@@ -1,0 +1,686 @@
+{
+  "schemaVersion": "1.0.0",
+  "codebookVersion": "1.0.0",
+  "batch": "gen-001",
+  "site": {
+    "slug": "municipal-art-collection-loans",
+    "url": "http://municipal-art-collection-loans.localhost:4318/",
+    "finalUrl": "http://municipal-art-collection-loans.localhost:4318/",
+    "status": 200,
+    "title": "Civic Holdings Register",
+    "capturedAt": "2026-11-14T22:01:04.884Z",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "screenshot": {
+      "ref": "capture/screenshot.png",
+      "width": 1440,
+      "height": 5400
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.8127.18 Safari/537.36",
+    "domain": "government-civic",
+    "domainNote": "municipal art collection management: curating loans of city-owned artworks to a branch library",
+    "provenance": {
+      "source": "generated",
+      "generation": "generated/gen-001/municipal-art-collection-loans/generation.json",
+      "generator": {
+        "id": "haiku",
+        "model": "claude-haiku-5-5",
+        "effort": "high"
+      },
+      "brief": {
+        "domain": "design-creative",
+        "archetype": "browse-collections",
+        "context": "public-sector",
+        "product": "Civic Holdings Register"
+      }
+    }
+  },
+  "regions": [
+    {
+      "id": "header",
+      "role": "header",
+      "label": "Dark app bar with CHR logo, product name, two nav destinations with count pills, and user identity",
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 56
+      },
+      "patterns": [
+        "app-shell",
+        "badge"
+      ]
+    },
+    {
+      "id": "brief-sidebar",
+      "role": "sidebar",
+      "label": "Project brief: project card with review deadline, director's requirements with progress bars, space cards with restrictions, register stats",
+      "bbox": {
+        "x": 0,
+        "y": 56,
+        "width": 272,
+        "height": 1352
+      },
+      "patterns": [
+        "card",
+        "progress-indicator",
+        "stat-tile",
+        "badge"
+      ]
+    },
+    {
+      "id": "candidates",
+      "role": "main-table",
+      "label": "Candidates heading with legend, filter/sort toolbar, and long table of candidate works with shortlist stars, condition pills, space eligibility chips and Propose buttons",
+      "bbox": {
+        "x": 272,
+        "y": 56,
+        "width": 808,
+        "height": 5344
+      },
+      "patterns": [
+        "data-table",
+        "filter-controls",
+        "sort-control",
+        "text-field",
+        "choice-control",
+        "badge",
+        "pagination",
+        "drawer",
+        "overview-detail"
+      ]
+    },
+    {
+      "id": "proposal-panel",
+      "role": "side-panel",
+      "label": "Proposal builder: rule check summary, wall-length capacity bars, 12 numbered slots with space/wall selects, warnings, and empty open slots",
+      "bbox": {
+        "x": 1080,
+        "y": 56,
+        "width": 360,
+        "height": 1294
+      },
+      "patterns": [
+        "progress-indicator",
+        "choice-control",
+        "badge",
+        "empty-state"
+      ]
+    },
+    {
+      "id": "proposal-footer",
+      "role": "action-bar",
+      "label": "Sticky footer with Export CSV, Print and Reset",
+      "bbox": {
+        "x": 1081,
+        "y": 5347,
+        "width": 359,
+        "height": 53
+      },
+      "patterns": []
+    }
+  ],
+  "patterns": [
+    {
+      "id": "app-shell",
+      "status": "present",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 56
+          },
+          "quote": "Civic Holdings Register",
+          "region": "header",
+          "note": "Top bar; nav buttons switch between project workspace and Collection register (verified live)"
+        }
+      ],
+      "dims": {
+        "primary": "top-navigation-bar",
+        "secondary": "none",
+        "items": [
+          "fixed-destinations",
+          "live-counts"
+        ],
+        "visibility": "always-visible",
+        "structure": "single-app"
+      }
+    },
+    {
+      "id": "data-table",
+      "status": "present",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 272,
+            "y": 241,
+            "width": 808,
+            "height": 660
+          },
+          "quote": "WORK ARTIST SIZE (CM) CONDITION LIGHT SPACES",
+          "region": "candidates",
+          "note": "Candidate works table; rows with star, title+meta, artist+locality chip, size, condition pill, light class, RR/EA/CA eligibility chips, Propose button"
+        }
+      ],
+      "dims": {
+        "columnSet": "fixed",
+        "cellRendering": [
+          "plain-text",
+          "chips-and-avatars"
+        ],
+        "density": "standard",
+        "rowExpansion": "none",
+        "selection": "none",
+        "opScope": [
+          "row"
+        ],
+        "aggregation": [
+          "flat"
+        ]
+      }
+    },
+    {
+      "id": "overview-detail",
+      "status": "present",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 272,
+            "y": 273,
+            "width": 808,
+            "height": 70
+          },
+          "quote": "Boatyard No. 21",
+          "region": "candidates",
+          "note": "Clicking a row (verified live) opens a right drawer with full record, per-space fit calculations, loans and record fields"
+        }
+      ],
+      "dims": {
+        "attributePlacement": [
+          "in-both-views",
+          "in-detail-view-only"
+        ],
+        "abstraction": [
+          "category",
+          "style"
+        ],
+        "relationship": "one-to-one",
+        "overviewType": [
+          "table",
+          "list"
+        ],
+        "detailMultiplicity": "one-at-a-time",
+        "openBy": [
+          "click"
+        ],
+        "openFrom": "whole-item"
+      }
+    },
+    {
+      "id": "drawer",
+      "status": "present",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 272,
+            "y": 273,
+            "width": 808,
+            "height": 70
+          },
+          "region": "candidates",
+          "note": "Not visible in capture; live, clicking a row or a proposal slot title slides in a right-edge detail panel over a dimmed scrim"
+        }
+      ],
+      "dims": {
+        "edge": "right",
+        "relationship": "overlay-with-scrim",
+        "holds": "item-detail",
+        "openBy": [
+          "selecting-an-item"
+        ]
+      }
+    },
+    {
+      "id": "filter-controls",
+      "status": "present",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 272,
+            "y": 145,
+            "width": 808,
+            "height": 94
+          },
+          "quote": "Any space",
+          "region": "candidates",
+          "note": "Search, Space/Medium/Condition selects, Eastvale artists and Shortlisted checkboxes; result count updates live ('15 works match in your shortlist')"
+        }
+      ],
+      "dims": {
+        "types": [
+          "text-match",
+          "checkbox-values"
+        ],
+        "preview": "live-results",
+        "origin": "developer-defined"
+      },
+      "novel": [
+        {
+          "subdimension": "placement",
+          "description": "Always-visible inline toolbar of dropdown selects and checkboxes above the table, no chips/popover",
+          "proposedValueId": "inline-toolbar-controls"
+        }
+      ]
+    },
+    {
+      "id": "sort-control",
+      "status": "present",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 288,
+            "y": 197,
+            "width": 187,
+            "height": 32
+          },
+          "quote": "Sort: Eastvale artists first",
+          "region": "candidates"
+        }
+      ],
+      "dims": {
+        "keys": "fixed-list",
+        "form": "dropdown",
+        "indicator": "label"
+      }
+    },
+    {
+      "id": "text-field",
+      "status": "present",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 288,
+            "y": 156,
+            "width": 378,
+            "height": 32
+          },
+          "quote": "Search title, artist or accession",
+          "region": "candidates"
+        }
+      ],
+      "dims": {
+        "supporting": [
+          "placeholder"
+        ],
+        "style": "outlined",
+        "validation": "none",
+        "assistance": [
+          "none"
+        ],
+        "inputType": "plain"
+      }
+    },
+    {
+      "id": "choice-control",
+      "status": "present",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 674,
+            "y": 157,
+            "width": 390,
+            "height": 32
+          },
+          "region": "candidates",
+          "note": "Native dropdown selects for filters"
+        },
+        {
+          "bbox": {
+            "x": 1124,
+            "y": 397,
+            "width": 300,
+            "height": 26
+          },
+          "quote": "Reading Room",
+          "region": "proposal-panel",
+          "note": "Per-slot space and wall selects"
+        },
+        {
+          "bbox": {
+            "x": 483,
+            "y": 200,
+            "width": 220,
+            "height": 25
+          },
+          "quote": "Shortlisted",
+          "region": "candidates",
+          "note": "Checkbox toggles"
+        }
+      ],
+      "dims": {
+        "cardinality": "single-choice",
+        "form": "dropdown-select",
+        "option": [
+          "label-only"
+        ],
+        "timing": "immediately",
+        "largeSets": "show-all"
+      }
+    },
+    {
+      "id": "badge",
+      "status": "present",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 722,
+            "y": 282,
+            "width": 66,
+            "height": 18
+          },
+          "quote": "Excellent",
+          "region": "candidates",
+          "note": "Condition status pill"
+        },
+        {
+          "bbox": {
+            "x": 896,
+            "y": 283,
+            "width": 84,
+            "height": 17
+          },
+          "quote": "RR EA CA",
+          "region": "candidates",
+          "note": "Space eligibility chips: green eligible, amber warnings, struck grey not eligible"
+        },
+        {
+          "bbox": {
+            "x": 506,
+            "y": 17,
+            "width": 40,
+            "height": 20
+          },
+          "quote": "7/12",
+          "region": "header",
+          "note": "Count pill on nav item"
+        },
+        {
+          "bbox": {
+            "x": 1322,
+            "y": 70,
+            "width": 102,
+            "height": 20
+          },
+          "quote": "3 with warnings",
+          "region": "proposal-panel"
+        }
+      ],
+      "dims": {
+        "meaning": "status",
+        "aggregation": "per-item"
+      }
+    },
+    {
+      "id": "progress-indicator",
+      "status": "present",
+      "confidence": 0.65,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 29,
+            "y": 360,
+            "width": 213,
+            "height": 50
+          },
+          "quote": "Works proposed 7 of 12",
+          "region": "brief-sidebar",
+          "note": "Linear bars for requirement completion"
+        },
+        {
+          "bbox": {
+            "x": 1097,
+            "y": 205,
+            "width": 330,
+            "height": 105
+          },
+          "quote": "503/640",
+          "region": "proposal-panel",
+          "note": "Wall length capacity meters"
+        }
+      ],
+      "dims": {
+        "determinacy": "steps-completed",
+        "form": "linear-bar",
+        "control": "no-control"
+      }
+    },
+    {
+      "id": "stat-tile",
+      "status": "present",
+      "confidence": 0.6,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 14,
+            "y": 1137,
+            "width": 243,
+            "height": 269
+          },
+          "quote": "In the register 1,412",
+          "region": "brief-sidebar",
+          "note": "Register section with labelled key numbers 1,412 / 1,232 / 54"
+        }
+      ],
+      "dims": {
+        "context": [
+          "label"
+        ],
+        "encoding": "number-only",
+        "drill": "none"
+      }
+    },
+    {
+      "id": "card",
+      "status": "present",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 29,
+            "y": 549,
+            "width": 213,
+            "height": 147
+          },
+          "quote": "Reading Room",
+          "region": "brief-sidebar",
+          "note": "Outlined space cards with code chip, dimensions, restriction bullets and available/proposed counts"
+        },
+        {
+          "bbox": {
+            "x": 29,
+            "y": 945,
+            "width": 213,
+            "height": 167
+          },
+          "quote": "Entry Atrium",
+          "region": "brief-sidebar"
+        }
+      ],
+      "dims": {
+        "media": "none",
+        "actions": "none",
+        "shape": "vertical",
+        "style": "outlined"
+      }
+    },
+    {
+      "id": "empty-state",
+      "status": "uncertain",
+      "confidence": 0.55,
+      "rationale": "Placeholder text for unfilled slots inside a list rather than a whole empty view",
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1081,
+            "y": 1138,
+            "width": 359,
+            "height": 212
+          },
+          "quote": "Open. Add a work from the candidate list.",
+          "region": "proposal-panel"
+        }
+      ],
+      "dims": {
+        "cause": "first-use",
+        "content": [
+          "explanation"
+        ],
+        "starters": "none",
+        "recovery": "none"
+      }
+    },
+    {
+      "id": "pagination",
+      "status": "present",
+      "confidence": 0.65,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 272,
+            "y": 5300,
+            "width": 808,
+            "height": 100
+          },
+          "region": "candidates",
+          "note": "Accessibility tree shows 'Showing 150 of 886' and 'Show 150 more' button after the 150 rows, below the captured screenshot area"
+        }
+      ],
+      "dims": {
+        "mechanism": "load-more",
+        "position": "item-range",
+        "pageSize": "fixed"
+      }
+    },
+    {
+      "id": "tabs",
+      "status": "absent",
+      "confidence": 0.6,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 336,
+            "y": 10,
+            "width": 422,
+            "height": 36
+          },
+          "note": "Nav buttons switch whole app destinations; coded as app-shell nav not tabs"
+        }
+      ],
+      "dims": {}
+    },
+    {
+      "id": "form",
+      "status": "absent",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1081,
+            "y": 323,
+            "width": 359,
+            "height": 813
+          },
+          "note": "Proposal slots use selects but apply immediately; not a submit form"
+        }
+      ],
+      "dims": {}
+    }
+  ],
+  "structure": {
+    "layout": "full-height three-pane desktop app: dark top bar with two-destination nav; left project-brief sidebar (272px), central candidate data table with filter toolbar (808px), right proposal builder panel (360px) with sticky action footer; each pane scrolls independently",
+    "regions": [
+      "header",
+      "brief-sidebar",
+      "candidates",
+      "proposal-panel",
+      "proposal-footer"
+    ],
+    "density": "dense"
+  },
+  "aesthetics": {
+    "palette": [
+      "#f4f3ef",
+      "#ffffff",
+      "#1c2330",
+      "#5d6675",
+      "#1f5f63",
+      "#2b7a4b",
+      "#8f5d00",
+      "#e3f1e8",
+      "#fbf0d6",
+      "#dcdad3",
+      "#faf9f6"
+    ],
+    "colorRoles": {
+      "background": "#f4f3ef",
+      "surface": "#ffffff",
+      "text": "#1c2330",
+      "muted": "#5d6675",
+      "primary": "#1f5f63",
+      "success": "#2b7a4b",
+      "warning": "#8f5d00",
+      "border": "#dcdad3",
+      "header": "#1c2330",
+      "toolbar": "#faf9f6"
+    },
+    "typography": "system-ui throughout (headings, table, controls); small uppercase letter-spaced labels for section and column headers",
+    "typeScale": "compact utilitarian scale: 20px semibold panel titles (Candidates, Proposal, project name), 14px semibold item titles, 13px body/controls, 11-12px meta, chips and uppercase labels; hierarchy via weight and grey tone rather than size",
+    "shape": "soft",
+    "elevation": "flat",
+    "borders": "thin",
+    "imagery": [
+      "none"
+    ],
+    "iconStyle": "line",
+    "whitespace": "moderate",
+    "backgroundTreatment": "solid",
+    "mood": [
+      "institutional",
+      "calm",
+      "technical",
+      "utilitarian",
+      "trustworthy"
+    ]
+  },
+  "model": {
+    "rater": "rater-2",
+    "provider": "claude-code",
+    "name": "claude-opus-5-5",
+    "effort": "high",
+    "generatedAt": "2026-11-14T22:03:33.908Z",
+    "servedBy": [
+      "claude-opus-5-5"
+    ],
+    "turns": 18,
+    "usage": {
+      "input_tokens": 36,
+      "cache_creation_input_tokens": 78443,
+      "cache_read_input_tokens": 858483,
+      "output_tokens": 9954
+    }
+  },
+  "notes": "Curatorial loan-planning tool for a city art collection. Distinctive: three independently scrolling panes; candidate table encodes space eligibility as tiny two-letter chips (RR/EA/CA) colored green/amber or greyed with strikethrough; stale condition-check dates turn amber; proposal slots have colored left rule (green ok, amber warning, dashed grey empty) and inline '!' warnings; requirement checks ('✕ Eastvale-area artists: 4 of 6 required') act as live validation of the selection against constraints. Dark navy top bar with teal monogram tile. Live: second nav destination is a Collection register with sidebar checkbox facets with counts and numbered pagination (not part of capture). Row click opens a right drawer with per-space fit arithmetic. Constraint/requirements checklist + slot builder has no exact codebook entry."
+}

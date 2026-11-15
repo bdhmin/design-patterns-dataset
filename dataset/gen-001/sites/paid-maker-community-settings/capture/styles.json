@@ -1,0 +1,206 @@
+{
+ "pageBackground": "#f5f1ea",
+ "backgroundsByArea": [
+  {
+   "color": "#f5f1ea",
+   "share": 0.4495
+  },
+  {
+   "color": "#fffdf9",
+   "share": 0.2573
+  },
+  {
+   "color": "#ece6dc",
+   "share": 0.1625
+  },
+  {
+   "color": "#efe9e0",
+   "share": 0.0716
+  },
+  {
+   "color": "#faf6f0",
+   "share": 0.0185
+  },
+  {
+   "color": "#fdf6f1",
+   "share": 0.0137
+  },
+  {
+   "color": "#ffffff",
+   "share": 0.0134
+  },
+  {
+   "color": "#dddddd",
+   "share": 0.0067
+  },
+  {
+   "color": "#fbf4ea",
+   "share": 0.0021
+  },
+  {
+   "color": "#f1ebe2",
+   "share": 0.0018
+  },
+  {
+   "color": "#2b2622",
+   "share": 0.0007
+  },
+  {
+   "color": "#f8e7dc",
+   "share": 0.0006
+  },
+  {
+   "color": "#d4c9bb",
+   "share": 0.0004
+  },
+  {
+   "color": "#d0e7db",
+   "share": 0.0002
+  },
+  {
+   "color": "#e4dccf",
+   "share": 0.0002
+  },
+  {
+   "color": "#fbf0dc",
+   "share": 0.0002
+  }
+ ],
+ "textColors": [
+  {
+   "color": "#8a8076",
+   "chars": 1711
+  },
+  {
+   "color": "#5c544c",
+   "chars": 1600
+  },
+  {
+   "color": "#2b2622",
+   "chars": 1196
+  },
+  {
+   "color": "#6b420f",
+   "chars": 51
+  },
+  {
+   "color": "#ffffff",
+   "chars": 47
+  },
+  {
+   "color": "#fbf6ef",
+   "chars": 20
+  },
+  {
+   "color": "#8e3d1c",
+   "chars": 20
+  },
+  {
+   "color": "#9a5a12",
+   "chars": 10
+  },
+  {
+   "color": "#512b64",
+   "chars": 6
+  },
+  {
+   "color": "#2b6447",
+   "chars": 6
+  }
+ ],
+ "fonts": [
+  {
+   "family": "-apple-system",
+   "textNodes": 150
+  },
+  {
+   "family": "Iowan Old Style",
+   "textNodes": 14
+  }
+ ],
+ "fontSizes": [
+  {
+   "px": 25,
+   "textNodes": 1
+  },
+  {
+   "px": 18,
+   "textNodes": 8
+  },
+  {
+   "px": 17,
+   "textNodes": 1
+  },
+  {
+   "px": 15,
+   "textNodes": 1
+  },
+  {
+   "px": 14,
+   "textNodes": 36
+  },
+  {
+   "px": 13,
+   "textNodes": 75
+  },
+  {
+   "px": 12,
+   "textNodes": 17
+  },
+  {
+   "px": 11,
+   "textNodes": 13
+  },
+  {
+   "px": 10,
+   "textNodes": 8
+  },
+  {
+   "px": 8,
+   "textNodes": 3
+  },
+  {
+   "px": 7,
+   "textNodes": 1
+  }
+ ],
+ "radii": [
+  {
+   "radius": "50%",
+   "boxes": 33
+  },
+  {
+   "radius": "8px",
+   "boxes": 18
+  },
+  {
+   "radius": "10px",
+   "boxes": 16
+  },
+  {
+   "radius": "6px",
+   "boxes": 14
+  },
+  {
+   "radius": "999px",
+   "boxes": 14
+  },
+  {
+   "radius": "4px",
+   "boxes": 7
+  },
+  {
+   "radius": "12px",
+   "boxes": 7
+  },
+  {
+   "radius": "5px",
+   "boxes": 7
+  }
+ ],
+ "boxesMeasured": 475,
+ "shadowedShare": 0.044,
+ "borderedShare": 0.135,
+ "gradientBackgrounds": 3,
+ "imageBackgrounds": 0
+}

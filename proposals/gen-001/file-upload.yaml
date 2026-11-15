@@ -1,0 +1,37 @@
+# Codebook proposal (new-values) — review with: node scripts/proposals.ts show gen-001 file-upload
+id: file-upload
+kind: new-values
+status: open
+batch: gen-001
+codebookVersion: 1.0.0
+dimensions:
+  - subdimensions:
+      - id: entry
+        values:
+          - id: from-existing-record
+            name: From an existing record
+            description: Attach a file already stored on another record inside the same product, chosen from
+              that record
+            example: Ledgerline — 'From grant record' button beside Upload
+rationale:
+  - rater: rater-3
+    site: ngo-grants-system-onboarding
+    text: Enterprise apps often let users attach a file already stored elsewhere in the same product
+      (e.g. on a grant/project record) rather than uploading from device or a third-party cloud
+      picker; cloud-import is the nearest but implies external storage.
+sources:
+  - batch: gen-001
+    site: ngo-grants-system-onboarding
+    url: http://ngo-grants-system-onboarding.localhost:4318/
+    note: proposed by rater-3
+evidence:
+  - site: ngo-grants-system-onboarding
+    rater: rater-3
+    bbox:
+      x: 775
+      y: 3319
+      width: 222
+      height: 29
+    quote: From grant record
+createdAt: 2026-11-14T22:05:25.533Z
+updatedAt: 2026-11-14T22:05:25.533Z

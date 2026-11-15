@@ -1,0 +1,71 @@
+# Generation briefs for gen-001. Review before running scripts/generate.ts:
+# briefs describe the work, never the interface. `echo` lists codebook pattern
+# names found in a brief's text; reword the brief (and delete `echo`) when the
+# term describes the UI rather than the data. Edits are fine until generation.
+# Trimmed 2026-11-14 from 15 briefs (seed 1301) to these 5: the four already
+# built plus ngo-grants-system-onboarding.
+batch: gen-001
+createdAt: 2026-11-14T04:11:23.338Z
+codebookVersion: 1.0.0
+seed: 1301
+writer:
+  model: claude-opus-5-5
+  effort: high
+briefs:
+  - slug: paid-maker-community-settings
+    domain: social-community
+    archetype: configure
+    generator: opus
+    context: freelancer
+    product: Hearthroom
+    summary: Hosted membership-community software for independent creators who run small paid communities around their own craft or practice.
+    user: Maren Oduya, a self-employed knitwear designer who sells patterns and runs a paid community for 342 subscribers. She set it up herself two years ago and handles all moderation alone. She knows her members well but isn't technical.
+    moment: "She is opening a new invite-only space for the 18 test knitters who will try her winter collection before it is released. She needs to set how it behaves before sending invites tonight: only test knitters can see and post in it, and only on its threads; regular members shouldn't know it exists. Posts should hold back photos of unreleased designs from being shared or downloaded. Test knitters should get a daily digest, not instant alerts. Her name and brand mark should replace the default community name in invite emails. She also wants to reword the automatic welcome message and switch on a keyword hold for spoilers ('pattern PDF', 'leak', 'Ravelry link') that sends matching posts to her for approval. Before she saves, she wants to check what a test knitter and a regular member would each experience."
+    data: "Community 'Oduya Knits Circle': 342 members on three tiers (Supporter $4/mo: 211, Maker $9/mo: 113, Studio $20/mo: 18). Six existing spaces: Announcements, General Chat, WIP Photos, Pattern Help, Swap & Sell, Studio Lounge. Draft space 'Winter '26 Test Knit': 18 invitees, including Saoirse Byrne, Tomasz Wilk and Imani Reyes, and test window Nov 16–Dec 14. Current settings: posting open to all members, instant notifications on, image download allowed, welcome message 'Welcome to the Circle! Say hi in General Chat.' and no keyword holds. Brand assets on file: logo file 'oduya-mark.png' and display name 'Oduya Knits'. Settings were last changed Sep 3, 2026."
+    echo:
+      - 'settings: "settings"'
+      - 'choice-control: "switch"'
+      - 'notification-center: "notifications"'
+  - slug: municipal-art-collection-loans
+    domain: design-creative
+    archetype: browse-collections
+    generator: haiku
+    context: public-sector
+    product: Civic Holdings Register
+    summary: Collection-management software for a city's municipally owned public art, used by arts office staff to find, place and track works across city buildings.
+    user: Rosalind Achebe, collections coordinator at the City of Harrow Bay's Office of Arts & Culture. She has been there 8 years and knows many works by heart, but not their current condition or exact sizes.
+    moment: The new Eastvale Branch Library opens in January. Facilities has given her the wall dimensions, and she has to propose 12 works from the city's holdings by Friday's review with the library director. The south-facing reading room gets direct sun, so works on paper, textiles and photographs are ruled out there. The children's area needs works that are hung, not free-standing, with nothing fragile under 1.2 m high. The director has asked that at least half be by artists from the Eastvale area. She is narrowing roughly 1,400 works down to strong candidates. She needs to compare them on size, medium, condition and availability, then look closely at a few to confirm they fit and aren't already promised elsewhere.
+    data: "Collection: 1,412 works acquired 1958–2026. By medium: 498 paintings, 311 works on paper, 207 photographs, 164 sculptures, 96 textiles, 81 ceramics and 55 mixed media. Each record holds the accession number (e.g. HB.1987.042), title, artist and the artist's neighborhood, year, medium, dimensions in cm, weight in kg and light-sensitivity class (1–3). It also holds condition (Excellent/Good/Fair/Needs Treatment, last assessed date), current location (City Hall, Fire Station 4, the Ridgeline Storage vault and others), loan status and image rights. 63 works are flagged 'Eastvale artist', among them Delphine Moreau's 'Tidewater at Dusk' (1994, oil, 122×183 cm, Good) and Kofi Asante's 'Market Day' (2011, acrylic, 90×120 cm, Excellent). 14 works are on hold for the Civic Center renovation until June 2027. Eastvale wall spaces: Reading Room south wall, 6.4 m × 2.8 m; Children's Area, three walls of 3.1 m each; Entry Atrium, a 4.2 m by 5 m double-height wall."
+  - slug: ngo-grants-system-onboarding
+    domain: nonprofit
+    archetype: guide
+    generator: opus
+    context: enterprise-internal
+    product: Ledgerline
+    summary: An in-house grants-management system built by a large international humanitarian NGO's IT team for its grants and compliance department to track donor awards, budgets and reporting obligations.
+    user: Aisha Kamau, who just moved from four years as a field program manager to a grants officer post at Northbridge Relief International's Nairobi regional office. She knows the programs well but has never used Ledgerline or handled donor compliance.
+    moment: It's her third day. Her supervisor has asked her to prepare her first budget reallocation request on an active water-and-sanitation grant. The request moves funds from an underspent training line to borehole rehabilitation. She is learning the system by doing this one real task. She doesn't know what 'variance threshold', 'donor prior approval' or 'cost category lock' mean here. She also doesn't know which reallocations need donor sign-off, or who in the department has to approve. She wants help that explains things right when they come up, a sense of where she is in the department's required steps, and a way to reach the internal grants helpdesk if she gets stuck.
+    data: "Grant NRI-KE-2025-118 is funded by the Halvorsen Foundation: 'Turkana WASH Resilience', $1,840,000, running Apr 2025 to Mar 2027. It has 9 budget lines; for example, Line 4 'Community Hygiene Training' has a budget of $212,000 and $61,400 spent, and Line 6 'Borehole Rehabilitation' has $540,000 budgeted and $512,900 spent. Proposed move: $85,000 from Line 4 to Line 6, which is 40.1% of Line 4. Donor rule: moves over 10% of any line need prior written approval from the donor. Internal approvals needed: Grants Manager (Peter Owino), then Regional Finance Controller (Lucía Ferrer). Her onboarding plan has 7 required steps, of which 2 are done (system access and policy acknowledgment). There are 34 glossary terms and 112 help articles, including 'Reallocation vs. Amendment' and 'Halvorsen Foundation donor rules summary'. Helpdesk queue 'Grants-Systems' has a typical response time of 4 business hours. Her last 3 actions were: opened the grant record, viewed the budget lines, and started a draft request."
+    echo:
+      - 'playlist-queue: "queue"'
+      - 'approval-flow: "sign-off"'
+  - slug: community-fridge-restock-analysis
+    domain: data-visualization
+    archetype: analyze
+    generator: sonnet
+    context: community-nonprofit
+    product: Stocktake Commons
+    summary: A free, volunteer-maintained tool that lets neighborhood community-fridge networks log fridge checks and donations and study patterns in them.
+    user: Dev Raman, a volunteer coordinator for the Southside Free Fridge Network, which runs on donations and about 60 volunteers. He works as a pharmacist and does this in the evenings. He's comfortable with numbers but not a data professional.
+    moment: The network's monthly meeting is Sunday. Two fridges keep going empty before noon, and a partner bakery has offered a second weekly drop. Dev is digging through 14 weeks of volunteer check logs to work out which fridges run out fastest, and on which weekdays and times. He also wants to see whether donation drops actually change how full the fridges are, and whether the two warm-temperature incidents line up with power trouble at one site. He wants to compare fridges side by side, spot outliers, and isolate the stretch after Labor Day, when a school reopened next to Fridge 3. Then he'll recommend which fridge and which day should get the bakery's extra drop.
+    data: "9 fridges, each with a host site and neighborhood. Examples: F1 Elm St Laundromat (Southside), F3 Kessler Ave Church (Riverbend), F7 Ortiz Corner Store (Southside). There are 3,126 check entries from Aug 4 to Nov 9, 2026. Each holds the timestamp, fridge, volunteer initials, fill level (0 empty to 4 full), interior temperature in °F, and items noted (produce, dairy, prepared meals, bread). Each also records whether the fridge was cleaned and any issue flags. There are 412 donation drops, from Rosa's Bakery (Tue/Fri), Greenway Grocery (Mon) and individual donors, each with the fridge, estimated pounds and food type. Temperature incidents: F7 read 47°F on Sep 22 and 51°F on Oct 30. F3 and F5 recorded fill level 0 before noon on 38% of weekdays, against a network average of 14%."
+  - slug: course-sequencing-credit-commitment
+    domain: science-research
+    archetype: transact
+    generator: sonnet
+    context: education
+    product: Benchcredit
+    summary: Allocation software for course-based undergraduate research labs, where student teams spend a limited course budget to send samples to the university's core sequencing facility.
+    user: "Mateo Lindqvist, a junior biology major and team lead for 'Team Rhizo' (4 students) in BIOL 3420: Soil Microbe Discovery, a semester-long lab course. He knows the biology but this is his first time spending real research money."
+    moment: His team has isolated 14 bacterial strains from campus soil. Their teaching assistant has approved 9 of them as good enough for sequencing. They have 300 sequencing credits and each whole-genome submission costs 45, so they can afford at most 6. The facility's batch cutoff is Friday at 5:00 PM. Until then they can withdraw a submission and get the credits back; after it, the submission is final and the credits are spent. Mateo has to choose which 6 to commit, based on the team's notes on antibiotic-inhibition results and DNA quality. He'll submit them and confirm that each reserves credits. Two teammates disagree about isolate R-11, so he expects to swap one later this week.
+    data: "Course: BIOL 3420, Fall 2026, instructor Dr. Hannah Osei, TA Wren Castillo. 8 teams; course pool of 2,400 credits, 300 per team. Team Rhizo's isolates run R-01 to R-14. Each has its collection site (e.g. Arboretum creek bank, Lot C planter), gram stain result, inhibition zone in mm against E. coli and S. aureus, DNA concentration in ng/µL, A260/280 ratio, TA approval status and team notes. Examples: R-04 at 18 mm, 62 ng/µL, ratio 1.86, approved. R-11 at 22 mm, 14 ng/µL, ratio 1.71, approved with a low-yield warning. Facility batch FB-2026-11B, cutoff Fri Nov 20 at 17:00, results expected around Dec 7. The team's credit ledger shows 300 available, 0 reserved and 0 spent. Other teams' submission counts so far: 3, 6, 0, 5, 2, 6 and 4."

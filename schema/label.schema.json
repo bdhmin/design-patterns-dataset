@@ -46,7 +46,7 @@
             "source": { "enum": ["captured", "generated"] },
             "generation": { "type": "string" },
             "generator": { "type": "object", "additionalProperties": false, "required": ["id", "model"], "properties": { "id": { "type": "string" }, "model": { "type": "string" }, "effort": { "type": "string" } } },
-            "brief": { "type": "object", "additionalProperties": false, "required": ["domain", "archetype", "product"], "properties": { "domain": { "type": "string" }, "archetype": { "type": "string" }, "product": { "type": "string" } } }
+            "brief": { "type": "object", "additionalProperties": false, "required": ["domain", "archetype", "product"], "properties": { "domain": { "type": "string" }, "archetype": { "type": "string" }, "context": { "type": "string" }, "product": { "type": "string" } } }
           }
         }
       }

@@ -1,0 +1,697 @@
+{
+  "schemaVersion": "1.0.0",
+  "codebookVersion": "1.0.0",
+  "batch": "gen-001",
+  "site": {
+    "slug": "course-sequencing-credit-commitment",
+    "url": "http://course-sequencing-credit-commitment.localhost:4318/",
+    "finalUrl": "http://course-sequencing-credit-commitment.localhost:4318/",
+    "status": 200,
+    "title": "Benchcredit · Team Rhizo · BIOL 3420",
+    "capturedAt": "2026-11-14T22:05:53.546Z",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "screenshot": {
+      "ref": "capture/screenshot.png",
+      "width": 1440,
+      "height": 900
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.8127.18 Safari/537.36",
+    "domain": "education",
+    "domainNote": "university course lab tool: teams spend shared sequencing credits on bacterial isolates before a batch cutoff",
+    "provenance": {
+      "source": "generated",
+      "generation": "generated/gen-001/course-sequencing-credit-commitment/generation.json",
+      "generator": {
+        "id": "sonnet",
+        "model": "claude-sonnet-5-5",
+        "effort": "high"
+      },
+      "brief": {
+        "domain": "science-research",
+        "archetype": "transact",
+        "context": "education",
+        "product": "Benchcredit"
+      }
+    }
+  },
+  "regions": [
+    {
+      "id": "header",
+      "role": "header",
+      "label": "App top bar: Benchcredit logo, course name with Fall 2026 pill, Submissions / Credit ledger / Course nav, user avatar and role",
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 56
+      },
+      "patterns": [
+        "app-shell"
+      ]
+    },
+    {
+      "id": "page-title",
+      "role": "page-header",
+      "label": "H1 'Choose what to sequence' with team, instructor and facility context",
+      "bbox": {
+        "x": 32,
+        "y": 72,
+        "width": 1376,
+        "height": 32
+      },
+      "patterns": []
+    },
+    {
+      "id": "cutoff-banner",
+      "role": "banner",
+      "label": "Amber batch-cutoff banner with countdown and an explanation of withdrawal and finality",
+      "bbox": {
+        "x": 32,
+        "y": 111,
+        "width": 1376,
+        "height": 56
+      },
+      "patterns": [
+        "banner"
+      ]
+    },
+    {
+      "id": "isolates-table",
+      "role": "data-table",
+      "label": "Isolates card: Approved/All segmented filter, sortable table with in-cell bars, warning chips, team notes and Submit · 45 row buttons",
+      "bbox": {
+        "x": 32,
+        "y": 180,
+        "width": 996,
+        "height": 613
+      },
+      "patterns": [
+        "data-table",
+        "filter-controls",
+        "choice-control",
+        "sort-control",
+        "badge",
+        "overview-detail",
+        "drawer"
+      ]
+    },
+    {
+      "id": "credits-aside",
+      "role": "sidebar",
+      "label": "Team credits card: 300 credits available, segmented 6-slot meter, Available/Reserved/Spent stats",
+      "bbox": {
+        "x": 1048,
+        "y": 180,
+        "width": 360,
+        "height": 269
+      },
+      "patterns": [
+        "stat-tile",
+        "progress-indicator"
+      ]
+    },
+    {
+      "id": "submissions-aside",
+      "role": "sidebar",
+      "label": "Submissions card: 0 of 6, six dashed numbered 'Open slot' placeholders, helper text",
+      "bbox": {
+        "x": 1048,
+        "y": 465,
+        "width": 360,
+        "height": 339
+      },
+      "patterns": [
+        "empty-state",
+        "undo"
+      ]
+    },
+    {
+      "id": "toast-area",
+      "role": "status",
+      "label": "Empty live status region; on the live page, success toasts appear here at bottom centre after Submit or Withdraw",
+      "bbox": {
+        "x": 410,
+        "y": 800,
+        "width": 620,
+        "height": 90
+      },
+      "patterns": [
+        "toast"
+      ]
+    }
+  ],
+  "patterns": [
+    {
+      "id": "app-shell",
+      "status": "present",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 56
+          },
+          "quote": "Submissions Credit ledger Course",
+          "region": "header",
+          "note": "Top bar with brand, course context, three section tabs with an underline on the active one, and user identity. Stays sticky on scroll (verified live)."
+        }
+      ],
+      "dims": {
+        "primary": "top-navigation-bar",
+        "secondary": "none",
+        "items": [
+          "fixed-destinations"
+        ],
+        "visibility": "always-visible",
+        "structure": "single-app"
+      }
+    },
+    {
+      "id": "banner",
+      "status": "present",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 32,
+            "y": 111,
+            "width": 1376,
+            "height": 56
+          },
+          "quote": "Batch FB-2026-11B closes Fri, Nov 20 at 5:00 PM 6 days 6 hr left",
+          "region": "cutoff-banner",
+          "note": "Amber region 'Batch cutoff' with clock icon, countdown and consequence text; no dismiss"
+        }
+      ],
+      "dims": {
+        "scope": "page",
+        "severity": "warning",
+        "dismissal": "not-until-resolved",
+        "action": "none",
+        "placement": "top-of-content"
+      }
+    },
+    {
+      "id": "data-table",
+      "status": "present",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 32,
+            "y": 257,
+            "width": 996,
+            "height": 536
+          },
+          "quote": "Isolate E. coli zone, mm S. aureus zone, mm DNA ng/µL · A260/280 Team notes",
+          "region": "isolates-table",
+          "note": "Real <table>. Sortable headers. Zone values have small bar gauges. Warning chips. Each row has a Submit · 45 button."
+        }
+      ],
+      "dims": {
+        "columnSet": "fixed",
+        "cellRendering": [
+          "plain-text",
+          "in-cell-charts",
+          "chips-and-avatars"
+        ],
+        "density": "comfortable",
+        "rowExpansion": "none",
+        "selection": "none",
+        "opScope": [
+          "row",
+          "column"
+        ],
+        "aggregation": [
+          "flat"
+        ],
+        "openIn": "side-by-side"
+      }
+    },
+    {
+      "id": "filter-controls",
+      "status": "present",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 843,
+            "y": 196,
+            "width": 166,
+            "height": 34
+          },
+          "quote": "Approved 9 All 14",
+          "region": "isolates-table",
+          "note": "group 'Filter isolates'. Live check: All shows 14 rows, including Not approved and Pending TA review."
+        }
+      ],
+      "dims": {
+        "placement": "filter-bar-with-chips",
+        "types": [
+          "toggle-chips"
+        ],
+        "preview": "counts-per-value",
+        "origin": "developer-defined"
+      }
+    },
+    {
+      "id": "choice-control",
+      "status": "present",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 843,
+            "y": 196,
+            "width": 166,
+            "height": 34
+          },
+          "quote": "Approved 9 All 14",
+          "region": "isolates-table",
+          "note": "Segmented two-option toggle, aria-pressed"
+        }
+      ],
+      "dims": {
+        "cardinality": "single-choice",
+        "form": "segmented-control",
+        "option": [
+          "label-only"
+        ],
+        "timing": "immediately",
+        "largeSets": "show-all"
+      }
+    },
+    {
+      "id": "sort-control",
+      "status": "present",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 50,
+            "y": 282,
+            "width": 54,
+            "height": 18
+          },
+          "quote": "Isolate",
+          "region": "isolates-table",
+          "note": "Header button with an up caret. Live check: clicking E. coli sorts descending and moves the caret."
+        }
+      ],
+      "dims": {
+        "keys": "any-column",
+        "form": "column-header-click",
+        "default": "alphabetical",
+        "indicator": "header-arrow"
+      }
+    },
+    {
+      "id": "badge",
+      "status": "present",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 92,
+            "y": 694,
+            "width": 117,
+            "height": 18
+          },
+          "quote": "Low-yield warning",
+          "region": "isolates-table",
+          "note": "Amber status pill on the R-11 row"
+        },
+        {
+          "bbox": {
+            "x": 498,
+            "y": 692,
+            "width": 80,
+            "height": 18
+          },
+          "quote": "Low yield",
+          "region": "isolates-table",
+          "note": "Warning chips on DNA values ('Below 1.8' too)"
+        },
+        {
+          "bbox": {
+            "x": 449,
+            "y": 17,
+            "width": 65,
+            "height": 20
+          },
+          "quote": "Fall 2026",
+          "region": "header",
+          "note": "Term label pill"
+        }
+      ],
+      "dims": {
+        "meaning": "status",
+        "aggregation": "per-item"
+      }
+    },
+    {
+      "id": "overview-detail",
+      "status": "present",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 50,
+            "y": 315,
+            "width": 34,
+            "height": 22
+          },
+          "quote": "R-01",
+          "region": "isolates-table",
+          "note": "Isolate ID is a button. Live check: it opens a right-side detail panel with inhibition bars, DNA quality explanations, TA review, notes and a Submit CTA."
+        }
+      ],
+      "dims": {
+        "attributePlacement": [
+          "in-both-views",
+          "in-detail-view-only"
+        ],
+        "abstraction": [
+          "graphic",
+          "category"
+        ],
+        "truncation": "ellipsis",
+        "relationship": "one-to-one",
+        "recursion": [
+          "none"
+        ],
+        "openIn": "side-by-side",
+        "overviewType": [
+          "table"
+        ],
+        "detailMultiplicity": "one-at-a-time",
+        "openBy": [
+          "click"
+        ],
+        "openFrom": "specific-attribute",
+        "attributeScope": [
+          "per-item"
+        ]
+      }
+    },
+    {
+      "id": "drawer",
+      "status": "present",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 50,
+            "y": 423,
+            "width": 34,
+            "height": 22
+          },
+          "quote": "R-04",
+          "region": "isolates-table",
+          "note": "Trigger in the capture. Live: a right slide-over over a dimmed scrim shows item detail and closes with Escape or ×."
+        }
+      ],
+      "dims": {
+        "edge": "right",
+        "relationship": "overlay-with-scrim",
+        "holds": "item-detail",
+        "openBy": [
+          "selecting-an-item"
+        ]
+      }
+    },
+    {
+      "id": "stat-tile",
+      "status": "present",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1066,
+            "y": 225,
+            "width": 180,
+            "height": 42
+          },
+          "quote": "300 credits available",
+          "region": "credits-aside",
+          "note": "Hero number in 40px bold green"
+        },
+        {
+          "bbox": {
+            "x": 1066,
+            "y": 332,
+            "width": 324,
+            "height": 44
+          },
+          "quote": "Available 300 Reserved 0 Spent 0",
+          "region": "credits-aside",
+          "note": "Three mini stats with coloured legend dots"
+        }
+      ],
+      "dims": {
+        "context": [
+          "label"
+        ],
+        "encoding": "number-only",
+        "drill": "none"
+      }
+    },
+    {
+      "id": "progress-indicator",
+      "status": "uncertain",
+      "confidence": 0.5,
+      "rationale": "The 6-segment credit meter (1 per submission, plus a hatched leftover segment) shows budget use, not work in progress. It is coded here as the closest available component.",
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1066,
+            "y": 276,
+            "width": 324,
+            "height": 14
+          },
+          "quote": "6 submissions × 45 = 270",
+          "region": "credits-aside",
+          "note": "Segmented bar. Segments fill dark green as slots are reserved (verified live)."
+        }
+      ],
+      "dims": {
+        "determinacy": "steps-completed",
+        "form": "linear-bar",
+        "coverage": "a-region",
+        "control": "no-control"
+      }
+    },
+    {
+      "id": "empty-state",
+      "status": "uncertain",
+      "confidence": 0.55,
+      "rationale": "The submissions list is empty and shows dashed placeholder slots with guidance. It is a slot list, not a classic blank-slate screen.",
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1060,
+            "y": 509,
+            "width": 336,
+            "height": 283
+          },
+          "quote": "Choose up to 6 approved isolates. Nothing is spent until the cutoff, so you can change your mind.",
+          "region": "submissions-aside",
+          "note": "Six dashed 'Open slot' placeholders with helper text"
+        }
+      ],
+      "dims": {
+        "cause": "first-use",
+        "content": [
+          "explanation"
+        ],
+        "starters": "none",
+        "recovery": "none"
+      }
+    },
+    {
+      "id": "undo",
+      "status": "uncertain",
+      "confidence": 0.5,
+      "rationale": "Withdraw (on the row and in the filled slot) reverses a submission until the batch cutoff. It is a domain-level reversal, not a generic undo, and it is not visible in the captured state.",
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1060,
+            "y": 509,
+            "width": 336,
+            "height": 36
+          },
+          "quote": "Open slot",
+          "region": "submissions-aside",
+          "note": "Live: a filled slot shows Swap / Withdraw. The banner says withdrawal is possible until the cutoff."
+        }
+      ],
+      "dims": {
+        "unit": "per-object-history",
+        "window": "session",
+        "preview": "named-action"
+      }
+    },
+    {
+      "id": "toast",
+      "status": "uncertain",
+      "confidence": 0.6,
+      "rationale": "The capture has only an empty status live region. Toasts appeared only after live interaction.",
+      "evidence": [
+        {
+          "bbox": {
+            "x": 410,
+            "y": 812,
+            "width": 620,
+            "height": 64
+          },
+          "quote": "R-01 submitted. 45 credits reserved (RSV-001). 255 available.",
+          "region": "toast-area",
+          "note": "Live-observed dark toast with a green check at bottom centre"
+        }
+      ],
+      "dims": {
+        "content": [
+          "message-only",
+          "status-icon"
+        ],
+        "position": "bottom-centre",
+        "severity": "success"
+      }
+    },
+    {
+      "id": "confirmation",
+      "status": "absent",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 915,
+            "y": 319,
+            "width": 95,
+            "height": 32
+          },
+          "quote": "Submit · 45",
+          "note": "Live: Submit and Withdraw act immediately with no confirm dialog; reversibility comes from the cutoff"
+        }
+      ],
+      "dims": {}
+    },
+    {
+      "id": "tabs",
+      "status": "absent",
+      "confidence": 0.6,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 550,
+            "y": 0,
+            "width": 307,
+            "height": 55
+          },
+          "quote": "Submissions Credit ledger Course",
+          "note": "Underlined header items are app-level navigation (coded as app-shell), not in-page tabs"
+        }
+      ],
+      "dims": {}
+    },
+    {
+      "id": "checkout",
+      "status": "absent",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1048,
+            "y": 465,
+            "width": 360,
+            "height": 339
+          },
+          "note": "Credit reservation with slots; no cart, payment or order review"
+        }
+      ],
+      "dims": {}
+    }
+  ],
+  "structure": {
+    "layout": "single-screen app page: sticky top bar with course context and section nav; page title; full-width deadline banner; two-column body with a wide isolates data table (left) and a right aside of stacked credit and submission-slot cards",
+    "regions": [
+      "header",
+      "page-title",
+      "cutoff-banner",
+      "isolates-table",
+      "credits-aside",
+      "submissions-aside",
+      "toast-area"
+    ],
+    "density": "dense"
+  },
+  "aesthetics": {
+    "palette": [
+      "#f4f2ec",
+      "#ffffff",
+      "#1b241f",
+      "#5b665f",
+      "#1f5c4a",
+      "#164538",
+      "#fbf3df",
+      "#8a4f00",
+      "#e2efe9",
+      "#8a948d"
+    ],
+    "colorRoles": {
+      "background": "#f4f2ec",
+      "surface": "#ffffff",
+      "text": "#1b241f",
+      "muted": "#5b665f",
+      "primary": "#1f5c4a",
+      "accent": "#8a4f00",
+      "warning-surface": "#fbf3df",
+      "primary-tint": "#e2efe9",
+      "subtle": "#8a948d",
+      "link": "#164538"
+    },
+    "typography": "One system face (ui-sans-serif) everywhere. Bold weights for IDs, headings and figures. Small grey unit sub-labels under column headers.",
+    "typeScale": "Compact UI scale: 40px bold for the credits balance, 24px/700 H1, 16px/650 H2s, 15px for row IDs and values, 13-14px body and buttons, 11-12px units and meta. Numbers are emphasised in bold next to light units.",
+    "shape": "soft",
+    "elevation": "subtle-shadows",
+    "borders": "thin",
+    "imagery": [
+      "data-visualization",
+      "iconography"
+    ],
+    "iconStyle": "line",
+    "whitespace": "moderate",
+    "backgroundTreatment": "solid",
+    "mood": [
+      "calm",
+      "academic",
+      "trustworthy",
+      "technical",
+      "earthy"
+    ]
+  },
+  "model": {
+    "rater": "rater-2",
+    "provider": "claude-code",
+    "name": "claude-opus-5-5",
+    "effort": "high",
+    "generatedAt": "2026-11-14T22:08:11.519Z",
+    "servedBy": [
+      "claude-opus-5-5"
+    ],
+    "turns": 16,
+    "usage": {
+      "input_tokens": 32,
+      "cache_creation_input_tokens": 55793,
+      "cache_read_input_tokens": 738329,
+      "output_tokens": 15814
+    }
+  },
+  "notes": "Warm off-white page (#f4f2ec) with white rounded cards and a deep forest-green primary (#1f5c4a) on every Submit · 45 button. Each button states its cost. The domain language of reversible commitment runs through the page: the amber cutoff banner, Available/Reserved/Spent states, a 6-slot meter with a hatched 'left over' segment, and dashed numbered slots. Numeric cells pair a bold number with a light unit and a thin green bar gauge, and 0 values are greyed. Warnings are amber pills with ⚠. Live behaviour: Submit reserves credits immediately (row turns tinted with 'Reserved · Withdraw', slot fills with Swap/Withdraw, success toast at bottom centre). Clicking an ID opens a right drawer. Approved/All filters the table. Headers sort. Proposed new entry: budget-allocation-tray."
+}

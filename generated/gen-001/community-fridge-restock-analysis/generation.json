@@ -1,0 +1,69 @@
+{
+  "batch": "gen-001",
+  "slug": "community-fridge-restock-analysis",
+  "ok": true,
+  "brief": {
+    "slug": "community-fridge-restock-analysis",
+    "domain": "data-visualization",
+    "archetype": "analyze",
+    "generator": "sonnet",
+    "context": "community-nonprofit",
+    "product": "Stocktake Commons",
+    "summary": "A free, volunteer-maintained tool that lets neighborhood community-fridge networks log fridge checks and donations and study patterns in them.",
+    "user": "Dev Raman, a volunteer coordinator for the Southside Free Fridge Network, which runs on donations and about 60 volunteers. He works as a pharmacist and does this in the evenings. He's comfortable with numbers but not a data professional.",
+    "moment": "The network's monthly meeting is Sunday. Two fridges keep going empty before noon, and a partner bakery has offered a second weekly drop. Dev is digging through 14 weeks of volunteer check logs to work out which fridges run out fastest, and on which weekdays and times. He also wants to see whether donation drops actually change how full the fridges are, and whether the two warm-temperature incidents line up with power trouble at one site. He wants to compare fridges side by side, spot outliers, and isolate the stretch after Labor Day, when a school reopened next to Fridge 3. Then he'll recommend which fridge and which day should get the bakery's extra drop.",
+    "data": "9 fridges, each with a host site and neighborhood. Examples: F1 Elm St Laundromat (Southside), F3 Kessler Ave Church (Riverbend), F7 Ortiz Corner Store (Southside). There are 3,126 check entries from Aug 4 to Nov 9, 2026. Each holds the timestamp, fridge, volunteer initials, fill level (0 empty to 4 full), interior temperature in °F, and items noted (produce, dairy, prepared meals, bread). Each also records whether the fridge was cleaned and any issue flags. There are 412 donation drops, from Rosa's Bakery (Tue/Fri), Greenway Grocery (Mon) and individual donors, each with the fridge, estimated pounds and food type. Temperature incidents: F7 read 47°F on Sep 22 and 51°F on Oct 30. F3 and F5 recorded fill level 0 before noon on 38% of weekdays, against a network average of 14%."
+  },
+  "generator": {
+    "id": "sonnet",
+    "model": "claude-sonnet-5-5",
+    "effort": "high"
+  },
+  "prompt": "I need the front end for Stocktake Commons. A free, volunteer-maintained tool that lets neighborhood community-fridge networks log fridge checks and donations and study patterns in them.\n\nWho's using it: Dev Raman, a volunteer coordinator for the Southside Free Fridge Network, which runs on donations and about 60 volunteers. He works as a pharmacist and does this in the evenings. He's comfortable with numbers but not a data professional.\n\nWhat they're doing right now: The network's monthly meeting is Sunday. Two fridges keep going empty before noon, and a partner bakery has offered a second weekly drop. Dev is digging through 14 weeks of volunteer check logs to work out which fridges run out fastest, and on which weekdays and times. He also wants to see whether donation drops actually change how full the fridges are, and whether the two warm-temperature incidents line up with power trouble at one site. He wants to compare fridges side by side, spot outliers, and isolate the stretch after Labor Day, when a school reopened next to Fridge 3. Then he'll recommend which fridge and which day should get the bakery's extra drop.\n\nWhat's in the system at this point: 9 fridges, each with a host site and neighborhood. Examples: F1 Elm St Laundromat (Southside), F3 Kessler Ave Church (Riverbend), F7 Ortiz Corner Store (Southside). There are 3,126 check entries from Aug 4 to Nov 9, 2026. Each holds the timestamp, fridge, volunteer initials, fill level (0 empty to 4 full), interior temperature in °F, and items noted (produce, dairy, prepared meals, bread). Each also records whether the fridge was cleaned and any issue flags. There are 412 donation drops, from Rosa's Bakery (Tue/Fri), Greenway Grocery (Mon) and individual donors, each with the fridge, estimated pounds and food type. Temperature incidents: F7 read 47°F on Sep 22 and 51°F on Oct 30. F3 and F5 recorded fill level 0 before noon on 38% of weekdays, against a network average of 14%.\n\nBuild it as a working web app, opened in the state that person would see at that moment. No backend: use realistic mock data (no lorem ipsum, no placeholder names), and make the interactive parts actually work client-side.\n\nUse whatever framework and tooling you like. When you're done there must be a static production build in ./out with ./out/index.html as the entry point. It will be served from the root of a plain static file server (no rewrites, no server code) and viewed in a desktop browser at 1440×900.",
+  "startedAt": "2026-11-14T04:11:47.282Z",
+  "finishedAt": "2026-11-14T04:30:35.272Z",
+  "verification": {
+    "ok": true,
+    "problems": [],
+    "pageErrors": [],
+    "consoleErrors": [],
+    "failedRequests": [],
+    "textChars": 2973,
+    "visibleElements": 524,
+    "title": "Run-outs · Stocktake Commons"
+  },
+  "repairs": 0,
+  "session": {
+    "rounds": 1,
+    "numTurns": 52,
+    "costUsd": 3.039338100000001,
+    "durationMs": 1127905,
+    "models": [
+      "claude-sonnet-5-5"
+    ],
+    "usage": {
+      "input_tokens": 96,
+      "cache_creation_input_tokens": 205234,
+      "cache_read_input_tokens": 6304601,
+      "output_tokens": 158775
+    },
+    "timedOut": false
+  },
+  "stack": {
+    "packageJson": true,
+    "dependencies": [
+      "@fontsource-variable/public-sans",
+      "react",
+      "react-dom"
+    ],
+    "devDependencies": [
+      "@types/react",
+      "@types/react-dom",
+      "@vitejs/plugin-react",
+      "typescript",
+      "vite"
+    ],
+    "outFiles": 6,
+    "outBytes": 600973
+  }
+}

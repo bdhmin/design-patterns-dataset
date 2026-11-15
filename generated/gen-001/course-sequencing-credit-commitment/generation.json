@@ -1,0 +1,59 @@
+{
+  "batch": "gen-001",
+  "slug": "course-sequencing-credit-commitment",
+  "ok": true,
+  "brief": {
+    "slug": "course-sequencing-credit-commitment",
+    "domain": "science-research",
+    "archetype": "transact",
+    "generator": "sonnet",
+    "context": "education",
+    "product": "Benchcredit",
+    "summary": "Allocation software for course-based undergraduate research labs, where student teams spend a limited course budget to send samples to the university's core sequencing facility.",
+    "user": "Mateo Lindqvist, a junior biology major and team lead for 'Team Rhizo' (4 students) in BIOL 3420: Soil Microbe Discovery, a semester-long lab course. He knows the biology but this is his first time spending real research money.",
+    "moment": "His team has isolated 14 bacterial strains from campus soil. Their teaching assistant has approved 9 of them as good enough for sequencing. They have 300 sequencing credits and each whole-genome submission costs 45, so they can afford at most 6. The facility's batch cutoff is Friday at 5:00 PM. Until then they can withdraw a submission and get the credits back; after it, the submission is final and the credits are spent. Mateo has to choose which 6 to commit, based on the team's notes on antibiotic-inhibition results and DNA quality. He'll submit them and confirm that each reserves credits. Two teammates disagree about isolate R-11, so he expects to swap one later this week.",
+    "data": "Course: BIOL 3420, Fall 2026, instructor Dr. Hannah Osei, TA Wren Castillo. 8 teams; course pool of 2,400 credits, 300 per team. Team Rhizo's isolates run R-01 to R-14. Each has its collection site (e.g. Arboretum creek bank, Lot C planter), gram stain result, inhibition zone in mm against E. coli and S. aureus, DNA concentration in ng/µL, A260/280 ratio, TA approval status and team notes. Examples: R-04 at 18 mm, 62 ng/µL, ratio 1.86, approved. R-11 at 22 mm, 14 ng/µL, ratio 1.71, approved with a low-yield warning. Facility batch FB-2026-11B, cutoff Fri Nov 20 at 17:00, results expected around Dec 7. The team's credit ledger shows 300 available, 0 reserved and 0 spent. Other teams' submission counts so far: 3, 6, 0, 5, 2, 6 and 4."
+  },
+  "generator": {
+    "id": "sonnet",
+    "model": "claude-sonnet-5-5",
+    "effort": "high"
+  },
+  "prompt": "I need the front end for Benchcredit. Allocation software for course-based undergraduate research labs, where student teams spend a limited course budget to send samples to the university's core sequencing facility.\n\nWho's using it: Mateo Lindqvist, a junior biology major and team lead for 'Team Rhizo' (4 students) in BIOL 3420: Soil Microbe Discovery, a semester-long lab course. He knows the biology but this is his first time spending real research money.\n\nWhat they're doing right now: His team has isolated 14 bacterial strains from campus soil. Their teaching assistant has approved 9 of them as good enough for sequencing. They have 300 sequencing credits and each whole-genome submission costs 45, so they can afford at most 6. The facility's batch cutoff is Friday at 5:00 PM. Until then they can withdraw a submission and get the credits back; after it, the submission is final and the credits are spent. Mateo has to choose which 6 to commit, based on the team's notes on antibiotic-inhibition results and DNA quality. He'll submit them and confirm that each reserves credits. Two teammates disagree about isolate R-11, so he expects to swap one later this week.\n\nWhat's in the system at this point: Course: BIOL 3420, Fall 2026, instructor Dr. Hannah Osei, TA Wren Castillo. 8 teams; course pool of 2,400 credits, 300 per team. Team Rhizo's isolates run R-01 to R-14. Each has its collection site (e.g. Arboretum creek bank, Lot C planter), gram stain result, inhibition zone in mm against E. coli and S. aureus, DNA concentration in ng/µL, A260/280 ratio, TA approval status and team notes. Examples: R-04 at 18 mm, 62 ng/µL, ratio 1.86, approved. R-11 at 22 mm, 14 ng/µL, ratio 1.71, approved with a low-yield warning. Facility batch FB-2026-11B, cutoff Fri Nov 20 at 17:00, results expected around Dec 7. The team's credit ledger shows 300 available, 0 reserved and 0 spent. Other teams' submission counts so far: 3, 6, 0, 5, 2, 6 and 4.\n\nBuild it as a working web app, opened in the state that person would see at that moment. No backend: use realistic mock data (no lorem ipsum, no placeholder names), and make the interactive parts actually work client-side.\n\nUse whatever framework and tooling you like. When you're done there must be a static production build in ./out with ./out/index.html as the entry point. It will be served from the root of a plain static file server (no rewrites, no server code) and viewed in a desktop browser at 1440×900.",
+  "startedAt": "2026-11-14T16:36:08.282Z",
+  "finishedAt": "2026-11-14T16:43:10.767Z",
+  "verification": {
+    "ok": true,
+    "problems": [],
+    "pageErrors": [],
+    "consoleErrors": [],
+    "failedRequests": [],
+    "textChars": 2659,
+    "visibleElements": 367,
+    "title": "Benchcredit · Team Rhizo · BIOL 3420"
+  },
+  "repairs": 0,
+  "session": {
+    "rounds": 1,
+    "numTurns": 28,
+    "costUsd": 1.0315981,
+    "durationMs": 422482,
+    "models": [
+      "claude-sonnet-5-5"
+    ],
+    "usage": {
+      "input_tokens": 40,
+      "cache_creation_input_tokens": 83984,
+      "cache_read_input_tokens": 1042821,
+      "output_tokens": 59130
+    },
+    "timedOut": false
+  },
+  "stack": {
+    "packageJson": false,
+    "dependencies": [],
+    "devDependencies": [],
+    "outFiles": 4,
+    "outBytes": 59318
+  }
+}

@@ -5,7 +5,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { buildBundle } from '../src/codebook/bundle.ts';
 import { loadCodebook } from '../src/codebook/io.ts';
-import { echoTerms, frameArchetypes, frameDomains, planCells, toSlug } from '../src/generate/briefs.ts';
+import { CONTEXTS, echoTerms, frameArchetypes, frameDomains, planCells, toSlug } from '../src/generate/briefs.ts';
 import { generationPrompt } from '../src/generate/app.ts';
 import { resolveStatic, startLocalServer } from '../src/pipeline/serve.ts';
 import { provenanceOf } from '../src/pipeline/rater.ts';
@@ -45,6 +45,21 @@ test('planCells: even marginals, distinct pairs, generators spread within domain
   for (const [d, g] of byDomain) if (cells.filter((c) => c.domain === d).length >= 3) assert.ok(g.size > 1, d);
   // Deterministic for a seed.
   assert.deepEqual(planCells(10, domains, archetypes, gens, 7), cells.slice(0, 10));
+});
+
+test('planCells: context axis is even, optional, and leaves the other axes unchanged', () => {
+  const domains = frameDomains();
+  const archetypes = frameArchetypes(codebook).map((e) => e.id);
+  const gens = ['opus', 'sonnet', 'haiku'];
+  const contexts = CONTEXTS.map((c) => c.id);
+  const cells = planCells(96, domains, archetypes, gens, 7, contexts);
+  const m = new Map<string, number>();
+  for (const c of cells) m.set(c.context!, (m.get(c.context!) ?? 0) + 1);
+  assert.equal(m.size, contexts.length);
+  assert.ok(Math.max(...m.values()) - Math.min(...m.values()) <= 1, `context counts uneven: ${[...m.values()]}`);
+  const plain = planCells(96, domains, archetypes, gens, 7);
+  assert.ok(plain.every((c) => !('context' in c)));
+  assert.deepEqual(cells.map(({ context, ...c }) => c), plain);
 });
 
 test('echoTerms flags codebook pattern names, not archetypes', () => {

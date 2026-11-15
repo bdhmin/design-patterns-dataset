@@ -1,0 +1,68 @@
+# Codebook proposal (new-entry) — review with: node scripts/proposals.ts show gen-001 section-jump-nav
+id: section-jump-nav
+kind: new-entry
+status: open
+batch: gen-001
+codebookVersion: 1.0.0
+name: Section jump navigation
+level: component
+parent: navigate
+definition: A row or list of links/chips that scroll a long page to its named sections, sometimes
+  sticky and marked with per-section status. Unlike tabs, all sections stay rendered on one
+  scrolling page.
+aliases:
+  - jump links
+  - on this page
+  - anchor nav
+  - scrollspy
+relations:
+  neighbors:
+    - tabs
+    - breadcrumbs
+dimensions:
+  - name: Form
+    family: layout
+    question: How are the jump targets drawn?
+    subdimensions:
+      - id: form
+        name: Form
+        select: one
+        values:
+          - id: chip-row
+            name: Chip row
+          - id: side-toc
+            name: Side table of contents
+          - id: underline-links
+            name: Underlined link row
+      - id: status
+        name: Per-section status
+        select: many
+        values:
+          - id: none
+            name: None
+          - id: scrollspy-active
+            name: Active section highlighted on scroll
+          - id: change-dot
+            name: Changed/error dot per section
+rationale:
+  - rater: rater-3
+    site: paid-maker-community-settings
+    text: Tabs hide non-selected panels; breadcrumbs show hierarchy. Nothing covers in-page anchor
+      navigation over a sectioned settings/doc page.
+sources:
+  - batch: gen-001
+    site: paid-maker-community-settings
+    url: http://paid-maker-community-settings.localhost:4318/
+    note: proposed by rater-3
+evidence:
+  - site: paid-maker-community-settings
+    rater: rater-3
+    bbox:
+      x: 260
+      y: 181
+      width: 604
+      height: 82
+    quote: Jump to section
+    note: Pill buttons per section; dot marks sections with unsaved changes
+createdAt: 2026-11-14T22:01:55.349Z
+updatedAt: 2026-11-14T22:01:55.349Z

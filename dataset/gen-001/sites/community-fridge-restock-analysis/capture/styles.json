@@ -1,0 +1,162 @@
+{
+ "pageBackground": "#f3efe6",
+ "backgroundsByArea": [
+  {
+   "color": "#f3efe6",
+   "share": 0.522
+  },
+  {
+   "color": "#fffdf8",
+   "share": 0.3964
+  },
+  {
+   "color": "#ece7da",
+   "share": 0.0213
+  },
+  {
+   "color": "#eaf3ee",
+   "share": 0.0125
+  },
+  {
+   "color": "#f6f1e4",
+   "share": 0.0056
+  },
+  {
+   "color": "#e1dac8",
+   "share": 0.0054
+  },
+  {
+   "color": "#f4e6d2",
+   "share": 0.0042
+  },
+  {
+   "color": "#f1dac1",
+   "share": 0.0025
+  },
+  {
+   "color": "#ebe6d9",
+   "share": 0.0021
+  },
+  {
+   "color": "#e5e0d2",
+   "share": 0.0019
+  },
+  {
+   "color": "#e6a07e",
+   "share": 0.0017
+  },
+  {
+   "color": "#ce7254",
+   "share": 0.0013
+  },
+  {
+   "color": "#df9372",
+   "share": 0.0013
+  },
+  {
+   "color": "#d88566",
+   "share": 0.0013
+  },
+  {
+   "color": "#1f2a26",
+   "share": 0.0013
+  },
+  {
+   "color": "#e2a57f",
+   "share": 0.0011
+  }
+ ],
+ "textColors": [
+  {
+   "color": "#55625c",
+   "chars": 1059
+  },
+  {
+   "color": "#1f2a26",
+   "chars": 824
+  },
+  {
+   "color": "#7b8781",
+   "chars": 478
+  },
+  {
+   "color": "#ffffff",
+   "chars": 73
+  },
+  {
+   "color": "#14513f",
+   "chars": 46
+  },
+  {
+   "color": "#a23c1f",
+   "chars": 6
+  }
+ ],
+ "fonts": [
+  {
+   "family": "Public Sans Variable",
+   "textNodes": 237
+  }
+ ],
+ "fontSizes": [
+  {
+   "px": 22,
+   "textNodes": 5
+  },
+  {
+   "px": 16,
+   "textNodes": 5
+  },
+  {
+   "px": 14,
+   "textNodes": 28
+  },
+  {
+   "px": 13,
+   "textNodes": 72
+  },
+  {
+   "px": 12,
+   "textNodes": 101
+  },
+  {
+   "px": 11,
+   "textNodes": 26
+  }
+ ],
+ "radii": [
+  {
+   "radius": "5px",
+   "boxes": 70
+  },
+  {
+   "radius": "6px",
+   "boxes": 50
+  },
+  {
+   "radius": "7px",
+   "boxes": 18
+  },
+  {
+   "radius": "10px",
+   "boxes": 3
+  },
+  {
+   "radius": "9px",
+   "boxes": 2
+  },
+  {
+   "radius": "8px",
+   "boxes": 1
+  },
+  {
+   "radius": "3px",
+   "boxes": 1
+  }
+ ],
+ "boxesMeasured": 536,
+ "shadowedShare": 0.011,
+ "borderedShare": 0.035,
+ "gradientBackgrounds": 9,
+ "imageBackgrounds": 0
+}

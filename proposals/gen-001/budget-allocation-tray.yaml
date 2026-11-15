@@ -1,0 +1,74 @@
+# Codebook proposal (new-entry) — review with: node scripts/proposals.ts show gen-001 budget-allocation-tray
+id: budget-allocation-tray
+kind: new-entry
+status: open
+batch: gen-001
+codebookVersion: 1.0.0
+name: Budget allocation tray
+level: pattern
+parent: transact
+definition: A fixed number of numbered slots plus a budget meter where a person reserves items
+  against a limited balance before a deadline. Reserved items can be withdrawn or swapped until the
+  cutoff, then become final.
+relations:
+  neighbors:
+    - checkout
+    - undo
+    - plan-picker
+  uses:
+    - stat-tile
+    - progress-indicator
+    - toast
+dimensions:
+  - name: Commitment stages
+    family: lifecycle
+    question: What states does an allocation pass through?
+    subdimensions:
+      - id: stages
+        name: Stages
+        select: one
+        values:
+          - id: reserve-then-final-at-cutoff
+            name: Reserve, then final at cutoff
+            description: Reservations stay reversible until a deadline
+          - id: immediate-spend
+            name: Immediate spend
+            description: Allocating spends the budget right away
+  - name: Capacity display
+    family: feedback
+    question: How is the remaining capacity shown?
+    subdimensions:
+      - id: capacity
+        name: Capacity
+        select: many
+        values:
+          - id: numbered-slots
+            name: Numbered slots
+          - id: segmented-meter
+            name: Segmented meter
+          - id: balance-breakdown
+            name: Balance breakdown
+rationale:
+  - rater: rater-2
+    site: course-sequencing-credit-commitment
+    text: This is not checkout (there is no cart or payment) and not plan-picker or undo. The core idea
+      is a reversible reservation against a capped budget, with available/reserved/spent states and
+      a cutoff. The codebook has no entry for staged commitment with a grace period.
+sources:
+  - batch: gen-001
+    site: course-sequencing-credit-commitment
+    url: http://course-sequencing-credit-commitment.localhost:4318/
+    note: proposed by rater-2
+evidence:
+  - site: course-sequencing-credit-commitment
+    rater: rater-2
+    bbox:
+      x: 1048
+      y: 180
+      width: 360
+      height: 624
+    note: Team credits meter (available/reserved/spent) and 6 numbered open slots
+    quote: Choose up to 6 approved isolates. Nothing is spent until the cutoff, so you can change your
+      mind.
+createdAt: 2026-11-14T22:06:53.808Z
+updatedAt: 2026-11-14T22:06:53.808Z
