@@ -6,6 +6,10 @@
 //   screenshot.png   full page, CSS px == screenshot px (deviceScaleFactor 1)
 //   viewport.png     above the fold, at the real 1440×900 viewport
 //
+// Sites with `steps` (repo views: a state reached by signing in, clicking,
+// typing) have them replayed after the page loads and before anything is
+// captured; a step that fails fails the capture.
+//
 // App UIs often fill the window and scroll inside panels (sidebars, lists,
 // inspectors), so a full-page screenshot would show only the first 900px of
 // each panel. Before the full screenshot, unrollPanels() makes the window
@@ -19,6 +23,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { chromium, type Browser, type Page } from 'playwright';
+import { replaySteps, type Step } from './steps.ts';
 
 export const VIEWPORT = { width: 1440, height: 900 };
 export const MAX_SCREENSHOT_HEIGHT = 16000;
@@ -36,6 +41,8 @@ export interface CaptureMeta {
   viewportShot: string;
   /** Present when the page scrolled inside panels and they were unrolled for the full screenshot. */
   panels?: PanelUnroll;
+  /** Number of replayed steps (site.steps) between loading `url` and capturing. */
+  steps?: number;
   userAgent: string;
   durationMs: number;
   error?: string;
@@ -80,7 +87,7 @@ export async function openPage(browser: Browser): Promise<Page> {
   return ctx.newPage();
 }
 
-export async function captureSite(browser: Browser, url: string, outDir: string): Promise<CaptureMeta> {
+export async function captureSite(browser: Browser, url: string, outDir: string, opts: { steps?: Step[] } = {}): Promise<CaptureMeta> {
   fs.mkdirSync(outDir, { recursive: true });
   const t0 = Date.now();
   const page = await openPage(browser);
@@ -90,6 +97,7 @@ export async function captureSite(browser: Browser, url: string, outDir: string)
     status = resp?.status() ?? null;
     await page.waitForLoadState('load', { timeout: 20_000 }).catch(() => {});
     await page.waitForLoadState('networkidle', { timeout: 8_000 }).catch(() => {});
+    if (opts.steps?.length) await replaySteps(page, new URL(url).origin, opts.steps);
     await autoScroll(page);
     await page.waitForTimeout(800);
 
@@ -121,6 +129,7 @@ export async function captureSite(browser: Browser, url: string, outDir: string)
       screenshot: { ref: 'capture/screenshot.png', width: VIEWPORT.width, height, truncated: pageHeight > height, pageHeight },
       viewportShot: 'capture/viewport.png',
       ...(panels ? { panels } : {}),
+      ...(opts.steps?.length ? { steps: opts.steps.length } : {}),
       userAgent: await page.evaluate(() => navigator.userAgent),
       durationMs: Date.now() - t0,
     };

@@ -24,6 +24,8 @@ import { usageGate, usageLimitFromText, UsageLimitError } from '../pipeline/usag
 export interface ModelChoice { model: string; effort?: string; command?: string }
 
 const VANILLA = ['--setting-sources', 'project,local', '--strict-mcp-config', '--disable-slash-commands', '--no-session-persistence'];
+/** For sessions inside third-party code: load no settings files at all, so a repo's own .claude/settings.json (hooks!) never applies. */
+const NO_SETTINGS_FILES = ['--setting-sources', '', '--strict-mcp-config', '--disable-slash-commands', '--no-session-persistence'];
 
 function cliEnv(): NodeJS.ProcessEnv {
   const env = { ...process.env };
@@ -104,6 +106,14 @@ export interface CodingSessionOpts extends ModelChoice {
   log: (e: object) => void;
   /** After each agent turn: return a follow-up message to continue, or undefined to end. */
   onTurnEnd: (turn: { round: number; text: string }) => Promise<string | undefined>;
+  /** Extra CLI arguments (e.g. `--settings` with a sandbox). */
+  extraArgs?: string[];
+  /** cwd holds third-party code: ignore its .claude/ settings (hooks, permissions). Flag settings (`--settings`) still apply. */
+  untrustedCwd?: boolean;
+  /** Extra environment for the session and its tools. */
+  env?: Record<string, string>;
+  /** false: the session gets only `env`, nothing from this process's environment (for third-party code). Default true. */
+  inheritEnv?: boolean;
 }
 
 export interface CodingSessionOutcome {
@@ -136,10 +146,11 @@ export async function runCodingSession(o: CodingSessionOpts): Promise<CodingSess
     '--tools', o.tools.join(','),
     '--allowedTools', o.tools.join(','),
     '--permission-mode', 'dontAsk',
-    ...VANILLA,
+    ...(o.untrustedCwd ? NO_SETTINGS_FILES : VANILLA),
+    ...(o.extraArgs ?? []),
   ];
   const t0 = Date.now();
-  const proc = spawn(o.command ?? 'claude', args, { cwd: o.cwd, env: cliEnv(), stdio: ['pipe', 'pipe', 'pipe'] });
+  const proc = spawn(o.command ?? 'claude', args, { cwd: o.cwd, env: { ...(o.inheritEnv === false ? {} : cliEnv()), ...o.env }, stdio: ['pipe', 'pipe', 'pipe'] });
   sessions.add(proc);
   let stderr = '';
   proc.stderr.on('data', (d) => { stderr = (stderr + d).slice(-8000); });

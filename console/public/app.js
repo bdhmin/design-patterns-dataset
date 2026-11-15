@@ -35,7 +35,7 @@ async function codebook() {
 
 // Per-view UI state, kept across live re-renders (and across navigation).
 const ui = {
-  progress: { q: '', st: '', dis: false },
+  progress: { q: '', st: '', dis: false, collapsed: new Set() },
   site: { key: '', source: undefined, showRegions: true, showPatterns: true, tags: false },
   codebook: { level: '', q: '', sort: 'archetype' },
   proposals: { filter: 'open' },
@@ -193,20 +193,64 @@ async function viewProgress(batchName, live) {
     f.st = document.getElementById('st').value;
     f.dis = document.getElementById('dis').checked;
     const q = f.q.toLowerCase(), st = f.st, dis = f.dis;
-    const rows = b.sites.filter((s) => (!q || `${s.slug} ${s.title ?? ''} ${s.domain ?? ''} ${s.source ?? ''}`.toLowerCase().includes(q)) && (!st || s.state === st) && (!dis || s.agreement?.disagreements));
-    document.getElementById('sites').innerHTML = rows.map((s) => `
-      <tr class="click" data-href="#/site/${encodeURIComponent(b.batch)}/${encodeURIComponent(s.slug)}">
-        <td><div>${esc(s.title || s.slug)}</div><div class="small muted mono">${esc(s.url ?? '')}</div>${s.error ? `<div class="small err">${esc(s.error)}</div>` : ''}${s.flags?.length ? `<div class="small">${s.flags.map(esc).join(' · ')}</div>` : ''}</td>
-        <td class="small">${esc(s.domain ?? '')}${s.source === 'generated' ? ' <span class="chip" title="Built by a coding agent from a brief">generated</span>' : ''}</td>
+    const rows = b.sites.filter((s) => (!q || `${s.slug} ${s.title ?? ''} ${s.domain ?? ''} ${s.source ?? ''} ${s.app?.name ?? ''} ${s.view?.name ?? ''}`.toLowerCase().includes(q)) && (!st || s.state === st) && (!dis || s.agreement?.disagreements));
+    const sourceChip = (s) => s.source === 'generated' ? ' <span class="chip" title="Built by a coding agent from a brief">generated</span>' : s.source === 'repo' ? ' <span class="chip" title="A view of an open-source app built from its repository">repo</span>' : '';
+    const siteRow = (s, nested) => `
+      <tr class="click${nested ? ' view' : ''}" data-href="#/site/${encodeURIComponent(b.batch)}/${encodeURIComponent(s.slug)}">
+        <td>${nested
+          ? `<div>${esc(s.view.name)}</div><div class="small muted">${esc(s.view.description ?? '')}</div><div class="small muted mono">${esc(s.url ?? '')}</div>`
+          : `<div>${esc(s.title || s.slug)}</div><div class="small muted mono">${esc(s.url ?? '')}</div>`}${s.error ? `<div class="small err">${esc(s.error)}</div>` : ''}${s.flags?.length ? `<div class="small">${s.flags.map(esc).join(' · ')}</div>` : ''}</td>
+        <td class="small">${nested ? '' : esc(s.domain ?? '') + sourceChip(s)}</td>
         <td>${stateChip(s.state)}</td>
         <td><div class="dots">${b.raters.map((r) => `<span class="st ${RSTATE[s.raters[r]?.state] ?? 'queued'}" title="${esc(r)}: ${esc(s.raters[r]?.state ?? 'pending')}${s.raters[r]?.error ? ' — ' + esc(s.raters[r].error) : ''}"><i></i></span>`).join('')}</div></td>
         <td class="num">${s.agreement ? `${fmt(s.agreement.score)}<div class="ubar" style="margin-top:4px"><b style="width:${Math.max(0, s.agreement.score) * 100}%"></b></div>` : '<span class="muted">—</span>'}</td>
         <td><div class="chips">${(s.agreement?.fields ?? []).map((f) => `<span class="chip">${esc(f)}</span>`).join('')}</div></td>
-      </tr>`).join('') || `<tr><td colspan="6" class="empty">No sites match.</td></tr>`;
+      </tr>`;
+    // Views of one app (repo batches) sit under one group row, in list order.
+    const items = [];
+    const groups = new Map();
+    for (const s of rows) {
+      if (!s.app) { items.push(s); continue; }
+      let g = groups.get(s.app.id);
+      if (!g) { g = { app: s.app, sites: [] }; groups.set(s.app.id, g); items.push(g); }
+      g.sites.push(s);
+    }
+    const groupRow = (g) => {
+      const key = `${b.batch}/${g.app.id}`;
+      const open = !f.collapsed.has(key);
+      const states = {};
+      for (const s of g.sites) states[s.state] = (states[s.state] ?? 0) + 1;
+      const scored = g.sites.filter((s) => s.agreement);
+      const mean = scored.length ? scored.reduce((a, s) => a + s.agreement.score, 0) / scored.length : null;
+      const done = g.sites.reduce((a, s) => a + b.raters.filter((r) => s.raters[r]?.state === 'done').length, 0);
+      const fields = [...new Set(g.sites.flatMap((s) => s.agreement?.fields ?? []))];
+      return `
+      <tr class="group" data-group="${esc(key)}" aria-expanded="${open}">
+        <td><div><span class="caret">${open ? '▾' : '▸'}</span> <b>${esc(g.app.name)}</b> <span class="small muted">${g.sites.length} view${g.sites.length === 1 ? '' : 's'}</span></div>
+          ${g.app.url ? `<div class="small muted mono"><a href="${esc(g.app.url)}${g.app.commit ? `/tree/${esc(g.app.commit)}` : ''}" target="_blank" rel="noopener">${esc(g.app.url.replace(/^https?:\/\//, ''))}${g.app.commit ? ` @ ${esc(g.app.commit.slice(0, 8))}` : ''}</a></div>` : ''}</td>
+        <td class="small">${esc(g.sites[0].domain ?? '')}${sourceChip(g.sites[0])}</td>
+        <td><div class="chips">${Object.entries(states).map(([st, n]) => `${stateChip(st)}${g.sites.length > 1 ? ` <span class="small muted">${n}</span>` : ''}`).join(' ')}</div></td>
+        <td class="small muted">${done}/${g.sites.length * b.raters.length} labels</td>
+        <td class="num">${mean !== null ? `${fmt(mean)}<div class="small muted">mean of ${scored.length}</div>` : '<span class="muted">—</span>'}</td>
+        <td><div class="chips">${fields.map((x) => `<span class="chip">${esc(x)}</span>`).join('')}</div></td>
+      </tr>${open ? g.sites.map((s) => siteRow(s, true)).join('') : ''}`;
+    };
+    document.getElementById('sites').innerHTML = items.map((it) => (it.sites ? groupRow(it) : siteRow(it, false))).join('') || `<tr><td colspan="6" class="empty">No sites match.</td></tr>`;
   };
   renderSites();
   ['q', 'st', 'dis'].forEach((id) => document.getElementById(id).addEventListener('input', renderSites));
-  document.getElementById('sites').addEventListener('click', (e) => { const tr = e.target.closest('tr[data-href]'); if (tr) location.hash = tr.dataset.href; });
+  document.getElementById('sites').addEventListener('click', (e) => {
+    if (e.target.closest('a')) return;
+    const g = e.target.closest('tr[data-group]');
+    if (g) {
+      const k = g.dataset.group;
+      if (f.collapsed.has(k)) f.collapsed.delete(k); else f.collapsed.add(k);
+      renderSites();
+      return;
+    }
+    const tr = e.target.closest('tr[data-href]');
+    if (tr) location.hash = tr.dataset.href;
+  });
   document.getElementById('batch')?.addEventListener('change', (e) => { location.hash = `#/batch/${encodeURIComponent(e.target.value)}`; });
 }
 
@@ -237,7 +281,8 @@ async function viewSite(batch, slug, live) {
 
   const header = `
     <div class="row"><a href="#/batch/${encodeURIComponent(batch)}" class="small">← ${esc(batch)}</a></div>
-    <div class="row" style="margin:6px 0 14px"><div><h1>${esc(d.meta?.title || slug)}</h1>
+    <div class="row" style="margin:6px 0 14px"><div><h1>${d.app ? `${esc(d.app.name)} <span class="muted">·</span> ${esc(d.view.name)}` : esc(d.meta?.title || slug)}</h1>
+      ${d.app ? `<div class="small muted">${esc(d.view.description ?? '')}${d.app.url ? ` · <a href="${esc(d.app.url)}${d.app.commit ? `/tree/${esc(d.app.commit)}` : ''}" target="_blank" rel="noopener">repo${d.app.commit ? ` @ ${esc(d.app.commit.slice(0, 8))}` : ''}</a>` : ''}</div>` : ''}
       <div class="small muted mono"><a href="${esc(d.meta?.finalUrl ?? d.status?.url)}" target="_blank" rel="noopener">${esc(d.meta?.finalUrl ?? d.status?.url ?? '')}</a>
       ${d.meta ? ` · ${d.meta.screenshot.width}×${d.meta.screenshot.height}px · captured ${esc(d.meta.capturedAt.slice(0, 16).replace('T', ' '))}` : ''}</div></div>
       <div class="spacer"></div>${d.status ? stateChip(d.status.state) : ''}</div>`;

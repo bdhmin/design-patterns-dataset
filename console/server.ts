@@ -14,7 +14,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 import { P } from '../src/paths.ts';
-import { readJson } from '../src/pipeline/sites.ts';
+import { readJson, readSiteList, type SiteSpec } from '../src/pipeline/sites.ts';
 import { acceptProposal, listProposals, rejectProposal } from '../src/pipeline/proposals.ts';
 import type { SiteStatus } from '../src/pipeline/sites.ts';
 import type { Label } from '../src/pipeline/label.ts';
@@ -32,10 +32,41 @@ const TYPES: Record<string, string> = {
 
 const listDirs = (d: string) => (fs.existsSync(d) ? fs.readdirSync(d).filter((x) => !x.startsWith('_') && !x.startsWith('.') && fs.statSync(path.join(d, x)).isDirectory()).sort() : []);
 
+/**
+ * Repo views: which app each site is a view of, from the batch's site list and
+ * the repo records (repos/<batch>/<slug>/setup.json, explore.json). The console
+ * groups a repo's views under its app.
+ */
+interface AppInfo { app: { id: string; name: string; url?: string; commit?: string }; view: { slug: string; name: string; description?: string } }
+function appInfo(info: any): Map<string, AppInfo> {
+  const out = new Map<string, AppInfo>();
+  if (!info?.sitesFile) return out;
+  let sites: SiteSpec[];
+  try { sites = readSiteList(path.resolve(P.root, info.sitesFile)).sites; } catch { return out; }
+  const records = new Map<string, { setup: any; views: any[] }>();
+  for (const s of sites) {
+    if (!s.app || !s.slug) continue;
+    const ref = path.resolve(P.root, s.app);
+    let r = records.get(ref);
+    if (!r) {
+      r = { setup: readJson<any>(ref), views: readJson<any>(path.join(path.dirname(ref), 'explore.json'))?.views ?? [] };
+      records.set(ref, r);
+    }
+    const id = r.setup?.slug ?? path.basename(path.dirname(ref));
+    const v = r.views.find((x: any) => x.slug === s.view);
+    out.set(s.slug, {
+      app: { id, name: r.setup?.repo?.name ?? id, ...(r.setup?.repo?.url ? { url: r.setup.repo.url } : {}), ...(r.setup?.repo?.commit ? { commit: r.setup.repo.commit } : {}) },
+      view: { slug: s.view ?? s.slug, name: v?.name ?? s.view ?? s.slug, ...(v?.description ? { description: v.description } : {}) },
+    });
+  }
+  return out;
+}
+
 function batchSummary(batch: string) {
   const dir = path.join(P.dataset, batch);
   const info = readJson<any>(path.join(dir, 'batch.json'));
   const raterIds: string[] = info?.raters?.map((r: any) => r.id) ?? [];
+  const apps = appInfo(info);
   const sites = listDirs(path.join(dir, 'sites')).map((slug) => {
     const sdir = path.join(dir, 'sites', slug);
     const status = readJson<SiteStatus>(path.join(sdir, 'status.json'));
@@ -55,6 +86,7 @@ function batchSummary(batch: string) {
       updatedAt: status?.updatedAt,
       agreement: agreement ? { score: agreement.score, patternStatusAlpha: agreement.patternStatusAlpha, disagreements: agreement.disagreements.length, fields: disagreeFields } : null,
       hasCapture: !!meta,
+      ...apps.get(slug),
     };
   });
   const counts: Record<string, number> = { queued: 0, capturing: 0, labeling: 0, labeled: 0, flagged: 0, failed: 0 };
@@ -76,6 +108,7 @@ function siteDetail(batch: string, slug: string) {
   }
   return {
     batch, slug,
+    ...appInfo(info).get(slug),
     raters: info?.raters?.map((r: any) => r.id) ?? [],
     status: readJson(path.join(dir, 'status.json')),
     meta: readJson(path.join(dir, 'capture', 'meta.json')),

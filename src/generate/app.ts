@@ -55,12 +55,20 @@ const MIN_ELEMENTS = 12;
 
 /** Load ./out the way capture will and decide whether it is a usable build. */
 export async function verifyBuild(browser: Browser, server: LocalServer, slug: string, outDir: string, previewFile?: string): Promise<Verification> {
-  const v: Verification = { ok: false, problems: [], pageErrors: [], consoleErrors: [], failedRequests: [], textChars: 0, visibleElements: 0, title: '' };
   if (!fs.existsSync(path.join(outDir, 'index.html'))) {
-    v.problems.push('./out/index.html does not exist.');
-    return v;
+    return { ok: false, problems: ['./out/index.html does not exist.'], pageErrors: [], consoleErrors: [], failedRequests: [], textChars: 0, visibleElements: 0, title: '' };
   }
   const url = server.mount(`verify-${slug}`, outDir);
+  try {
+    return await inspectUrl(browser, url, previewFile);
+  } finally {
+    server.unmount(`verify-${slug}`);
+  }
+}
+
+/** Open `url` at 1440×900 and decide whether it shows a working page: loads, no uncaught errors or failed same-origin requests, not blank. */
+export async function inspectUrl(browser: Browser, url: string, previewFile?: string): Promise<Verification> {
+  const v: Verification = { ok: false, problems: [], pageErrors: [], consoleErrors: [], failedRequests: [], textChars: 0, visibleElements: 0, title: '' };
   const page = await openPage(browser);
   try {
     const origin = new URL(url).origin;
@@ -90,7 +98,6 @@ export async function verifyBuild(browser: Browser, server: LocalServer, slug: s
     v.problems.push(`The page did not load: ${(e as Error).message.split('\n')[0]}`);
   } finally {
     await page.context().close().catch(() => {});
-    server.unmount(`verify-${slug}`);
   }
   if (v.failedRequests.length) v.problems.push(`These files failed to load:\n${[...new Set(v.failedRequests)].slice(0, 10).map((r) => `  - ${r}`).join('\n')}`);
   if (v.pageErrors.length) v.problems.push(`Uncaught errors in the page:\n${[...new Set(v.pageErrors)].slice(0, 8).map((r) => `  - ${r}`).join('\n')}`);

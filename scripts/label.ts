@@ -5,6 +5,7 @@
 //   node scripts/label.ts --batch batch-001 [--sites sites/batch-001.yaml]
 //        [--raters config/raters.yaml] [--concurrency 2] [--only slug,slug]
 //        [--capture-only] [--recapture] [--relabel] [--rater rater-2]
+//        [--repos-config config/repos.yaml]
 //
 // Rule 5 (codebook frozen per batch): the batch records the version and hash of
 // dist/codebook.json when it starts, and refuses to continue if either changes.
@@ -26,12 +27,17 @@ import { usageGate } from '../src/pipeline/usage-limit.ts';
 import type { RaterConfig } from '../src/pipeline/provider.ts';
 import { batchDir, captureDir, labelsDir, readJson, readSiteList, siteDir, writeJson, type SiteSpec, type SiteStatus } from '../src/pipeline/sites.ts';
 import { scoreSite } from '../src/irr/site.ts';
+import { AppHost, type AppSpec } from '../src/repos/apps.ts';
+import { readReposConfig } from '../src/repos/frame.ts';
+import { appSpecFor } from '../src/repos/sites.ts';
 
 const { values: args } = parseArgs({
   options: {
     batch: { type: 'string' },
     sites: { type: 'string' },
     raters: { type: 'string', default: path.join(P.root, 'config', 'raters.yaml') },
+    // Repo views: the config prepare-repos.ts ran with (sandbox, startup time; checkouts are found from setup.json).
+    'repos-config': { type: 'string', default: path.join(P.root, 'config', 'repos.yaml') },
     concurrency: { type: 'string', default: '2' },
     only: { type: 'string' },
     rater: { type: 'string' },
@@ -41,7 +47,7 @@ const { values: args } = parseArgs({
   },
 });
 if (!args.batch) {
-  console.error('usage: node scripts/label.ts --batch <name> [--sites sites/<name>.yaml] [--concurrency N] [--only slugs] [--capture-only]');
+  console.error('usage: node scripts/label.ts --batch <name> [--sites sites/<name>.yaml] [--concurrency N] [--only slugs] [--capture-only] [--repos-config config/repos.yaml]');
   process.exit(2);
 }
 const batch = args.batch;
@@ -84,12 +90,25 @@ let sites = list.sites as (SiteSpec & { slug: string })[];
 if (args.only) sites = sites.filter((s) => args.only!.split(',').includes(s.slug));
 for (const s of list.sites) initStatus(s as SiteSpec & { slug: string });
 
-// Generated apps (`local:` in the site list) are served from disk at their
-// http://<slug>.localhost:<port>/ URLs for capture and for the raters' live page.
+// Repo views (`app:` in the site list) need their app: static builds are served
+// like generated apps; server apps are started (sandboxed) while their views
+// are captured and labeled, and stopped after the last one.
+const repoCfg = list.sites.some((s) => s.app) ? readReposConfig(args['repos-config']) : undefined;
+const appSpecs = new Map<string, AppSpec>();
+const appErrors = new Map<string, string>();
+for (const s of list.sites) {
+  if (!s.app) continue;
+  try { appSpecs.set(s.slug!, appSpecFor(s, repoCfg!)); } catch (e) { appErrors.set(s.slug!, (e as Error).message); }
+}
+
+// Generated apps (`local:` in the site list) and static repo apps are served
+// from disk at their http://<slug>.localhost:<port>/ URLs for capture and for
+// the raters' live page.
 let local: LocalServer | undefined;
 const localSites = list.sites.filter((s) => s.local);
-if (localSites.length) {
-  const ports = new Set(localSites.map((s) => new URL(s.url).port));
+const staticSites = [...localSites, ...list.sites.filter((s) => appSpecs.get(s.slug!)?.mode === 'static')];
+if (staticSites.length) {
+  const ports = new Set(staticSites.map((s) => new URL(s.url).port));
   if (ports.size !== 1) throw new Error(`${sitesFile}: local sites must share one port (have ${[...ports].join(', ')})`);
   try {
     local = await startLocalServer(Number([...ports][0]));
@@ -104,8 +123,9 @@ if (localSites.length) {
     if (!fs.existsSync(path.join(dir, 'index.html'))) console.error(`  warning: ${s.slug}: ${s.local}/index.html is missing`);
     local.mount(host.slice(0, -'.localhost'.length), dir);
   }
-  console.log(`Serving ${localSites.length} generated app(s) on port ${local.port}`);
+  console.log(`Serving ${staticSites.length} local site(s) on port ${local.port}`);
 }
+const apps = new AppHost({ staticServer: local, sandbox: repoCfg?.setup.sandbox ?? true, startupSeconds: repoCfg?.setup.startupSeconds ?? 180, log: console.log });
 
 // One shared browser, relaunched if it dies (crash, SIGINT to the process group, ...)
 // so a single browser death can't fail every remaining site.
@@ -131,20 +151,43 @@ try {
   });
 } finally {
   await browser.close().catch(() => {});
+  await apps.closeAll();
   await local?.close();
 }
 console.log(`\nDone. Next: node scripts/irr.ts --batch ${batch}   ·   console: node console/server.ts`);
 
 // ======================================================================
 
+/** Capture and label one site, with its repo app running if it has one and there is work to do. */
 async function runSite(site: SiteSpec & { slug: string }): Promise<void> {
+  if (!site.app) return labelSite(site);
+  const metaFile = path.join(captureDir(batch, site.slug), 'meta.json');
+  const work = args.recapture || !fs.existsSync(metaFile)
+    || (!args['capture-only'] && raters.some((r) => args.relabel || !fs.existsSync(path.join(labelsDir(batch, site.slug), `${r.id}.json`))));
+  if (!work) return labelSite(site);
+  const spec = appSpecs.get(site.slug);
+  try {
+    if (!spec) throw new Error(appErrors.get(site.slug) ?? 'no app');
+    await apps.acquire(spec);
+  } catch (e) {
+    setStatus(site, { state: 'failed', error: `app: ${(e as Error).message.split('\n')[0]}` });
+    throw e;
+  }
+  try {
+    await labelSite(site);
+  } finally {
+    await apps.release(spec);
+  }
+}
+
+async function labelSite(site: SiteSpec & { slug: string }): Promise<void> {
   await ensureBrowser();
   const cdir = captureDir(batch, site.slug);
   const metaFile = path.join(cdir, 'meta.json');
   if (args.recapture || !fs.existsSync(metaFile)) {
     setStatus(site, { state: 'capturing' });
     try {
-      await captureSite(browser, site.url, cdir);
+      await captureSite(browser, site.url, cdir, { steps: site.steps });
     } catch (e) {
       setStatus(site, { state: 'failed', error: `capture: ${(e as Error).message.split('\n')[0]}` });
       throw e;

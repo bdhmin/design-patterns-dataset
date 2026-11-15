@@ -104,6 +104,10 @@ th { text-align: left; font-weight: 550; font-size: 12px; color: var(--text-2); 
 td { border-bottom: 1px solid var(--line); padding: 7px 8px; vertical-align: top; }
 tr.click { cursor: pointer; }
 tr.click:hover td { background: var(--surface-2); }
+tr.group { cursor: pointer; }
+tr.group td { background: var(--surface-2); }
+tr.group .caret { display: inline-block; width: 1em; color: var(--muted); }
+tr.view td:first-child { padding-left: 28px; }
 td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 
 /* alpha bars */
