@@ -1,0 +1,70 @@
+# Codebook proposal (new-values) — review with: node scripts/proposals.ts show gen-001 filter-controls
+id: filter-controls
+kind: new-values
+status: open
+batch: gen-001
+codebookVersion: 1.0.0
+dimensions:
+  - subdimensions:
+      - id: placement
+        values:
+          - id: inline-toolbar-controls
+            name: Inline toolbar controls
+            description: Filter controls (selects, checkboxes, search) laid out directly in an always-visible
+              toolbar above the collection, with no chips or popover
+            example: Admin consoles with Status / Type dropdowns above a table
+          - id: inline-toolbar-selects
+            name: Inline toolbar selects
+            description: Filters are always-visible dropdowns/checkboxes laid out in a toolbar strip above the
+              collection, with no chip summary or popover
+            example: "Admin tables with 'Status: Any' / 'Type: All' selects above the grid"
+rationale:
+  - rater: rater-3
+    site: municipal-art-collection-loans
+    text: The filters here sit as always-visible native dropdown selects and checkboxes in a toolbar
+      strip above the table. There are no chips, sidebar, sheet, popover or column-header filters.
+      None of the existing placement values describes an inline toolbar of visible selects, which is
+      very common in admin and back-office tools.
+  - rater: rater-2
+    site: municipal-art-collection-loans
+    text: Filters here sit always-visible in a toolbar strip directly above the table, as native
+      dropdown selects and plain checkboxes, with no chips, no popover, no sidebar and no header
+      filters. None of the placement values covers an inline toolbar of always-visible controls.
+  - rater: rater-1
+    site: municipal-art-collection-loans
+    text: Filters here are always-visible native dropdown selects and checkboxes in a toolbar strip
+      directly above the table. They show no chips, sit in no sidebar, sheet or popover, and are not
+      in column headers. No existing placement value describes this common admin-tool layout.
+sources:
+  - batch: gen-001
+    site: municipal-art-collection-loans
+    url: http://municipal-art-collection-loans.localhost:4318/
+    note: proposed by rater-3, rater-2, rater-1
+evidence:
+  - site: municipal-art-collection-loans
+    rater: rater-3
+    bbox:
+      x: 272
+      y: 145
+      width: 808
+      height: 94
+    quote: Any space / All media / Good or better / Eastvale artists / Shortlisted
+    note: toolbar of native selects and checkboxes above the candidate table
+  - site: municipal-art-collection-loans
+    rater: rater-2
+    bbox:
+      x: 272
+      y: 145
+      width: 808
+      height: 94
+    note: Search + Space/Medium/Condition selects + Eastvale artists/Shortlisted checkboxes
+  - site: municipal-art-collection-loans
+    rater: rater-1
+    bbox:
+      x: 272
+      y: 145
+      width: 808
+      height: 94
+    quote: Any space
+createdAt: 2026-11-14T22:02:08.998Z
+updatedAt: 2026-11-14T22:02:36.856Z

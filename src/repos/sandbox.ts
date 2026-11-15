@@ -20,18 +20,35 @@ import path from 'node:path';
 /** Credential and config dirs third-party code has no reason to read. */
 export const DENY_READ = ['.ssh', '.aws', '.gnupg', '.config/gh', '.config/gcloud', '.azure', '.kube', '.docker', '.netrc', '.npmrc', '.pypirc', '.git-credentials', '.claude', 'Library/Keychains'];
 
+/**
+ * Absolute paths third-party code must not read: DENY_READ under `home`, plus
+ * Claude Code's config dir if CLAUDE_CONFIG_DIR moves it out of ~/.claude (the
+ * setup session is given that variable, and the login may live there).
+ */
+export function denyReadPaths(home = os.homedir(), env: NodeJS.ProcessEnv = process.env): string[] {
+  const paths = DENY_READ.map((d) => path.join(home, d));
+  if (env.CLAUDE_CONFIG_DIR) paths.push(path.resolve(home, env.CLAUDE_CONFIG_DIR.replace(/^~(?=$|\/)/, home)));
+  const real = (p: string) => { try { return fs.realpathSync(p); } catch { return p; } };
+  return [...new Set(paths.flatMap((p) => [p, real(p)]))];
+}
+
 /** Claude Code `--settings` for a sandboxed setup session in `checkout`. */
-export function claudeSandboxSettings(network: string[]): object {
+export function claudeSandboxSettings(network: string[], home = os.homedir(), env: NodeJS.ProcessEnv = process.env): object {
+  const paths = denyReadPaths(home, env);
+  // Under home both syntaxes take `~/rel`; elsewhere the sandbox takes `/abs` and permission rules `//abs`.
+  const rel = (p: string) => (p.startsWith(home + path.sep) ? `~/${path.relative(home, p)}` : undefined);
+  const sandboxPath = (p: string) => rel(p) ?? p;
+  const rulePath = (p: string) => rel(p) ?? `/${p}`;
   return {
     sandbox: {
       enabled: true,
       autoAllowBashIfSandboxed: true,
       allowUnsandboxedCommands: false,
       network: { allowedDomains: network, allowLocalBinding: true },
-      filesystem: { denyRead: DENY_READ.map((d) => `~/${d}`) },
+      filesystem: { denyRead: paths.map(sandboxPath) },
     },
     // The file tools are not part of the Bash sandbox; keep them out of the same places.
-    permissions: { deny: DENY_READ.flatMap((d) => [`Read(~/${d}/**)`, `Read(~/${d})`]) },
+    permissions: { deny: paths.map(rulePath).flatMap((d) => [`Read(${d}/**)`, `Read(${d})`]) },
   };
 }
 
@@ -137,7 +154,7 @@ const sbString = (s: string) => `"${s.replace(/\\/g, '\\\\').replace(/"/g, '\\"'
 export function runtimeProfile(writable: string[], home = os.homedir()): string {
   const real = (p: string) => { try { return fs.realpathSync(p); } catch { return path.resolve(p); } };
   const dirs = [...new Set(writable.flatMap((d) => [path.resolve(d), real(d)]))];
-  const deny = DENY_READ.map((d) => path.join(real(home), d));
+  const deny = [...new Set(denyReadPaths(real(home)).map(real))];
   return `(version 1)
 (allow default)
 (deny file-write*)

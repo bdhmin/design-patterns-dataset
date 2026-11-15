@@ -13,13 +13,13 @@ import { startLocalServer } from '../src/pipeline/serve.ts';
 import { readSiteList } from '../src/pipeline/sites.ts';
 import { appUrl, checkStep, describeStep, isAppPath } from '../src/pipeline/steps.ts';
 import { spawn } from 'node:child_process';
-import { AppHost, checkMise, portInUse, readAppJson, startServer, stopStrays } from '../src/repos/apps.ts';
+import { AppHost, checkMise, portInUse, readAppJson, startServer, staticDir, stopStrays } from '../src/repos/apps.ts';
 import { archiveContract } from '../src/repos/setup.ts';
 import { acceptable, domainQuotas, sample, searchQuery, toCandidate, type Candidate } from '../src/repos/discover.ts';
 import { ExplorerTools, jaccard } from '../src/repos/explore.ts';
 import { checkoutDir, readReposConfig, type ScreenResult } from '../src/repos/frame.ts';
 import { appSpecFor } from '../src/repos/sites.ts';
-import { baseEnv, claudeSandboxSettings, findMise, setupEnv, miseEnv, runtimeEnv, runtimeProfile, runtimeSandboxAvailable } from '../src/repos/sandbox.ts';
+import { baseEnv, claudeSandboxSettings, denyReadPaths, findMise, setupEnv, miseEnv, runtimeEnv, runtimeProfile, runtimeSandboxAvailable } from '../src/repos/sandbox.ts';
 import { frameDomains } from '../src/generate/briefs.ts';
 
 const hasBrowser = fs.existsSync(chromium.executablePath());
@@ -181,6 +181,14 @@ test('sandbox settings and runtime profile', () => {
   assert.match(p, /\(subpath "\/work\/x"\)/);
   assert.match(p, /\(deny network-outbound\)/);
   assert.match(p, /\(subpath "\/home\/u\/\.ssh"\)/);
+  // A custom CLAUDE_CONFIG_DIR (where the login may live) is denied too, in each syntax.
+  const c = claudeSandboxSettings([], '/home/u', { CLAUDE_CONFIG_DIR: '/srv/claude-cfg' }) as any;
+  assert.ok(c.sandbox.filesystem.denyRead.includes('/srv/claude-cfg'));
+  assert.ok(c.permissions.deny.includes('Read(//srv/claude-cfg/**)'));
+  const h = claudeSandboxSettings([], '/home/u', { CLAUDE_CONFIG_DIR: '~/cfg/claude' }) as any;
+  assert.ok(h.sandbox.filesystem.denyRead.includes('~/cfg/claude'));
+  assert.ok(h.permissions.deny.includes('Read(~/cfg/claude/**)'));
+  assert.ok(denyReadPaths('/home/u', { CLAUDE_CONFIG_DIR: '/srv/claude-cfg' }).includes('/srv/claude-cfg'));
 });
 
 test('contract check', () => {
@@ -197,6 +205,19 @@ test('contract check', () => {
   assert.deepEqual(readAppJson(dir).problems, []);
   fs.writeFileSync(path.join(dir, '.ui-capture', 'app.json'), JSON.stringify({ mode: 'server', entry: '//evil.example/', notes: 'n', stubs: [] }));
   assert.match(readAppJson(dir).problems.join(), /"entry" must be a path on the app/);
+  // Static builds must be a real dir in the checkout, not a link to the host.
+  const host = tmp('hostdir-');
+  fs.writeFileSync(path.join(host, 'index.html'), 'x');
+  fs.symlinkSync(host, path.join(dir, '.ui-capture', 'out'));
+  fs.writeFileSync(path.join(dir, '.ui-capture', 'app.json'), JSON.stringify({ mode: 'static', entry: '/', notes: 'n', stubs: [] }));
+  assert.match(readAppJson(dir).problems.join(), /out resolves outside the checkout/);
+  assert.throws(() => staticDir(dir), /outside the checkout/);
+  fs.rmSync(path.join(dir, '.ui-capture', 'out'));
+  fs.mkdirSync(path.join(dir, '.ui-capture', 'out'));
+  fs.writeFileSync(path.join(dir, '.ui-capture', 'out', 'index.html'), 'x');
+  assert.deepEqual(readAppJson(dir).problems, []);
+  assert.equal(staticDir(dir), fs.realpathSync(path.join(dir, '.ui-capture', 'out')));
+  fs.rmSync(host, { recursive: true, force: true });
   fs.rmSync(dir, { recursive: true, force: true });
 });
 
@@ -313,6 +334,48 @@ http.createServer((q, s) => s.end(JSON.stringify(r))).listen(+process.env.PORT);
     await host.closeAll();
     fs.rmSync(co, { recursive: true, force: true });
     fs.rmSync(outside, { force: true });
+  }
+});
+
+/** A checkout whose start.sh runs a node server on $PORT, launched as `launch` (e.g. `exec node server.mjs`). */
+function serverCheckout(launch: string): string {
+  const co = tmp('srvco-');
+  fs.mkdirSync(path.join(co, '.ui-capture'));
+  fs.writeFileSync(path.join(co, 'server.mjs'), `import http from 'node:http'; http.createServer((q, s) => s.end('ok')).listen(+process.env.PORT);`);
+  fs.writeFileSync(path.join(co, '.ui-capture', 'start.sh'), `#!/bin/bash\nPATH=${JSON.stringify(path.dirname(process.execPath))}:$PATH\n${launch}\n`);
+  return co;
+}
+
+test('stopping a server stops what start.sh backgrounded, even after start.sh exited', async () => {
+  const co = serverCheckout('node server.mjs &\nsleep 2\nexit 0');
+  const port = 4500 + (process.pid % 9);
+  try {
+    const s = await startServer({ slug: 'bg', mode: 'server', checkout: co, port }, { sandbox: false, startupSeconds: 20 });
+    await new Promise((r) => setTimeout(r, 3000)); // start.sh has exited; its server lives on
+    assert.ok(await portInUse(port));
+    await s.stop();
+    assert.ok(!(await portInUse(port)), 'the backgrounded server was stopped with start.sh\'s group');
+  } finally {
+    fs.rmSync(co, { recursive: true, force: true });
+  }
+});
+
+test('a view acquired while its app is stopping waits for the old server instead of colliding on the port', async () => {
+  const co = serverCheckout('exec node server.mjs');
+  const port = 4510 + (process.pid % 9);
+  const host = new AppHost({ sandbox: false, startupSeconds: 20 });
+  const spec = { slug: 'race', mode: 'server' as const, checkout: co, port };
+  try {
+    await host.acquire(spec);
+    const released = host.release(spec); // last view done: server stopping
+    const url = await host.acquire(spec); // next queued view of the same app
+    await released;
+    assert.equal(await (await fetch(url)).text(), 'ok');
+    await host.release(spec);
+    assert.ok(!(await portInUse(port)));
+  } finally {
+    await host.closeAll();
+    fs.rmSync(co, { recursive: true, force: true });
   }
 });
 

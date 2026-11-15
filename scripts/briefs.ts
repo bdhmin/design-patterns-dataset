@@ -2,9 +2,9 @@
 // Write the brief frame for a generated batch: briefs/<batch>.yaml.
 //
 //   node scripts/briefs.ts --batch gen-001 [--n 48] [--seed 1]
-//        [--domains a,b] [--archetypes a,b] [--config config/generators.yaml] [--plan-only]
+//        [--domains a,b] [--archetypes a,b] [--contexts a,b|none] [--config config/generators.yaml] [--plan-only]
 //
-// --plan-only prints the domain × function × generator cells without calling a model.
+// --plan-only prints the domain × function × context × generator cells without calling a model.
 // Review the file (especially `echo`) before running scripts/generate.ts.
 
 import fs from 'node:fs';
@@ -12,7 +12,7 @@ import path from 'node:path';
 import { parseArgs } from 'node:util';
 import { P } from '../src/paths.ts';
 import { loadBundle } from '../src/pipeline/label.ts';
-import { frameArchetypes, frameDomains, planCells, readGenerationConfig, writeBriefFile, writeBriefs } from '../src/generate/briefs.ts';
+import { CONTEXTS, frameArchetypes, frameDomains, planCells, readGenerationConfig, writeBriefFile, writeBriefs } from '../src/generate/briefs.ts';
 import { diversity } from '../src/variety.ts';
 
 const { values: args } = parseArgs({
@@ -22,13 +22,14 @@ const { values: args } = parseArgs({
     seed: { type: 'string' },
     domains: { type: 'string' },
     archetypes: { type: 'string' },
+    contexts: { type: 'string' },
     config: { type: 'string', default: path.join(P.root, 'config', 'generators.yaml') },
     'plan-only': { type: 'boolean', default: false },
     force: { type: 'boolean', default: false },
   },
 });
 if (!args.batch) {
-  console.error('usage: node scripts/briefs.ts --batch <name> [--n 48] [--seed N] [--domains a,b] [--archetypes a,b] [--plan-only]');
+  console.error('usage: node scripts/briefs.ts --batch <name> [--n 48] [--seed N] [--domains a,b] [--archetypes a,b] [--contexts a,b|none] [--plan-only]');
   process.exit(2);
 }
 const file = path.join(P.briefs, `${args.batch}.yaml`);
@@ -50,18 +51,19 @@ const pick = (given: string | undefined, all: string[], what: string) => {
 };
 const domains = pick(args.domains, allDomains, 'domains');
 const archetypes = pick(args.archetypes, allArchetypes, 'archetypes');
+const contexts = args.contexts === 'none' ? [] : pick(args.contexts, CONTEXTS.map((c) => c.id), 'contexts');
 const seed = args.seed ? Number(args.seed) : Math.floor(Math.random() * 2 ** 31);
 const n = Number(args.n);
-const cells = planCells(n, domains, archetypes, cfg.generators.map((g) => g.id), seed);
+const cells = planCells(n, domains, archetypes, cfg.generators.map((g) => g.id), seed, contexts);
 
-const summary = (key: 'domain' | 'archetype' | 'generator', k: number) => {
-  const d = diversity(cells.map((c) => c[key]), k);
+const summary = (key: 'domain' | 'archetype' | 'context' | 'generator', k: number) => {
+  const d = diversity(cells.map((c) => c[key] ?? ''), k);
   return `${key}s ${d.categories}/${k} · evenness ${d.evenness.toFixed(2)}`;
 };
-console.log(`${n} cells (seed ${seed}): ${summary('domain', domains.length)} · ${summary('archetype', archetypes.length)} · ${summary('generator', cfg.generators.length)}`);
+console.log(`${n} cells (seed ${seed}): ${summary('domain', domains.length)} · ${summary('archetype', archetypes.length)}${contexts.length ? ` · ${summary('context', contexts.length)}` : ''} · ${summary('generator', cfg.generators.length)}`);
 if (n > lcm(domains.length, archetypes.length)) console.log(`  note: n > ${lcm(domains.length, archetypes.length)} repeats some domain × function pairs`);
 if (args['plan-only']) {
-  for (const [i, c] of cells.entries()) console.log(`${String(i).padStart(3)}  ${c.domain.padEnd(20)} ${c.archetype.padEnd(20)} ${c.generator}`);
+  for (const [i, c] of cells.entries()) console.log(`${String(i).padStart(3)}  ${c.domain.padEnd(20)} ${c.archetype.padEnd(20)} ${(c.context ?? '').padEnd(20)} ${c.generator}`);
   process.exit(0);
 }
 

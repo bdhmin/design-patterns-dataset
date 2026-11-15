@@ -1,0 +1,23 @@
+{
+  "slug": "paid-maker-community-settings",
+  "url": "http://paid-maker-community-settings.localhost:4318/",
+  "domain": "social-community",
+  "source": "generated",
+  "state": "labeled",
+  "raters": {
+    "rater-1": {
+      "state": "done",
+      "updatedAt": "2026-11-14T22:03:28.985Z"
+    },
+    "rater-2": {
+      "state": "done",
+      "updatedAt": "2026-11-14T22:03:04.697Z"
+    },
+    "rater-3": {
+      "state": "done",
+      "updatedAt": "2026-11-14T22:03:18.091Z"
+    }
+  },
+  "flags": [],
+  "updatedAt": "2026-11-14T22:03:28.988Z"
+}

@@ -1,0 +1,23 @@
+{
+  "slug": "course-sequencing-credit-commitment",
+  "url": "http://course-sequencing-credit-commitment.localhost:4318/",
+  "domain": "science-research",
+  "source": "generated",
+  "state": "labeled",
+  "raters": {
+    "rater-1": {
+      "state": "done",
+      "updatedAt": "2026-11-14T22:07:57.706Z"
+    },
+    "rater-2": {
+      "state": "done",
+      "updatedAt": "2026-11-14T22:08:11.950Z"
+    },
+    "rater-3": {
+      "state": "done",
+      "updatedAt": "2026-11-14T22:07:47.551Z"
+    }
+  },
+  "flags": [],
+  "updatedAt": "2026-11-14T22:08:11.952Z"
+}

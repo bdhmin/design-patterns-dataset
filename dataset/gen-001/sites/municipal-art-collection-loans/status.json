@@ -1,0 +1,23 @@
+{
+  "slug": "municipal-art-collection-loans",
+  "url": "http://municipal-art-collection-loans.localhost:4318/",
+  "domain": "design-creative",
+  "source": "generated",
+  "state": "labeled",
+  "raters": {
+    "rater-1": {
+      "state": "done",
+      "updatedAt": "2026-11-14T22:03:13.616Z"
+    },
+    "rater-2": {
+      "state": "done",
+      "updatedAt": "2026-11-14T22:03:34.407Z"
+    },
+    "rater-3": {
+      "state": "done",
+      "updatedAt": "2026-11-14T22:03:26.380Z"
+    }
+  },
+  "flags": [],
+  "updatedAt": "2026-11-14T22:03:34.410Z"
+}

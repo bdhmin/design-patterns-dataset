@@ -1,0 +1,1160 @@
+{
+  "site": {
+    "slug": "paid-maker-community-settings",
+    "url": "http://paid-maker-community-settings.localhost:4318/",
+    "finalUrl": "http://paid-maker-community-settings.localhost:4318/",
+    "status": 200,
+    "title": "Winter '26 Test Knit · Space settings · Hearthroom",
+    "capturedAt": "2026-11-14T22:01:04.618Z",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "screenshot": {
+      "ref": "capture/screenshot.png",
+      "width": 1440,
+      "height": 2915
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.8127.18 Safari/537.36",
+    "domain": "social-community",
+    "domainNote": "Admin settings for a paid maker (knitting) community platform: configuring a private test-knit space with a live member preview",
+    "provenance": {
+      "source": "generated",
+      "generation": "generated/gen-001/paid-maker-community-settings/generation.json",
+      "generator": {
+        "id": "opus",
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      "brief": {
+        "domain": "social-community",
+        "archetype": "configure",
+        "context": "freelancer",
+        "product": "Hearthroom"
+      }
+    }
+  },
+  "codebookVersion": "1.0.0",
+  "batch": "gen-001",
+  "raters": [
+    "rater-1",
+    "rater-2",
+    "rater-3"
+  ],
+  "domain": {
+    "value": "social-community",
+    "support": 3
+  },
+  "structure": {
+    "density": {
+      "value": "medium",
+      "support": 3
+    },
+    "layout": {
+      "rater-1": "Three-column admin app: fixed left sidebar nav, center scrolling settings column of stacked section cards with chip jump-nav, right preview panel simulating what a chosen member would experience; page header with breadcrumbs, title, status badge and primary action",
+      "rater-2": "three-column admin settings: fixed left nav sidebar, scrolling center column of stacked setting cards under a page header, and a scrolling right preview aside",
+      "rater-3": "three-column admin app: fixed left sidebar, central scrolling column of settings section cards with chip jump-nav, right scrolling Preview panel showing a mock of the result"
+    }
+  },
+  "aesthetics": {
+    "shape": {
+      "value": "soft",
+      "support": 3
+    },
+    "elevation": {
+      "value": "subtle-shadows",
+      "support": 3
+    },
+    "borders": {
+      "value": "thin",
+      "support": 3
+    },
+    "iconStyle": {
+      "value": "line",
+      "support": 3
+    },
+    "whitespace": {
+      "value": "moderate",
+      "support": 3
+    },
+    "backgroundTreatment": {
+      "value": "solid",
+      "support": 3
+    }
+  },
+  "patterns": [
+    {
+      "id": "app-shell",
+      "status": "present",
+      "confidence": 0.89,
+      "dims": {
+        "primary": "sidebar",
+        "secondary": "none",
+        "items": [
+          "fixed-destinations",
+          "live-counts",
+          "workspace-switcher"
+        ],
+        "visibility": "always-visible",
+        "structure": "single-app"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 232,
+            "height": 900
+          },
+          "quote": "Hearthroom",
+          "note": "Persistent left sidebar with community switcher, nav with count, nested spaces list, profile footer",
+          "region": "sidebar",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 232,
+            "height": 900
+          },
+          "quote": "Hearthroom",
+          "note": "Persistent left sidebar with community switcher and destinations",
+          "region": "sidebar",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 232,
+            "height": 900
+          },
+          "quote": "Hearthroom",
+          "region": "sidebar",
+          "note": "Persistent sidebar with community switcher, nested Spaces list, owner footer",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "badge",
+      "status": "present",
+      "confidence": 0.83,
+      "dims": {
+        "meaning": "status",
+        "aggregation": "per-item"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 506,
+            "y": 45,
+            "width": 48,
+            "height": 22
+          },
+          "quote": "Draft",
+          "note": "Status pill next to title",
+          "region": "page-header",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 164,
+            "y": 412,
+            "width": 48,
+            "height": 18
+          },
+          "quote": "DRAFT",
+          "note": "Status label on nav item",
+          "region": "sidebar",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 180,
+            "y": 168,
+            "width": 32,
+            "height": 18
+          },
+          "quote": "342",
+          "note": "Member count on Members nav item",
+          "region": "sidebar",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 505,
+            "y": 45,
+            "width": 50,
+            "height": 22
+          },
+          "quote": "Draft",
+          "note": "Status pill next to the title",
+          "region": "page-header",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 165,
+            "y": 412,
+            "width": 48,
+            "height": 18
+          },
+          "quote": "DRAFT",
+          "note": "Status pill on sidebar item",
+          "region": "sidebar",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 180,
+            "y": 168,
+            "width": 32,
+            "height": 18
+          },
+          "quote": "342",
+          "note": "Member count on Members nav item",
+          "region": "sidebar",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 506,
+            "y": 45,
+            "width": 48,
+            "height": 22
+          },
+          "quote": "Draft",
+          "region": "page-header",
+          "note": "Status pill next to title",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 164,
+            "y": 412,
+            "width": 48,
+            "height": 18
+          },
+          "quote": "DRAFT",
+          "region": "sidebar",
+          "note": "Status label on nav item",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 180,
+            "y": 168,
+            "width": 32,
+            "height": 18
+          },
+          "quote": "342",
+          "region": "sidebar",
+          "note": "Member count on Members nav item",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "banner",
+      "status": "present",
+      "confidence": 0.74,
+      "dims": {
+        "scope": "page",
+        "severity": "information",
+        "action": "none",
+        "placement": "top-of-content"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 260,
+            "y": 132,
+            "width": 604,
+            "height": 38
+          },
+          "quote": "This space is still a draft. Nobody but you can see it until you send the invites.",
+          "note": "Page-level info notice at top of content",
+          "region": "settings-column",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 281,
+            "y": 1530,
+            "width": 562,
+            "height": 52
+          },
+          "quote": "No website can stop screenshots.",
+          "note": "Section-level info callout",
+          "region": "settings-column",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 258,
+            "y": 130,
+            "width": 600,
+            "height": 40
+          },
+          "quote": "This space is still a draft. Nobody but you can see it until you send the invites.",
+          "note": "Info notice at top of content",
+          "region": "settings-column",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 281,
+            "y": 1530,
+            "width": 562,
+            "height": 52
+          },
+          "quote": "No website can stop screenshots.",
+          "note": "Section-level info callout",
+          "region": "settings-column",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 258,
+            "y": 130,
+            "width": 600,
+            "height": 40
+          },
+          "quote": "This space is still a draft. Nobody but you can see it until you send the invites.",
+          "region": "draft-notice",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 281,
+            "y": 1530,
+            "width": 562,
+            "height": 52
+          },
+          "quote": "No website can stop screenshots.",
+          "region": "settings-sections",
+          "note": "Section-level info callout box",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 281,
+            "y": 2626,
+            "width": 562,
+            "height": 59
+          },
+          "quote": "Held posts go to your Approvals queue",
+          "region": "settings-sections",
+          "note": "Section-level info callout",
+          "rater": "rater-3"
+        }
+      ],
+      "ties": [
+        "dims.dismissal"
+      ]
+    },
+    {
+      "id": "breadcrumbs",
+      "status": "present",
+      "confidence": 0.89,
+      "dims": {
+        "type": "location",
+        "truncation": "full-path",
+        "placement": "above-the-title"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 260,
+            "y": 16,
+            "width": 180,
+            "height": 18
+          },
+          "quote": "Spaces > Winter '26 Test Knit",
+          "region": "page-header",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 260,
+            "y": 16,
+            "width": 180,
+            "height": 18
+          },
+          "quote": "Spaces > Winter '26 Test Knit",
+          "region": "page-header",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 260,
+            "y": 16,
+            "width": 180,
+            "height": 18
+          },
+          "quote": "Spaces › Winter '26 Test Knit",
+          "region": "page-header",
+          "rater": "rater-3"
+        }
+      ],
+      "ties": [
+        "dims.interaction"
+      ]
+    },
+    {
+      "id": "card",
+      "status": "present",
+      "confidence": 0.65,
+      "dims": {
+        "actions": "none",
+        "shape": "vertical",
+        "style": "outlined"
+      },
+      "support": 2,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1072,
+            "y": 750,
+            "width": 335,
+            "height": 281
+          },
+          "quote": "Fenwick Pullover: sample photos and sizing notes",
+          "note": "Post cards in mock community preview with photos below text and replies count",
+          "region": "preview-panel",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 1072,
+            "y": 750,
+            "width": 335,
+            "height": 281
+          },
+          "quote": "Fenwick Pullover: sample photos and sizing notes",
+          "note": "Post card in preview mock with images and reply count",
+          "region": "preview-panel",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 1072,
+            "y": 1040,
+            "width": 335,
+            "height": 275
+          },
+          "quote": "Hollin Cowl gauge",
+          "region": "preview-panel",
+          "rater": "rater-2"
+        }
+      ],
+      "ties": [
+        "dims.media"
+      ]
+    },
+    {
+      "id": "choice-control",
+      "status": "present",
+      "confidence": 0.92,
+      "dims": {
+        "cardinality": "single-choice",
+        "form": "option-cards",
+        "option": [
+          "icon-or-image",
+          "label-and-description"
+        ],
+        "timing": "previewed",
+        "largeSets": "show-all"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 281,
+            "y": 349,
+            "width": 562,
+            "height": 225
+          },
+          "quote": "Visible to all members",
+          "note": "Radio option cards with icon, label and description",
+          "region": "settings-column",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 281,
+            "y": 1718,
+            "width": 390,
+            "height": 39
+          },
+          "quote": "Instant alerts",
+          "note": "Segmented control (radiogroup)",
+          "region": "settings-column",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 281,
+            "y": 1350,
+            "width": 562,
+            "height": 140
+          },
+          "quote": "Block saving photos",
+          "note": "Switches with label and description",
+          "region": "settings-column",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 281,
+            "y": 1944,
+            "width": 562,
+            "height": 80
+          },
+          "quote": "Oduya Knits Circle",
+          "note": "Option cards with logo image",
+          "region": "settings-column",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 913,
+            "y": 277,
+            "width": 507,
+            "height": 56
+          },
+          "quote": "Saoirse Byrne · Maker member",
+          "note": "Dropdown select of 18 invitees for preview",
+          "region": "preview-panel",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 281,
+            "y": 349,
+            "width": 562,
+            "height": 225
+          },
+          "quote": "Visible to all members",
+          "note": "Bordered radio rows with label + description; selected row tinted with rust border",
+          "region": "settings-column",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 281,
+            "y": 1719,
+            "width": 390,
+            "height": 38
+          },
+          "quote": "Instant alerts",
+          "note": "Segmented control radiogroup",
+          "region": "settings-column",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 805,
+            "y": 1353,
+            "width": 38,
+            "height": 22
+          },
+          "note": "Switches for photo protection",
+          "region": "settings-column",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 281,
+            "y": 1944,
+            "width": 562,
+            "height": 80
+          },
+          "quote": "Oduya Knits Circle",
+          "note": "Option cards with logo image",
+          "region": "settings-column",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 913,
+            "y": 277,
+            "width": 507,
+            "height": 56
+          },
+          "quote": "Saoirse Byrne · Maker member",
+          "note": "Dropdown select of who to preview as",
+          "region": "preview-panel",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 281,
+            "y": 349,
+            "width": 562,
+            "height": 225
+          },
+          "quote": "Visible to all members",
+          "region": "settings-sections",
+          "note": "Radio option cards with icon, label, description; selected card has rust border and tint",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 281,
+            "y": 1716,
+            "width": 390,
+            "height": 42
+          },
+          "quote": "Instant alerts",
+          "region": "settings-sections",
+          "note": "Segmented control radiogroup",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 805,
+            "y": 1353,
+            "width": 38,
+            "height": 142
+          },
+          "region": "settings-sections",
+          "note": "On/off switches for photo protection",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 913,
+            "y": 277,
+            "width": 507,
+            "height": 56
+          },
+          "quote": "Saoirse Byrne · Maker member",
+          "region": "preview-panel",
+          "note": "Dropdown select of which invitee to preview as",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "form",
+      "status": "absent",
+      "confidence": 0.6,
+      "dims": {},
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 260,
+            "y": 267,
+            "width": 604,
+            "height": 2540
+          },
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 260,
+            "y": 267,
+            "width": 604,
+            "height": 2538
+          },
+          "note": "Fields are durable space settings with a save/review flow; coded as settings instead",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "modal-dialog",
+      "status": "absent",
+      "confidence": 0.65,
+      "dims": {},
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1263,
+            "y": 63,
+            "width": 149,
+            "height": 36
+          },
+          "note": "No dialog in capture; a 'Review before saving' modal appears only after editing (live)",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 1263,
+            "y": 63,
+            "width": 149,
+            "height": 36
+          },
+          "note": "A 'Review before saving' modal exists only after making a change (live); not in the captured state",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "settings",
+      "status": "present",
+      "confidence": 0.92,
+      "dims": {
+        "ia": "sectioned-page",
+        "controls": [
+          "boolean-toggles",
+          "single-and-multi-select",
+          "text-and-credentials"
+        ],
+        "discovery": [
+          "browse-hierarchy"
+        ],
+        "timing": "save-button",
+        "scope": "override-layers",
+        "safety": [
+          "reset-to-default",
+          "show-side-effects"
+        ]
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 260,
+            "y": 267,
+            "width": 604,
+            "height": 655
+          },
+          "quote": "Who can see it",
+          "note": "First of seven headed settings section cards on one long page",
+          "region": "settings-column",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 260,
+            "y": 181,
+            "width": 604,
+            "height": 82
+          },
+          "quote": "Jump to section",
+          "note": "Chip jump nav to sections",
+          "region": "settings-column",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 1263,
+            "y": 63,
+            "width": 149,
+            "height": 36
+          },
+          "quote": "Send 18 invites",
+          "note": "Live: editing a setting swaps this to '1 unsaved change' + Discard + Review & save; sections get a 'Changed' badge and the old option a 'CURRENT' tag",
+          "region": "page-header",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 281,
+            "y": 2181,
+            "width": 562,
+            "height": 28
+          },
+          "quote": "Use community message",
+          "note": "Reset-to-community-default control (disabled while already default)",
+          "region": "settings-column",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 260,
+            "y": 267,
+            "width": 604,
+            "height": 655
+          },
+          "quote": "Who can see it",
+          "note": "First of seven sectioned setting cards on one page",
+          "region": "settings-column",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 260,
+            "y": 181,
+            "width": 604,
+            "height": 82
+          },
+          "quote": "Jump to section",
+          "note": "Pill nav jumping to sections",
+          "region": "settings-column",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 913,
+            "y": 341,
+            "width": 507,
+            "height": 178
+          },
+          "quote": "WHAT SAOIRSE WOULD EXPERIENCE",
+          "note": "Consequences of current settings shown per member",
+          "region": "preview-panel",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 649,
+            "y": 2181,
+            "width": 194,
+            "height": 28
+          },
+          "quote": "Use community message",
+          "note": "Revert to community default",
+          "region": "settings-column",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 260,
+            "y": 267,
+            "width": 604,
+            "height": 655
+          },
+          "quote": "Who can see it",
+          "region": "settings-sections",
+          "note": "First of seven section cards of space-level settings",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 913,
+            "y": 341,
+            "width": 507,
+            "height": 178
+          },
+          "quote": "WHAT SAOIRSE WOULD EXPERIENCE",
+          "region": "preview-panel",
+          "note": "Side effects of current settings spelled out per person",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 232,
+            "y": 130,
+            "width": 620,
+            "height": 40
+          },
+          "quote": "It started with your community defaults.",
+          "region": "draft-notice",
+          "note": "Space overrides community defaults; 'Use community message' resets",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 1263,
+            "y": 63,
+            "width": 149,
+            "height": 36
+          },
+          "quote": "Send 18 invites",
+          "region": "page-header",
+          "note": "Live: changing a setting swaps this for '1 unsaved change · Discard · Review & save', which opens a review modal",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "split-pane",
+      "status": "absent",
+      "confidence": 0.7,
+      "dims": {},
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 892,
+            "y": 114,
+            "width": 548,
+            "height": 1270
+          },
+          "note": "Settings and preview columns are fixed, no resize divider",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "tabs",
+      "status": "present",
+      "confidence": 0.87,
+      "dims": {
+        "placement": "top",
+        "label": [
+          "text"
+        ],
+        "origin": "fixed-by-the-designer",
+        "grouping": "flat",
+        "switchBy": [
+          "click"
+        ]
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 913,
+            "y": 211,
+            "width": 507,
+            "height": 55
+          },
+          "quote": "A test knitter",
+          "note": "'Preview as' tablist rendered as two card tabs",
+          "region": "preview-panel",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 913,
+            "y": 533,
+            "width": 507,
+            "height": 35
+          },
+          "quote": "In the space",
+          "note": "Underlined sub-tabs switching preview surface",
+          "region": "preview-panel",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 913,
+            "y": 533,
+            "width": 507,
+            "height": 35
+          },
+          "quote": "In the space",
+          "note": "Underlined tab strip; live check switches preview to email mock",
+          "region": "preview-panel",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 913,
+            "y": 211,
+            "width": 507,
+            "height": 55
+          },
+          "quote": "A test knitter",
+          "note": "Second tablist 'Preview as' styled as two cards",
+          "region": "preview-panel",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 913,
+            "y": 533,
+            "width": 507,
+            "height": 35
+          },
+          "quote": "In the space",
+          "region": "preview-panel",
+          "note": "Underline tabs; live check: 'Invite email' swaps mock to an email preview",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 913,
+            "y": 211,
+            "width": 507,
+            "height": 55
+          },
+          "quote": "A test knitter",
+          "region": "preview-panel",
+          "note": "Second tablist 'Preview as' drawn as two card-like tabs",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "tag-input",
+      "status": "present",
+      "confidence": 0.68,
+      "dims": {
+        "token": [
+          "text"
+        ],
+        "vocabulary": "free-creation",
+        "create": [
+          "enter"
+        ]
+      },
+      "support": 2,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 281,
+            "y": 2485,
+            "width": 562,
+            "height": 67
+          },
+          "quote": "Type a word or phrase, then press Enter",
+          "note": "Empty in capture; live check: Enter turns text into a removable chip with 'Add another…'",
+          "region": "settings-column",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 281,
+            "y": 2485,
+            "width": 562,
+            "height": 45
+          },
+          "quote": "Type a word or phrase, then press Enter",
+          "region": "settings-sections",
+          "note": "Spoiler-hold word list input; empty in capture so tokens not visible",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "text-field",
+      "status": "present",
+      "confidence": 0.87,
+      "dims": {
+        "supporting": [
+          "character-counter",
+          "hint-text",
+          "label",
+          "placeholder"
+        ],
+        "style": "outlined",
+        "inputType": "plain"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 281,
+            "y": 2217,
+            "width": 562,
+            "height": 125
+          },
+          "quote": "Welcome to the Circle! Say hi in General Chat.",
+          "note": "Textarea with hint and 46/600 counter",
+          "region": "settings-column",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 281,
+            "y": 2716,
+            "width": 562,
+            "height": 68
+          },
+          "quote": "Try a sample post",
+          "note": "Labelled input with example placeholder",
+          "region": "settings-column",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 281,
+            "y": 2217,
+            "width": 562,
+            "height": 135
+          },
+          "quote": "Welcome to the Circle! Say hi in General Chat.",
+          "note": "Textarea with hint and 46/600 counter",
+          "region": "settings-column",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 281,
+            "y": 2716,
+            "width": 562,
+            "height": 68
+          },
+          "quote": "Try a sample post",
+          "note": "Labelled field with example placeholder",
+          "region": "settings-column",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 281,
+            "y": 2217,
+            "width": 562,
+            "height": 132
+          },
+          "quote": "46/600",
+          "region": "settings-sections",
+          "note": "Welcome message textarea with hint and character counter",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 281,
+            "y": 2742,
+            "width": 562,
+            "height": 42
+          },
+          "quote": "e.g. Anyone have the pattern PDF for Fenwick yet?",
+          "region": "settings-sections",
+          "rater": "rater-3"
+        }
+      ],
+      "ties": [
+        "dims.validation",
+        "dims.assistance"
+      ]
+    },
+    {
+      "id": "tree-view",
+      "status": "absent",
+      "confidence": 0.65,
+      "dims": {},
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 20,
+            "y": 195,
+            "width": 200,
+            "height": 250
+          },
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 12,
+            "y": 194,
+            "width": 207,
+            "height": 250
+          },
+          "note": "Spaces shows an indented child list but no disclosure control",
+          "rater": "rater-2"
+        }
+      ]
+    }
+  ],
+  "note": "Majority vote across raters. Free-text fields (layout, typography, palette, notes) stay per rater in labels/.",
+  "computedAt": "2026-11-14T22:08:16.763Z"
+}

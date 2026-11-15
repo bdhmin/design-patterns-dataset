@@ -1,0 +1,657 @@
+{
+  "schemaVersion": "1.0.0",
+  "codebookVersion": "1.0.0",
+  "batch": "gen-001",
+  "site": {
+    "slug": "community-fridge-restock-analysis",
+    "url": "http://community-fridge-restock-analysis.localhost:4318/",
+    "finalUrl": "http://community-fridge-restock-analysis.localhost:4318/",
+    "status": 200,
+    "title": "Run-outs · Stocktake Commons",
+    "capturedAt": "2026-11-14T22:03:36.213Z",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "screenshot": {
+      "ref": "capture/screenshot.png",
+      "width": 1440,
+      "height": 1321
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.8127.18 Safari/537.36",
+    "domain": "data-visualization",
+    "domainNote": "nonprofit community-fridge network restock analytics (volunteer check-log analysis)",
+    "provenance": {
+      "source": "generated",
+      "generation": "generated/gen-001/community-fridge-restock-analysis/generation.json",
+      "generator": {
+        "id": "sonnet",
+        "model": "claude-sonnet-5-5",
+        "effort": "high"
+      },
+      "brief": {
+        "domain": "data-visualization",
+        "archetype": "analyze",
+        "context": "community-nonprofit",
+        "product": "Stocktake Commons"
+      }
+    }
+  },
+  "regions": [
+    {
+      "id": "header",
+      "role": "header",
+      "label": "Brand (fridge icon, Stocktake Commons / Southside Free Fridge Network), top nav of 6 views with underline indicator, data-freshness note and 'Sunday brief' button",
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 58
+      },
+      "patterns": [
+        "app-shell"
+      ]
+    },
+    {
+      "id": "filter-bar",
+      "role": "toolbar",
+      "label": "Global PERIOD filter: segmented presets (All 14 weeks / Before / After Labor Day), From–to native date inputs, result summary (98 days · 3,126 checks · 412 drops)",
+      "bbox": {
+        "x": 0,
+        "y": 58,
+        "width": 1440,
+        "height": 54
+      },
+      "patterns": [
+        "filter-controls",
+        "date-picker",
+        "choice-control",
+        "coordinated-views"
+      ]
+    },
+    {
+      "id": "headline",
+      "role": "insight-headline",
+      "label": "Generated narrative H1 stating the key finding with bold numbers plus definition paragraph",
+      "bbox": {
+        "x": 32,
+        "y": 130,
+        "width": 1060,
+        "height": 80
+      },
+      "patterns": []
+    },
+    {
+      "id": "fridge-table",
+      "role": "data-table",
+      "label": "'Which fridges run out fastest' table: fridge ID chips, in-cell bar with network tick, % and counts, heat-coloured weekday cells (clickable to log), typical first empty time, before→after Labor Day delta, Network footer row",
+      "bbox": {
+        "x": 32,
+        "y": 225,
+        "width": 948,
+        "height": 654
+      },
+      "patterns": [
+        "data-table",
+        "sort-control",
+        "coordinated-views",
+        "overview-detail",
+        "chart"
+      ]
+    },
+    {
+      "id": "heatmap-panel",
+      "role": "detail-panel",
+      "label": "'When F3 is empty' detail: fridge select, Average fill / Share empty segmented toggle, 7×7 day × time-slot heat map with hatched low-sample cells, gradient legend, emptiest-window insight and link to readings",
+      "bbox": {
+        "x": 998,
+        "y": 225,
+        "width": 410,
+        "height": 576
+      },
+      "patterns": [
+        "chart",
+        "choice-control",
+        "coordinated-views",
+        "overview-detail"
+      ]
+    },
+    {
+      "id": "weekly-chart",
+      "role": "chart",
+      "label": "Weekly empty-before-noon rate bar chart for selected fridge vs dashed network line, Labor Day reference line with label, summary caption",
+      "bbox": {
+        "x": 32,
+        "y": 897,
+        "width": 1376,
+        "height": 347
+      },
+      "patterns": [
+        "chart",
+        "tooltip",
+        "coordinated-views"
+      ]
+    },
+    {
+      "id": "footer",
+      "role": "footer",
+      "label": "Single-line volunteer-maintained data caveat",
+      "bbox": {
+        "x": 0,
+        "y": 1274,
+        "width": 1440,
+        "height": 47
+      },
+      "patterns": []
+    }
+  ],
+  "patterns": [
+    {
+      "id": "app-shell",
+      "status": "present",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 58
+          },
+          "region": "header",
+          "quote": "Run-outs Compare Donations Temperature Extra drop Check log",
+          "note": "Persistent top bar with brand and view navigation; buttons route to #/compare, #/log etc. Header and filter bar stay pinned while scrolling"
+        }
+      ],
+      "dims": {
+        "primary": "top-navigation-bar",
+        "secondary": "none",
+        "items": [
+          "fixed-destinations"
+        ],
+        "visibility": "always-visible",
+        "structure": "single-app"
+      }
+    },
+    {
+      "id": "data-table",
+      "status": "present",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 51,
+            "y": 297,
+            "width": 910,
+            "height": 538
+          },
+          "region": "fridge-table",
+          "quote": "Which fridges run out fastest",
+          "note": "Fridges as rows, metrics as columns; in-cell bars, ID chips, heat-coloured cells; Network aggregate footer row; row click selects one fridge"
+        }
+      ],
+      "dims": {
+        "columnSet": "fixed",
+        "cellRendering": [
+          "plain-text",
+          "chips-and-avatars",
+          "in-cell-charts"
+        ],
+        "density": "standard",
+        "rowExpansion": "none",
+        "selection": "single-row",
+        "opScope": [
+          "row",
+          "column"
+        ],
+        "aggregation": [
+          "footer-aggregates"
+        ],
+        "openIn": "side-by-side"
+      }
+    },
+    {
+      "id": "sort-control",
+      "status": "present",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 291,
+            "y": 313,
+            "width": 168,
+            "height": 17
+          },
+          "region": "fridge-table",
+          "quote": "EMPTY BEFORE NOON ↓",
+          "note": "All column headers are buttons; clicking MON re-sorted rows and moved the arrow (verified live)"
+        }
+      ],
+      "dims": {
+        "keys": "any-column",
+        "form": "column-header-click",
+        "indicator": "header-arrow"
+      }
+    },
+    {
+      "id": "chart",
+      "status": "present",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 51,
+            "y": 987,
+            "width": 1338,
+            "height": 200
+          },
+          "region": "weekly-chart",
+          "quote": "Labor Day · school reopens",
+          "note": "Dominant instance: weekly bars for selected fridge with dashed network line overlaid, dotted Labor Day reference line, faded out-of-filter weeks, hover tooltip"
+        },
+        {
+          "bbox": {
+            "x": 1017,
+            "y": 380,
+            "width": 372,
+            "height": 290
+          },
+          "region": "heatmap-panel",
+          "note": "Second chart: weekday × time-slot heat map, diverging rust→green colour scale, hatched cells for <5 checks"
+        },
+        {
+          "bbox": {
+            "x": 51,
+            "y": 1199,
+            "width": 600,
+            "height": 30
+          },
+          "region": "weekly-chart",
+          "quote": "F3: 20% of weekdays before Labor Day, 49% after. The school next to F3 reopened Sep 8.",
+          "note": "Computed caption under chart"
+        }
+      ],
+      "dims": {
+        "markType": "bars",
+        "channels": [
+          "position",
+          "length",
+          "opacity"
+        ],
+        "scale": "ordinal-or-band",
+        "faceting": "layered-series",
+        "inspectBy": [
+          "hover-tooltip",
+          "cross-filter-linked-views",
+          "click-through-to-source-rows"
+        ],
+        "authorship": "author-specified",
+        "annotation": [
+          "reference-lines",
+          "callout-labels",
+          "automated-insight-captions"
+        ],
+        "adaptation": "fixed-desktop-chart"
+      }
+    },
+    {
+      "id": "coordinated-views",
+      "status": "present",
+      "confidence": 0.88,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 51,
+            "y": 398,
+            "width": 910,
+            "height": 30
+          },
+          "region": "fridge-table",
+          "quote": "Eastgate Rec Center",
+          "note": "Clicking F5 row highlighted it and switched heat map title to 'When F5 is empty' and chart to 'F5 vs network' (verified live)"
+        },
+        {
+          "bbox": {
+            "x": 104,
+            "y": 70,
+            "width": 360,
+            "height": 30
+          },
+          "region": "filter-bar",
+          "quote": "Before Labor Day",
+          "note": "Period preset re-computed table, heat map and faded chart weeks outside the range"
+        }
+      ],
+      "dims": {
+        "linkChannel": [
+          "selection-highlight",
+          "parameters"
+        ],
+        "arrangement": "overview-detail-split",
+        "trigger": [
+          "click-a-mark",
+          "change-a-control"
+        ],
+        "scope": "one-mark",
+        "feedback": [
+          "highlight-in-place",
+          "grey-out-non-matches"
+        ],
+        "authorship": "fixed-published-dashboard"
+      }
+    },
+    {
+      "id": "overview-detail",
+      "status": "present",
+      "confidence": 0.65,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 998,
+            "y": 225,
+            "width": 410,
+            "height": 576
+          },
+          "region": "heatmap-panel",
+          "quote": "When F3 is empty",
+          "note": "Selected table row opens a side-by-side detail panel (heat map) for that fridge; select also synced"
+        }
+      ],
+      "dims": {
+        "openIn": "side-by-side",
+        "overviewType": [
+          "table"
+        ],
+        "detailMultiplicity": "one-at-a-time",
+        "openBy": [
+          "click"
+        ],
+        "openFrom": "whole-item",
+        "linking": "synchronized-navigation",
+        "attributePlacement": [
+          "in-overview-only",
+          "in-detail-view-only"
+        ],
+        "abstraction": [
+          "graphic",
+          "sum-or-average",
+          "ranking-or-order"
+        ]
+      }
+    },
+    {
+      "id": "filter-controls",
+      "status": "present",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 0,
+            "y": 58,
+            "width": 1440,
+            "height": 54
+          },
+          "region": "filter-bar",
+          "quote": "PERIOD All 14 weeks Before Labor Day After Labor Day From 08/04/2026 to 11/09/2026",
+          "note": "Global filter bar: preset segmented buttons + date range; summary 'Aug 4 – Nov 9 · 98 days · 3,126 checks · 412 drops' updates live"
+        }
+      ],
+      "dims": {
+        "placement": "filter-bar-with-chips",
+        "types": [
+          "date-range",
+          "toggle-chips"
+        ],
+        "preview": "live-results",
+        "origin": "developer-defined"
+      }
+    },
+    {
+      "id": "date-picker",
+      "status": "present",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 519,
+            "y": 69,
+            "width": 284,
+            "height": 31
+          },
+          "region": "filter-bar",
+          "quote": "08/04/2026",
+          "note": "Native type=date inputs for From/to with calendar icon"
+        }
+      ],
+      "dims": {
+        "presentation": "formatted-text-field",
+        "selection": "range",
+        "openBy": "calendar-icon",
+        "annotations": [
+          "none"
+        ]
+      }
+    },
+    {
+      "id": "choice-control",
+      "status": "present",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1017,
+            "y": 335,
+            "width": 203,
+            "height": 35
+          },
+          "region": "heatmap-panel",
+          "quote": "Average fill Share empty",
+          "note": "Segmented control switches heat-map measure (aria-pressed); also period preset segmented control and a fridge <select>"
+        },
+        {
+          "bbox": {
+            "x": 1017,
+            "y": 293,
+            "width": 372,
+            "height": 30
+          },
+          "region": "heatmap-panel",
+          "quote": "F3 · Kessler Ave Church",
+          "note": "Dropdown select of fridge to inspect"
+        }
+      ],
+      "dims": {
+        "cardinality": "single-choice",
+        "form": "segmented-control",
+        "option": [
+          "label-only"
+        ],
+        "timing": "immediately",
+        "largeSets": "show-all"
+      }
+    },
+    {
+      "id": "tooltip",
+      "status": "present",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 51,
+            "y": 987,
+            "width": 1338,
+            "height": 200
+          },
+          "region": "weekly-chart",
+          "note": "Hovering a bar shows dark tooltip 'Week of Sep 15 / F5: 4 of 5 weekday mornings empty (80%) / Network: 24%' (verified live, not in capture)"
+        }
+      ],
+      "dims": {
+        "trigger": [
+          "hover"
+        ],
+        "timing": "until-the-pointer-leaves",
+        "content": "rich-content",
+        "placement": "following-the-pointer"
+      }
+    },
+    {
+      "id": "dashboard",
+      "status": "uncertain",
+      "confidence": 0.5,
+      "rationale": "Multiple linked widgets under global filters resemble a dashboard, but the page is a single-question analytic report (narrative headline, one table, two charts) rather than an at-a-glance KPI board; coordinated-views captures it better.",
+      "evidence": [
+        {
+          "bbox": {
+            "x": 32,
+            "y": 130,
+            "width": 1376,
+            "height": 1114
+          },
+          "region": "fridge-table",
+          "note": "Narrative headline + table + heat map + chart under global period filter"
+        }
+      ],
+      "dims": {
+        "widgets": [
+          "narrative-text",
+          "tables",
+          "time-series-charts"
+        ],
+        "purpose": "operational-decisions",
+        "arrangement": "story-layout",
+        "linking": "cross-filtering",
+        "alerting": "threshold-colours",
+        "ownership": "shared-read-only"
+      }
+    },
+    {
+      "id": "stat-tile",
+      "status": "absent",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 32,
+            "y": 130,
+            "width": 1060,
+            "height": 80
+          },
+          "note": "Key numbers are inline in narrative headline, not tiles"
+        }
+      ],
+      "dims": {}
+    },
+    {
+      "id": "card",
+      "status": "absent",
+      "confidence": 0.6,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 32,
+            "y": 225,
+            "width": 948,
+            "height": 654
+          },
+          "note": "Rounded white panels are section containers, not item cards"
+        }
+      ],
+      "dims": {}
+    },
+    {
+      "id": "pagination",
+      "status": "absent",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 51,
+            "y": 297,
+            "width": 910,
+            "height": 538
+          },
+          "note": "All 9 fridges shown; no paging on this view"
+        }
+      ],
+      "dims": {}
+    }
+  ],
+  "structure": {
+    "layout": "Analytic app page: sticky top bar with brand + 6 view buttons, sticky global period/date filter bar, narrative H1 finding, then a 2-column grid (sortable fridge table left ~2/3, linked heat-map detail panel right ~1/3), then a full-width linked weekly bar chart, plain text footer",
+    "regions": [
+      "header",
+      "filter-bar",
+      "headline",
+      "fridge-table",
+      "heatmap-panel",
+      "weekly-chart",
+      "footer"
+    ],
+    "density": "dense"
+  },
+  "aesthetics": {
+    "palette": [
+      "#f3efe6",
+      "#fffdf8",
+      "#1f2a26",
+      "#55625c",
+      "#7b8781",
+      "#14513f",
+      "#c55d3b",
+      "#a23c1f",
+      "#f1dac1",
+      "#e2dccd",
+      "#ece7da"
+    ],
+    "colorRoles": {
+      "background": "#f3efe6",
+      "surface": "#fffdf8",
+      "text": "#1f2a26",
+      "muted": "#55625c",
+      "primary": "#14513f",
+      "accent": "#c55d3b",
+      "danger": "#a23c1f",
+      "border": "#e2dccd",
+      "subtle": "#ece7da"
+    },
+    "typography": "Public Sans Variable throughout: headings 22px/520 (H1) and 16px/650 (panel H3), body 13–14px, uppercase letter-spaced 12px/650 column headers and PERIOD label, tabular numerals in cells; native date inputs use the same face",
+    "typeScale": "Compact, restrained scale: 22px H1 → 16px section titles → 14px row names → 13px cells/controls → 11–12px meta and axis labels; hierarchy carried by weight (400/550/650) more than size",
+    "shape": "soft",
+    "elevation": "subtle-shadows",
+    "borders": "thin",
+    "imagery": [
+      "data-visualization",
+      "iconography"
+    ],
+    "iconStyle": "filled",
+    "whitespace": "moderate",
+    "backgroundTreatment": "solid",
+    "mood": [
+      "warm",
+      "civic",
+      "analytical",
+      "calm",
+      "editorial",
+      "utilitarian"
+    ]
+  },
+  "model": {
+    "rater": "rater-2",
+    "provider": "claude-code",
+    "name": "claude-opus-5-5",
+    "effort": "high",
+    "generatedAt": "2026-11-14T22:05:39.411Z",
+    "servedBy": [
+      "claude-opus-5-5"
+    ],
+    "turns": 14,
+    "usage": {
+      "input_tokens": 28,
+      "cache_creation_input_tokens": 60452,
+      "cache_read_input_tokens": 688107,
+      "output_tokens": 13913
+    }
+  },
+  "notes": "Warm paper palette (cream #f3efe6 page, #fffdf8 panels with 1px #e2dccd border, 10px radius, faint shadow) with deep forest green (#14513f) for selection/brand and a rust ramp (#f1dac1 → #c55d3b → #a23c1f) for 'bad' values; heat map uses a diverging rust→sage→green scale with diagonal hatching for cells under 5 checks. Headline is a computed sentence of the finding, with the key numbers bolded. Selected table row gets a green left rule, mint fill (#eaf3ee) and a filled green ID chip, while other chips stay beige. In-cell bars carry a black tick for the network average. Weekday cells are clickable and drill through to a pre-filtered Check log view (verified live). Out-of-filter weeks in the bar chart fade rather than disappear. The top nav buttons have descriptive aria names ('Which fridges empty, and when')."
+}

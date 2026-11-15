@@ -42,6 +42,18 @@ export interface AppSpec {
 
 export const CONTRACT_DIR = '.ui-capture';
 
+/**
+ * The static build to serve, .ui-capture/out, as a real path. Throws if it
+ * resolves outside the checkout (the dir, or .ui-capture, made a symlink to
+ * somewhere on the host): serving it would publish host files to the app.
+ */
+export function staticDir(checkout: string): string {
+  const root = fs.realpathSync(checkout);
+  const out = fs.realpathSync(path.join(checkout, CONTRACT_DIR, 'out'));
+  if (!out.startsWith(root + path.sep)) throw new Error(`./${CONTRACT_DIR}/out resolves outside the checkout (${out}); it must be a real directory in it, not a symlink.`);
+  return out;
+}
+
 /** Read and check .ui-capture/app.json and the files its mode needs. */
 export function readAppJson(checkout: string): { app?: AppJson; problems: string[] } {
   const dir = path.join(checkout, CONTRACT_DIR);
@@ -58,7 +70,10 @@ export function readAppJson(checkout: string): { app?: AppJson; problems: string
   if (!Array.isArray(app.stubs) || app.stubs.some((x) => typeof x?.service !== 'string' || typeof x?.how !== 'string')) {
     problems.push('app.json "stubs" must be a list of {"service": "...", "how": "..."} for every secret, API key or external service you faked ([] if none).');
   }
-  if (app.mode === 'static' && !fs.existsSync(path.join(dir, 'out', 'index.html'))) problems.push(`Static mode, but ./${CONTRACT_DIR}/out/index.html does not exist.`);
+  if (app.mode === 'static') {
+    if (!fs.existsSync(path.join(dir, 'out', 'index.html'))) problems.push(`Static mode, but ./${CONTRACT_DIR}/out/index.html does not exist.`);
+    else try { staticDir(checkout); } catch (e) { problems.push((e as Error).message); }
+  }
   if (app.mode === 'server' && !fs.existsSync(path.join(dir, 'start.sh'))) problems.push(`Server mode, but ./${CONTRACT_DIR}/start.sh does not exist.`);
   return { app, problems };
 }
@@ -113,11 +128,18 @@ export interface RunningServer {
   stop(): Promise<void>;
 }
 
+/** start.sh process groups not yet stopped, whether or not start.sh itself is still running. */
 const running = new Set<ChildProcess>();
 process.once('exit', () => { for (const p of running) killGroup(p, 'SIGKILL'); });
 
 function killGroup(p: ChildProcess, sig: NodeJS.Signals): void {
   try { if (p.pid) process.kill(-p.pid, sig); } catch { try { p.kill(sig); } catch { /* gone */ } }
+}
+
+/** Any process left in the group: start.sh, or children it backgrounded and outlived. */
+function groupAlive(p: ChildProcess): boolean {
+  try { if (p.pid) { process.kill(-p.pid, 0); return true; } } catch (e) { return (e as NodeJS.ErrnoException).code === 'EPERM'; }
+  return false;
 }
 
 export async function portInUse(port: number): Promise<boolean> {
@@ -204,13 +226,14 @@ export async function startServer(spec: AppSpec, opts: { sandbox: boolean; start
   }
   running.add(proc);
   let exited: number | null | undefined;
-  const exit = new Promise<void>((resolve) => proc.once('exit', (code) => { exited = code; running.delete(proc); resolve(); }));
+  proc.once('exit', (code) => { exited = code; });
+  // Stop the whole group even once start.sh has exited: servers it backgrounded
+  // stay in its group (detached: true made it the leader) and would keep their ports.
   const stop = async () => {
-    if (exited === undefined) {
-      killGroup(proc, 'SIGTERM');
-      await Promise.race([exit, new Promise((r) => setTimeout(r, 8000))]);
-      if (exited === undefined) killGroup(proc, 'SIGKILL');
-    }
+    killGroup(proc, 'SIGTERM');
+    for (const until = Date.now() + 8000; groupAlive(proc) && Date.now() < until;) await new Promise((r) => setTimeout(r, 100));
+    if (groupAlive(proc)) killGroup(proc, 'SIGKILL');
+    running.delete(proc);
     fs.rmSync(runDir, { recursive: true, force: true });
   };
   const fail = async (why: string) => {
@@ -231,6 +254,8 @@ export async function startServer(spec: AppSpec, opts: { sandbox: boolean; start
 
 export class AppHost {
   private servers = new Map<string, { refs: number; ready: Promise<RunningServer> }>();
+  /** Apps whose last view was released and whose server is still shutting down. */
+  private stopping = new Map<string, Promise<void>>();
   private opts: { staticServer?: LocalServer; sandbox: boolean; startupSeconds: number; log?: (s: string) => void };
 
   constructor(opts: AppHost['opts']) {
@@ -241,8 +266,11 @@ export class AppHost {
   async acquire(spec: AppSpec): Promise<string> {
     if (spec.mode === 'static') {
       if (!this.opts.staticServer) throw new Error(`${spec.slug}: static app but no static server`);
-      return this.opts.staticServer.mount(spec.slug, path.join(spec.checkout, CONTRACT_DIR, 'out'));
+      return this.opts.staticServer.mount(spec.slug, staticDir(spec.checkout));
     }
+    // A view queued behind the app's last one must not start a second server
+    // while the first still holds the port.
+    for (let st; (st = this.stopping.get(spec.slug));) await st;
     let s = this.servers.get(spec.slug);
     if (!s) {
       this.opts.log?.(`  starting ${spec.slug} on port ${spec.port}`);
@@ -265,12 +293,15 @@ export class AppHost {
     if (!s || --s.refs > 0) return;
     this.servers.delete(spec.slug);
     this.opts.log?.(`  stopping ${spec.slug}`);
-    await (await s.ready.catch(() => undefined))?.stop();
+    const stopped: Promise<void> = (async () => { await (await s.ready.catch(() => undefined))?.stop(); })()
+      .finally(() => { if (this.stopping.get(spec.slug) === stopped) this.stopping.delete(spec.slug); });
+    this.stopping.set(spec.slug, stopped);
+    await stopped;
   }
 
   async closeAll(): Promise<void> {
     const all = [...this.servers.values()];
     this.servers.clear();
-    await Promise.all(all.map(async (s) => (await s.ready.catch(() => undefined))?.stop()));
+    await Promise.all([...all.map(async (s) => (await s.ready.catch(() => undefined))?.stop()), ...this.stopping.values()]);
   }
 }

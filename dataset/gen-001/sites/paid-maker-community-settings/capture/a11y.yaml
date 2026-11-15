@@ -1,0 +1,204 @@
+- navigation "Admin":
+  - text: Hearthroom
+  - button "Oduya Knits Circle 342 members":
+    - strong: Oduya Knits Circle
+    - text: 342 members
+  - list:
+    - listitem:
+      - button "Home"
+    - listitem:
+      - button "Members 342"
+    - listitem:
+      - button "Spaces"
+      - list:
+        - listitem:
+          - button "Announcements"
+        - listitem:
+          - button "General Chat"
+        - listitem:
+          - button "WIP Photos"
+        - listitem:
+          - button "Pattern Help"
+        - listitem:
+          - button "Swap & Sell"
+        - listitem:
+          - button "Studio Lounge"
+        - listitem:
+          - button "Winter '26 Test Knit Draft"
+    - listitem:
+      - button "Tiers & pricing"
+    - listitem:
+      - button "Approvals"
+    - listitem:
+      - button "Brand"
+    - listitem:
+      - button "Community settings"
+  - strong: Maren Oduya
+  - text: Owner
+- main:
+  - text: Spaces Winter '26 Test Knit
+  - heading "Winter '26 Test Knit" [level=1]
+  - text: Draft 18 invitees Test window Nov 16 – Dec 14 Settings last changed Sep 3, 2026
+  - button "Send 18 invites"
+  - text: This space is still a draft. Nobody but you can see it until you send the invites. It started with your community defaults.
+  - navigation "Jump to section":
+    - button "Who can see it"
+    - button "Posting"
+    - button "Photo protection"
+    - button "Notifications"
+    - button "Invite email"
+    - button "Welcome message"
+    - button "Spoiler holds"
+  - region "Who can see it":
+    - heading "Who can see it" [level=2]
+    - paragraph: Decide whether members outside the invite list can find this space.
+    - radiogroup "Who can see it":
+      - radio "Visible to all members Shows in everyone’s space list. Any member can open it and read along." [checked]
+      - text: Visible to all members Shows in everyone’s space list. Any member can open it and read along.
+      - radio "Listed, but locked Members see the name with a lock and can ask to join. They’ll know it exists."
+      - text: Listed, but locked Members see the name with a lock and can ask to join. They’ll know it exists.
+      - radio "Hidden from everyone but invitees Not listed, not in search, and test knitters’ posts here stay off their profiles. A forwarded link shows “Page not found”."
+      - text: Hidden from everyone but invitees Not listed, not in search, and test knitters’ posts here stay off their profiles. A forwarded link shows “Page not found”.
+    - text: Invited test knitters 18 invited · 13 are members, 5 are guests who don’t subscribe
+    - button "Show list"
+    - text: What an invite lets them reach Members keep the spaces their tier already includes. This mostly matters for the 5 guests.
+    - radiogroup "What an invite lets them reach":
+      - radio "Only this space’s threads Guests can open this space and nothing else. The invite adds no other access for members."
+      - text: Only this space’s threads Guests can open this space and nothing else. The invite adds no other access for members.
+      - radio "This space, plus Announcements and General Chat The usual invite access. Guests can read and post in both, free." [checked]
+      - text: This space, plus Announcements and General Chat The usual invite access. Guests can read and post in both, free.
+  - region "Posting":
+    - heading "Posting" [level=2]
+    - paragraph: Who can start threads and reply in this space.
+    - radiogroup "Who can post":
+      - radio "All members Anyone who can open the space can post." [checked]
+      - text: All members Anyone who can open the space can post.
+      - radio "Invited test knitters only Only the 18 people on the invite list, plus you."
+      - text: Invited test knitters only Only the 18 people on the invite list, plus you.
+      - radio "Only you Others can read and react, like Announcements."
+      - text: Only you Others can read and react, like Announcements.
+  - region "Photo protection":
+    - heading "Photo protection" [level=2]
+    - paragraph: For photos of unreleased designs posted in this space.
+    - text: Block saving photos Removes the download button and turns off right-click “Save image”.
+    - switch "Block saving photos"
+    - text: Block sharing photos Removes “Copy link” and “Share”. Photo links only open for invitees.
+    - switch "Block sharing photos"
+    - text: Add the viewer’s name across photos A faint watermark with each knitter’s own name, so a screenshot shows who took it.
+    - switch "Add the viewer’s name across photos"
+    - paragraph: No website can stop screenshots. The name watermark is the best way to discourage them.
+  - region "Notifications for test knitters":
+    - heading "Notifications for test knitters" [level=2]
+    - paragraph: How invitees hear about new posts in this space. Their settings for other spaces stay as they are.
+    - radiogroup "Notification frequency":
+      - radio "Instant alerts" [checked]
+      - radio "Daily digest"
+      - radio "Weekly digest"
+      - radio "Off"
+    - text: Let test knitters change this for themselves They can pick something different in their own notification settings.
+    - switch "Let test knitters change this for themselves" [checked]
+  - region "Invite email":
+    - heading "Invite email" [level=2]
+    - paragraph: The name and logo invitees see at the top of their invite and in their inbox.
+    - radiogroup "Invite emails come from":
+      - radio "Oduya Knits Circle Community name and default mark" [checked]
+      - text: Oduya Knits Circle Community name and default mark
+      - radio "Oduya Knits logo Oduya Knits Your brand · oduya-mark.png"
+      - img "Oduya Knits logo"
+      - text: Oduya Knits Your brand · oduya-mark.png
+    - paragraph: Uses the display name and logo saved in Brand. Applies to invites for Winter '26 Test Knit only.
+  - region "Welcome message":
+    - heading "Welcome message" [level=2]
+    - paragraph: Sent from you automatically when a test knitter accepts their invite.
+    - text: Using the community message
+    - button "Insert first name"
+    - button "Use community message" [disabled]
+    - text: Welcome message
+    - textbox "Welcome message": Welcome to the Circle! Say hi in General Chat.
+    - text: "{first name} is replaced with each knitter’s first name. 46/600"
+  - region "Spoiler holds":
+    - heading "Spoiler holds" [level=2]
+    - paragraph: Posts and replies containing these words go to you for approval before anyone else sees them.
+    - textbox "Add a word or phrase to hold":
+      - /placeholder: Type a word or phrase, then press Enter
+    - text: "Capital letters don’t matter, and word endings count: “leak” also catches “leaked”. Also hold any link to ravelry.com Catches pasted links even when nobody types the word “Ravelry”."
+    - switch "Also hold any link to ravelry.com"
+    - text: Held posts go to
+    - strong: your Approvals queue
+    - text: ", and you get an alert for each one. The writer sees “Waiting for Maren’s approval”. Try a sample post"
+    - textbox "Try a sample post":
+      - /placeholder: e.g. Anyone have the pattern PDF for Fenwick yet?
+  - text: Settings apply to Winter '26 Test Knit only. The rest of Oduya Knits Circle is unchanged.
+  - complementary "Preview":
+    - heading "Preview" [level=2]
+    - paragraph: Matches your saved settings
+    - tablist "Preview as":
+      - tab "A test knitter Invited to this space" [selected]
+      - tab "A regular member Not invited"
+    - text: Choose who to preview as
+    - combobox "Choose who to preview as":
+      - option "Saoirse Byrne · Maker member" [selected]
+      - option "Tomasz Wilk · Guest (not a member)"
+      - option "Imani Reyes · Studio member"
+      - option "Hana Kobayashi · Studio member"
+      - option "Lucía Ferrer · Maker member"
+      - option "Aoife Duggan · Supporter member"
+      - option "Bettina Krause · Guest (not a member)"
+      - option "Ngozi Adeyemi · Studio member"
+      - option "Ruth Lindqvist · Maker member"
+      - option "Priyanka Rao · Studio member"
+      - option "Elodie Marchand · Guest (not a member)"
+      - option "Kateryna Bondar · Maker member"
+      - option "Wren Castellano · Studio member"
+      - option "Ffion Pryce · Supporter member"
+      - option "Mei-Ling Tsao · Studio member"
+      - option "Josefa Arancibia · Guest (not a member)"
+      - option "Dorothy Okafor · Maker member"
+      - option "Signe Halvorsen · Guest (not a member)"
+    - text: Galway What Saoirse would experience
+    - list:
+      - listitem: Gets an invite email from “Oduya Knits Circle”
+      - listitem: Keeps their Maker spaces; the invite adds this space
+      - listitem: Can start threads and reply in this space
+      - listitem: Can download and share photos of unreleased designs
+      - listitem: Gets an alert for every new post and reply
+      - listitem: Every post appears straight away; nothing is held
+    - tablist:
+      - tab "In the space" [selected]
+      - tab "Invite email"
+      - tab "Notifications"
+    - text: oduyaknits.hearthroom.app Saoirse
+    - navigation: "Oduya Knits Circle # Announcements # General Chat # WIP Photos # Pattern Help # Swap & Sell Invited Winter '26 Test Knit"
+    - text: Winter '26 Test Knit Invite only · 18 knitters · Test window Nov 16 – Dec 14
+    - strong: Maren Oduya
+    - text: Welcome message
+    - paragraph: Welcome to the Circle! Say hi in General Chat.
+    - article:
+      - strong: Maren Oduya
+      - text: "Pinned Fenwick Pullover: sample photos and sizing notes"
+      - paragraph: Here are the finished samples in sizes 2 and 5. Yoke depth is the measurement I most want your notes on. Please knit from the Nov 16 file, not the preview sheet.
+      - figure "Fenwick, front":
+        - img "Fenwick, front"
+        - button "Download photo"
+        - button "Share photo"
+        - text: Fenwick, front
+      - figure "Fenwick, yoke detail":
+        - img "Fenwick, yoke detail"
+        - button "Download photo"
+        - button "Share photo"
+        - text: Fenwick, yoke detail
+      - text: 4 replies
+    - article:
+      - strong: Imani Reyes
+      - text: "2h Hollin Cowl gauge: 19 sts / 4 in after blocking"
+      - paragraph: Brooklyn Tweed Shelter in Hayloft on 4.5 mm. Slightly looser than the pattern says before blocking.
+      - figure "Hollin swatch":
+        - img "Hollin swatch"
+        - button "Download photo"
+        - button "Share photo"
+        - text: Hollin swatch
+      - text: 7 replies
+    - text: Write a post as Saoirse
+    - textbox "Write a post as Saoirse":
+      - /placeholder: Try a post as Saoirse…
+    - button "Post" [disabled]

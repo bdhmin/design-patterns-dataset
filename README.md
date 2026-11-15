@@ -426,9 +426,12 @@ software functions, and the same labeling pipeline adds the codebook semantics.
 1. **Brief frame (`briefs/<batch>.yaml`).** `scripts/briefs.ts` crosses the
    label schema's domains (minus marketing-landing, portfolio-agency, other)
    with the codebook's 16 archetypes as the software-function axis (analyze,
-   create, communicate, monitor, schedule, transact, delegate-ai, …). Cells come
-   from seeded shuffles walked in lockstep, so domain and function counts stay
-   even and pairs don't repeat. Generators from `config/generators.yaml` rotate
+   create, communicate, monitor, schedule, transact, delegate-ai, …), and with
+   a context axis of scale and setting (`CONTEXTS` in `src/generate/briefs.ts`:
+   solo hobbyist, household, enterprise internal tool, public sector,
+   classroom, shared screen, …) so briefs don't drift toward professional
+   SaaS. Cells come from seeded shuffles walked in lockstep, so domain,
+   function and context counts stay even and pairs don't repeat. Generators from `config/generators.yaml` rotate
    so no domain is tied to one model. A writer model then turns each cell into
    a concrete product, user, moment and data. **Briefs describe the work, never
    the interface.** If a brief asked for a kanban board, the raters would find

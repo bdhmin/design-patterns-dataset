@@ -1,0 +1,57 @@
+# Codebook proposal (new-entry) — review with: node scripts/proposals.ts show gen-001 commitment-budget-tray
+id: commitment-budget-tray
+kind: new-entry
+status: open
+batch: gen-001
+codebookVersion: 1.0.0
+name: Commitment budget tray
+level: pattern
+parent: transact
+definition: A persistent side panel that shows a fixed number of numbered slots and a credit/budget
+  meter split into available/reserved/spent, filled by picking items from a collection; picks are
+  held as reversible reservations until a cutoff makes them final.
+relations:
+  neighbors:
+    - checkout
+    - plan-picker
+    - undo
+dimensions:
+  - name: Commitment model
+    family: lifecycle
+    question: When does a pick become final?
+    subdimensions:
+      - id: finality
+        name: Finality
+        select: one
+        values:
+          - id: immediate
+            name: Immediate
+          - id: reserved-until-cutoff
+            name: Reserved until cutoff
+            description: Picks hold budget but can be withdrawn until a deadline
+          - id: explicit-final-submit
+            name: Explicit final submit
+rationale:
+  - rater: rater-1
+    site: course-sequencing-credit-commitment
+    text: Not a checkout (no payment flow), not a plan picker, not a comparison table. The defining
+      features — fixed slot count, budget meter with reserved vs spent states, swap/withdraw per
+      slot, deadline after which reservations become irreversible — have no codebook entry.
+sources:
+  - batch: gen-001
+    site: course-sequencing-credit-commitment
+    url: http://course-sequencing-credit-commitment.localhost:4318/
+    note: proposed by rater-1
+evidence:
+  - site: course-sequencing-credit-commitment
+    rater: rater-1
+    bbox:
+      x: 1048
+      y: 180
+      width: 360
+      height: 624
+    note: Team credits meter plus 6 numbered open slots
+    quote: Choose up to 6 approved isolates. Nothing is spent until the cutoff, so you can change your
+      mind.
+createdAt: 2026-11-14T22:06:47.608Z
+updatedAt: 2026-11-14T22:06:47.608Z

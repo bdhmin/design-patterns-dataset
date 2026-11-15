@@ -5,7 +5,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { buildBundle } from '../src/codebook/bundle.ts';
 import { loadCodebook } from '../src/codebook/io.ts';
-import { echoTerms, frameArchetypes, frameDomains, planCells, toSlug } from '../src/generate/briefs.ts';
+import { CONTEXTS, echoTerms, frameArchetypes, frameDomains, planCells, toSlug } from '../src/generate/briefs.ts';
 import { generationPrompt } from '../src/generate/app.ts';
 import { resolveStatic, startLocalServer } from '../src/pipeline/serve.ts';
 import { provenanceOf } from '../src/pipeline/rater.ts';
@@ -47,6 +47,21 @@ test('planCells: even marginals, distinct pairs, generators spread within domain
   assert.deepEqual(planCells(10, domains, archetypes, gens, 7), cells.slice(0, 10));
 });
 
+test('planCells: context axis is even, optional, and leaves the other axes unchanged', () => {
+  const domains = frameDomains();
+  const archetypes = frameArchetypes(codebook).map((e) => e.id);
+  const gens = ['opus', 'sonnet', 'haiku'];
+  const contexts = CONTEXTS.map((c) => c.id);
+  const cells = planCells(96, domains, archetypes, gens, 7, contexts);
+  const m = new Map<string, number>();
+  for (const c of cells) m.set(c.context!, (m.get(c.context!) ?? 0) + 1);
+  assert.equal(m.size, contexts.length);
+  assert.ok(Math.max(...m.values()) - Math.min(...m.values()) <= 1, `context counts uneven: ${[...m.values()]}`);
+  const plain = planCells(96, domains, archetypes, gens, 7);
+  assert.ok(plain.every((c) => !('context' in c)));
+  assert.deepEqual(cells.map(({ context, ...c }) => c), plain);
+});
+
 test('echoTerms flags codebook pattern names, not archetypes', () => {
   const clean = { product: 'Tidewater', summary: 'Harbor berth assignments for a small port.', user: 'A harbormaster.', moment: 'Reassigning two ships after a delay.', data: '14 berths, 9 vessels with ETAs.' };
   assert.deepEqual(echoTerms(clean, codebook), []);
@@ -71,6 +86,16 @@ test('resolveStatic stays inside the root', () => {
   assert.equal(resolveStatic(root, '/a/'), path.join(root, 'a', 'index.html'));
   assert.equal(resolveStatic(root, '/../../etc/passwd'), undefined);
   assert.equal(resolveStatic(root, '/%2e%2e/%2e%2e/etc/passwd'), undefined);
+  // Links are followed only while they stay inside the root: a build could link to a host file.
+  const secret = path.join(fs.mkdtempSync(path.join(os.tmpdir(), 'host-')), 'id_rsa');
+  fs.writeFileSync(secret, 'private');
+  fs.symlinkSync(secret, path.join(root, 'key.txt'));
+  fs.symlinkSync(path.dirname(secret), path.join(root, 'hostdir'));
+  fs.symlinkSync(path.join(root, 'a', 'index.html'), path.join(root, 'alias.html'));
+  assert.equal(resolveStatic(root, '/key.txt'), undefined);
+  assert.equal(resolveStatic(root, '/hostdir/id_rsa'), undefined);
+  assert.equal(resolveStatic(root, '/alias.html'), path.join(root, 'alias.html'));
+  fs.rmSync(path.dirname(secret), { recursive: true, force: true });
   fs.rmSync(root, { recursive: true, force: true });
 });
 

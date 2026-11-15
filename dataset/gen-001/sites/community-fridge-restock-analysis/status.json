@@ -1,0 +1,23 @@
+{
+  "slug": "community-fridge-restock-analysis",
+  "url": "http://community-fridge-restock-analysis.localhost:4318/",
+  "domain": "data-visualization",
+  "source": "generated",
+  "state": "labeled",
+  "raters": {
+    "rater-1": {
+      "state": "done",
+      "updatedAt": "2026-11-14T22:05:20.314Z"
+    },
+    "rater-2": {
+      "state": "done",
+      "updatedAt": "2026-11-14T22:05:39.953Z"
+    },
+    "rater-3": {
+      "state": "done",
+      "updatedAt": "2026-11-14T22:05:51.809Z"
+    }
+  },
+  "flags": [],
+  "updatedAt": "2026-11-14T22:05:51.811Z"
+}

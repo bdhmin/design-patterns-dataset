@@ -1,0 +1,68 @@
+{
+  "batch": "gen-001",
+  "slug": "municipal-art-collection-loans",
+  "ok": true,
+  "brief": {
+    "slug": "municipal-art-collection-loans",
+    "domain": "design-creative",
+    "archetype": "browse-collections",
+    "generator": "haiku",
+    "context": "public-sector",
+    "product": "Civic Holdings Register",
+    "summary": "Collection-management software for a city's municipally owned public art, used by arts office staff to find, place and track works across city buildings.",
+    "user": "Rosalind Achebe, collections coordinator at the City of Harrow Bay's Office of Arts & Culture. She has been there 8 years and knows many works by heart, but not their current condition or exact sizes.",
+    "moment": "The new Eastvale Branch Library opens in January. Facilities has given her the wall dimensions, and she has to propose 12 works from the city's holdings by Friday's review with the library director. The south-facing reading room gets direct sun, so works on paper, textiles and photographs are ruled out there. The children's area needs works that are hung, not free-standing, with nothing fragile under 1.2 m high. The director has asked that at least half be by artists from the Eastvale area. She is narrowing roughly 1,400 works down to strong candidates. She needs to compare them on size, medium, condition and availability, then look closely at a few to confirm they fit and aren't already promised elsewhere.",
+    "data": "Collection: 1,412 works acquired 1958–2026. By medium: 498 paintings, 311 works on paper, 207 photographs, 164 sculptures, 96 textiles, 81 ceramics and 55 mixed media. Each record holds the accession number (e.g. HB.1987.042), title, artist and the artist's neighborhood, year, medium, dimensions in cm, weight in kg and light-sensitivity class (1–3). It also holds condition (Excellent/Good/Fair/Needs Treatment, last assessed date), current location (City Hall, Fire Station 4, the Ridgeline Storage vault and others), loan status and image rights. 63 works are flagged 'Eastvale artist', among them Delphine Moreau's 'Tidewater at Dusk' (1994, oil, 122×183 cm, Good) and Kofi Asante's 'Market Day' (2011, acrylic, 90×120 cm, Excellent). 14 works are on hold for the Civic Center renovation until June 2027. Eastvale wall spaces: Reading Room south wall, 6.4 m × 2.8 m; Children's Area, three walls of 3.1 m each; Entry Atrium, a 4.2 m by 5 m double-height wall."
+  },
+  "generator": {
+    "id": "haiku",
+    "model": "claude-haiku-5-5",
+    "effort": "high"
+  },
+  "prompt": "I need the front end for Civic Holdings Register. Collection-management software for a city's municipally owned public art, used by arts office staff to find, place and track works across city buildings.\n\nWho's using it: Rosalind Achebe, collections coordinator at the City of Harrow Bay's Office of Arts & Culture. She has been there 8 years and knows many works by heart, but not their current condition or exact sizes.\n\nWhat they're doing right now: The new Eastvale Branch Library opens in January. Facilities has given her the wall dimensions, and she has to propose 12 works from the city's holdings by Friday's review with the library director. The south-facing reading room gets direct sun, so works on paper, textiles and photographs are ruled out there. The children's area needs works that are hung, not free-standing, with nothing fragile under 1.2 m high. The director has asked that at least half be by artists from the Eastvale area. She is narrowing roughly 1,400 works down to strong candidates. She needs to compare them on size, medium, condition and availability, then look closely at a few to confirm they fit and aren't already promised elsewhere.\n\nWhat's in the system at this point: Collection: 1,412 works acquired 1958–2026. By medium: 498 paintings, 311 works on paper, 207 photographs, 164 sculptures, 96 textiles, 81 ceramics and 55 mixed media. Each record holds the accession number (e.g. HB.1987.042), title, artist and the artist's neighborhood, year, medium, dimensions in cm, weight in kg and light-sensitivity class (1–3). It also holds condition (Excellent/Good/Fair/Needs Treatment, last assessed date), current location (City Hall, Fire Station 4, the Ridgeline Storage vault and others), loan status and image rights. 63 works are flagged 'Eastvale artist', among them Delphine Moreau's 'Tidewater at Dusk' (1994, oil, 122×183 cm, Good) and Kofi Asante's 'Market Day' (2011, acrylic, 90×120 cm, Excellent). 14 works are on hold for the Civic Center renovation until June 2027. Eastvale wall spaces: Reading Room south wall, 6.4 m × 2.8 m; Children's Area, three walls of 3.1 m each; Entry Atrium, a 4.2 m by 5 m double-height wall.\n\nBuild it as a working web app, opened in the state that person would see at that moment. No backend: use realistic mock data (no lorem ipsum, no placeholder names), and make the interactive parts actually work client-side.\n\nUse whatever framework and tooling you like. When you're done there must be a static production build in ./out with ./out/index.html as the entry point. It will be served from the root of a plain static file server (no rewrites, no server code) and viewed in a desktop browser at 1440×900.",
+  "startedAt": "2026-11-14T04:11:47.280Z",
+  "finishedAt": "2026-11-14T04:29:37.058Z",
+  "verification": {
+    "ok": true,
+    "problems": [],
+    "pageErrors": [],
+    "consoleErrors": [],
+    "failedRequests": [],
+    "textChars": 23030,
+    "visibleElements": 1033,
+    "title": "Civic Holdings Register"
+  },
+  "repairs": 0,
+  "session": {
+    "rounds": 1,
+    "numTurns": 92,
+    "costUsd": 0.7471030200000002,
+    "durationMs": 1069598,
+    "models": [
+      "claude-haiku-5-5"
+    ],
+    "usage": {
+      "input_tokens": 92,
+      "cache_creation_input_tokens": 223138,
+      "cache_read_input_tokens": 6681174,
+      "output_tokens": 183682
+    },
+    "timedOut": false
+  },
+  "stack": {
+    "packageJson": true,
+    "dependencies": [
+      "react",
+      "react-dom"
+    ],
+    "devDependencies": [
+      "@types/react",
+      "@types/react-dom",
+      "@vitejs/plugin-react",
+      "typescript",
+      "vite"
+    ],
+    "outFiles": 3,
+    "outBytes": 872386
+  }
+}

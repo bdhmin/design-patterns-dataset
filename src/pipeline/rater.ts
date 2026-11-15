@@ -107,7 +107,7 @@ export function provenanceOf(site: SiteSpec): Label['site']['provenance'] {
     ...(ref ? { generation: ref } : {}),
     ...(g ? {
       generator: { id: g.generator?.id, model: g.generator?.model, ...(g.generator?.effort ? { effort: g.generator.effort } : {}) },
-      brief: { domain: g.brief?.domain, archetype: g.brief?.archetype, product: g.brief?.product },
+      brief: { domain: g.brief?.domain, archetype: g.brief?.archetype, ...(g.brief?.context ? { context: g.brief.context } : {}), product: g.brief?.product },
     } : {}),
   };
 }

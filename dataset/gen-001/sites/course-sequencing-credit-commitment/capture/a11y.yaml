@@ -1,0 +1,151 @@
+- banner:
+  - text: Benchcredit BIOL 3420 · Soil Microbe Discovery Fall 2026
+  - navigation "Sections":
+    - button "Submissions"
+    - button "Credit ledger"
+    - button "Course"
+  - text: Mateo Lindqvist Team Rhizo · Team lead
+- main:
+  - heading "Choose what to sequence" [level=1]
+  - paragraph: Team Rhizo · Dr. Hannah Osei, TA Wren Castillo · University Core Sequencing Facility
+  - region "Batch cutoff":
+    - text: Batch FB-2026-11B closes Fri, Nov 20 at 5:00 PM 6 days 6 hr left
+    - paragraph: Until then you can withdraw a submission and get the credits back. After the cutoff, submissions are final and the credits are spent. Results expected about Dec 7.
+  - region "Isolates":
+    - heading "Isolates" [level=2]
+    - paragraph: "9 of 14 approved by Wren Castillo. Zone of inhibition: a bigger zone means stronger activity."
+    - group "Filter isolates":
+      - button "Approved 9" [pressed]
+      - button "All 14"
+    - table:
+      - rowgroup:
+        - row "Isolate E. coli zone, mm S. aureus zone, mm DNA ng/µL · A260/280 Team notes Action":
+          - columnheader "Isolate":
+            - button "Isolate"
+          - columnheader "E. coli zone, mm":
+            - button "E. coli"
+            - text: zone, mm
+          - columnheader "S. aureus zone, mm":
+            - button "S. aureus"
+            - text: zone, mm
+          - columnheader "DNA ng/µL · A260/280":
+            - button "DNA"
+            - text: ng/µL · A260/280
+          - columnheader "Team notes"
+          - columnheader "Action"
+      - rowgroup:
+        - 'row "R-01 Arboretum creek bank · Gram − 9 mm 0 mm 41 ng/µL A260/280 1.85 Amara: Small translucent colonies, grew fine on LB at 30 °C. Weak E. coli zone and nothing on S. aureus. Submit · 45"':
+          - cell "R-01 Arboretum creek bank · Gram −":
+            - button "R-01"
+            - text: Arboretum creek bank · Gram −
+          - cell "9 mm"
+          - cell "0 mm"
+          - cell "41 ng/µL A260/280 1.85"
+          - 'cell "Amara: Small translucent colonies, grew fine on LB at 30 °C. Weak E. coli zone and nothing on S. aureus."'
+          - cell "Submit · 45":
+            - button "Submit · 45"
+        - 'row "R-02 Arboretum creek bank · Gram + 14 mm 16 mm 56 ng/µL A260/280 1.88 Priya: Fast grower with clear zones on both plates. Endospores visible at 48 h. Submit · 45"':
+          - cell "R-02 Arboretum creek bank · Gram +":
+            - button "R-02"
+            - text: Arboretum creek bank · Gram +
+          - cell "14 mm"
+          - cell "16 mm"
+          - cell "56 ng/µL A260/280 1.88"
+          - 'cell "Priya: Fast grower with clear zones on both plates. Endospores visible at 48 h."'
+          - cell "Submit · 45":
+            - button "Submit · 45"
+        - 'row "R-04 Lot C planter · Gram + 18 mm 11 mm 62 ng/µL A260/280 1.86 Mateo: Cleanest prep of the set. Good E. coli zone, moderate on S. aureus. Submit · 45"':
+          - cell "R-04 Lot C planter · Gram +":
+            - button "R-04"
+            - text: Lot C planter · Gram +
+          - cell "18 mm"
+          - cell "11 mm"
+          - cell "62 ng/µL A260/280 1.86"
+          - 'cell "Mateo: Cleanest prep of the set. Good E. coli zone, moderate on S. aureus."'
+          - cell "Submit · 45":
+            - button "Submit · 45"
+        - 'row "R-05 Greenhouse 2 compost bin · Gram + 12 mm 20 mm 48 ng/µL A260/280 1.90 Jonah: Spore-former from the compost. Strong against S. aureus. Prep was a little viscous but the ratio is fine. Submit · 45"':
+          - cell "R-05 Greenhouse 2 compost bin · Gram +":
+            - button "R-05"
+            - text: Greenhouse 2 compost bin · Gram +
+          - cell "12 mm"
+          - cell "20 mm"
+          - cell "48 ng/µL A260/280 1.90"
+          - 'cell "Jonah: Spore-former from the compost. Strong against S. aureus. Prep was a little viscous but the ratio is fine."'
+          - cell "Submit · 45":
+            - button "Submit · 45"
+        - 'row "R-07 Library lawn · Gram + 20 mm 17 mm 35 ng/µL A260/280 1.81 Priya: Close behind R-11 on E. coli (20 mm) and the DNA is solid. Submit · 45"':
+          - cell "R-07 Library lawn · Gram +":
+            - button "R-07"
+            - text: Library lawn · Gram +
+          - cell "20 mm"
+          - cell "17 mm"
+          - cell "35 ng/µL A260/280 1.81"
+          - 'cell "Priya: Close behind R-11 on E. coli (20 mm) and the DNA is solid."'
+          - cell "Submit · 45":
+            - button "Submit · 45"
+        - 'row "R-08 Library lawn · Gram − 6 mm 0 mm 52 ng/µL A260/280 1.83 Amara: Only inhibits E. coli, and weakly. The only Gram-negative from the lawn, so it adds diversity. Submit · 45"':
+          - cell "R-08 Library lawn · Gram −":
+            - button "R-08"
+            - text: Library lawn · Gram −
+          - cell "6 mm"
+          - cell "0 mm"
+          - cell "52 ng/µL A260/280 1.83"
+          - 'cell "Amara: Only inhibits E. coli, and weakly. The only Gram-negative from the lawn, so it adds diversity."'
+          - cell "Submit · 45":
+            - button "Submit · 45"
+        - 'row "R-09 Eucalyptus grove leaf litter · Gram + 16 mm 24 mm 27 ng/µL A260/280 1.82 Jonah: Chalky, filamentous colonies with an earthy smell, probably an actinomycete. Biggest S. aureus zone we have (24 mm). Submit · 45"':
+          - cell "R-09 Eucalyptus grove leaf litter · Gram +":
+            - button "R-09"
+            - text: Eucalyptus grove leaf litter · Gram +
+          - cell "16 mm"
+          - cell "24 mm"
+          - cell "27 ng/µL A260/280 1.82"
+          - 'cell "Jonah: Chalky, filamentous colonies with an earthy smell, probably an actinomycete. Biggest S. aureus zone we have (24 mm)."'
+          - cell "Submit · 45":
+            - button "Submit · 45"
+        - 'row "R-11 Low-yield warning Athletic field drainage ditch · Gram + 22 mm 15 mm 14 ng/µL Low yield A260/280 1.71 Below 1.8 Priya +1: Biggest E. coli zone of anything we have (22 mm). I think we have to sequence this one. Submit · 45"':
+          - cell "R-11 Low-yield warning Athletic field drainage ditch · Gram +":
+            - button "R-11"
+            - text: Low-yield warning Athletic field drainage ditch · Gram +
+          - cell "22 mm"
+          - cell "15 mm"
+          - cell "14 ng/µL Low yield A260/280 1.71 Below 1.8"
+          - 'cell "Priya +1: Biggest E. coli zone of anything we have (22 mm). I think we have to sequence this one."'
+          - cell "Submit · 45":
+            - button "Submit · 45"
+        - 'row "R-12 Athletic field drainage ditch · Gram − 11 mm 9 mm 44 ng/µL A260/280 1.87 Amara: Moderate zones and very clean DNA. The safe pick. Submit · 45"':
+          - cell "R-12 Athletic field drainage ditch · Gram −":
+            - button "R-12"
+            - text: Athletic field drainage ditch · Gram −
+          - cell "11 mm"
+          - cell "9 mm"
+          - cell "44 ng/µL A260/280 1.87"
+          - 'cell "Amara: Moderate zones and very clean DNA. The safe pick."'
+          - cell "Submit · 45":
+            - button "Submit · 45"
+  - complementary:
+    - region "Team credits":
+      - heading "Team credits" [level=2]
+      - text: Team Rhizo 300 credits available
+      - img "300 credits available, 0 reserved, 0 spent"
+      - text: 6 submissions × 45 = 270 30 left over
+      - term: Available
+      - definition: "300"
+      - term: Reserved
+      - definition: "0"
+      - term: Spent
+      - definition: "0"
+      - paragraph: Reserved credits come back if you withdraw. They become spent only at the cutoff.
+    - region "Submissions":
+      - heading "Submissions" [level=2]
+      - text: 0 of 6
+      - list:
+        - listitem: 1 Open slot
+        - listitem: 2 Open slot
+        - listitem: 3 Open slot
+        - listitem: 4 Open slot
+        - listitem: 5 Open slot
+        - listitem: 6 Open slot
+      - paragraph: Choose up to 6 approved isolates. Nothing is spent until the cutoff, so you can change your mind.
+- status

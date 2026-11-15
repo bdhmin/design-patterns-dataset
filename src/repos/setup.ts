@@ -39,7 +39,7 @@ import type { LocalServer } from '../pipeline/serve.ts';
 import { appUrl } from '../pipeline/steps.ts';
 import { writeJson } from '../pipeline/sites.ts';
 import { UsageLimitError } from '../pipeline/usage-limit.ts';
-import { checkMise, CONTRACT_DIR, readAppJson, startServer, stopStrays, type AppJson } from './apps.ts';
+import { checkMise, CONTRACT_DIR, readAppJson, startServer, staticDir, stopStrays, type AppJson } from './apps.ts';
 import { checkoutDir, recordDir, type ReposConfig, type RepoEntry } from './frame.ts';
 import { claudeSandboxSettings, setupEnv } from './sandbox.ts';
 
@@ -123,7 +123,7 @@ export async function verifySetup(r: RepoEntry, checkout: string, cfg: ReposConf
   const tools = mise.tools;
   if (!app || problems.length) return { v: failed(problems), app, tools };
   if (app.mode === 'static') {
-    const base = server.mount(`verify-${r.slug}`, path.join(checkout, CONTRACT_DIR, 'out'));
+    const base = server.mount(`verify-${r.slug}`, staticDir(checkout));
     try {
       return { v: await inspectUrl(browser, appUrl(base, app.entry), previewFile), app, tools };
     } finally {
