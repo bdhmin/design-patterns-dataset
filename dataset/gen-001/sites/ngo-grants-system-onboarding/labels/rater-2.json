@@ -1,0 +1,1031 @@
+{
+  "schemaVersion": "1.0.0",
+  "codebookVersion": "1.0.0",
+  "batch": "gen-001",
+  "site": {
+    "slug": "ngo-grants-system-onboarding",
+    "url": "http://ngo-grants-system-onboarding.localhost:4318/",
+    "finalUrl": "http://ngo-grants-system-onboarding.localhost:4318/",
+    "status": 200,
+    "title": "Draft RR-2026-047 · NRI-KE-2025-118 · Ledgerline",
+    "capturedAt": "2026-11-14T22:03:31.748Z",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "screenshot": {
+      "ref": "capture/screenshot.png",
+      "width": 1440,
+      "height": 4148
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.8127.18 Safari/537.36",
+    "domain": "finance",
+    "domainNote": "NGO grants management system — budget reallocation request with embedded onboarding/help for a new Grants Officer",
+    "provenance": {
+      "source": "generated",
+      "generation": "generated/gen-001/ngo-grants-system-onboarding/generation.json",
+      "generator": {
+        "id": "opus",
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      "brief": {
+        "domain": "nonprofit",
+        "archetype": "guide",
+        "context": "enterprise-internal",
+        "product": "Ledgerline"
+      }
+    }
+  },
+  "regions": [
+    {
+      "id": "header",
+      "role": "header",
+      "label": "Dark top app bar: logo, main nav, search with '/' hint, Onboarding 2 of 7 progress button, Help, user identity",
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 56
+      },
+      "patterns": [
+        "app-shell",
+        "onboarding-tour",
+        "progress-indicator"
+      ]
+    },
+    {
+      "id": "step-rail",
+      "role": "sidebar",
+      "label": "Left rail: 'This request · 1 of 5 done' progress bar + 5-step vertical stepper, grant key facts, your recent activity log",
+      "bbox": {
+        "x": 0,
+        "y": 56,
+        "width": 218,
+        "height": 1019
+      },
+      "patterns": [
+        "stepper",
+        "progress-indicator",
+        "activity-log",
+        "wizard"
+      ]
+    },
+    {
+      "id": "page-title",
+      "role": "page-header",
+      "label": "Breadcrumb, H1 'Budget reallocation request RR-2026-047', grant meta line, Draft status pill and 'Saved 10:42'",
+      "bbox": {
+        "x": 246,
+        "y": 72,
+        "width": 774,
+        "height": 84
+      },
+      "patterns": [
+        "breadcrumbs",
+        "badge"
+      ]
+    },
+    {
+      "id": "onboarding-banner",
+      "role": "banner",
+      "label": "Dismissible amber onboarding callout: 'You're on onboarding step 3 of 7'",
+      "bbox": {
+        "x": 246,
+        "y": 171,
+        "width": 774,
+        "height": 108
+      },
+      "patterns": [
+        "banner",
+        "onboarding-tour"
+      ]
+    },
+    {
+      "id": "approval-route",
+      "role": "status-tracker",
+      "label": "'Where this request goes' horizontal route of 5 stages with avatars, roles, durations, 'You are here' and deadline pill",
+      "bbox": {
+        "x": 246,
+        "y": 295,
+        "width": 774,
+        "height": 290
+      },
+      "patterns": [
+        "status-tracker",
+        "approval-flow",
+        "badge",
+        "popover"
+      ]
+    },
+    {
+      "id": "step-lines-amount",
+      "role": "form-step",
+      "label": "Step 1 card: request type note, budget-lines table with Move from/to radios and usage bars, amount field, moving-from/to impact cards, donor-approval warning",
+      "bbox": {
+        "x": 246,
+        "y": 601,
+        "width": 774,
+        "height": 1096
+      },
+      "patterns": [
+        "data-table",
+        "choice-control",
+        "text-field",
+        "card",
+        "banner",
+        "contextual-help",
+        "form",
+        "popover"
+      ]
+    },
+    {
+      "id": "step-compliance",
+      "role": "form-step",
+      "label": "Step 2 card: compliance check list with OK / Needs donor approval pills, 'What does this mean?' links, acknowledgement checkbox",
+      "bbox": {
+        "x": 246,
+        "y": 1713,
+        "width": 774,
+        "height": 713
+      },
+      "patterns": [
+        "badge",
+        "choice-control",
+        "contextual-help"
+      ]
+    },
+    {
+      "id": "step-justification",
+      "role": "form-step",
+      "label": "Step 3 card: three numbered textarea questions with hints, 0/100 character counters and example links",
+      "bbox": {
+        "x": 246,
+        "y": 2441,
+        "width": 774,
+        "height": 687
+      },
+      "patterns": [
+        "text-field",
+        "form"
+      ]
+    },
+    {
+      "id": "step-documents",
+      "role": "form-step",
+      "label": "Step 4 card: generated revised budget with Preview, required/recommended documents with From grant record / Upload",
+      "bbox": {
+        "x": 246,
+        "y": 3144,
+        "width": 774,
+        "height": 362
+      },
+      "patterns": [
+        "file-upload",
+        "badge"
+      ]
+    },
+    {
+      "id": "step-review",
+      "role": "review",
+      "label": "Step 5 card: move summary strip, 'Before you send' checklist with Go there links, optional note, disabled send button with '5 items left'",
+      "bbox": {
+        "x": 246,
+        "y": 3523,
+        "width": 774,
+        "height": 543
+      },
+      "patterns": [
+        "wizard",
+        "form",
+        "text-field"
+      ]
+    },
+    {
+      "id": "footer",
+      "role": "footer",
+      "label": "Version and audit trail note",
+      "bbox": {
+        "x": 246,
+        "y": 4082,
+        "width": 774,
+        "height": 27
+      },
+      "patterns": []
+    },
+    {
+      "id": "help-panel",
+      "role": "sidebar",
+      "label": "Right 'Help and guidance' panel: tabs Guide/Glossary 34/Articles 112/Helpdesk; dark 'three things to know' card, step guide, term chips, read-more links, helpdesk card",
+      "bbox": {
+        "x": 1048,
+        "y": 56,
+        "width": 392,
+        "height": 1019
+      },
+      "patterns": [
+        "tabs",
+        "contextual-help",
+        "badge",
+        "card"
+      ]
+    }
+  ],
+  "patterns": [
+    {
+      "id": "app-shell",
+      "status": "present",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 56
+          },
+          "quote": "Home Grants Requests Reporting calendar Documents",
+          "region": "header",
+          "note": "Dark top bar with logo, global nav (Grants active), search, onboarding, help, account"
+        }
+      ],
+      "dims": {
+        "primary": "top-navigation-bar",
+        "secondary": "contextual-panel",
+        "items": [
+          "fixed-destinations"
+        ],
+        "visibility": "always-visible",
+        "structure": "single-app"
+      }
+    },
+    {
+      "id": "wizard",
+      "status": "present",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 0,
+            "y": 56,
+            "width": 218,
+            "height": 290
+          },
+          "quote": "THIS REQUEST · 1 OF 5 DONE",
+          "region": "step-rail",
+          "note": "Five titled steps of one request, all stacked as section cards on one long page"
+        },
+        {
+          "bbox": {
+            "x": 246,
+            "y": 3523,
+            "width": 774,
+            "height": 543
+          },
+          "quote": "Before you send",
+          "region": "step-review",
+          "note": "Final review step with summary and 'Go there' links back to unfinished steps"
+        }
+      ],
+      "dims": {
+        "sequence": "fixed-linear",
+        "resume": "save-and-return",
+        "progress": "stepper-with-titles",
+        "density": "whole-sections",
+        "presentation": "full-page",
+        "review": "summary-page-with-change-links"
+      }
+    },
+    {
+      "id": "stepper",
+      "status": "present",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 18,
+            "y": 116,
+            "width": 185,
+            "height": 205
+          },
+          "quote": "Lines & amount",
+          "region": "step-rail",
+          "note": "Vertical list of numbered steps; first has check and white current highlight; clicking jumps to the section (verified live)"
+        }
+      ],
+      "dims": {
+        "rule": "free-jump",
+        "form": "vertical-list",
+        "states": [
+          "current",
+          "completed"
+        ],
+        "labels": "titles"
+      }
+    },
+    {
+      "id": "form",
+      "status": "present",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 269,
+            "y": 2560,
+            "width": 728,
+            "height": 530
+          },
+          "quote": "Why is Line 4 (Community Hygiene Training) underspent?",
+          "region": "step-justification",
+          "note": "Top-labelled questions with hints and textareas"
+        },
+        {
+          "bbox": {
+            "x": 269,
+            "y": 3870,
+            "width": 728,
+            "height": 175
+          },
+          "quote": "Send to Peter Owino for review",
+          "region": "step-review",
+          "note": "Disabled submit with '5 items left before you can send'"
+        }
+      ],
+      "dims": {
+        "labels": "top-aligned",
+        "columns": "single-column",
+        "grouping": "sections-with-headings",
+        "errors": [
+          "summary-linking-to-fields"
+        ],
+        "prefill": "smart-defaults",
+        "help": [
+          "hint-text",
+          "tooltip-help",
+          "why-we-ask",
+          "format-examples"
+        ],
+        "commit": "review-page-before-submit"
+      }
+    },
+    {
+      "id": "data-table",
+      "status": "present",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 269,
+            "y": 760,
+            "width": 728,
+            "height": 550
+          },
+          "quote": "Budget line Budget Spent Committed Available Move from Move to",
+          "region": "step-lines-amount",
+          "note": "9 budget lines with usage mini-bars, radio columns, lock chips, grant total footer row"
+        }
+      ],
+      "dims": {
+        "columnSet": "fixed",
+        "cellRendering": [
+          "plain-text",
+          "in-cell-charts",
+          "editable-input",
+          "chips-and-avatars"
+        ],
+        "density": "standard",
+        "rowExpansion": "none",
+        "selection": "single-row",
+        "opScope": [
+          "row"
+        ],
+        "aggregation": [
+          "footer-aggregates"
+        ]
+      }
+    },
+    {
+      "id": "choice-control",
+      "status": "present",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 880,
+            "y": 800,
+            "width": 117,
+            "height": 420
+          },
+          "quote": "Move from line 4",
+          "region": "step-lines-amount",
+          "note": "Radio columns pick source and target line; selected row tinted"
+        },
+        {
+          "bbox": {
+            "x": 269,
+            "y": 2341,
+            "width": 728,
+            "height": 64
+          },
+          "quote": "I understand this request needs Halvorsen’s prior written approval",
+          "region": "step-compliance",
+          "note": "Acknowledgement checkbox"
+        }
+      ],
+      "dims": {
+        "cardinality": "single-choice",
+        "form": "radio-list",
+        "timing": "immediately",
+        "largeSets": "show-all"
+      }
+    },
+    {
+      "id": "text-field",
+      "status": "present",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 269,
+            "y": 1345,
+            "width": 220,
+            "height": 44
+          },
+          "quote": "$ 85,000 USD",
+          "region": "step-lines-amount",
+          "note": "Amount field with $ prefix and USD suffix"
+        },
+        {
+          "bbox": {
+            "x": 269,
+            "y": 2588,
+            "width": 728,
+            "height": 120
+          },
+          "quote": "0 / 100 characters minimum",
+          "region": "step-justification",
+          "note": "Textarea with placeholder, hint and minimum character counter"
+        }
+      ],
+      "dims": {
+        "supporting": [
+          "label",
+          "placeholder",
+          "hint-text",
+          "character-counter",
+          "prefix-or-suffix"
+        ],
+        "style": "outlined"
+      }
+    },
+    {
+      "id": "card",
+      "status": "present",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 269,
+            "y": 1406,
+            "width": 358,
+            "height": 167
+          },
+          "quote": "MOVING FROM −$85,000",
+          "region": "step-lines-amount",
+          "note": "Outlined impact cards for source/target line with before→after values and threshold bar"
+        },
+        {
+          "bbox": {
+            "x": 1067,
+            "y": 907,
+            "width": 355,
+            "height": 144
+          },
+          "quote": "Stuck or unsure?",
+          "region": "help-panel",
+          "note": "Helpdesk card with one action"
+        }
+      ],
+      "dims": {
+        "media": "none",
+        "actions": "none",
+        "shape": "vertical",
+        "style": "outlined"
+      }
+    },
+    {
+      "id": "banner",
+      "status": "present",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 246,
+            "y": 171,
+            "width": 774,
+            "height": 108
+          },
+          "quote": "You’re on onboarding step 3 of 7: your first reallocation request.",
+          "region": "onboarding-banner",
+          "note": "Amber informational callout with dismiss X"
+        },
+        {
+          "bbox": {
+            "x": 269,
+            "y": 1589,
+            "width": 728,
+            "height": 84
+          },
+          "quote": "This move needs donor prior approval.",
+          "region": "step-lines-amount",
+          "note": "Warning callout beside the problem with 'See the compliance check' link"
+        }
+      ],
+      "dims": {
+        "scope": "page",
+        "severity": "information",
+        "dismissal": "dismissible",
+        "action": "none",
+        "placement": "top-of-content"
+      }
+    },
+    {
+      "id": "badge",
+      "status": "present",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 968,
+            "y": 101,
+            "width": 52,
+            "height": 24
+          },
+          "quote": "Draft",
+          "region": "page-title",
+          "note": "Status pill"
+        },
+        {
+          "bbox": {
+            "x": 820,
+            "y": 1822,
+            "width": 170,
+            "height": 24
+          },
+          "quote": "Needs donor approval",
+          "region": "step-compliance",
+          "note": "Per-check status pills (also OK, Required, Recommended)"
+        },
+        {
+          "bbox": {
+            "x": 1218,
+            "y": 68,
+            "width": 128,
+            "height": 18
+          },
+          "quote": "34",
+          "region": "help-panel",
+          "note": "Count badges on Glossary/Articles tabs"
+        }
+      ],
+      "dims": {
+        "meaning": "status",
+        "aggregation": "per-item"
+      }
+    },
+    {
+      "id": "breadcrumbs",
+      "status": "present",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 246,
+            "y": 72,
+            "width": 774,
+            "height": 19
+          },
+          "quote": "Grants NRI-KE-2025-118 · Turkana WASH Resilience Requests RR-2026-047",
+          "region": "page-title"
+        }
+      ],
+      "dims": {
+        "type": "location",
+        "truncation": "full-path",
+        "interaction": [
+          "click-to-go-up"
+        ],
+        "placement": "above-the-title"
+      }
+    },
+    {
+      "id": "status-tracker",
+      "status": "present",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 267,
+            "y": 386,
+            "width": 732,
+            "height": 180
+          },
+          "quote": "YOU ARE HERE",
+          "region": "approval-route",
+          "note": "Five stages connected horizontally with role, person, action and ~business-day estimates"
+        }
+      ],
+      "dims": {
+        "stages": "stages-with-estimates",
+        "detail": [
+          "stage-names",
+          "estimated-time",
+          "responsible-party"
+        ],
+        "presentation": "horizontal-progress-bar"
+      }
+    },
+    {
+      "id": "approval-flow",
+      "status": "present",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 246,
+            "y": 295,
+            "width": 774,
+            "height": 290
+          },
+          "quote": "Each person is notified only when the step before them is finished.",
+          "region": "approval-route",
+          "note": "Requester-side view of a sequential approval chain; donor added by rule"
+        },
+        {
+          "bbox": {
+            "x": 246,
+            "y": 1713,
+            "width": 774,
+            "height": 713
+          },
+          "quote": "Ledgerline checks your numbers against Halvorsen’s rules.",
+          "region": "step-compliance",
+          "note": "Policy checks travel with the request"
+        }
+      ],
+      "dims": {
+        "routing": "sequential-chain",
+        "surface": [
+          "request-summary",
+          "evidence-attachments",
+          "policy-checks"
+        ],
+        "visibility": "full-audit-trail",
+        "status": "stage-by-stage"
+      }
+    },
+    {
+      "id": "contextual-help",
+      "status": "present",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1048,
+            "y": 56,
+            "width": 392,
+            "height": 1019
+          },
+          "quote": "YOU'RE ON STEP 1 OF 5",
+          "region": "help-panel",
+          "note": "Guide panel follows the current step"
+        },
+        {
+          "bbox": {
+            "x": 856,
+            "y": 620,
+            "width": 141,
+            "height": 28
+          },
+          "quote": "Explain this step",
+          "region": "step-lines-amount",
+          "note": "Per-step help links; dotted-underline terms open glossary popovers (verified live)"
+        }
+      ],
+      "dims": {
+        "access": [
+          "help-panel-link",
+          "the-control-itself",
+          "info-icon"
+        ],
+        "content": [
+          "definitions",
+          "step-instructions",
+          "links-to-documentation"
+        ],
+        "placement": "side-panel-beside-the-task",
+        "proactivity": "always-visible-hints",
+        "relevance": "the-person-s-current-state"
+      }
+    },
+    {
+      "id": "tabs",
+      "status": "present",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1049,
+            "y": 56,
+            "width": 391,
+            "height": 43
+          },
+          "quote": "Guide Glossary 34 Articles 112 Helpdesk",
+          "region": "help-panel",
+          "note": "role=tablist; Glossary tab switches panel to searchable term list (verified live)"
+        }
+      ],
+      "dims": {
+        "placement": "top",
+        "label": [
+          "text",
+          "icon",
+          "badge-count"
+        ],
+        "origin": "fixed-by-the-designer",
+        "grouping": "flat",
+        "switchBy": [
+          "click"
+        ]
+      }
+    },
+    {
+      "id": "onboarding-tour",
+      "status": "present",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 967,
+            "y": 13,
+            "width": 184,
+            "height": 30
+          },
+          "quote": "Onboarding 2 of 7",
+          "region": "header",
+          "note": "Opens 'Your onboarding plan' checklist panel with dated steps (verified live)"
+        },
+        {
+          "bbox": {
+            "x": 246,
+            "y": 171,
+            "width": 774,
+            "height": 108
+          },
+          "quote": "You’re on onboarding step 3 of 7",
+          "region": "onboarding-banner",
+          "note": "Onboarding step done as a real supervised request"
+        }
+      ],
+      "dims": {
+        "form": "checklist-panel",
+        "progression": "spread-over-days",
+        "action": "do-the-real-action",
+        "reaccess": "resume-where-left"
+      }
+    },
+    {
+      "id": "progress-indicator",
+      "status": "present",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 18,
+            "y": 100,
+            "width": 185,
+            "height": 6
+          },
+          "quote": "THIS REQUEST · 1 OF 5 DONE",
+          "region": "step-rail",
+          "note": "Linear bar of steps completed; also circular ring in Onboarding button and 'Saved 10:42' text status"
+        }
+      ],
+      "dims": {
+        "determinacy": "steps-completed",
+        "form": "linear-bar",
+        "coverage": "a-region"
+      }
+    },
+    {
+      "id": "activity-log",
+      "status": "present",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 18,
+            "y": 598,
+            "width": 185,
+            "height": 105
+          },
+          "quote": "10:31 Started a draft budget reallocation request",
+          "region": "step-rail"
+        }
+      ],
+      "dims": {
+        "detail": "one-line-summary",
+        "subject": "the-person-s-own",
+        "aggregation": "every-event",
+        "presentation": "sidebar-in-a-detail-view",
+        "actions": "read-only"
+      }
+    },
+    {
+      "id": "file-upload",
+      "status": "present",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 269,
+            "y": 3310,
+            "width": 728,
+            "height": 180
+          },
+          "quote": "From grant record Upload",
+          "region": "step-documents",
+          "note": "Per-document browse upload or attach from existing grant record"
+        }
+      ],
+      "dims": {
+        "entry": [
+          "browse-button",
+          "cloud-import"
+        ],
+        "preview": "filename"
+      }
+    },
+    {
+      "id": "popover",
+      "status": "present",
+      "confidence": 0.65,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 425,
+            "y": 447,
+            "width": 92,
+            "height": 16
+          },
+          "quote": "Grants Manager",
+          "region": "approval-route",
+          "note": "Dotted-underline term; click opens glossary popover below it with 'Open in glossary' link; Escape closes (verified live, not visible in capture)"
+        }
+      ],
+      "dims": {
+        "openBy": "click",
+        "dismissBy": [
+          "escape"
+        ],
+        "placement": "below-the-anchor",
+        "contents": "read-only-preview",
+        "persistence": "until-dismissed"
+      }
+    },
+    {
+      "id": "chart",
+      "status": "absent",
+      "confidence": 0.6,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 269,
+            "y": 1510,
+            "width": 358,
+            "height": 35
+          },
+          "note": "Threshold meter bars with 10% marker are gauges, not a chart"
+        }
+      ],
+      "dims": {}
+    },
+    {
+      "id": "menu",
+      "status": "absent",
+      "confidence": 0.65,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 967,
+            "y": 13,
+            "width": 184,
+            "height": 30
+          },
+          "note": "Onboarding dropdown opens a checklist panel, not a command menu"
+        }
+      ],
+      "dims": {}
+    },
+    {
+      "id": "suggestion-chips",
+      "status": "absent",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1069,
+            "y": 645,
+            "width": 280,
+            "height": 60
+          },
+          "note": "Term chips are glossary links, not AI prompt chips"
+        }
+      ],
+      "dims": {}
+    }
+  ],
+  "structure": {
+    "layout": "three-column app layout: dark top app bar; left step rail (request steps, grant facts, recent activity); centre column of stacked numbered step cards forming a one-page wizard; right tabbed help/guide panel",
+    "regions": [
+      "header",
+      "step-rail",
+      "page-title",
+      "onboarding-banner",
+      "approval-route",
+      "step-lines-amount",
+      "step-compliance",
+      "step-justification",
+      "step-documents",
+      "step-review",
+      "footer",
+      "help-panel"
+    ],
+    "density": "dense"
+  },
+  "aesthetics": {
+    "palette": [
+      "#f4f3ee",
+      "#ffffff",
+      "#14232b",
+      "#16212a",
+      "#44515d",
+      "#737e89",
+      "#0e5a4f",
+      "#e5f0ec",
+      "#96560a",
+      "#fff8e8",
+      "#eceae3"
+    ],
+    "colorRoles": {
+      "background": "#f4f3ee",
+      "surface": "#ffffff",
+      "text": "#16212a",
+      "muted": "#737e89",
+      "primary": "#0e5a4f",
+      "accent": "#96560a",
+      "border": "#eceae3",
+      "header": "#14232b",
+      "warning-surface": "#fff8e8",
+      "primary-tint": "#e5f0ec",
+      "body": "#44515d"
+    },
+    "typography": "Inter throughout: 22px/700 H1, 17px/700 step headings, 14px body, 13px secondary/table text, 11–12px uppercase letter-spaced eyebrow labels (THIS GRANT, WATCH FOR, AMOUNT TO MOVE); tabular numerals in budget table",
+    "typeScale": "Compact, low-contrast scale (11–22px) with hierarchy from weight (700 headings, 550 buttons/chips) and uppercase tracked eyebrows rather than size",
+    "shape": "soft",
+    "elevation": "subtle-shadows",
+    "borders": "thin",
+    "imagery": [
+      "iconography",
+      "data-visualization"
+    ],
+    "iconStyle": "line",
+    "whitespace": "moderate",
+    "backgroundTreatment": "solid",
+    "mood": [
+      "calm",
+      "trustworthy",
+      "instructional",
+      "institutional",
+      "warm-neutral"
+    ]
+  },
+  "model": {
+    "rater": "rater-2",
+    "provider": "claude-code",
+    "name": "claude-opus-5-5",
+    "effort": "high",
+    "generatedAt": "2026-11-14T22:06:20.125Z",
+    "servedBy": [
+      "claude-opus-5-5"
+    ],
+    "turns": 16,
+    "usage": {
+      "input_tokens": 32,
+      "cache_creation_input_tokens": 75459,
+      "cache_read_input_tokens": 880896,
+      "output_tokens": 12870
+    }
+  },
+  "notes": "A one-page five-step request wizard wrapped in heavy onboarding: dotted-underline terms throughout open glossary popovers with an 'In this request' note; every step has 'Explain this step'; the right Guide panel follows the active step and includes a dark navy 'Three things to know' summary card. Warm off-white page (#f4f3ee) with white rounded cards, deep teal-green primary (#0e5a4f) and amber/ochre for approval warnings; terracotta for money leaving a line vs green for money arriving. Budget table uses tiny usage bars per row, tinted source/target rows with coloured left border, dashed lock chips. Impact cards show before→after values with a gauge marking the donor's 10% threshold. The review step lists blockers with 'Go there' links and the send button stays disabled with a count of items left. Onboarding progress ring in the top bar opens a dated 7-step onboarding plan."
+}

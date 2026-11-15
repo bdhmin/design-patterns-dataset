@@ -1,0 +1,1860 @@
+- banner:
+  - strong: Civic Holdings Register
+  - text: City of Harrow Bay · Office of Arts & Culture
+  - navigation "Main":
+    - button "Eastvale Branch Library 7/12"
+    - button "Collection register 1,412"
+  - strong: Rosalind Achebe
+  - text: Collections Coordinator
+- complementary "Project brief":
+  - paragraph: Project
+  - heading "Eastvale Branch Library" [level=2]
+  - paragraph: Opens January 2027. Twelve works from city holdings for the reading room, the children’s area and the entry atrium.
+  - text: Director’s review
+  - strong: Fri, Nov 20, 2026
+  - text: 6 days
+  - heading "Director’s requirements" [level=3]
+  - text: Works proposed
+  - strong: 7 of 12
+  - text: 5 slots open By Eastvale-area artists
+  - strong: 4 of 6 minimum
+  - text: 2 more needed
+  - heading "Spaces" [level=3]
+  - strong: Reading Room
+  - text: RR South wall, 6.4 m × 2.8 m
+  - list:
+    - listitem: "South-facing, direct sun: no works on paper, textiles or photographs"
+  - strong: "697"
+  - text: available here
+  - strong: "2"
+  - text: proposed
+  - strong: Children's Area
+  - text: CA Three walls, 3.1 m each
+  - list:
+    - listitem: Hung works only; nothing free-standing
+    - listitem: Fragile works must be at least 1.2 m tall
+    - listitem: Wall height not yet supplied by Facilities
+  - strong: 1,009
+  - text: available here (1,009 with warnings)
+  - strong: "3"
+  - text: proposed
+  - strong: Entry Atrium
+  - text: EA Double-height wall, 4.2 m × 5.0 m
+  - list:
+    - listitem: No medium restriction; size and hanging clearance only
+  - strong: 1,232
+  - text: available here
+  - strong: "2"
+  - text: proposed
+  - heading "Register" [level=3]
+  - term: In the register
+  - definition: 1,412
+  - term: Available for display
+  - definition: 1,232
+  - paragraph: Excludes works on hold for the Civic Center renovation, works committed elsewhere past Dec 21, 2026, and works needing treatment.
+  - term: Eastvale-area artists among them
+  - definition: "54"
+- main "Candidate works":
+  - heading "Candidates" [level=2]
+  - paragraph: 886 works match and are available for at least one space. 15 shortlisted.
+  - text: RR Reading Room CA Children’s Area EA Entry Atrium eligible with warnings not eligible
+  - searchbox "Search candidates"
+  - combobox "Space":
+    - option "Any space" [selected]
+    - option "Reading Room"
+    - option "Children's Area"
+    - option "Entry Atrium"
+  - combobox "Medium":
+    - option "All media" [selected]
+    - option "Painting"
+    - option "Work on paper"
+    - option "Photograph"
+    - option "Sculpture"
+    - option "Textile"
+    - option "Ceramic"
+    - option "Mixed media"
+  - combobox "Condition":
+    - option "Good or better" [selected]
+    - option "Any condition"
+  - combobox "Sort":
+    - 'option "Sort: Eastvale artists first" [selected]'
+    - 'option "Sort: Condition, best first"'
+    - 'option "Sort: Artist"'
+    - 'option "Sort: Title"'
+    - 'option "Sort: Size, largest first"'
+    - 'option "Sort: Light class"'
+    - 'option "Sort: Accession number"'
+  - checkbox "Eastvale artists"
+  - text: Eastvale artists
+  - checkbox "Shortlisted"
+  - text: Shortlisted
+  - table:
+    - rowgroup:
+      - row "Shortlist Work Artist Size (cm) Condition Light Spaces Action":
+        - columnheader "Shortlist"
+        - columnheader "Work"
+        - columnheader "Artist"
+        - columnheader "Size (cm)"
+        - columnheader "Condition"
+        - columnheader "Light"
+        - columnheader "Spaces"
+        - columnheader "Action"
+    - rowgroup:
+      - row "Add Boatyard No. 21 to shortlist Boatyard No. 21 HB.2002.042 · 1961 · Photograph Teodor Kowal Eastvale 22 × 27 Excellent checked Apr 6, 2025 1 RR EA CA Propose":
+        - cell "Add Boatyard No. 21 to shortlist":
+          - button "Add Boatyard No. 21 to shortlist": ☆
+        - cell "Boatyard No. 21 HB.2002.042 · 1961 · Photograph"
+        - cell "Teodor Kowal Eastvale"
+        - cell "22 × 27"
+        - cell "Excellent checked Apr 6, 2025"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Cloth Mill to shortlist Cloth Mill HB.2013.133 · 1976 · Work on paper Connor Dougherty Eastvale 45 × 40 Excellent checked Nov 9, 2021 1 RR EA CA Propose":
+        - cell "Add Cloth Mill to shortlist":
+          - button "Add Cloth Mill to shortlist": ☆
+        - cell "Cloth Mill HB.2013.133 · 1976 · Work on paper"
+        - cell "Connor Dougherty Eastvale"
+        - cell "45 × 40"
+        - cell "Excellent checked Nov 9, 2021"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Grain Silo to shortlist Grain Silo HB.1990.158 · 1973 · Work on paper Connor Dougherty Eastvale 102 × 90 Excellent checked Aug 23, 2025 1 RR EA CA Propose":
+        - cell "Add Grain Silo to shortlist":
+          - button "Add Grain Silo to shortlist": ☆
+        - cell "Grain Silo HB.1990.158 · 1973 · Work on paper"
+        - cell "Connor Dougherty Eastvale"
+        - cell "102 × 90"
+        - cell "Excellent checked Aug 23, 2025"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Grain Silo to shortlist Grain Silo HB.2006.164 · 1964 · Work on paper Teodor Kowal Eastvale 74 × 63 Excellent checked Jun 21, 2024 1 RR EA CA Propose":
+        - cell "Add Grain Silo to shortlist":
+          - button "Add Grain Silo to shortlist": ☆
+        - cell "Grain Silo HB.2006.164 · 1964 · Work on paper"
+        - cell "Teodor Kowal Eastvale"
+        - cell "74 × 63"
+        - cell "Excellent checked Jun 21, 2024"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Remove Market Day from shortlist Market Day HB.2011.088 · 2011 · Painting Kofi Asante Eastvale 90 × 120 Excellent checked Apr 8, 2026 3 RR EA CA Slot 3":
+        - cell "Remove Market Day from shortlist":
+          - button "Remove Market Day from shortlist" [pressed]: ★
+        - cell "Market Day HB.2011.088 · 2011 · Painting"
+        - cell "Kofi Asante Eastvale"
+        - cell "90 × 120"
+        - cell "Excellent checked Apr 8, 2026"
+        - cell "3"
+        - cell "RR EA CA"
+        - cell "Slot 3"
+      - row "Add Market Stall to shortlist Market Stall HB.2005.142 · 1986 · Work on paper Connor Dougherty Eastvale 43 × 59 Excellent checked Dec 4, 2025 1 RR EA CA Propose":
+        - cell "Add Market Stall to shortlist":
+          - button "Add Market Stall to shortlist": ☆
+        - cell "Market Stall HB.2005.142 · 1986 · Work on paper"
+        - cell "Connor Dougherty Eastvale"
+        - cell "43 × 59"
+        - cell "Excellent checked Dec 4, 2025"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Orchard Gate to shortlist Orchard Gate HB.1961.110 · 1929 · Work on paper Priya Raman Eastvale 46 × 62 Excellent checked Dec 19, 2021 1 RR EA CA Propose":
+        - cell "Add Orchard Gate to shortlist":
+          - button "Add Orchard Gate to shortlist": ☆
+        - cell "Orchard Gate HB.1961.110 · 1929 · Work on paper"
+        - cell "Priya Raman Eastvale"
+        - cell "46 × 62"
+        - cell "Excellent checked Dec 19, 2021"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Orchard Gate to shortlist Orchard Gate HB.1991.064 · 1961 · Painting Priya Raman Eastvale 100 × 99 Excellent checked Aug 18, 2024 2 RR EA CA Propose":
+        - cell "Add Orchard Gate to shortlist":
+          - button "Add Orchard Gate to shortlist": ☆
+        - cell "Orchard Gate HB.1991.064 · 1961 · Painting"
+        - cell "Priya Raman Eastvale"
+        - cell "100 × 99"
+        - cell "Excellent checked Aug 18, 2024"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Quiet Glaze Vase to shortlist Quiet Glaze Vase HB.2016.079 · 1991 · Ceramic Kofi Asante Eastvale 18 × 18 × 18 Excellent checked Jan 2, 2026 3 RR EA CA Propose":
+        - cell "Add Quiet Glaze Vase to shortlist":
+          - button "Add Quiet Glaze Vase to shortlist": ☆
+        - cell "Quiet Glaze Vase HB.2016.079 · 1991 · Ceramic"
+        - cell "Kofi Asante Eastvale"
+        - cell "18 × 18 × 18"
+        - cell "Excellent checked Jan 2, 2026"
+        - cell "3"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Tram Line No. 7 to shortlist Tram Line No. 7 HB.1992.139 · 1964 · Photograph Ruth Lindqvist Eastvale 55 × 53 Excellent checked Aug 30, 2024 1 RR EA CA Propose":
+        - cell "Add Tram Line No. 7 to shortlist":
+          - button "Add Tram Line No. 7 to shortlist": ☆
+        - cell "Tram Line No. 7 HB.1992.139 · 1964 · Photograph"
+        - cell "Ruth Lindqvist Eastvale"
+        - cell "55 × 53"
+        - cell "Excellent checked Aug 30, 2024"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Water Tower No. 24 to shortlist Water Tower No. 24 HB.1972.079 · 1948 · Photograph Priya Raman Eastvale 45 × 61 Excellent checked Aug 4, 2024 1 RR EA CA Propose":
+        - cell "Add Water Tower No. 24 to shortlist":
+          - button "Add Water Tower No. 24 to shortlist": ☆
+        - cell "Water Tower No. 24 HB.1972.079 · 1948 · Photograph"
+        - cell "Priya Raman Eastvale"
+        - cell "45 × 61"
+        - cell "Excellent checked Aug 4, 2024"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Remove Arc, Hillside from shortlist Arc, Hillside HB.1966.150 · 1941 · Sculpture Teodor Kowal Eastvale 76 × 89 × 6 Good checked Feb 24, 2026 3 RR EA CA Propose":
+        - cell "Remove Arc, Hillside from shortlist":
+          - button "Remove Arc, Hillside from shortlist" [pressed]: ★
+        - cell "Arc, Hillside HB.1966.150 · 1941 · Sculpture"
+        - cell "Teodor Kowal Eastvale"
+        - cell "76 × 89 × 6"
+        - cell "Good checked Feb 24, 2026"
+        - cell "3"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Arc, Rail Yard to shortlist Arc, Rail Yard HB.2026.107 · 2012 · Sculpture Ruth Lindqvist Eastvale 93 × 48 × 39 Good checked Apr 7, 2025 3 RR EA CA Propose":
+        - cell "Add Arc, Rail Yard to shortlist":
+          - button "Add Arc, Rail Yard to shortlist": ☆
+        - cell "Arc, Rail Yard HB.2026.107 · 2012 · Sculpture"
+        - cell "Ruth Lindqvist Eastvale"
+        - cell "93 × 48 × 39"
+        - cell "Good checked Apr 7, 2025"
+        - cell "3"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Boatyard No. 24 to shortlist Boatyard No. 24 HB.2018.133 · 1982 · Photograph Nadia Solberg Eastvale 35 × 43 Good checked Jul 30, 2023 1 RR EA CA Propose":
+        - cell "Add Boatyard No. 24 to shortlist":
+          - button "Add Boatyard No. 24 to shortlist": ☆
+        - cell "Boatyard No. 24 HB.2018.133 · 1982 · Photograph"
+        - cell "Nadia Solberg Eastvale"
+        - cell "35 × 43"
+        - cell "Good checked Jul 30, 2023"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Cannery to shortlist Cannery HB.2026.023 · 1982 · Painting Teodor Kowal Eastvale 111 × 79 Good checked Apr 6, 2026 2 RR EA CA Propose":
+        - cell "Add Cannery to shortlist":
+          - button "Add Cannery to shortlist": ☆
+        - cell "Cannery HB.2026.023 · 1982 · Painting"
+        - cell "Teodor Kowal Eastvale"
+        - cell "111 × 79"
+        - cell "Good checked Apr 6, 2026"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Ferry Slip No. 23 to shortlist Ferry Slip No. 23 HB.1988.050 · 1970 · Photograph Connor Dougherty Eastvale 85 × 73 Good checked Jul 1, 2023 1 RR EA CA Propose":
+        - cell "Add Ferry Slip No. 23 to shortlist":
+          - button "Add Ferry Slip No. 23 to shortlist": ☆
+        - cell "Ferry Slip No. 23 HB.1988.050 · 1970 · Photograph"
+        - cell "Connor Dougherty Eastvale"
+        - cell "85 × 73"
+        - cell "Good checked Jul 1, 2023"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Remove Ferry Slip No. 4 from shortlist Ferry Slip No. 4 HB.1965.112 · 1952 · Painting Owen Pryce Eastvale 64 × 60 Good checked Mar 15, 2025 2 RR EA CA Propose":
+        - cell "Remove Ferry Slip No. 4 from shortlist":
+          - button "Remove Ferry Slip No. 4 from shortlist" [pressed]: ★
+        - cell "Ferry Slip No. 4 HB.1965.112 · 1952 · Painting"
+        - cell "Owen Pryce Eastvale"
+        - cell "64 × 60"
+        - cell "Good checked Mar 15, 2025"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Foundry in October to shortlist Foundry in October HB.2013.010 · 1998 · Work on paper Kofi Asante Eastvale 87 × 73 Good checked May 6, 2016 1 RR EA CA Propose":
+        - cell "Add Foundry in October to shortlist":
+          - button "Add Foundry in October to shortlist": ☆
+        - cell "Foundry in October HB.2013.010 · 1998 · Work on paper"
+        - cell "Kofi Asante Eastvale"
+        - cell "87 × 73"
+        - cell "Good checked May 6, 2016"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Foundry No. 6 to shortlist Foundry No. 6 HB.2002.166 · 1988 · Work on paper Teodor Kowal Eastvale 96 × 100 Good checked Jan 3, 2024 1 RR EA CA Propose":
+        - cell "Add Foundry No. 6 to shortlist":
+          - button "Add Foundry No. 6 to shortlist": ☆
+        - cell "Foundry No. 6 HB.2002.166 · 1988 · Work on paper"
+        - cell "Teodor Kowal Eastvale"
+        - cell "96 × 100"
+        - cell "Good checked Jan 3, 2024"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Grain Silo to shortlist Grain Silo HB.1989.095 · 1983 · Work on paper Teodor Kowal Eastvale 101 × 100 Good checked Jun 3, 2023 1 RR EA CA Propose":
+        - cell "Add Grain Silo to shortlist":
+          - button "Add Grain Silo to shortlist": ☆
+        - cell "Grain Silo HB.1989.095 · 1983 · Work on paper"
+        - cell "Teodor Kowal Eastvale"
+        - cell "101 × 100"
+        - cell "Good checked Jun 3, 2023"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Remove Grain Silo from shortlist Grain Silo HB.1991.115 · 1955 · Painting Owen Pryce Eastvale 166 × 240 Good checked Nov 5, 2025 2 RR EA CA Slot 2":
+        - cell "Remove Grain Silo from shortlist":
+          - button "Remove Grain Silo from shortlist" [pressed]: ★
+        - cell "Grain Silo HB.1991.115 · 1955 · Painting"
+        - cell "Owen Pryce Eastvale"
+        - cell "166 × 240"
+        - cell "Good checked Nov 5, 2025"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Slot 2"
+      - row "Add Granary at First Frost to shortlist Granary at First Frost HB.2013.117 · 1984 · Painting Elena Marchetti Eastvale 34 × 41 Good checked Oct 13, 2017 2 RR EA CA Propose":
+        - cell "Add Granary at First Frost to shortlist":
+          - button "Add Granary at First Frost to shortlist": ☆
+        - cell "Granary at First Frost HB.2013.117 · 1984 · Painting"
+        - cell "Elena Marchetti Eastvale"
+        - cell "34 × 41"
+        - cell "Good checked Oct 13, 2017"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Grey Pier Shed to shortlist Grey Pier Shed HB.2024.043 · 2008 · Work on paper Samuel Adeyemi Eastvale 105 × 67 Good checked Aug 24, 2025 1 RR EA CA Propose":
+        - cell "Add Grey Pier Shed to shortlist":
+          - button "Add Grey Pier Shed to shortlist": ☆
+        - cell "Grey Pier Shed HB.2024.043 · 2008 · Work on paper"
+        - cell "Samuel Adeyemi Eastvale"
+        - cell "105 × 67"
+        - cell "Good checked Aug 24, 2025"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Harbor in March to shortlist Harbor in March HB.1997.019 · 1968 · Work on paper Nadia Solberg Eastvale 109 × 100 Good checked Jun 11, 2023 1 RR EA CA Propose":
+        - cell "Add Harbor in March to shortlist":
+          - button "Add Harbor in March to shortlist": ☆
+        - cell "Harbor in March HB.1997.019 · 1968 · Work on paper"
+        - cell "Nadia Solberg Eastvale"
+        - cell "109 × 100"
+        - cell "Good checked Jun 11, 2023"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Harbor No. 19 to shortlist Harbor No. 19 HB.2004.086 · 1968 · Photograph Priya Raman Eastvale 100 × 98 Good checked Dec 10, 2019 1 RR EA CA Propose":
+        - cell "Add Harbor No. 19 to shortlist":
+          - button "Add Harbor No. 19 to shortlist": ☆
+        - cell "Harbor No. 19 HB.2004.086 · 1968 · Photograph"
+        - cell "Priya Raman Eastvale"
+        - cell "100 × 98"
+        - cell "Good checked Dec 10, 2019"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Remove Hillside from shortlist Hillside HB.2007.029 · 1986 · Painting Teodor Kowal Eastvale 45 × 63 Good checked May 4, 2024 3 RR EA CA Propose":
+        - cell "Remove Hillside from shortlist":
+          - button "Remove Hillside from shortlist" [pressed]: ★
+        - cell "Hillside HB.2007.029 · 1986 · Painting"
+        - cell "Teodor Kowal Eastvale"
+        - cell "45 × 63"
+        - cell "Good checked May 4, 2024"
+        - cell "3"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Ice House to shortlist Ice House HB.2022.115 · 2017 · Painting Kofi Asante Eastvale 57 × 90 Good checked Oct 13, 2026 2 RR EA CA Propose":
+        - cell "Add Ice House to shortlist":
+          - button "Add Ice House to shortlist": ☆
+        - cell "Ice House HB.2022.115 · 2017 · Painting"
+        - cell "Kofi Asante Eastvale"
+        - cell "57 × 90"
+        - cell "Good checked Oct 13, 2026"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Remove Meadow from shortlist Meadow HB.1997.068 · 1974 · Painting Priya Raman Eastvale 122 × 172 Good checked May 19, 2023 2 RR EA CA Propose":
+        - cell "Remove Meadow from shortlist":
+          - button "Remove Meadow from shortlist" [pressed]: ★
+        - cell "Meadow HB.1997.068 · 1974 · Painting"
+        - cell "Priya Raman Eastvale"
+        - cell "122 × 172"
+        - cell "Good checked May 19, 2023"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Remove Meadow at High Water from shortlist Meadow at High Water HB.2004.062 · 1997 · Painting Ruth Lindqvist Eastvale 143 × 135 Good checked Dec 7, 2024 2 RR EA CA Slot 5":
+        - cell "Remove Meadow at High Water from shortlist":
+          - button "Remove Meadow at High Water from shortlist" [pressed]: ★
+        - cell "Meadow at High Water HB.2004.062 · 1997 · Painting"
+        - cell "Ruth Lindqvist Eastvale"
+        - cell "143 × 135"
+        - cell "Good checked Dec 7, 2024"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Slot 5"
+      - row "Add Orchard Gate at Low Tide to shortlist Orchard Gate at Low Tide HB.2000.110 · 1977 · Work on paper Teodor Kowal Eastvale 33 × 42 Good checked Sep 30, 2025 1 RR EA CA Propose":
+        - cell "Add Orchard Gate at Low Tide to shortlist":
+          - button "Add Orchard Gate at Low Tide to shortlist": ☆
+        - cell "Orchard Gate at Low Tide HB.2000.110 · 1977 · Work on paper"
+        - cell "Teodor Kowal Eastvale"
+        - cell "33 × 42"
+        - cell "Good checked Sep 30, 2025"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Rail Yard in October to shortlist Rail Yard in October HB.2000.088 · 1972 · Work on paper Connor Dougherty Eastvale 37 × 35 Good checked Mar 3, 2023 1 RR EA CA Propose":
+        - cell "Add Rail Yard in October to shortlist":
+          - button "Add Rail Yard in October to shortlist": ☆
+        - cell "Rail Yard in October HB.2000.088 · 1972 · Work on paper"
+        - cell "Connor Dougherty Eastvale"
+        - cell "37 × 35"
+        - cell "Good checked Mar 3, 2023"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Rust Glaze Jar to shortlist Rust Glaze Jar HB.2008.039 · 1990 · Ceramic Ruth Lindqvist Eastvale 39 × 37 × 37 Good checked Dec 22, 2023 3 RR EA CA Propose":
+        - cell "Add Rust Glaze Jar to shortlist":
+          - button "Add Rust Glaze Jar to shortlist": ☆
+        - cell "Rust Glaze Jar HB.2008.039 · 1990 · Ceramic"
+        - cell "Ruth Lindqvist Eastvale"
+        - cell "39 × 37 × 37"
+        - cell "Good checked Dec 22, 2023"
+        - cell "3"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Seated Figure, Tram Line to shortlist Seated Figure, Tram Line HB.2025.080 · 2011 · Sculpture Lucia Ferraro Eastvale 208 × 162 × 140 Good checked Dec 28, 2025 3 RR EA CA Propose":
+        - cell "Add Seated Figure, Tram Line to shortlist":
+          - button "Add Seated Figure, Tram Line to shortlist": ☆
+        - cell "Seated Figure, Tram Line HB.2025.080 · 2011 · Sculpture"
+        - cell "Lucia Ferraro Eastvale"
+        - cell "208 × 162 × 140"
+        - cell "Good checked Dec 28, 2025"
+        - cell "3"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Remove Stairwell in January from shortlist Stairwell in January HB.2016.048 · 1997 · Painting Kofi Asante Eastvale 143 × 219 Good checked Nov 19, 2025 2 RR EA CA Propose":
+        - cell "Remove Stairwell in January from shortlist":
+          - button "Remove Stairwell in January from shortlist" [pressed]: ★
+        - cell "Stairwell in January HB.2016.048 · 1997 · Painting"
+        - cell "Kofi Asante Eastvale"
+        - cell "143 × 219"
+        - cell "Good checked Nov 19, 2025"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Standing Form, Stairwell to shortlist Standing Form, Stairwell HB.1988.131 · 1946 · Sculpture Ruth Lindqvist Eastvale 241 × 136 × 130 Good checked Apr 4, 2023 3 RR EA CA Propose":
+        - cell "Add Standing Form, Stairwell to shortlist":
+          - button "Add Standing Form, Stairwell to shortlist": ☆
+        - cell "Standing Form, Stairwell HB.1988.131 · 1946 · Sculpture"
+        - cell "Ruth Lindqvist Eastvale"
+        - cell "241 × 136 × 130"
+        - cell "Good checked Apr 4, 2023"
+        - cell "3"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Threshold No. 2 to shortlist Threshold No. 2 HB.1997.133 · 1966 · Sculpture Elena Marchetti Eastvale 159 × 58 × 63 Good checked Dec 15, 2025 3 RR EA CA Propose":
+        - cell "Add Threshold No. 2 to shortlist":
+          - button "Add Threshold No. 2 to shortlist": ☆
+        - cell "Threshold No. 2 HB.1997.133 · 1966 · Sculpture"
+        - cell "Elena Marchetti Eastvale"
+        - cell "159 × 58 × 63"
+        - cell "Good checked Dec 15, 2025"
+        - cell "3"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Threshold No. 7 to shortlist Threshold No. 7 HB.2011.090 · 2008 · Sculpture Teodor Kowal Eastvale 257 × 180 × 140 Good checked Jul 6, 2026 3 RR EA CA Propose":
+        - cell "Add Threshold No. 7 to shortlist":
+          - button "Add Threshold No. 7 to shortlist": ☆
+        - cell "Threshold No. 7 HB.2011.090 · 2008 · Sculpture"
+        - cell "Teodor Kowal Eastvale"
+        - cell "257 × 180 × 140"
+        - cell "Good checked Jul 6, 2026"
+        - cell "3"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Remove Tidewater at Dusk from shortlist Tidewater at Dusk HB.1994.017 · 1994 · Painting Delphine Moreau Eastvale 122 × 183 Good checked Sep 12, 2025 2 RR EA CA Slot 1":
+        - cell "Remove Tidewater at Dusk from shortlist":
+          - button "Remove Tidewater at Dusk from shortlist" [pressed]: ★
+        - cell "Tidewater at Dusk HB.1994.017 · 1994 · Painting"
+        - cell "Delphine Moreau Eastvale"
+        - cell "122 × 183"
+        - cell "Good checked Sep 12, 2025"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Slot 1"
+      - row "Add Torso No. 1 to shortlist Torso No. 1 HB.2000.084 · 1984 · Sculpture Priya Raman Eastvale 217 × 78 × 32 Good checked Mar 12, 2025 3 RR EA CA Propose":
+        - cell "Add Torso No. 1 to shortlist":
+          - button "Add Torso No. 1 to shortlist": ☆
+        - cell "Torso No. 1 HB.2000.084 · 1984 · Sculpture"
+        - cell "Priya Raman Eastvale"
+        - cell "217 × 78 × 32"
+        - cell "Good checked Mar 12, 2025"
+        - cell "3"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Remove Water Tower No. 20 from shortlist Water Tower No. 20 HB.1987.042 · 1987 · Photograph Teodor Kowal Eastvale 96 × 119 Good checked Sep 30, 2024 1 RR EA CA Propose":
+        - cell "Remove Water Tower No. 20 from shortlist":
+          - button "Remove Water Tower No. 20 from shortlist" [pressed]: ★
+        - cell "Water Tower No. 20 HB.1987.042 · 1987 · Photograph"
+        - cell "Teodor Kowal Eastvale"
+        - cell "96 × 119"
+        - cell "Good checked Sep 30, 2024"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Windmill in March to shortlist Windmill in March HB.2017.081 · 2014 · Mixed media Elena Marchetti Eastvale 75 × 85 × 8 Good checked May 25, 2023 3 RR EA CA Propose":
+        - cell "Add Windmill in March to shortlist":
+          - button "Add Windmill in March to shortlist": ☆
+        - cell "Windmill in March HB.2017.081 · 2014 · Mixed media"
+        - cell "Elena Marchetti Eastvale"
+        - cell "75 × 85 × 8"
+        - cell "Good checked May 25, 2023"
+        - cell "3"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Amber Glaze Bowl to shortlist Amber Glaze Bowl HB.2021.104 · 1997 · Ceramic Lorenzo Vidal Brightwater 31 × 16 × 16 Excellent checked Jun 12, 2023 3 RR EA CA Propose":
+        - cell "Add Amber Glaze Bowl to shortlist":
+          - button "Add Amber Glaze Bowl to shortlist": ☆
+        - cell "Amber Glaze Bowl HB.2021.104 · 1997 · Ceramic"
+        - cell "Lorenzo Vidal Brightwater"
+        - cell "31 × 16 × 16"
+        - cell "Excellent checked Jun 12, 2023"
+        - cell "3"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Amber Glaze Bowl to shortlist Amber Glaze Bowl HB.2024.002 · 2012 · Ceramic Wendell Pemberton Millbrook 43 × 26 × 8 Excellent checked Apr 11, 2026 3 RR EA CA Propose":
+        - cell "Add Amber Glaze Bowl to shortlist":
+          - button "Add Amber Glaze Bowl to shortlist": ☆
+        - cell "Amber Glaze Bowl HB.2024.002 · 2012 · Ceramic"
+        - cell "Wendell Pemberton Millbrook"
+        - cell "43 × 26 × 8"
+        - cell "Excellent checked Apr 11, 2026"
+        - cell "3"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Amber Glaze Vase to shortlist Amber Glaze Vase HB.1964.012 · 1931 · Ceramic Kaveh Halvorsen Ferris Park 63 × 45 × 45 Excellent checked Jul 16, 2026 3 RR EA CA Propose":
+        - cell "Add Amber Glaze Vase to shortlist":
+          - button "Add Amber Glaze Vase to shortlist": ☆
+        - cell "Amber Glaze Vase HB.1964.012 · 1931 · Ceramic"
+        - cell "Kaveh Halvorsen Ferris Park"
+        - cell "63 × 45 × 45"
+        - cell "Excellent checked Jul 16, 2026"
+        - cell "3"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Amber Grain Silo to shortlist Amber Grain Silo HB.2017.069 · 1992 · Painting Noor Nielsen Old Harbor 154 × 111 Excellent checked Feb 3, 2024 2 RR EA CA Propose":
+        - cell "Add Amber Grain Silo to shortlist":
+          - button "Add Amber Grain Silo to shortlist": ☆
+        - cell "Amber Grain Silo HB.2017.069 · 1992 · Painting"
+        - cell "Noor Nielsen Old Harbor"
+        - cell "154 × 111"
+        - cell "Excellent checked Feb 3, 2024"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Arc, Harbor to shortlist Arc, Harbor HB.1990.044 · 1947 · Sculpture Jun Ueda Brightwater 220 × 53 × 24 Excellent checked Aug 25, 2026 3 RR EA CA Propose":
+        - cell "Add Arc, Harbor to shortlist":
+          - button "Add Arc, Harbor to shortlist": ☆
+        - cell "Arc, Harbor HB.1990.044 · 1947 · Sculpture"
+        - cell "Jun Ueda Brightwater"
+        - cell "220 × 53 × 24"
+        - cell "Excellent checked Aug 25, 2026"
+        - cell "3"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Bell Tower to shortlist Bell Tower HB.2002.021 · 1988 · Work on paper Leopold Kessler Harrow Point 91 × 100 Excellent checked Feb 3, 2024 1 RR EA CA Propose":
+        - cell "Add Bell Tower to shortlist":
+          - button "Add Bell Tower to shortlist": ☆
+        - cell "Bell Tower HB.2002.021 · 1988 · Work on paper"
+        - cell "Leopold Kessler Harrow Point"
+        - cell "91 × 100"
+        - cell "Excellent checked Feb 3, 2024"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Bell Tower at Midnight to shortlist Bell Tower at Midnight HB.1969.131 · 1929 · Painting Bianca Vidal Old Harbor 54 × 39 Excellent checked Mar 21, 2019 2 RR EA CA Propose":
+        - cell "Add Bell Tower at Midnight to shortlist":
+          - button "Add Bell Tower at Midnight to shortlist": ☆
+        - cell "Bell Tower at Midnight HB.1969.131 · 1929 · Painting"
+        - cell "Bianca Vidal Old Harbor"
+        - cell "54 × 39"
+        - cell "Excellent checked Mar 21, 2019"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Bell Tower No. 13 to shortlist Bell Tower No. 13 HB.2025.020 · 1997 · Photograph Farid Bellweather Lower Cannery 22 × 32 Excellent checked Jul 20, 2023 1 RR EA CA Propose":
+        - cell "Add Bell Tower No. 13 to shortlist":
+          - button "Add Bell Tower No. 13 to shortlist": ☆
+        - cell "Bell Tower No. 13 HB.2025.020 · 1997 · Photograph"
+        - cell "Farid Bellweather Lower Cannery"
+        - cell "22 × 32"
+        - cell "Excellent checked Jul 20, 2023"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Bell Tower No. 3 to shortlist Bell Tower No. 3 HB.2019.072 · 1984 · Painting Joaquin Moss Brightwater 109 × 84 Excellent checked Mar 22, 2024 2 RR EA CA Propose":
+        - cell "Add Bell Tower No. 3 to shortlist":
+          - button "Add Bell Tower No. 3 to shortlist": ☆
+        - cell "Bell Tower No. 3 HB.2019.072 · 1984 · Painting"
+        - cell "Joaquin Moss Brightwater"
+        - cell "109 × 84"
+        - cell "Excellent checked Mar 22, 2024"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Bell Tower No. 4 to shortlist Bell Tower No. 4 HB.2023.025 · 2021 · Work on paper Kaveh Lambert Greenhollow 21 × 27 Excellent checked Sep 15, 2023 1 RR EA CA Propose":
+        - cell "Add Bell Tower No. 4 to shortlist":
+          - button "Add Bell Tower No. 4 to shortlist": ☆
+        - cell "Bell Tower No. 4 HB.2023.025 · 2021 · Work on paper"
+        - cell "Kaveh Lambert Greenhollow"
+        - cell "21 × 27"
+        - cell "Excellent checked Sep 15, 2023"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Bell Tower No. 7 to shortlist Bell Tower No. 7 HB.2025.091 · 2016 · Painting Talia Lambert Harrow Point 38 × 31 Excellent checked Sep 3, 2023 2 RR EA CA Propose":
+        - cell "Add Bell Tower No. 7 to shortlist":
+          - button "Add Bell Tower No. 7 to shortlist": ☆
+        - cell "Bell Tower No. 7 HB.2025.091 · 2016 · Painting"
+        - cell "Talia Lambert Harrow Point"
+        - cell "38 × 31"
+        - cell "Excellent checked Sep 3, 2023"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Blue Glaze Bowl to shortlist Blue Glaze Bowl HB.2001.055 · 1990 · Ceramic Sofia Brooke Harrow Point 26 × 22 × 22 Excellent checked Sep 30, 2025 3 RR EA CA Propose":
+        - cell "Add Blue Glaze Bowl to shortlist":
+          - button "Add Blue Glaze Bowl to shortlist": ☆
+        - cell "Blue Glaze Bowl HB.2001.055 · 1990 · Ceramic"
+        - cell "Sofia Brooke Harrow Point"
+        - cell "26 × 22 × 22"
+        - cell "Excellent checked Sep 30, 2025"
+        - cell "3"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Blue Meadow to shortlist Blue Meadow HB.1980.003 · 1977 · Painting Farid Bellweather Lower Cannery 54 × 71 Excellent checked May 22, 2017 2 RR EA CA Propose":
+        - cell "Add Blue Meadow to shortlist":
+          - button "Add Blue Meadow to shortlist": ☆
+        - cell "Blue Meadow HB.1980.003 · 1977 · Painting"
+        - cell "Farid Bellweather Lower Cannery"
+        - cell "54 × 71"
+        - cell "Excellent checked May 22, 2017"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Boatyard to shortlist Boatyard HB.2019.149 · 2017 · Painting Iris Wojcik Westfield 49 × 64 Excellent checked Mar 20, 2023 2 RR EA CA Propose":
+        - cell "Add Boatyard to shortlist":
+          - button "Add Boatyard to shortlist": ☆
+        - cell "Boatyard HB.2019.149 · 2017 · Painting"
+        - cell "Iris Wojcik Westfield"
+        - cell "49 × 64"
+        - cell "Excellent checked Mar 20, 2023"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Boatyard at Late Rain to shortlist Boatyard at Late Rain HB.2026.130 · 1991 · Work on paper Fenna Nakamura Saltmarsh 101 × 75 Excellent checked Apr 27, 2026 1 RR EA CA Propose":
+        - cell "Add Boatyard at Late Rain to shortlist":
+          - button "Add Boatyard at Late Rain to shortlist": ☆
+        - cell "Boatyard at Late Rain HB.2026.130 · 1991 · Work on paper"
+        - cell "Fenna Nakamura Saltmarsh"
+        - cell "101 × 75"
+        - cell "Excellent checked Apr 27, 2026"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Boatyard at Low Tide to shortlist Boatyard at Low Tide HB.1982.116 · 1952 · Work on paper Wendell Pemberton Millbrook 80 × 100 Excellent checked Jul 25, 2026 1 RR EA CA Propose":
+        - cell "Add Boatyard at Low Tide to shortlist":
+          - button "Add Boatyard at Low Tide to shortlist": ☆
+        - cell "Boatyard at Low Tide HB.1982.116 · 1952 · Work on paper"
+        - cell "Wendell Pemberton Millbrook"
+        - cell "80 × 100"
+        - cell "Excellent checked Jul 25, 2026"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Boatyard No. 2 to shortlist Boatyard No. 2 HB.2019.008 · 2006 · Painting Bram Rosenthal Cedar Flats 131 × 169 Excellent checked Aug 14, 2025 2 RR EA CA Propose":
+        - cell "Add Boatyard No. 2 to shortlist":
+          - button "Add Boatyard No. 2 to shortlist": ☆
+        - cell "Boatyard No. 2 HB.2019.008 · 2006 · Painting"
+        - cell "Bram Rosenthal Cedar Flats"
+        - cell "131 × 169"
+        - cell "Excellent checked Aug 14, 2025"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Boatyard No. 5 to shortlist Boatyard No. 5 HB.1996.153 · 1996 · Painting Leopold Kessler Harrow Point 143 × 161 Excellent checked Jun 5, 2026 2 RR EA CA Propose":
+        - cell "Add Boatyard No. 5 to shortlist":
+          - button "Add Boatyard No. 5 to shortlist": ☆
+        - cell "Boatyard No. 5 HB.1996.153 · 1996 · Painting"
+        - cell "Leopold Kessler Harrow Point"
+        - cell "143 × 161"
+        - cell "Excellent checked Jun 5, 2026"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Bridge Piece No. 9 to shortlist Bridge Piece No. 9 HB.1991.035 · 1967 · Sculpture Nadir Ekwueme Quarry Hill 133 × 103 × 107 Excellent checked Apr 21, 2024 3 RR EA CA Propose":
+        - cell "Add Bridge Piece No. 9 to shortlist":
+          - button "Add Bridge Piece No. 9 to shortlist": ☆
+        - cell "Bridge Piece No. 9 HB.1991.035 · 1967 · Sculpture"
+        - cell "Nadir Ekwueme Quarry Hill"
+        - cell "133 × 103 × 107"
+        - cell "Excellent checked Apr 21, 2024"
+        - cell "3"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Bridge Piece, Cannery to shortlist Bridge Piece, Cannery HB.1999.143 · 1959 · Sculpture Dev Bellweather Cedar Flats 244 × 167 × 140 Excellent checked Mar 30, 2026 3 RR EA CA Propose":
+        - cell "Add Bridge Piece, Cannery to shortlist":
+          - button "Add Bridge Piece, Cannery to shortlist": ☆
+        - cell "Bridge Piece, Cannery HB.1999.143 · 1959 · Sculpture"
+        - cell "Dev Bellweather Cedar Flats"
+        - cell "244 × 167 × 140"
+        - cell "Excellent checked Mar 30, 2026"
+        - cell "3"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Remove Bridge Piece, Granary from shortlist Bridge Piece, Granary HB.1970.151 · 1962 · Sculpture Yosef Fairweather Lower Cannery 126 × 154 × 19 Excellent checked Feb 18, 2026 3 RR EA CA Propose":
+        - cell "Remove Bridge Piece, Granary from shortlist":
+          - button "Remove Bridge Piece, Granary from shortlist" [pressed]: ★
+        - cell "Bridge Piece, Granary HB.1970.151 · 1962 · Sculpture"
+        - cell "Yosef Fairweather Lower Cannery"
+        - cell "126 × 154 × 19"
+        - cell "Excellent checked Feb 18, 2026"
+        - cell "3"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Bridge Piece, Orchard Gate to shortlist Bridge Piece, Orchard Gate HB.2020.110 · 2008 · Sculpture Rhys Quintero Northgate 253 × 180 × 140 Excellent checked Oct 28, 2025 3 RR EA CA Propose":
+        - cell "Add Bridge Piece, Orchard Gate to shortlist":
+          - button "Add Bridge Piece, Orchard Gate to shortlist": ☆
+        - cell "Bridge Piece, Orchard Gate HB.2020.110 · 2008 · Sculpture"
+        - cell "Rhys Quintero Northgate"
+        - cell "253 × 180 × 140"
+        - cell "Excellent checked Oct 28, 2025"
+        - cell "3"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Cannery to shortlist Cannery HB.1982.162 · 1944 · Painting Miriam Quarles Old Harbor 190 × 240 Excellent checked Mar 1, 2026 2 RR EA CA Propose":
+        - cell "Add Cannery to shortlist":
+          - button "Add Cannery to shortlist": ☆
+        - cell "Cannery HB.1982.162 · 1944 · Painting"
+        - cell "Miriam Quarles Old Harbor"
+        - cell "190 × 240"
+        - cell "Excellent checked Mar 1, 2026"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Cannery at Dawn to shortlist Cannery at Dawn HB.1977.066 · 1947 · Painting Yosef Amato Saltmarsh 67 × 43 Excellent checked Dec 11, 2025 2 RR EA CA Propose":
+        - cell "Add Cannery at Dawn to shortlist":
+          - button "Add Cannery at Dawn to shortlist": ☆
+        - cell "Cannery at Dawn HB.1977.066 · 1947 · Painting"
+        - cell "Yosef Amato Saltmarsh"
+        - cell "67 × 43"
+        - cell "Excellent checked Dec 11, 2025"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Cannery at Dawn to shortlist Cannery at Dawn HB.2001.159 · 1957 · Work on paper Ezra Rosenthal Cedar Flats 61 × 66 Excellent checked Apr 24, 2023 1 RR EA CA Propose":
+        - cell "Add Cannery at Dawn to shortlist":
+          - button "Add Cannery at Dawn to shortlist": ☆
+        - cell "Cannery at Dawn HB.2001.159 · 1957 · Work on paper"
+        - cell "Ezra Rosenthal Cedar Flats"
+        - cell "61 × 66"
+        - cell "Excellent checked Apr 24, 2023"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Cannery at Early Spring to shortlist Cannery at Early Spring HB.2020.030 · 1999 · Painting Kaveh Lambert Greenhollow 183 × 209 Excellent checked Oct 17, 2025 2 RR EA CA Propose":
+        - cell "Add Cannery at Early Spring to shortlist":
+          - button "Add Cannery at Early Spring to shortlist": ☆
+        - cell "Cannery at Early Spring HB.2020.030 · 1999 · Painting"
+        - cell "Kaveh Lambert Greenhollow"
+        - cell "183 × 209"
+        - cell "Excellent checked Oct 17, 2025"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Cannery at Low Tide to shortlist Cannery at Low Tide HB.2018.091 · 1994 · Painting Yara Castellano Old Harbor 69 × 77 Excellent checked May 4, 2025 2 RR EA CA Propose":
+        - cell "Add Cannery at Low Tide to shortlist":
+          - button "Add Cannery at Low Tide to shortlist": ☆
+        - cell "Cannery at Low Tide HB.2018.091 · 1994 · Painting"
+        - cell "Yara Castellano Old Harbor"
+        - cell "69 × 77"
+        - cell "Excellent checked May 4, 2025"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Cannery in October to shortlist Cannery in October HB.1985.171 · 1985 · Painting Bianca Lowry Brightwater 137 × 112 Excellent checked Apr 20, 2024 3 RR EA CA Propose":
+        - cell "Add Cannery in October to shortlist":
+          - button "Add Cannery in October to shortlist": ☆
+        - cell "Cannery in October HB.1985.171 · 1985 · Painting"
+        - cell "Bianca Lowry Brightwater"
+        - cell "137 × 112"
+        - cell "Excellent checked Apr 20, 2024"
+        - cell "3"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Cannery No. 13 to shortlist Cannery No. 13 HB.2025.164 · 2019 · Photograph Callum Jurgens Northgate 118 × 150 Excellent checked Feb 22, 2023 1 RR EA CA Propose":
+        - cell "Add Cannery No. 13 to shortlist":
+          - button "Add Cannery No. 13 to shortlist": ☆
+        - cell "Cannery No. 13 HB.2025.164 · 2019 · Photograph"
+        - cell "Callum Jurgens Northgate"
+        - cell "118 × 150"
+        - cell "Excellent checked Feb 22, 2023"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Cannery No. 3 to shortlist Cannery No. 3 HB.1984.080 · 1972 · Work on paper Farid Bellweather Lower Cannery 83 × 100 Excellent checked May 9, 2023 1 RR EA CA Propose":
+        - cell "Add Cannery No. 3 to shortlist":
+          - button "Add Cannery No. 3 to shortlist": ☆
+        - cell "Cannery No. 3 HB.1984.080 · 1972 · Work on paper"
+        - cell "Farid Bellweather Lower Cannery"
+        - cell "83 × 100"
+        - cell "Excellent checked May 9, 2023"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Cannery No. 32 to shortlist Cannery No. 32 HB.2008.081 · 1975 · Photograph Rhys Quintero Northgate 120 × 89 Excellent checked Mar 29, 2024 1 RR EA CA Propose":
+        - cell "Add Cannery No. 32 to shortlist":
+          - button "Add Cannery No. 32 to shortlist": ☆
+        - cell "Cannery No. 32 HB.2008.081 · 1975 · Photograph"
+        - cell "Rhys Quintero Northgate"
+        - cell "120 × 89"
+        - cell "Excellent checked Mar 29, 2024"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Cannery No. 8 to shortlist Cannery No. 8 HB.2020.052 · 1998 · Painting Greta Brandt Saltmarsh 123 × 180 Excellent checked Jul 9, 2025 2 RR EA CA Propose":
+        - cell "Add Cannery No. 8 to shortlist":
+          - button "Add Cannery No. 8 to shortlist": ☆
+        - cell "Cannery No. 8 HB.2020.052 · 1998 · Painting"
+        - cell "Greta Brandt Saltmarsh"
+        - cell "123 × 180"
+        - cell "Excellent checked Jul 9, 2025"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Cloth Mill in March to shortlist Cloth Mill in March HB.2020.188 · 2018 · Work on paper Vivian Iyer Westfield 80 × 96 Excellent checked Mar 24, 2025 1 RR EA CA Propose":
+        - cell "Add Cloth Mill in March to shortlist":
+          - button "Add Cloth Mill in March to shortlist": ☆
+        - cell "Cloth Mill in March HB.2020.188 · 2018 · Work on paper"
+        - cell "Vivian Iyer Westfield"
+        - cell "80 × 96"
+        - cell "Excellent checked Mar 24, 2025"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Cloth Mill No. 20 to shortlist Cloth Mill No. 20 HB.2013.138 · 1984 · Photograph Silas Petrov Brightwater 49 × 60 Excellent checked Feb 11, 2023 1 RR EA CA Propose":
+        - cell "Add Cloth Mill No. 20 to shortlist":
+          - button "Add Cloth Mill No. 20 to shortlist": ☆
+        - cell "Cloth Mill No. 20 HB.2013.138 · 1984 · Photograph"
+        - cell "Silas Petrov Brightwater"
+        - cell "49 × 60"
+        - cell "Excellent checked Feb 11, 2023"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Cobalt Ferry Slip to shortlist Cobalt Ferry Slip HB.1982.099 · 1944 · Painting Nadir Varga Westfield 44 × 39 Excellent checked Aug 26, 2026 2 RR EA CA Propose":
+        - cell "Add Cobalt Ferry Slip to shortlist":
+          - button "Add Cobalt Ferry Slip to shortlist": ☆
+        - cell "Cobalt Ferry Slip HB.1982.099 · 1944 · Painting"
+        - cell "Nadir Varga Westfield"
+        - cell "44 × 39"
+        - cell "Excellent checked Aug 26, 2026"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Cobalt Footbridge to shortlist Cobalt Footbridge HB.2023.018 · 2019 · Painting Bea Castellano Westfield 182 × 155 Excellent checked Mar 5, 2025 3 RR EA CA Propose":
+        - cell "Add Cobalt Footbridge to shortlist":
+          - button "Add Cobalt Footbridge to shortlist": ☆
+        - cell "Cobalt Footbridge HB.2023.018 · 2019 · Painting"
+        - cell "Bea Castellano Westfield"
+        - cell "182 × 155"
+        - cell "Excellent checked Mar 5, 2025"
+        - cell "3"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Cobalt Glaze Jar to shortlist Cobalt Glaze Jar HB.2006.190 · 1993 · Ceramic Ezra Rosenthal Cedar Flats 55 × 42 × 42 Excellent checked Aug 7, 2023 3 RR EA CA Propose":
+        - cell "Add Cobalt Glaze Jar to shortlist":
+          - button "Add Cobalt Glaze Jar to shortlist": ☆
+        - cell "Cobalt Glaze Jar HB.2006.190 · 1993 · Ceramic"
+        - cell "Ezra Rosenthal Cedar Flats"
+        - cell "55 × 42 × 42"
+        - cell "Excellent checked Aug 7, 2023"
+        - cell "3"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Cobalt Glaze Vase to shortlist Cobalt Glaze Vase HB.2021.116 · 1977 · Ceramic Wendell Ibsen Northgate 51 × 40 × 5 Excellent checked Oct 29, 2025 3 RR EA CA Propose":
+        - cell "Add Cobalt Glaze Vase to shortlist":
+          - button "Add Cobalt Glaze Vase to shortlist": ☆
+        - cell "Cobalt Glaze Vase HB.2021.116 · 1977 · Ceramic"
+        - cell "Wendell Ibsen Northgate"
+        - cell "51 × 40 × 5"
+        - cell "Excellent checked Oct 29, 2025"
+        - cell "3"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Column No. 3 to shortlist Column No. 3 HB.2015.092 · 1971 · Sculpture Ines Varga Saltmarsh 164 × 88 × 86 Excellent checked May 2, 2026 3 RR EA CA Propose":
+        - cell "Add Column No. 3 to shortlist":
+          - button "Add Column No. 3 to shortlist": ☆
+        - cell "Column No. 3 HB.2015.092 · 1971 · Sculpture"
+        - cell "Ines Varga Saltmarsh"
+        - cell "164 × 88 × 86"
+        - cell "Excellent checked May 2, 2026"
+        - cell "3"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Column No. 3 to shortlist Column No. 3 HB.2023.112 · 2004 · Sculpture Marcus Castellano Greenhollow 134 × 160 × 14 Excellent checked Sep 26, 2025 3 RR EA CA Propose":
+        - cell "Add Column No. 3 to shortlist":
+          - button "Add Column No. 3 to shortlist": ☆
+        - cell "Column No. 3 HB.2023.112 · 2004 · Sculpture"
+        - cell "Marcus Castellano Greenhollow"
+        - cell "134 × 160 × 14"
+        - cell "Excellent checked Sep 26, 2025"
+        - cell "3"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Column, Boatyard to shortlist Column, Boatyard HB.2000.186 · 1992 · Sculpture Lorenzo Nakamura Greenhollow 44 × 20 × 15 Excellent checked May 22, 2026 3 RR EA CA Propose":
+        - cell "Add Column, Boatyard to shortlist":
+          - button "Add Column, Boatyard to shortlist": ☆
+        - cell "Column, Boatyard HB.2000.186 · 1992 · Sculpture"
+        - cell "Lorenzo Nakamura Greenhollow"
+        - cell "44 × 20 × 15"
+        - cell "Excellent checked May 22, 2026"
+        - cell "3"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Dune Grass at Dawn to shortlist Dune Grass at Dawn HB.1998.126 · 1995 · Painting Gwen Sato Millbrook 134 × 104 Excellent checked May 13, 2025 2 RR EA CA Propose":
+        - cell "Add Dune Grass at Dawn to shortlist":
+          - button "Add Dune Grass at Dawn to shortlist": ☆
+        - cell "Dune Grass at Dawn HB.1998.126 · 1995 · Painting"
+        - cell "Gwen Sato Millbrook"
+        - cell "134 × 104"
+        - cell "Excellent checked May 13, 2025"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Dune Grass at Late Rain to shortlist Dune Grass at Late Rain HB.2012.031 · 1991 · Work on paper Dominic Waite Northgate 73 × 56 Excellent checked Mar 17, 2024 1 RR EA CA Propose":
+        - cell "Add Dune Grass at Late Rain to shortlist":
+          - button "Add Dune Grass at Late Rain to shortlist": ☆
+        - cell "Dune Grass at Late Rain HB.2012.031 · 1991 · Work on paper"
+        - cell "Dominic Waite Northgate"
+        - cell "73 × 56"
+        - cell "Excellent checked Mar 17, 2024"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Dune Grass in August to shortlist Dune Grass in August HB.2021.102 · 2005 · Painting Callum Jurgens Northgate 164 × 178 Excellent checked Feb 19, 2023 2 RR EA CA Propose":
+        - cell "Add Dune Grass in August to shortlist":
+          - button "Add Dune Grass in August to shortlist": ☆
+        - cell "Dune Grass in August HB.2021.102 · 2005 · Painting"
+        - cell "Callum Jurgens Northgate"
+        - cell "164 × 178"
+        - cell "Excellent checked Feb 19, 2023"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Ferry Slip to shortlist Ferry Slip HB.1976.129 · 1948 · Painting Rafael Kovacs Brightwater 92 × 91 Excellent checked Sep 7, 2025 2 RR EA CA Propose":
+        - cell "Add Ferry Slip to shortlist":
+          - button "Add Ferry Slip to shortlist": ☆
+        - cell "Ferry Slip HB.1976.129 · 1948 · Painting"
+        - cell "Rafael Kovacs Brightwater"
+        - cell "92 × 91"
+        - cell "Excellent checked Sep 7, 2025"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Ferry Slip to shortlist Ferry Slip HB.1978.164 · 1942 · Painting Felix Vance Millbrook 185 × 240 Excellent checked Jan 29, 2026 2 RR EA CA Propose":
+        - cell "Add Ferry Slip to shortlist":
+          - button "Add Ferry Slip to shortlist": ☆
+        - cell "Ferry Slip HB.1978.164 · 1942 · Painting"
+        - cell "Felix Vance Millbrook"
+        - cell "185 × 240"
+        - cell "Excellent checked Jan 29, 2026"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Ferry Slip to shortlist Ferry Slip HB.1998.066 · 1966 · Work on paper Soren Brooke Cedar Flats 95 × 57 Excellent checked Feb 6, 2023 1 RR EA CA Propose":
+        - cell "Add Ferry Slip to shortlist":
+          - button "Add Ferry Slip to shortlist": ☆
+        - cell "Ferry Slip HB.1998.066 · 1966 · Work on paper"
+        - cell "Soren Brooke Cedar Flats"
+        - cell "95 × 57"
+        - cell "Excellent checked Feb 6, 2023"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Ferry Slip at First Frost to shortlist Ferry Slip at First Frost HB.2011.030 · 2006 · Painting Emeka Petrov Harrow Point 47 × 58 Excellent checked Aug 14, 2023 2 RR EA CA Propose":
+        - cell "Add Ferry Slip at First Frost to shortlist":
+          - button "Add Ferry Slip at First Frost to shortlist": ☆
+        - cell "Ferry Slip at First Frost HB.2011.030 · 2006 · Painting"
+        - cell "Emeka Petrov Harrow Point"
+        - cell "47 × 58"
+        - cell "Excellent checked Aug 14, 2023"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Ferry Slip at High Water to shortlist Ferry Slip at High Water HB.2020.025 · 1999 · Painting Lorenzo Nakamura Greenhollow 162 × 142 Excellent checked Oct 1, 2026 2 RR EA CA Propose":
+        - cell "Add Ferry Slip at High Water to shortlist":
+          - button "Add Ferry Slip at High Water to shortlist": ☆
+        - cell "Ferry Slip at High Water HB.2020.025 · 1999 · Painting"
+        - cell "Lorenzo Nakamura Greenhollow"
+        - cell "162 × 142"
+        - cell "Excellent checked Oct 1, 2026"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Ferry Slip No. 27 to shortlist Ferry Slip No. 27 HB.1992.014 · 1949 · Photograph Mei Ekwueme Harrow Point 19 × 15 Excellent checked Nov 6, 2017 1 RR EA CA Propose":
+        - cell "Add Ferry Slip No. 27 to shortlist":
+          - button "Add Ferry Slip No. 27 to shortlist": ☆
+        - cell "Ferry Slip No. 27 HB.1992.014 · 1949 · Photograph"
+        - cell "Mei Ekwueme Harrow Point"
+        - cell "19 × 15"
+        - cell "Excellent checked Nov 6, 2017"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Ferry Slip No. 3 to shortlist Ferry Slip No. 3 HB.1994.155 · 1990 · Work on paper Emeka Rahimi Greenhollow 87 × 100 Excellent checked Oct 23, 2024 1 RR EA CA Propose":
+        - cell "Add Ferry Slip No. 3 to shortlist":
+          - button "Add Ferry Slip No. 3 to shortlist": ☆
+        - cell "Ferry Slip No. 3 HB.1994.155 · 1990 · Work on paper"
+        - cell "Emeka Rahimi Greenhollow"
+        - cell "87 × 100"
+        - cell "Excellent checked Oct 23, 2024"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Ferry Slip No. 3 to shortlist Ferry Slip No. 3 HB.2014.097 · 1990 · Painting Tomas Vidal Saltmarsh 150 × 137 Excellent checked Nov 28, 2024 2 RR EA CA Propose":
+        - cell "Add Ferry Slip No. 3 to shortlist":
+          - button "Add Ferry Slip No. 3 to shortlist": ☆
+        - cell "Ferry Slip No. 3 HB.2014.097 · 1990 · Painting"
+        - cell "Tomas Vidal Saltmarsh"
+        - cell "150 × 137"
+        - cell "Excellent checked Nov 28, 2024"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Footbridge to shortlist Footbridge HB.2010.020 · 1985 · Mixed media Soren Brooke Cedar Flats 128 × 140 × 3 Excellent checked Feb 6, 2023 3 RR EA CA Propose":
+        - cell "Add Footbridge to shortlist":
+          - button "Add Footbridge to shortlist": ☆
+        - cell "Footbridge HB.2010.020 · 1985 · Mixed media"
+        - cell "Soren Brooke Cedar Flats"
+        - cell "128 × 140 × 3"
+        - cell "Excellent checked Feb 6, 2023"
+        - cell "3"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Footbridge No. 17 to shortlist Footbridge No. 17 HB.1998.098 · 1954 · Photograph Clara Pemberton Harrow Point 43 × 40 Excellent checked Sep 5, 2024 1 RR EA CA Propose":
+        - cell "Add Footbridge No. 17 to shortlist":
+          - button "Add Footbridge No. 17 to shortlist": ☆
+        - cell "Footbridge No. 17 HB.1998.098 · 1954 · Photograph"
+        - cell "Clara Pemberton Harrow Point"
+        - cell "43 × 40"
+        - cell "Excellent checked Sep 5, 2024"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Footbridge No. 21 to shortlist Footbridge No. 21 HB.1985.043 · 1958 · Photograph Talia Ortega Lower Cannery 94 × 123 Excellent checked Jan 6, 2024 1 RR EA CA Propose":
+        - cell "Add Footbridge No. 21 to shortlist":
+          - button "Add Footbridge No. 21 to shortlist": ☆
+        - cell "Footbridge No. 21 HB.1985.043 · 1958 · Photograph"
+        - cell "Talia Ortega Lower Cannery"
+        - cell "94 × 123"
+        - cell "Excellent checked Jan 6, 2024"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Footbridge No. 9 to shortlist Footbridge No. 9 HB.2021.112 · 2018 · Painting Fenna Nakamura Saltmarsh 182 × 240 Excellent checked Apr 27, 2024 2 RR EA CA Propose":
+        - cell "Add Footbridge No. 9 to shortlist":
+          - button "Add Footbridge No. 9 to shortlist": ☆
+        - cell "Footbridge No. 9 HB.2021.112 · 2018 · Painting"
+        - cell "Fenna Nakamura Saltmarsh"
+        - cell "182 × 240"
+        - cell "Excellent checked Apr 27, 2024"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Foundry to shortlist Foundry HB.2006.185 · 1993 · Work on paper Yusuf Quintero Cedar Flats 21 × 25 Excellent checked Mar 30, 2020 1 RR EA CA Propose":
+        - cell "Add Foundry to shortlist":
+          - button "Add Foundry to shortlist": ☆
+        - cell "Foundry HB.2006.185 · 1993 · Work on paper"
+        - cell "Yusuf Quintero Cedar Flats"
+        - cell "21 × 25"
+        - cell "Excellent checked Mar 30, 2020"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Foundry at Late Rain to shortlist Foundry at Late Rain HB.2009.040 · 1965 · Painting Bianca Lowry Brightwater 143 × 135 Excellent checked Dec 25, 2025 3 RR EA CA Propose":
+        - cell "Add Foundry at Late Rain to shortlist":
+          - button "Add Foundry at Late Rain to shortlist": ☆
+        - cell "Foundry at Late Rain HB.2009.040 · 1965 · Painting"
+        - cell "Bianca Lowry Brightwater"
+        - cell "143 × 135"
+        - cell "Excellent checked Dec 25, 2025"
+        - cell "3"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Grain Silo to shortlist Grain Silo HB.2010.014 · 2009 · Painting Wren Nakamura Brightwater 143 × 95 Excellent checked Apr 26, 2022 2 RR EA CA Propose":
+        - cell "Add Grain Silo to shortlist":
+          - button "Add Grain Silo to shortlist": ☆
+        - cell "Grain Silo HB.2010.014 · 2009 · Painting"
+        - cell "Wren Nakamura Brightwater"
+        - cell "143 × 95"
+        - cell "Excellent checked Apr 26, 2022"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Grain Silo at Dusk to shortlist Grain Silo at Dusk HB.2020.103 · 1994 · Work on paper Leopold Kessler Harrow Point 62 × 50 Excellent checked Dec 1, 2024 1 RR EA CA Propose":
+        - cell "Add Grain Silo at Dusk to shortlist":
+          - button "Add Grain Silo at Dusk to shortlist": ☆
+        - cell "Grain Silo at Dusk HB.2020.103 · 1994 · Work on paper"
+        - cell "Leopold Kessler Harrow Point"
+        - cell "62 × 50"
+        - cell "Excellent checked Dec 1, 2024"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Grain Silo at Midnight to shortlist Grain Silo at Midnight HB.1994.140 · 1958 · Painting Joaquin Nielsen Westfield 135 × 128 Excellent checked Jan 26, 2024 2 RR EA CA Propose":
+        - cell "Add Grain Silo at Midnight to shortlist":
+          - button "Add Grain Silo at Midnight to shortlist": ☆
+        - cell "Grain Silo at Midnight HB.1994.140 · 1958 · Painting"
+        - cell "Joaquin Nielsen Westfield"
+        - cell "135 × 128"
+        - cell "Excellent checked Jan 26, 2024"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Grain Silo No. 32 to shortlist Grain Silo No. 32 HB.1993.101 · 1969 · Photograph Mei Ekwueme Harrow Point 101 × 82 Excellent checked May 9, 2026 1 RR EA CA Propose":
+        - cell "Add Grain Silo No. 32 to shortlist":
+          - button "Add Grain Silo No. 32 to shortlist": ☆
+        - cell "Grain Silo No. 32 HB.1993.101 · 1969 · Photograph"
+        - cell "Mei Ekwueme Harrow Point"
+        - cell "101 × 82"
+        - cell "Excellent checked May 9, 2026"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Granary to shortlist Granary HB.1990.122 · 1964 · Work on paper Bram Rosenthal Cedar Flats 33 × 40 Excellent checked Mar 24, 2026 1 RR EA CA Propose":
+        - cell "Add Granary to shortlist":
+          - button "Add Granary to shortlist": ☆
+        - cell "Granary HB.1990.122 · 1964 · Work on paper"
+        - cell "Bram Rosenthal Cedar Flats"
+        - cell "33 × 40"
+        - cell "Excellent checked Mar 24, 2026"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Granary to shortlist Granary HB.2024.170 · 2002 · Painting Ines Varga Saltmarsh 95 × 72 Excellent checked Jul 14, 2023 2 RR EA CA Propose":
+        - cell "Add Granary to shortlist":
+          - button "Add Granary to shortlist": ☆
+        - cell "Granary HB.2024.170 · 2002 · Painting"
+        - cell "Ines Varga Saltmarsh"
+        - cell "95 × 72"
+        - cell "Excellent checked Jul 14, 2023"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Granary to shortlist Granary HB.2026.057 · 2013 · Painting Lorenzo Vidal Brightwater 116 × 122 Excellent checked Sep 25, 2024 2 RR EA CA Propose":
+        - cell "Add Granary to shortlist":
+          - button "Add Granary to shortlist": ☆
+        - cell "Granary HB.2026.057 · 2013 · Painting"
+        - cell "Lorenzo Vidal Brightwater"
+        - cell "116 × 122"
+        - cell "Excellent checked Sep 25, 2024"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Granary at Dawn to shortlist Granary at Dawn HB.1997.015 · 1961 · Work on paper Kaveh Zielinski Millbrook 77 × 96 Excellent checked Feb 13, 2026 1 RR EA CA Propose":
+        - cell "Add Granary at Dawn to shortlist":
+          - button "Add Granary at Dawn to shortlist": ☆
+        - cell "Granary at Dawn HB.1997.015 · 1961 · Work on paper"
+        - cell "Kaveh Zielinski Millbrook"
+        - cell "77 × 96"
+        - cell "Excellent checked Feb 13, 2026"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Granary at Dusk to shortlist Granary at Dusk HB.2010.169 · 1979 · Painting Callum Lowry Brightwater 172 × 240 Excellent checked Jun 26, 2017 3 RR EA CA Propose":
+        - cell "Add Granary at Dusk to shortlist":
+          - button "Add Granary at Dusk to shortlist": ☆
+        - cell "Granary at Dusk HB.2010.169 · 1979 · Painting"
+        - cell "Callum Lowry Brightwater"
+        - cell "172 × 240"
+        - cell "Excellent checked Jun 26, 2017"
+        - cell "3"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Granary in June to shortlist Granary in June HB.2023.095 · 1998 · Work on paper Ezra Falk Lower Cannery 37 × 26 Excellent checked May 4, 2026 1 RR EA CA Propose":
+        - cell "Add Granary in June to shortlist":
+          - button "Add Granary in June to shortlist": ☆
+        - cell "Granary in June HB.2023.095 · 1998 · Work on paper"
+        - cell "Ezra Falk Lower Cannery"
+        - cell "37 × 26"
+        - cell "Excellent checked May 4, 2026"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Granary in October to shortlist Granary in October HB.2024.063 · 2013 · Painting Pavel Rahimi Old Harbor 44 × 59 Excellent checked Jan 12, 2023 2 RR EA CA Propose":
+        - cell "Add Granary in October to shortlist":
+          - button "Add Granary in October to shortlist": ☆
+        - cell "Granary in October HB.2024.063 · 2013 · Painting"
+        - cell "Pavel Rahimi Old Harbor"
+        - cell "44 × 59"
+        - cell "Excellent checked Jan 12, 2023"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Greenhouse to shortlist Greenhouse HB.1994.081 · 1985 · Work on paper Esther Fairweather Cedar Flats 48 × 53 Excellent checked Jul 4, 2026 1 RR EA CA Propose":
+        - cell "Add Greenhouse to shortlist":
+          - button "Add Greenhouse to shortlist": ☆
+        - cell "Greenhouse HB.1994.081 · 1985 · Work on paper"
+        - cell "Esther Fairweather Cedar Flats"
+        - cell "48 × 53"
+        - cell "Excellent checked Jul 4, 2026"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Greenhouse to shortlist Greenhouse HB.2010.109 · 1992 · Painting Tamsin Thorne Quarry Hill 186 × 183 Excellent checked Oct 10, 2023 2 RR EA CA Propose":
+        - cell "Add Greenhouse to shortlist":
+          - button "Add Greenhouse to shortlist": ☆
+        - cell "Greenhouse HB.2010.109 · 1992 · Painting"
+        - cell "Tamsin Thorne Quarry Hill"
+        - cell "186 × 183"
+        - cell "Excellent checked Oct 10, 2023"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Greenhouse at Late Rain to shortlist Greenhouse at Late Rain HB.2025.109 · 2002 · Painting Joaquin Moss Brightwater 51 × 61 Excellent checked Oct 1, 2023 2 RR EA CA Propose":
+        - cell "Add Greenhouse at Late Rain to shortlist":
+          - button "Add Greenhouse at Late Rain to shortlist": ☆
+        - cell "Greenhouse at Late Rain HB.2025.109 · 2002 · Painting"
+        - cell "Joaquin Moss Brightwater"
+        - cell "51 × 61"
+        - cell "Excellent checked Oct 1, 2023"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Greenhouse No. 36 to shortlist Greenhouse No. 36 HB.1977.134 · 1944 · Photograph Joaquin Hartigan Harrow Point 116 × 122 Excellent checked Sep 22, 2025 1 RR EA CA Propose":
+        - cell "Add Greenhouse No. 36 to shortlist":
+          - button "Add Greenhouse No. 36 to shortlist": ☆
+        - cell "Greenhouse No. 36 HB.1977.134 · 1944 · Photograph"
+        - cell "Joaquin Hartigan Harrow Point"
+        - cell "116 × 122"
+        - cell "Excellent checked Sep 22, 2025"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Grey Meadow to shortlist Grey Meadow HB.1983.138 · 1969 · Work on paper Tamsin Cahill Saltmarsh 50 × 35 Excellent checked Sep 4, 2026 1 RR EA CA Propose":
+        - cell "Add Grey Meadow to shortlist":
+          - button "Add Grey Meadow to shortlist": ☆
+        - cell "Grey Meadow HB.1983.138 · 1969 · Work on paper"
+        - cell "Tamsin Cahill Saltmarsh"
+        - cell "50 × 35"
+        - cell "Excellent checked Sep 4, 2026"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Grey Tidal Flat to shortlist Grey Tidal Flat HB.2018.106 · 2018 · Painting Mateo Abara Old Harbor 184 × 168 Excellent checked Jun 26, 2026 3 RR EA CA Propose":
+        - cell "Add Grey Tidal Flat to shortlist":
+          - button "Add Grey Tidal Flat to shortlist": ☆
+        - cell "Grey Tidal Flat HB.2018.106 · 2018 · Painting"
+        - cell "Mateo Abara Old Harbor"
+        - cell "184 × 168"
+        - cell "Excellent checked Jun 26, 2026"
+        - cell "3"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Hanging Ferry Slip to shortlist Hanging Ferry Slip HB.1983.185 · 1951 · Textile Silas Stroud Saltmarsh 225 × 150 Excellent checked Apr 30, 2026 1 RR EA CA Propose":
+        - cell "Add Hanging Ferry Slip to shortlist":
+          - button "Add Hanging Ferry Slip to shortlist": ☆
+        - cell "Hanging Ferry Slip HB.1983.185 · 1951 · Textile"
+        - cell "Silas Stroud Saltmarsh"
+        - cell "225 × 150"
+        - cell "Excellent checked Apr 30, 2026"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Hanging Footbridge to shortlist Hanging Footbridge HB.2006.165 · 1962 · Textile Nikhil Underhill Old Harbor 205 × 236 Excellent checked Jun 4, 2024 1 RR EA CA Propose":
+        - cell "Add Hanging Footbridge to shortlist":
+          - button "Add Hanging Footbridge to shortlist": ☆
+        - cell "Hanging Footbridge HB.2006.165 · 1962 · Textile"
+        - cell "Nikhil Underhill Old Harbor"
+        - cell "205 × 236"
+        - cell "Excellent checked Jun 4, 2024"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Hanging Granary to shortlist Hanging Granary HB.1991.163 · 1984 · Textile Yara Castellano Old Harbor 254 × 154 Excellent checked Sep 21, 2025 1 RR EA CA Propose":
+        - cell "Add Hanging Granary to shortlist":
+          - button "Add Hanging Granary to shortlist": ☆
+        - cell "Hanging Granary HB.1991.163 · 1984 · Textile"
+        - cell "Yara Castellano Old Harbor"
+        - cell "254 × 154"
+        - cell "Excellent checked Sep 21, 2025"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Hanging Ice House to shortlist Hanging Ice House HB.2021.175 · 2005 · Textile Bram Takahashi Old Harbor 274 × 260 Excellent checked Sep 11, 2023 1 RR EA CA Propose":
+        - cell "Add Hanging Ice House to shortlist":
+          - button "Add Hanging Ice House to shortlist": ☆
+        - cell "Hanging Ice House HB.2021.175 · 2005 · Textile"
+        - cell "Bram Takahashi Old Harbor"
+        - cell "274 × 260"
+        - cell "Excellent checked Sep 11, 2023"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Hanging Meadow to shortlist Hanging Meadow HB.2016.063 · 1995 · Textile Nikhil Underhill Old Harbor 202 × 195 Excellent checked Oct 9, 2025 1 RR EA CA Propose":
+        - cell "Add Hanging Meadow to shortlist":
+          - button "Add Hanging Meadow to shortlist": ☆
+        - cell "Hanging Meadow HB.2016.063 · 1995 · Textile"
+        - cell "Nikhil Underhill Old Harbor"
+        - cell "202 × 195"
+        - cell "Excellent checked Oct 9, 2025"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Hanging Meadow to shortlist Hanging Meadow HB.2025.088 · 1999 · Textile Yosef Fairweather Lower Cannery 160 × 186 Excellent checked Jun 2, 2023 1 RR EA CA Propose":
+        - cell "Add Hanging Meadow to shortlist":
+          - button "Add Hanging Meadow to shortlist": ☆
+        - cell "Hanging Meadow HB.2025.088 · 1999 · Textile"
+        - cell "Yosef Fairweather Lower Cannery"
+        - cell "160 × 186"
+        - cell "Excellent checked Jun 2, 2023"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Hanging Quarry to shortlist Hanging Quarry HB.2019.039 · 2014 · Textile Augustin Ortega Northgate 130 × 120 Excellent checked Aug 17, 2022 1 RR EA CA Propose":
+        - cell "Add Hanging Quarry to shortlist":
+          - button "Add Hanging Quarry to shortlist": ☆
+        - cell "Hanging Quarry HB.2019.039 · 2014 · Textile"
+        - cell "Augustin Ortega Northgate"
+        - cell "130 × 120"
+        - cell "Excellent checked Aug 17, 2022"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Hanging Rail Yard to shortlist Hanging Rail Yard HB.1992.016 · 1979 · Textile Hugo Rahimi Northgate 65 × 63 Excellent checked Apr 17, 2026 1 RR EA CA Propose":
+        - cell "Add Hanging Rail Yard to shortlist":
+          - button "Add Hanging Rail Yard to shortlist": ☆
+        - cell "Hanging Rail Yard HB.1992.016 · 1979 · Textile"
+        - cell "Hugo Rahimi Northgate"
+        - cell "65 × 63"
+        - cell "Excellent checked Apr 17, 2026"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Hanging Rooftops to shortlist Hanging Rooftops HB.2009.122 · 1970 · Textile Sofia Brooke Harrow Point 236 × 151 Excellent checked Feb 26, 2023 1 RR EA CA Propose":
+        - cell "Add Hanging Rooftops to shortlist":
+          - button "Add Hanging Rooftops to shortlist": ☆
+        - cell "Hanging Rooftops HB.2009.122 · 1970 · Textile"
+        - cell "Sofia Brooke Harrow Point"
+        - cell "236 × 151"
+        - cell "Excellent checked Feb 26, 2023"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Hanging Stairwell to shortlist Hanging Stairwell HB.2003.183 · 1966 · Textile Kaveh Dubois Saltmarsh 112 × 119 Excellent checked Jan 23, 2016 1 RR EA CA Propose":
+        - cell "Add Hanging Stairwell to shortlist":
+          - button "Add Hanging Stairwell to shortlist": ☆
+        - cell "Hanging Stairwell HB.2003.183 · 1966 · Textile"
+        - cell "Kaveh Dubois Saltmarsh"
+        - cell "112 × 119"
+        - cell "Excellent checked Jan 23, 2016"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Harbor at Midnight to shortlist Harbor at Midnight HB.1999.124 · 1966 · Mixed media Greta Brandt Saltmarsh 195 × 216 × 8 Excellent checked Mar 5, 2023 2 RR EA CA Propose":
+        - cell "Add Harbor at Midnight to shortlist":
+          - button "Add Harbor at Midnight to shortlist": ☆
+        - cell "Harbor at Midnight HB.1999.124 · 1966 · Mixed media"
+        - cell "Greta Brandt Saltmarsh"
+        - cell "195 × 216 × 8"
+        - cell "Excellent checked Mar 5, 2023"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Harbor in January to shortlist Harbor in January HB.1994.070 · 1982 · Painting Silas Petrov Brightwater 86 × 119 Excellent checked Feb 11, 2023 2 RR EA CA Propose":
+        - cell "Add Harbor in January to shortlist":
+          - button "Add Harbor in January to shortlist": ☆
+        - cell "Harbor in January HB.1994.070 · 1982 · Painting"
+        - cell "Silas Petrov Brightwater"
+        - cell "86 × 119"
+        - cell "Excellent checked Feb 11, 2023"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Harbor in March to shortlist Harbor in March HB.2019.083 · 1988 · Painting Rosa Lowry Northgate 137 × 230 Excellent checked Jan 30, 2026 2 RR EA CA Propose":
+        - cell "Add Harbor in March to shortlist":
+          - button "Add Harbor in March to shortlist": ☆
+        - cell "Harbor in March HB.2019.083 · 1988 · Painting"
+        - cell "Rosa Lowry Northgate"
+        - cell "137 × 230"
+        - cell "Excellent checked Jan 30, 2026"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Harbor No. 25 to shortlist Harbor No. 25 HB.2024.070 · 1984 · Photograph Felix Vance Millbrook 99 × 130 Excellent checked Apr 5, 2025 1 RR EA CA Propose":
+        - cell "Add Harbor No. 25 to shortlist":
+          - button "Add Harbor No. 25 to shortlist": ☆
+        - cell "Harbor No. 25 HB.2024.070 · 1984 · Photograph"
+        - cell "Felix Vance Millbrook"
+        - cell "99 × 130"
+        - cell "Excellent checked Apr 5, 2025"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Harbor No. 3 to shortlist Harbor No. 3 HB.2012.162 · 1978 · Photograph Celeste Quintero Northgate 24 × 35 Excellent checked May 3, 2025 1 RR EA CA Propose":
+        - cell "Add Harbor No. 3 to shortlist":
+          - button "Add Harbor No. 3 to shortlist": ☆
+        - cell "Harbor No. 3 HB.2012.162 · 1978 · Photograph"
+        - cell "Celeste Quintero Northgate"
+        - cell "24 × 35"
+        - cell "Excellent checked May 3, 2025"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Harbor No. 7 to shortlist Harbor No. 7 HB.1994.021 · 1953 · Painting Rosa Lowry Northgate 107 × 143 Excellent checked Mar 16, 2024 2 RR EA CA Propose":
+        - cell "Add Harbor No. 7 to shortlist":
+          - button "Add Harbor No. 7 to shortlist": ☆
+        - cell "Harbor No. 7 HB.1994.021 · 1953 · Painting"
+        - cell "Rosa Lowry Northgate"
+        - cell "107 × 143"
+        - cell "Excellent checked Mar 16, 2024"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Hillside to shortlist Hillside HB.2017.182 · 1983 · Work on paper Emeka Nakamura Westfield 86 × 83 Excellent checked Sep 26, 2023 1 RR EA CA Propose":
+        - cell "Add Hillside to shortlist":
+          - button "Add Hillside to shortlist": ☆
+        - cell "Hillside HB.2017.182 · 1983 · Work on paper"
+        - cell "Emeka Nakamura Westfield"
+        - cell "86 × 83"
+        - cell "Excellent checked Sep 26, 2023"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Hillside to shortlist Hillside HB.2024.037 · 2008 · Painting Bram Brooke Old Harbor 113 × 123 Excellent checked May 26, 2020 2 RR EA CA Propose":
+        - cell "Add Hillside to shortlist":
+          - button "Add Hillside to shortlist": ☆
+        - cell "Hillside HB.2024.037 · 2008 · Painting"
+        - cell "Bram Brooke Old Harbor"
+        - cell "113 × 123"
+        - cell "Excellent checked May 26, 2020"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Hillside No. 3 to shortlist Hillside No. 3 HB.2010.186 · 1978 · Painting Mateo Abara Old Harbor 118 × 174 Excellent checked Jul 8, 2023 2 RR EA CA Propose":
+        - cell "Add Hillside No. 3 to shortlist":
+          - button "Add Hillside No. 3 to shortlist": ☆
+        - cell "Hillside No. 3 HB.2010.186 · 1978 · Painting"
+        - cell "Mateo Abara Old Harbor"
+        - cell "118 × 174"
+        - cell "Excellent checked Jul 8, 2023"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Hillside No. 8 to shortlist Hillside No. 8 HB.2011.009 · 2006 · Work on paper Leopold Kessler Harrow Point 58 × 68 Excellent checked Dec 30, 2021 1 RR EA CA Propose":
+        - cell "Add Hillside No. 8 to shortlist":
+          - button "Add Hillside No. 8 to shortlist": ☆
+        - cell "Hillside No. 8 HB.2011.009 · 2006 · Work on paper"
+        - cell "Leopold Kessler Harrow Point"
+        - cell "58 × 68"
+        - cell "Excellent checked Dec 30, 2021"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Ice House to shortlist Ice House HB.1995.173 · 1960 · Mixed media Maren Quarles Westfield 50 × 57 × 74 Excellent checked Sep 30, 2024 2 RR EA CA Propose":
+        - cell "Add Ice House to shortlist":
+          - button "Add Ice House to shortlist": ☆
+        - cell "Ice House HB.1995.173 · 1960 · Mixed media"
+        - cell "Maren Quarles Westfield"
+        - cell "50 × 57 × 74"
+        - cell "Excellent checked Sep 30, 2024"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Ice House at Dusk to shortlist Ice House at Dusk HB.2026.162 · 1997 · Work on paper Mateo Abara Old Harbor 23 × 26 Excellent checked Dec 12, 2018 1 RR EA CA Propose":
+        - cell "Add Ice House at Dusk to shortlist":
+          - button "Add Ice House at Dusk to shortlist": ☆
+        - cell "Ice House at Dusk HB.2026.162 · 1997 · Work on paper"
+        - cell "Mateo Abara Old Harbor"
+        - cell "23 × 26"
+        - cell "Excellent checked Dec 12, 2018"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Ice House at Low Tide to shortlist Ice House at Low Tide HB.1983.101 · 1964 · Painting Jun Lindqvist Old Harbor 71 × 58 Excellent checked Jan 11, 2026 2 RR EA CA Propose":
+        - cell "Add Ice House at Low Tide to shortlist":
+          - button "Add Ice House at Low Tide to shortlist": ☆
+        - cell "Ice House at Low Tide HB.1983.101 · 1964 · Painting"
+        - cell "Jun Lindqvist Old Harbor"
+        - cell "71 × 58"
+        - cell "Excellent checked Jan 11, 2026"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Jar No. 7 to shortlist Jar No. 7 HB.2020.140 · 1991 · Ceramic Jun Ueda Brightwater 25 × 24 × 24 Excellent checked Aug 7, 2019 3 RR EA CA Propose":
+        - cell "Add Jar No. 7 to shortlist":
+          - button "Add Jar No. 7 to shortlist": ☆
+        - cell "Jar No. 7 HB.2020.140 · 1991 · Ceramic"
+        - cell "Jun Ueda Brightwater"
+        - cell "25 × 24 × 24"
+        - cell "Excellent checked Aug 7, 2019"
+        - cell "3"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Lantern No. 1 to shortlist Lantern No. 1 HB.1979.024 · 1958 · Sculpture Felix Falk Saltmarsh 104 × 78 × 80 Excellent checked Jul 19, 2026 3 RR EA CA Propose":
+        - cell "Add Lantern No. 1 to shortlist":
+          - button "Add Lantern No. 1 to shortlist": ☆
+        - cell "Lantern No. 1 HB.1979.024 · 1958 · Sculpture"
+        - cell "Felix Falk Saltmarsh"
+        - cell "104 × 78 × 80"
+        - cell "Excellent checked Jul 19, 2026"
+        - cell "3"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Lantern No. 4 to shortlist Lantern No. 4 HB.1967.180 · 1939 · Sculpture Joaquin Kovacs Harrow Point 88 × 66 × 70 Excellent checked Apr 13, 2023 3 RR EA CA Propose":
+        - cell "Add Lantern No. 4 to shortlist":
+          - button "Add Lantern No. 4 to shortlist": ☆
+        - cell "Lantern No. 4 HB.1967.180 · 1939 · Sculpture"
+        - cell "Joaquin Kovacs Harrow Point"
+        - cell "88 × 66 × 70"
+        - cell "Excellent checked Apr 13, 2023"
+        - cell "3"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Lantern, Granary to shortlist Lantern, Granary HB.1990.107 · 1982 · Sculpture Clara Pemberton Harrow Point 210 × 47 × 49 Excellent checked Jan 7, 2026 3 RR EA CA Propose":
+        - cell "Add Lantern, Granary to shortlist":
+          - button "Add Lantern, Granary to shortlist": ☆
+        - cell "Lantern, Granary HB.1990.107 · 1982 · Sculpture"
+        - cell "Clara Pemberton Harrow Point"
+        - cell "210 × 47 × 49"
+        - cell "Excellent checked Jan 7, 2026"
+        - cell "3"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Lighthouse to shortlist Lighthouse HB.1975.106 · 1955 · Painting Augustin Ortega Northgate 190 × 240 Excellent checked Aug 23, 2025 2 RR EA CA Propose":
+        - cell "Add Lighthouse to shortlist":
+          - button "Add Lighthouse to shortlist": ☆
+        - cell "Lighthouse HB.1975.106 · 1955 · Painting"
+        - cell "Augustin Ortega Northgate"
+        - cell "190 × 240"
+        - cell "Excellent checked Aug 23, 2025"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Lighthouse at Noon to shortlist Lighthouse at Noon HB.2023.091 · 1978 · Painting Rosa Ueda Northgate 115 × 150 Excellent checked Oct 31, 2020 3 RR EA CA Propose":
+        - cell "Add Lighthouse at Noon to shortlist":
+          - button "Add Lighthouse at Noon to shortlist": ☆
+        - cell "Lighthouse at Noon HB.2023.091 · 1978 · Painting"
+        - cell "Rosa Ueda Northgate"
+        - cell "115 × 150"
+        - cell "Excellent checked Oct 31, 2020"
+        - cell "3"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Lighthouse No. 9 to shortlist Lighthouse No. 9 HB.1983.114 · 1982 · Photograph Bea Castellano Westfield 79 × 67 Excellent checked Feb 26, 2025 1 RR EA CA Propose":
+        - cell "Add Lighthouse No. 9 to shortlist":
+          - button "Add Lighthouse No. 9 to shortlist": ☆
+        - cell "Lighthouse No. 9 HB.1983.114 · 1982 · Photograph"
+        - cell "Bea Castellano Westfield"
+        - cell "79 × 67"
+        - cell "Excellent checked Feb 26, 2025"
+        - cell "1"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Long Cloth Mill to shortlist Long Cloth Mill HB.2016.055 · 1996 · Mixed media Joaquin Moss Brightwater 160 × 218 × 8 Excellent checked Sep 14, 2025 2 RR EA CA Propose":
+        - cell "Add Long Cloth Mill to shortlist":
+          - button "Add Long Cloth Mill to shortlist": ☆
+        - cell "Long Cloth Mill HB.2016.055 · 1996 · Mixed media"
+        - cell "Joaquin Moss Brightwater"
+        - cell "160 × 218 × 8"
+        - cell "Excellent checked Sep 14, 2025"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Long Glaze Vase to shortlist Long Glaze Vase HB.1998.095 · 1987 · Ceramic Miriam Moss Ferris Park 32 × 23 × 23 Excellent checked Feb 2, 2025 3 RR EA CA Propose":
+        - cell "Add Long Glaze Vase to shortlist":
+          - button "Add Long Glaze Vase to shortlist": ☆
+        - cell "Long Glaze Vase HB.1998.095 · 1987 · Ceramic"
+        - cell "Miriam Moss Ferris Park"
+        - cell "32 × 23 × 23"
+        - cell "Excellent checked Feb 2, 2025"
+        - cell "3"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Long Greenhouse to shortlist Long Greenhouse HB.2000.119 · 1975 · Painting Nadir Varga Westfield 186 × 157 Excellent checked Sep 22, 2024 2 RR EA CA Propose":
+        - cell "Add Long Greenhouse to shortlist":
+          - button "Add Long Greenhouse to shortlist": ☆
+        - cell "Long Greenhouse HB.2000.119 · 1975 · Painting"
+        - cell "Nadir Varga Westfield"
+        - cell "186 × 157"
+        - cell "Excellent checked Sep 22, 2024"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+      - row "Add Long Orchard to shortlist Long Orchard HB.1985.149 · 1977 · Painting Callum Lowry Brightwater 174 × 175 Excellent checked Jun 12, 2026 2 RR EA CA Propose":
+        - cell "Add Long Orchard to shortlist":
+          - button "Add Long Orchard to shortlist": ☆
+        - cell "Long Orchard HB.1985.149 · 1977 · Painting"
+        - cell "Callum Lowry Brightwater"
+        - cell "174 × 175"
+        - cell "Excellent checked Jun 12, 2026"
+        - cell "2"
+        - cell "RR EA CA"
+        - cell "Propose":
+          - button "Propose"
+  - text: Showing 150 of 886
+  - button "Show 150 more"
+- complementary "Proposal":
+  - heading "Proposal" [level=2]
+  - paragraph: 7 of 12 works placed
+  - text: "3 with warnings ✕ Eastvale-area artists:"
+  - strong: "4"
+  - text: "of 6 required (2 more) · Open slots:"
+  - strong: "5"
+  - text: Wall lengths used (cm) RR South wall 503/640 CA Wall A 175/310 CA Wall B 210/310 CA Wall C 0/310 EA Atrium wall 279/420
+  - list:
+    - listitem:
+      - text: "1"
+      - button "Tidewater at Dusk"
+      - text: Eastvale
+      - button "Remove slot 1 from proposal": ×
+      - text: Delphine Moreau · HB.1994.017 · Painting · 122 × 183 cm
+      - combobox "Space for slot 1":
+        - option "Reading Room" [selected]
+        - option "Children's Area"
+        - option "Entry Atrium"
+      - combobox "Wall for slot 1":
+        - option "South wall" [selected]
+    - listitem:
+      - text: "2"
+      - button "Grain Silo"
+      - text: Eastvale
+      - button "Remove slot 2 from proposal": ×
+      - text: Owen Pryce · HB.1991.115 · Painting · 166 × 240 cm
+      - combobox "Space for slot 2":
+        - option "Reading Room" [selected]
+        - option "Children's Area"
+        - option "Entry Atrium"
+      - combobox "Wall for slot 2":
+        - option "South wall" [selected]
+    - listitem:
+      - text: "3"
+      - button "Market Day"
+      - text: Eastvale
+      - button "Remove slot 3 from proposal": ×
+      - text: Kofi Asante · HB.2011.088 · Painting · 90 × 120 cm
+      - combobox "Space for slot 3":
+        - option "Reading Room"
+        - option "Children's Area"
+        - option "Entry Atrium" [selected]
+      - combobox "Wall for slot 3":
+        - option "Atrium wall" [selected]
+    - listitem:
+      - text: "4"
+      - button "Weaving No. 8"
+      - button "Remove slot 4 from proposal": ×
+      - text: Soren Brooke · HB.1959.158 · Textile · 101 × 79 cm
+      - combobox "Space for slot 4":
+        - option "Reading Room"
+        - option "Children's Area"
+        - option "Entry Atrium" [selected]
+      - combobox "Wall for slot 4":
+        - option "Atrium wall" [selected]
+    - listitem:
+      - text: "5"
+      - button "Meadow at High Water"
+      - text: Eastvale
+      - button "Remove slot 5 from proposal": ×
+      - text: Ruth Lindqvist · HB.2004.062 · Painting · 143 × 135 cm
+      - combobox "Space for slot 5":
+        - option "Reading Room"
+        - option "Children's Area" [selected]
+        - option "Entry Atrium"
+      - combobox "Wall for slot 5":
+        - option "Wall A" [selected]
+        - option "Wall B"
+        - option "Wall C"
+      - list:
+        - listitem: Wall height not supplied; confirm clearance with Facilities
+    - listitem:
+      - text: "6"
+      - button "Rail Yard in March"
+      - button "Remove slot 6 from proposal": ×
+      - text: Rafael Kovacs · HB.1961.096 · Painting · 61 × 42 cm
+      - combobox "Space for slot 6":
+        - option "Reading Room"
+        - option "Children's Area" [selected]
+        - option "Entry Atrium"
+      - combobox "Wall for slot 6":
+        - option "Wall A"
+        - option "Wall B" [selected]
+        - option "Wall C"
+      - list:
+        - listitem: Wall height not supplied; confirm clearance with Facilities
+    - listitem:
+      - text: "7"
+      - button "Rooftops in October"
+      - button "Remove slot 7 from proposal": ×
+      - text: Henrik Dubois · HB.1962.132 · Painting · 116 × 88 cm
+      - combobox "Space for slot 7":
+        - option "Reading Room"
+        - option "Children's Area" [selected]
+        - option "Entry Atrium"
+      - combobox "Wall for slot 7":
+        - option "Wall A"
+        - option "Wall B" [selected]
+        - option "Wall C"
+      - list:
+        - listitem: Wall height not supplied; confirm clearance with Facilities
+    - listitem: 8 Open. Add a work from the candidate list.
+    - listitem: 9 Open. Add a work from the candidate list.
+    - listitem: 10 Open. Add a work from the candidate list.
+    - listitem: 11 Open. Add a work from the candidate list.
+    - listitem: 12 Open. Add a work from the candidate list.
+  - button "Export CSV"
+  - button "Print"
+  - button "Reset"

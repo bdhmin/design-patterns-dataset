@@ -1,0 +1,426 @@
+- banner:
+  - text: Ledgerline
+  - navigation "Main":
+    - link "Home":
+      - /url: "#top"
+    - link "Grants":
+      - /url: "#top"
+    - link "Requests":
+      - /url: "#top"
+    - link "Reporting calendar":
+      - /url: "#top"
+    - link "Documents":
+      - /url: "#top"
+  - textbox "Search":
+    - /placeholder: Search grants, terms, help articles
+  - text: /
+  - button "Onboarding 2 of 7":
+    - text: Onboarding
+    - strong: 2 of 7
+  - button "Help"
+  - text: AK
+  - strong: Aisha Kamau
+  - text: Grants Officer · Nairobi
+- complementary "Request steps":
+  - text: This request · 1 of 5 done
+  - list:
+    - listitem:
+      - button "Lines & amount"
+    - listitem:
+      - button "2 Compliance check"
+    - listitem:
+      - button "3 Justification"
+    - listitem:
+      - button "4 Supporting documents"
+    - listitem:
+      - button "5 Review & send"
+  - text: This grant
+  - term: Donor
+  - definition: Halvorsen Foundation
+  - term: Award
+  - definition: $1,840,000
+  - term: Period
+  - definition: Apr 2025 – Mar 2027
+  - term:
+    - button "Budget holder"
+  - definition: Joseph Ekai, Lodwar
+  - term: Donor threshold
+  - definition: 10% of any line
+  - text: Your recent activity
+  - list:
+    - listitem:
+      - time: 10:31
+      - text: Started a draft budget reallocation request
+    - listitem:
+      - time: 10:24
+      - text: Viewed budget lines
+    - listitem:
+      - time: 10:19
+      - text: Opened grant record
+- main:
+  - navigation "Breadcrumb":
+    - link "Grants":
+      - /url: "#top"
+    - link "NRI-KE-2025-118 · Turkana WASH Resilience":
+      - /url: "#top"
+    - link "Requests":
+      - /url: "#top"
+    - text: RR-2026-047
+  - heading "Budget reallocation request RR-2026-047" [level=1]
+  - paragraph:
+    - button "NRI-KE-2025-118"
+    - text: · Turkana WASH Resilience · Halvorsen Foundation · Apr 2025 – Mar 2027
+  - text: Draft Saved 10:42
+  - strong: "You’re on onboarding step 3 of 7: your first reallocation request."
+  - paragraph:
+    - text: You started this draft at 10:31 with the lines and amount Peter asked for. Anything with a
+    - button "dotted underline"
+    - text: explains itself when clicked, and the Guide on the right follows the step you’re on. Nothing is sent until you press
+    - emphasis: Send to Peter Owino
+    - text: in step 5.
+  - button "Dismiss"
+  - region "Approval route":
+    - heading "Where this request goes" [level=2]
+    - paragraph: "Each person is notified only when the step before them is finished. Typical total: about 21 business days, mostly waiting for Halvorsen."
+    - text: Halvorsen must receive it before
+    - strong: 1 Jan 2027
+    - list:
+      - listitem: You are here AK Grants Officer (you) Aisha Kamau Prepare & submit Drafting now
+      - listitem:
+        - text: PO
+        - button "Grants Manager"
+        - text: Peter Owino Reviews & approves ~2 business days
+      - listitem:
+        - text: LF
+        - button "Regional Finance Controller"
+        - text: Lucía Ferrer Final internal sign-off ~3 business days
+      - listitem:
+        - text: HF
+        - button "Donor prior approval"
+        - text: Halvorsen Foundation Peter sends the request ~15 business days
+      - listitem: RF Budget updated Regional Finance Revised budget posted ~1 business day
+  - heading "Lines & amount" [level=2]
+  - paragraph: Choose where the money comes from and where it goes. Actuals as of 31 Oct 2026.
+  - button "Explain this step"
+  - text: Request type
+  - button "Budget reallocation"
+  - text: – within the approved total
+  - paragraph:
+    - text: Not an
+    - button "amendment"
+    - text: ": the total, end date and objectives don’t change."
+    - 'button "Read: Reallocation vs. Amendment"'
+  - table:
+    - rowgroup:
+      - row "# Budget line Budget Spent Committed Available Move from Move to":
+        - columnheader "#"
+        - columnheader "Budget line"
+        - columnheader "Budget"
+        - columnheader "Spent":
+          - button "Spent"
+        - columnheader "Committed":
+          - button "Committed"
+        - columnheader "Available":
+          - button "Available"
+        - columnheader "Move from"
+        - columnheader "Move to"
+    - rowgroup:
+      - row "1 Personnel – national staff Personnel 83% used $412,000 $318,700 $21,600 $71,700 Move from line 1 Move to line 1":
+        - cell "1"
+        - cell "Personnel – national staff Personnel 83% used"
+        - cell "$412,000"
+        - cell "$318,700"
+        - cell "$21,600"
+        - cell "$71,700"
+        - cell "Move from line 1":
+          - radio "Move from line 1"
+        - cell "Move to line 1":
+          - radio "Move to line 1"
+      - row "2 Personnel – international technical support Personnel 71% used $118,000 $84,200 – $33,800 Move from line 2 Move to line 2":
+        - cell "2"
+        - cell "Personnel – international technical support Personnel 71% used"
+        - cell "$118,000"
+        - cell "$84,200"
+        - cell "–"
+        - cell "$33,800"
+        - cell "Move from line 2":
+          - radio "Move from line 2"
+        - cell "Move to line 2":
+          - radio "Move to line 2"
+      - row "3 Water point surveys & hydrogeology Technical services 96% used $74,000 $71,350 – $2,650 Move from line 3 Move to line 3":
+        - cell "3"
+        - cell "Water point surveys & hydrogeology Technical services 96% used"
+        - cell "$74,000"
+        - cell "$71,350"
+        - cell "–"
+        - cell "$2,650"
+        - cell "Move from line 3":
+          - radio "Move from line 3"
+        - cell "Move to line 3":
+          - radio "Move to line 3"
+      - row "4 Community Hygiene Training Programme activities 33% used $212,000 $61,400 $8,200 $142,400 Move from line 4 Move to line 4":
+        - cell "4"
+        - cell "Community Hygiene Training Programme activities 33% used"
+        - cell "$212,000"
+        - cell "$61,400"
+        - cell "$8,200"
+        - cell "$142,400"
+        - cell "Move from line 4":
+          - radio "Move from line 4" [checked]
+        - cell "Move to line 4":
+          - radio "Move to line 4"
+      - row "5 Hygiene kits & consumables Supplies 81% used $158,000 $112,800 $14,900 $30,300 Move from line 5 Move to line 5":
+        - cell "5"
+        - cell "Hygiene kits & consumables Supplies 81% used"
+        - cell "$158,000"
+        - cell "$112,800"
+        - cell "$14,900"
+        - cell "$30,300"
+        - cell "Move from line 5":
+          - radio "Move from line 5"
+        - cell "Move to line 5":
+          - radio "Move to line 5"
+      - row "6 Borehole Rehabilitation Works & construction 98% used $540,000 $512,900 $14,500 $12,600 Move from line 6 Move to line 6":
+        - cell "6"
+        - cell "Borehole Rehabilitation Works & construction 98% used"
+        - cell "$540,000"
+        - cell "$512,900"
+        - cell "$14,500"
+        - cell "$12,600"
+        - cell "Move from line 6":
+          - radio "Move from line 6"
+        - cell "Move to line 6":
+          - radio "Move to line 6" [checked]
+      - row "7 Water Management Committee strengthening Programme activities 66% used $108,000 $66,300 $4,800 $36,900 Move from line 7 Move to line 7":
+        - cell "7"
+        - cell "Water Management Committee strengthening Programme activities 66% used"
+        - cell "$108,000"
+        - cell "$66,300"
+        - cell "$4,800"
+        - cell "$36,900"
+        - cell "Move from line 7":
+          - radio "Move from line 7"
+        - cell "Move to line 7":
+          - radio "Move to line 7"
+      - row "8 Monitoring, evaluation & learning MEL 67% used $98,000 $29,400 $36,000 $32,600 Donor lock":
+        - cell "8"
+        - cell "Monitoring, evaluation & learning MEL 67% used"
+        - cell "$98,000"
+        - cell "$29,400"
+        - cell "$36,000"
+        - cell "$32,600"
+        - cell "Donor lock":
+          - button "Donor lock"
+      - row "9 Indirect costs (7% of direct) Indirect 73% used $120,000 $87,994 – $32,006 System lock":
+        - cell "9"
+        - cell "Indirect costs (7% of direct) Indirect 73% used"
+        - cell "$120,000"
+        - cell "$87,994"
+        - cell "–"
+        - cell "$32,006"
+        - cell "System lock":
+          - button "System lock"
+    - rowgroup:
+      - row "Grant total $1,840,000 $1,345,044 $100,000 $394,956 Total stays the same":
+        - cell
+        - cell "Grant total"
+        - cell "$1,840,000"
+        - cell "$1,345,044"
+        - cell "$100,000"
+        - cell "$394,956"
+        - cell "Total stays the same"
+  - text: Amount to move $
+  - textbox "Amount to move $ USD": 85,000
+  - text: USD
+  - strong: 40.1%
+  - text: of Line 4’s budget ·
+  - strong: 15.7%
+  - text: of Line 6’s budget Halvorsen’s
+  - button "variance threshold"
+  - text: is 10% of any line. Up to $21,200 on these two lines would not need donor approval. Moving from −$85,000 Line 4 · Community Hygiene Training
+  - term: Budget
+  - definition:
+    - text: $212,000
+    - strong: $127,000
+  - term: Available
+  - definition:
+    - text: $142,400
+    - strong: $57,400
+  - text: 10% 0%
+  - strong: 40.1%
+  - text: of the line’s budget 50%+ Moving to +$85,000 Line 6 · Borehole Rehabilitation
+  - term: Budget
+  - definition:
+    - text: $540,000
+    - strong: $625,000
+  - term: Available
+  - definition:
+    - text: $12,600
+    - strong: $97,600
+  - text: 10% 0%
+  - strong: 15.7%
+  - text: of the line’s budget 50%+
+  - strong:
+    - text: This move needs
+    - button "donor prior approval"
+    - text: .
+  - text: It is over 10% of both lines, so Halvorsen must agree in writing before the money is used. That doesn’t block you – it adds a step after the internal approvals. Peter Owino sends the request to Halvorsen; you don’t contact them yourself.
+  - button "See the compliance check"
+  - text: "2"
+  - heading "Compliance check" [level=2]
+  - paragraph:
+    - text: Ledgerline checks your numbers against Halvorsen’s rules.
+    - button "Halvorsen donor rules summary"
+  - button "Explain this step"
+  - list:
+    - listitem:
+      - button "Variance threshold"
+      - text: "(Halvorsen: 10% of any line) Needs donor approval"
+      - paragraph:
+        - text: $85,000 is
+        - strong: 40.1%
+        - text: of Line 4 and
+        - strong: 15.7%
+        - text: of Line 6. Over 10% →
+        - strong: donor prior written approval required
+        - text: . Halvorsen has been added to the approval route.
+      - button "What does this mean?"
+    - listitem:
+      - button "Cost category lock"
+      - text: OK
+      - paragraph: "Neither Line 4 nor Line 6 is locked. Locked on this grant: Line 8 (MEL – ring-fenced by Halvorsen) and Line 9 (Indirect – calculated by the system)."
+      - button "What does this mean?"
+    - listitem:
+      - button "Reallocation window"
+      - text: OK
+      - paragraph:
+        - text: Halvorsen accepts requests until
+        - strong: 1 Jan 2027
+        - text: (90 days before the grant ends). That’s 51 days from today – enough for the internal approvals first.
+      - button "What does this mean?"
+    - listitem:
+      - text: Enough left on Line 4 for the remaining 5 months OK
+      - paragraph:
+        - text: After the move Line 4 keeps $57,400 available. At its
+        - button "burn rate"
+        - text: so far (~$3,232/month), the remaining months need about $16,158.
+      - button "What does this mean?"
+    - listitem:
+      - text: Grant total and
+      - button "indirect costs"
+      - text: unchanged OK
+      - paragraph: The grant stays at $1,840,000. Moving between two direct lines doesn’t change the 7% indirect line.
+  - checkbox "I understand this request needs Halvorsen’s prior written approval, and that no money should be spent under the new budget until it is received. Peter Owino will send the donor request after internal approval."
+  - text: I understand this request needs Halvorsen’s prior written approval, and that no money should be spent under the new budget until it is received. Peter Owino will send the donor request after internal approval. 3
+  - heading "Justification" [level=2]
+  - paragraph: Goes to Halvorsen’s programme officer, Ingrid Solberg, in Peter’s request letter. Write it for someone who has never been to Turkana.
+  - button "Explain this step"
+  - text: 1 Why is Line 4 (Community Hygiene Training) underspent?
+  - paragraph: What happened in the field? Delays, a cheaper approach, a partner covering part of the work? Give figures if you can.
+  - textbox "1 Why is Line 4 (Community Hygiene Training) underspent?":
+    - /placeholder: Write in plain language – what happened, with numbers where you have them.
+  - text: 0 / 100 characters minimum
+  - button "See an example from an approved request"
+  - text: 2 Why does Line 6 (Borehole Rehabilitation) need more?
+  - paragraph: What is the need, what evidence shows it, and what happens if it isn’t funded?
+  - textbox "2 Why does Line 6 (Borehole Rehabilitation) need more?":
+    - /placeholder: Write in plain language – what happened, with numbers where you have them.
+  - text: 0 / 100 characters minimum
+  - button "See an example from an approved request"
+  - text: 3 What is the effect on targets and beneficiaries?
+  - paragraph: Do the targets for either activity change? Who benefits from the move?
+  - textbox "3 What is the effect on targets and beneficiaries?":
+    - /placeholder: Write in plain language – what happened, with numbers where you have them.
+  - text: 0 / 100 characters minimum
+  - button "See an example from an approved request"
+  - text: "4"
+  - heading "Supporting documents" [level=2]
+  - paragraph: Attach what approvers and Halvorsen will ask for. Files already on the grant record can be attached directly.
+  - button "Explain this step"
+  - button "Revised budget"
+  - text: – Halvorsen template Revised_budget_NRI-KE-2025-118_RR-2026-047.xlsx · generated by Ledgerline from your numbers
+  - button "Preview"
+  - text: Technical evidence for Line 6 (Borehole Rehabilitation) Required Required – Halvorsen asks for an assessment or bill of quantities for works and construction.
+  - button "From grant record"
+  - button "Upload"
+  - text: Revised activity plan for Line 4 (Community Hygiene Training) Recommended Recommended – shows the remaining activities on the line are still covered.
+  - button "From grant record"
+  - button "Upload"
+  - text: "5"
+  - heading "Review & send" [level=2]
+  - paragraph:
+    - text: Sends the request to Peter Owino (Grants Manager, your supervisor) – the first step of the
+    - button "approval route"
+    - text: .
+  - button "Explain this step"
+  - text: Move
+  - strong: $85,000
+  - text: From Line 4 · Community Hygiene Training (40.1%) To Line 6 · Borehole Rehabilitation (15.7%) Donor approval Required Before you send
+  - list:
+    - listitem:
+      - text: Confirm you’ve read the compliance check
+      - button "Go there"
+    - listitem:
+      - text: Justification answer 1 (at least 100 characters)
+      - button "Go there"
+    - listitem:
+      - text: Justification answer 2 (at least 100 characters)
+      - button "Go there"
+    - listitem:
+      - text: Justification answer 3 (at least 100 characters)
+      - button "Go there"
+    - listitem:
+      - text: Technical evidence for Line 6
+      - button "Go there"
+  - text: Note to Peter (optional – not sent to the donor)
+  - textbox "Note to Peter (optional – not sent to the donor)":
+    - /placeholder: E.g. “First reallocation – I checked the figures with Joseph Ekai on Tuesday. Happy to walk through it.”
+  - button "Send to Peter Owino for review" [disabled]
+  - text: 5 items left before you can send. Ledgerline 4.12 · Northbridge Relief International · Every change to this request is recorded in the
+  - button "audit trail"
+  - text: .
+- complementary "Help and guidance":
+  - tablist:
+    - tab "Guide" [selected]
+    - tab "Glossary 34":
+      - text: Glossary
+      - emphasis: "34"
+    - tab "Articles 112":
+      - text: Articles
+      - emphasis: "112"
+    - tab "Helpdesk"
+  - text: Three things to know about this request
+  - list:
+    - listitem:
+      - strong: Halvorsen must approve it in writing first.
+      - text: The move is 40.1% of a line; their limit is 10%.
+    - listitem:
+      - strong: "Two internal approvers, in order:"
+      - text: Peter Owino (Grants Manager), then Lucía Ferrer (Regional Finance Controller).
+    - listitem:
+      - strong: "Deadline:"
+      - text: Halvorsen stops accepting reallocation requests on 1 Jan 2027.
+  - text: You’re on step 1 of 5
+  - heading "Lines & amount" [level=3]
+  - paragraph: Pick the line giving money (Move from) and the line receiving it (Move to), then the amount. Ledgerline only lets you move money that is still available.
+  - heading "Watch for" [level=4]
+  - list:
+    - listitem: Available = budget − spent − committed. Open purchase orders already count as used.
+    - listitem: Padlocked lines can’t be a source or target. On this grant that’s Line 8 and Line 9.
+    - listitem: The percentage that matters is the amount moved ÷ the line’s full budget – on both lines.
+  - heading "Words on this step" [level=4]
+  - button "Available balance"
+  - button "Committed"
+  - button "Cost category lock"
+  - button "Variance threshold"
+  - heading "Read more" [level=4]
+  - list:
+    - listitem:
+      - button "Reallocation vs. Amendment"
+    - listitem:
+      - 'button "Spent, committed and available: how balances are calculated"'
+    - listitem:
+      - button "Variance thresholds explained"
+  - strong: Stuck or unsure?
+  - paragraph: The Grants-Systems helpdesk usually replies within 4 business hours. Ledgerline attaches this request so you don’t have to explain where you are.
+  - button "Ask the helpdesk"

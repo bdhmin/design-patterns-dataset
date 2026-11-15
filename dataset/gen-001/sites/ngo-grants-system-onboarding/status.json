@@ -1,0 +1,23 @@
+{
+  "slug": "ngo-grants-system-onboarding",
+  "url": "http://ngo-grants-system-onboarding.localhost:4318/",
+  "domain": "nonprofit",
+  "source": "generated",
+  "state": "labeled",
+  "raters": {
+    "rater-1": {
+      "state": "done",
+      "updatedAt": "2026-11-14T22:06:17.374Z"
+    },
+    "rater-2": {
+      "state": "done",
+      "updatedAt": "2026-11-14T22:06:20.536Z"
+    },
+    "rater-3": {
+      "state": "done",
+      "updatedAt": "2026-11-14T22:06:14.325Z"
+    }
+  },
+  "flags": [],
+  "updatedAt": "2026-11-14T22:06:20.538Z"
+}

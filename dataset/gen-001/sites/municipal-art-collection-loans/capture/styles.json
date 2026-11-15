@@ -1,0 +1,182 @@
+{
+ "pageBackground": "#f4f3ef",
+ "backgroundsByArea": [
+  {
+   "color": "#f4f3ef",
+   "share": 0.4938
+  },
+  {
+   "color": "#ffffff",
+   "share": 0.3933
+  },
+  {
+   "color": "#faf9f6",
+   "share": 0.0874
+  },
+  {
+   "color": "#e3f1e8",
+   "share": 0.0077
+  },
+  {
+   "color": "#1c2330",
+   "share": 0.0046
+  },
+  {
+   "color": "#fbfbf9",
+   "share": 0.0041
+  },
+  {
+   "color": "#e2eeee",
+   "share": 0.0034
+  },
+  {
+   "color": "#fbf0d6",
+   "share": 0.0015
+  },
+  {
+   "color": "#f6f5f1",
+   "share": 0.0015
+  },
+  {
+   "color": "#ebe9e3",
+   "share": 0.0011
+  },
+  {
+   "color": "#f1f6f6",
+   "share": 0.001
+  },
+  {
+   "color": "#e8e6df",
+   "share": 0.0003
+  },
+  {
+   "color": "#1f5f63",
+   "share": 0.0002
+  },
+  {
+   "color": "#2f8a8f",
+   "share": 0.0001
+  },
+  {
+   "color": "#2b7a4b",
+   "share": 0
+  },
+  {
+   "color": "#c99a2e",
+   "share": 0
+  }
+ ],
+ "textColors": [
+  {
+   "color": "#5d6675",
+   "chars": 5104
+  },
+  {
+   "color": "#1c2330",
+   "chars": 3750
+  },
+  {
+   "color": "#8f5d00",
+   "chars": 799
+  },
+  {
+   "color": "#2b7a4b",
+   "chars": 748
+  },
+  {
+   "color": "#1f5f63",
+   "chars": 389
+  },
+  {
+   "color": "#ffffff",
+   "chars": 140
+  },
+  {
+   "color": "#9b9891",
+   "chars": 92
+  },
+  {
+   "color": "#cfd6e2",
+   "chars": 29
+  }
+ ],
+ "fonts": [
+  {
+   "family": "system-ui",
+   "textNodes": 917
+  }
+ ],
+ "fontSizes": [
+  {
+   "px": 20,
+   "textNodes": 3
+  },
+  {
+   "px": 19,
+   "textNodes": 1
+  },
+  {
+   "px": 18,
+   "textNodes": 2
+  },
+  {
+   "px": 15,
+   "textNodes": 1
+  },
+  {
+   "px": 14,
+   "textNodes": 16
+  },
+  {
+   "px": 13,
+   "textNodes": 243
+  },
+  {
+   "px": 12,
+   "textNodes": 292
+  },
+  {
+   "px": 11,
+   "textNodes": 359
+  }
+ ],
+ "radii": [
+  {
+   "radius": "4px",
+   "boxes": 227
+  },
+  {
+   "radius": "999px",
+   "boxes": 125
+  },
+  {
+   "radius": "7px",
+   "boxes": 92
+  },
+  {
+   "radius": "3px",
+   "boxes": 7
+  },
+  {
+   "radius": "6px",
+   "boxes": 7
+  },
+  {
+   "radius": "8px",
+   "boxes": 5
+  },
+  {
+   "radius": "10px",
+   "boxes": 4
+  },
+  {
+   "radius": "50%",
+   "boxes": 3
+  }
+ ],
+ "boxesMeasured": 1839,
+ "shadowedShare": 0,
+ "borderedShare": 0.056,
+ "gradientBackgrounds": 0,
+ "imageBackgrounds": 0
+}

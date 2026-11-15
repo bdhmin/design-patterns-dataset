@@ -1,0 +1,178 @@
+{
+  "batch": "gen-001",
+  "codebookVersion": "1.0.0",
+  "raters": [
+    "rater-1",
+    "rater-2",
+    "rater-3"
+  ],
+  "sites": 5,
+  "sitesWithTwoPlusLabels": 5,
+  "fields": [
+    {
+      "field": "pattern.status",
+      "label": "Pattern status",
+      "location": "Patterns",
+      "metric": "nominal",
+      "alpha": 0.7675703324808184,
+      "observedDisagreement": 0.11228070175438597,
+      "expectedDisagreement": 0.48307388188781814,
+      "units": 95,
+      "pairable": 285,
+      "pairwiseAgreement": 0.887719298245614
+    },
+    {
+      "field": "pattern.confidence",
+      "label": "Pattern confidence",
+      "location": "Patterns",
+      "metric": "interval",
+      "alpha": 0.879252064586273,
+      "observedDisagreement": 0.0034284482758620703,
+      "expectedDisagreement": 0.028393431855500816,
+      "units": 81,
+      "pairable": 232,
+      "pairwiseAgreement": 0.43891402714932126
+    },
+    {
+      "field": "structure.density",
+      "label": "density",
+      "location": "Structure",
+      "metric": "ordinal",
+      "alpha": 1,
+      "observedDisagreement": 0,
+      "expectedDisagreement": 19.285714285714285,
+      "units": 5,
+      "pairable": 15,
+      "pairwiseAgreement": 1
+    },
+    {
+      "field": "aesthetics.elevation",
+      "label": "elevation",
+      "location": "Aesthetics",
+      "metric": "nominal",
+      "alpha": 1,
+      "observedDisagreement": 0,
+      "expectedDisagreement": 0.34285714285714286,
+      "units": 5,
+      "pairable": 15,
+      "pairwiseAgreement": 1
+    },
+    {
+      "field": "aesthetics.shape",
+      "label": "shape",
+      "location": "Aesthetics",
+      "metric": "nominal",
+      "alpha": null,
+      "observedDisagreement": 0,
+      "expectedDisagreement": 0,
+      "units": 5,
+      "pairable": 15,
+      "pairwiseAgreement": 1,
+      "note": "no variation: every rater used the same value everywhere"
+    },
+    {
+      "field": "aesthetics.whitespace",
+      "label": "whitespace",
+      "location": "Aesthetics",
+      "metric": "ordinal",
+      "alpha": null,
+      "observedDisagreement": 0,
+      "expectedDisagreement": 0,
+      "units": 5,
+      "pairable": 15,
+      "pairwiseAgreement": 1,
+      "note": "no variation: every rater used the same value everywhere"
+    },
+    {
+      "field": "aesthetics.iconStyle",
+      "label": "iconStyle",
+      "location": "Aesthetics",
+      "metric": "nominal",
+      "alpha": 0.4042553191489362,
+      "observedDisagreement": 0.26666666666666666,
+      "expectedDisagreement": 0.44761904761904764,
+      "units": 5,
+      "pairable": 15,
+      "pairwiseAgreement": 0.7333333333333333
+    },
+    {
+      "field": "aesthetics.borders",
+      "label": "borders",
+      "location": "Aesthetics",
+      "metric": "nominal",
+      "alpha": null,
+      "observedDisagreement": 0,
+      "expectedDisagreement": 0,
+      "units": 5,
+      "pairable": 15,
+      "pairwiseAgreement": 1,
+      "note": "no variation: every rater used the same value everywhere"
+    },
+    {
+      "field": "aesthetics.backgroundTreatment",
+      "label": "backgroundTreatment",
+      "location": "Aesthetics",
+      "metric": "nominal",
+      "alpha": null,
+      "observedDisagreement": 0,
+      "expectedDisagreement": 0,
+      "units": 5,
+      "pairable": 15,
+      "pairwiseAgreement": 1,
+      "note": "no variation: every rater used the same value everywhere"
+    },
+    {
+      "field": "pattern.dims",
+      "label": "Pattern dims (extra)",
+      "location": "Patterns",
+      "metric": "nominal",
+      "alpha": 0.9113930506296282,
+      "observedDisagreement": 0.08752997601918465,
+      "expectedDisagreement": 0.9878454979113948,
+      "units": 292,
+      "pairable": 834,
+      "pairwiseAgreement": 0.9166666666666666
+    }
+  ],
+  "patternStatusByPattern": [
+    {
+      "id": "card",
+      "alpha": 0.5254237288135593,
+      "observedDisagreement": 0.26666666666666666,
+      "expectedDisagreement": 0.5619047619047619,
+      "units": 5,
+      "pairable": 15,
+      "pairwiseAgreement": 0.7333333333333333
+    },
+    {
+      "id": "tabs",
+      "alpha": 1,
+      "observedDisagreement": 0,
+      "expectedDisagreement": 0.5142857142857142,
+      "units": 5,
+      "pairable": 15,
+      "pairwiseAgreement": 1
+    },
+    {
+      "id": "app-shell",
+      "alpha": null,
+      "observedDisagreement": 0,
+      "expectedDisagreement": 0,
+      "units": 5,
+      "pairable": 15,
+      "pairwiseAgreement": 1,
+      "note": "no variation: every rater used the same value everywhere"
+    },
+    {
+      "id": "choice-control",
+      "alpha": null,
+      "observedDisagreement": 0,
+      "expectedDisagreement": 0,
+      "units": 5,
+      "pairable": 15,
+      "pairwiseAgreement": 1,
+      "note": "no variation: every rater used the same value everywhere"
+    }
+  ],
+  "computedAt": "2026-11-14T22:08:16.767Z"
+}

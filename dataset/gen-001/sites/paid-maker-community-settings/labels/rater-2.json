@@ -1,0 +1,657 @@
+{
+  "schemaVersion": "1.0.0",
+  "codebookVersion": "1.0.0",
+  "batch": "gen-001",
+  "site": {
+    "slug": "paid-maker-community-settings",
+    "url": "http://paid-maker-community-settings.localhost:4318/",
+    "finalUrl": "http://paid-maker-community-settings.localhost:4318/",
+    "status": 200,
+    "title": "Winter '26 Test Knit · Space settings · Hearthroom",
+    "capturedAt": "2026-11-14T22:01:04.618Z",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "screenshot": {
+      "ref": "capture/screenshot.png",
+      "width": 1440,
+      "height": 2915
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.8127.18 Safari/537.36",
+    "domain": "social-community",
+    "domainNote": "Admin settings for a paid maker (knitting) community platform; configuring a draft invite-only test-knit space",
+    "provenance": {
+      "source": "generated",
+      "generation": "generated/gen-001/paid-maker-community-settings/generation.json",
+      "generator": {
+        "id": "opus",
+        "model": "claude-opus-5-5",
+        "effort": "high"
+      },
+      "brief": {
+        "domain": "social-community",
+        "archetype": "configure",
+        "context": "freelancer",
+        "product": "Hearthroom"
+      }
+    }
+  },
+  "regions": [
+    {
+      "id": "sidebar",
+      "role": "sidebar",
+      "label": "Admin sidebar: Hearthroom brand, community switcher card, nav list with nested Spaces list (Winter '26 Test Knit current, DRAFT pill), owner identity at bottom",
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 232,
+        "height": 2915
+      },
+      "patterns": [
+        "app-shell",
+        "badge"
+      ]
+    },
+    {
+      "id": "page-header",
+      "role": "header",
+      "label": "Breadcrumb Spaces > Winter '26 Test Knit, serif H1 with Draft pill, meta line (18 invitees, test window, last changed), dark 'Send 18 invites' button",
+      "bbox": {
+        "x": 232,
+        "y": 0,
+        "width": 1208,
+        "height": 114
+      },
+      "patterns": [
+        "breadcrumbs",
+        "badge"
+      ]
+    },
+    {
+      "id": "settings-column",
+      "role": "settings-form",
+      "label": "Draft info notice, 'Jump to section' pill nav, then seven stacked setting cards: Who can see it, Posting, Photo protection, Notifications, Invite email, Welcome message, Spoiler holds; footer scope note",
+      "bbox": {
+        "x": 232,
+        "y": 114,
+        "width": 660,
+        "height": 2801
+      },
+      "patterns": [
+        "settings",
+        "choice-control",
+        "text-field",
+        "tag-input",
+        "banner"
+      ]
+    },
+    {
+      "id": "preview-panel",
+      "role": "aside-preview",
+      "label": "Preview aside: preview-as tabs (test knitter / regular member), member select, 'What Saoirse would experience' consequence list, tabs (In the space / Invite email / Notifications) over a mocked browser view of the space with posts and composer",
+      "bbox": {
+        "x": 892,
+        "y": 114,
+        "width": 548,
+        "height": 2801
+      },
+      "patterns": [
+        "tabs",
+        "choice-control",
+        "card",
+        "feed",
+        "text-field"
+      ]
+    }
+  ],
+  "patterns": [
+    {
+      "id": "settings",
+      "status": "present",
+      "confidence": 0.92,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 260,
+            "y": 267,
+            "width": 604,
+            "height": 655
+          },
+          "quote": "Who can see it",
+          "note": "First of seven sectioned setting cards on one page",
+          "region": "settings-column"
+        },
+        {
+          "bbox": {
+            "x": 260,
+            "y": 181,
+            "width": 604,
+            "height": 82
+          },
+          "quote": "Jump to section",
+          "note": "Pill nav jumping to sections",
+          "region": "settings-column"
+        },
+        {
+          "bbox": {
+            "x": 913,
+            "y": 341,
+            "width": 507,
+            "height": 178
+          },
+          "quote": "WHAT SAOIRSE WOULD EXPERIENCE",
+          "note": "Consequences of current settings shown per member",
+          "region": "preview-panel"
+        },
+        {
+          "bbox": {
+            "x": 649,
+            "y": 2181,
+            "width": 194,
+            "height": 28
+          },
+          "quote": "Use community message",
+          "note": "Revert to community default",
+          "region": "settings-column"
+        }
+      ],
+      "dims": {
+        "ia": "sectioned-page",
+        "controls": [
+          "boolean-toggles",
+          "single-and-multi-select",
+          "text-and-credentials"
+        ],
+        "discovery": [
+          "browse-hierarchy"
+        ],
+        "timing": "save-button",
+        "scope": "override-layers",
+        "safety": [
+          "show-side-effects",
+          "reset-to-default"
+        ]
+      }
+    },
+    {
+      "id": "app-shell",
+      "status": "present",
+      "confidence": 0.88,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 232,
+            "height": 900
+          },
+          "quote": "Hearthroom",
+          "note": "Persistent left sidebar with community switcher and destinations",
+          "region": "sidebar"
+        }
+      ],
+      "dims": {
+        "primary": "sidebar",
+        "secondary": "none",
+        "items": [
+          "fixed-destinations",
+          "workspace-switcher"
+        ],
+        "visibility": "always-visible",
+        "structure": "single-app"
+      }
+    },
+    {
+      "id": "breadcrumbs",
+      "status": "present",
+      "confidence": 0.88,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 260,
+            "y": 16,
+            "width": 180,
+            "height": 18
+          },
+          "quote": "Spaces > Winter '26 Test Knit",
+          "region": "page-header"
+        }
+      ],
+      "dims": {
+        "type": "location",
+        "truncation": "full-path",
+        "placement": "above-the-title"
+      }
+    },
+    {
+      "id": "badge",
+      "status": "present",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 505,
+            "y": 45,
+            "width": 50,
+            "height": 22
+          },
+          "quote": "Draft",
+          "note": "Status pill next to the title",
+          "region": "page-header"
+        },
+        {
+          "bbox": {
+            "x": 165,
+            "y": 412,
+            "width": 48,
+            "height": 18
+          },
+          "quote": "DRAFT",
+          "note": "Status pill on sidebar item",
+          "region": "sidebar"
+        },
+        {
+          "bbox": {
+            "x": 180,
+            "y": 168,
+            "width": 32,
+            "height": 18
+          },
+          "quote": "342",
+          "note": "Member count on Members nav item",
+          "region": "sidebar"
+        }
+      ],
+      "dims": {
+        "meaning": "status",
+        "aggregation": "per-item"
+      }
+    },
+    {
+      "id": "banner",
+      "status": "present",
+      "confidence": 0.72,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 258,
+            "y": 130,
+            "width": 600,
+            "height": 40
+          },
+          "quote": "This space is still a draft. Nobody but you can see it until you send the invites.",
+          "note": "Info notice at top of content",
+          "region": "settings-column"
+        },
+        {
+          "bbox": {
+            "x": 281,
+            "y": 1530,
+            "width": 562,
+            "height": 52
+          },
+          "quote": "No website can stop screenshots.",
+          "note": "Section-level info callout",
+          "region": "settings-column"
+        }
+      ],
+      "dims": {
+        "scope": "page",
+        "severity": "information",
+        "dismissal": "not-until-resolved",
+        "action": "none",
+        "placement": "top-of-content"
+      }
+    },
+    {
+      "id": "choice-control",
+      "status": "present",
+      "confidence": 0.92,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 281,
+            "y": 349,
+            "width": 562,
+            "height": 225
+          },
+          "quote": "Visible to all members",
+          "note": "Bordered radio rows with label + description; selected row tinted with rust border",
+          "region": "settings-column"
+        },
+        {
+          "bbox": {
+            "x": 281,
+            "y": 1719,
+            "width": 390,
+            "height": 38
+          },
+          "quote": "Instant alerts",
+          "note": "Segmented control radiogroup",
+          "region": "settings-column"
+        },
+        {
+          "bbox": {
+            "x": 805,
+            "y": 1353,
+            "width": 38,
+            "height": 22
+          },
+          "note": "Switches for photo protection",
+          "region": "settings-column"
+        },
+        {
+          "bbox": {
+            "x": 281,
+            "y": 1944,
+            "width": 562,
+            "height": 80
+          },
+          "quote": "Oduya Knits Circle",
+          "note": "Option cards with logo image",
+          "region": "settings-column"
+        },
+        {
+          "bbox": {
+            "x": 913,
+            "y": 277,
+            "width": 507,
+            "height": 56
+          },
+          "quote": "Saoirse Byrne · Maker member",
+          "note": "Dropdown select of who to preview as",
+          "region": "preview-panel"
+        }
+      ],
+      "dims": {
+        "cardinality": "single-choice",
+        "form": "radio-list",
+        "option": [
+          "label-and-description",
+          "icon-or-image"
+        ],
+        "timing": "previewed",
+        "largeSets": "show-all"
+      }
+    },
+    {
+      "id": "text-field",
+      "status": "present",
+      "confidence": 0.88,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 281,
+            "y": 2217,
+            "width": 562,
+            "height": 135
+          },
+          "quote": "Welcome to the Circle! Say hi in General Chat.",
+          "note": "Textarea with hint and 46/600 counter",
+          "region": "settings-column"
+        },
+        {
+          "bbox": {
+            "x": 281,
+            "y": 2716,
+            "width": 562,
+            "height": 68
+          },
+          "quote": "Try a sample post",
+          "note": "Labelled field with example placeholder",
+          "region": "settings-column"
+        }
+      ],
+      "dims": {
+        "supporting": [
+          "label",
+          "placeholder",
+          "hint-text",
+          "character-counter"
+        ],
+        "validation": "while-typing",
+        "style": "outlined",
+        "assistance": [
+          "none"
+        ],
+        "inputType": "plain"
+      }
+    },
+    {
+      "id": "tag-input",
+      "status": "present",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 281,
+            "y": 2485,
+            "width": 562,
+            "height": 67
+          },
+          "quote": "Type a word or phrase, then press Enter",
+          "note": "Empty in capture; live check: Enter turns text into a removable chip with 'Add another…'",
+          "region": "settings-column"
+        }
+      ],
+      "dims": {
+        "token": [
+          "text"
+        ],
+        "vocabulary": "free-creation",
+        "create": [
+          "enter"
+        ]
+      }
+    },
+    {
+      "id": "tabs",
+      "status": "present",
+      "confidence": 0.88,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 913,
+            "y": 533,
+            "width": 507,
+            "height": 35
+          },
+          "quote": "In the space",
+          "note": "Underlined tab strip; live check switches preview to email mock",
+          "region": "preview-panel"
+        },
+        {
+          "bbox": {
+            "x": 913,
+            "y": 211,
+            "width": 507,
+            "height": 55
+          },
+          "quote": "A test knitter",
+          "note": "Second tablist 'Preview as' styled as two cards",
+          "region": "preview-panel"
+        }
+      ],
+      "dims": {
+        "placement": "top",
+        "label": [
+          "text"
+        ],
+        "origin": "fixed-by-the-designer",
+        "grouping": "flat",
+        "switchBy": [
+          "click"
+        ]
+      }
+    },
+    {
+      "id": "card",
+      "status": "present",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1072,
+            "y": 750,
+            "width": 335,
+            "height": 281
+          },
+          "quote": "Fenwick Pullover: sample photos and sizing notes",
+          "note": "Post card in preview mock with images and reply count",
+          "region": "preview-panel"
+        },
+        {
+          "bbox": {
+            "x": 1072,
+            "y": 1040,
+            "width": 335,
+            "height": 275
+          },
+          "quote": "Hollin Cowl gauge",
+          "region": "preview-panel"
+        }
+      ],
+      "dims": {
+        "media": "none",
+        "actions": "none",
+        "shape": "vertical",
+        "style": "outlined"
+      }
+    },
+    {
+      "id": "feed",
+      "status": "uncertain",
+      "confidence": 0.5,
+      "rationale": "The posts are a simulated preview of the member-facing space inside the settings page, not a working feed; cannot verify ordering or loading.",
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1060,
+            "y": 610,
+            "width": 359,
+            "height": 767
+          },
+          "quote": "Winter '26 Test Knit",
+          "note": "Mock space view: welcome message, pinned post, recent post, composer",
+          "region": "preview-panel"
+        }
+      ],
+      "dims": {
+        "density": "full-post",
+        "arrangement": "single-column",
+        "nesting": [
+          "flat"
+        ]
+      }
+    },
+    {
+      "id": "tree-view",
+      "status": "absent",
+      "confidence": 0.6,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 12,
+            "y": 194,
+            "width": 207,
+            "height": 250
+          },
+          "note": "Spaces shows an indented child list but no disclosure control"
+        }
+      ],
+      "dims": {}
+    },
+    {
+      "id": "modal-dialog",
+      "status": "absent",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1263,
+            "y": 63,
+            "width": 149,
+            "height": 36
+          },
+          "note": "No dialog in capture; a 'Review before saving' modal appears only after editing (live)"
+        }
+      ],
+      "dims": {}
+    }
+  ],
+  "structure": {
+    "layout": "three-column admin settings: fixed left nav sidebar, scrolling center column of stacked setting cards under a page header, and a scrolling right preview aside",
+    "regions": [
+      "sidebar",
+      "page-header",
+      "settings-column",
+      "preview-panel"
+    ],
+    "density": "medium"
+  },
+  "aesthetics": {
+    "palette": [
+      "#f5f1ea",
+      "#fffdf9",
+      "#ece6dc",
+      "#2b2622",
+      "#5c544c",
+      "#8a8076",
+      "#b5532b",
+      "#e7dfd4",
+      "#fdf6f1",
+      "#6b420f"
+    ],
+    "colorRoles": {
+      "background": "#f5f1ea",
+      "surface": "#fffdf9",
+      "text": "#2b2622",
+      "muted": "#8a8076",
+      "secondary-text": "#5c544c",
+      "primary": "#2b2622",
+      "accent": "#b5532b",
+      "selected-fill": "#fdf6f1",
+      "border": "#e7dfd4",
+      "aside-background": "#ece6dc",
+      "warning-text": "#6b420f"
+    },
+    "typography": "Iowan Old Style (serif) for H1, section H2s, brand wordmark and preview titles; -apple-system sans for all body, labels, controls",
+    "typeScale": "Modest: H1 25px serif, H2 18px serif, labels 14px semibold, body/descriptions 13-14px, meta 11-12px uppercase tracked eyebrows; hierarchy carried by serif vs sans rather than size",
+    "shape": "soft",
+    "elevation": "subtle-shadows",
+    "borders": "thin",
+    "imagery": [
+      "iconography",
+      "illustration"
+    ],
+    "iconStyle": "line",
+    "whitespace": "moderate",
+    "backgroundTreatment": "solid",
+    "mood": [
+      "warm",
+      "calm",
+      "crafty",
+      "considerate",
+      "editorial"
+    ]
+  },
+  "model": {
+    "rater": "rater-2",
+    "provider": "claude-code",
+    "name": "claude-opus-5-5",
+    "effort": "high",
+    "generatedAt": "2026-11-14T22:03:04.304Z",
+    "servedBy": [
+      "claude-opus-5-5"
+    ],
+    "turns": 17,
+    "usage": {
+      "input_tokens": 34,
+      "cache_creation_input_tokens": 81216,
+      "cache_read_input_tokens": 813207,
+      "output_tokens": 13208
+    }
+  },
+  "notes": "Warm paper palette (cream/linen) with a single rust accent (#b5532b) for selected radios/switch and a near-black primary button. Distinctive: a live 'Preview' aside that simulates exactly what a chosen member (test knitter vs regular member, selectable person) would experience, with a plain-language consequence list using info/check/warning icons, and a mocked browser view of the space. Editing a setting shows a 'Changed' pill on the section, a dot on its jump chip, 'CURRENT' tag on the saved option, and swaps the header button to '1 unsaved change · Discard · Review & save', which opens a 'Review before saving' modal with a now/after diff table and side-effects warnings (not in the capture). Copy is unusually plain and consequence-focused. Avatar stack '+12' for invitees."
+}

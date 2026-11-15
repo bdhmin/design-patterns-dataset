@@ -1,0 +1,305 @@
+- link "Skip to content":
+  - /url: "#main"
+- banner:
+  - text: Stocktake Commons Southside Free Fridge Network
+  - navigation "Views":
+    - button "Run-outs"
+    - button "Compare"
+    - button "Donations"
+    - button "Temperature"
+    - button "Extra drop"
+    - button "Check log"
+  - text: Logs through Mon, Nov 9 · meeting Sun, Nov 15
+  - button "Sunday brief"
+- text: Period
+- group "Period":
+  - button "All 14 weeks" [pressed]
+  - button "Before Labor Day"
+  - button "After Labor Day"
+- text: From
+- textbox "From": 2026-08-04
+- text: to
+- textbox "to": 2026-11-09
+- text: Aug 4 – Nov 9 · 98 days · 3,126 checks · 412 drops
+- main:
+  - heading "F3 and F5 ran out before noon on 38% of weekdays, against 14% across the network." [level=1]
+  - paragraph: The other 7 fridges average 7%. “Empty before noon” means at least one check before 12:00 PM logged fill level 0. Counted per fridge per weekday, over all 14 weeks (about 70 weekdays each).
+  - heading "Which fridges run out fastest" [level=3]
+  - paragraph: Click a row to inspect it. Click a weekday cell to open the matching check entries.
+  - table:
+    - rowgroup:
+      - row "Fridge Empty before noon Mon Tue Wed Thu Fri Typical first empty Before → after Labor Day":
+        - columnheader "Fridge":
+          - button "Fridge"
+        - columnheader "Empty before noon":
+          - button "Empty before noon"
+        - columnheader "Mon":
+          - button "Mon"
+        - columnheader "Tue":
+          - button "Tue"
+        - columnheader "Wed":
+          - button "Wed"
+        - columnheader "Thu":
+          - button "Thu"
+        - columnheader "Fri":
+          - button "Fri"
+        - columnheader "Typical first empty":
+          - button "Typical first empty"
+        - columnheader "Before → after Labor Day":
+          - button "Before → after Labor Day"
+    - rowgroup:
+      - 'row "F3 Kessler Ave Church Riverbend Network average 39% 27/70 F3 Monday: empty before noon on 9 of 14 days F3 Tuesday: empty before noon on 0 of 14 days F3 Wednesday: empty before noon on 2 of 14 days F3 Thursday: empty before noon on 9 of 14 days F3 Friday: empty before noon on 7 of 14 days 9:27 AM 20% → 49% +29 pt"':
+        - rowheader "F3 Kessler Ave Church Riverbend":
+          - button "F3 Kessler Ave Church Riverbend" [pressed]
+        - cell "Network average 39% 27/70": 39% 27/70
+        - 'cell "F3 Monday: empty before noon on 9 of 14 days"':
+          - 'button "F3 Monday: empty before noon on 9 of 14 days"': "64"
+        - 'cell "F3 Tuesday: empty before noon on 0 of 14 days"':
+          - 'button "F3 Tuesday: empty before noon on 0 of 14 days"': "0"
+        - 'cell "F3 Wednesday: empty before noon on 2 of 14 days"':
+          - 'button "F3 Wednesday: empty before noon on 2 of 14 days"': "14"
+        - 'cell "F3 Thursday: empty before noon on 9 of 14 days"':
+          - 'button "F3 Thursday: empty before noon on 9 of 14 days"': "64"
+        - 'cell "F3 Friday: empty before noon on 7 of 14 days"':
+          - 'button "F3 Friday: empty before noon on 7 of 14 days"': "50"
+        - cell "9:27 AM"
+        - cell "20% → 49% +29 pt"
+      - 'row "F5 Eastgate Rec Center Eastgate Network average 37% 26/70 F5 Monday: empty before noon on 6 of 14 days F5 Tuesday: empty before noon on 5 of 14 days F5 Wednesday: empty before noon on 6 of 14 days F5 Thursday: empty before noon on 7 of 14 days F5 Friday: empty before noon on 2 of 14 days 9:42 AM 32% → 40% +8 pt"':
+        - rowheader "F5 Eastgate Rec Center Eastgate":
+          - button "F5 Eastgate Rec Center Eastgate"
+        - cell "Network average 37% 26/70": 37% 26/70
+        - 'cell "F5 Monday: empty before noon on 6 of 14 days"':
+          - 'button "F5 Monday: empty before noon on 6 of 14 days"': "43"
+        - 'cell "F5 Tuesday: empty before noon on 5 of 14 days"':
+          - 'button "F5 Tuesday: empty before noon on 5 of 14 days"': "36"
+        - 'cell "F5 Wednesday: empty before noon on 6 of 14 days"':
+          - 'button "F5 Wednesday: empty before noon on 6 of 14 days"': "43"
+        - 'cell "F5 Thursday: empty before noon on 7 of 14 days"':
+          - 'button "F5 Thursday: empty before noon on 7 of 14 days"': "50"
+        - 'cell "F5 Friday: empty before noon on 2 of 14 days"':
+          - 'button "F5 Friday: empty before noon on 2 of 14 days"': "14"
+        - cell "9:42 AM"
+        - cell "32% → 40% +8 pt"
+      - 'row "F6 Harmon & 4th Barbershop Southside Network average 10% 7/70 F6 Monday: empty before noon on 5 of 14 days F6 Tuesday: empty before noon on 1 of 14 days F6 Wednesday: empty before noon on 0 of 14 days F6 Thursday: empty before noon on 0 of 14 days F6 Friday: empty before noon on 1 of 14 days 9:23 AM 8% → 11% +3 pt"':
+        - rowheader "F6 Harmon & 4th Barbershop Southside":
+          - button "F6 Harmon & 4th Barbershop Southside"
+        - cell "Network average 10% 7/70": 10% 7/70
+        - 'cell "F6 Monday: empty before noon on 5 of 14 days"':
+          - 'button "F6 Monday: empty before noon on 5 of 14 days"': "36"
+        - 'cell "F6 Tuesday: empty before noon on 1 of 14 days"':
+          - 'button "F6 Tuesday: empty before noon on 1 of 14 days"': "7"
+        - 'cell "F6 Wednesday: empty before noon on 0 of 14 days"':
+          - 'button "F6 Wednesday: empty before noon on 0 of 14 days"': "0"
+        - 'cell "F6 Thursday: empty before noon on 0 of 14 days"':
+          - 'button "F6 Thursday: empty before noon on 0 of 14 days"': "0"
+        - 'cell "F6 Friday: empty before noon on 1 of 14 days"':
+          - 'button "F6 Friday: empty before noon on 1 of 14 days"': "7"
+        - cell "9:23 AM"
+        - cell "8% → 11% +3 pt"
+      - 'row "F1 Elm St Laundromat Southside Network average 9% 6/70 F1 Monday: empty before noon on 3 of 14 days F1 Tuesday: empty before noon on 0 of 14 days F1 Wednesday: empty before noon on 0 of 14 days F1 Thursday: empty before noon on 1 of 14 days F1 Friday: empty before noon on 2 of 14 days 8:41 AM 8% → 9% +1 pt"':
+        - rowheader "F1 Elm St Laundromat Southside":
+          - button "F1 Elm St Laundromat Southside"
+        - cell "Network average 9% 6/70": 9% 6/70
+        - 'cell "F1 Monday: empty before noon on 3 of 14 days"':
+          - 'button "F1 Monday: empty before noon on 3 of 14 days"': "21"
+        - 'cell "F1 Tuesday: empty before noon on 0 of 14 days"':
+          - 'button "F1 Tuesday: empty before noon on 0 of 14 days"': "0"
+        - 'cell "F1 Wednesday: empty before noon on 0 of 14 days"':
+          - 'button "F1 Wednesday: empty before noon on 0 of 14 days"': "0"
+        - 'cell "F1 Thursday: empty before noon on 1 of 14 days"':
+          - 'button "F1 Thursday: empty before noon on 1 of 14 days"': "7"
+        - 'cell "F1 Friday: empty before noon on 2 of 14 days"':
+          - 'button "F1 Friday: empty before noon on 2 of 14 days"': "14"
+        - cell "8:41 AM"
+        - cell "8% → 9% +1 pt"
+      - 'row "F4 Millbrook Community Garden Millbrook Network average 7% 5/70 F4 Monday: empty before noon on 5 of 14 days F4 Tuesday: empty before noon on 0 of 14 days F4 Wednesday: empty before noon on 0 of 14 days F4 Thursday: empty before noon on 0 of 14 days F4 Friday: empty before noon on 0 of 14 days 8:21 AM 4% → 9% +5 pt"':
+        - rowheader "F4 Millbrook Community Garden Millbrook":
+          - button "F4 Millbrook Community Garden Millbrook"
+        - cell "Network average 7% 5/70": 7% 5/70
+        - 'cell "F4 Monday: empty before noon on 5 of 14 days"':
+          - 'button "F4 Monday: empty before noon on 5 of 14 days"': "36"
+        - 'cell "F4 Tuesday: empty before noon on 0 of 14 days"':
+          - 'button "F4 Tuesday: empty before noon on 0 of 14 days"': "0"
+        - 'cell "F4 Wednesday: empty before noon on 0 of 14 days"':
+          - 'button "F4 Wednesday: empty before noon on 0 of 14 days"': "0"
+        - 'cell "F4 Thursday: empty before noon on 0 of 14 days"':
+          - 'button "F4 Thursday: empty before noon on 0 of 14 days"': "0"
+        - 'cell "F4 Friday: empty before noon on 0 of 14 days"':
+          - 'button "F4 Friday: empty before noon on 0 of 14 days"': "0"
+        - cell "8:21 AM"
+        - cell "4% → 9% +5 pt"
+      - 'row "F7 Ortiz Corner Store Southside Network average 7% 5/70 F7 Monday: empty before noon on 0 of 14 days F7 Tuesday: empty before noon on 1 of 14 days F7 Wednesday: empty before noon on 1 of 14 days F7 Thursday: empty before noon on 2 of 14 days F7 Friday: empty before noon on 1 of 14 days 10:01 AM 8% → 7% −1 pt"':
+        - rowheader "F7 Ortiz Corner Store Southside":
+          - button "F7 Ortiz Corner Store Southside"
+        - cell "Network average 7% 5/70": 7% 5/70
+        - 'cell "F7 Monday: empty before noon on 0 of 14 days"':
+          - 'button "F7 Monday: empty before noon on 0 of 14 days"': "0"
+        - 'cell "F7 Tuesday: empty before noon on 1 of 14 days"':
+          - 'button "F7 Tuesday: empty before noon on 1 of 14 days"': "7"
+        - 'cell "F7 Wednesday: empty before noon on 1 of 14 days"':
+          - 'button "F7 Wednesday: empty before noon on 1 of 14 days"': "7"
+        - 'cell "F7 Thursday: empty before noon on 2 of 14 days"':
+          - 'button "F7 Thursday: empty before noon on 2 of 14 days"': "14"
+        - 'cell "F7 Friday: empty before noon on 1 of 14 days"':
+          - 'button "F7 Friday: empty before noon on 1 of 14 days"': "7"
+        - cell "10:01 AM"
+        - cell "8% → 7% −1 pt"
+      - 'row "F9 Station 6 Firehouse Millbrook Network average 7% 5/70 F9 Monday: empty before noon on 0 of 14 days F9 Tuesday: empty before noon on 1 of 14 days F9 Wednesday: empty before noon on 1 of 14 days F9 Thursday: empty before noon on 1 of 14 days F9 Friday: empty before noon on 2 of 14 days 9:24 AM 4% → 9% +5 pt"':
+        - rowheader "F9 Station 6 Firehouse Millbrook":
+          - button "F9 Station 6 Firehouse Millbrook"
+        - cell "Network average 7% 5/70": 7% 5/70
+        - 'cell "F9 Monday: empty before noon on 0 of 14 days"':
+          - 'button "F9 Monday: empty before noon on 0 of 14 days"': "0"
+        - 'cell "F9 Tuesday: empty before noon on 1 of 14 days"':
+          - 'button "F9 Tuesday: empty before noon on 1 of 14 days"': "7"
+        - 'cell "F9 Wednesday: empty before noon on 1 of 14 days"':
+          - 'button "F9 Wednesday: empty before noon on 1 of 14 days"': "7"
+        - 'cell "F9 Thursday: empty before noon on 1 of 14 days"':
+          - 'button "F9 Thursday: empty before noon on 1 of 14 days"': "7"
+        - 'cell "F9 Friday: empty before noon on 2 of 14 days"':
+          - 'button "F9 Friday: empty before noon on 2 of 14 days"': "14"
+        - cell "9:24 AM"
+        - cell "4% → 9% +5 pt"
+      - 'row "F2 Delancey Library Annex Eastgate Network average 6% 4/70 F2 Monday: empty before noon on 1 of 14 days F2 Tuesday: empty before noon on 0 of 14 days F2 Wednesday: empty before noon on 1 of 14 days F2 Thursday: empty before noon on 2 of 14 days F2 Friday: empty before noon on 0 of 14 days 10:19 AM 8% → 4% −4 pt"':
+        - rowheader "F2 Delancey Library Annex Eastgate":
+          - button "F2 Delancey Library Annex Eastgate"
+        - cell "Network average 6% 4/70": 6% 4/70
+        - 'cell "F2 Monday: empty before noon on 1 of 14 days"':
+          - 'button "F2 Monday: empty before noon on 1 of 14 days"': "7"
+        - 'cell "F2 Tuesday: empty before noon on 0 of 14 days"':
+          - 'button "F2 Tuesday: empty before noon on 0 of 14 days"': "0"
+        - 'cell "F2 Wednesday: empty before noon on 1 of 14 days"':
+          - 'button "F2 Wednesday: empty before noon on 1 of 14 days"': "7"
+        - 'cell "F2 Thursday: empty before noon on 2 of 14 days"':
+          - 'button "F2 Thursday: empty before noon on 2 of 14 days"': "14"
+        - 'cell "F2 Friday: empty before noon on 0 of 14 days"':
+          - 'button "F2 Friday: empty before noon on 0 of 14 days"': "0"
+        - cell "10:19 AM"
+        - cell "8% → 4% −4 pt"
+      - 'row "F8 Riverbend Senior Housing Riverbend Network average 4% 3/70 F8 Monday: empty before noon on 0 of 14 days F8 Tuesday: empty before noon on 0 of 14 days F8 Wednesday: empty before noon on 1 of 14 days F8 Thursday: empty before noon on 2 of 14 days F8 Friday: empty before noon on 0 of 14 days 9:21 AM 8% → 2% −6 pt"':
+        - rowheader "F8 Riverbend Senior Housing Riverbend":
+          - button "F8 Riverbend Senior Housing Riverbend"
+        - cell "Network average 4% 3/70": 4% 3/70
+        - 'cell "F8 Monday: empty before noon on 0 of 14 days"':
+          - 'button "F8 Monday: empty before noon on 0 of 14 days"': "0"
+        - 'cell "F8 Tuesday: empty before noon on 0 of 14 days"':
+          - 'button "F8 Tuesday: empty before noon on 0 of 14 days"': "0"
+        - 'cell "F8 Wednesday: empty before noon on 1 of 14 days"':
+          - 'button "F8 Wednesday: empty before noon on 1 of 14 days"': "7"
+        - 'cell "F8 Thursday: empty before noon on 2 of 14 days"':
+          - 'button "F8 Thursday: empty before noon on 2 of 14 days"': "14"
+        - 'cell "F8 Friday: empty before noon on 0 of 14 days"':
+          - 'button "F8 Friday: empty before noon on 0 of 14 days"': "0"
+        - cell "9:21 AM"
+        - cell "8% → 2% −6 pt"
+    - rowgroup:
+      - row "All Network 9 fridges 14% 88/630 23 6 10 19 12 11% → 16%":
+        - rowheader "All Network 9 fridges"
+        - cell "14% 88/630"
+        - cell "23"
+        - cell "6"
+        - cell "10"
+        - cell "19"
+        - cell "12"
+        - cell
+        - cell "11% → 16%"
+  - paragraph: "Weekday cells show % of that weekday’s mornings with an empty reading. Bar tick = network average. Flagged in rust: at least twice the network rate."
+  - heading "When F3 is empty" [level=3]
+  - paragraph: F3 · Kessler Ave Church
+  - combobox "Fridge to inspect":
+    - option "All fridges"
+    - option "F1 · Elm St Laundromat"
+    - option "F2 · Delancey Library Annex"
+    - option "F3 · Kessler Ave Church" [selected]
+    - option "F4 · Millbrook Community Garden"
+    - option "F5 · Eastgate Rec Center"
+    - option "F6 · Harmon & 4th Barbershop"
+    - option "F7 · Ortiz Corner Store"
+    - option "F8 · Riverbend Senior Housing"
+    - option "F9 · Station 6 Firehouse"
+  - group "Heat map measure":
+    - button "Average fill" [pressed]
+    - button "Share empty"
+  - table:
+    - rowgroup:
+      - row "7–9a 9–11a 11a–1p 1–3p 3–5p 5–7p 7–9p":
+        - columnheader
+        - columnheader "7–9a"
+        - columnheader "9–11a"
+        - columnheader "11a–1p"
+        - columnheader "1–3p"
+        - columnheader "3–5p"
+        - columnheader "5–7p"
+        - columnheader "7–9p"
+    - rowgroup:
+      - row "Mon 0.2 1.1 0.5 0.0 0.6 0.9 0.2":
+        - rowheader "Mon"
+        - cell "0.2"
+        - cell "1.1"
+        - cell "0.5"
+        - cell "0.0"
+        - cell "0.6"
+        - cell "0.9"
+        - cell "0.2"
+      - row "Tue 3.5 2.4 2.4 2.4 2.0 2.0 1.8":
+        - rowheader "Tue"
+        - cell "3.5"
+        - cell "2.4"
+        - cell "2.4"
+        - cell "2.4"
+        - cell "2.0"
+        - cell "2.0"
+        - cell "1.8"
+      - row "Wed 2.0 1.8 1.8 0.8 0.5 1.5 0.6":
+        - rowheader "Wed"
+        - cell "2.0"
+        - cell "1.8"
+        - cell "1.8"
+        - cell "0.8"
+        - cell "0.5"
+        - cell "1.5"
+        - cell "0.6"
+      - row "Thu 1.1 0.6 0.3 0.8 0.7 1.4 0.9":
+        - rowheader "Thu"
+        - cell "1.1"
+        - cell "0.6"
+        - cell "0.3"
+        - cell "0.8"
+        - cell "0.7"
+        - cell "1.4"
+        - cell "0.9"
+      - row "Fri 0.3 0.9 1.1 0.7 0.0 0.9 0.8":
+        - rowheader "Fri"
+        - cell "0.3"
+        - cell "0.9"
+        - cell "1.1"
+        - cell "0.7"
+        - cell "0.0"
+        - cell "0.9"
+        - cell "0.8"
+      - row "Sat 1.0 0.5 0.8 1.0 0.7 1.9 0.8":
+        - rowheader "Sat"
+        - cell "1.0"
+        - cell "0.5"
+        - cell "0.8"
+        - cell "1.0"
+        - cell "0.7"
+        - cell "1.9"
+        - cell "0.8"
+      - row "Sun 0.0 1.0 0.3 1.0 1.0 1.0 0.6":
+        - rowheader "Sun"
+        - cell "0.0"
+        - cell "1.0"
+        - cell "0.3"
+        - cell "1.0"
+        - cell "1.0"
+        - cell "1.0"
+        - cell "0.6"
+  - text: Empty Full (4) under 5 checks
+  - paragraph: "Emptiest window with enough checks: Monday 1–3p, average fill 0.0 across 6 checks."
+  - button "See all F3 readings of 0 before noon →"
+  - heading "Weekly empty-before-noon rate · F3 vs network" [level=3]
+  - paragraph: Each bar is one Tuesday-to-Monday week (5 weekday mornings). Dashed line is the network. Faded weeks fall outside the date filter.
+  - img "Weekly empty-before-noon rate for F3 · Kessler Ave Church": 0% 25% 50% 75% 100% Labor Day · school reopens Aug 4 Aug 11 Aug 18 Aug 25 Sep 1 Sep 8 Sep 15 Sep 22 Sep 29 Oct 6 Oct 13 Oct 20 Oct 27 Nov 3
+  - paragraph: "F3: 20% of weekdays before Labor Day, 49% after. The school next to F3 reopened Sep 8."
+- contentinfo: Stocktake Commons is free and volunteer-maintained. Figures come from volunteer check logs, so a fridge can be empty between checks without it being recorded.

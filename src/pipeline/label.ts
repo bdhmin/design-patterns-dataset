@@ -35,7 +35,7 @@ export interface Label {
       source: 'captured' | 'generated';
       generation?: string;
       generator?: { id: string; model: string; effort?: string };
-      brief?: { domain: string; archetype: string; product: string };
+      brief?: { domain: string; archetype: string; context?: string; product: string };
     };
   };
   regions: LabelRegion[];

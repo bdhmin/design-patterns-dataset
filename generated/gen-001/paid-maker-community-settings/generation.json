@@ -1,0 +1,73 @@
+{
+  "batch": "gen-001",
+  "slug": "paid-maker-community-settings",
+  "ok": true,
+  "brief": {
+    "slug": "paid-maker-community-settings",
+    "domain": "social-community",
+    "archetype": "configure",
+    "generator": "opus",
+    "context": "freelancer",
+    "product": "Hearthroom",
+    "summary": "Hosted membership-community software for independent creators who run small paid communities around their own craft or practice.",
+    "user": "Maren Oduya, a self-employed knitwear designer who sells patterns and runs a paid community for 342 subscribers. She set it up herself two years ago and handles all moderation alone. She knows her members well but isn't technical.",
+    "moment": "She is opening a new invite-only space for the 18 test knitters who will try her winter collection before it is released. She needs to set how it behaves before sending invites tonight: only test knitters can see and post in it, and only on its threads; regular members shouldn't know it exists. Posts should hold back photos of unreleased designs from being shared or downloaded. Test knitters should get a daily digest, not instant alerts. Her name and brand mark should replace the default community name in invite emails. She also wants to reword the automatic welcome message and switch on a keyword hold for spoilers ('pattern PDF', 'leak', 'Ravelry link') that sends matching posts to her for approval. Before she saves, she wants to check what a test knitter and a regular member would each experience.",
+    "data": "Community 'Oduya Knits Circle': 342 members on three tiers (Supporter $4/mo: 211, Maker $9/mo: 113, Studio $20/mo: 18). Six existing spaces: Announcements, General Chat, WIP Photos, Pattern Help, Swap & Sell, Studio Lounge. Draft space 'Winter '26 Test Knit': 18 invitees, including Saoirse Byrne, Tomasz Wilk and Imani Reyes, and test window Nov 16–Dec 14. Current settings: posting open to all members, instant notifications on, image download allowed, welcome message 'Welcome to the Circle! Say hi in General Chat.' and no keyword holds. Brand assets on file: logo file 'oduya-mark.png' and display name 'Oduya Knits'. Settings were last changed Sep 3, 2026.",
+    "echo": [
+      "settings: \"settings\"",
+      "choice-control: \"switch\"",
+      "notification-center: \"notifications\""
+    ]
+  },
+  "generator": {
+    "id": "opus",
+    "model": "claude-opus-5-5",
+    "effort": "high"
+  },
+  "prompt": "I need the front end for Hearthroom. Hosted membership-community software for independent creators who run small paid communities around their own craft or practice.\n\nWho's using it: Maren Oduya, a self-employed knitwear designer who sells patterns and runs a paid community for 342 subscribers. She set it up herself two years ago and handles all moderation alone. She knows her members well but isn't technical.\n\nWhat they're doing right now: She is opening a new invite-only space for the 18 test knitters who will try her winter collection before it is released. She needs to set how it behaves before sending invites tonight: only test knitters can see and post in it, and only on its threads; regular members shouldn't know it exists. Posts should hold back photos of unreleased designs from being shared or downloaded. Test knitters should get a daily digest, not instant alerts. Her name and brand mark should replace the default community name in invite emails. She also wants to reword the automatic welcome message and switch on a keyword hold for spoilers ('pattern PDF', 'leak', 'Ravelry link') that sends matching posts to her for approval. Before she saves, she wants to check what a test knitter and a regular member would each experience.\n\nWhat's in the system at this point: Community 'Oduya Knits Circle': 342 members on three tiers (Supporter $4/mo: 211, Maker $9/mo: 113, Studio $20/mo: 18). Six existing spaces: Announcements, General Chat, WIP Photos, Pattern Help, Swap & Sell, Studio Lounge. Draft space 'Winter '26 Test Knit': 18 invitees, including Saoirse Byrne, Tomasz Wilk and Imani Reyes, and test window Nov 16–Dec 14. Current settings: posting open to all members, instant notifications on, image download allowed, welcome message 'Welcome to the Circle! Say hi in General Chat.' and no keyword holds. Brand assets on file: logo file 'oduya-mark.png' and display name 'Oduya Knits'. Settings were last changed Sep 3, 2026.\n\nBuild it as a working web app, opened in the state that person would see at that moment. No backend: use realistic mock data (no lorem ipsum, no placeholder names), and make the interactive parts actually work client-side.\n\nUse whatever framework and tooling you like. When you're done there must be a static production build in ./out with ./out/index.html as the entry point. It will be served from the root of a plain static file server (no rewrites, no server code) and viewed in a desktop browser at 1440×900.",
+  "startedAt": "2026-11-14T04:11:47.278Z",
+  "finishedAt": "2026-11-14T04:23:44.787Z",
+  "verification": {
+    "ok": true,
+    "problems": [],
+    "pageErrors": [],
+    "consoleErrors": [],
+    "failedRequests": [],
+    "textChars": 5419,
+    "visibleElements": 473,
+    "title": "Winter '26 Test Knit · Space settings · Hearthroom"
+  },
+  "repairs": 0,
+  "session": {
+    "rounds": 1,
+    "numTurns": 37,
+    "costUsd": 2.8055426,
+    "durationMs": 717416,
+    "models": [
+      "claude-opus-5-5"
+    ],
+    "usage": {
+      "input_tokens": 58,
+      "cache_creation_input_tokens": 101764,
+      "cache_read_input_tokens": 1933393,
+      "output_tokens": 80226
+    },
+    "timedOut": false
+  },
+  "stack": {
+    "packageJson": true,
+    "dependencies": [
+      "react",
+      "react-dom"
+    ],
+    "devDependencies": [
+      "@types/react",
+      "@types/react-dom",
+      "@vitejs/plugin-react",
+      "typescript",
+      "vite"
+    ],
+    "outFiles": 3,
+    "outBytes": 311557
+  }
+}

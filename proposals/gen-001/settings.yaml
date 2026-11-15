@@ -1,0 +1,37 @@
+# Codebook proposal (new-values) — review with: node scripts/proposals.ts show gen-001 settings
+id: settings
+kind: new-values
+status: open
+batch: gen-001
+codebookVersion: 1.0.0
+dimensions:
+  - subdimensions:
+      - id: safety
+        values:
+          - id: preview-as-audience
+            name: Preview as audience
+            description: A live preview renders what a chosen affected person would see/experience under the
+              pending settings, before saving.
+            example: Hearthroom space settings — Preview as a test knitter / regular member
+rationale:
+  - rater: rater-3
+    site: paid-maker-community-settings
+    text: The page previews the settings' effect as a chosen audience member (test knitter vs regular
+      member, choosable person) with a mock rendering of the space, email and notifications.
+      'show-side-effects' covers explanations but not a persona-based live preview of the outcome.
+sources:
+  - batch: gen-001
+    site: paid-maker-community-settings
+    url: http://paid-maker-community-settings.localhost:4318/
+    note: proposed by rater-3
+evidence:
+  - site: paid-maker-community-settings
+    rater: rater-3
+    bbox:
+      x: 892
+      y: 114
+      width: 548
+      height: 1270
+    quote: Preview
+createdAt: 2026-11-14T22:01:48.773Z
+updatedAt: 2026-11-14T22:01:48.773Z
