@@ -1,0 +1,95 @@
+# Repo-sourced UIs: open-source apps built from their own repositories.
+#   scripts/discover-repos.ts → repos/<batch>.yaml (review it)
+#   scripts/prepare-repos.ts  → clone + build (sandboxed coding agent), then a
+#                               browser agent picks views → sites/<batch>.yaml
+#   scripts/label.ts          → capture + label, unchanged
+# README "Repo-sourced UIs" has the details.
+
+discovery:
+  minStars: 150
+  pushedWithinDays: 730
+  # GitHub ORs repeated language qualifiers.
+  languages: [TypeScript, JavaScript, Vue, Svelte, HTML]
+  # SPDX ids. Repos without a license (or "NOASSERTION") are skipped.
+  licenses: [MIT, Apache-2.0, BSD-2-Clause, BSD-3-Clause, ISC, MPL-2.0, GPL-2.0, GPL-3.0, AGPL-3.0, LGPL-2.1, LGPL-3.0, Unlicense, 0BSD]
+  perQuery: 50
+  # Frame domain (label schema enum, minus marketing-landing / portfolio-agency /
+  # other) → search terms: topics, or keywords with in:name,description where
+  # topics are sparse (health, travel, civic, nonprofit). Terms name what the app is for, not how its interface
+  # looks: topic:kanban would oversample kanban boards and the labels would echo it.
+  queries:
+    productivity: [topic:note-taking, topic:project-management, topic:time-tracking, topic:personal-knowledge-management]
+    developer-tools: [topic:developer-tools, topic:api-client, topic:database-management, topic:log-viewer]
+    ai-tools: [topic:llm-ui, topic:chatbot-ui, topic:prompt-engineering, topic:ai-assistant]
+    finance: [topic:personal-finance, topic:budgeting, topic:invoicing, topic:accounting]
+    commerce: [topic:point-of-sale, topic:inventory-management, topic:ecommerce-admin, topic:storefront]
+    media-entertainment: [topic:music-player, topic:video-player, topic:podcast-player, topic:media-library]
+    news-publishing: [topic:rss-reader, topic:newsletter, topic:headless-cms, topic:read-it-later]
+    social-community: [topic:forum, topic:fediverse, topic:chat-application, topic:mastodon-client]
+    education: [topic:flashcards, topic:learning-management-system, topic:quiz-app, topic:language-learning]
+    health: [topic:health, topic:fitness-tracker, topic:habit-tracker, '"workout" in:name,description', '"medical" in:name,description', '"hospital" in:name,description']
+    travel-hospitality: [topic:travel, topic:trip-planner, '"travel" in:name,description', '"trip" in:name,description', '"hotel" in:name,description', '"flight" in:name,description']
+    government-civic: [topic:civic-tech, topic:government, topic:open-government, '"open data" in:name,description', '"transit" in:name,description', '"election" in:name,description']
+    data-visualization: [topic:data-visualization, topic:business-intelligence, topic:analytics-dashboard, topic:observability]
+    games: [topic:browser-game, topic:html5-game, topic:puzzle-game, topic:board-game]
+    design-creative: [topic:drawing-app, topic:whiteboard, topic:pixel-art, topic:photo-editor]
+    reference-docs: [topic:wiki, topic:knowledge-base, topic:dictionary, topic:documentation-tool]
+    utilities: [topic:file-sharing, topic:password-manager, topic:converter, topic:self-hosted]
+    science-research: [topic:bioinformatics, topic:astronomy, topic:electronic-lab-notebook, topic:reference-manager]
+    nonprofit: [topic:nonprofit, topic:donation, topic:fundraising, '"donation" in:name,description', '"volunteer" in:name,description', '"charity" in:name,description']
+
+# Reads each candidate's description, topics, root files, dependencies and
+# README excerpt; `chunk` candidates per call.
+screener: { model: claude-sonnet-5-5, effort: medium, chunk: 8 }
+
+# One Claude Code session per repo gets the app running (a static build in
+# .ui-capture/out, or .ui-capture/start.sh for apps with their own server).
+setup:
+  model: claude-opus-5-5
+  effort: high
+  tools: [Bash, Read, Write, Edit, Glob, Grep]
+  timeoutMinutes: 45
+  # A build that does not load when the agent stops goes back to it, up to this many times.
+  repairRounds: 2
+  # Checkouts with their node_modules: several GB per batch, so outside the repo.
+  checkoutRoot: ~/.cache/design-patterns-dataset/repos
+  basePort: 4400
+  startupSeconds: 180
+  # Bash runs in Claude Code's sandbox (writes confined to the checkout, no
+  # reads of credential dirs) and may reach only these hosts. Docker is not
+  # available inside it, so apps that need Postgres/Redis/... are screened out.
+  # Apps that need API keys or hosted services are kept: the agent fakes the
+  # keys and stubs the services locally. Runtimes are installed with mise and
+  # pinned in the checkout's mise.toml (per-checkout mise dirs; your global
+  # mise config is not used).
+  sandbox: true
+  network:
+    - registry.npmjs.org
+    - registry.yarnpkg.com
+    - repo.yarnpkg.com
+    - github.com
+    - codeload.github.com
+    - objects.githubusercontent.com
+    - raw.githubusercontent.com
+    - nodejs.org
+    # mise: version lists and runtime downloads (node from nodejs.org, python and
+    # most others from GitHub release assets)
+    - mise.jdx.dev
+    - mise-versions.jdx.dev
+    - release-assets.githubusercontent.com
+    - pypi.org
+    - files.pythonhosted.org
+    - binaries.prisma.sh
+    - cdn.jsdelivr.net
+    - unpkg.com
+
+# The browser agent that chooses which screens of a running app to capture.
+# Same provider options as config/raters.yaml.
+explorer:
+  id: explorer
+  provider: claude-code
+  model: claude-opus-5-5
+  effort: high
+  maxTurns: 120
+  maxViews: 5
+  maxActions: 80

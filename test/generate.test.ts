@@ -86,6 +86,16 @@ test('resolveStatic stays inside the root', () => {
   assert.equal(resolveStatic(root, '/a/'), path.join(root, 'a', 'index.html'));
   assert.equal(resolveStatic(root, '/../../etc/passwd'), undefined);
   assert.equal(resolveStatic(root, '/%2e%2e/%2e%2e/etc/passwd'), undefined);
+  // Links are followed only while they stay inside the root: a build could link to a host file.
+  const secret = path.join(fs.mkdtempSync(path.join(os.tmpdir(), 'host-')), 'id_rsa');
+  fs.writeFileSync(secret, 'private');
+  fs.symlinkSync(secret, path.join(root, 'key.txt'));
+  fs.symlinkSync(path.dirname(secret), path.join(root, 'hostdir'));
+  fs.symlinkSync(path.join(root, 'a', 'index.html'), path.join(root, 'alias.html'));
+  assert.equal(resolveStatic(root, '/key.txt'), undefined);
+  assert.equal(resolveStatic(root, '/hostdir/id_rsa'), undefined);
+  assert.equal(resolveStatic(root, '/alias.html'), path.join(root, 'alias.html'));
+  fs.rmSync(path.dirname(secret), { recursive: true, force: true });
   fs.rmSync(root, { recursive: true, force: true });
 });
 

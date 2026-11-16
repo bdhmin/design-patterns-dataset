@@ -22,6 +22,7 @@ export const P = {
   sites: path.join(ROOT, 'sites'),
   briefs: path.join(ROOT, 'briefs'),
   generated: path.join(ROOT, 'generated'),
+  repos: path.join(ROOT, 'repos'),
   dataset: path.join(ROOT, 'dataset'),
   originalAtlas: path.join(ROOT, 'codebook.html'),
 };

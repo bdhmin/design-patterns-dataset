@@ -32,14 +32,26 @@ export interface LocalServer {
   close(): Promise<void>;
 }
 
-/** Resolve a request path inside `root`, or undefined if it escapes it or does not exist. */
+const inside = (root: string, p: string) => p === root || p.startsWith(root + path.sep);
+
+/**
+ * Resolve a request path inside `root`, or undefined if it escapes it or does
+ * not exist. Symlinks are followed only while they stay inside `root`: a build
+ * from third-party code could hold a link to a host file (~/.ssh/id_rsa), which
+ * the app's own JavaScript could then fetch from its origin.
+ */
 export function resolveStatic(root: string, urlPath: string): string | undefined {
   let rel: string;
   try { rel = decodeURIComponent(urlPath.split('?')[0].split('#')[0]); } catch { return undefined; }
   const file = path.resolve(root, '.' + path.posix.normalize('/' + rel));
-  if (file !== root && !file.startsWith(root + path.sep)) return undefined;
+  if (!inside(root, file)) return undefined;
+  let realRoot: string;
+  try { realRoot = fs.realpathSync(root); } catch { return undefined; }
   for (const candidate of [file, path.join(file, 'index.html'), file + '.html']) {
-    try { if (fs.statSync(candidate).isFile()) return candidate; } catch { /* next */ }
+    try {
+      const real = fs.realpathSync(candidate);
+      if (inside(realRoot, real) && fs.statSync(real).isFile()) return candidate;
+    } catch { /* next */ }
   }
   return undefined;
 }

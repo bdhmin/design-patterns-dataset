@@ -8,6 +8,7 @@ import { pathToFileURL } from 'node:url';
 import type { Browser, Page } from 'playwright';
 import type { BundleEntry, CodebookBundle } from '../codebook/bundle.ts';
 import { openPage, type CaptureMeta, type IndexedElement } from './capture.ts';
+import { replaySteps, type Step } from './steps.ts';
 import { validateLabel, type Label, type ModelLabel } from './label.ts';
 import { checkProposal, fileProposal, type ProposalInput } from './proposals.ts';
 import type { ImagePart, ToolResult, ToolSpec } from './provider.ts';
@@ -19,6 +20,8 @@ export interface ToolContext {
   batch: string;
   slug: string;
   siteUrl: string;
+  /** Replayed after loading siteUrl so the live page opens in the captured state. */
+  steps?: Step[];
   rater: { id: string; provider: string; model: string; effort?: string };
   captureDir: string;
   meta: CaptureMeta;
@@ -308,8 +311,11 @@ export class RaterTools {
       if (!this.live || input.action === 'open') {
         await this.live?.context().close().catch(() => {});
         this.live = await openPage(this.ctx.browser);
-        await this.live.goto(this.ctx.meta.finalUrl, { waitUntil: 'domcontentloaded', timeout: 45_000 });
+        // A state reached by steps has no URL of its own: load the site's URL and replay them.
+        const steps = this.ctx.steps ?? [];
+        await this.live.goto(steps.length ? this.ctx.siteUrl : this.ctx.meta.finalUrl, { waitUntil: 'domcontentloaded', timeout: 45_000 });
         await this.live.waitForLoadState('networkidle', { timeout: 8_000 }).catch(() => {});
+        if (steps.length) await replaySteps(this.live, new URL(this.ctx.siteUrl).origin, steps);
       }
       const page = this.live;
       const scrollToPageY = async (py: number) => {

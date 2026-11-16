@@ -16,6 +16,8 @@ generated/scratch-*/
 proposals/scratch-*/
 sites/scratch-*.yaml
 briefs/scratch-*.yaml
+repos/scratch-*/
+repos/scratch-*.yaml
 
 # Rewritten by the rater's box-overlay tool on every call.
 dataset/**/capture/_viewer.html

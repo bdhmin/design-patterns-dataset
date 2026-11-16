@@ -4,8 +4,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import YAML from 'yaml';
 import { P } from '../paths.ts';
+import { checkStep, type Step } from './steps.ts';
 
-export type SiteSource = 'captured' | 'generated';
+export type SiteSource = 'captured' | 'generated' | 'repo';
 
 export interface SiteSpec {
   url: string;
@@ -18,6 +19,12 @@ export interface SiteSpec {
   local?: string;
   /** Generated apps: repo-relative path to generated/<batch>/<slug>/generation.json. */
   generation?: string;
+  /** Replayed after loading `url`, before capture and on the raters' live page (src/pipeline/steps.ts). */
+  steps?: Step[];
+  /** Repo apps: repo-relative path to repos/<batch>/<slug>/setup.json; label.ts serves or starts the app. */
+  app?: string;
+  /** Repo apps: the view's slug in the explore.json next to `app`. */
+  view?: string;
 }
 
 export interface SiteList { batch?: string; description?: string; sites: SiteSpec[] }
@@ -41,6 +48,10 @@ export function readSiteList(file: string): SiteList {
   for (const s of list.sites) {
     if (seen.has(s.slug!)) throw new Error(`${file}: duplicate site slug "${s.slug}" (${s.url})`);
     seen.add(s.slug!);
+    for (const [i, st] of (s.steps ?? []).entries()) {
+      const p = checkStep(st);
+      if (p.length) throw new Error(`${file}: ${s.slug} steps[${i}]: ${p.join('; ')}`);
+    }
   }
   return list;
 }

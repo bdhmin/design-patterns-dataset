@@ -32,10 +32,14 @@ export interface Label {
     screenshot: { ref: string; width: number; height: number; truncated?: boolean };
     userAgent: string; domain: string; domainNote?: string;
     provenance?: {
-      source: 'captured' | 'generated';
+      source: 'captured' | 'generated' | 'repo';
       generation?: string;
       generator?: { id: string; model: string; effort?: string };
-      brief?: { domain: string; archetype: string; context?: string; product: string };
+      brief?: { domain: string; archetype: string; product: string };
+      /** repo: repos/<batch>/<slug>/explore.json */
+      record?: string;
+      repo?: { name: string; url: string; commit: string; license?: string };
+      view?: { slug: string; name: string; description?: string };
     };
   };
   regions: LabelRegion[];

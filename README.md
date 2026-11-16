@@ -261,6 +261,9 @@ claude auth status                  # real labeling runs use the local Claude Co
 | Write a brief frame for generated UIs (review it before generating) | `node scripts/briefs.ts --batch gen-001 --n 48` (`--plan-only` to preview cells) |
 | Generate apps from briefs; writes `sites/gen-001.yaml`          | `node scripts/generate.ts --batch gen-001`                           |
 | Label generated apps (served locally while labeling)            | `node scripts/label.ts --batch gen-001`                              |
+| Find open-source apps on GitHub; writes `repos/repo-001.yaml` (review it) | `node scripts/discover-repos.ts --batch repo-001 --n 20` (`--search-only` to preview, no model) |
+| Build and explore them; writes `sites/repo-001.yaml`            | `node scripts/prepare-repos.ts --batch repo-001`                     |
+| Label repo views (apps served or started while labeling)        | `node scripts/label.ts --batch repo-001`                             |
 | End-to-end smoke test, no model and no cost                     | `pnpm smoke` (then `rm -rf dataset/dry-run proposals/dry-run`)       |
 | Tests / types                                                   | `pnpm test` / `pnpm typecheck`                                       |
 
@@ -286,6 +289,9 @@ sites/<batch>.yaml     sampling frame per batch
 briefs/<batch>.yaml    generation briefs (generated batches): domain × software function × generator
 config/generators.yaml brief writer + generator models for generated batches
 generated/<batch>/<slug>/  generated apps: out/ (served build), src/, preview.png, transcript.jsonl, generation.json
+config/repos.yaml      repo discovery (search terms per domain), screener, setup and explorer models, sandbox
+repos/<batch>.yaml     repo frame: open-source apps pinned to a commit, with the domain each was sampled for
+repos/<batch>/<slug>/  setup.json, setup.patch, app.json, start.sh, preview.png, explore.json, views/<view>.png, transcripts
 dataset/<batch>/
   batch.json           codebook version + hash frozen at batch start, raters
   irr.json             Krippendorff's α per README field, plus per-pattern reliability
@@ -465,6 +471,119 @@ direct measure of the "vibecoded" look.
 **Safety.** Generators run `Bash` without prompts (`--permission-mode dontAsk`)
 so they can install packages and build. They work in a temp dir but are not
 sandboxed. Run generation on a machine where that's acceptable.
+
+### Repo-sourced UIs
+
+A third source, between scraping live sites and generating apps: open-source
+apps built from their own repositories. Like generated apps they are working
+application UIs (past the login wall, with data in them), but they were
+designed by people, so their aesthetics are not model defaults. One app gives
+several views.
+
+1. **Frame (`scripts/discover-repos.ts` → `repos/<batch>.yaml`).** GitHub
+   search (through `gh`) per domain of the label schema, using the search terms
+   in `config/repos.yaml` plus shared qualifiers: at least 150 stars, pushed in
+   the last two years, not archived or a fork, a front-end language, and an
+   OSI license. Search terms name what an app is for (`topic:budgeting`), not
+   how it looks, so the sample doesn't lean toward a pattern. A screener model
+   reads each candidate's description, topics, root files, dependencies and
+   README excerpt. It keeps end-user applications and drops libraries, UI
+   kits, templates, landing pages and docs sites. It also drops apps that need
+   separately run services (Postgres, Redis, Docker) with no embedded
+   alternative. Apps that need API keys or third-party accounts are kept,
+   because setup fakes those.
+   Candidates are screened in seeded random order, only until each domain's
+   quota is full. A repo counts toward the domain the screener assigns it,
+   not the query that found it. Each pick is pinned to its default branch's
+   head commit. Repos already in another frame are skipped. Review the frame
+   before preparing it.
+2. **Setup (`scripts/prepare-repos.ts`, `src/repos/setup.ts`).** The harness
+   clones the pinned commit into `setup.checkoutRoot` (outside the repo, since
+   node_modules for a batch take several GB). One Claude Code session per repo
+   is then asked to get the app running the way an established user would see
+   it, without restyling anything:
+   - **Tools through mise.** Every runtime and tool is installed with mise
+     and pinned to an exact version in a `mise.toml` at the repo root,
+     following the repo's engines, `.nvmrc` or `packageManager`. Each checkout
+     gets its own mise config, data and state dirs. Your global mise config and
+     installed tools don't leak in, and the checkout's shims come first on
+     PATH for the agent and for `start.sh`. The harness checks with
+     `mise ls --current` that every tool is pinned exactly and installed, and
+     `setup.json` records the versions. Serving runs mise offline.
+   - **Secrets and services faked.** Required env vars get placeholder values.
+     Calls to outside services (hosted auth, payments, email, LLM APIs, maps,
+     storage, …) go to the app's own mock mode, a local stub server that
+     `start.sh` also starts, or a stub at the API-client boundary. Stubs
+     return realistic responses, and none live in UI code. `app.json` lists
+     each stub. The app never needs the network: serving has none.
+   - **Data like real use.** Seed data is meant to look like months of an
+     established user's activity: plausible specifics, dates spread over time,
+     a mix of states, and realistic volume. It is loaded through the app's own
+     API, seed scripts or schema, never hardcoded into UI code.
+
+   The agent leaves a contract in `.ui-capture/`: `app.json` (mode, entry path,
+   demo login, stubs, notes), plus either a static build in `out/` or a
+   `start.sh` that serves the app on its assigned port. The
+   harness then checks the result the way labeling will use it. It serves
+   `out/`, or runs `start.sh` itself, then opens the entry page at 1440×900.
+   Failures go back to the same session (`repairRounds`). The agent's diff
+   against the pinned commit (including `mise.toml`) is kept in `setup.patch`.
+   Its own scripts in `.ui-capture/` (`start.sh`, seed and stub scripts) are
+   kept in `ui-capture/`, without builds, caches or installs.
+3. **Explore (`src/repos/explore.ts`).** A browser agent (same providers as
+   the raters) uses `look`, `read_page`, `act` and `goto` tools on the running
+   app and saves up to `maxViews` views. A view is a distinct screen or state
+   with real content. Sign-in and error pages, near-duplicates and empty states
+   don't count. Every action is recorded as a replayable step
+   (`src/pipeline/steps.ts`), targeted by role and name, label, placeholder or
+   text rather than coordinates. A sign-in can be marked as a prelude that runs
+   before every view. `save_view` replays the steps in a fresh browser and
+   refuses the view if it doesn't reach the same screen (same path, ≥ 0.75
+   text similarity). It also refuses a view that duplicates an earlier one.
+4. **Labeling is unchanged.** Each view is one site (`<repo>--<view>`) with
+   `source: repo`, `app:` (its setup record) and `steps:`. `label.ts` serves
+   static apps like generated ones. It starts server apps while their views are
+   captured and labeled, and stops them after the last one. Capture and the
+   raters' live page replay the steps, so raters see and interact with the
+   chosen state. Labels record `site.provenance` with the repo, commit,
+   license and view. Checkouts are found under the `checkoutRoot` recorded in
+   each `setup.json`; if you prepared with `--config`, pass the same file to
+   `label.ts --repos-config` so the sandbox and startup settings match.
+
+**Safety.** Setup runs third-party install and build scripts, and labeling
+runs third-party servers, so both are sandboxed (`src/repos/sandbox.ts`). The
+setup agent's Bash runs in Claude Code's sandbox. It can write only inside the
+checkout (package-manager caches are pointed there). It can reach only the
+hosts in `setup.network`: package registries, mise's download sources and
+GitHub, but not the GitHub API. Credential dirs (`~/.ssh`, `~/.aws`, `~/.config/gh`, …) are unreadable,
+and the file tools are denied the same paths. The session gets an
+allowlisted environment (PATH, HOME, locale, the checkout's caches and
+`CLAUDE_CONFIG_DIR`), so tokens or keys you have exported don't reach install
+scripts; Claude Code finds its own login in the keychain or config dir. `start.sh` runs under macOS
+`sandbox-exec` with the same file rules and no network beyond localhost. It
+gets the same minimal environment. Its log and sandbox profile go to a
+harness-owned temp dir, never a path inside the checkout. Docker is unavailable
+inside the sandbox, which is why apps that need services are screened out.
+The session loads no settings files (`--setting-sources ""`). Otherwise a
+repo's own `.claude/settings.json` would apply, and its hooks run outside the
+sandbox; this was checked with a repo whose hook ran under the default
+`project,local` sources and did not run with none.
+These checks were run by hand and are in `test/repos.test.ts`: writes to
+`~`, reads of `~/.ssh` and outbound requests all fail, and serving on
+localhost works. Inside the sandbox, a later command can't see or stop a process an earlier
+command backgrounded. So the harness stops leftover servers whose working
+directory is in the checkout: on the app's port before each check, and on
+every port when the session ends. The sandbox narrows what a malicious dependency can reach;
+it is not a VM. Server mode needs macOS. Setting `setup.sandbox: false` turns
+both layers off and is meant for a throwaway machine only.
+
+**Caveats.** A repo's checkout is needed to label it again, and it isn't
+versioned. `setup.patch` and the pinned commit make the setup reproducible, but
+rerunning it means another agent session. Labels capture what the app looks
+like with the data the setup agent loaded, which is usually sparser than real
+use. The domain mix follows what GitHub has: health, travel, civic and
+nonprofit apps are scarce at ≥ 150 stars, so `discover-repos.ts` reports any
+quota shortfall rather than lowering the bar.
 
 ### Not yet verified
 

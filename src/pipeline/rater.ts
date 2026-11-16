@@ -55,6 +55,7 @@ async function runRaterOnce(job: RaterJob): Promise<Label> {
     batch: job.batch,
     slug: job.site.slug,
     siteUrl: job.site.url,
+    steps: job.site.steps,
     rater: { id: rater.id, provider: rater.provider, model: rater.model, effort: rater.effort },
     captureDir: job.captureDir,
     meta,
@@ -96,6 +97,7 @@ async function runRaterOnce(job: RaterJob): Promise<Label> {
 
 /** Harness-owned provenance for the label: where this UI came from. */
 export function provenanceOf(site: SiteSpec): Label['site']['provenance'] {
+  if (site.source === 'repo') return repoProvenance(site);
   if (site.source !== 'generated') return { source: 'captured' };
   const ref = site.generation;
   let g: any;
@@ -107,5 +109,19 @@ export function provenanceOf(site: SiteSpec): Label['site']['provenance'] {
       generator: { id: g.generator?.id, model: g.generator?.model, ...(g.generator?.effort ? { effort: g.generator.effort } : {}) },
       brief: { domain: g.brief?.domain, archetype: g.brief?.archetype, ...(g.brief?.context ? { context: g.brief.context } : {}), product: g.brief?.product },
     } : {}),
+  };
+}
+
+/** Repo views: the repository and commit the app was built from, and which explored view this is. */
+function repoProvenance(site: SiteSpec): Label['site']['provenance'] {
+  const read = (ref: string) => { try { return JSON.parse(fs.readFileSync(path.resolve(P.root, ref), 'utf8')); } catch { return undefined; } };
+  const setup = site.app ? read(site.app) : undefined;
+  const exploreRef = site.app ? path.join(path.dirname(site.app), 'explore.json') : undefined;
+  const view = exploreRef ? read(exploreRef)?.views?.find((v: any) => v.slug === site.view) : undefined;
+  return {
+    source: 'repo',
+    ...(exploreRef && view ? { record: exploreRef } : site.app ? { record: site.app } : {}),
+    ...(setup?.repo ? { repo: { name: setup.repo.name, url: setup.repo.url, commit: setup.repo.commit, ...(setup.repo.license ? { license: setup.repo.license } : {}) } } : {}),
+    ...(view ? { view: { slug: view.slug, name: view.name, ...(view.description ? { description: view.description } : {}) } } : site.view ? { view: { slug: site.view, name: site.view } } : {}),
   };
 }
