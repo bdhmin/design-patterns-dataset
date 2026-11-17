@@ -1,0 +1,479 @@
+{
+  "v": 1,
+  "docId": "ba885056-fe38-4e1f-8684-5feab453c92a",
+  "chats": [
+    {
+      "id": "fb9605d9-0308-4e8f-a1cc-2f1e57c98055",
+      "title": "what causes the after-hyperpolarisation?",
+      "createdAt": 1794814267383,
+      "updatedAt": 1794814268764,
+      "messages": [
+        {
+          "role": "user",
+          "content": "what causes the after-hyperpolarisation?",
+          "ts": 1794814267425
+        },
+        {
+          "role": "assistant",
+          "content": "Here's how the document frames it (looking at causes and after):\n\n- K+ leaves the cell and the membrane repolarises, briefly undershooting to around -80 mV: the after-hyperpolarisation .\n- Nerve agents and some insecticides block acetylcholinesterase, which causes continuous stimulation and paralysis.\n\n**In plain words:** the key move is the first point — once you see *why* it holds, the rest follow as consequences rather than separate facts to memorise.\n\nA quick check for yourself: can you predict what changes if one of those conditions is removed?",
+          "ts": 1794814268764
+        }
+      ],
+      "codexThreadId": "3aff093d-8aac-4841-a0b0-da1e3a4ee885",
+      "threadProvider": "codex"
+    },
+    {
+      "id": "s2ml0ss2p1o3g",
+      "title": "Why does K+ leave but the cell stays negative?",
+      "createdAt": 1793256780000,
+      "updatedAt": 1793257081195,
+      "messages": [
+        {
+          "role": "user",
+          "content": "if potassium leaves the cell, positive charge goes out, so why doesn't the inside eventually become neutral again?",
+          "ts": 1793256793342
+        },
+        {
+          "role": "assistant",
+          "content": "Good instinct — but only a *tiny* number of K+ ions need to leave to build the potential.\n\n- As K+ diffuses out, the inside becomes negative.\n- That negative inside **pulls K+ back in**.\n- At about -90 mV (E_K, from the Nernst equation) the electrical pull exactly balances the chemical push.\n\nThe bulk concentrations barely change — we're talking about roughly 1 ion in 100 000 crossing. So the cell never \"runs out\": the potential is a balance point, not a leak that drains.\n\nThe resting potential (-70 mV) sits a bit above E_K because the membrane is slightly permeable to Na+ too.",
+          "ts": 1793256894834
+        },
+        {
+          "role": "user",
+          "content": "ok so the pump isn't what makes it negative directly?",
+          "ts": 1793256981370
+        },
+        {
+          "role": "assistant",
+          "content": "Exactly. The Na+/K+-ATPase is *electrogenic* (3 out, 2 in) but contributes only a few mV directly. Its real job is to **maintain the gradients** that the leak channels then convert into a voltage. Block the pump with ouabain and the potential decays slowly over minutes as the gradients run down — not instantly.",
+          "ts": 1793257081195
+        }
+      ]
+    },
+    {
+      "id": "schxergjz9jaw",
+      "title": "Myelin and MS",
+      "createdAt": 1793809680000,
+      "updatedAt": 1793809806901,
+      "messages": [
+        {
+          "role": "user",
+          "content": "explain why multiple sclerosis slows conduction, using the notes",
+          "ts": 1793809700217
+        },
+        {
+          "role": "assistant",
+          "content": "From page 1: spikes in myelinated fibres **jump between nodes of Ranvier** (saltatory conduction) because the myelin insulates the internodes and the Na+ channels are clustered at the nodes.\n\nIn MS the myelin in the CNS (made by oligodendrocytes) is damaged:\n\n1. Current leaks out through the demyelinated segment.\n2. Less depolarisation reaches the next node.\n3. If it falls below threshold, conduction **blocks**; if barely above, it **slows**.\n\nThe internodes have few Na+ channels, so they can't simply switch to continuous conduction — that's why symptoms can be so abrupt.",
+          "ts": 1793809806901
+        }
+      ]
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "44f1ec8b-90f4-4f8b-b2a2-f98168b2a281",
+      "topic": "all",
+      "createdAt": 1794814269537,
+      "cards": [
+        {
+          "q": "What sets the resting membrane potential near -70 mV?",
+          "a": "The Na+/K+-ATPase gradients plus a membrane much more permeable to K+ (leak channels), so Vm sits close to E_K."
+        },
+        {
+          "q": "Which channel drives the rising phase of the action potential?",
+          "a": "Voltage-gated Na+ channels opening in a positive feedback loop once threshold (~-55 mV) is crossed."
+        },
+        {
+          "q": "Why is the action potential all-or-none?",
+          "a": "Above threshold the Na+ positive feedback runs to completion regardless of stimulus size; intensity is coded by firing frequency."
+        },
+        {
+          "q": "What causes the after-hyperpolarisation?",
+          "a": "Slow voltage-gated K+ channels stay open after repolarisation, driving Vm toward E_K (~-80 mV)."
+        },
+        {
+          "q": "What is saltatory conduction?",
+          "a": "In myelinated axons the spike regenerates only at nodes of Ranvier, jumping node to node — up to 120 m/s."
+        },
+        {
+          "q": "What triggers vesicle release at the presynaptic terminal?",
+          "a": "Ca2+ influx through voltage-gated calcium channels drives SNARE-mediated vesicle fusion."
+        },
+        {
+          "q": "EPSP vs IPSP?",
+          "a": "EPSP depolarises (e.g. glutamate on AMPA); IPSP hyperpolarises, typically Cl- through GABA/glycine receptors."
+        },
+        {
+          "q": "How do SSRIs act?",
+          "a": "They block serotonin reuptake transporters so serotonin stays longer in the cleft."
+        }
+      ]
+    },
+    {
+      "id": "s1p1b8g7o2jps",
+      "topic": "all",
+      "createdAt": 1792925040000,
+      "endedAt": 1792925460000,
+      "cards": [
+        {
+          "q": "What sets the resting membrane potential near -70 mV?",
+          "a": "The Na+/K+-ATPase gradients plus a membrane much more permeable to K+ (leak channels), so Vm sits close to E_K.",
+          "userAnswer": "the na+/k+-atpase gradients plus a membrane much more permeable to k+ (leak channels), so vm sits close to e_k",
+          "rating": 4,
+          "answeredAt": 1792925090000
+        },
+        {
+          "q": "Which channel drives the rising phase of the action potential?",
+          "a": "Voltage-gated Na+ channels opening in a positive feedback loop once threshold (~-55 mV) is crossed.",
+          "userAnswer": "i think it's the opposite?",
+          "rating": 2,
+          "answeredAt": 1792925140000
+        },
+        {
+          "q": "Why is the action potential all-or-none?",
+          "a": "Above threshold the Na+ positive feedback runs to completion regardless of stimulus size; intensity is coded by firing frequency.",
+          "userAnswer": "above threshold the na+ positive feedback runs to completion regardless of stimulus size",
+          "rating": 3,
+          "answeredAt": 1792925190000
+        },
+        {
+          "q": "What causes the after-hyperpolarisation?",
+          "a": "Slow voltage-gated K+ channels stay open after repolarisation, driving Vm toward E_K (~-80 mV).",
+          "userAnswer": "i think it's the opposite?",
+          "rating": 1,
+          "answeredAt": 1792925240000
+        },
+        {
+          "q": "What is saltatory conduction?",
+          "a": "In myelinated axons the spike regenerates only at nodes of Ranvier, jumping node to node — up to 120 m/s.",
+          "userAnswer": "in myelinated axons the spike regenerates only at nodes of ranvier, jumping node to node — up to 120 m/s",
+          "rating": 3,
+          "answeredAt": 1792925290000
+        },
+        {
+          "q": "What triggers vesicle release at the presynaptic terminal?",
+          "a": "Ca2+ influx through voltage-gated calcium channels drives SNARE-mediated vesicle fusion.",
+          "userAnswer": "ca2+ influx through voltage-gated calcium channels drives snare-mediated vesicle fusion",
+          "rating": 3,
+          "answeredAt": 1792925340000
+        },
+        {
+          "q": "EPSP vs IPSP?",
+          "a": "EPSP depolarises (e.g. glutamate on AMPA); IPSP hyperpolarises, typically Cl- through GABA/glycine receptors.",
+          "userAnswer": "i think it's the opposite?",
+          "rating": 2,
+          "answeredAt": 1792925390000
+        },
+        {
+          "q": "How do SSRIs act?",
+          "a": "They block serotonin reuptake transporters so serotonin stays longer in the cleft.",
+          "userAnswer": "they block serotonin reuptake transporters so serotonin stays longer in the cleft",
+          "rating": 4,
+          "answeredAt": 1792925440000
+        }
+      ]
+    },
+    {
+      "id": "s6stju1scggv9",
+      "topic": "Action potential phases",
+      "createdAt": 1793441080000,
+      "endedAt": 1793441500000,
+      "cards": [
+        {
+          "q": "What sets the resting membrane potential near -70 mV?",
+          "a": "The Na+/K+-ATPase gradients plus a membrane much more permeable to K+ (leak channels), so Vm sits close to E_K.",
+          "userAnswer": "i think it's the opposite?",
+          "rating": 1,
+          "answeredAt": 1793441130000
+        },
+        {
+          "q": "Which channel drives the rising phase of the action potential?",
+          "a": "Voltage-gated Na+ channels opening in a positive feedback loop once threshold (~-55 mV) is crossed.",
+          "userAnswer": "voltage-gated na+ channels opening in a positive feedback loop once threshold (~-55 mv) is crossed",
+          "rating": 4,
+          "answeredAt": 1793441180000
+        },
+        {
+          "q": "Why is the action potential all-or-none?",
+          "a": "Above threshold the Na+ positive feedback runs to completion regardless of stimulus size; intensity is coded by firing frequency.",
+          "userAnswer": "above threshold the na+ positive feedback runs to completion regardless of stimulus size",
+          "rating": 3,
+          "answeredAt": 1793441230000
+        },
+        {
+          "q": "What causes the after-hyperpolarisation?",
+          "a": "Slow voltage-gated K+ channels stay open after repolarisation, driving Vm toward E_K (~-80 mV).",
+          "userAnswer": "not sure",
+          "rating": 2,
+          "answeredAt": 1793441280000
+        },
+        {
+          "q": "What is saltatory conduction?",
+          "a": "In myelinated axons the spike regenerates only at nodes of Ranvier, jumping node to node — up to 120 m/s.",
+          "userAnswer": "i think it's the opposite?",
+          "rating": 1,
+          "answeredAt": 1793441330000
+        },
+        {
+          "q": "What triggers vesicle release at the presynaptic terminal?",
+          "a": "Ca2+ influx through voltage-gated calcium channels drives SNARE-mediated vesicle fusion.",
+          "userAnswer": "ca2+ influx through voltage-gated calcium channels drives snare-mediated vesicle fusion",
+          "rating": 3,
+          "answeredAt": 1793441380000
+        },
+        {
+          "q": "EPSP vs IPSP?",
+          "a": "EPSP depolarises (e.g. glutamate on AMPA); IPSP hyperpolarises, typically Cl- through GABA/glycine receptors.",
+          "userAnswer": "epsp depolarises (e",
+          "rating": 3,
+          "answeredAt": 1793441430000
+        },
+        {
+          "q": "How do SSRIs act?",
+          "a": "They block serotonin reuptake transporters so serotonin stays longer in the cleft.",
+          "userAnswer": "they block serotonin reuptake transporters so serotonin stays longer in the cleft",
+          "rating": 4,
+          "answeredAt": 1793441480000
+        }
+      ]
+    },
+    {
+      "id": "s40jwimf1j2b6",
+      "topic": "Saltatory conduction",
+      "createdAt": 1793957120000,
+      "endedAt": 1793957540000,
+      "cards": [
+        {
+          "q": "What sets the resting membrane potential near -70 mV?",
+          "a": "The Na+/K+-ATPase gradients plus a membrane much more permeable to K+ (leak channels), so Vm sits close to E_K.",
+          "userAnswer": "the na+/k+-atpase gradients plus a membrane much more permeable to k+ (leak channels), so vm sits close to e_k",
+          "rating": 3,
+          "answeredAt": 1793957170000
+        },
+        {
+          "q": "Which channel drives the rising phase of the action potential?",
+          "a": "Voltage-gated Na+ channels opening in a positive feedback loop once threshold (~-55 mV) is crossed.",
+          "userAnswer": "voltage-gated na+ channels opening in a positive feedback loop once threshold (~-55 mv) is crossed",
+          "rating": 3,
+          "answeredAt": 1793957220000
+        },
+        {
+          "q": "Why is the action potential all-or-none?",
+          "a": "Above threshold the Na+ positive feedback runs to completion regardless of stimulus size; intensity is coded by firing frequency.",
+          "userAnswer": "above threshold the na+ positive feedback runs to completion regardless of stimulus size",
+          "rating": 4,
+          "answeredAt": 1793957270000
+        },
+        {
+          "q": "What causes the after-hyperpolarisation?",
+          "a": "Slow voltage-gated K+ channels stay open after repolarisation, driving Vm toward E_K (~-80 mV).",
+          "userAnswer": "slow voltage-gated k+ channels stay open after repolarisation, driving vm toward e_k (~-80 mv)",
+          "rating": 3,
+          "answeredAt": 1793957320000
+        },
+        {
+          "q": "What is saltatory conduction?",
+          "a": "In myelinated axons the spike regenerates only at nodes of Ranvier, jumping node to node — up to 120 m/s.",
+          "userAnswer": "in myelinated axons the spike regenerates only at nodes of ranvier, jumping node to node — up to 120 m/s",
+          "rating": 3,
+          "answeredAt": 1793957370000
+        },
+        {
+          "q": "What triggers vesicle release at the presynaptic terminal?",
+          "a": "Ca2+ influx through voltage-gated calcium channels drives SNARE-mediated vesicle fusion.",
+          "userAnswer": "ca2+ influx through voltage-gated calcium channels drives snare-mediated vesicle fusion",
+          "rating": 3,
+          "answeredAt": 1793957420000
+        },
+        {
+          "q": "EPSP vs IPSP?",
+          "a": "EPSP depolarises (e.g. glutamate on AMPA); IPSP hyperpolarises, typically Cl- through GABA/glycine receptors.",
+          "userAnswer": "epsp depolarises (e",
+          "rating": 3,
+          "answeredAt": 1793957470000
+        },
+        {
+          "q": "How do SSRIs act?",
+          "a": "They block serotonin reuptake transporters so serotonin stays longer in the cleft.",
+          "userAnswer": "they block serotonin reuptake transporters so serotonin stays longer in the cleft",
+          "rating": 3,
+          "answeredAt": 1793957520000
+        }
+      ]
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "s2nqn8pjp7vpw",
+      "topic": "all",
+      "createdAt": 1793367360000,
+      "endedAt": 1793367725000,
+      "questions": [
+        {
+          "stem": "During the absolute refractory period a second action potential cannot fire because:",
+          "options": [
+            "K+ channels are closed",
+            "Na+ channels are inactivated",
+            "The Na+/K+ pump has stopped",
+            "Ca2+ is depleted from the terminal"
+          ],
+          "correctIndex": 1,
+          "explanation": "The inactivation gate of voltage-gated Na+ channels must reset before they can open again.",
+          "chosenIndex": 1,
+          "answeredAt": 1793367430000
+        },
+        {
+          "stem": "Which change would INCREASE conduction velocity?",
+          "options": [
+            "Demyelination",
+            "Smaller axon diameter",
+            "Larger axon diameter",
+            "Lower temperature"
+          ],
+          "correctIndex": 2,
+          "explanation": "A wider axon has lower internal resistance and a longer length constant.",
+          "chosenIndex": 3,
+          "answeredAt": 1793367500000
+        },
+        {
+          "stem": "The Nernst potential for K+ at 37 C is closest to:",
+          "options": [
+            "+60 mV",
+            "-55 mV",
+            "-90 mV",
+            "0 mV"
+          ],
+          "correctIndex": 2,
+          "explanation": "With [K+]out ~4 mM and [K+]in ~140 mM, E_K is around -90 to -95 mV.",
+          "chosenIndex": 2,
+          "answeredAt": 1793367570000
+        },
+        {
+          "stem": "Most of the ~0.5 ms synaptic delay is due to:",
+          "options": [
+            "Diffusion across the cleft",
+            "Ca2+-triggered vesicle fusion",
+            "Receptor desensitisation",
+            "AChE hydrolysis"
+          ],
+          "correctIndex": 1,
+          "explanation": "Diffusion across 20 nm is fast; the exocytosis machinery takes most of the time.",
+          "chosenIndex": 1,
+          "answeredAt": 1793367640000
+        },
+        {
+          "stem": "A nerve agent that blocks acetylcholinesterase causes:",
+          "options": [
+            "Flaccid paralysis from no ACh release",
+            "Continuous stimulation then paralysis",
+            "Hyperpolarisation of muscle",
+            "Faster saltatory conduction"
+          ],
+          "correctIndex": 1,
+          "explanation": "ACh accumulates in the cleft, over-stimulating receptors until they desensitise.",
+          "chosenIndex": 1,
+          "answeredAt": 1793367710000
+        }
+      ]
+    },
+    {
+      "id": "s4mfgd08ajqiq",
+      "topic": "all",
+      "createdAt": 1793920260000,
+      "endedAt": 1793920625000,
+      "questions": [
+        {
+          "stem": "During the absolute refractory period a second action potential cannot fire because:",
+          "options": [
+            "K+ channels are closed",
+            "Na+ channels are inactivated",
+            "The Na+/K+ pump has stopped",
+            "Ca2+ is depleted from the terminal"
+          ],
+          "correctIndex": 1,
+          "explanation": "The inactivation gate of voltage-gated Na+ channels must reset before they can open again.",
+          "chosenIndex": 1,
+          "answeredAt": 1793920330000
+        },
+        {
+          "stem": "Which change would INCREASE conduction velocity?",
+          "options": [
+            "Demyelination",
+            "Smaller axon diameter",
+            "Larger axon diameter",
+            "Lower temperature"
+          ],
+          "correctIndex": 2,
+          "explanation": "A wider axon has lower internal resistance and a longer length constant.",
+          "chosenIndex": 0,
+          "answeredAt": 1793920400000
+        },
+        {
+          "stem": "The Nernst potential for K+ at 37 C is closest to:",
+          "options": [
+            "+60 mV",
+            "-55 mV",
+            "-90 mV",
+            "0 mV"
+          ],
+          "correctIndex": 2,
+          "explanation": "With [K+]out ~4 mM and [K+]in ~140 mM, E_K is around -90 to -95 mV.",
+          "chosenIndex": 2,
+          "answeredAt": 1793920470000
+        },
+        {
+          "stem": "Most of the ~0.5 ms synaptic delay is due to:",
+          "options": [
+            "Diffusion across the cleft",
+            "Ca2+-triggered vesicle fusion",
+            "Receptor desensitisation",
+            "AChE hydrolysis"
+          ],
+          "correctIndex": 1,
+          "explanation": "Diffusion across 20 nm is fast; the exocytosis machinery takes most of the time.",
+          "chosenIndex": 1,
+          "answeredAt": 1793920540000
+        },
+        {
+          "stem": "A nerve agent that blocks acetylcholinesterase causes:",
+          "options": [
+            "Flaccid paralysis from no ACh release",
+            "Continuous stimulation then paralysis",
+            "Hyperpolarisation of muscle",
+            "Faster saltatory conduction"
+          ],
+          "correctIndex": 1,
+          "explanation": "ACh accumulates in the cleft, over-stimulating receptors until they desensitise.",
+          "chosenIndex": 1,
+          "answeredAt": 1793920610000
+        }
+      ]
+    }
+  ],
+  "feynman": [
+    {
+      "id": "sbbor70jz8uoq",
+      "topic": "Action potential",
+      "createdAt": 1794141420000,
+      "endedAt": 1794141960000,
+      "turns": [
+        {
+          "childPrompt": "Hi! I'm eight. Can you tell me what an action potential is, like you'd explain it to me?",
+          "userExplanation": "It's like a wave of electricity that goes down a nerve. The nerve is negative inside and when something pokes it enough, little doors open and positive stuff rushes in, and then it goes back to normal.",
+          "ts": 1794141590000
+        },
+        {
+          "childPrompt": "Ohh. But WHY does it go back to normal? Why doesn't it stay positive?",
+          "userExplanation": "Because the sodium doors close by themselves after a moment and other doors for potassium open, and potassium goes out, so it gets negative again. It even goes a bit too negative for a sec.",
+          "ts": 1794141760000
+        },
+        {
+          "childPrompt": "Can you give me an example from real life, like something at my house?",
+          "userExplanation": "Like a row of dominoes — once you push the first one hard enough they all fall, and you can't push it halfway. But dominoes don't stand back up, nerves do.",
+          "ts": 1794141930000
+        }
+      ],
+      "summary": "Solid causal chain for depolarisation and repolarisation, and the domino analogy captures all-or-none well. Missing: why propagation is one-directional (refractory period) and that the dominoes 'standing back up' is the pump restoring gradients, not the K+ channels."
+    }
+  ]
+}

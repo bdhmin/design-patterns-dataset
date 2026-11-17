@@ -1,0 +1,558 @@
+{
+  "schemaVersion": "1.0.0",
+  "codebookVersion": "1.0.0",
+  "batch": "repo-pilot",
+  "site": {
+    "slug": "get-it--document-chat",
+    "url": "http://localhost:4401/viewer/994a113e-e7ba-4f78-926a-7154208adfff",
+    "finalUrl": "http://localhost:4401/viewer/994a113e-e7ba-4f78-926a-7154208adfff",
+    "status": 200,
+    "title": "Get It.",
+    "capturedAt": "2026-11-16T17:54:52.872Z",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "screenshot": {
+      "ref": "capture/screenshot.png",
+      "width": 1440,
+      "height": 2198
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.8127.18 Safari/537.36",
+    "domain": "education",
+    "domainNote": "AI study tool: lecture-notes document viewer with an AI Q&A chat and generated visualizations",
+    "provenance": {
+      "source": "repo",
+      "record": "repos/repo-pilot/get-it/explore.json",
+      "repo": {
+        "name": "beltromatti/get-it",
+        "url": "https://github.com/beltromatti/get-it",
+        "commit": "ae0fa999f352b951ab8150fac5dcf9d7ab6fd9a4",
+        "license": "Apache-2.0"
+      },
+      "view": {
+        "slug": "document-chat",
+        "name": "Document chat",
+        "description": "Chat pane beside the lecture document with a thread list, a user question and an AI answer, and a message composer."
+      }
+    }
+  },
+  "regions": [
+    {
+      "id": "top-bar",
+      "role": "header",
+      "label": "Upload and Library links, active document tab with a MANUAL badge, Synced and 7/7 viz-ready status pills, settings and account icons",
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 46
+      },
+      "patterns": [
+        "app-shell",
+        "badge",
+        "tabs"
+      ]
+    },
+    {
+      "id": "document-viewer",
+      "role": "main-content",
+      "label": "Paginated lecture-notes document (pages rendered to canvas) with coloured inline viz chips, plus a floating pagination and zoom toolbar",
+      "bbox": {
+        "x": 8,
+        "y": 52,
+        "width": 789,
+        "height": 2137
+      },
+      "patterns": [
+        "reader",
+        "pagination",
+        "annotation",
+        "tooltip",
+        "split-pane"
+      ]
+    },
+    {
+      "id": "chat-header",
+      "role": "panel-header",
+      "label": "Chat mode dropdown, panel description and overflow button",
+      "bbox": {
+        "x": 806,
+        "y": 52,
+        "width": 625,
+        "height": 46
+      },
+      "patterns": [
+        "menu"
+      ]
+    },
+    {
+      "id": "chat-history",
+      "role": "sidebar",
+      "label": "New chat button and list of past conversations",
+      "bbox": {
+        "x": 806,
+        "y": 98,
+        "width": 176,
+        "height": 2091
+      },
+      "patterns": [
+        "ai-chat"
+      ]
+    },
+    {
+      "id": "chat-thread",
+      "role": "chat",
+      "label": "User question bubble (dark) and AI answer bubble (light grey), with the composer pinned at the bottom",
+      "bbox": {
+        "x": 982,
+        "y": 98,
+        "width": 449,
+        "height": 2091
+      },
+      "patterns": [
+        "ai-chat",
+        "prompt-input"
+      ]
+    }
+  ],
+  "patterns": [
+    {
+      "id": "app-shell",
+      "status": "present",
+      "confidence": 0.75,
+      "dims": {
+        "primary": "top-navigation-bar",
+        "secondary": "none",
+        "items": [
+          "fixed-destinations"
+        ],
+        "visibility": "always-visible",
+        "structure": "document-tabs"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 46
+          },
+          "quote": "Upload Library Cell_Biology_L07_-_Membr… MANUAL",
+          "region": "top-bar",
+          "note": "Persistent top bar with global links, a document tab and status/settings/account controls"
+        }
+      ]
+    },
+    {
+      "id": "split-pane",
+      "status": "present",
+      "confidence": 0.75,
+      "dims": {
+        "orientation": "side-by-side",
+        "relationship": "linked-selection"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 8,
+            "y": 52,
+            "width": 1423,
+            "height": 2137
+          },
+          "region": "document-viewer",
+          "note": "Document pane on the left, tool/chat pane on the right. Clicking an inline chip (checked live) switches the right pane to Visualizer with the linked 3D model"
+        }
+      ]
+    },
+    {
+      "id": "reader",
+      "status": "present",
+      "confidence": 0.75,
+      "dims": {
+        "pagination": "fixed-layout",
+        "progress": "location-only"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 41,
+            "y": 84,
+            "width": 723,
+            "height": 1023
+          },
+          "quote": "Cell Biology — Lecture 7: Membrane Transport",
+          "region": "document-viewer",
+          "note": "Fixed-layout pages rendered to canvas, with 'page 1' and 'page 2' markers and zoom controls"
+        },
+        {
+          "bbox": {
+            "x": 676,
+            "y": 2148,
+            "width": 104,
+            "height": 24
+          },
+          "quote": "100%",
+          "region": "document-viewer",
+          "note": "Zoom in/out and custom zoom"
+        }
+      ]
+    },
+    {
+      "id": "pagination",
+      "status": "present",
+      "confidence": 0.85,
+      "dims": {
+        "mechanism": "next-and-previous",
+        "position": "page-n-of-m"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 353,
+            "y": 2148,
+            "width": 99,
+            "height": 24
+          },
+          "quote": "1 / 2",
+          "region": "document-viewer",
+          "note": "Previous/next page buttons around a 'Jump to page' N/M button"
+        }
+      ]
+    },
+    {
+      "id": "ai-chat",
+      "status": "present",
+      "confidence": 0.9,
+      "dims": {
+        "turnContent": [
+          "markdown-with-code"
+        ],
+        "composition": "linear-thread",
+        "invokeBy": [
+          "text-field-submit"
+        ],
+        "scope": "live-page-or-selection"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1066,
+            "y": 114,
+            "width": 341,
+            "height": 59
+          },
+          "quote": "why does SGLT1 need two sodium ions per glucose and not one?",
+          "region": "chat-thread",
+          "note": "User turn (dark bubble)"
+        },
+        {
+          "bbox": {
+            "x": 1006,
+            "y": 185,
+            "width": 340,
+            "height": 320
+          },
+          "quote": "Energy budget. Glucose in the enterocyte can be much more concentrated than in the lumen",
+          "region": "chat-thread",
+          "note": "Model reply with bold emphasis; it answers about the open document"
+        },
+        {
+          "bbox": {
+            "x": 814,
+            "y": 106,
+            "width": 159,
+            "height": 72
+          },
+          "quote": "SGLT1: why 2 Na+?",
+          "region": "chat-history",
+          "note": "New chat button and list of past conversations"
+        }
+      ]
+    },
+    {
+      "id": "prompt-input",
+      "status": "present",
+      "confidence": 0.85,
+      "dims": {
+        "content": [
+          "plain-prompt"
+        ],
+        "layout": "sidebar-composer",
+        "submitBy": [
+          "enter-key",
+          "click-send"
+        ],
+        "assistance": [
+          "placeholder-examples"
+        ]
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 994,
+            "y": 2117,
+            "width": 425,
+            "height": 60
+          },
+          "quote": "Ask a question about this document…",
+          "region": "chat-thread",
+          "note": "Textarea plus dark 'Send (Enter)' button (disabled while empty) at the bottom of the side panel"
+        }
+      ]
+    },
+    {
+      "id": "menu",
+      "status": "present",
+      "confidence": 0.75,
+      "dims": {
+        "openBy": "button-click",
+        "structure": "flat",
+        "item": [
+          "label",
+          "icon",
+          "description"
+        ],
+        "itemSet": "fixed",
+        "form": "vertical-list"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 826,
+            "y": 61,
+            "width": 81,
+            "height": 28
+          },
+          "quote": "Chat",
+          "region": "chat-header",
+          "note": "Dropdown trigger. Checked live: it opens a list of modes (Visualizer, Knowledge Graph, Chat, Flashcards, Quizzes, Feynman), each with an icon and a one-line description"
+        }
+      ]
+    },
+    {
+      "id": "badge",
+      "status": "present",
+      "confidence": 0.7,
+      "dims": {
+        "meaning": "label"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 426,
+            "y": 14,
+            "width": 79,
+            "height": 20
+          },
+          "quote": "MANUAL",
+          "region": "top-bar",
+          "note": "Amber label badge on the document tab"
+        },
+        {
+          "bbox": {
+            "x": 1120,
+            "y": 12,
+            "width": 236,
+            "height": 24
+          },
+          "quote": "Synced 33d ago · 7/7 viz ready",
+          "region": "top-bar",
+          "note": "Status pills for sync state and visualization readiness count"
+        }
+      ]
+    },
+    {
+      "id": "tabs",
+      "status": "uncertain",
+      "confidence": 0.45,
+      "rationale": "Only one document tab is shown, so I could not check whether multiple tabs can be opened and switched; Upload and Library are plain links.",
+      "dims": {
+        "placement": "top",
+        "label": [
+          "icon",
+          "text"
+        ]
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 202,
+            "y": 7,
+            "width": 309,
+            "height": 36
+          },
+          "quote": "Cell_Biology_L07_-_Membr…",
+          "region": "top-bar",
+          "note": "Browser-style active document tab with file icon and truncated name"
+        }
+      ]
+    },
+    {
+      "id": "tooltip",
+      "status": "present",
+      "confidence": 0.65,
+      "dims": {
+        "trigger": [
+          "hover"
+        ],
+        "content": "label",
+        "placement": "below"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 419,
+            "y": 307,
+            "width": 96,
+            "height": 18
+          },
+          "quote": "Fluid mo...",
+          "region": "document-viewer",
+          "note": "Checked live: hovering a truncated chip shows a tooltip below it with the full name, '3D Model: Fluid mosaic membrane'"
+        }
+      ]
+    },
+    {
+      "id": "annotation",
+      "status": "uncertain",
+      "confidence": 0.4,
+      "rationale": "The coloured chips are anchored inline to text ranges in the document, but the system generates them as visualization links. They are not discussion threads, so they may not be annotation. Filed as the new entry inline-entity-chip.",
+      "dims": {
+        "anchor": "text-range",
+        "marker": [
+          "status-colour"
+        ]
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 419,
+            "y": 307,
+            "width": 96,
+            "height": 18
+          },
+          "quote": "Fluid mo...",
+          "region": "document-viewer",
+          "note": "3D Model chip (pink)"
+        },
+        {
+          "bbox": {
+            "x": 535,
+            "y": 598,
+            "width": 96,
+            "height": 18
+          },
+          "quote": "Carrier...",
+          "region": "document-viewer",
+          "note": "Graph chip (blue)"
+        },
+        {
+          "bbox": {
+            "x": 437,
+            "y": 725,
+            "width": 96,
+            "height": 18
+          },
+          "quote": "Tonicity...",
+          "region": "document-viewer",
+          "note": "Source chip (green)"
+        }
+      ]
+    },
+    {
+      "id": "suggestion-chips",
+      "status": "absent",
+      "confidence": 0.7,
+      "dims": {},
+      "evidence": []
+    },
+    {
+      "id": "ai-provenance",
+      "status": "absent",
+      "confidence": 0.6,
+      "dims": {},
+      "evidence": []
+    },
+    {
+      "id": "settings",
+      "status": "absent",
+      "confidence": 0.6,
+      "dims": {},
+      "evidence": []
+    }
+  ],
+  "structure": {
+    "layout": "Desktop app with a thin top bar (Upload, Library and a document tab) and a two-panel split: a paginated document viewer on the left with a floating page/zoom toolbar, and a tool panel on the right (mode dropdown header, chat-history sidebar, chat thread, bottom composer)",
+    "regions": [
+      "top-bar",
+      "document-viewer",
+      "chat-header",
+      "chat-history",
+      "chat-thread"
+    ],
+    "density": "medium"
+  },
+  "aesthetics": {
+    "palette": [
+      "#f6f5f2",
+      "#ffffff",
+      "#f3f2ef",
+      "#111113",
+      "#6a6a6e",
+      "#ececea",
+      "#9f1f3a",
+      "#fde8ec",
+      "#eae4fb",
+      "#d9e9f9",
+      "#d9efe2",
+      "#fdedd2"
+    ],
+    "colorRoles": {
+      "background": "#f6f5f2",
+      "surface": "#ffffff",
+      "text": "#111113",
+      "muted": "#6a6a6e",
+      "border": "#ececea",
+      "primary": "#111113",
+      "accent": "#9f1f3a",
+      "secondary-surface": "#f3f2ef"
+    },
+    "typography": "GeistSans throughout the UI (tabs, buttons, chat, chips). The document body is rendered on canvas in a Helvetica/Inter-like sans with bold headings",
+    "typeScale": "Compact UI: 13px chat text and nav, 12px buttons and labels, 10px semibold chip labels. Document headings are large (~28px title, ~20px section heads) over a ~13px body",
+    "shape": "soft",
+    "elevation": "subtle-shadows",
+    "borders": "thin",
+    "imagery": [
+      "iconography"
+    ],
+    "iconStyle": "line",
+    "whitespace": "moderate",
+    "backgroundTreatment": "solid",
+    "mood": [
+      "clean",
+      "calm",
+      "academic",
+      "minimal",
+      "utilitarian"
+    ]
+  },
+  "model": {
+    "rater": "rater-3",
+    "provider": "claude-code",
+    "name": "claude-opus-5-5",
+    "effort": "high",
+    "generatedAt": "2026-11-16T17:56:46.683Z",
+    "servedBy": [
+      "claude-opus-5-5"
+    ],
+    "turns": 14,
+    "usage": {
+      "input_tokens": 28,
+      "cache_creation_input_tokens": 43678,
+      "cache_read_input_tokens": 527881,
+      "output_tokens": 8937
+    }
+  },
+  "notes": "An AI study companion for lecture PDFs. Warm off-white chrome (#f6f5f2) surrounds white panels with 12px radii. The defining detail is the inline visualization chips: 96x18 pills (999px radius, 1px tinted border, small shadow), each with a type icon and truncated label. Each visualization type has its own pastel colour: pink for 3D Model, lavender for Formula, blue for Graph, amber for Animation and green for Source. Clicking a chip switches the right panel to a 'Visualizer' mode with an interactive WebGL 3D model and a caption. The right panel's mode dropdown also offers Knowledge Graph, Flashcards, Quizzes and Feynman modes. User chat bubbles are near-black (#111113) with white text; AI replies are on warm grey (#f3f2ef). A floating pill toolbar at the bottom of the document holds paging and zoom controls. The Settings icon opens a popover (Model Engine, model selects, Light/System/Dark segmented control, Auto-generate toggle); it is not open in the capture. I filed a new-entry proposal, inline-entity-chip, for the viz chips."
+}

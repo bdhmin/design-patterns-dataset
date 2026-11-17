@@ -1,0 +1,425 @@
+{
+  "schemaVersion": "1.0.0",
+  "codebookVersion": "1.0.0",
+  "batch": "repo-pilot",
+  "site": {
+    "slug": "elk--explore-news",
+    "url": "http://localhost:4400/explore/links",
+    "finalUrl": "http://localhost:4400/explore/links",
+    "status": 200,
+    "title": "News | Explore | Elk",
+    "capturedAt": "2026-11-16T17:49:52.452Z",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "screenshot": {
+      "ref": "capture/screenshot.png",
+      "width": 1440,
+      "height": 978
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.8127.18 Safari/537.36",
+    "domain": "social-community",
+    "domainNote": "Elk — web client for Mastodon/fediverse; Explore › News (trending links) page, signed-out view",
+    "provenance": {
+      "source": "repo",
+      "record": "repos/repo-pilot/elk/explore.json",
+      "repo": {
+        "name": "elk-zone/elk",
+        "url": "https://github.com/elk-zone/elk",
+        "commit": "6b956a6d4a89a676059d83a0b0e59d7165d5f266",
+        "license": "MIT"
+      },
+      "view": {
+        "slug": "explore-news",
+        "name": "Explore – trending news",
+        "description": "Explore News tab listing trending link cards with thumbnail, source, headline and excerpt."
+      }
+    }
+  },
+  "regions": [
+    {
+      "id": "left-sidebar",
+      "role": "sidebar",
+      "label": "Elk logo, primary nav links (Home…Settings, signed-out items dimmed), 'Viewing localhost:4410 public data' note and orange Sign in button",
+      "bbox": {
+        "x": 120,
+        "y": 0,
+        "width": 300,
+        "height": 978
+      },
+      "patterns": [
+        "app-shell"
+      ]
+    },
+    {
+      "id": "explore-tabs",
+      "role": "sub-navigation",
+      "label": "Explore sub-tabs: Posts, Hashtags, News, For you (disabled)",
+      "bbox": {
+        "x": 435,
+        "y": 0,
+        "width": 600,
+        "height": 84
+      },
+      "patterns": [
+        "tabs",
+        "app-shell"
+      ]
+    },
+    {
+      "id": "info-notice",
+      "role": "notice",
+      "label": "Dismissible explanatory notice about trending news stories",
+      "bbox": {
+        "x": 435,
+        "y": 84,
+        "width": 600,
+        "height": 68
+      },
+      "patterns": [
+        "banner"
+      ]
+    },
+    {
+      "id": "news-list",
+      "role": "feed",
+      "label": "Trending news link cards with 120px thumbnail, source, bold title, two-line description; 'End of the list' marker",
+      "bbox": {
+        "x": 435,
+        "y": 152,
+        "width": 600,
+        "height": 810
+      },
+      "patterns": [
+        "feed",
+        "card"
+      ]
+    },
+    {
+      "id": "right-aside",
+      "role": "sidebar",
+      "label": "Search input, instance card (Harbor Social name, image, description), icon buttons and build/version footer links",
+      "bbox": {
+        "x": 1035,
+        "y": 0,
+        "width": 285,
+        "height": 978
+      },
+      "patterns": [
+        "text-field",
+        "app-shell"
+      ]
+    }
+  ],
+  "patterns": [
+    {
+      "id": "app-shell",
+      "status": "present",
+      "confidence": 0.88,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 120,
+            "y": 86,
+            "width": 300,
+            "height": 723
+          },
+          "quote": "Home Notifications Conversations Favorites Bookmarks",
+          "note": "left sidebar global navigation",
+          "region": "left-sidebar"
+        },
+        {
+          "bbox": {
+            "x": 435,
+            "y": 0,
+            "width": 600,
+            "height": 84
+          },
+          "quote": "Posts Hashtags News For you",
+          "note": "sub-tabs within Explore destination",
+          "region": "explore-tabs"
+        },
+        {
+          "bbox": {
+            "x": 1035,
+            "y": 0,
+            "width": 285,
+            "height": 978
+          },
+          "note": "right aside with search and instance info",
+          "region": "right-aside"
+        }
+      ],
+      "dims": {
+        "primary": "sidebar",
+        "secondary": "sub-tabs-under-the-header",
+        "items": [
+          "fixed-destinations"
+        ],
+        "visibility": "always-visible",
+        "structure": "single-app"
+      }
+    },
+    {
+      "id": "tabs",
+      "status": "present",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 435,
+            "y": 10,
+            "width": 600,
+            "height": 63
+          },
+          "quote": "Posts Hashtags News For you",
+          "note": "route-link tabs; 'For you' greyed out (unavailable signed out); active indicator barely distinguishable",
+          "region": "explore-tabs"
+        }
+      ],
+      "dims": {
+        "placement": "top",
+        "label": [
+          "text"
+        ],
+        "origin": "fixed-by-the-designer",
+        "grouping": "flat",
+        "switchBy": [
+          "click"
+        ]
+      }
+    },
+    {
+      "id": "banner",
+      "status": "present",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 435,
+            "y": 84,
+            "width": 600,
+            "height": 68
+          },
+          "quote": "These news stories are being talked about by people on this and other servers of the decentralized network right now.",
+          "note": "informational notice with close (×) button at top of content",
+          "region": "info-notice"
+        }
+      ],
+      "dims": {
+        "scope": "section",
+        "severity": "information",
+        "dismissal": "dismissible",
+        "action": "none",
+        "placement": "top-of-content"
+      }
+    },
+    {
+      "id": "feed",
+      "status": "present",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 435,
+            "y": 152,
+            "width": 600,
+            "height": 755
+          },
+          "note": "single-column stream of trending link cards",
+          "region": "news-list"
+        },
+        {
+          "bbox": {
+            "x": 640,
+            "y": 925,
+            "width": 190,
+            "height": 25
+          },
+          "quote": "End of the list",
+          "note": "explicit end marker",
+          "region": "news-list"
+        }
+      ],
+      "dims": {
+        "density": "card-preview",
+        "heterogeneity": [
+          "uniform-posts"
+        ],
+        "ordering": "ranked",
+        "sources": [
+          "global-pool"
+        ],
+        "arrangement": "single-column",
+        "position": "caught-up-marker",
+        "nesting": [
+          "flat"
+        ]
+      }
+    },
+    {
+      "id": "card",
+      "status": "present",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 435,
+            "y": 152,
+            "width": 600,
+            "height": 151
+          },
+          "quote": "Urban roofs as stepping stones for wild bees: native forbs ...",
+          "note": "whole-card link with left 120px rounded thumbnail, source, bold title, truncated description on light grey fill",
+          "region": "news-list"
+        },
+        {
+          "bbox": {
+            "x": 435,
+            "y": 605,
+            "width": 600,
+            "height": 151
+          },
+          "quote": "Your dependencies have dependencies: supply chain atta...",
+          "note": "placeholder newspaper icon when no image",
+          "region": "news-list"
+        }
+      ],
+      "dims": {
+        "media": "side-thumbnail",
+        "actions": "none",
+        "shape": "horizontal",
+        "style": "filled",
+        "target": "whole-card"
+      }
+    },
+    {
+      "id": "text-field",
+      "status": "present",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1046,
+            "y": 26,
+            "width": 270,
+            "height": 38
+          },
+          "quote": "Search",
+          "note": "rounded outlined search input with magnifier prefix icon and placeholder",
+          "region": "right-aside"
+        }
+      ],
+      "dims": {
+        "supporting": [
+          "placeholder",
+          "prefix-or-suffix"
+        ],
+        "style": "outlined"
+      }
+    },
+    {
+      "id": "recommendations",
+      "status": "absent",
+      "confidence": 0.65,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 435,
+            "y": 152,
+            "width": 600,
+            "height": 755
+          },
+          "note": "trending list is the same for all visitors (signed out), not personalised"
+        }
+      ],
+      "dims": {}
+    },
+    {
+      "id": "search-results",
+      "status": "absent",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 435,
+            "y": 152,
+            "width": 600,
+            "height": 755
+          },
+          "note": "list is not query-driven"
+        }
+      ],
+      "dims": {}
+    }
+  ],
+  "structure": {
+    "layout": "three-column app layout: left sidebar nav (logo, nav links, sign-in prompt), centre 600px content column with route sub-tabs, info notice and link-card list, right aside with search, instance info and footer",
+    "regions": [
+      "left-sidebar",
+      "explore-tabs",
+      "info-notice",
+      "news-list",
+      "right-aside"
+    ],
+    "density": "medium"
+  },
+  "aesthetics": {
+    "palette": [
+      "#fafafa",
+      "#f2f2f2",
+      "#232323",
+      "#686868",
+      "#919191",
+      "#cc7d24",
+      "#e5e5e5"
+    ],
+    "colorRoles": {
+      "background": "#fafafa",
+      "surface": "#f2f2f2",
+      "text": "#232323",
+      "muted": "#686868",
+      "subtle": "#919191",
+      "primary": "#cc7d24",
+      "border": "#e5e5e5"
+    },
+    "typography": "System UI stack (-apple-system) throughout: nav, titles, body, buttons; ui-monospace only for version/commit hash in footer.",
+    "typeScale": "Flat scale: 23px logo wordmark; 17px nav and tab labels; 15px card source/title (title bold/600) and body; 13px notice and footer meta. Hierarchy carried by weight and grey shades rather than size.",
+    "shape": "soft",
+    "elevation": "flat",
+    "borders": "thin",
+    "imagery": [
+      "photography",
+      "iconography"
+    ],
+    "iconStyle": "line",
+    "whitespace": "moderate",
+    "backgroundTreatment": "solid",
+    "mood": [
+      "clean",
+      "minimal",
+      "calm",
+      "neutral",
+      "friendly"
+    ]
+  },
+  "model": {
+    "rater": "rater-2",
+    "provider": "claude-code",
+    "name": "claude-opus-5-5",
+    "effort": "high",
+    "generatedAt": "2026-11-16T17:50:55.942Z",
+    "servedBy": [
+      "claude-opus-5-5"
+    ],
+    "turns": 8,
+    "usage": {
+      "input_tokens": 16,
+      "cache_creation_input_tokens": 25813,
+      "cache_read_input_tokens": 230452,
+      "output_tokens": 4395
+    }
+  },
+  "notes": "Elk Mastodon client in signed-out mode: sidebar items needing auth are greyed (#919191-ish) while Explore/Local/Federated/Settings are full black; single warm orange accent (#cc7d24) used only for Sign in button and the instance name. Link cards sit edge-to-edge in the 600px column on a slightly darker grey fill separated by hairlines, with 120px square rounded (≈11px radius) thumbnails and a newspaper icon placeholder when no image. Descriptions break mid-word ('habitat, b / ut') and are line-clamped with ellipsis. Tab bar has no strong active indicator in the capture; 'For you' is disabled. No shadows anywhere."
+}

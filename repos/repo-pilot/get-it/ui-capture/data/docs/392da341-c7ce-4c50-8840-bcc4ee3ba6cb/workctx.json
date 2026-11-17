@@ -1,0 +1,130 @@
+{
+  "v": 1,
+  "docId": "392da341-c7ce-4c50-8840-bcc4ee3ba6cb",
+  "chats": [],
+  "flashcards": [
+    {
+      "id": "s6wwpebcyao5y",
+      "topic": "all",
+      "createdAt": 1793342796000,
+      "endedAt": 1793343066000,
+      "cards": [
+        {
+          "q": "What is Km?",
+          "a": "The [S] at which v0 = Vmax/2.",
+          "userAnswer": "the [s] at which v0 = vmax/2",
+          "rating": 3,
+          "answeredAt": 1793342846000
+        },
+        {
+          "q": "Competitive inhibitor effect on Km and Vmax?",
+          "a": "Km up (apparent), Vmax unchanged.",
+          "userAnswer": "i think it's the opposite?",
+          "rating": 1,
+          "answeredAt": 1793342896000
+        },
+        {
+          "q": "Uncompetitive inhibitor effect?",
+          "a": "Both Km and Vmax decrease.",
+          "userAnswer": "both km and vmax decrease",
+          "rating": 4,
+          "answeredAt": 1793342946000
+        },
+        {
+          "q": "Lineweaver-Burk intercepts?",
+          "a": "y = 1/Vmax, x = -1/Km, slope Km/Vmax.",
+          "userAnswer": "i think it's the opposite?",
+          "rating": 2,
+          "answeredAt": 1793342996000
+        },
+        {
+          "q": "Why are allosteric curves sigmoidal?",
+          "a": "Cooperativity between subunits.",
+          "userAnswer": "not sure",
+          "rating": 1,
+          "answeredAt": 1793343046000
+        }
+      ]
+    },
+    {
+      "id": "s33qmc8ixgsqo",
+      "topic": "Saturation curve",
+      "createdAt": 1793762964000,
+      "endedAt": 1793763234000,
+      "cards": [
+        {
+          "q": "What is Km?",
+          "a": "The [S] at which v0 = Vmax/2.",
+          "userAnswer": "the [s] at which v0 = vmax/2",
+          "rating": 3,
+          "answeredAt": 1793763014000
+        },
+        {
+          "q": "Competitive inhibitor effect on Km and Vmax?",
+          "a": "Km up (apparent), Vmax unchanged.",
+          "userAnswer": "km up (apparent), vmax unchanged",
+          "rating": 4,
+          "answeredAt": 1793763064000
+        },
+        {
+          "q": "Uncompetitive inhibitor effect?",
+          "a": "Both Km and Vmax decrease.",
+          "userAnswer": "i think it's the opposite?",
+          "rating": 2,
+          "answeredAt": 1793763114000
+        },
+        {
+          "q": "Lineweaver-Burk intercepts?",
+          "a": "y = 1/Vmax, x = -1/Km, slope Km/Vmax.",
+          "userAnswer": "y = 1/vmax, x = -1/km, slope km/vmax",
+          "rating": 3,
+          "answeredAt": 1793763164000
+        },
+        {
+          "q": "Why are allosteric curves sigmoidal?",
+          "a": "Cooperativity between subunits.",
+          "userAnswer": "cooperativity between subunits",
+          "rating": 4,
+          "answeredAt": 1793763214000
+        }
+      ]
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "s5ltda1wo3ndr",
+      "topic": "all",
+      "createdAt": 1793582892000,
+      "endedAt": 1793583047000,
+      "questions": [
+        {
+          "stem": "Methanol poisoning is treated with ethanol because ethanol:",
+          "options": [
+            "Is a non-competitive inhibitor",
+            "Competes for alcohol dehydrogenase",
+            "Denatures the enzyme",
+            "Activates catalase"
+          ],
+          "correctIndex": 1,
+          "explanation": "Classic competitive inhibition.",
+          "chosenIndex": 3,
+          "answeredAt": 1793582962000
+        },
+        {
+          "stem": "On a Lineweaver-Burk plot a competitive inhibitor:",
+          "options": [
+            "Changes the y-intercept",
+            "Changes the slope only",
+            "Shifts lines parallel",
+            "Has no effect"
+          ],
+          "correctIndex": 1,
+          "explanation": "Lines intersect on the y-axis.",
+          "chosenIndex": 1,
+          "answeredAt": 1793583032000
+        }
+      ]
+    }
+  ],
+  "feynman": []
+}

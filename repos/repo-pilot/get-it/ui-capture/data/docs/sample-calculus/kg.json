@@ -1,0 +1,173 @@
+{
+  "v": 1,
+  "docId": "sample-calculus",
+  "status": "ready",
+  "buildAt": 1789049070000,
+  "lastEvaluatedAt": 1793184300000,
+  "evaluationCount": 16,
+  "nodes": [
+    {
+      "id": "derivative-as-a-limit",
+      "label": "Derivative as a limit",
+      "summary": "f'(x) = lim h->0 [f(x+h) - f(x)]/h, slope of the tangent line.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 94,
+        "comprehension": 86,
+        "structure": 79,
+        "application": 68
+      },
+      "evaluatorNote": "Strong: correct on every quiz item and used it in own words in chat."
+    },
+    {
+      "id": "tangent-envelope-of-x-2",
+      "label": "Tangent envelope of x^2",
+      "summary": "Family of tangents to y = x^2 forming the parabola as envelope.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 89,
+        "comprehension": 80,
+        "structure": 77,
+        "application": 74
+      },
+      "evaluatorNote": "Explains it unprompted and applies it to new cases; keep it warm with spaced review."
+    },
+    {
+      "id": "fundamental-theorem",
+      "label": "Fundamental Theorem",
+      "summary": "FTC parts I and II linking derivative and integral.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 78,
+        "comprehension": 61,
+        "structure": 63,
+        "application": 57
+      },
+      "evaluatorNote": "Good recognition on quizzes; explanations still lean on the textbook's wording."
+    },
+    {
+      "id": "standard-normal-density",
+      "label": "Standard normal density",
+      "summary": "phi(x) = exp(-x^2/2)/sqrt(2 pi), inflection points at +/-1.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 89,
+        "comprehension": 73,
+        "structure": 75,
+        "application": 65
+      },
+      "evaluatorNote": "Explains it unprompted and applies it to new cases; keep it warm with spaced review."
+    },
+    {
+      "id": "taylor-partial-sums-of-sin",
+      "label": "Taylor partial sums of sin",
+      "summary": "Odd-degree Maclaurin polynomials approximating sin(x).",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 66,
+        "comprehension": 49,
+        "structure": 46,
+        "application": 35
+      },
+      "evaluatorNote": "Understands the idea, but confuses it with a neighbouring concept under time pressure."
+    },
+    {
+      "id": "chain-rule",
+      "label": "Chain rule",
+      "summary": "d/dx f(g(x)) = f'(g(x)) g'(x).",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 63,
+        "comprehension": 50,
+        "structure": 43,
+        "application": 35
+      },
+      "evaluatorNote": "Recalls the definition but hesitated applying it to an unseen example."
+    },
+    {
+      "id": "riemann-sums",
+      "label": "Riemann sums",
+      "summary": "Definite integral as limit of sums of f(x_k) Delta x.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 58,
+        "comprehension": 46,
+        "structure": 40,
+        "application": 38
+      },
+      "evaluatorNote": "Good recognition on quizzes; explanations still lean on the textbook's wording."
+    },
+    {
+      "id": "lagrange-remainder",
+      "label": "Lagrange remainder",
+      "summary": "Error bound for a truncated Taylor polynomial.",
+      "pageHints": [
+        2
+      ],
+      "evaluation": {
+        "memory": 83,
+        "comprehension": 72,
+        "structure": 62,
+        "application": 59
+      },
+      "evaluatorNote": "Explains it unprompted and applies it to new cases; keep it warm with spaced review."
+    }
+  ],
+  "edges": [
+    {
+      "source": "derivative-as-a-limit",
+      "target": "tangent-envelope-of-x-2",
+      "relation": "is a consequence of"
+    },
+    {
+      "source": "tangent-envelope-of-x-2",
+      "target": "fundamental-theorem",
+      "relation": "requires"
+    },
+    {
+      "source": "fundamental-theorem",
+      "target": "standard-normal-density",
+      "relation": "contrasts with"
+    },
+    {
+      "source": "fundamental-theorem",
+      "target": "taylor-partial-sums-of-sin",
+      "relation": "is an example of"
+    },
+    {
+      "source": "tangent-envelope-of-x-2",
+      "target": "chain-rule",
+      "relation": "requires"
+    },
+    {
+      "source": "chain-rule",
+      "target": "riemann-sums",
+      "relation": "is measured by"
+    },
+    {
+      "source": "tangent-envelope-of-x-2",
+      "target": "lagrange-remainder",
+      "relation": "is measured by"
+    },
+    {
+      "source": "fundamental-theorem",
+      "target": "lagrange-remainder",
+      "relation": "is related to"
+    }
+  ],
+  "globalNote": "Most of the map is solid — recall and comprehension are well ahead. The gap is application: \"Taylor partial sums of sin\" still breaks down on unseen problems. A short quiz on it is the best next step."
+}

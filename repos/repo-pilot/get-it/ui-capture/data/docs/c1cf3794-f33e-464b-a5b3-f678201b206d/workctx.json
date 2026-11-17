@@ -1,0 +1,156 @@
+{
+  "v": 1,
+  "docId": "c1cf3794-f33e-464b-a5b3-f678201b206d",
+  "chats": [],
+  "flashcards": [
+    {
+      "id": "sfgqnlv4g132",
+      "topic": "all",
+      "createdAt": 1791746964000,
+      "endedAt": 1791747234000,
+      "cards": [
+        {
+          "q": "Carnot efficiency?",
+          "a": "1 - Tc/Th, temperatures in kelvin.",
+          "userAnswer": "not sure",
+          "rating": 1,
+          "answeredAt": 1791747014000
+        },
+        {
+          "q": "Definition of entropy change?",
+          "a": "dS = dQ_rev / T.",
+          "userAnswer": "i think it's the opposite?",
+          "rating": 2,
+          "answeredAt": 1791747064000
+        },
+        {
+          "q": "Second law for isolated systems?",
+          "a": "Delta S >= 0, equality only for reversible processes.",
+          "userAnswer": "i think it's the opposite?",
+          "rating": 2,
+          "answeredAt": 1791747114000
+        },
+        {
+          "q": "Boltzmann formula?",
+          "a": "S = k_B ln W.",
+          "userAnswer": "s = k_b ln w",
+          "rating": 3,
+          "answeredAt": 1791747164000
+        },
+        {
+          "q": "Spontaneity at constant T, p?",
+          "a": "Delta G < 0 with G = H - TS.",
+          "userAnswer": "i think it's the opposite?",
+          "rating": 2,
+          "answeredAt": 1791747214000
+        }
+      ]
+    },
+    {
+      "id": "s1ae8875sapmt",
+      "topic": "Clausius entropy",
+      "createdAt": 1792573461000,
+      "endedAt": 1792573731000,
+      "cards": [
+        {
+          "q": "Carnot efficiency?",
+          "a": "1 - Tc/Th, temperatures in kelvin.",
+          "userAnswer": "1 - tc/th, temperatures in kelvin",
+          "rating": 3,
+          "answeredAt": 1792573511000
+        },
+        {
+          "q": "Definition of entropy change?",
+          "a": "dS = dQ_rev / T.",
+          "userAnswer": "ds = dq_rev / t",
+          "rating": 4,
+          "answeredAt": 1792573561000
+        },
+        {
+          "q": "Second law for isolated systems?",
+          "a": "Delta S >= 0, equality only for reversible processes.",
+          "userAnswer": "delta s >= 0, equality only for reversible processes",
+          "rating": 4,
+          "answeredAt": 1792573611000
+        },
+        {
+          "q": "Boltzmann formula?",
+          "a": "S = k_B ln W.",
+          "userAnswer": "i think it's the opposite?",
+          "rating": 2,
+          "answeredAt": 1792573661000
+        },
+        {
+          "q": "Spontaneity at constant T, p?",
+          "a": "Delta G < 0 with G = H - TS.",
+          "userAnswer": "delta g < 0 with g = h - ts",
+          "rating": 3,
+          "answeredAt": 1792573711000
+        }
+      ]
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "s5f510h7xafl8",
+      "topic": "all",
+      "createdAt": 1792219248000,
+      "endedAt": 1792219543000,
+      "questions": [
+        {
+          "stem": "Max efficiency between 600 K and 300 K:",
+          "options": [
+            "25%",
+            "50%",
+            "67%",
+            "100%"
+          ],
+          "correctIndex": 1,
+          "explanation": "1 - 300/600.",
+          "chosenIndex": 2,
+          "answeredAt": 1792219318000
+        },
+        {
+          "stem": "Which is NOT a source of entropy generation?",
+          "options": [
+            "Friction",
+            "Free expansion",
+            "Reversible isothermal compression",
+            "Mixing"
+          ],
+          "correctIndex": 2,
+          "explanation": "Reversible processes generate none.",
+          "chosenIndex": 1,
+          "answeredAt": 1792219388000
+        },
+        {
+          "stem": "COP of a fridge is defined as:",
+          "options": [
+            "W/Qc",
+            "Qc/W",
+            "Qh/Qc",
+            "1 - Tc/Th"
+          ],
+          "correctIndex": 1,
+          "explanation": "Heat removed per work input.",
+          "chosenIndex": 0,
+          "answeredAt": 1792219458000
+        },
+        {
+          "stem": "ATP hydrolysis can drive unfavourable reactions because:",
+          "options": [
+            "It raises temperature",
+            "Coupled Delta G is negative",
+            "It lowers entropy",
+            "It is reversible"
+          ],
+          "correctIndex": 1,
+          "explanation": "Coupling makes total Delta G < 0.",
+          "chosenIndex": 3,
+          "answeredAt": 1792219528000
+        }
+      ]
+    }
+  ],
+  "feynman": []
+}

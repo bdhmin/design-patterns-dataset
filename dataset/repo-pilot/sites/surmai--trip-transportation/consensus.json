@@ -1,0 +1,947 @@
+{
+  "site": {
+    "slug": "surmai--trip-transportation",
+    "url": "http://localhost:4402/login",
+    "finalUrl": "http://localhost:4402/trips/28yvjgeiih3i58v",
+    "status": 200,
+    "title": "Surmai | Costa Rica — Pura Vida",
+    "capturedAt": "2026-11-16T17:57:06.798Z",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "screenshot": {
+      "ref": "capture/screenshot.png",
+      "width": 1440,
+      "height": 1400
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.8127.18 Safari/537.36",
+    "domain": "travel-hospitality",
+    "domainNote": "self-hosted trip organizer (Surmai) — trip detail page with transportation, lodging, activities",
+    "provenance": {
+      "source": "repo",
+      "record": "repos/repo-pilot/surmai/explore.json",
+      "repo": {
+        "name": "rohitkumbhar/surmai",
+        "url": "https://github.com/rohitkumbhar/surmai",
+        "commit": "619b602cd7b9a20f6a05eb752f0007da6bc39b6b",
+        "license": "MIT"
+      },
+      "view": {
+        "slug": "trip-transportation",
+        "name": "Trip organization – transportation",
+        "description": "Trip detail page with tabs and accordion sections; the Transportation section is expanded showing a timeline of flight and taxi booking cards with attachments."
+      }
+    }
+  },
+  "codebookVersion": "1.0.0",
+  "batch": "repo-pilot",
+  "raters": [
+    "rater-1",
+    "rater-2",
+    "rater-3"
+  ],
+  "domain": {
+    "value": "travel-hospitality",
+    "support": 3
+  },
+  "structure": {
+    "density": {
+      "value": "medium",
+      "support": 3
+    },
+    "layout": {
+      "rater-1": "app layout: fixed left icon rail + top bar + fixed footer; content area with top tab strip over a stack of full-width accordion sections; expanded section holds a vertical list of horizontal booking cards",
+      "rater-2": "app shell with narrow icon navigation rail on the left, top bar with trip title/dates, notifications and user menu; content area with top tabs and a stack of collapsible section panels; fixed footer links",
+      "rater-3": "web app with left icon rail, top bar, sub-tabs and a single column of stacked accordion sections containing full-width horizontal booking cards; fixed footer"
+    }
+  },
+  "aesthetics": {
+    "shape": {
+      "value": "soft",
+      "support": 3
+    },
+    "elevation": {
+      "value": "flat",
+      "support": 3
+    },
+    "borders": {
+      "value": "thin",
+      "support": 3
+    },
+    "iconStyle": {
+      "value": "line",
+      "support": 3
+    },
+    "whitespace": {
+      "value": "moderate",
+      "support": 3
+    },
+    "backgroundTreatment": {
+      "value": "solid",
+      "support": 3
+    }
+  },
+  "patterns": [
+    {
+      "id": "accordion",
+      "status": "present",
+      "confidence": 0.91,
+      "dims": {
+        "policy": "many-at-a-time",
+        "header": [
+          "title-only"
+        ],
+        "toggle": [
+          "header-click"
+        ]
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 100,
+            "y": 136,
+            "width": 1320,
+            "height": 71
+          },
+          "note": "Collapsed section with icon, title, description and chevron",
+          "quote": "Basic Information",
+          "region": "organization-panel",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 100,
+            "y": 223,
+            "width": 1320,
+            "height": 975
+          },
+          "note": "Expanded Transportation section",
+          "quote": "Transportation",
+          "region": "organization-panel",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 100,
+            "y": 1214,
+            "width": 1320,
+            "height": 158
+          },
+          "note": "Collapsed Lodging and Activities",
+          "quote": "Lodging",
+          "region": "organization-panel",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 100,
+            "y": 136,
+            "width": 1320,
+            "height": 71
+          },
+          "region": "organization-panel",
+          "quote": "Basic Information View basic information about your trip",
+          "note": "collapsed header with icon, title, description and chevron",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 100,
+            "y": 223,
+            "width": 1320,
+            "height": 975
+          },
+          "region": "organization-panel",
+          "quote": "Transportation",
+          "note": "expanded section; opening Lodging live did not close Transportation",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 100,
+            "y": 1214,
+            "width": 1320,
+            "height": 158
+          },
+          "region": "organization-panel",
+          "quote": "Lodging",
+          "note": "collapsed Lodging and Activities",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 100,
+            "y": 136,
+            "width": 1320,
+            "height": 71
+          },
+          "quote": "Basic Information View basic information about your trip",
+          "note": "Collapsed section header with icon, title, description, chevron",
+          "region": "organization-panel",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 100,
+            "y": 223,
+            "width": 1320,
+            "height": 975
+          },
+          "quote": "Transportation",
+          "note": "Expanded section with chevron up; opening Lodging live left Transportation open",
+          "region": "organization-panel",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 100,
+            "y": 1214,
+            "width": 1320,
+            "height": 158
+          },
+          "quote": "Lodging",
+          "note": "Further collapsed sections",
+          "region": "organization-panel",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "app-shell",
+      "status": "present",
+      "confidence": 0.89,
+      "dims": {
+        "primary": "navigation-rail",
+        "secondary": "sub-tabs-under-the-header",
+        "items": [
+          "fixed-destinations"
+        ],
+        "visibility": "always-visible",
+        "structure": "single-app"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 80,
+            "height": 900
+          },
+          "note": "Fixed icon-only navigation rail",
+          "region": "sidebar",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 80,
+            "y": 0,
+            "width": 1360,
+            "height": 60
+          },
+          "note": "Top bar with trip title, notifications and account",
+          "quote": "Costa Rica — Pura Vida",
+          "region": "header",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 80,
+            "height": 900
+          },
+          "region": "nav-rail",
+          "note": "icon-only navigation rail with tooltip labels (e.g. 'Travel Board')",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 80,
+            "y": 0,
+            "width": 1360,
+            "height": 60
+          },
+          "region": "header",
+          "quote": "Costa Rica — Pura Vida",
+          "note": "top bar with context title, notifications and account",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 80,
+            "height": 900
+          },
+          "note": "Icon-only navigation rail with fixed destinations, tooltips on hover",
+          "region": "sidebar-rail",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 80,
+            "y": 0,
+            "width": 1360,
+            "height": 60
+          },
+          "note": "Top bar with context title, notifications and account",
+          "quote": "Costa Rica — Pura Vida",
+          "region": "header",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "badge",
+      "status": "present",
+      "confidence": 0.85,
+      "dims": {
+        "meaning": "count",
+        "overflow": "exact-count"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1131,
+            "y": 8,
+            "width": 36,
+            "height": 36
+          },
+          "note": "Count badge on notification bell",
+          "quote": "2",
+          "region": "header",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 1131,
+            "y": 8,
+            "width": 36,
+            "height": 36
+          },
+          "region": "header",
+          "quote": "2",
+          "note": "count badge on notifications bell",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 1131,
+            "y": 10,
+            "width": 34,
+            "height": 33
+          },
+          "quote": "2",
+          "note": "Count badge on notification bell (matches Invitations (2))",
+          "region": "header",
+          "rater": "rater-3"
+        }
+      ],
+      "ties": [
+        "dims.aggregation",
+        "dims.rule"
+      ]
+    },
+    {
+      "id": "card",
+      "status": "present",
+      "confidence": 0.85,
+      "dims": {
+        "actions": "overflow-menu",
+        "shape": "horizontal",
+        "style": "outlined",
+        "media": "side-thumbnail"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 127,
+            "y": 410,
+            "width": 1266,
+            "height": 156
+          },
+          "note": "Flight segment card: transport icon, labelled attribute columns, ⋯ overflow menu, attachment footer",
+          "quote": "SEA",
+          "region": "organization-panel",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 127,
+            "y": 582,
+            "width": 1266,
+            "height": 112
+          },
+          "note": "Taxi segment card",
+          "quote": "A1 Taxi Service",
+          "region": "organization-panel",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 127,
+            "y": 710,
+            "width": 1266,
+            "height": 112
+          },
+          "note": "Transfer card",
+          "quote": "Westin Transportation",
+          "region": "organization-panel",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 127,
+            "y": 410,
+            "width": 1266,
+            "height": 156
+          },
+          "region": "organization-panel",
+          "quote": "SEA → SJO ASA3543 Delta Air Lines",
+          "note": "outlined horizontal flight card with type icon, attribute columns, kebab menu and attachment row",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 127,
+            "y": 582,
+            "width": 1266,
+            "height": 112
+          },
+          "region": "organization-panel",
+          "quote": "A1 Taxi Service",
+          "note": "car transfer card",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 127,
+            "y": 710,
+            "width": 1266,
+            "height": 112
+          },
+          "region": "organization-panel",
+          "quote": "Westin Transportation",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 127,
+            "y": 410,
+            "width": 1266,
+            "height": 156
+          },
+          "quote": "SEA",
+          "note": "Flight card: transport icon, labelled attribute columns, overflow ⋯ menu (Edit/Delete), attached file row",
+          "region": "organization-panel",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 127,
+            "y": 582,
+            "width": 1266,
+            "height": 112
+          },
+          "quote": "A1 Taxi Service",
+          "note": "Car transfer card",
+          "region": "organization-panel",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "empty-state",
+      "status": "present",
+      "confidence": 0.78,
+      "dims": {
+        "cause": "first-use",
+        "content": [
+          "explanation"
+        ],
+        "starters": "none",
+        "recovery": "none"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 127,
+            "y": 1001,
+            "width": 1266,
+            "height": 59
+          },
+          "note": "Outlined box with muted text only",
+          "quote": "No Rentals",
+          "region": "organization-panel",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 127,
+            "y": 1112,
+            "width": 1266,
+            "height": 59
+          },
+          "quote": "No Parking",
+          "region": "organization-panel",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 127,
+            "y": 1001,
+            "width": 1266,
+            "height": 59
+          },
+          "region": "organization-panel",
+          "quote": "No Rentals",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 127,
+            "y": 1112,
+            "width": 1266,
+            "height": 59
+          },
+          "region": "organization-panel",
+          "quote": "No Parking",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 127,
+            "y": 1001,
+            "width": 1266,
+            "height": 59
+          },
+          "quote": "No Rentals",
+          "region": "organization-panel",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 127,
+            "y": 1112,
+            "width": 1266,
+            "height": 59
+          },
+          "quote": "No Parking",
+          "region": "organization-panel",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "file-upload",
+      "status": "uncertain",
+      "confidence": 0.48,
+      "dims": {
+        "preview": "filename"
+      },
+      "support": 2,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 127,
+            "y": 520,
+            "width": 1266,
+            "height": 46
+          },
+          "note": "Attached PDF shown as filename link with remove ×; entry point not visible on the page",
+          "quote": "costa_rica_flight.pdf",
+          "region": "organization-panel",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 137,
+            "y": 530,
+            "width": 200,
+            "height": 26
+          },
+          "region": "organization-panel",
+          "quote": "costa_rica_flight.pdf",
+          "note": "attachment chip with delete x",
+          "rater": "rater-2"
+        }
+      ]
+    },
+    {
+      "id": "menu",
+      "status": "present",
+      "confidence": 0.86,
+      "dims": {
+        "openBy": "button-click",
+        "structure": "sections",
+        "item": [
+          "icon",
+          "label"
+        ],
+        "itemSet": "fixed",
+        "form": "vertical-list"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1265,
+            "y": 315,
+            "width": 128,
+            "height": 36
+          },
+          "note": "Add new dropdown (verified live): Flight, Bus, Car, Boat, Train, Bike | Car Rental, Parking with icons and divider",
+          "quote": "Add new",
+          "region": "organization-panel",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 1359,
+            "y": 413,
+            "width": 28,
+            "height": 28
+          },
+          "note": "⋯ overflow menu per card (Edit, Delete)",
+          "region": "organization-panel",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 1169,
+            "y": 12,
+            "width": 235,
+            "height": 38
+          },
+          "note": "User account menu trigger with chevron",
+          "quote": "Maya Chen",
+          "region": "header",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 1265,
+            "y": 315,
+            "width": 128,
+            "height": 36
+          },
+          "region": "organization-panel",
+          "quote": "Add new",
+          "note": "opens list Flight/Bus/Car/Boat/Train/Bike | Car Rental/Parking with icons and a separator (verified live)",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 1359,
+            "y": 413,
+            "width": 28,
+            "height": 28
+          },
+          "region": "organization-panel",
+          "note": "kebab menu on each card opens Edit/Delete",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 1169,
+            "y": 12,
+            "width": 235,
+            "height": 38
+          },
+          "region": "header",
+          "quote": "Maya Chen",
+          "note": "user menu trigger with chevron",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 1265,
+            "y": 315,
+            "width": 128,
+            "height": 36
+          },
+          "quote": "Add new",
+          "note": "Dropdown verified live: Flight, Bus, Car, Boat, Train, Bike | Car Rental, Parking with icons and divider",
+          "region": "organization-panel",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 1360,
+            "y": 418,
+            "width": 26,
+            "height": 20
+          },
+          "note": "Card ⋯ overflow menu (Edit, Delete)",
+          "region": "organization-panel",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 1169,
+            "y": 12,
+            "width": 235,
+            "height": 38
+          },
+          "quote": "Maya Chen",
+          "note": "Account menu: Profile, Invitations (2), Logout",
+          "region": "header",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "overview-detail",
+      "status": "absent",
+      "confidence": 0.6,
+      "dims": {},
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 127,
+            "y": 410,
+            "width": 1266,
+            "height": 540
+          },
+          "note": "cards show all attributes inline; detail only via edit menu",
+          "rater": "rater-2"
+        }
+      ]
+    },
+    {
+      "id": "popover",
+      "status": "absent",
+      "confidence": 0.55,
+      "dims": {},
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 280,
+            "y": 443,
+            "width": 14,
+            "height": 14
+          },
+          "note": "Airport info appears on hover and is coded as a rich tooltip",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 334,
+            "y": 744,
+            "width": 12,
+            "height": 12
+          },
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "stat-tile",
+      "status": "absent",
+      "confidence": 0.75,
+      "dims": {},
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 127,
+            "y": 410,
+            "width": 1266,
+            "height": 156
+          },
+          "note": "Cost values are attributes inside cards, not standalone tiles",
+          "rater": "rater-1"
+        }
+      ]
+    },
+    {
+      "id": "status-tracker",
+      "status": "absent",
+      "confidence": 0.8,
+      "dims": {},
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 127,
+            "y": 370,
+            "width": 1266,
+            "height": 580
+          },
+          "note": "'Travel Timeline' is a chronological list of bookings, not stage progress",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 127,
+            "y": 370,
+            "width": 1266,
+            "height": 580
+          },
+          "note": "'Travel Timeline' is a chronological list of bookings, not stage progress",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 127,
+            "y": 372,
+            "width": 200,
+            "height": 20
+          },
+          "quote": "Travel Timeline",
+          "note": "Chronological list of bookings, not stages of a process",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "tabs",
+      "status": "present",
+      "confidence": 0.89,
+      "dims": {
+        "placement": "top",
+        "label": [
+          "text"
+        ],
+        "origin": "fixed-by-the-designer",
+        "grouping": "flat",
+        "switchBy": [
+          "click"
+        ]
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 100,
+            "y": 88,
+            "width": 505,
+            "height": 36
+          },
+          "note": "role=tablist; verified Itinerary tab swaps panel (URL #itinerary)",
+          "quote": "Organization Itinerary Attachments Expenses Notes",
+          "region": "trip-tabs",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 100,
+            "y": 88,
+            "width": 1320,
+            "height": 36
+          },
+          "region": "trip-tabs",
+          "quote": "Organization Itinerary Attachments Expenses Notes",
+          "note": "role=tablist, Organization selected with underline indicator",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 100,
+            "y": 88,
+            "width": 505,
+            "height": 36
+          },
+          "quote": "Organization Itinerary Attachments Expenses Notes",
+          "note": "ARIA tablist with underline indicator on selected tab",
+          "region": "trip-tabs",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "tooltip",
+      "status": "present",
+      "confidence": 0.72,
+      "dims": {
+        "trigger": [
+          "hover"
+        ],
+        "content": "label",
+        "placement": "beside"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 280,
+            "y": 443,
+            "width": 14,
+            "height": 14
+          },
+          "note": "Info icon next to airport code; hover shows card below with full airport name and timezone pill (verified live)",
+          "quote": "SEA",
+          "region": "organization-panel",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 16,
+            "y": 153,
+            "width": 47,
+            "height": 50
+          },
+          "region": "nav-rail",
+          "note": "hover shows dark label 'Travel Board' beside icon (verified live)",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 280,
+            "y": 443,
+            "width": 14,
+            "height": 14
+          },
+          "region": "organization-panel",
+          "note": "info icon next to airport code shows hover card 'Seattle–Tacoma International Airport' with timezone chip (rich hover card)",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 16,
+            "y": 153,
+            "width": 47,
+            "height": 50
+          },
+          "note": "Hovering rail icons shows dark label tooltip beside (e.g. 'Travel Board') — verified live",
+          "region": "sidebar-rail",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 334,
+            "y": 744,
+            "width": 12,
+            "height": 12
+          },
+          "note": "Info icons next to locations show a small timezone hover bubble ('UNKNOWN') below",
+          "region": "organization-panel",
+          "rater": "rater-3"
+        }
+      ]
+    }
+  ],
+  "note": "Majority vote across raters. Free-text fields (layout, typography, palette, notes) stay per rater in labels/.",
+  "computedAt": "2026-11-16T17:58:46.866Z"
+}

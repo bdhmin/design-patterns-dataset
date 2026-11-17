@@ -1,0 +1,101 @@
+{
+  "v": 1,
+  "docId": "sample-chemistry",
+  "savedAt": 1789200600000,
+  "tags": [
+    {
+      "id": "0-0",
+      "page": 0,
+      "endX": 523.797499972,
+      "endY": 584.2121,
+      "fontHeight": 11.5,
+      "type": "3d",
+      "label": "Methane tetrahedron",
+      "ready": true,
+      "generating": false,
+      "concept": {
+        "label": "Methane tetrahedron",
+        "type": "3d",
+        "anchor": "to hydrogen atoms arranged at the vertices of a regular tetrahedron",
+        "context": "CH4: central carbon, four H at 109.5 degrees."
+      },
+      "spec": {
+        "type": "3d",
+        "title": "Methane (CH4)",
+        "caption": "sp3 carbon with four C–H bonds at 109.5 degrees — symmetric, so the molecule is non-polar.",
+        "setup_code": "camera.position.set(0, 1.4, 5);\nscene.background = new THREE.Color('#fafafa');\nscene.add(new THREE.AmbientLight(0xffffff, 0.7));\nvar dl = new THREE.DirectionalLight(0xffffff, 0.9); dl.position.set(3, 5, 4); scene.add(dl);\nvar C = new THREE.Mesh(new THREE.SphereGeometry(0.42, 32, 32), new THREE.MeshStandardMaterial({ color: '#374151' }));\ngroup.add(C);\nvar dirs = [[1,1,1],[1,-1,-1],[-1,1,-1],[-1,-1,1]];\nfor (var i = 0; i < 4; i++) {\n  var v = new THREE.Vector3(dirs[i][0], dirs[i][1], dirs[i][2]).normalize().multiplyScalar(1.5);\n  var H = new THREE.Mesh(new THREE.SphereGeometry(0.26, 24, 24), new THREE.MeshStandardMaterial({ color: '#93c5fd' }));\n  H.position.copy(v); group.add(H);\n  var len = v.length();\n  var b = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.06, len, 12), new THREE.MeshStandardMaterial({ color: '#9ca3af' }));\n  b.position.copy(v.clone().multiplyScalar(0.5));\n  b.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), v.clone().normalize());\n  group.add(b);\n}\nreturn { update: function (t) { group.rotation.y = t * 0.5; group.rotation.x = Math.sin(t * 0.3) * 0.2; } };"
+      },
+      "attempts": 1
+    },
+    {
+      "id": "0-1",
+      "page": 0,
+      "endX": 523.395000018,
+      "endY": 393.1639,
+      "fontHeight": 11.5,
+      "type": "3d",
+      "label": "Bent water molecule",
+      "ready": true,
+      "generating": false,
+      "concept": {
+        "label": "Bent water molecule",
+        "type": "3d",
+        "anchor": "to two hydrogen atoms with an H–O–H bond angle of about 104.5 degrees",
+        "context": "H2O bent geometry, 104.5 degrees due to two lone pairs."
+      },
+      "spec": {
+        "type": "3d",
+        "title": "Water: a squeezed tetrahedron",
+        "caption": "Two bonding pairs and two lone pairs; lone-pair repulsion closes the H–O–H angle to 104.5 degrees.",
+        "setup_code": "camera.position.set(0, 1.4, 5);\nscene.background = new THREE.Color('#fafafa');\nscene.add(new THREE.AmbientLight(0xffffff, 0.7));\nvar dl = new THREE.DirectionalLight(0xffffff, 0.9); dl.position.set(3, 5, 4); scene.add(dl);\nvar C = new THREE.Mesh(new THREE.SphereGeometry(0.42, 32, 32), new THREE.MeshStandardMaterial({ color: '#374151' }));\ngroup.add(C);\nvar dirs = [[1,1,1],[1,-1,-1],[-1,1,-1],[-1,-1,1]];\nfor (var i = 0; i < 4; i++) {\n  var v = new THREE.Vector3(dirs[i][0], dirs[i][1], dirs[i][2]).normalize().multiplyScalar(1.5);\n  var H = new THREE.Mesh(new THREE.SphereGeometry(0.26, 24, 24), new THREE.MeshStandardMaterial({ color: '#93c5fd' }));\n  H.position.copy(v); group.add(H);\n  var len = v.length();\n  var b = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.06, len, 12), new THREE.MeshStandardMaterial({ color: '#9ca3af' }));\n  b.position.copy(v.clone().multiplyScalar(0.5));\n  b.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), v.clone().normalize());\n  group.add(b);\n}\nreturn { update: function (t) { group.rotation.y = t * 0.5; group.rotation.x = Math.sin(t * 0.3) * 0.2; } };"
+      },
+      "attempts": 1
+    },
+    {
+      "id": "0-2",
+      "page": 0,
+      "endX": 523.2799999870001,
+      "endY": 217.4497,
+      "fontHeight": 11.5,
+      "type": "3d",
+      "label": "Benzene ring",
+      "ready": true,
+      "generating": false,
+      "concept": {
+        "label": "Benzene ring",
+        "type": "3d",
+        "anchor": "Benzene and Aromaticity Benzene (C6H6) is a planar six-membered ring",
+        "context": "C6H6 planar ring with delocalised pi electrons."
+      },
+      "spec": {
+        "type": "3d",
+        "title": "Benzene (C6H6)",
+        "caption": "Six equivalent C–C bonds (139 pm) and a delocalised pi cloud above and below the ring.",
+        "setup_code": "camera.position.set(0, 1.4, 5);\nscene.background = new THREE.Color('#fafafa');\nscene.add(new THREE.AmbientLight(0xffffff, 0.7));\nvar dl = new THREE.DirectionalLight(0xffffff, 0.9); dl.position.set(3, 5, 4); scene.add(dl);\nfor (var i = 0; i < 6; i++) {\n  var a = i * Math.PI / 3;\n  var c = new THREE.Mesh(new THREE.SphereGeometry(0.3, 24, 24), new THREE.MeshStandardMaterial({ color: '#374151' }));\n  c.position.set(Math.cos(a) * 1.3, Math.sin(a) * 1.3, 0); group.add(c);\n  var h = new THREE.Mesh(new THREE.SphereGeometry(0.18, 20, 20), new THREE.MeshStandardMaterial({ color: '#bfdbfe' }));\n  h.position.set(Math.cos(a) * 2.2, Math.sin(a) * 2.2, 0); group.add(h);\n  var b2 = i + 1;\n  var a2 = b2 * Math.PI / 3;\n  var p1 = new THREE.Vector3(Math.cos(a) * 1.3, Math.sin(a) * 1.3, 0);\n  var p2 = new THREE.Vector3(Math.cos(a2) * 1.3, Math.sin(a2) * 1.3, 0);\n  var d = p2.clone().sub(p1);\n  var bond = new THREE.Mesh(new THREE.CylinderGeometry(i % 2 ? 0.05 : 0.09, i % 2 ? 0.05 : 0.09, d.length(), 12), new THREE.MeshStandardMaterial({ color: '#6b7280' }));\n  bond.position.copy(p1.clone().add(p2).multiplyScalar(0.5));\n  bond.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), d.normalize());\n  group.add(bond);\n}\nvar cloud = new THREE.Mesh(new THREE.TorusGeometry(1.3, 0.22, 16, 64), new THREE.MeshStandardMaterial({ color: '#7c3aed', transparent: true, opacity: 0.18 }));\ngroup.add(cloud);\nreturn { update: function (t) { group.rotation.y = t * 0.4; group.rotation.x = 0.6 + Math.sin(t * 0.4) * 0.15; } };"
+      },
+      "attempts": 1
+    },
+    {
+      "id": "0-3",
+      "page": 0,
+      "endX": 523.5675000524998,
+      "endY": 132.7797,
+      "fontHeight": 11.5,
+      "type": "formula",
+      "label": "Hückel's rule",
+      "ready": false,
+      "generating": false,
+      "concept": {
+        "label": "Hückel's rule",
+        "type": "formula",
+        "anchor": "monocyclic system is aromatic if it contains 4n+2 pi electrons",
+        "context": "Aromatic if planar, cyclic, fully conjugated with 4n+2 pi electrons."
+      }
+    }
+  ],
+  "activeTagId": "0-1",
+  "pagesAnalyzed": [
+    1,
+    0
+  ]
+}

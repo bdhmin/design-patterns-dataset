@@ -1,0 +1,563 @@
+{
+  "schemaVersion": "1.0.0",
+  "codebookVersion": "1.0.0",
+  "batch": "repo-pilot",
+  "site": {
+    "slug": "get-it--viewer-visualizer",
+    "url": "http://localhost:4401/viewer/994a113e-e7ba-4f78-926a-7154208adfff",
+    "finalUrl": "http://localhost:4401/viewer/994a113e-e7ba-4f78-926a-7154208adfff",
+    "status": 200,
+    "title": "Get It.",
+    "capturedAt": "2026-11-16T17:52:15.985Z",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "screenshot": {
+      "ref": "capture/screenshot.png",
+      "width": 1440,
+      "height": 2198
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.8127.18 Safari/537.36",
+    "domain": "education",
+    "domainNote": "AI study tool: lecture-PDF viewer with concept tags that open generated visualizations (graph, 3D model, formula, animation, source)",
+    "provenance": {
+      "source": "repo",
+      "record": "repos/repo-pilot/get-it/explore.json",
+      "repo": {
+        "name": "beltromatti/get-it",
+        "url": "https://github.com/beltromatti/get-it",
+        "commit": "ae0fa999f352b951ab8150fac5dcf9d7ab6fd9a4",
+        "license": "Apache-2.0"
+      },
+      "view": {
+        "slug": "viewer-visualizer",
+        "name": "Document viewer with visualizer",
+        "description": "Lecture PDF with inline concept tag pills on the left and the Visualizer pane on the right showing a generated graph for the selected concept."
+      }
+    }
+  },
+  "regions": [
+    {
+      "id": "top-bar",
+      "role": "header",
+      "label": "App top bar: Upload and Library links, active document tab with MANUAL badge, Synced and 7/7 viz ready status pills, settings and account icons",
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 46
+      },
+      "patterns": [
+        "app-shell",
+        "badge",
+        "tabs"
+      ]
+    },
+    {
+      "id": "document-pane",
+      "role": "reader",
+      "label": "Rendered PDF pages of the lecture with colour-coded concept chips anchored to phrases; bottom toolbar with prev/next page (1 / 2) and zoom 100% +/-",
+      "bbox": {
+        "x": 8,
+        "y": 52,
+        "width": 789,
+        "height": 2138
+      },
+      "patterns": [
+        "reader",
+        "annotation",
+        "pagination",
+        "tooltip",
+        "split-pane",
+        "overview-detail"
+      ]
+    },
+    {
+      "id": "visualizer-pane",
+      "role": "detail-panel",
+      "label": "Visualizer panel: Visualizer mode menu, Graph type pill, title 'Carrier saturation', overflow menu, line chart of GLUT carrier vs simple diffusion, caption footer",
+      "bbox": {
+        "x": 806,
+        "y": 52,
+        "width": 625,
+        "height": 2137
+      },
+      "patterns": [
+        "chart",
+        "menu",
+        "split-pane"
+      ]
+    }
+  ],
+  "patterns": [
+    {
+      "id": "reader",
+      "status": "present",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 41,
+            "y": 84,
+            "width": 723,
+            "height": 1023
+          },
+          "region": "document-pane",
+          "note": "PDF page 1 rendered on canvas, page 2 below; fixed-layout pages",
+          "quote": "Cell Biology — Lecture 7: Membrane Transport"
+        },
+        {
+          "bbox": {
+            "x": 353,
+            "y": 2148,
+            "width": 426,
+            "height": 24
+          },
+          "region": "document-pane",
+          "note": "page nav and zoom controls",
+          "quote": "1 / 2"
+        }
+      ],
+      "dims": {
+        "pagination": "fixed-layout",
+        "typography": [
+          "size-and-spacing"
+        ],
+        "progress": "location-only"
+      }
+    },
+    {
+      "id": "pagination",
+      "status": "present",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 353,
+            "y": 2148,
+            "width": 99,
+            "height": 24
+          },
+          "region": "document-pane",
+          "note": "Previous (disabled) / Jump to page / Next page",
+          "quote": "1 / 2"
+        }
+      ],
+      "dims": {
+        "mechanism": "next-and-previous",
+        "position": "page-n-of-m"
+      }
+    },
+    {
+      "id": "chart",
+      "status": "present",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 806,
+            "y": 98,
+            "width": 625,
+            "height": 747
+          },
+          "region": "visualizer-pane",
+          "note": "line chart with legend, y 'uptake rate', x '[glucose] (mM)', two series",
+          "quote": "GLUT carrier"
+        },
+        {
+          "bbox": {
+            "x": 806,
+            "y": 2144,
+            "width": 625,
+            "height": 45
+          },
+          "region": "visualizer-pane",
+          "note": "caption explaining the chart",
+          "quote": "Carrier-mediated transport rate vs concentration saturates (Vmax, Km) vs linear diffusion."
+        }
+      ],
+      "dims": {
+        "markType": "lines",
+        "channels": [
+          "position",
+          "colour-hue-or-value"
+        ],
+        "scale": "linear",
+        "faceting": "layered-series",
+        "annotation": [
+          "none"
+        ],
+        "adaptation": "fixed-desktop-chart"
+      }
+    },
+    {
+      "id": "annotation",
+      "status": "uncertain",
+      "confidence": 0.5,
+      "rationale": "Chips are anchored to text ranges like annotations, but they are system-generated concept tags that open visualizations, not discussion threads on a shared artifact.",
+      "evidence": [
+        {
+          "bbox": {
+            "x": 419,
+            "y": 307,
+            "width": 96,
+            "height": 18
+          },
+          "region": "document-pane",
+          "note": "pink 3D Model chip anchored after 'phospholipid bilayer'",
+          "quote": "Fluid mo..."
+        },
+        {
+          "bbox": {
+            "x": 535,
+            "y": 598,
+            "width": 96,
+            "height": 18
+          },
+          "region": "document-pane",
+          "note": "blue Graph chip, selected (dark outline)",
+          "quote": "Carrier..."
+        },
+        {
+          "bbox": {
+            "x": 437,
+            "y": 725,
+            "width": 96,
+            "height": 18
+          },
+          "region": "document-pane",
+          "note": "green Source chip",
+          "quote": "Tonicity..."
+        }
+      ],
+      "dims": {
+        "anchor": "text-range",
+        "marker": [
+          "status-colour"
+        ],
+        "layout": "side-margin-panel"
+      }
+    },
+    {
+      "id": "overview-detail",
+      "status": "uncertain",
+      "confidence": 0.45,
+      "rationale": "Concept chips in the document act like overview items whose detail renders in the right panel (verified live: clicking 'Fluid mo...' swaps the panel to a 3D model), but the overview is a document, not a collection list.",
+      "evidence": [
+        {
+          "bbox": {
+            "x": 535,
+            "y": 598,
+            "width": 96,
+            "height": 18
+          },
+          "region": "document-pane",
+          "note": "selected chip drives the visualizer panel",
+          "quote": "Carrier..."
+        },
+        {
+          "bbox": {
+            "x": 806,
+            "y": 52,
+            "width": 625,
+            "height": 46
+          },
+          "region": "visualizer-pane",
+          "quote": "Carrier saturation"
+        }
+      ],
+      "dims": {
+        "openIn": "side-by-side",
+        "openBy": [
+          "click"
+        ],
+        "openFrom": "whole-item",
+        "detailMultiplicity": "one-at-a-time",
+        "abstraction": [
+          "category"
+        ],
+        "truncation": "ellipsis"
+      }
+    },
+    {
+      "id": "split-pane",
+      "status": "uncertain",
+      "confidence": 0.55,
+      "rationale": "Two side-by-side panes with linked selection; no visible or hoverable resize divider, so resizability could not be confirmed.",
+      "evidence": [
+        {
+          "bbox": {
+            "x": 8,
+            "y": 52,
+            "width": 1423,
+            "height": 2138
+          },
+          "note": "document pane and visualizer pane side by side",
+          "region": "document-pane"
+        }
+      ],
+      "dims": {
+        "orientation": "side-by-side",
+        "sizing": "fixed",
+        "relationship": "linked-selection"
+      }
+    },
+    {
+      "id": "app-shell",
+      "status": "present",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 46
+          },
+          "region": "top-bar",
+          "note": "top bar with Upload/Library destinations, document tab, settings and account",
+          "quote": "Library"
+        }
+      ],
+      "dims": {
+        "primary": "top-navigation-bar",
+        "secondary": "none",
+        "items": [
+          "fixed-destinations"
+        ],
+        "visibility": "always-visible",
+        "structure": "document-tabs"
+      }
+    },
+    {
+      "id": "tabs",
+      "status": "uncertain",
+      "confidence": 0.45,
+      "rationale": "Only one document tab is visible next to Upload/Library links; the tab-strip styling suggests document tabs, but switching between several tabs was not observed.",
+      "evidence": [
+        {
+          "bbox": {
+            "x": 201,
+            "y": 7,
+            "width": 311,
+            "height": 36
+          },
+          "region": "top-bar",
+          "note": "active document tab with file icon and title",
+          "quote": "Cell_Biology_L07_-_Membr..."
+        }
+      ],
+      "dims": {
+        "placement": "top",
+        "label": [
+          "icon",
+          "text",
+          "badge-count"
+        ],
+        "origin": "created-by-the-person"
+      }
+    },
+    {
+      "id": "badge",
+      "status": "present",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 426,
+            "y": 14,
+            "width": 71,
+            "height": 19
+          },
+          "region": "top-bar",
+          "note": "amber label badge on document tab",
+          "quote": "MANUAL"
+        },
+        {
+          "bbox": {
+            "x": 1120,
+            "y": 11,
+            "width": 122,
+            "height": 26
+          },
+          "region": "top-bar",
+          "note": "sync status pill",
+          "quote": "Synced 33d ago"
+        },
+        {
+          "bbox": {
+            "x": 1250,
+            "y": 11,
+            "width": 106,
+            "height": 26
+          },
+          "region": "top-bar",
+          "note": "count of ready visualizations",
+          "quote": "7/7 viz ready"
+        }
+      ],
+      "dims": {
+        "meaning": "status"
+      }
+    },
+    {
+      "id": "tooltip",
+      "status": "present",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 509,
+            "y": 498,
+            "width": 147,
+            "height": 25
+          },
+          "region": "document-pane",
+          "note": "role=tooltip label under hovered chip (viewport coordinates of first screen)",
+          "quote": "Graph: Carrier saturation"
+        }
+      ],
+      "dims": {
+        "trigger": [
+          "hover"
+        ],
+        "content": "label",
+        "placement": "below"
+      }
+    },
+    {
+      "id": "menu",
+      "status": "present",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 826,
+            "y": 61,
+            "width": 109,
+            "height": 28
+          },
+          "region": "visualizer-pane",
+          "note": "Visualizer dropdown (live: Visualizer, Knowledge Graph, Chat, Flashcards, Quizzes, Feynman with icons and descriptions)",
+          "quote": "Visualizer"
+        },
+        {
+          "bbox": {
+            "x": 1383,
+            "y": 60,
+            "width": 28,
+            "height": 28
+          },
+          "region": "visualizer-pane",
+          "note": "More actions overflow menu (Regenerate visualization, Download work context)"
+        }
+      ],
+      "dims": {
+        "openBy": "button-click",
+        "structure": "flat",
+        "item": [
+          "label",
+          "icon",
+          "description"
+        ],
+        "itemSet": "fixed",
+        "form": "vertical-list"
+      }
+    },
+    {
+      "id": "ai-provenance",
+      "status": "absent",
+      "confidence": 0.6,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 426,
+            "y": 14,
+            "width": 71,
+            "height": 19
+          },
+          "note": "'MANUAL' badge hints at generation mode but nothing labels output as AI-generated",
+          "quote": "MANUAL"
+        }
+      ],
+      "dims": {}
+    }
+  ],
+  "structure": {
+    "layout": "full-height two-pane workspace under a slim top bar: left a paginated PDF reader with zoom/page controls floating at the bottom; right a visualizer panel with header (mode menu, type pill, title, overflow menu), chart canvas, and caption footer",
+    "regions": [
+      "top-bar",
+      "document-pane",
+      "visualizer-pane"
+    ],
+    "density": "medium"
+  },
+  "aesthetics": {
+    "palette": [
+      "#f6f5f2",
+      "#ffffff",
+      "#f3f2ef",
+      "#111113",
+      "#2a2a2d",
+      "#6a6a6e",
+      "#ececea",
+      "#7c3aed",
+      "#d9e9f9",
+      "#1c4f87",
+      "#fde8ec",
+      "#9f1f3a",
+      "#d9efe2",
+      "#0f6a47",
+      "#eae4fb",
+      "#fdedd2"
+    ],
+    "colorRoles": {
+      "background": "#f6f5f2",
+      "surface": "#ffffff",
+      "text": "#111113",
+      "muted": "#6a6a6e",
+      "border": "#ececea",
+      "primary": "#1c4f87",
+      "accent": "#7c3aed"
+    },
+    "typography": "GeistSans throughout the UI chrome (tabs, pills, buttons, chips, caption); the lecture is a rendered PDF in a neo-grotesque sans (Helvetica/Arial-like)",
+    "typeScale": "UI is very small and quiet: 10px semibold chips, 11-13px medium controls, 14px caption; the PDF content has its own hierarchy (~26px bold title, ~20px bold section heads, ~13px body)",
+    "shape": "soft",
+    "elevation": "subtle-shadows",
+    "borders": "thin",
+    "imagery": [
+      "data-visualization",
+      "3d-renders",
+      "iconography"
+    ],
+    "iconStyle": "line",
+    "whitespace": "moderate",
+    "backgroundTreatment": "solid",
+    "mood": [
+      "clean",
+      "calm",
+      "academic",
+      "technical",
+      "utilitarian"
+    ]
+  },
+  "model": {
+    "rater": "rater-2",
+    "provider": "claude-code",
+    "name": "claude-opus-5-5",
+    "effort": "high",
+    "generatedAt": "2026-11-16T17:53:56.034Z",
+    "servedBy": [
+      "claude-opus-5-5"
+    ],
+    "turns": 10,
+    "usage": {
+      "input_tokens": 20,
+      "cache_creation_input_tokens": 43520,
+      "cache_read_input_tokens": 351497,
+      "output_tokens": 11080
+    }
+  },
+  "notes": "Distinctive: a study viewer that overlays colour-coded pill chips straight onto PDF text, each colour standing for a visualization type (pink = 3D Model, lavender = Formula, blue = Graph, green = Source, amber = Animation). Selected chips get a dark outline and a hover tooltip like 'Graph: Carrier saturation'. Clicking a chip renders that concept in the right Visualizer panel (checked live: a 3D WebGL membrane model with a 'DRAG · SCROLL' hint). The panel header's Visualizer dropdown switches the panel between study modes (Knowledge Graph, Chat, Flashcards, Quizzes, Feynman), each with a one-line description, and the overflow menu offers 'Regenerate visualization'. The warm off-white (#f6f5f2) canvas shows behind white rounded panels; floating white pill toolbars for page and zoom controls sit at the bottom of the reader. In the tall capture the chip overlays are misplaced; the chip bboxes quoted use the indexed element coordinates."
+}

@@ -1,0 +1,35 @@
+- link "Upload":
+  - /url: /
+- link "Open library":
+  - /url: /library
+  - text: Library
+- text: Cell_Biology_L07_-_Membrane_… manual Synced 33d ago 7/7 viz ready
+- button "Settings"
+- button "Account"
+- 'button "3D Model: Fluid mosaic membrane"'
+- 'button "Formula: Fick''s law of diffusion"'
+- 'button "Graph: Carrier saturation"'
+- 'button "Animation: Na+/glucose symport"'
+- 'button "Source: Tonicity and red cells"'
+- text: page 1
+- 'button "3D Model: Receptor-mediated endocytosis"'
+- 'button "Source: CFTR and cystic fibrosis"'
+- text: page 2
+- button "Previous page" [disabled]
+- button "Jump to page": 1 / 2
+- button "Next page"
+- button "Set custom zoom": 100%
+- button "Zoom in"
+- button "Zoom out"
+- banner:
+  - button "Knowledge Graph"
+  - paragraph: Map of concepts with live mastery scores
+  - button "More actions"
+- paragraph: "Most of the map is solid — recall and comprehension are well ahead. The gap is application: \"Receptor-mediated endocytosis\" still breaks down on unseen problems. A short quiz on it is the best next step."
+- paragraph: last evaluated 789h ago · 23 passes
+- img: Fluid mosaicmembrane Fick's law ofdiffusion Carrier saturation Na+/glucosesymport Receptor-mediatedendocytosis CFTR and cystic fibrosis Tonicity and redcells Na+/K+-ATPase Receptor-mediatedendocytosis CFTR and cystic fibrosis
+- text: drag to pan · scroll to zoom
+- button "Zoom in"
+- button "Zoom out"
+- button "Fit graph"
+- alert

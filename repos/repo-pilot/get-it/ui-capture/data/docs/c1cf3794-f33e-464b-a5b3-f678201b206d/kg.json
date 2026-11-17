@@ -1,0 +1,148 @@
+{
+  "v": 1,
+  "docId": "c1cf3794-f33e-464b-a5b3-f678201b206d",
+  "status": "ready",
+  "buildAt": 1791274770000,
+  "lastEvaluatedAt": 1793635980000,
+  "evaluationCount": 10,
+  "nodes": [
+    {
+      "id": "carnot-efficiency",
+      "label": "Carnot efficiency",
+      "summary": "Carnot efficiency vs hot reservoir temperature with Tc = 300 K.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 79,
+        "comprehension": 66,
+        "structure": 68,
+        "application": 62
+      },
+      "evaluatorNote": "Good recognition on quizzes; explanations still lean on the textbook's wording."
+    },
+    {
+      "id": "clausius-entropy",
+      "label": "Clausius entropy",
+      "summary": "Entropy defined along a reversible path; ideal-gas Delta S.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 0,
+        "comprehension": 0,
+        "structure": 0,
+        "application": 0
+      },
+      "evaluatorNote": "Not yet tested."
+    },
+    {
+      "id": "boltzmann-entropy",
+      "label": "Boltzmann entropy",
+      "summary": "Gas particles spreading into the full box; microstates.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 81,
+        "comprehension": 71,
+        "structure": 61,
+        "application": 53
+      },
+      "evaluatorNote": "Recalls the definition but hesitated applying it to an unseen example."
+    },
+    {
+      "id": "gibbs-free-energy",
+      "label": "Gibbs free energy",
+      "summary": "G = H - TS; spontaneity at constant T and p.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 0,
+        "comprehension": 0,
+        "structure": 0,
+        "application": 0
+      },
+      "evaluatorNote": "Missed both quiz items on this; revisit the worked example on the page."
+    },
+    {
+      "id": "second-law-statements",
+      "label": "Kelvin-Planck & Clausius",
+      "summary": "Two equivalent statements of the second law.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 42,
+        "comprehension": 29,
+        "structure": 20,
+        "application": 16
+      },
+      "evaluatorNote": "Only seen while reading — no flashcard or quiz evidence yet."
+    },
+    {
+      "id": "entropy-generation",
+      "label": "Entropy generation",
+      "summary": "Friction, finite-Delta-T heat transfer, free expansion, mixing.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 65,
+        "comprehension": 46,
+        "structure": 48,
+        "application": 32
+      },
+      "evaluatorNote": "Understands the idea, but confuses it with a neighbouring concept under time pressure."
+    },
+    {
+      "id": "third-law",
+      "label": "Third law",
+      "summary": "S -> 0 for a perfect crystal as T -> 0.",
+      "pageHints": [
+        2
+      ],
+      "evaluation": {
+        "memory": 49,
+        "comprehension": 33,
+        "structure": 38,
+        "application": 22
+      },
+      "evaluatorNote": "Missed both quiz items on this; revisit the worked example on the page."
+    }
+  ],
+  "edges": [
+    {
+      "source": "carnot-efficiency",
+      "target": "clausius-entropy",
+      "relation": "contrasts with"
+    },
+    {
+      "source": "carnot-efficiency",
+      "target": "boltzmann-entropy",
+      "relation": "explains"
+    },
+    {
+      "source": "carnot-efficiency",
+      "target": "gibbs-free-energy",
+      "relation": "requires"
+    },
+    {
+      "source": "boltzmann-entropy",
+      "target": "second-law-statements",
+      "relation": "explains"
+    },
+    {
+      "source": "second-law-statements",
+      "target": "entropy-generation",
+      "relation": "is a consequence of"
+    },
+    {
+      "source": "entropy-generation",
+      "target": "third-law",
+      "relation": "is measured by"
+    }
+  ],
+  "globalNote": "Halfway there. Definitions are in place, but links between concepts are shaky. Focus on \"Clausius entropy\" and try explaining how it connects to its neighbours."
+}

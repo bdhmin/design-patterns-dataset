@@ -1,0 +1,154 @@
+{
+  "v": 1,
+  "docId": "a2ddba8f-40a2-4d46-b1d5-9ba6e1bba700",
+  "savedAt": 1794758280000,
+  "tags": [
+    {
+      "id": "0-0",
+      "page": 0,
+      "endX": 273.924,
+      "endY": 600.6203,
+      "fontHeight": 11,
+      "type": "formula",
+      "label": "Fourier transform",
+      "ready": true,
+      "generating": false,
+      "concept": {
+        "label": "Fourier transform",
+        "type": "formula",
+        "anchor": "an integral. That integral is the continuous-time Fourier transform",
+        "context": "Definition of the CTFT and its inverse."
+      },
+      "spec": {
+        "type": "formula",
+        "title": "Fourier transform",
+        "caption": "Definition of the CTFT and its inverse.",
+        "main_latex": "X(f) = \\int_{-\\infty}^{\\infty} x(t)\\,e^{-j2\\pi f t}\\,dt",
+        "steps": [
+          {
+            "latex": "e^{-j2\\pi ft}",
+            "explanation": "A probe rotating at frequency f."
+          },
+          {
+            "latex": "x(t)e^{-j2\\pi ft}",
+            "explanation": "Multiply: components at f stop rotating."
+          },
+          {
+            "latex": "\\int \\cdot\\,dt",
+            "explanation": "Integrate: only the non-rotating part survives."
+          }
+        ]
+      },
+      "attempts": 1
+    },
+    {
+      "id": "0-1",
+      "page": 0,
+      "endX": 410.72398899999996,
+      "endY": 432.7776,
+      "fontHeight": 11,
+      "type": "graph",
+      "label": "Rect pulse to sinc",
+      "ready": true,
+      "generating": false,
+      "concept": {
+        "label": "Rect pulse to sinc",
+        "type": "graph",
+        "anchor": "• A rectangular pulse of width T in time transforms to a sinc function",
+        "context": "Spectrum of a rectangular pulse of width T = 1."
+      },
+      "spec": {
+        "type": "graph",
+        "title": "Rect pulse to sinc",
+        "caption": "Spectrum of a rectangular pulse of width T = 1.",
+        "chart_type": "function",
+        "x_label": "f (Hz)",
+        "y_label": "X(f)",
+        "data_json": "{\"fn\":\"x===0?1:Math.sin(Math.PI*x)/(Math.PI*x)\",\"x_min\":-5,\"x_max\":5,\"samples\":400}"
+      },
+      "attempts": 1
+    },
+    {
+      "id": "0-2",
+      "page": 0,
+      "endX": 243.503,
+      "endY": 123.5965,
+      "fontHeight": 17,
+      "type": "2d-anim",
+      "label": "Aliasing",
+      "ready": true,
+      "generating": false,
+      "concept": {
+        "label": "Aliasing",
+        "type": "2d-anim",
+        "anchor": ": the energy is the same in both domains. Sampling and aliasing",
+        "context": "Undersampling a sinusoid makes it look like a lower frequency."
+      },
+      "spec": {
+        "type": "2d-anim",
+        "title": "Aliasing: true vs sampled",
+        "caption": "Undersampling a sinusoid makes it look like a lower frequency.",
+        "setup_code": "var title = \"Aliasing: true vs sampled\";\nreturn { draw: function (ctx, w, h, time) {\n  ctx.fillStyle = '#fafafa'; ctx.fillRect(0, 0, w, h);\n  var mid = h / 2; ctx.strokeStyle = '#d1d5db'; ctx.beginPath(); ctx.moveTo(20, mid); ctx.lineTo(w - 20, mid); ctx.stroke();\n  ctx.strokeStyle = '#7c3aed'; ctx.lineWidth = 2.5; ctx.beginPath();\n  for (var x = 20; x <= w - 20; x += 2) { var y = mid - Math.sin((x / w) * 4 * Math.PI - time * 2.2) * h * 0.22 * Math.exp(-((x - w / 2) * (x - w / 2)) / (w * w * 0.25)); if (x === 20) ctx.moveTo(x, y); else ctx.lineTo(x, y); } ctx.stroke(); ctx.lineWidth = 1;\n  ctx.strokeStyle = '#0284c7'; ctx.setLineDash([4, 4]); ctx.beginPath();\n  for (var x2 = 20; x2 <= w - 20; x2 += 2) { var y2 = mid - Math.cos((x2 / w) * 4 * Math.PI - time * 2.2) * h * 0.12; if (x2 === 20) ctx.moveTo(x2, y2); else ctx.lineTo(x2, y2); } ctx.stroke(); ctx.setLineDash([]);\n  ctx.fillStyle = '#1a1a1d'; ctx.font = '14px sans-serif'; ctx.fillText(title, 14, 22); ctx.font = '12px sans-serif'; ctx.fillStyle = '#6b7280'; ctx.fillText('t = ' + time.toFixed(1) + ' s', w - 80, h - 12);\n} };"
+      },
+      "attempts": 1
+    },
+    {
+      "id": "1-0",
+      "page": 1,
+      "endX": 446.370992,
+      "endY": 769.992,
+      "fontHeight": 11,
+      "type": "2d-text",
+      "label": "Nyquist-Shannon theorem",
+      "ready": true,
+      "generating": false,
+      "concept": {
+        "label": "Nyquist-Shannon theorem",
+        "type": "2d-text",
+        "anchor": "to B Hz and fs > 2B — the Nyquist-Shannon sampling theorem",
+        "context": "fs > 2B for perfect reconstruction."
+      },
+      "spec": {
+        "type": "2d-text",
+        "title": "Nyquist-Shannon theorem",
+        "caption": "fs > 2B for perfect reconstruction.",
+        "body_markdown": "*\"If a function x(t) contains no frequencies higher than B hertz, it is completely determined by giving its ordinates at a series of points spaced 1/(2B) seconds apart.\"* — Shannon, 1949 [1]",
+        "citations": [
+          {
+            "label": "[1]",
+            "source": "Shannon, Communication in the Presence of Noise (1949)",
+            "url": "https://doi.org/10.1109/JRPROC.1949.232969"
+          },
+          {
+            "label": "[2]",
+            "source": "Wikipedia — Nyquist–Shannon sampling theorem",
+            "url": "https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem"
+          }
+        ]
+      },
+      "attempts": 1
+    },
+    {
+      "id": "1-1",
+      "page": 1,
+      "endX": 524.4929999999995,
+      "endY": 582.3001,
+      "fontHeight": 11,
+      "type": "graph",
+      "label": "ECG spectrum",
+      "ready": false,
+      "generating": false,
+      "concept": {
+        "label": "ECG spectrum",
+        "type": "graph",
+        "anchor": "baseline wander below 0.5 Hz from breathing, and a sharp peak at 50 Hz",
+        "context": "ECG power spectrum with QRS energy and 50 Hz mains."
+      }
+    }
+  ],
+  "activeTagId": "0-1",
+  "pagesAnalyzed": [
+    0,
+    1
+  ]
+}

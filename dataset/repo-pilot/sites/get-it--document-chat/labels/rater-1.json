@@ -1,0 +1,515 @@
+{
+  "schemaVersion": "1.0.0",
+  "codebookVersion": "1.0.0",
+  "batch": "repo-pilot",
+  "site": {
+    "slug": "get-it--document-chat",
+    "url": "http://localhost:4401/viewer/994a113e-e7ba-4f78-926a-7154208adfff",
+    "finalUrl": "http://localhost:4401/viewer/994a113e-e7ba-4f78-926a-7154208adfff",
+    "status": 200,
+    "title": "Get It.",
+    "capturedAt": "2026-11-16T17:54:52.872Z",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "screenshot": {
+      "ref": "capture/screenshot.png",
+      "width": 1440,
+      "height": 2198
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.8127.18 Safari/537.36",
+    "domain": "education",
+    "domainNote": "AI study tool: lecture-notes PDF viewer with inline concept visualizations and a document Q&A chat side panel",
+    "provenance": {
+      "source": "repo",
+      "record": "repos/repo-pilot/get-it/explore.json",
+      "repo": {
+        "name": "beltromatti/get-it",
+        "url": "https://github.com/beltromatti/get-it",
+        "commit": "ae0fa999f352b951ab8150fac5dcf9d7ab6fd9a4",
+        "license": "Apache-2.0"
+      },
+      "view": {
+        "slug": "document-chat",
+        "name": "Document chat",
+        "description": "Chat pane beside the lecture document with a thread list, a user question and an AI answer, and a message composer."
+      }
+    }
+  },
+  "regions": [
+    {
+      "id": "top-bar",
+      "role": "header",
+      "label": "App top bar with Upload and Library links, active document tab with MANUAL badge, Synced and 7/7 viz ready status pills, settings and account icons",
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 44
+      },
+      "patterns": [
+        "app-shell",
+        "badge"
+      ]
+    },
+    {
+      "id": "document-viewer",
+      "role": "main-content",
+      "label": "Rendered lecture PDF pages (canvas) with color-coded inline concept chips and floating page navigator + zoom controls",
+      "bbox": {
+        "x": 8,
+        "y": 52,
+        "width": 789,
+        "height": 2138
+      },
+      "patterns": [
+        "reader",
+        "pagination",
+        "coordinated-views",
+        "tooltip"
+      ]
+    },
+    {
+      "id": "chat-panel",
+      "role": "side-panel",
+      "label": "AI tool panel in Chat mode: mode dropdown header with overflow menu, chat sessions column (New chat, SGLT1 thread), message thread and composer",
+      "bbox": {
+        "x": 806,
+        "y": 52,
+        "width": 625,
+        "height": 2137
+      },
+      "patterns": [
+        "ai-chat",
+        "prompt-input",
+        "menu"
+      ]
+    }
+  ],
+  "patterns": [
+    {
+      "id": "app-shell",
+      "status": "present",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 44
+          },
+          "quote": "Upload Library Cell_Biology_L07_-_Membr… MANUAL",
+          "region": "top-bar",
+          "note": "Persistent top bar with global links, document tab, status and account"
+        }
+      ],
+      "dims": {
+        "primary": "top-navigation-bar",
+        "items": [
+          "fixed-destinations"
+        ],
+        "visibility": "always-visible",
+        "structure": "document-tabs"
+      }
+    },
+    {
+      "id": "reader",
+      "status": "present",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 41,
+            "y": 84,
+            "width": 723,
+            "height": 1023
+          },
+          "quote": "Cell Biology — Lecture 7: Membrane Transport",
+          "region": "document-viewer",
+          "note": "PDF page rendered on canvas; page 1 of 2, scrolls continuously within the panel"
+        },
+        {
+          "bbox": {
+            "x": 349,
+            "y": 2144,
+            "width": 435,
+            "height": 32
+          },
+          "quote": "1 / 2  100%",
+          "region": "document-viewer",
+          "note": "Floating page and zoom controls"
+        }
+      ],
+      "dims": {
+        "pagination": "fixed-layout",
+        "progress": "location-only"
+      }
+    },
+    {
+      "id": "pagination",
+      "status": "present",
+      "confidence": 0.6,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 349,
+            "y": 2144,
+            "width": 108,
+            "height": 32
+          },
+          "quote": "1 / 2",
+          "region": "document-viewer",
+          "note": "Previous page (disabled) / Jump to page / Next page buttons"
+        }
+      ],
+      "dims": {
+        "mechanism": "next-and-previous",
+        "position": "page-n-of-m",
+        "pageSize": "fixed"
+      }
+    },
+    {
+      "id": "ai-chat",
+      "status": "present",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1066,
+            "y": 114,
+            "width": 341,
+            "height": 59
+          },
+          "quote": "why does SGLT1 need two sodium ions per glucose and not one?",
+          "region": "chat-panel",
+          "note": "User turn, dark right-aligned bubble"
+        },
+        {
+          "bbox": {
+            "x": 1006,
+            "y": 185,
+            "width": 340,
+            "height": 320
+          },
+          "quote": "Energy budget. Glucose in the enterocyte can be much more concentrated than in the lumen",
+          "region": "chat-panel",
+          "note": "Model reply in light grey bubble with bold emphasis"
+        },
+        {
+          "bbox": {
+            "x": 806,
+            "y": 98,
+            "width": 176,
+            "height": 90
+          },
+          "quote": "New chat",
+          "region": "chat-panel",
+          "note": "Chat session list column"
+        }
+      ],
+      "dims": {
+        "turnContent": [
+          "markdown-with-code"
+        ],
+        "composition": "linear-thread",
+        "invokeBy": [
+          "text-field-submit"
+        ],
+        "flow": "strict-turn-taking",
+        "scope": "live-page-or-selection"
+      }
+    },
+    {
+      "id": "prompt-input",
+      "status": "present",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 982,
+            "y": 2104,
+            "width": 449,
+            "height": 85
+          },
+          "quote": "Ask a question about this document…",
+          "region": "chat-panel",
+          "note": "Textarea plus square send button labelled Send (Enter), disabled while empty"
+        }
+      ],
+      "dims": {
+        "content": [
+          "plain-prompt"
+        ],
+        "layout": "sidebar-composer",
+        "submitBy": [
+          "enter-key",
+          "click-send"
+        ]
+      }
+    },
+    {
+      "id": "menu",
+      "status": "present",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 826,
+            "y": 61,
+            "width": 81,
+            "height": 28
+          },
+          "quote": "Chat",
+          "region": "chat-panel",
+          "note": "Dropdown trigger; live it opens a list of panel modes (Visualizer, Knowledge Graph, Chat, Flashcards, Quizzes, Feynman) each with icon and description"
+        },
+        {
+          "bbox": {
+            "x": 1383,
+            "y": 60,
+            "width": 28,
+            "height": 28
+          },
+          "region": "chat-panel",
+          "note": "More actions overflow: Regenerate visualization, Download work context (JSON), with descriptions"
+        }
+      ],
+      "dims": {
+        "openBy": "button-click",
+        "structure": "flat",
+        "item": [
+          "label",
+          "icon",
+          "description"
+        ],
+        "itemSet": "fixed",
+        "form": "vertical-list"
+      }
+    },
+    {
+      "id": "badge",
+      "status": "present",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 426,
+            "y": 14,
+            "width": 72,
+            "height": 18
+          },
+          "quote": "MANUAL",
+          "region": "top-bar",
+          "note": "Label pill on document tab"
+        },
+        {
+          "bbox": {
+            "x": 1250,
+            "y": 11,
+            "width": 106,
+            "height": 26
+          },
+          "quote": "7/7 viz ready",
+          "region": "top-bar",
+          "note": "Status pill with count"
+        },
+        {
+          "bbox": {
+            "x": 1120,
+            "y": 11,
+            "width": 122,
+            "height": 26
+          },
+          "quote": "Synced 33d ago",
+          "region": "top-bar",
+          "note": "Sync status pill"
+        }
+      ],
+      "dims": {
+        "meaning": "label"
+      }
+    },
+    {
+      "id": "tooltip",
+      "status": "present",
+      "confidence": 0.65,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 419,
+            "y": 307,
+            "width": 96,
+            "height": 18
+          },
+          "quote": "Fluid mo...",
+          "region": "document-viewer",
+          "note": "Live: hovering/focusing a truncated chip shows full name '3D Model: Fluid mosaic membrane' just below it; not visible in capture"
+        }
+      ],
+      "dims": {
+        "trigger": [
+          "hover"
+        ],
+        "content": "label",
+        "placement": "below"
+      }
+    },
+    {
+      "id": "coordinated-views",
+      "status": "uncertain",
+      "confidence": 0.5,
+      "rationale": "In the capture the right panel shows Chat, not linked to chips; live, clicking an inline chip switches the right panel to the Visualizer and renders that concept, a document-to-panel linked selection rather than classic data-view coordination.",
+      "evidence": [
+        {
+          "bbox": {
+            "x": 535,
+            "y": 598,
+            "width": 96,
+            "height": 18
+          },
+          "quote": "Carrier...",
+          "region": "document-viewer",
+          "note": "Typed concept chips (3D Model, Formula, Graph, Animation, Source) anchored inline; clicking drives the side panel"
+        }
+      ],
+      "dims": {
+        "arrangement": "split-panes",
+        "trigger": [
+          "click-a-mark"
+        ],
+        "scope": "one-mark"
+      }
+    },
+    {
+      "id": "split-pane",
+      "status": "uncertain",
+      "confidence": 0.45,
+      "rationale": "Two side-by-side panels share the window, but no visible divider handle and resizing could not be confirmed.",
+      "evidence": [
+        {
+          "bbox": {
+            "x": 8,
+            "y": 52,
+            "width": 1423,
+            "height": 2138
+          },
+          "region": "document-viewer",
+          "note": "Document panel and tool panel side by side"
+        }
+      ],
+      "dims": {
+        "orientation": "side-by-side"
+      }
+    },
+    {
+      "id": "annotation",
+      "status": "absent",
+      "confidence": 0.6,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 419,
+            "y": 307,
+            "width": 96,
+            "height": 18
+          },
+          "note": "Inline chips are anchored to text but are visualization links, not discussion threads"
+        }
+      ],
+      "dims": {}
+    },
+    {
+      "id": "object-viewer-3d",
+      "status": "absent",
+      "confidence": 0.6,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 806,
+            "y": 52,
+            "width": 625,
+            "height": 2137
+          },
+          "note": "A 3D model viewer appears in the right panel only after clicking a chip; capture shows Chat"
+        }
+      ],
+      "dims": {}
+    }
+  ],
+  "structure": {
+    "layout": "Full-height app shell: thin top bar (Upload / Library links, active document tab, sync + viz status, settings, account) above two side-by-side panels: a paginated PDF document viewer on the left (~55%) with floating page/zoom controls, and a mode-switchable tool panel on the right (currently Chat) with a chat-session list column and a message thread with a bottom composer",
+    "regions": [
+      "top-bar",
+      "document-viewer",
+      "chat-panel"
+    ],
+    "density": "medium"
+  },
+  "aesthetics": {
+    "palette": [
+      "#f6f5f2",
+      "#ffffff",
+      "#f3f2ef",
+      "#111113",
+      "#6a6a6e",
+      "#ececea",
+      "#fde8ec",
+      "#eae4fb",
+      "#d9e9f9",
+      "#fdedd2",
+      "#d9efe2"
+    ],
+    "colorRoles": {
+      "background": "#f6f5f2",
+      "surface": "#ffffff",
+      "text": "#111113",
+      "muted": "#6a6a6e",
+      "border": "#ececea",
+      "primary": "#111113",
+      "assistantBubble": "#f3f2ef",
+      "accent3d": "#fde8ec",
+      "accentFormula": "#eae4fb",
+      "accentGraph": "#d9e9f9",
+      "accentAnimation": "#fdedd2",
+      "accentSource": "#d9efe2"
+    },
+    "typography": "GeistSans throughout the UI chrome and chat (12-13px UI, 13px chat body, 10px semibold chips); PDF content rendered on canvas in a Helvetica/Arial-like sans with bold heading hierarchy",
+    "typeScale": "Compact UI scale: 10px/600 chips, 11-12px/500 buttons and labels, 13px chat text, 14px header title; document content carries the large type (~28px bold title, ~20px bold section heads, ~13px body)",
+    "shape": "soft",
+    "elevation": "subtle-shadows",
+    "borders": "thin",
+    "imagery": [
+      "iconography"
+    ],
+    "iconStyle": "line",
+    "whitespace": "moderate",
+    "backgroundTreatment": "solid",
+    "mood": [
+      "calm",
+      "clean",
+      "studious",
+      "neutral",
+      "technical"
+    ]
+  },
+  "model": {
+    "rater": "rater-1",
+    "provider": "claude-code",
+    "name": "claude-opus-5-5",
+    "effort": "high",
+    "generatedAt": "2026-11-16T17:56:58.603Z",
+    "servedBy": [
+      "claude-opus-5-5"
+    ],
+    "turns": 14,
+    "usage": {
+      "input_tokens": 28,
+      "cache_creation_input_tokens": 44731,
+      "cache_read_input_tokens": 548739,
+      "output_tokens": 9722
+    }
+  },
+  "notes": "Warm off-white (#f6f5f2) canvas with two white rounded panels; near-black (#111113) used for user chat bubble and send button, giving monochrome chrome. Only color comes from the inline concept chips: 999px-radius pastel pills with 1px tinted borders and dark text in matching hue, color-coded by type (rose = 3D model, violet = formula, blue = graph, amber = animation, green = source), with small line icons and truncated labels. The active chip gets a heavy black outline. Page navigator and zoom float as small white pills at the bottom of the document panel. The right panel is a multi-tool study surface switched by a dropdown (Visualizer, Knowledge Graph, Chat, Flashcards, Quizzes, Feynman). Filed new-entry proposal 'inline-concept-chip' for the typed inline enrichment chips."
+}

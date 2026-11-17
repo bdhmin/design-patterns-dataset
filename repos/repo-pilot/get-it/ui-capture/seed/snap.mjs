@@ -1,0 +1,10 @@
+import { chromium } from "playwright";
+const base = process.argv[2]; const out = process.argv[3];
+const b = await chromium.launch({ executablePath: process.env.CHROME });
+const p = await b.newPage({ viewport: { width: 1440, height: 900 } });
+const errs = []; p.on("pageerror", e => errs.push(e.message));
+await p.goto(base + "/library"); await p.waitForTimeout(2500); await p.screenshot({ path: out + "/lib.png" });
+await p.goto(base + "/viewer/ba885056-fe38-4e1f-8684-5feab453c92a"); await p.waitForTimeout(5000); await p.screenshot({ path: out + "/viewer.png" });
+await p.goto(base + "/"); await p.waitForTimeout(2000); await p.screenshot({ path: out + "/home.png" });
+console.log("errors", errs);
+await b.close();

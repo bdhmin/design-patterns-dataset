@@ -1,0 +1,552 @@
+{
+  "schemaVersion": "1.0.0",
+  "codebookVersion": "1.0.0",
+  "batch": "repo-pilot",
+  "site": {
+    "slug": "surmai--trip-transportation",
+    "url": "http://localhost:4402/login",
+    "finalUrl": "http://localhost:4402/trips/28yvjgeiih3i58v",
+    "status": 200,
+    "title": "Surmai | Costa Rica — Pura Vida",
+    "capturedAt": "2026-11-16T17:57:06.798Z",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "screenshot": {
+      "ref": "capture/screenshot.png",
+      "width": 1440,
+      "height": 1400
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.8127.18 Safari/537.36",
+    "domain": "travel-hospitality",
+    "domainNote": "self-hosted trip organizer (Surmai) — trip detail page with transportation, lodging, activities",
+    "provenance": {
+      "source": "repo",
+      "record": "repos/repo-pilot/surmai/explore.json",
+      "repo": {
+        "name": "rohitkumbhar/surmai",
+        "url": "https://github.com/rohitkumbhar/surmai",
+        "commit": "619b602cd7b9a20f6a05eb752f0007da6bc39b6b",
+        "license": "MIT"
+      },
+      "view": {
+        "slug": "trip-transportation",
+        "name": "Trip organization – transportation",
+        "description": "Trip detail page with tabs and accordion sections; the Transportation section is expanded showing a timeline of flight and taxi booking cards with attachments."
+      }
+    }
+  },
+  "regions": [
+    {
+      "id": "sidebar",
+      "role": "sidebar",
+      "label": "Fixed slate-blue icon navigation rail with logo, 4 destination icons and account/logout at bottom",
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 80,
+        "height": 900
+      },
+      "patterns": [
+        "app-shell"
+      ]
+    },
+    {
+      "id": "header",
+      "role": "header",
+      "label": "Top bar with trip title and dates, notification bell with count badge, user avatar menu",
+      "bbox": {
+        "x": 80,
+        "y": 0,
+        "width": 1360,
+        "height": 60
+      },
+      "patterns": [
+        "app-shell",
+        "badge",
+        "menu"
+      ]
+    },
+    {
+      "id": "trip-tabs",
+      "role": "tabs",
+      "label": "Trip section tabs: Organization, Itinerary, Attachments, Expenses, Notes",
+      "bbox": {
+        "x": 100,
+        "y": 88,
+        "width": 1320,
+        "height": 36
+      },
+      "patterns": [
+        "tabs"
+      ]
+    },
+    {
+      "id": "organization-panel",
+      "role": "main-content",
+      "label": "Organization tab panel: stacked accordion sections (Basic Information, Transportation expanded, Lodging, Activities); Transportation shows Add new menu, Travel Timeline of outlined segment cards, and empty Rentals/Parking boxes",
+      "bbox": {
+        "x": 100,
+        "y": 136,
+        "width": 1320,
+        "height": 1236
+      },
+      "patterns": [
+        "accordion",
+        "card",
+        "menu",
+        "tooltip",
+        "empty-state",
+        "file-upload"
+      ]
+    },
+    {
+      "id": "footer",
+      "role": "footer",
+      "label": "Fixed footer with Documentation and About Surmai links",
+      "bbox": {
+        "x": 80,
+        "y": 867,
+        "width": 1360,
+        "height": 33
+      },
+      "patterns": []
+    }
+  ],
+  "patterns": [
+    {
+      "id": "app-shell",
+      "status": "present",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 80,
+            "height": 900
+          },
+          "note": "Fixed icon-only navigation rail",
+          "region": "sidebar"
+        },
+        {
+          "bbox": {
+            "x": 80,
+            "y": 0,
+            "width": 1360,
+            "height": 60
+          },
+          "note": "Top bar with trip title, notifications and account",
+          "quote": "Costa Rica — Pura Vida",
+          "region": "header"
+        }
+      ],
+      "dims": {
+        "primary": "navigation-rail",
+        "secondary": "sub-tabs-under-the-header",
+        "items": [
+          "fixed-destinations"
+        ],
+        "visibility": "always-visible",
+        "structure": "single-app"
+      }
+    },
+    {
+      "id": "tabs",
+      "status": "present",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 100,
+            "y": 88,
+            "width": 505,
+            "height": 36
+          },
+          "note": "role=tablist; verified Itinerary tab swaps panel (URL #itinerary)",
+          "quote": "Organization Itinerary Attachments Expenses Notes",
+          "region": "trip-tabs"
+        }
+      ],
+      "dims": {
+        "placement": "top",
+        "label": [
+          "text"
+        ],
+        "origin": "fixed-by-the-designer",
+        "grouping": "flat",
+        "switchBy": [
+          "click"
+        ]
+      }
+    },
+    {
+      "id": "accordion",
+      "status": "present",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 100,
+            "y": 136,
+            "width": 1320,
+            "height": 71
+          },
+          "note": "Collapsed section with icon, title, description and chevron",
+          "quote": "Basic Information",
+          "region": "organization-panel"
+        },
+        {
+          "bbox": {
+            "x": 100,
+            "y": 223,
+            "width": 1320,
+            "height": 975
+          },
+          "note": "Expanded Transportation section",
+          "quote": "Transportation",
+          "region": "organization-panel"
+        },
+        {
+          "bbox": {
+            "x": 100,
+            "y": 1214,
+            "width": 1320,
+            "height": 158
+          },
+          "note": "Collapsed Lodging and Activities",
+          "quote": "Lodging",
+          "region": "organization-panel"
+        }
+      ],
+      "dims": {
+        "policy": "many-at-a-time",
+        "header": [
+          "title-only"
+        ],
+        "toggle": [
+          "header-click"
+        ]
+      }
+    },
+    {
+      "id": "card",
+      "status": "present",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 127,
+            "y": 410,
+            "width": 1266,
+            "height": 156
+          },
+          "note": "Flight segment card: transport icon, labelled attribute columns, ⋯ overflow menu, attachment footer",
+          "quote": "SEA",
+          "region": "organization-panel"
+        },
+        {
+          "bbox": {
+            "x": 127,
+            "y": 582,
+            "width": 1266,
+            "height": 112
+          },
+          "note": "Taxi segment card",
+          "quote": "A1 Taxi Service",
+          "region": "organization-panel"
+        },
+        {
+          "bbox": {
+            "x": 127,
+            "y": 710,
+            "width": 1266,
+            "height": 112
+          },
+          "note": "Transfer card",
+          "quote": "Westin Transportation",
+          "region": "organization-panel"
+        }
+      ],
+      "dims": {
+        "actions": "overflow-menu",
+        "shape": "horizontal",
+        "style": "outlined"
+      }
+    },
+    {
+      "id": "menu",
+      "status": "present",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1265,
+            "y": 315,
+            "width": 128,
+            "height": 36
+          },
+          "note": "Add new dropdown (verified live): Flight, Bus, Car, Boat, Train, Bike | Car Rental, Parking with icons and divider",
+          "quote": "Add new",
+          "region": "organization-panel"
+        },
+        {
+          "bbox": {
+            "x": 1359,
+            "y": 413,
+            "width": 28,
+            "height": 28
+          },
+          "note": "⋯ overflow menu per card (Edit, Delete)",
+          "region": "organization-panel"
+        },
+        {
+          "bbox": {
+            "x": 1169,
+            "y": 12,
+            "width": 235,
+            "height": 38
+          },
+          "note": "User account menu trigger with chevron",
+          "quote": "Maya Chen",
+          "region": "header"
+        }
+      ],
+      "dims": {
+        "openBy": "button-click",
+        "structure": "sections",
+        "item": [
+          "label",
+          "icon"
+        ],
+        "itemSet": "fixed",
+        "form": "vertical-list"
+      }
+    },
+    {
+      "id": "badge",
+      "status": "present",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1131,
+            "y": 8,
+            "width": 36,
+            "height": 36
+          },
+          "note": "Count badge on notification bell",
+          "quote": "2",
+          "region": "header"
+        }
+      ],
+      "dims": {
+        "meaning": "count",
+        "aggregation": "per-item"
+      }
+    },
+    {
+      "id": "tooltip",
+      "status": "present",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 280,
+            "y": 443,
+            "width": 14,
+            "height": 14
+          },
+          "note": "Info icon next to airport code; hover shows card below with full airport name and timezone pill (verified live)",
+          "quote": "SEA",
+          "region": "organization-panel"
+        }
+      ],
+      "dims": {
+        "trigger": [
+          "hover"
+        ],
+        "content": "rich-content",
+        "placement": "below"
+      }
+    },
+    {
+      "id": "empty-state",
+      "status": "present",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 127,
+            "y": 1001,
+            "width": 1266,
+            "height": 59
+          },
+          "note": "Outlined box with muted text only",
+          "quote": "No Rentals",
+          "region": "organization-panel"
+        },
+        {
+          "bbox": {
+            "x": 127,
+            "y": 1112,
+            "width": 1266,
+            "height": 59
+          },
+          "quote": "No Parking",
+          "region": "organization-panel"
+        }
+      ],
+      "dims": {
+        "cause": "first-use",
+        "content": [
+          "explanation"
+        ],
+        "starters": "none",
+        "recovery": "none"
+      }
+    },
+    {
+      "id": "file-upload",
+      "status": "uncertain",
+      "confidence": 0.5,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 127,
+            "y": 520,
+            "width": 1266,
+            "height": 46
+          },
+          "note": "Attached PDF shown as filename link with remove ×; entry point not visible on the page",
+          "quote": "costa_rica_flight.pdf",
+          "region": "organization-panel"
+        }
+      ],
+      "dims": {
+        "preview": "filename"
+      },
+      "rationale": "Only the result of an attachment (filename chip with delete) is visible; the upload entry point is presumably in the edit form, not observed."
+    },
+    {
+      "id": "popover",
+      "status": "absent",
+      "confidence": 0.6,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 280,
+            "y": 443,
+            "width": 14,
+            "height": 14
+          },
+          "note": "Airport info appears on hover and is coded as a rich tooltip"
+        }
+      ],
+      "dims": {}
+    },
+    {
+      "id": "status-tracker",
+      "status": "absent",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 127,
+            "y": 370,
+            "width": 1266,
+            "height": 580
+          },
+          "note": "'Travel Timeline' is a chronological list of bookings, not stage progress"
+        }
+      ],
+      "dims": {}
+    },
+    {
+      "id": "stat-tile",
+      "status": "absent",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 127,
+            "y": 410,
+            "width": 1266,
+            "height": 156
+          },
+          "note": "Cost values are attributes inside cards, not standalone tiles"
+        }
+      ],
+      "dims": {}
+    }
+  ],
+  "structure": {
+    "layout": "app layout: fixed left icon rail + top bar + fixed footer; content area with top tab strip over a stack of full-width accordion sections; expanded section holds a vertical list of horizontal booking cards",
+    "regions": [
+      "sidebar",
+      "header",
+      "trip-tabs",
+      "organization-panel",
+      "footer"
+    ],
+    "density": "medium"
+  },
+  "aesthetics": {
+    "palette": [
+      "#6b7a99",
+      "#ffffff",
+      "#000000",
+      "#868e96",
+      "#f8f9fa",
+      "#dee2e6",
+      "#e9ecef",
+      "#495057"
+    ],
+    "colorRoles": {
+      "background": "#e9ecef",
+      "surface": "#ffffff",
+      "text": "#000000",
+      "muted": "#868e96",
+      "primary": "#6b7a99",
+      "border": "#dee2e6",
+      "surface-alt": "#f8f9fa"
+    },
+    "typography": "Verdana throughout (Mantine defaults overridden): headings, labels, values, buttons all in Verdana",
+    "typeScale": "flat scale: 16px regular for titles and values, 14px for tabs/buttons/subtitles, 12px muted labels and dates; section headings like 'Travel Timeline' 16px bold; little size contrast, hierarchy via gray vs black",
+    "shape": "soft",
+    "elevation": "flat",
+    "borders": "thin",
+    "imagery": [
+      "iconography"
+    ],
+    "iconStyle": "line",
+    "whitespace": "moderate",
+    "backgroundTreatment": "solid",
+    "mood": [
+      "utilitarian",
+      "calm",
+      "muted",
+      "organized",
+      "technical"
+    ]
+  },
+  "model": {
+    "rater": "rater-1",
+    "provider": "claude-code",
+    "name": "claude-opus-5-5",
+    "effort": "high",
+    "generatedAt": "2026-11-16T17:58:46.218Z",
+    "servedBy": [
+      "claude-opus-5-5"
+    ],
+    "turns": 13,
+    "usage": {
+      "input_tokens": 26,
+      "cache_creation_input_tokens": 40829,
+      "cache_read_input_tokens": 481706,
+      "output_tokens": 6029
+    }
+  },
+  "notes": "Surmai self-hosted trip planner built on Mantine. Muted slate-blue (#6b7a99) is the single brand color: sidebar rail fill, primary buttons, icons, links. Booking cards read like one-row label-over-value tables (small gray label above black value) with a large thin-line transport glyph at left and a ⋯ menu top right; flight card has an attachment footer row. Airport codes have tiny info icons revealing airport name + timezone pill on hover. Sidebar and footer are position:fixed so in the full-page capture they only cover the first 900px and the footer overlaps the 4th card. Collapsed accordion headers use #f8f9fa fill; expanded one turns white. Empty sub-sections (Rentals, Parking) are plain outlined boxes with gray text."
+}

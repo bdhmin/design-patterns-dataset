@@ -1,0 +1,615 @@
+{
+  "schemaVersion": "1.0.0",
+  "codebookVersion": "1.0.0",
+  "batch": "repo-pilot",
+  "site": {
+    "slug": "surmai--trip-expenses",
+    "url": "http://localhost:4402/login",
+    "finalUrl": "http://localhost:4402/trips/28yvjgeiih3i58v#expenses",
+    "status": 200,
+    "title": "Surmai | Costa Rica — Pura Vida",
+    "capturedAt": "2026-11-16T17:58:19.694Z",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "screenshot": {
+      "ref": "capture/screenshot.png",
+      "width": 1440,
+      "height": 1356
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.8127.18 Safari/537.36",
+    "domain": "travel-hospitality",
+    "domainNote": "self-hosted trip planner (Surmai) — trip expense tracking tab",
+    "provenance": {
+      "source": "repo",
+      "record": "repos/repo-pilot/surmai/explore.json",
+      "repo": {
+        "name": "rohitkumbhar/surmai",
+        "url": "https://github.com/rohitkumbhar/surmai",
+        "commit": "619b602cd7b9a20f6a05eb752f0007da6bc39b6b",
+        "license": "MIT"
+      },
+      "view": {
+        "slug": "trip-expenses",
+        "name": "Trip expenses",
+        "description": "Trip expenses tab with budget, category and currency donut charts plus a grid of expense cards with edit buttons."
+      }
+    }
+  },
+  "regions": [
+    {
+      "id": "sidebar",
+      "role": "sidebar",
+      "label": "Slate-blue icon-only navigation rail with fish logo, 4 top icons, profile and logout icons at bottom",
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 79,
+        "height": 900
+      },
+      "patterns": [
+        "app-shell"
+      ]
+    },
+    {
+      "id": "header",
+      "role": "header",
+      "label": "Top bar: trip name 'Costa Rica — Pura Vida', date range, notification bell with count badge, avatar account button with dropdown",
+      "bbox": {
+        "x": 80,
+        "y": 0,
+        "width": 1360,
+        "height": 60
+      },
+      "patterns": [
+        "app-shell",
+        "badge",
+        "menu"
+      ]
+    },
+    {
+      "id": "trip-tabs",
+      "role": "tab-bar",
+      "label": "Trip section tabs, Expenses selected",
+      "bbox": {
+        "x": 100,
+        "y": 88,
+        "width": 1320,
+        "height": 36
+      },
+      "patterns": [
+        "tabs"
+      ]
+    },
+    {
+      "id": "toolbar",
+      "role": "toolbar",
+      "label": "Sort by dropdown, Add Expense primary button, Download CSV outlined button",
+      "bbox": {
+        "x": 100,
+        "y": 140,
+        "width": 1320,
+        "height": 62
+      },
+      "patterns": [
+        "sort-control"
+      ]
+    },
+    {
+      "id": "summary-charts",
+      "role": "summary-dashboard",
+      "label": "Three summary cards: Budget Overview donut (42%) with used/budget/remaining, Expenses by Category donut with legend, Expenses by Currency donut",
+      "bbox": {
+        "x": 100,
+        "y": 217,
+        "width": 1320,
+        "height": 436
+      },
+      "patterns": [
+        "dashboard",
+        "chart",
+        "stat-tile",
+        "card",
+        "tooltip"
+      ]
+    },
+    {
+      "id": "expense-grid",
+      "role": "card-grid",
+      "label": "3-column grid of 10 expense cards with title, date, category pill, amount and edit icon button",
+      "bbox": {
+        "x": 100,
+        "y": 670,
+        "width": 1320,
+        "height": 660
+      },
+      "patterns": [
+        "card",
+        "badge",
+        "overview-detail"
+      ]
+    },
+    {
+      "id": "footer",
+      "role": "footer",
+      "label": "Fixed bottom bar with Documentation | About Surmai links",
+      "bbox": {
+        "x": 80,
+        "y": 867,
+        "width": 1360,
+        "height": 33
+      },
+      "patterns": []
+    }
+  ],
+  "patterns": [
+    {
+      "id": "app-shell",
+      "status": "present",
+      "confidence": 0.9,
+      "dims": {
+        "primary": "navigation-rail",
+        "secondary": "sub-tabs-under-the-header",
+        "items": [
+          "fixed-destinations"
+        ],
+        "visibility": "always-visible",
+        "structure": "single-app"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 79,
+            "height": 900
+          },
+          "note": "icon-only nav rail",
+          "region": "sidebar"
+        },
+        {
+          "bbox": {
+            "x": 80,
+            "y": 0,
+            "width": 1360,
+            "height": 60
+          },
+          "note": "top bar with title and account",
+          "quote": "Costa Rica — Pura Vida",
+          "region": "header"
+        }
+      ]
+    },
+    {
+      "id": "tabs",
+      "status": "present",
+      "confidence": 0.9,
+      "dims": {
+        "placement": "top",
+        "label": [
+          "text"
+        ],
+        "origin": "fixed-by-the-designer",
+        "grouping": "flat",
+        "switchBy": [
+          "click"
+        ]
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 100,
+            "y": 88,
+            "width": 505,
+            "height": 36
+          },
+          "quote": "Organization Itinerary Attachments Expenses Notes",
+          "note": "role=tablist; Expenses selected with light fill and underline",
+          "region": "trip-tabs"
+        }
+      ]
+    },
+    {
+      "id": "sort-control",
+      "status": "present",
+      "confidence": 0.85,
+      "dims": {
+        "keys": "fixed-list",
+        "form": "dropdown",
+        "indicator": "none"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 100,
+            "y": 142,
+            "width": 220,
+            "height": 59
+          },
+          "quote": "Sort by",
+          "note": "combobox with placeholder 'Select sorting'; live options Date/Category/Amount Asc/Desc",
+          "region": "toolbar"
+        }
+      ]
+    },
+    {
+      "id": "chart",
+      "status": "present",
+      "confidence": 0.9,
+      "dims": {
+        "markType": "arcs",
+        "channels": [
+          "colour-hue-or-value",
+          "length"
+        ],
+        "scale": "radial",
+        "faceting": "small-multiples",
+        "inspectBy": [
+          "hover-tooltip"
+        ],
+        "authorship": "author-specified",
+        "annotation": [
+          "callout-labels"
+        ]
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 545,
+            "y": 217,
+            "width": 430,
+            "height": 436
+          },
+          "quote": "Expenses by Category",
+          "note": "donut with center total and legend with % and amounts; hover shows value tooltip",
+          "region": "summary-charts"
+        },
+        {
+          "bbox": {
+            "x": 100,
+            "y": 217,
+            "width": 429,
+            "height": 436
+          },
+          "quote": "Budget Overview",
+          "note": "donut showing 42% of budget used",
+          "region": "summary-charts"
+        },
+        {
+          "bbox": {
+            "x": 991,
+            "y": 217,
+            "width": 429,
+            "height": 436
+          },
+          "quote": "Expenses by Currency",
+          "region": "summary-charts"
+        }
+      ]
+    },
+    {
+      "id": "dashboard",
+      "status": "uncertain",
+      "confidence": 0.55,
+      "rationale": "Summary row of three chart widgets behaves like a small dashboard header atop a list; not a standalone dashboard page.",
+      "dims": {
+        "widgets": [
+          "categorical-charts",
+          "kpi-tiles"
+        ],
+        "purpose": "operational-decisions",
+        "arrangement": "fixed-grid",
+        "density": "a-few-glanceable-tiles",
+        "linking": "independent",
+        "refresh": "on-visit",
+        "alerting": "none"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 100,
+            "y": 217,
+            "width": 1320,
+            "height": 436
+          },
+          "note": "three glanceable summary widgets in a grid",
+          "region": "summary-charts"
+        }
+      ]
+    },
+    {
+      "id": "stat-tile",
+      "status": "uncertain",
+      "confidence": 0.5,
+      "rationale": "Budget Overview combines a donut with Used/Budget/Remaining numbers — KPI-like against a target, but more chart card than compact stat tile.",
+      "dims": {
+        "context": [
+          "label",
+          "target"
+        ],
+        "encoding": "number-only",
+        "drill": "none"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 335,
+            "y": 345,
+            "width": 180,
+            "height": 85
+          },
+          "quote": "Used: $3,115.96 Budget: $7,500.00 Remaining: $4,384.04",
+          "region": "summary-charts"
+        }
+      ]
+    },
+    {
+      "id": "card",
+      "status": "present",
+      "confidence": 0.9,
+      "dims": {
+        "media": "none",
+        "actions": "one-primary-action",
+        "shape": "compact-tile",
+        "style": "outlined",
+        "target": "separate-targets-per-attribute"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 100,
+            "y": 670,
+            "width": 432,
+            "height": 154
+          },
+          "quote": "Activity: Ziplining In the rain forest",
+          "note": "expense card: title, date, category pill, amount, edit icon button (opens Edit Expense modal)",
+          "region": "expense-grid"
+        },
+        {
+          "bbox": {
+            "x": 545,
+            "y": 670,
+            "width": 431,
+            "height": 154
+          },
+          "quote": "Transportation: LIR -> SEA",
+          "region": "expense-grid"
+        }
+      ]
+    },
+    {
+      "id": "badge",
+      "status": "present",
+      "confidence": 0.85,
+      "dims": {
+        "meaning": "count",
+        "overflow": "exact-count",
+        "aggregation": "app-icon-total"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1144,
+            "y": 9,
+            "width": 20,
+            "height": 18
+          },
+          "quote": "2",
+          "note": "notification count on bell",
+          "region": "header"
+        },
+        {
+          "bbox": {
+            "x": 192,
+            "y": 762,
+            "width": 88,
+            "height": 18
+          },
+          "quote": "ACTIVITIES",
+          "note": "category label pills on cards",
+          "region": "expense-grid"
+        }
+      ]
+    },
+    {
+      "id": "menu",
+      "status": "uncertain",
+      "confidence": 0.6,
+      "rationale": "Account dropdown is not open in the capture; live page shows Profile/Invitations (2)/Logout menu on click.",
+      "dims": {
+        "openBy": "button-click",
+        "structure": "sections",
+        "item": [
+          "label",
+          "icon"
+        ],
+        "itemSet": "fixed",
+        "form": "vertical-list"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1169,
+            "y": 12,
+            "width": 235,
+            "height": 38
+          },
+          "quote": "Maya Chen",
+          "note": "avatar button with chevron trigger",
+          "region": "header"
+        }
+      ]
+    },
+    {
+      "id": "tooltip",
+      "status": "uncertain",
+      "confidence": 0.55,
+      "rationale": "Chart value tooltip appears only on hover in the live page, not in the capture.",
+      "dims": {},
+      "evidence": [
+        {
+          "bbox": {
+            "x": 686,
+            "y": 318,
+            "width": 149,
+            "height": 149
+          },
+          "note": "hovering a donut segment shows '$1,719.97' tooltip",
+          "region": "summary-charts"
+        }
+      ]
+    },
+    {
+      "id": "overview-detail",
+      "status": "uncertain",
+      "confidence": 0.55,
+      "rationale": "Cards are an overview of expenses; detail is only reachable via the edit button, which opens an Edit Expense modal form (verified live), so detail = editing rather than viewing.",
+      "dims": {
+        "attributePlacement": [
+          "in-both-views",
+          "in-detail-view-only"
+        ],
+        "abstraction": [
+          "category"
+        ],
+        "truncation": "ellipsis",
+        "relationship": "one-to-one",
+        "openIn": "pop-up",
+        "overviewType": [
+          "grid"
+        ],
+        "openBy": [
+          "click"
+        ],
+        "openFrom": "specific-attribute",
+        "attributeScope": [
+          "per-item",
+          "per-collection"
+        ]
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 100,
+            "y": 670,
+            "width": 1320,
+            "height": 660
+          },
+          "note": "grid of expense cards; titles truncated with ellipsis",
+          "quote": "Lodging: Los Lagos Spa & Thermal…",
+          "region": "expense-grid"
+        }
+      ]
+    },
+    {
+      "id": "progress-indicator",
+      "status": "absent",
+      "confidence": 0.7,
+      "dims": {},
+      "evidence": [
+        {
+          "bbox": {
+            "x": 144,
+            "y": 314,
+            "width": 149,
+            "height": 149
+          },
+          "note": "42% donut is budget consumption, not task progress"
+        }
+      ]
+    },
+    {
+      "id": "data-table",
+      "status": "absent",
+      "confidence": 0.8,
+      "dims": {},
+      "evidence": [
+        {
+          "bbox": {
+            "x": 100,
+            "y": 670,
+            "width": 1320,
+            "height": 660
+          },
+          "note": "expenses shown as cards, not a table"
+        }
+      ]
+    }
+  ],
+  "structure": {
+    "layout": "web app shell: narrow slate-blue icon sidebar on the left, white top bar with trip title/dates, notifications and account; content area with horizontal tabs (Organization/Itinerary/Attachments/Expenses/Notes); Expenses panel = sort dropdown + action buttons, row of three donut-chart summary cards, then 3-column grid of expense cards; fixed thin footer with links",
+    "regions": [
+      "sidebar",
+      "header",
+      "trip-tabs",
+      "toolbar",
+      "summary-charts",
+      "expense-grid",
+      "footer"
+    ],
+    "density": "medium"
+  },
+  "aesthetics": {
+    "palette": [
+      "#ebebeb",
+      "#ffffff",
+      "#6b7a99",
+      "#000000",
+      "#868e96",
+      "#228be6",
+      "#15aabf",
+      "#fab005",
+      "#12b886",
+      "#40c057",
+      "#dee2e6"
+    ],
+    "colorRoles": {
+      "background": "#ebebeb",
+      "surface": "#ffffff",
+      "text": "#000000",
+      "muted": "#868e96",
+      "primary": "#6b7a99",
+      "accent": "#228be6",
+      "success": "#40c057",
+      "border": "#dee2e6"
+    },
+    "typography": "Verdana throughout (Mantine-based UI): headings bold, body regular, small uppercase bold category pills",
+    "typeScale": "Low contrast scale: card titles 18px regular, section titles ~18px bold, body/labels 14px, pills 10px uppercase bold; donut center values ~20px bold",
+    "shape": "soft",
+    "elevation": "flat",
+    "borders": "thin",
+    "imagery": [
+      "data-visualization",
+      "iconography"
+    ],
+    "iconStyle": "line",
+    "whitespace": "moderate",
+    "backgroundTreatment": "solid",
+    "mood": [
+      "utilitarian",
+      "clean",
+      "calm",
+      "muted"
+    ]
+  },
+  "model": {
+    "rater": "rater-2",
+    "provider": "claude-code",
+    "name": "claude-opus-5-5",
+    "effort": "high",
+    "generatedAt": "2026-11-16T17:59:58.001Z",
+    "servedBy": [
+      "claude-opus-5-5"
+    ],
+    "turns": 12,
+    "usage": {
+      "input_tokens": 24,
+      "cache_creation_input_tokens": 44187,
+      "cache_read_input_tokens": 440474,
+      "output_tokens": 6359
+    }
+  },
+  "notes": "Surmai self-hosted trip planner. Desaturated slate-blue (#6b7a99) brand used for the left rail, primary button fill, outlined secondary button, tab underline and footer links; bright Mantine palette colors (blue/cyan/yellow/teal/green) only inside donut charts and amounts. Light gray canvas with white 8px-radius outlined cards, no shadows. Amounts in bold blue; Remaining in green. Edit icon on each card opens an 'Edit Expense' modal form (name, date, amount+currency, category, notes, split toggle, drag-drop attachments, Delete/Cancel/Save) — not visible in capture. Footer is fixed to the viewport bottom and overlaps content in the full-page capture. 'conversionRates By Exchange Rate API' attribution link under budget card."
+}

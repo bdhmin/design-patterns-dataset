@@ -1,0 +1,23 @@
+{
+  "slug": "surmai--trip-expenses",
+  "url": "http://localhost:4402/login",
+  "domain": "travel-hospitality",
+  "source": "repo",
+  "state": "labeled",
+  "raters": {
+    "rater-1": {
+      "state": "done",
+      "updatedAt": "2026-11-16T17:59:40.042Z"
+    },
+    "rater-2": {
+      "state": "done",
+      "updatedAt": "2026-11-16T17:59:58.561Z"
+    },
+    "rater-3": {
+      "state": "done",
+      "updatedAt": "2026-11-16T18:00:04.163Z"
+    }
+  },
+  "flags": [],
+  "updatedAt": "2026-11-16T18:00:04.166Z"
+}

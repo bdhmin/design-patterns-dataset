@@ -1,0 +1,96 @@
+{
+  "v": 1,
+  "docs": [
+    {
+      "id": "sample-physics",
+      "filename": "physics.pdf",
+      "uploadedAt": 1788898440000,
+      "numPages": 2,
+      "lastOpenedAt": 1792422120000
+    },
+    {
+      "id": "sample-costituzione",
+      "filename": "costituzione.pdf",
+      "uploadedAt": 1788898800000,
+      "numPages": 2,
+      "lastOpenedAt": 1788899160000
+    },
+    {
+      "id": "sample-anatomy",
+      "filename": "anatomy.pdf",
+      "uploadedAt": 1788946860000,
+      "numPages": 2,
+      "lastOpenedAt": 1790962200000
+    },
+    {
+      "id": "sample-chemistry",
+      "filename": "chemistry.pdf",
+      "uploadedAt": 1788947700000,
+      "numPages": 2,
+      "lastOpenedAt": 1789200600000
+    },
+    {
+      "id": "sample-calculus",
+      "filename": "calculus.pdf",
+      "uploadedAt": 1789048980000,
+      "numPages": 2,
+      "lastOpenedAt": 1793184420000
+    },
+    {
+      "id": "994a113e-e7ba-4f78-926a-7154208adfff",
+      "filename": "Cell_Biology_L07_-_Membrane_Transport.md",
+      "uploadedAt": 1790187120000,
+      "numPages": 2,
+      "lastOpenedAt": 1792011900000
+    },
+    {
+      "id": "d6086557-fbec-409d-8726-f558c32460c1",
+      "filename": "Linear_Algebra_-_Eigenvalues_and_Diagonalization.md",
+      "uploadedAt": 1790861400000,
+      "numPages": 2,
+      "lastOpenedAt": 1794512460000
+    },
+    {
+      "id": "c1cf3794-f33e-464b-a5b3-f678201b206d",
+      "filename": "Thermodynamics_ch4_-_Entropy_and_the_Second_Law.md",
+      "uploadedAt": 1791274680000,
+      "numPages": 2,
+      "lastOpenedAt": 1793636100000
+    },
+    {
+      "id": "fddba584-2509-4829-ab34-77cd072d08b8",
+      "filename": "Probabilita_e_Statistica_-_Teorema_di_Bayes.md",
+      "uploadedAt": 1792079040000,
+      "numPages": 2,
+      "lastOpenedAt": 1794579600000
+    },
+    {
+      "id": "ba885056-fe38-4e1f-8684-5feab453c92a",
+      "filename": "Neurophysiology_-_Action_Potential___Synaptic_Transmission.md",
+      "uploadedAt": 1792482720000,
+      "numPages": 2,
+      "lastOpenedAt": 1794694320000
+    },
+    {
+      "id": "392da341-c7ce-4c50-8840-bcc4ee3ba6cb",
+      "filename": "Biochem_Enzyme_Kinetics_notes.md",
+      "uploadedAt": 1793102700000,
+      "numPages": 2,
+      "lastOpenedAt": 1794303180000
+    },
+    {
+      "id": "a2ddba8f-40a2-4d46-b1d5-9ba6e1bba700",
+      "filename": "Signals___Systems_-_Fourier_Transform__lecture_12_.md",
+      "uploadedAt": 1793899200000,
+      "numPages": 2,
+      "lastOpenedAt": 1794758280000
+    },
+    {
+      "id": "764d6c60-6d8a-4449-b0ed-de5530d902ef",
+      "filename": "Microeconomia_-_Domanda_e_Offerta.md",
+      "uploadedAt": 1794654120000,
+      "numPages": 2,
+      "lastOpenedAt": null
+    }
+  ]
+}

@@ -1,0 +1,498 @@
+{
+  "site": {
+    "slug": "elk--profile",
+    "url": "http://localhost:4400/@maren",
+    "finalUrl": "http://localhost:4400/@maren",
+    "status": 200,
+    "title": "Profile | Maren Lindqvist (@maren@harbor.social) | Elk",
+    "capturedAt": "2026-11-16T08:33:02.784Z",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "screenshot": {
+      "ref": "capture/screenshot.png",
+      "width": 1440,
+      "height": 4829
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.8127.18 Safari/537.36",
+    "domain": "social-community",
+    "domainNote": "Elk web client for Mastodon / fediverse — public account profile page",
+    "provenance": {
+      "source": "repo",
+      "record": "repos/repo-pilot/elk/explore.json",
+      "repo": {
+        "name": "elk-zone/elk",
+        "url": "https://github.com/elk-zone/elk",
+        "commit": "6b956a6d4a89a676059d83a0b0e59d7165d5f266",
+        "license": "MIT"
+      },
+      "view": {
+        "slug": "profile",
+        "name": "User profile",
+        "description": "Account profile with header banner, avatar, bio, metadata fields, follower counts, tabs (Posts, Posts & Replies, Media, Collections) and pinned posts."
+      }
+    }
+  },
+  "codebookVersion": "1.0.0",
+  "batch": "repo-pilot",
+  "raters": [
+    "rater-1",
+    "rater-2"
+  ],
+  "domain": {
+    "value": "social-community",
+    "support": 2
+  },
+  "structure": {
+    "density": {
+      "value": "medium",
+      "support": 2
+    },
+    "layout": {
+      "rater-1": "three-column app layout: left sidebar nav (300px) with sign-in prompt, central 600px profile column (header image, avatar, bio, stats, tabs, post timeline), right sidebar with search, server info card and footer",
+      "rater-2": "three-column app layout: left nav sidebar, centered 600px profile + timeline column, right aside with search and instance info"
+    }
+  },
+  "aesthetics": {
+    "shape": {
+      "value": "soft",
+      "support": 2
+    },
+    "elevation": {
+      "value": "flat",
+      "support": 2
+    },
+    "borders": {
+      "value": "thin",
+      "support": 2
+    },
+    "iconStyle": {
+      "value": "line",
+      "support": 2
+    },
+    "whitespace": {
+      "value": "moderate",
+      "support": 2
+    },
+    "backgroundTreatment": {
+      "value": "solid",
+      "support": 2
+    }
+  },
+  "patterns": [
+    {
+      "id": "app-shell",
+      "status": "present",
+      "confidence": 0.85,
+      "dims": {
+        "primary": "sidebar",
+        "secondary": "sub-tabs-under-the-header",
+        "items": [
+          "fixed-destinations"
+        ],
+        "visibility": "always-visible",
+        "structure": "single-app"
+      },
+      "support": 2,
+      "raters": 2,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 120,
+            "y": 86,
+            "width": 300,
+            "height": 723
+          },
+          "region": "left-sidebar",
+          "quote": "Home Notifications Conversations Favorites Bookmarks Compose",
+          "note": "Persistent left sidebar of fixed destinations; signed-out items dimmed",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 1035,
+            "y": 0,
+            "width": 285,
+            "height": 970
+          },
+          "region": "right-sidebar",
+          "note": "Right rail with global search and instance info",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 120,
+            "y": 86,
+            "width": 300,
+            "height": 723
+          },
+          "quote": "Home Notifications Conversations Favorites Bookmarks",
+          "region": "left-sidebar",
+          "note": "Persistent left sidebar with fixed destinations; signed-out-only items greyed",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 1035,
+            "y": 0,
+            "width": 285,
+            "height": 975
+          },
+          "region": "right-sidebar",
+          "note": "Right aside with search and instance info",
+          "rater": "rater-2"
+        }
+      ]
+    },
+    {
+      "id": "card",
+      "status": "present",
+      "confidence": 0.75,
+      "dims": {
+        "media": "top-image",
+        "actions": "none",
+        "shape": "vertical",
+        "style": "filled",
+        "target": "whole-card"
+      },
+      "support": 2,
+      "raters": 2,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 512,
+            "y": 1457,
+            "width": 509,
+            "height": 364
+          },
+          "region": "timeline",
+          "quote": "The hidden battery under Copenhagen's streets",
+          "note": "Link preview card: top image, source, bold title, truncated description on light grey fill, whole card is a link",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 512,
+            "y": 1457,
+            "width": 509,
+            "height": 364
+          },
+          "quote": "The hidden battery under Copenhagen's streets",
+          "region": "timeline",
+          "note": "Link preview card: top image, grey filled footer with source, title, truncated description; whole card is a link. Posts themselves are borderless rows separated by dividers.",
+          "rater": "rater-2"
+        }
+      ]
+    },
+    {
+      "id": "feed",
+      "status": "present",
+      "confidence": 0.87,
+      "dims": {
+        "density": "full-post",
+        "heterogeneity": [
+          "mixed-media-types"
+        ],
+        "ordering": "chronological",
+        "arrangement": "single-column",
+        "nesting": [
+          "flat"
+        ]
+      },
+      "support": 2,
+      "raters": 2,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 435,
+            "y": 624,
+            "width": 600,
+            "height": 1570
+          },
+          "region": "timeline",
+          "quote": "Pinned post",
+          "note": "Reverse-chronological stream of the account's posts and boosts, full post text inline with action rows",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 446,
+            "y": 1355,
+            "width": 580,
+            "height": 510
+          },
+          "region": "timeline",
+          "quote": "Elinor Vance",
+          "note": "Boosted post with link preview card (mixed media)",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 435,
+            "y": 4760,
+            "width": 600,
+            "height": 69
+          },
+          "region": "timeline-end",
+          "quote": "Older posts from other instances may not be displayed.",
+          "note": "End-of-stream note",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 435,
+            "y": 630,
+            "width": 600,
+            "height": 1560
+          },
+          "quote": "Pinned post",
+          "region": "timeline",
+          "note": "Profile timeline of full posts, pinned first then reverse-chronological, including boosts",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 446,
+            "y": 1355,
+            "width": 580,
+            "height": 510
+          },
+          "quote": "New piece: How Copenhagen's district heating network quietly became one of the biggest batteries in Europe.",
+          "region": "timeline",
+          "note": "Boosted post with link preview card",
+          "rater": "rater-2"
+        }
+      ],
+      "ties": [
+        "dims.loading"
+      ]
+    },
+    {
+      "id": "menu",
+      "status": "uncertain",
+      "confidence": 0.6,
+      "dims": {
+        "openBy": "button-click"
+      },
+      "support": 1,
+      "raters": 2,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 987,
+            "y": 661,
+            "width": 33,
+            "height": 33
+          },
+          "region": "timeline",
+          "note": "Post 'More' ··· button",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 980,
+            "y": 232,
+            "width": 33,
+            "height": 33
+          },
+          "region": "profile-header",
+          "note": "Profile actions.more ⋮ button",
+          "rater": "rater-1"
+        }
+      ],
+      "ties": [
+        "status"
+      ]
+    },
+    {
+      "id": "popover",
+      "status": "absent",
+      "confidence": 0.6,
+      "dims": {},
+      "support": 2,
+      "raters": 2,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 504,
+            "y": 1040,
+            "width": 323,
+            "height": 23
+          },
+          "note": "Hover on author name did not show a hover card in live check",
+          "rater": "rater-2"
+        }
+      ]
+    },
+    {
+      "id": "reactions",
+      "status": "present",
+      "confidence": 0.8,
+      "dims": {
+        "vocabulary": "single-like",
+        "aggregate": "total-count"
+      },
+      "support": 2,
+      "raters": 2,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 868,
+            "y": 791,
+            "width": 59,
+            "height": 33
+          },
+          "region": "timeline",
+          "quote": "120",
+          "note": "Heart favorite button with total count; boost toggles green when active",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 512,
+            "y": 1828,
+            "width": 508,
+            "height": 33
+          },
+          "region": "timeline",
+          "quote": "16",
+          "note": "Action row: Boosted (green), Favorite 12, Bookmarked (yellow)",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 868,
+            "y": 791,
+            "width": 59,
+            "height": 33
+          },
+          "quote": "120",
+          "region": "timeline",
+          "note": "Favorite heart with total count; boost and bookmark alongside",
+          "rater": "rater-2"
+        }
+      ],
+      "ties": [
+        "dims.add"
+      ]
+    },
+    {
+      "id": "stat-tile",
+      "status": "absent",
+      "confidence": 0.78,
+      "dims": {},
+      "support": 2,
+      "raters": 2,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 450,
+            "y": 522,
+            "width": 324,
+            "height": 23
+          },
+          "quote": "2,147 Posts 312 Following 1,284 Followers",
+          "note": "Inline count links, not tiles",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 450,
+            "y": 522,
+            "width": 324,
+            "height": 23
+          },
+          "quote": "2,147 Posts",
+          "note": "Inline count links, not tiles",
+          "rater": "rater-2"
+        }
+      ]
+    },
+    {
+      "id": "tabs",
+      "status": "present",
+      "confidence": 0.85,
+      "dims": {
+        "placement": "top",
+        "label": [
+          "text"
+        ],
+        "origin": "fixed-by-the-designer",
+        "grouping": "flat",
+        "switchBy": [
+          "click"
+        ]
+      },
+      "support": 2,
+      "raters": 2,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 435,
+            "y": 561,
+            "width": 600,
+            "height": 63
+          },
+          "region": "profile-tabs",
+          "quote": "Posts Posts & Replies Media Collections",
+          "note": "Text tabs with orange underline indicator on active 'Posts'; implemented as route links",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 435,
+            "y": 561,
+            "width": 600,
+            "height": 63
+          },
+          "quote": "Posts Posts & Replies Media Collections",
+          "region": "profile-tabs",
+          "note": "Text tabs with orange underline on active; each is a route link",
+          "rater": "rater-2"
+        }
+      ]
+    },
+    {
+      "id": "text-field",
+      "status": "present",
+      "confidence": 0.8,
+      "dims": {
+        "style": "outlined"
+      },
+      "support": 2,
+      "raters": 2,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1046,
+            "y": 26,
+            "width": 270,
+            "height": 38
+          },
+          "region": "right-sidebar",
+          "quote": "Search",
+          "note": "Search input with magnifier icon and placeholder, rounded thin outline",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 1046,
+            "y": 26,
+            "width": 270,
+            "height": 38
+          },
+          "quote": "Search",
+          "region": "right-sidebar",
+          "note": "Search input with leading magnifier icon and placeholder, faint rounded outline",
+          "rater": "rater-2"
+        }
+      ],
+      "ties": [
+        "dims.supporting"
+      ]
+    }
+  ],
+  "note": "Majority vote across raters. Free-text fields (layout, typography, palette, notes) stay per rater in labels/.",
+  "computedAt": "2026-11-16T17:33:20.552Z"
+}

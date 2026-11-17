@@ -1,0 +1,235 @@
+{
+  "v": 1,
+  "docId": "sample-physics",
+  "chats": [
+    {
+      "id": "s33vjburtcy4f",
+      "title": "Why 45 degrees?",
+      "createdAt": 1790131728000,
+      "updatedAt": 1790131827694,
+      "messages": [
+        {
+          "role": "user",
+          "content": "why is max range at 45 degrees intuitively",
+          "ts": 1790131748369
+        },
+        {
+          "role": "assistant",
+          "content": "Range = (horizontal speed) × (time in the air).\n\n- Steeper angle → longer flight but slower horizontally.\n- Flatter angle → fast horizontally but lands quickly.\n\nThe product v0 cos α · 2v0 sin α / g = v0² sin 2α / g is maximised when sin 2α = 1, i.e. **α = 45°** — the best compromise. Your graph tag on page 2 shows the curve peaking there.",
+          "ts": 1790131827694
+        }
+      ]
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "s8bdgty5gl67g",
+      "topic": "all",
+      "createdAt": 1789603176000,
+      "endedAt": 1789603446000,
+      "cards": [
+        {
+          "q": "Acceleration down a frictionless incline?",
+          "a": "a = g sin(theta).",
+          "userAnswer": "not sure",
+          "rating": 2,
+          "answeredAt": 1789603226000
+        },
+        {
+          "q": "Critical angle for a block to start sliding?",
+          "a": "theta_c = arctan(mu).",
+          "userAnswer": "theta_c = arctan(mu)",
+          "rating": 3,
+          "answeredAt": 1789603276000
+        },
+        {
+          "q": "Period of a simple pendulum (small angles)?",
+          "a": "T = 2 pi sqrt(L/g).",
+          "userAnswer": "i think it's the opposite?",
+          "rating": 1,
+          "answeredAt": 1789603326000
+        },
+        {
+          "q": "Range of a projectile on level ground?",
+          "a": "R = v0^2 sin(2 alpha)/g, max at 45 degrees.",
+          "userAnswer": "not sure",
+          "rating": 2,
+          "answeredAt": 1789603376000
+        },
+        {
+          "q": "Why is the final speed on a frictionless slope angle-independent?",
+          "a": "Energy conservation: mgh = (1/2)mv^2 depends only on height.",
+          "userAnswer": "energy conservation",
+          "rating": 3,
+          "answeredAt": 1789603426000
+        }
+      ]
+    },
+    {
+      "id": "s691vaxx3i0w1",
+      "topic": "Acceleration with friction",
+      "createdAt": 1790836464000,
+      "endedAt": 1790836734000,
+      "cards": [
+        {
+          "q": "Acceleration down a frictionless incline?",
+          "a": "a = g sin(theta).",
+          "userAnswer": "a = g sin(theta)",
+          "rating": 3,
+          "answeredAt": 1790836514000
+        },
+        {
+          "q": "Critical angle for a block to start sliding?",
+          "a": "theta_c = arctan(mu).",
+          "userAnswer": "theta_c = arctan(mu)",
+          "rating": 4,
+          "answeredAt": 1790836564000
+        },
+        {
+          "q": "Period of a simple pendulum (small angles)?",
+          "a": "T = 2 pi sqrt(L/g).",
+          "userAnswer": "t = 2 pi sqrt(l/g)",
+          "rating": 3,
+          "answeredAt": 1790836614000
+        },
+        {
+          "q": "Range of a projectile on level ground?",
+          "a": "R = v0^2 sin(2 alpha)/g, max at 45 degrees.",
+          "userAnswer": "i think it's the opposite?",
+          "rating": 2,
+          "answeredAt": 1790836664000
+        },
+        {
+          "q": "Why is the final speed on a frictionless slope angle-independent?",
+          "a": "Energy conservation: mgh = (1/2)mv^2 depends only on height.",
+          "userAnswer": "energy conservation",
+          "rating": 4,
+          "answeredAt": 1790836714000
+        }
+      ]
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "s55j5i1o09l9",
+      "topic": "all",
+      "createdAt": 1790307912000,
+      "endedAt": 1790308207000,
+      "questions": [
+        {
+          "stem": "Doubling the length of a pendulum multiplies its period by:",
+          "options": [
+            "2",
+            "sqrt(2)",
+            "1/2",
+            "4"
+          ],
+          "correctIndex": 1,
+          "explanation": "T ∝ sqrt(L).",
+          "chosenIndex": 2,
+          "answeredAt": 1790307982000
+        },
+        {
+          "stem": "Launch angles giving the same range as 30 degrees:",
+          "options": [
+            "45",
+            "60",
+            "15",
+            "75"
+          ],
+          "correctIndex": 1,
+          "explanation": "sin(2·30) = sin(2·60).",
+          "chosenIndex": 1,
+          "answeredAt": 1790308052000
+        },
+        {
+          "stem": "With mu = 0.3, the critical angle is about:",
+          "options": [
+            "17 deg",
+            "30 deg",
+            "45 deg",
+            "73 deg"
+          ],
+          "correctIndex": 0,
+          "explanation": "arctan(0.3) ≈ 16.7°.",
+          "chosenIndex": 0,
+          "answeredAt": 1790308122000
+        },
+        {
+          "stem": "Quadratic air drag makes the trajectory:",
+          "options": [
+            "Symmetric",
+            "Asymmetric with shorter range",
+            "Longer",
+            "Circular"
+          ],
+          "correctIndex": 1,
+          "explanation": "Descent is steeper than ascent.",
+          "chosenIndex": 1,
+          "answeredAt": 1790308192000
+        }
+      ]
+    },
+    {
+      "id": "s7kn70r6uf0op",
+      "topic": "all",
+      "createdAt": 1791188832000,
+      "endedAt": 1791189127000,
+      "questions": [
+        {
+          "stem": "Doubling the length of a pendulum multiplies its period by:",
+          "options": [
+            "2",
+            "sqrt(2)",
+            "1/2",
+            "4"
+          ],
+          "correctIndex": 1,
+          "explanation": "T ∝ sqrt(L).",
+          "chosenIndex": 1,
+          "answeredAt": 1791188902000
+        },
+        {
+          "stem": "Launch angles giving the same range as 30 degrees:",
+          "options": [
+            "45",
+            "60",
+            "15",
+            "75"
+          ],
+          "correctIndex": 1,
+          "explanation": "sin(2·30) = sin(2·60).",
+          "chosenIndex": 1,
+          "answeredAt": 1791188972000
+        },
+        {
+          "stem": "With mu = 0.3, the critical angle is about:",
+          "options": [
+            "17 deg",
+            "30 deg",
+            "45 deg",
+            "73 deg"
+          ],
+          "correctIndex": 0,
+          "explanation": "arctan(0.3) ≈ 16.7°.",
+          "chosenIndex": 0,
+          "answeredAt": 1791189042000
+        },
+        {
+          "stem": "Quadratic air drag makes the trajectory:",
+          "options": [
+            "Symmetric",
+            "Asymmetric with shorter range",
+            "Longer",
+            "Circular"
+          ],
+          "correctIndex": 1,
+          "explanation": "Descent is steeper than ascent.",
+          "chosenIndex": 1,
+          "answeredAt": 1791189112000
+        }
+      ]
+    }
+  ],
+  "feynman": []
+}

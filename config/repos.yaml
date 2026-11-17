@@ -48,7 +48,7 @@ setup:
   model: claude-opus-5-5
   effort: high
   tools: [Bash, Read, Write, Edit, Glob, Grep]
-  timeoutMinutes: 45
+  timeoutMinutes: 90
   # A build that does not load when the agent stops goes back to it, up to this many times.
   repairRounds: 2
   # Checkouts with their node_modules: several GB per batch, so outside the repo.

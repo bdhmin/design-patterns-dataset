@@ -1,0 +1,350 @@
+{
+  "v": 1,
+  "docId": "d6086557-fbec-409d-8726-f558c32460c1",
+  "chats": [
+    {
+      "id": "s9sg343izk11g",
+      "title": "Exercise 8 — defective matrix",
+      "createdAt": 1792139271000,
+      "updatedAt": 1792139567889,
+      "messages": [
+        {
+          "role": "user",
+          "content": "in es. 8 i get lambda = 4 with algebraic multiplicity 2 but when i solve (A-4I)v=0 i get only one free variable. did i mess up?",
+          "ts": 1792139282249
+        },
+        {
+          "role": "assistant",
+          "content": "Probably not — that's exactly what makes it the **defective** one (your notes flag it).\n\n- Algebraic multiplicity = 2 (double root).\n- One free variable → eigenspace dimension = **1** = geometric multiplicity.\n\nSince 1 < 2, A doesn't have enough independent eigenvectors and **is not diagonalizable**. Double-check by computing rank(A - 4I): if it's n - 1, you're right.",
+          "ts": 1792139388761
+        },
+        {
+          "role": "user",
+          "content": "rank is 2 and n=3 so yes. so what do you do with it then?",
+          "ts": 1792139467661
+        },
+        {
+          "role": "assistant",
+          "content": "For this course: you just state it's not diagonalizable. (In general you'd use the **Jordan form**, with a 2x2 Jordan block for lambda = 4 — but that's beyond the program per the syllabus.)",
+          "ts": 1792139567889
+        }
+      ]
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "s4sengju9kt00",
+      "topic": "all",
+      "createdAt": 1791591612000,
+      "endedAt": 1791591982000,
+      "cards": [
+        {
+          "q": "Definition of eigenvector?",
+          "a": "Non-zero v with A v = lambda v: A only scales v.",
+          "userAnswer": "i think it's the opposite?",
+          "rating": 1,
+          "answeredAt": 1791591662000
+        },
+        {
+          "q": "How do you find eigenvalues?",
+          "a": "Solve det(A - lambda I) = 0, the characteristic equation.",
+          "userAnswer": "solve det(a - lambda i) = 0, the characteristic equation",
+          "rating": 3,
+          "answeredAt": 1791591712000
+        },
+        {
+          "q": "Sum and product of eigenvalues?",
+          "a": "Sum = trace(A), product = det(A).",
+          "userAnswer": "sum = trace(a), product = det(a)",
+          "rating": 3,
+          "answeredAt": 1791591762000
+        },
+        {
+          "q": "When is A diagonalizable?",
+          "a": "Iff it has n linearly independent eigenvectors (sufficient: n distinct eigenvalues).",
+          "userAnswer": "iff it has n linearly independent eigenvectors (sufficient",
+          "rating": 3,
+          "answeredAt": 1791591812000
+        },
+        {
+          "q": "Example of a defective matrix",
+          "a": "[[1,1],[0,1]]: lambda = 1 twice but only one eigenvector.",
+          "userAnswer": "[[1,1],[0,1]]",
+          "rating": 3,
+          "answeredAt": 1791591862000
+        },
+        {
+          "q": "What does the spectral theorem guarantee?",
+          "a": "Real symmetric A = Q D Q^T with Q orthogonal, all eigenvalues real.",
+          "userAnswer": "real symmetric a = q d q^t with q orthogonal, all eigenvalues real",
+          "rating": 4,
+          "answeredAt": 1791591912000
+        },
+        {
+          "q": "Why does PCA use eigenvectors?",
+          "a": "Covariance is symmetric; eigenvectors are principal directions, eigenvalues the variances.",
+          "userAnswer": "covariance is symmetric",
+          "rating": 4,
+          "answeredAt": 1791591962000
+        }
+      ]
+    },
+    {
+      "id": "sc7e2omht65yc",
+      "topic": "Characteristic equation",
+      "createdAt": 1792443526000,
+      "endedAt": 1792443896000,
+      "cards": [
+        {
+          "q": "Definition of eigenvector?",
+          "a": "Non-zero v with A v = lambda v: A only scales v.",
+          "userAnswer": "non-zero v with a v = lambda v",
+          "rating": 3,
+          "answeredAt": 1792443576000
+        },
+        {
+          "q": "How do you find eigenvalues?",
+          "a": "Solve det(A - lambda I) = 0, the characteristic equation.",
+          "userAnswer": "solve det(a - lambda i) = 0, the characteristic equation",
+          "rating": 4,
+          "answeredAt": 1792443626000
+        },
+        {
+          "q": "Sum and product of eigenvalues?",
+          "a": "Sum = trace(A), product = det(A).",
+          "userAnswer": "not sure",
+          "rating": 1,
+          "answeredAt": 1792443676000
+        },
+        {
+          "q": "When is A diagonalizable?",
+          "a": "Iff it has n linearly independent eigenvectors (sufficient: n distinct eigenvalues).",
+          "userAnswer": "iff it has n linearly independent eigenvectors (sufficient",
+          "rating": 4,
+          "answeredAt": 1792443726000
+        },
+        {
+          "q": "Example of a defective matrix",
+          "a": "[[1,1],[0,1]]: lambda = 1 twice but only one eigenvector.",
+          "userAnswer": "i think it's the opposite?",
+          "rating": 1,
+          "answeredAt": 1792443776000
+        },
+        {
+          "q": "What does the spectral theorem guarantee?",
+          "a": "Real symmetric A = Q D Q^T with Q orthogonal, all eigenvalues real.",
+          "userAnswer": "real symmetric a = q d q^t with q orthogonal, all eigenvalues real",
+          "rating": 4,
+          "answeredAt": 1792443826000
+        },
+        {
+          "q": "Why does PCA use eigenvectors?",
+          "a": "Covariance is symmetric; eigenvectors are principal directions, eigenvalues the variances.",
+          "userAnswer": "covariance is symmetric",
+          "rating": 4,
+          "answeredAt": 1792443876000
+        }
+      ]
+    },
+    {
+      "id": "s5covqedrg1ml",
+      "topic": "Diagonalization",
+      "createdAt": 1793295440000,
+      "endedAt": 1793295810000,
+      "cards": [
+        {
+          "q": "Definition of eigenvector?",
+          "a": "Non-zero v with A v = lambda v: A only scales v.",
+          "userAnswer": "non-zero v with a v = lambda v",
+          "rating": 3,
+          "answeredAt": 1793295490000
+        },
+        {
+          "q": "How do you find eigenvalues?",
+          "a": "Solve det(A - lambda I) = 0, the characteristic equation.",
+          "userAnswer": "solve det(a - lambda i) = 0, the characteristic equation",
+          "rating": 3,
+          "answeredAt": 1793295540000
+        },
+        {
+          "q": "Sum and product of eigenvalues?",
+          "a": "Sum = trace(A), product = det(A).",
+          "userAnswer": "sum = trace(a), product = det(a)",
+          "rating": 3,
+          "answeredAt": 1793295590000
+        },
+        {
+          "q": "When is A diagonalizable?",
+          "a": "Iff it has n linearly independent eigenvectors (sufficient: n distinct eigenvalues).",
+          "userAnswer": "iff it has n linearly independent eigenvectors (sufficient",
+          "rating": 3,
+          "answeredAt": 1793295640000
+        },
+        {
+          "q": "Example of a defective matrix",
+          "a": "[[1,1],[0,1]]: lambda = 1 twice but only one eigenvector.",
+          "userAnswer": "[[1,1],[0,1]]",
+          "rating": 3,
+          "answeredAt": 1793295690000
+        },
+        {
+          "q": "What does the spectral theorem guarantee?",
+          "a": "Real symmetric A = Q D Q^T with Q orthogonal, all eigenvalues real.",
+          "userAnswer": "real symmetric a = q d q^t with q orthogonal, all eigenvalues real",
+          "rating": 3,
+          "answeredAt": 1793295740000
+        },
+        {
+          "q": "Why does PCA use eigenvectors?",
+          "a": "Covariance is symmetric; eigenvectors are principal directions, eigenvalues the variances.",
+          "userAnswer": "covariance is symmetric",
+          "rating": 3,
+          "answeredAt": 1793295790000
+        }
+      ]
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "s1ju66ed4jeml",
+      "topic": "all",
+      "createdAt": 1792321824000,
+      "endedAt": 1792322119000,
+      "questions": [
+        {
+          "stem": "A 3x3 matrix has eigenvalues 2, 2, 5 and the eigenspace of 2 has dimension 1. Then A is:",
+          "options": [
+            "Diagonalizable",
+            "Defective",
+            "Symmetric",
+            "Singular"
+          ],
+          "correctIndex": 1,
+          "explanation": "Geometric multiplicity 1 < algebraic 2 for lambda = 2.",
+          "chosenIndex": 1,
+          "answeredAt": 1792321894000
+        },
+        {
+          "stem": "trace(A) = 7, det(A) = 10 for a 2x2 matrix. The eigenvalues are:",
+          "options": [
+            "2 and 5",
+            "1 and 10",
+            "3 and 4",
+            "-2 and -5"
+          ],
+          "correctIndex": 0,
+          "explanation": "Sum 7, product 10.",
+          "chosenIndex": 1,
+          "answeredAt": 1792321964000
+        },
+        {
+          "stem": "x' = A x is asymptotically stable when all eigenvalues:",
+          "options": [
+            "Are positive",
+            "Have negative real part",
+            "Are real",
+            "Equal 1"
+          ],
+          "correctIndex": 1,
+          "explanation": "Solutions behave like e^(lambda t).",
+          "chosenIndex": 1,
+          "answeredAt": 1792322034000
+        },
+        {
+          "stem": "PageRank is computed as:",
+          "options": [
+            "The smallest eigenvector",
+            "The dominant eigenvector via power method",
+            "The determinant of the link matrix",
+            "A singular value"
+          ],
+          "correctIndex": 1,
+          "explanation": "Repeated multiplication converges to the eigenvector with largest |lambda|.",
+          "chosenIndex": 1,
+          "answeredAt": 1792322104000
+        }
+      ]
+    },
+    {
+      "id": "s9rrwexf0e9zl",
+      "topic": "all",
+      "createdAt": 1793234589000,
+      "endedAt": 1793234884000,
+      "questions": [
+        {
+          "stem": "A 3x3 matrix has eigenvalues 2, 2, 5 and the eigenspace of 2 has dimension 1. Then A is:",
+          "options": [
+            "Diagonalizable",
+            "Defective",
+            "Symmetric",
+            "Singular"
+          ],
+          "correctIndex": 1,
+          "explanation": "Geometric multiplicity 1 < algebraic 2 for lambda = 2.",
+          "chosenIndex": 1,
+          "answeredAt": 1793234659000
+        },
+        {
+          "stem": "trace(A) = 7, det(A) = 10 for a 2x2 matrix. The eigenvalues are:",
+          "options": [
+            "2 and 5",
+            "1 and 10",
+            "3 and 4",
+            "-2 and -5"
+          ],
+          "correctIndex": 0,
+          "explanation": "Sum 7, product 10.",
+          "chosenIndex": 0,
+          "answeredAt": 1793234729000
+        },
+        {
+          "stem": "x' = A x is asymptotically stable when all eigenvalues:",
+          "options": [
+            "Are positive",
+            "Have negative real part",
+            "Are real",
+            "Equal 1"
+          ],
+          "correctIndex": 1,
+          "explanation": "Solutions behave like e^(lambda t).",
+          "chosenIndex": 0,
+          "answeredAt": 1793234799000
+        },
+        {
+          "stem": "PageRank is computed as:",
+          "options": [
+            "The smallest eigenvector",
+            "The dominant eigenvector via power method",
+            "The determinant of the link matrix",
+            "A singular value"
+          ],
+          "correctIndex": 1,
+          "explanation": "Repeated multiplication converges to the eigenvector with largest |lambda|.",
+          "chosenIndex": 1,
+          "answeredAt": 1793234869000
+        }
+      ]
+    }
+  ],
+  "feynman": [
+    {
+      "id": "s384ffr6ngu5e",
+      "topic": "Diagonalization",
+      "createdAt": 1793599695000,
+      "endedAt": 1793600055000,
+      "turns": [
+        {
+          "childPrompt": "Hi! I'm eight. Can you tell me what diagonalization is, like you'd explain it to me?",
+          "userExplanation": "Some machines squish and turn arrows. But there are special directions where the machine only stretches. If you look at everything using those directions, the machine becomes super simple — just stretching each one.",
+          "ts": 1793599865000
+        },
+        {
+          "childPrompt": "Ohh. But WHY is that useful?",
+          "userExplanation": "Because if you have to use the machine 100 times, you just stretch 100 times in each direction, you don't have to do all the hard turning math.",
+          "ts": 1793600035000
+        }
+      ],
+      "summary": "Good core intuition (change of basis to eigen-directions; powers become easy). You didn't mention when it fails — not enough special directions (defective matrices) — which is exactly what the exercises test."
+    }
+  ]
+}

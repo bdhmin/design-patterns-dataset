@@ -1,0 +1,939 @@
+{
+  "site": {
+    "slug": "get-it--knowledge-graph",
+    "url": "http://localhost:4401/viewer/994a113e-e7ba-4f78-926a-7154208adfff",
+    "finalUrl": "http://localhost:4401/viewer/994a113e-e7ba-4f78-926a-7154208adfff",
+    "status": 200,
+    "title": "Get It.",
+    "capturedAt": "2026-11-16T17:52:27.789Z",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "screenshot": {
+      "ref": "capture/screenshot.png",
+      "width": 1440,
+      "height": 2198
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.8127.18 Safari/537.36",
+    "domain": "education",
+    "domainNote": "AI study tool: lecture PDF viewer with concept tags linked to visualizers, knowledge graph with mastery scores, chat/flashcards/quizzes",
+    "provenance": {
+      "source": "repo",
+      "record": "repos/repo-pilot/get-it/explore.json",
+      "repo": {
+        "name": "beltromatti/get-it",
+        "url": "https://github.com/beltromatti/get-it",
+        "commit": "ae0fa999f352b951ab8150fac5dcf9d7ab6fd9a4",
+        "license": "Apache-2.0"
+      },
+      "view": {
+        "slug": "knowledge-graph",
+        "name": "Knowledge graph pane",
+        "description": "Document viewer with the right pane switched to the knowledge graph: an AI evaluation summary above a node-link map of concepts colored by mastery."
+      }
+    }
+  },
+  "codebookVersion": "1.0.0",
+  "batch": "repo-pilot",
+  "raters": [
+    "rater-1",
+    "rater-2",
+    "rater-3"
+  ],
+  "domain": {
+    "value": "education",
+    "support": 3
+  },
+  "structure": {
+    "density": {
+      "value": "medium",
+      "support": 3
+    },
+    "layout": {
+      "rater-1": "full-height two-pane app: top bar with nav links and a document tab; left pane is a paginated PDF/document viewer with floating page and zoom controls; right pane is a switchable tool panel (currently Knowledge Graph) with header dropdown, AI insight strip and a pan/zoom node-link graph",
+      "rater-2": "full-height two-pane app: thin top bar with document tab; left paginated PDF reader with inline concept chips and floating page/zoom toolbar; right switchable AI study panel (here Knowledge Graph) with AI insight strip and pan/zoom node-link graph",
+      "rater-3": "two-pane workspace: fixed top app bar, left scrolling PDF document pane with floating pager/zoom, right tool panel with mode dropdown, AI insight strip and interactive knowledge graph"
+    }
+  },
+  "aesthetics": {
+    "shape": {
+      "value": "soft",
+      "support": 3
+    },
+    "elevation": {
+      "value": "subtle-shadows",
+      "support": 3
+    },
+    "borders": {
+      "value": "thin",
+      "support": 3
+    },
+    "iconStyle": {
+      "value": "line",
+      "support": 3
+    },
+    "whitespace": {
+      "value": "moderate",
+      "support": 3
+    },
+    "backgroundTreatment": {
+      "value": "solid",
+      "support": 3
+    }
+  },
+  "patterns": [
+    {
+      "id": "ai-provenance",
+      "status": "uncertain",
+      "confidence": 0.55,
+      "dims": {
+        "disclosure": [
+          "ai-generated-badge"
+        ],
+        "trustCues": [
+          "stale-retrieval-time"
+        ]
+      },
+      "support": 2,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 806,
+            "y": 98,
+            "width": 625,
+            "height": 102
+          },
+          "quote": "last evaluated 789h ago · 23 passes",
+          "region": "tool-panel",
+          "note": "Sparkle-icon insight with evaluation timestamp",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 806,
+            "y": 98,
+            "width": 625,
+            "height": 102
+          },
+          "quote": "last evaluated 789h ago · 23 passes",
+          "region": "side-panel",
+          "note": "Sparkle-marked evaluator summary with staleness timestamp",
+          "rater": "rater-3"
+        }
+      ],
+      "ties": [
+        "dims.placement"
+      ]
+    },
+    {
+      "id": "annotation",
+      "status": "uncertain",
+      "confidence": 0.45,
+      "dims": {
+        "anchor": "text-range",
+        "layout": "side-margin-panel"
+      },
+      "support": 2,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 419,
+            "y": 307,
+            "width": 96,
+            "height": 18
+          },
+          "quote": "Fluid mo...",
+          "region": "document-viewer",
+          "note": "3D Model chip (pink) anchored after 'phospholipid bilayer'",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 358,
+            "y": 498,
+            "width": 96,
+            "height": 18
+          },
+          "quote": "Fick's l...",
+          "region": "document-viewer",
+          "note": "Formula chip (purple); clicking opens formula visualizer in right pane",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 535,
+            "y": 598,
+            "width": 96,
+            "height": 18
+          },
+          "quote": "Carrier...",
+          "region": "document-viewer",
+          "note": "Graph chip (blue)",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 8,
+            "y": 60,
+            "width": 105,
+            "height": 22
+          },
+          "quote": "Fluid mo...",
+          "region": "document-pane",
+          "note": "Inline pill chips (3D Model, Formula, Graph, Animation, Source) anchored to terms like 'phospholipid bilayer'; in the tall capture they stacked at the left edge",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 8,
+            "y": 1102,
+            "width": 105,
+            "height": 32
+          },
+          "quote": "CFTR and...",
+          "region": "document-pane",
+          "note": "Page-2 chips",
+          "rater": "rater-2"
+        }
+      ],
+      "ties": [
+        "dims.marker"
+      ]
+    },
+    {
+      "id": "app-shell",
+      "status": "present",
+      "confidence": 0.77,
+      "dims": {
+        "primary": "top-navigation-bar",
+        "secondary": "none",
+        "items": [
+          "fixed-destinations"
+        ],
+        "visibility": "always-visible",
+        "structure": "document-tabs"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 46
+          },
+          "quote": "Upload Library Cell_Biology_L07_-_Membr...",
+          "region": "top-bar",
+          "note": "Persistent top bar with destinations, open document tab, status and account",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 46
+          },
+          "quote": "Upload",
+          "region": "top-bar",
+          "note": "Persistent top bar with global destinations, document tab, sync status and account",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 46
+          },
+          "quote": "Upload",
+          "region": "top-bar",
+          "note": "Persistent top bar with global destinations, document tab, sync status and account",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "badge",
+      "status": "present",
+      "confidence": 0.78,
+      "dims": {
+        "meaning": "label",
+        "aggregation": "per-item"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 426,
+            "y": 14,
+            "width": 72,
+            "height": 18
+          },
+          "quote": "MANUAL",
+          "region": "top-bar",
+          "note": "Orange label badge on document tab",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 1120,
+            "y": 11,
+            "width": 122,
+            "height": 26
+          },
+          "quote": "Synced 33d ago",
+          "region": "top-bar",
+          "note": "Sync status pill",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 1250,
+            "y": 11,
+            "width": 106,
+            "height": 26
+          },
+          "quote": "7/7 viz ready",
+          "region": "top-bar",
+          "note": "Count/status pill",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 426,
+            "y": 14,
+            "width": 72,
+            "height": 20
+          },
+          "quote": "MANUAL",
+          "region": "top-bar",
+          "note": "Amber label pill on document tab",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 1250,
+            "y": 11,
+            "width": 106,
+            "height": 26
+          },
+          "quote": "7/7 viz ready",
+          "region": "top-bar",
+          "note": "Count pill of ready visualizations",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 1120,
+            "y": 11,
+            "width": 122,
+            "height": 26
+          },
+          "quote": "Synced 33d ago",
+          "region": "top-bar",
+          "note": "Sync status pill",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 426,
+            "y": 14,
+            "width": 72,
+            "height": 20
+          },
+          "quote": "MANUAL",
+          "region": "top-bar",
+          "note": "Amber label pill on the document tab",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 1251,
+            "y": 11,
+            "width": 105,
+            "height": 26
+          },
+          "quote": "7/7 viz ready",
+          "region": "top-bar",
+          "note": "Count of ready visualizations",
+          "rater": "rater-3"
+        }
+      ],
+      "ties": [
+        "dims.overflow"
+      ]
+    },
+    {
+      "id": "banner",
+      "status": "absent",
+      "confidence": 0.7,
+      "dims": {},
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 806,
+            "y": 98,
+            "width": 625,
+            "height": 102
+          },
+          "note": "AI insight strip is a summary, not a condition-alert banner",
+          "rater": "rater-2"
+        }
+      ]
+    },
+    {
+      "id": "chart",
+      "status": "present",
+      "confidence": 0.68,
+      "dims": {
+        "markType": "points",
+        "channels": [
+          "colour-hue-or-value",
+          "position",
+          "size"
+        ],
+        "faceting": "single-plot",
+        "authorship": "author-specified",
+        "annotation": [
+          "automated-insight-captions"
+        ],
+        "inspectBy": [
+          "click-to-select"
+        ]
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 806,
+            "y": 200,
+            "width": 625,
+            "height": 700
+          },
+          "quote": "Fick's law of diffusion",
+          "region": "tool-panel",
+          "note": "Force-directed node-link concept graph; node size/label size and green shade encode importance/mastery; pan/zoom/fit controls (graph rendered in first viewport)",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 1388,
+            "y": 2088,
+            "width": 32,
+            "height": 90
+          },
+          "region": "tool-panel",
+          "note": "Zoom in/out/fit graph buttons",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 806,
+            "y": 200,
+            "width": 625,
+            "height": 1989
+          },
+          "quote": "Fick's law of diffusion",
+          "region": "graph-panel",
+          "note": "Node-link knowledge graph; node fill shade and size/label size encode mastery/centrality (visible in the first viewport; the tall capture renders it blank)",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 806,
+            "y": 200,
+            "width": 625,
+            "height": 700
+          },
+          "quote": "Fick's law of diffusion",
+          "region": "side-panel",
+          "note": "Node-link concept graph; node size and green shade encode importance/mastery; hover highlights connected edges in indigo and fades others; pan/zoom controls bottom right",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "coordinated-views",
+      "status": "absent",
+      "confidence": 0.6,
+      "dims": {},
+      "support": 2,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 806,
+            "y": 52,
+            "width": 625,
+            "height": 2138
+          },
+          "note": "Document chips drive the panel content, but panes are not synchronized data views",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 806,
+            "y": 200,
+            "width": 625,
+            "height": 700
+          },
+          "note": "Chip click switches panel mode rather than synchronized selection across data views",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "menu",
+      "status": "present",
+      "confidence": 0.85,
+      "dims": {
+        "openBy": "button-click",
+        "structure": "flat",
+        "item": [
+          "description",
+          "icon",
+          "label"
+        ],
+        "itemSet": "fixed",
+        "form": "vertical-list"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 826,
+            "y": 61,
+            "width": 153,
+            "height": 28
+          },
+          "quote": "Knowledge Graph",
+          "region": "tool-panel",
+          "note": "Live: opens dropdown of tools — Visualizer, Knowledge Graph, Chat, Flashcards, Quizzes, Feynman — each with icon and description",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 1383,
+            "y": 60,
+            "width": 28,
+            "height": 28
+          },
+          "region": "tool-panel",
+          "note": "More actions overflow button",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 826,
+            "y": 61,
+            "width": 153,
+            "height": 28
+          },
+          "quote": "Knowledge Graph",
+          "region": "graph-panel",
+          "note": "Dropdown opens a list: Visualizer, Knowledge Graph, Chat, Flashcards, Quizzes, Feynman, each with icon and description; current item highlighted (verified live)",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 1383,
+            "y": 60,
+            "width": 28,
+            "height": 28
+          },
+          "region": "graph-panel",
+          "note": "More actions overflow button",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 826,
+            "y": 61,
+            "width": 153,
+            "height": 28
+          },
+          "quote": "Knowledge Graph",
+          "region": "side-panel",
+          "note": "Dropdown trigger; live opens list Visualizer / Knowledge Graph / Chat / Flashcards / Quizzes / Feynman with icon and description, current highlighted",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 1383,
+            "y": 60,
+            "width": 28,
+            "height": 28
+          },
+          "region": "side-panel",
+          "note": "More actions overflow: Regenerate visualization, Download work context (JSON)",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "object-viewer-3d",
+      "status": "absent",
+      "confidence": 0.6,
+      "dims": {},
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 806,
+            "y": 200,
+            "width": 625,
+            "height": 700
+          },
+          "note": "3D viewer appears only after clicking a 3D Model chip (live); not in capture",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "pagination",
+      "status": "present",
+      "confidence": 0.78,
+      "dims": {
+        "mechanism": "next-and-previous",
+        "position": "page-n-of-m",
+        "pageSize": "fixed"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 349,
+            "y": 2140,
+            "width": 110,
+            "height": 40
+          },
+          "quote": "1 / 2",
+          "region": "document-viewer",
+          "note": "Previous/next page with jump-to-page counter",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 353,
+            "y": 2148,
+            "width": 99,
+            "height": 24
+          },
+          "quote": "1 / 2",
+          "region": "document-pane",
+          "note": "Previous (disabled) / Jump to page / Next page controls",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 353,
+            "y": 2146,
+            "width": 100,
+            "height": 28
+          },
+          "quote": "1 / 2",
+          "region": "document-pane",
+          "note": "Previous/next arrows with page N of M jump button",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "reader",
+      "status": "present",
+      "confidence": 0.8,
+      "dims": {
+        "pagination": "fixed-layout",
+        "typography": [
+          "size-and-spacing"
+        ],
+        "progress": "location-only"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 41,
+            "y": 84,
+            "width": 723,
+            "height": 1023
+          },
+          "quote": "Cell Biology — Lecture 7: Membrane Transport",
+          "region": "document-viewer",
+          "note": "PDF page rendered to canvas; pages stack vertically with page labels",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 670,
+            "y": 2140,
+            "width": 115,
+            "height": 40
+          },
+          "quote": "100%",
+          "region": "document-viewer",
+          "note": "Zoom in/out controls",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 41,
+            "y": 84,
+            "width": 723,
+            "height": 1023
+          },
+          "quote": "Cell Biology — Lecture 7: Membrane Transport",
+          "region": "document-pane",
+          "note": "PDF page rendered to canvas; page 1 of 2 with page label",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 340,
+            "y": 2140,
+            "width": 445,
+            "height": 40
+          },
+          "quote": "1 / 2",
+          "region": "document-pane",
+          "note": "Floating page nav and zoom controls (100%, +, -)",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 41,
+            "y": 84,
+            "width": 723,
+            "height": 1023
+          },
+          "quote": "Cell Biology — Lecture 7: Membrane Transport",
+          "region": "document-pane",
+          "note": "Rendered PDF page canvas; page 2 below",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 353,
+            "y": 2146,
+            "width": 426,
+            "height": 28
+          },
+          "quote": "1 / 2",
+          "region": "document-pane",
+          "note": "Floating page pager and 100% zoom controls",
+          "rater": "rater-3"
+        }
+      ],
+      "ties": [
+        "dims.annotations"
+      ]
+    },
+    {
+      "id": "split-pane",
+      "status": "present",
+      "confidence": 0.73,
+      "dims": {
+        "orientation": "side-by-side",
+        "relationship": "linked-selection"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 8,
+            "y": 52,
+            "width": 1423,
+            "height": 2138
+          },
+          "region": "document-viewer",
+          "note": "Document pane and tool pane side by side; clicking a chip in the doc loads its visualization in the right pane",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 8,
+            "y": 52,
+            "width": 1423,
+            "height": 2138
+          },
+          "note": "Document pane and study panel side by side; clicking a chip in the document switches the right panel to that visualization (verified live)",
+          "region": "document-pane",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 8,
+            "y": 52,
+            "width": 789,
+            "height": 2138
+          },
+          "region": "document-pane",
+          "note": "Left pane: document",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 806,
+            "y": 52,
+            "width": 625,
+            "height": 2137
+          },
+          "region": "side-panel",
+          "note": "Right pane: tool panel; clicking a concept chip in the doc switches the panel to that concept's visualization",
+          "rater": "rater-3"
+        }
+      ],
+      "ties": [
+        "dims.sizing"
+      ]
+    },
+    {
+      "id": "tabs",
+      "status": "uncertain",
+      "confidence": 0.5,
+      "dims": {
+        "placement": "top"
+      },
+      "support": 2,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 201,
+            "y": 6,
+            "width": 311,
+            "height": 38
+          },
+          "quote": "Cell_Biology_L07_-_Membr...",
+          "region": "top-bar",
+          "note": "Active document tab raised in white with document icon",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 202,
+            "y": 6,
+            "width": 310,
+            "height": 38
+          },
+          "quote": "Cell_Biology_L07_-_Membr...",
+          "region": "top-bar",
+          "note": "Active document tab with file icon, truncated title and MANUAL badge",
+          "rater": "rater-3"
+        }
+      ],
+      "ties": [
+        "dims.label",
+        "dims.origin"
+      ]
+    },
+    {
+      "id": "tooltip",
+      "status": "present",
+      "confidence": 0.7,
+      "dims": {
+        "trigger": [
+          "hover"
+        ],
+        "content": "label",
+        "placement": "below",
+        "timing": "until-the-pointer-leaves"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 358,
+            "y": 498,
+            "width": 96,
+            "height": 18
+          },
+          "region": "document-viewer",
+          "note": "Live: hovering a chip shows 'Formula: Fick's law of diffusion' label below it",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 535,
+            "y": 598,
+            "width": 96,
+            "height": 18
+          },
+          "quote": "Carrier...",
+          "region": "document-pane",
+          "note": "Live: hovering a chip shows a label tooltip below it, 'Graph: Carrier saturation'",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 419,
+            "y": 307,
+            "width": 96,
+            "height": 18
+          },
+          "quote": "Fluid mo...",
+          "region": "document-pane",
+          "note": "Truncated chips reveal full name on hover (live: '3D Model: Fluid mosaic membrane' shown below chip)",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "view-switcher",
+      "status": "absent",
+      "confidence": 0.6,
+      "dims": {},
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 826,
+            "y": 61,
+            "width": 153,
+            "height": 28
+          },
+          "note": "Dropdown switches between distinct tools, not representations of the same collection; coded as menu",
+          "rater": "rater-1"
+        }
+      ]
+    },
+    {
+      "id": "zoomable-canvas",
+      "status": "absent",
+      "confidence": 0.65,
+      "dims": {},
+      "support": 2,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 806,
+            "y": 200,
+            "width": 625,
+            "height": 1989
+          },
+          "note": "Graph is pannable/zoomable but is a data visualization, not a free-placed canvas",
+          "rater": "rater-1"
+        }
+      ]
+    }
+  ],
+  "note": "Majority vote across raters. Free-text fields (layout, typography, palette, notes) stay per rater in labels/.",
+  "computedAt": "2026-11-16T17:54:49.009Z"
+}

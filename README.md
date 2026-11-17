@@ -248,6 +248,11 @@ claude auth status                  # real labeling runs use the local Claude Co
 
 ### Commands
 
+Step-by-step runbooks for the generated-UI and repo pipelines — prerequisites,
+ordered commands, expected outputs and troubleshooting — are in
+[`docs/running-pipelines.md`](docs/running-pipelines.md). This table is a quick
+reference.
+
 | What                                                            | Command                                                              |
 | --------------------------------------------------------------- | -------------------------------------------------------------------- |
 | Validate the codebook (CI gate)                                 | `node scripts/validate-codebook.ts`                                  |
@@ -555,7 +560,12 @@ runs third-party servers, so both are sandboxed (`src/repos/sandbox.ts`). The
 setup agent's Bash runs in Claude Code's sandbox. It can write only inside the
 checkout (package-manager caches are pointed there). It can reach only the
 hosts in `setup.network`: package registries, mise's download sources and
-GitHub, but not the GitHub API. Credential dirs (`~/.ssh`, `~/.aws`, `~/.config/gh`, …) are unreadable,
+GitHub, but not the GitHub API. The sandbox runs with
+`enableWeakerNetworkIsolation`, which lets it reach macOS's trustd service.
+mise checks certificates through that service, and without it every
+download fails with `OSStatus -26276`. Claude Code marks this setting as
+weaker isolation, because trustd is a possible low-bandwidth leak path.
+Credential dirs (`~/.ssh`, `~/.aws`, `~/.config/gh`, …) are unreadable,
 and the file tools are denied the same paths. The session gets an
 allowlisted environment (PATH, HOME, locale, the checkout's caches and
 `CLAUDE_CONFIG_DIR`), so tokens or keys you have exported don't reach install

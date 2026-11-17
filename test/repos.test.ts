@@ -176,6 +176,7 @@ test('sandbox settings and runtime profile', () => {
   assert.equal(s.sandbox.enabled, true);
   assert.equal(s.sandbox.allowUnsandboxedCommands, false);
   assert.equal(s.sandbox.network.allowLocalBinding, true);
+  assert.equal(s.sandbox.enableWeakerNetworkIsolation, true);
   assert.ok(s.sandbox.filesystem.denyRead.includes('~/.ssh'));
   const p = runtimeProfile(['/work/x'], '/home/u');
   assert.match(p, /\(subpath "\/work\/x"\)/);

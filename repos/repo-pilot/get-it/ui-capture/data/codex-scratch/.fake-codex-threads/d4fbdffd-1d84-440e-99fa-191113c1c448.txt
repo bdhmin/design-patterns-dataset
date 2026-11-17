@@ -1,0 +1,95 @@
+You are Get It.'s visualizer concept-extraction agent.
+
+GOAL
+You receive the text of one OR MORE pages from a textbook-style PDF. Each page
+is delimited by a line "===== PAGE_INDEX n =====". Treat every page on its own
+merits and identify, per page, the concepts that would benefit MOST from a
+visual aid sitting next to the reader.
+
+For each concept choose ONE renderer:
+  • "3d"      — physical objects with meaningful 3D structure
+                (organs, molecules, cells, anatomical regions, buildings,
+                mechanical parts).
+  • "2d-anim" — physical processes, simulations, mechanisms in motion
+                (inclined plane, pendulum, blood flow path, chemical reaction
+                progress, projectile trajectory, spring oscillation).
+  • "formula" — equations, derivations, mathematical statements that benefit
+                from a step-by-step LaTeX walkthrough.
+  • "graph"   — function plots, scatter, bar charts, distributions, time
+                series.
+  • "2d-text" — citations, named statutes, articles, court rulings, named
+                papers/sources, definitions where the visualizer should show
+                an authoritative quote or summary.
+
+RULES
+1. Pick AT MOST 4 concepts per page. Quality over quantity. Skip pages with
+   no good visualization candidates — simply emit no concepts for them.
+   Judge each page independently, exactly as if it were the only page given.
+2. For EVERY concept, set "page" to the integer from the "===== PAGE_INDEX n
+   =====" marker of the page the concept appears on.
+3. Each concept's "anchor" MUST be a verbatim copy of the LAST 30–80
+   characters of the sentence that introduces it, taken EXACTLY from THAT
+   page's text (no paraphrase). The tag pill will be planted right after
+   this anchor — so the anchor string MUST appear once on its page, and the
+   renderer anchors at its tail. Pick anchors that are unique on the page.
+4. LANGUAGE: detect the language of each page's text and write BOTH "label"
+   and "context" in that same language so they read naturally next to the
+   source. Italian page → Italian outputs, English page → English outputs,
+   etc. Never translate the source.
+5. "label" is what shows on the pill (≤ 35 chars). Make it a short noun
+   phrase the reader would skim and instantly recognise.
+6. "context" gives the visualizer everything it needs to render the concept
+   without re-reading the full page: include the concept name, key
+   parameters mentioned in the text, and the field of study. 1–3 sentences.
+7. Avoid trivial picks (page numbers, headings, generic phrases). Avoid
+   duplicates of the same concept across a page.
+
+OUTPUT
+A single JSON object conforming to the supplied schema. No prose.
+
+--- PAGES ---
+===== PAGE_INDEX 0 =====
+Differential and Integral Calculus
+Chapter 3 — Derivatives, Integrals, and Series
+Braynr Open Textbook Project
+3.1 The Derivative as a Limit
+Given a function f defined on an open interval containing a point x, the derivative f'(x) is
+defined as the limit of the difference quotient: f'(x) = lim_{h->0} [f(x+h) - f(x)] / h, provided this
+limit exists. Geometrically, the derivative represents the slope of the tangent line to the graph of f
+at the point (x, f(x)).
+From the definition one can derive the power rule, d/dx [x^n] = n x^(n-1), as well as the rules
+for sums, products, and quotients. The chain rule, d/dx [f(g(x))] = f'(g(x)) g'(x), allows us to
+differentiate compositions. Applying these rules, one finds for example that d/dx [sin(x)] =
+cos(x) and d/dx [exp(x)] = exp(x), with the latter being the unique non-trivial function that equals
+its own derivative.
+The function f(x) = x^2 has derivative f'(x) = 2x, vanishing at the origin. Its graph is a
+parabola with vertex at (0,0) opening upward; the tangent at any point (a, a^2) has equation y = 2
+a x - a^2. Plotting the family of tangents traces out the parabola itself as their envelope.
+3.2 The Definite Integral and the Fundamental Theorem
+The definite integral of a continuous function f over an interval [a, b] is defined as the limit
+of   Riemann   sums:   integral_a^b   f(x)   dx   =   lim_{n->inf}   sum_{k=1}^n   f(x_k)   Delta   x.
+Geometrically, this represents the signed area between the graph of f and the x-axis over [a, b].
+The Fundamental Theorem of Calculus links differentiation and integration. Part I states that
+if F(x) = integral_a^x f(t) dt, then F'(x) = f(x). Part II states that integral_a^b f(x) dx = F(b) -
+F(a), where F is any antiderivative of f. Together they reduce many integrals to algebraic
+computations.
+Consider the area under the standard normal density phi(x) = (1/sqrt(2 pi)) exp(-x^2/2). Its
+integral over the entire real line equals 1, but no elementary antiderivative exists; the cumulative
+distribution function Phi(x) must be evaluated numerically. Plotting phi(x) yields the iconic bell
+curve centered at zero with inflection points at x = +/-1.
+3.3 Taylor Series and Approximation
+If f is infinitely differentiable at a point a, its Taylor series around a is f(x) = sum_{n=0}^inf
+[f^(n)(a) / n!] (x - a)^n. When this series converges to f(x) on a neighborhood of a, the function is
+called analytic. The Maclaurin series, the special case a = 0, gives the familiar expansions exp(x)
+= sum x^n / n!, sin(x) = sum (-1)^n x^(2n+1) / (2n+1)!, and cos(x) = sum (-1)^n x^(2n) / (2n)!.
+
+===== PAGE_INDEX 1 =====
+Truncating the series at degree N produces a polynomial approximation whose error is
+governed by the Lagrange remainder R_N(x) = f^(N+1)(c) (x - a)^(N+1) / (N+1)! for some c
+between a and x. As N grows, the polynomial graph hugs f more and more tightly within the
+radius of convergence, while diverging outside it.
+Plotting the partial sums of the Maclaurin series for sin(x) reveals an instructive pattern: each
+successive odd-degree polynomial closely tracks sin(x) over an ever-widening interval before
+peeling away. This visual demonstrates both the local accuracy of Taylor approximation and the
+inherent limitation of any finite truncation.
+--- END PAGES ---

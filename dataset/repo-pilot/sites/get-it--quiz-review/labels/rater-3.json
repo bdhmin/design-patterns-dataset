@@ -1,0 +1,628 @@
+{
+  "schemaVersion": "1.0.0",
+  "codebookVersion": "1.0.0",
+  "batch": "repo-pilot",
+  "site": {
+    "slug": "get-it--quiz-review",
+    "url": "http://localhost:4401/viewer/994a113e-e7ba-4f78-926a-7154208adfff",
+    "finalUrl": "http://localhost:4401/viewer/994a113e-e7ba-4f78-926a-7154208adfff",
+    "status": 200,
+    "title": "Get It.",
+    "capturedAt": "2026-11-16T17:54:43.025Z",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "screenshot": {
+      "ref": "capture/screenshot.png",
+      "width": 1440,
+      "height": 2198
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.8127.18 Safari/537.36",
+    "domain": "education",
+    "domainNote": "AI study tool: lecture PDF viewer with inline concept visualizations and generated quizzes/flashcards/chat",
+    "provenance": {
+      "source": "repo",
+      "record": "repos/repo-pilot/get-it/explore.json",
+      "repo": {
+        "name": "beltromatti/get-it",
+        "url": "https://github.com/beltromatti/get-it",
+        "commit": "ae0fa999f352b951ab8150fac5dcf9d7ab6fd9a4",
+        "license": "Apache-2.0"
+      },
+      "view": {
+        "slug": "quiz-review",
+        "name": "Quiz question review",
+        "description": "Quizzes pane beside the document: new-quiz form and past quizzes list, with a graded multiple-choice question showing the correct answer and explanation."
+      }
+    }
+  },
+  "regions": [
+    {
+      "id": "top-bar",
+      "role": "header",
+      "label": "App top bar: Upload, Library links, open document tab with MANUAL badge, Synced / viz-ready status pills, settings and account icons",
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 46
+      },
+      "patterns": [
+        "app-shell",
+        "tabs",
+        "badge"
+      ]
+    },
+    {
+      "id": "document-viewer",
+      "role": "main-content",
+      "label": "Paged lecture PDF rendered on canvas with coloured inline concept chips, floating page (1/2) and zoom controls",
+      "bbox": {
+        "x": 8,
+        "y": 52,
+        "width": 789,
+        "height": 2138
+      },
+      "patterns": [
+        "reader",
+        "pagination",
+        "annotation",
+        "split-pane"
+      ]
+    },
+    {
+      "id": "tool-panel-header",
+      "role": "toolbar",
+      "label": "Right panel header: tool mode dropdown 'Quizzes' with description and overflow button",
+      "bbox": {
+        "x": 806,
+        "y": 52,
+        "width": 625,
+        "height": 46
+      },
+      "patterns": [
+        "menu"
+      ]
+    },
+    {
+      "id": "quiz-sidebar",
+      "role": "sidebar",
+      "label": "New quiz composer (topic field + Generate quiz) and list of past quizzes with progress bars",
+      "bbox": {
+        "x": 806,
+        "y": 98,
+        "width": 224,
+        "height": 290
+      },
+      "patterns": [
+        "prompt-input",
+        "overview-detail",
+        "card",
+        "progress-indicator",
+        "badge"
+      ]
+    },
+    {
+      "id": "quiz-detail",
+      "role": "detail",
+      "label": "Active quiz: progress bar, question counter, question card, four lettered answer options with correct one highlighted, explanation and Next question button",
+      "bbox": {
+        "x": 1030,
+        "y": 98,
+        "width": 401,
+        "height": 580
+      },
+      "patterns": [
+        "choice-control",
+        "progress-indicator",
+        "badge",
+        "overview-detail"
+      ]
+    }
+  ],
+  "patterns": [
+    {
+      "id": "app-shell",
+      "status": "present",
+      "confidence": 0.8,
+      "dims": {
+        "primary": "top-navigation-bar",
+        "secondary": "none",
+        "items": [
+          "fixed-destinations"
+        ],
+        "visibility": "always-visible",
+        "structure": "document-tabs"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 46
+          },
+          "quote": "Upload Library",
+          "region": "top-bar",
+          "note": "Persistent top bar with global destinations, document tab, status and account"
+        }
+      ]
+    },
+    {
+      "id": "tabs",
+      "status": "present",
+      "confidence": 0.6,
+      "dims": {
+        "placement": "top",
+        "label": [
+          "favicon-and-title",
+          "badge-count"
+        ],
+        "origin": "created-by-the-person",
+        "grouping": "flat"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 202,
+            "y": 6,
+            "width": 310,
+            "height": 40
+          },
+          "quote": "Cell_Biology_L07_-_Membr...",
+          "region": "top-bar",
+          "note": "Browser-like document tab with file icon, truncated title and MANUAL label; only one open"
+        }
+      ]
+    },
+    {
+      "id": "badge",
+      "status": "present",
+      "confidence": 0.8,
+      "dims": {
+        "meaning": "status",
+        "aggregation": "per-item"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 426,
+            "y": 13,
+            "width": 86,
+            "height": 21
+          },
+          "quote": "MANUAL",
+          "region": "top-bar",
+          "note": "label pill on document tab"
+        },
+        {
+          "bbox": {
+            "x": 1120,
+            "y": 11,
+            "width": 122,
+            "height": 26
+          },
+          "quote": "Synced 33d ago",
+          "region": "top-bar"
+        },
+        {
+          "bbox": {
+            "x": 1250,
+            "y": 11,
+            "width": 106,
+            "height": 26
+          },
+          "quote": "7/7 viz ready",
+          "region": "top-bar"
+        },
+        {
+          "bbox": {
+            "x": 1330,
+            "y": 171,
+            "width": 78,
+            "height": 26
+          },
+          "quote": "Correct",
+          "region": "quiz-detail",
+          "note": "green status pill for answer correctness"
+        }
+      ]
+    },
+    {
+      "id": "reader",
+      "status": "present",
+      "confidence": 0.8,
+      "dims": {
+        "pagination": "fixed-layout",
+        "typography": [
+          "size-and-spacing"
+        ]
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 41,
+            "y": 84,
+            "width": 723,
+            "height": 1023
+          },
+          "quote": "Cell Biology — Lecture 7: Membrane Transport",
+          "region": "document-viewer",
+          "note": "PDF page rendered as canvas; pages stacked with 'page 1' label; zoom 100% +/-"
+        }
+      ]
+    },
+    {
+      "id": "pagination",
+      "status": "present",
+      "confidence": 0.75,
+      "dims": {
+        "mechanism": "next-and-previous",
+        "position": "page-n-of-m",
+        "pageSize": "fixed"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 349,
+            "y": 2144,
+            "width": 108,
+            "height": 32
+          },
+          "quote": "1 / 2",
+          "region": "document-viewer",
+          "note": "Floating pill with prev/next page arrows and 'Jump to page' counter"
+        }
+      ]
+    },
+    {
+      "id": "split-pane",
+      "status": "present",
+      "confidence": 0.7,
+      "dims": {
+        "orientation": "side-by-side",
+        "relationship": "linked-selection"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 8,
+            "y": 52,
+            "width": 1423,
+            "height": 2138
+          },
+          "region": "document-viewer",
+          "note": "Document pane left, tool pane right; clicking an inline chip in the document loads its visualization in the right pane (verified live)"
+        }
+      ]
+    },
+    {
+      "id": "annotation",
+      "status": "uncertain",
+      "confidence": 0.45,
+      "rationale": "Coloured chips are anchored to text spans and open content in the side panel, but they are system-generated visualization links, not discussion/comments on a shared artifact.",
+      "dims": {
+        "anchor": "text-range",
+        "layout": "side-margin-panel"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 419,
+            "y": 307,
+            "width": 96,
+            "height": 18
+          },
+          "quote": "Fluid mo...",
+          "region": "document-viewer",
+          "note": "3D Model chip"
+        },
+        {
+          "bbox": {
+            "x": 535,
+            "y": 598,
+            "width": 96,
+            "height": 18
+          },
+          "quote": "Carrier...",
+          "region": "document-viewer",
+          "note": "Graph chip, selected (dark outline)"
+        }
+      ]
+    },
+    {
+      "id": "menu",
+      "status": "present",
+      "confidence": 0.8,
+      "dims": {
+        "openBy": "button-click",
+        "structure": "flat",
+        "item": [
+          "label",
+          "icon",
+          "description"
+        ],
+        "itemSet": "fixed",
+        "form": "vertical-list"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 826,
+            "y": 61,
+            "width": 99,
+            "height": 28
+          },
+          "quote": "Quizzes",
+          "region": "tool-panel-header",
+          "note": "Dropdown trigger; live it lists Visualizer, Knowledge Graph, Chat, Flashcards, Quizzes, Feynman with icons and descriptions"
+        }
+      ]
+    },
+    {
+      "id": "prompt-input",
+      "status": "present",
+      "confidence": 0.65,
+      "dims": {
+        "content": [
+          "plain-prompt"
+        ],
+        "layout": "sidebar-composer",
+        "submitBy": [
+          "click-send"
+        ],
+        "assistance": [
+          "placeholder-examples"
+        ]
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 814,
+            "y": 106,
+            "width": 207,
+            "height": 128
+          },
+          "quote": "Topic, or whole doc",
+          "region": "quiz-sidebar",
+          "note": "Topic field + 'Generate quiz' button with sparkle icon triggers AI generation"
+        }
+      ]
+    },
+    {
+      "id": "overview-detail",
+      "status": "present",
+      "confidence": 0.7,
+      "dims": {
+        "openIn": "side-by-side",
+        "overviewType": [
+          "list"
+        ],
+        "detailMultiplicity": "one-at-a-time",
+        "openBy": [
+          "click"
+        ],
+        "openFrom": "whole-item",
+        "relationship": "one-to-one",
+        "attributePlacement": [
+          "in-both-views"
+        ]
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 814,
+            "y": 262,
+            "width": 207,
+            "height": 125
+          },
+          "quote": "PAST QUIZZES 2",
+          "region": "quiz-sidebar",
+          "note": "List of past quizzes; the selected one (white card) shown in detail at right"
+        },
+        {
+          "bbox": {
+            "x": 1030,
+            "y": 98,
+            "width": 401,
+            "height": 580
+          },
+          "quote": "Whole document 4/4 answered",
+          "region": "quiz-detail"
+        }
+      ]
+    },
+    {
+      "id": "card",
+      "status": "present",
+      "confidence": 0.6,
+      "dims": {
+        "media": "none",
+        "actions": "none",
+        "shape": "horizontal",
+        "style": "filled",
+        "target": "whole-card"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 814,
+            "y": 262,
+            "width": 207,
+            "height": 60
+          },
+          "quote": "Whole document 4/4 questions done",
+          "region": "quiz-sidebar",
+          "note": "Selected past-quiz item as white card; unselected item is borderless"
+        }
+      ]
+    },
+    {
+      "id": "progress-indicator",
+      "status": "present",
+      "confidence": 0.8,
+      "dims": {
+        "determinacy": "steps-completed",
+        "form": "linear-bar",
+        "coverage": "a-region",
+        "control": "no-control"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1050,
+            "y": 108,
+            "width": 361,
+            "height": 34
+          },
+          "quote": "4/4 answered",
+          "region": "quiz-detail",
+          "note": "Indigo linear bar of quiz completion"
+        },
+        {
+          "bbox": {
+            "x": 820,
+            "y": 292,
+            "width": 195,
+            "height": 24
+          },
+          "quote": "4/4 questions done",
+          "region": "quiz-sidebar"
+        }
+      ]
+    },
+    {
+      "id": "choice-control",
+      "status": "present",
+      "confidence": 0.8,
+      "dims": {
+        "cardinality": "single-choice",
+        "form": "option-cards",
+        "option": [
+          "label-only"
+        ],
+        "timing": "immediately",
+        "largeSets": "show-all"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1054,
+            "y": 314,
+            "width": 353,
+            "height": 216
+          },
+          "quote": "B Carrier-mediated transport",
+          "region": "quiz-detail",
+          "note": "Four lettered answer rows; chosen correct answer green with check, others disabled after answering"
+        }
+      ]
+    },
+    {
+      "id": "chart",
+      "status": "absent",
+      "confidence": 0.7,
+      "dims": {},
+      "evidence": [
+        {
+          "bbox": {
+            "x": 806,
+            "y": 52,
+            "width": 625,
+            "height": 600
+          },
+          "note": "Chart only appears after clicking a Graph chip live; not in capture"
+        }
+      ]
+    },
+    {
+      "id": "text-field",
+      "status": "absent",
+      "confidence": 0.5,
+      "rationale": "The only input is the quiz topic field, coded as prompt-input instead.",
+      "dims": {},
+      "evidence": [
+        {
+          "bbox": {
+            "x": 823,
+            "y": 155,
+            "width": 189,
+            "height": 32
+          }
+        }
+      ]
+    }
+  ],
+  "structure": {
+    "layout": "Desktop app with top tab bar; two-pane workspace: large paged PDF viewer on left, tool panel on right subdivided into a narrow quiz-list sidebar and a quiz detail column",
+    "regions": [
+      "top-bar",
+      "document-viewer",
+      "tool-panel-header",
+      "quiz-sidebar",
+      "quiz-detail"
+    ],
+    "density": "medium"
+  },
+  "aesthetics": {
+    "palette": [
+      "#f6f5f2",
+      "#ffffff",
+      "#111113",
+      "#6a6a6e",
+      "#4f5ae0",
+      "#d1fae5",
+      "#064e3b",
+      "#ececea",
+      "#fde8ec",
+      "#d9e9f9"
+    ],
+    "colorRoles": {
+      "background": "#f6f5f2",
+      "surface": "#ffffff",
+      "text": "#111113",
+      "muted": "#6a6a6e",
+      "primary": "#111113",
+      "accent": "#4f5ae0",
+      "success": "#d1fae5",
+      "border": "#ececea"
+    },
+    "typography": "GeistSans throughout the UI (labels, buttons, quiz text); the PDF content renders in a Helvetica/Arial-like sans in a canvas",
+    "typeScale": "Compact UI scale: 16px question/options, 12-14px controls and labels, 10-11px uppercase eyebrow labels and chip text; weights 400-600; PDF headings larger (~24-28px bold)",
+    "shape": "soft",
+    "elevation": "subtle-shadows",
+    "borders": "thin",
+    "imagery": [
+      "iconography"
+    ],
+    "iconStyle": "line",
+    "whitespace": "moderate",
+    "backgroundTreatment": "solid",
+    "mood": [
+      "clean",
+      "calm",
+      "technical",
+      "studious",
+      "neutral"
+    ]
+  },
+  "model": {
+    "rater": "rater-3",
+    "provider": "claude-code",
+    "name": "claude-opus-5-5",
+    "effort": "high",
+    "generatedAt": "2026-11-16T17:56:20.315Z",
+    "servedBy": [
+      "claude-opus-5-5"
+    ],
+    "turns": 10,
+    "usage": {
+      "input_tokens": 20,
+      "cache_creation_input_tokens": 40598,
+      "cache_read_input_tokens": 331573,
+      "output_tokens": 11403
+    }
+  },
+  "notes": "Warm off-white (#f6f5f2) app background with white panels and hairline #ececea borders; near-black (#111113) primary buttons. Signature element: pill chips inline in the PDF text, colour-coded by visualization type (pink 3D model, lavender formula, blue graph, amber animation, green source) with a type icon and truncated label; clicking one swaps the right panel to Visualizer mode and shows e.g. a chart, with a hover tooltip naming it. Right panel mode menu offers Visualizer, Knowledge Graph, Chat, Flashcards, Quizzes, Feynman. Quiz uses lettered option rows, mint-green correct state, and a grey 'WHY THIS IS RIGHT' explanation box. Floating pill controls for page and zoom at bottom of the viewer."
+}

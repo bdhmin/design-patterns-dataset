@@ -1,0 +1,114 @@
+{
+ "pageBackground": "#fafafa",
+ "backgroundsByArea": [
+  {
+   "color": "#fafafa",
+   "share": 0.8448
+  },
+  {
+   "color": "#cc7d24",
+   "share": 0.0502
+  },
+  {
+   "color": "#686868",
+   "share": 0.0472
+  },
+  {
+   "color": "#232323",
+   "share": 0.0444
+  },
+  {
+   "color": "#919191",
+   "share": 0.0084
+  },
+  {
+   "color": "#facc15",
+   "share": 0.0033
+  },
+  {
+   "color": "#fb7185",
+   "share": 0.0017
+  }
+ ],
+ "textColors": [
+  {
+   "color": "#232323",
+   "chars": 893
+  },
+  {
+   "color": "#686868",
+   "chars": 597
+  },
+  {
+   "color": "#919191",
+   "chars": 214
+  },
+  {
+   "color": "#cc7d24",
+   "chars": 83
+  },
+  {
+   "color": "#fb7185",
+   "chars": 13
+  },
+  {
+   "color": "#4ade80",
+   "chars": 10
+  },
+  {
+   "color": "#fafafa",
+   "chars": 8
+  }
+ ],
+ "fonts": [
+  {
+   "family": "-apple-system",
+   "textNodes": 87
+  },
+  {
+   "family": "ui-monospace",
+   "textNodes": 2
+  }
+ ],
+ "fontSizes": [
+  {
+   "px": 23,
+   "textNodes": 1
+  },
+  {
+   "px": 17,
+   "textNodes": 19
+  },
+  {
+   "px": 15,
+   "textNodes": 32
+  },
+  {
+   "px": 13,
+   "textNodes": 37
+  }
+ ],
+ "radii": [
+  {
+   "radius": "9999px",
+   "boxes": 50
+  },
+  {
+   "radius": "3.75px",
+   "boxes": 33
+  },
+  {
+   "radius": "11.25px",
+   "boxes": 23
+  },
+  {
+   "radius": "7.5px",
+   "boxes": 3
+  }
+ ],
+ "boxesMeasured": 555,
+ "shadowedShare": 0,
+ "borderedShare": 0.002,
+ "gradientBackgrounds": 0,
+ "imageBackgrounds": 0
+}

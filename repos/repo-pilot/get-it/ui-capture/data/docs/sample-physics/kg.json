@@ -1,0 +1,178 @@
+{
+  "v": 1,
+  "docId": "sample-physics",
+  "status": "ready",
+  "buildAt": 1788898530000,
+  "lastEvaluatedAt": 1792422000000,
+  "evaluationCount": 13,
+  "nodes": [
+    {
+      "id": "inclined-plane-forces",
+      "label": "Inclined plane forces",
+      "summary": "Block sliding on a slope: mg sin(theta) along the plane, normal force balancing mg cos(theta).",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 49,
+        "comprehension": 36,
+        "structure": 27,
+        "application": 25
+      },
+      "evaluatorNote": "Recalls the definition but hesitated applying it to an unseen example."
+    },
+    {
+      "id": "acceleration-with-friction",
+      "label": "Acceleration with friction",
+      "summary": "Net acceleration on an incline with kinetic friction.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 94,
+        "comprehension": 77,
+        "structure": 73,
+        "application": 69
+      },
+      "evaluatorNote": "Strong: correct on every quiz item and used it in own words in chat."
+    },
+    {
+      "id": "pendulum-period",
+      "label": "Pendulum period",
+      "summary": "Simple pendulum, small-angle SHM with period 2 pi sqrt(L/g).",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 56,
+        "comprehension": 42,
+        "structure": 37,
+        "application": 26
+      },
+      "evaluatorNote": "Recalls the definition but hesitated applying it to an unseen example."
+    },
+    {
+      "id": "range-vs-launch-angle",
+      "label": "Range vs launch angle",
+      "summary": "Range of a projectile as alpha sweeps 0 to 90 degrees.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 79,
+        "comprehension": 64,
+        "structure": 51,
+        "application": 52
+      },
+      "evaluatorNote": "Good recognition on quizzes; explanations still lean on the textbook's wording."
+    },
+    {
+      "id": "tacoma-narrows-collapse",
+      "label": "Tacoma Narrows collapse",
+      "summary": "Resonance and aeroelastic flutter in the 1940 Tacoma Narrows bridge failure.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 0,
+        "comprehension": 0,
+        "structure": 0,
+        "application": 0
+      },
+      "evaluatorNote": "Missed both quiz items on this; revisit the worked example on the page."
+    },
+    {
+      "id": "energy-conservation",
+      "label": "Energy on the incline",
+      "summary": "v = sqrt(2gh) on a frictionless slope, independent of angle.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 90,
+        "comprehension": 73,
+        "structure": 71,
+        "application": 65
+      },
+      "evaluatorNote": "Solid recall and a clean Feynman explanation — ready for exam-style problems."
+    },
+    {
+      "id": "damping-resonance",
+      "label": "Damping and resonance",
+      "summary": "Exponential amplitude decay; resonance at omega = omega_0.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 82,
+        "comprehension": 65,
+        "structure": 60,
+        "application": 56
+      },
+      "evaluatorNote": "Recalls the definition but hesitated applying it to an unseen example."
+    },
+    {
+      "id": "drag",
+      "label": "Air drag",
+      "summary": "Linear at low Reynolds, quadratic at high speed; asymmetric trajectories.",
+      "pageHints": [
+        2
+      ],
+      "evaluation": {
+        "memory": 88,
+        "comprehension": 70,
+        "structure": 63,
+        "application": 57
+      },
+      "evaluatorNote": "Explains it unprompted and applies it to new cases; keep it warm with spaced review."
+    }
+  ],
+  "edges": [
+    {
+      "source": "inclined-plane-forces",
+      "target": "acceleration-with-friction",
+      "relation": "requires"
+    },
+    {
+      "source": "acceleration-with-friction",
+      "target": "pendulum-period",
+      "relation": "contrasts with"
+    },
+    {
+      "source": "inclined-plane-forces",
+      "target": "range-vs-launch-angle",
+      "relation": "contrasts with"
+    },
+    {
+      "source": "pendulum-period",
+      "target": "tacoma-narrows-collapse",
+      "relation": "requires"
+    },
+    {
+      "source": "acceleration-with-friction",
+      "target": "energy-conservation",
+      "relation": "explains"
+    },
+    {
+      "source": "energy-conservation",
+      "target": "damping-resonance",
+      "relation": "explains"
+    },
+    {
+      "source": "damping-resonance",
+      "target": "drag",
+      "relation": "is an example of"
+    },
+    {
+      "source": "range-vs-launch-angle",
+      "target": "energy-conservation",
+      "relation": "is related to"
+    },
+    {
+      "source": "pendulum-period",
+      "target": "inclined-plane-forces",
+      "relation": "is related to"
+    }
+  ],
+  "globalNote": "Halfway there. Definitions are in place, but links between concepts are shaky. Focus on \"Tacoma Narrows collapse\" and try explaining how it connects to its neighbours."
+}

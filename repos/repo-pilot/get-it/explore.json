@@ -1,0 +1,161 @@
+{
+  "batch": "repo-pilot",
+  "slug": "get-it",
+  "ok": true,
+  "entry": "/library",
+  "views": [
+    {
+      "slug": "library",
+      "name": "Library",
+      "description": "List of all uploaded study documents with page counts, last-opened dates, visualization and knowledge-graph status badges.",
+      "path": "/library",
+      "steps": [],
+      "title": "Get It.",
+      "similarity": 0.981,
+      "preview": "views/library.png"
+    },
+    {
+      "slug": "viewer-visualizer",
+      "name": "Document viewer with visualizer",
+      "description": "Lecture PDF with inline concept tag pills on the left and the Visualizer pane on the right showing a generated graph for the selected concept.",
+      "path": "/viewer/994a113e-e7ba-4f78-926a-7154208adfff",
+      "steps": [
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "name": "Graph: Carrier saturation"
+          }
+        }
+      ],
+      "title": "Get It.",
+      "similarity": 1,
+      "preview": "views/viewer-visualizer.png"
+    },
+    {
+      "slug": "knowledge-graph",
+      "name": "Knowledge graph pane",
+      "description": "Document viewer with the right pane switched to the knowledge graph: an AI evaluation summary above a node-link map of concepts colored by mastery.",
+      "path": "/viewer/994a113e-e7ba-4f78-926a-7154208adfff",
+      "steps": [
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "name": "Visualizer"
+          }
+        },
+        {
+          "action": "click",
+          "target": {
+            "text": "Knowledge Graph"
+          }
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "name": "Fit graph"
+          }
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "name": "Zoom out",
+            "nth": 1
+          }
+        }
+      ],
+      "title": "Get It.",
+      "similarity": 1,
+      "preview": "views/knowledge-graph.png"
+    },
+    {
+      "slug": "quiz-review",
+      "name": "Quiz question review",
+      "description": "Quizzes pane beside the document: new-quiz form and past quizzes list, with a graded multiple-choice question showing the correct answer and explanation.",
+      "path": "/viewer/994a113e-e7ba-4f78-926a-7154208adfff",
+      "steps": [
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "name": "Visualizer"
+          }
+        },
+        {
+          "action": "click",
+          "target": {
+            "text": "Forced-choice multiple-choice quizzes"
+          }
+        },
+        {
+          "action": "click",
+          "target": {
+            "text": "Whole document",
+            "nth": 0
+          }
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "name": "1",
+            "exact": true
+          }
+        }
+      ],
+      "title": "Get It.",
+      "similarity": 1,
+      "preview": "views/quiz-review.png"
+    },
+    {
+      "slug": "document-chat",
+      "name": "Document chat",
+      "description": "Chat pane beside the lecture document with a thread list, a user question and an AI answer, and a message composer.",
+      "path": "/viewer/994a113e-e7ba-4f78-926a-7154208adfff",
+      "steps": [
+        {
+          "action": "click",
+          "target": {
+            "css": "header button",
+            "nth": 0
+          }
+        },
+        {
+          "action": "click",
+          "target": {
+            "text": "Multi-turn Q&A about the document"
+          }
+        }
+      ],
+      "title": "Get It.",
+      "similarity": 1,
+      "preview": "views/document-chat.png"
+    }
+  ],
+  "summary": "get-it is an AI study companion: you upload lecture PDFs, it tags concepts inline and builds visualizations, knowledge graphs, chat, flashcards, quizzes and Feynman sessions for them. Five views saved, all replayed and matched (similarity 0.98 for the library, 1.00 for the rest).\n1. library: /library, the list of 13 documents with status badges.\n2. viewer-visualizer: the Cell Biology viewer, with tag pills on the PDF on the left and the \"Carrier saturation\" graph in the Visualizer pane on the right.\n3. knowledge-graph: the same document with the right pane set to Knowledge Graph, showing the AI evaluation summary and the concept map, zoomed out one step.\n4. quiz-review: the Quizzes pane, with the new-quiz form, the list of past quizzes and the graded question 1 with its explanation.\n5. document-chat: the Chat pane, with the thread list, a question and AI answer, and the message box.\n\nReplay notes:\n- The right-pane mode sometimes carries over between page loads. The chat view opens the mode menu with a CSS selector (first header button), so it works whatever mode was last open.\n- The other viewer views click the \"Visualizer\" button first, which worked in the fresh-browser replays.\n\nNot saved:\n- Flashcards: same layout as Quizzes.\n- Feynman: no sessions on this document.\n- Upload page, and the Settings and Account popovers in the top bar.",
+  "explorer": {
+    "provider": "claude-code",
+    "model": "claude-opus-5-5",
+    "effort": "high"
+  },
+  "outcome": {
+    "finished": true,
+    "reason": "stopped",
+    "turns": 26,
+    "servedBy": [
+      "claude-opus-5-5"
+    ],
+    "usage": {
+      "input_tokens": 52,
+      "cache_creation_input_tokens": 80949,
+      "cache_read_input_tokens": 1013899,
+      "output_tokens": 5796
+    }
+  },
+  "actions": 31,
+  "startedAt": "2026-11-16T07:31:26.077Z",
+  "finishedAt": "2026-11-16T07:33:47.883Z"
+}

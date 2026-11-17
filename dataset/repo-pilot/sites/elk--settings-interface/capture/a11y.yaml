@@ -1,0 +1,100 @@
+- main:
+  - complementary:
+    - link "Elk":
+      - /url: /home
+      - img
+      - text: Elk
+    - button "Go back"
+    - navigation:
+      - link "Home":
+        - /url: /home
+      - link "Notifications":
+        - /url: /notifications
+      - link "Conversations":
+        - /url: /conversations
+      - link "Favorites":
+        - /url: /favourites
+      - link "Bookmarks":
+        - /url: /bookmarks
+      - link "Compose":
+        - /url: /compose
+      - link "Scheduled posts":
+        - /url: /scheduled-posts
+      - link "Explore":
+        - /url: /localhost:4410/explore
+      - link "Local":
+        - /url: /localhost:4410/public/local
+      - link "Federated":
+        - /url: /localhost:4410/public
+      - link "Lists":
+        - /url: /localhost:4410/lists
+      - link "Hashtags":
+        - /url: /hashtags
+      - link "Collections":
+        - /url: /localhost:4410/collections
+      - link "Settings":
+        - /url: /settings
+    - paragraph:
+      - text: Viewing
+      - strong: localhost:4410
+      - text: public data
+    - paragraph: Sign in to follow profiles or hashtags, favorite, share and reply to posts.
+    - button "Sign in"
+  - link "Interface":
+    - /url: /settings/interface
+    - paragraph: Interface
+  - link "Language":
+    - /url: /settings/language
+    - paragraph: Language
+  - link "Preferences":
+    - /url: /settings/preferences
+    - paragraph: Preferences
+  - link "Logged in users":
+    - /url: /settings/users
+    - paragraph: Logged in users
+  - link "About":
+    - /url: /settings/about
+    - paragraph: About
+  - heading "Font Size" [level=2]
+  - text: Aa
+  - slider "Font Size": "5"
+  - text: Aa
+  - heading "Color Mode" [level=2]
+  - group "Color Mode":
+    - button "Dark"
+    - button "Light"
+    - button "System" [pressed]
+  - heading "Theme Color" [level=2]
+  - group "Theme Color":
+    - button "#cc7d24" [pressed]
+    - button "#8d9614"
+    - button "#24a451"
+    - button "#00a99b"
+    - button "#00a6df"
+    - button "#0097fd"
+    - button "#a27be7"
+    - button "#e65da9"
+    - button "#ef6061"
+  - heading "Bottom Navigation" [level=2]
+  - form "Bottom Navigation":
+    - paragraph: Choose your favorite navigation buttons up to five for the bottom navigation. Must include the "More menu" button.
+    - switch "Home"
+    - switch "Search"
+    - switch "Notifications"
+    - switch "Conversations"
+    - switch "Favorites"
+    - switch "Bookmarks"
+    - switch "Compose"
+    - switch "Scheduled posts"
+    - switch "Explore" [checked]
+    - switch "Local" [checked]
+    - switch "Federated" [checked]
+    - switch "Lists"
+    - switch "Collections"
+    - switch "Hashtags"
+    - switch "More menu" [checked]
+    - button "Clear"
+    - button "Reset"
+    - button "Save" [disabled]
+- status
+- img

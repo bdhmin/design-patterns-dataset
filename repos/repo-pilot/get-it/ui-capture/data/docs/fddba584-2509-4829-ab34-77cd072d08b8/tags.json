@@ -1,0 +1,135 @@
+{
+  "v": 1,
+  "docId": "fddba584-2509-4829-ab34-77cd072d08b8",
+  "savedAt": 1794579600000,
+  "tags": [
+    {
+      "id": "0-0",
+      "page": 0,
+      "endX": 407.04599999999994,
+      "endY": 725.0908,
+      "fontHeight": 22,
+      "type": "formula",
+      "label": "Teorema di Bayes",
+      "ready": true,
+      "generating": false,
+      "concept": {
+        "label": "Teorema di Bayes",
+        "type": "formula",
+        "anchor": "Probabilità e Statistica — Probabilità condizionata e Teorema di Bayes",
+        "context": "Formula di Bayes con prior, verosimiglianza e posterior."
+      },
+      "spec": {
+        "type": "formula",
+        "title": "Teorema di Bayes",
+        "caption": "Formula di Bayes con prior, verosimiglianza e posterior.",
+        "main_latex": "P(B_i\\mid A) = \\frac{P(A\\mid B_i)\\,P(B_i)}{\\sum_j P(A\\mid B_j)\\,P(B_j)}",
+        "steps": [
+          {
+            "latex": "P(A \\cap B_i) = P(A\\mid B_i)P(B_i)",
+            "explanation": "Regola del prodotto."
+          },
+          {
+            "latex": "P(A) = \\sum_j P(A\\mid B_j)P(B_j)",
+            "explanation": "Probabilità totale al denominatore."
+          },
+          {
+            "latex": "P(B_i\\mid A) = \\frac{P(A\\cap B_i)}{P(A)}",
+            "explanation": "Definizione di probabilità condizionata."
+          }
+        ]
+      },
+      "attempts": 1
+    },
+    {
+      "id": "1-0",
+      "page": 1,
+      "endX": 105.844,
+      "endY": 739.186,
+      "fontHeight": 11,
+      "type": "graph",
+      "label": "VPP vs prevalenza",
+      "ready": true,
+      "generating": false,
+      "concept": {
+        "label": "VPP vs prevalenza",
+        "type": "graph",
+        "anchor": "falsi positivi . Questa quantità si chiama valore predittivo positivo",
+        "context": "VPP di un test con sens 95% e spec 90% al variare della prevalenza."
+      },
+      "spec": {
+        "type": "graph",
+        "title": "VPP vs prevalenza",
+        "caption": "VPP di un test con sens 95% e spec 90% al variare della prevalenza.",
+        "chart_type": "function",
+        "x_label": "prevalenza (%)",
+        "y_label": "VPP (%)",
+        "data_json": "{\"fn\":\"100*(0.95*x/100)/((0.95*x/100)+0.10*(1-x/100))\",\"x_min\":0.1,\"x_max\":50,\"samples\":200}"
+      },
+      "attempts": 1
+    },
+    {
+      "id": "1-1",
+      "page": 1,
+      "endX": 280.248993,
+      "endY": 754.776,
+      "fontHeight": 11,
+      "type": "2d-text",
+      "label": "Albero del test diagnostico",
+      "ready": true,
+      "generating": false,
+      "concept": {
+        "label": "Albero del test diagnostico",
+        "type": "2d-text",
+        "anchor": "la malattia è rara la maggior parte dei positivi sono falsi positivi",
+        "context": "Su 10000 persone: 100 malati, 95 veri positivi, 990 falsi positivi."
+      },
+      "spec": {
+        "type": "2d-text",
+        "title": "Albero del test diagnostico",
+        "caption": "Su 10000 persone: 100 malati, 95 veri positivi, 990 falsi positivi.",
+        "body_markdown": "Su **10 000** persone:\n\n- 100 malati -> **95** positivi (veri)\n- 9 900 sani -> **990** positivi (falsi)\n\nVPP = 95 / (95 + 990) = **8.8%** [1]",
+        "citations": [
+          {
+            "label": "[1]",
+            "source": "Wikipedia — Base rate fallacy",
+            "url": "https://en.wikipedia.org/wiki/Base_rate_fallacy"
+          }
+        ]
+      },
+      "attempts": 1
+    },
+    {
+      "id": "1-2",
+      "page": 1,
+      "endX": 511.49499799999967,
+      "endY": 586.3865,
+      "fontHeight": 11,
+      "type": "graph",
+      "label": "Regola 68-95-99.7",
+      "ready": true,
+      "generating": false,
+      "concept": {
+        "label": "Regola 68-95-99.7",
+        "type": "graph",
+        "anchor": "Media e varianza entrambe uguali a lambda. • Normale N(mu, sigma^2)",
+        "context": "Densità normale standard con bande a 1, 2, 3 sigma."
+      },
+      "spec": {
+        "type": "graph",
+        "title": "Regola 68-95-99.7",
+        "caption": "Densità normale standard con bande a 1, 2, 3 sigma.",
+        "chart_type": "function",
+        "x_label": "z",
+        "y_label": "densità",
+        "data_json": "{\"fn\":\"Math.exp(-x*x/2)/Math.sqrt(2*Math.PI)\",\"x_min\":-4,\"x_max\":4,\"samples\":200}"
+      },
+      "attempts": 1
+    }
+  ],
+  "activeTagId": "1-0",
+  "pagesAnalyzed": [
+    0,
+    1
+  ]
+}

@@ -1,0 +1,106 @@
+You are Get It.'s visualizer concept-extraction agent.
+
+GOAL
+You receive the text of one OR MORE pages from a textbook-style PDF. Each page
+is delimited by a line "===== PAGE_INDEX n =====". Treat every page on its own
+merits and identify, per page, the concepts that would benefit MOST from a
+visual aid sitting next to the reader.
+
+For each concept choose ONE renderer:
+  • "3d"      — physical objects with meaningful 3D structure
+                (organs, molecules, cells, anatomical regions, buildings,
+                mechanical parts).
+  • "2d-anim" — physical processes, simulations, mechanisms in motion
+                (inclined plane, pendulum, blood flow path, chemical reaction
+                progress, projectile trajectory, spring oscillation).
+  • "formula" — equations, derivations, mathematical statements that benefit
+                from a step-by-step LaTeX walkthrough.
+  • "graph"   — function plots, scatter, bar charts, distributions, time
+                series.
+  • "2d-text" — citations, named statutes, articles, court rulings, named
+                papers/sources, definitions where the visualizer should show
+                an authoritative quote or summary.
+
+RULES
+1. Pick AT MOST 4 concepts per page. Quality over quantity. Skip pages with
+   no good visualization candidates — simply emit no concepts for them.
+   Judge each page independently, exactly as if it were the only page given.
+2. For EVERY concept, set "page" to the integer from the "===== PAGE_INDEX n
+   =====" marker of the page the concept appears on.
+3. Each concept's "anchor" MUST be a verbatim copy of the LAST 30–80
+   characters of the sentence that introduces it, taken EXACTLY from THAT
+   page's text (no paraphrase). The tag pill will be planted right after
+   this anchor — so the anchor string MUST appear once on its page, and the
+   renderer anchors at its tail. Pick anchors that are unique on the page.
+4. LANGUAGE: detect the language of each page's text and write BOTH "label"
+   and "context" in that same language so they read naturally next to the
+   source. Italian page → Italian outputs, English page → English outputs,
+   etc. Never translate the source.
+5. "label" is what shows on the pill (≤ 35 chars). Make it a short noun
+   phrase the reader would skim and instantly recognise.
+6. "context" gives the visualizer everything it needs to render the concept
+   without re-reading the full page: include the concept name, key
+   parameters mentioned in the text, and the field of study. 1–3 sentences.
+7. Avoid trivial picks (page numbers, headings, generic phrases). Avoid
+   duplicates of the same concept across a page.
+
+OUTPUT
+A single JSON object conforming to the supplied schema. No prose.
+
+--- PAGES ---
+===== PAGE_INDEX 0 =====
+Human Anatomy & Physiology
+Chapter 4 — The Cardiovascular and Endocrine Systems
+Braynr Open Textbook Project
+4.1 The Heart and Systemic Circulation
+The heart is a muscular organ roughly the size of a closed fist, located in the mediastinum
+between the lungs and slightly left of the body's midline. It is enclosed by a tough fibroserous sac
+called the pericardium and divided internally into four chambers: the right atrium, the right
+ventricle, the left atrium, and the left ventricle. The right side of the heart receives deoxygenated
+blood from the systemic circulation and propels it toward the pulmonary circuit, while the left
+side returns oxygenated blood to the rest of the body.
+Blood flow through the heart is unidirectional, enforced by four valves. The tricuspid valve
+separates the right atrium and right ventricle, and the bicuspid (mitral) valve performs the
+analogous role on the left. Two semilunar valves — the pulmonary and aortic valves — guard the
+exits to the pulmonary trunk and aorta respectively. The cardiac cycle alternates between systole,
+the contractile phase, and diastole, the relaxation phase, producing the familiar 'lub-dub' sound
+when the valves close.
+The conduction of the heartbeat originates in the sinoatrial (SA) node, often called the
+natural pacemaker, located in the wall of the right atrium. The depolarization wave then reaches
+the atrioventricular (AV) node, traverses the bundle of His, and propagates through the Purkinje
+fibers, triggering ventricular contraction. The aorta then carries oxygen-rich blood through major
+branches such as the brachiocephalic, left common carotid, and left subclavian arteries.
+4.2 The Pancreas and Endocrine Regulation of Glucose
+The pancreas is an elongated gland positioned retroperitoneally behind the stomach, with
+both exocrine and endocrine functions. Embedded within the pancreatic parenchyma are the
+islets   of   Langerhans,   clusters   of   endocrine   cells   that   secrete   several   hormones   critical   to
+metabolic homeostasis. Alpha cells produce glucagon, which raises blood glucose; beta cells
+produce insulin, which lowers it; delta cells secrete somatostatin, which suppresses both.
+When circulating glucose rises after a meal, beta cells respond by releasing insulin into the
+portal vein, where it travels first to the liver. Insulin promotes the uptake of glucose into
+hepatocytes and skeletal muscle fibers, where it is converted to glycogen for storage. Conversely,
+during fasting the alpha cells secrete glucagon, which stimulates hepatic glycogenolysis and
+gluconeogenesis, releasing glucose back into the blood.
+The   kidney   also   participates   in   homeostasis   by   filtering   blood   within   nephrons   and
+reabsorbing virtually all filtered glucose under normal conditions. When the renal tubular
+maximum is exceeded, glucose appears in the urine — a clinical sign of diabetes mellitus.
+Persistent   hyperglycemia   damages   microvascular   beds   throughout   the   retina,   kidneys,   and
+
+===== PAGE_INDEX 1 =====
+peripheral nerves, leading to long-term complications.
+4.3 The Brain and Neural Control of Visceral Function
+Autonomic regulation of the heart, pancreas, and other visceral organs is coordinated by
+nuclei in the brainstem, especially the medulla oblongata, with overarching modulation from the
+hypothalamus.   The   hypothalamus   integrates   signals   from   circulating   hormones,   blood
+osmolarity, and core temperature, and projects to both the autonomic nervous system and the
+pituitary gland.
+The pituitary gland sits in the sella turcica of the sphenoid bone, beneath the optic chiasm. Its
+anterior lobe synthesizes hormones such as growth hormone, ACTH, and TSH; the posterior lobe
+stores and releases oxytocin and antidiuretic hormone produced by hypothalamic neurons.
+Together,   these   axes   make   the   brain–pituitary–target-gland   triad   the   master   regulator   of
+endocrine output.
+Damage to brainstem nuclei involved in cardiovascular reflexes, such as the nucleus tractus
+solitarius,   abolishes   baroreceptor   responses   and   causes   catastrophic   blood   pressure
+dysregulation. Likewise, lesions in the hypothalamic arcuate nucleus disrupt energy-balance
+circuits, producing hyperphagia or anorexia depending on the neuron population affected.
+--- END PAGES ---

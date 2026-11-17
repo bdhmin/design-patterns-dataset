@@ -1,0 +1,147 @@
+{
+  "v": 1,
+  "docId": "sample-anatomy",
+  "savedAt": 1790962200000,
+  "tags": [
+    {
+      "id": "0-0",
+      "page": 0,
+      "endX": 523.2799999949998,
+      "endY": 568.8781,
+      "fontHeight": 11.5,
+      "type": "3d",
+      "label": "Four-chambered heart",
+      "ready": true,
+      "generating": false,
+      "concept": {
+        "label": "Four-chambered heart",
+        "type": "3d",
+        "anchor": "atrium, the right ventricle, the left atrium, and the left ventricle",
+        "context": "The heart's four chambers — right/left atria and ventricles — with the great vessels, beating in systole and diastole."
+      },
+      "spec": {
+        "type": "3d",
+        "title": "The four-chambered heart",
+        "caption": "Atria on top, ventricles below; the left ventricle wall is thicker because it pumps into the systemic circulation.",
+        "setup_code": "camera.position.set(0, 1.4, 5);\nscene.background = new THREE.Color('#fafafa');\nscene.add(new THREE.AmbientLight(0xffffff, 0.7));\nvar dl = new THREE.DirectionalLight(0xffffff, 0.9); dl.position.set(3, 5, 4); scene.add(dl);\nvar mat = function (c) { return new THREE.MeshStandardMaterial({ color: c }); };\nvar la = new THREE.Mesh(new THREE.SphereGeometry(0.55, 32, 32), mat('#e11d48')); la.position.set(0.55, 0.7, 0); group.add(la);\nvar ra = new THREE.Mesh(new THREE.SphereGeometry(0.55, 32, 32), mat('#2563eb')); ra.position.set(-0.55, 0.7, 0); group.add(ra);\nvar lv = new THREE.Mesh(new THREE.ConeGeometry(0.7, 1.6, 32), mat('#be123c')); lv.position.set(0.4, -0.5, 0); lv.rotation.z = Math.PI + 0.2; group.add(lv);\nvar rv = new THREE.Mesh(new THREE.ConeGeometry(0.6, 1.4, 32), mat('#1d4ed8')); rv.position.set(-0.4, -0.45, 0.1); rv.rotation.z = Math.PI - 0.2; group.add(rv);\nvar ao = new THREE.Mesh(new THREE.TorusGeometry(0.5, 0.14, 16, 40, Math.PI), mat('#f43f5e')); ao.position.set(0.2, 1.4, 0); group.add(ao);\nvar pa = new THREE.Mesh(new THREE.CylinderGeometry(0.13, 0.13, 0.8, 16), mat('#3b82f6')); pa.position.set(-0.3, 1.5, 0.2); group.add(pa);\nreturn { update: function (t) { var s = 1 + Math.max(0, Math.sin(t * 7.5)) * 0.06; lv.scale.set(s, s, s); rv.scale.set(s, s, s); group.rotation.y = t * 0.4; } };"
+      },
+      "attempts": 1
+    },
+    {
+      "id": "0-1",
+      "page": 0,
+      "endX": 523.2800000215,
+      "endY": 414.8721,
+      "fontHeight": 11.5,
+      "type": "2d-anim",
+      "label": "SA node pacemaker",
+      "ready": true,
+      "generating": false,
+      "concept": {
+        "label": "SA node pacemaker",
+        "type": "2d-anim",
+        "anchor": "The conduction of the heartbeat originates in the sinoatrial (SA) node",
+        "context": "Depolarisation starts at the SA node, crosses to the AV node, bundle of His and Purkinje fibres."
+      },
+      "spec": {
+        "type": "2d-anim",
+        "title": "Pacemaker depolarisation",
+        "caption": "Depolarisation starts at the SA node, crosses to the AV node, bundle of His and Purkinje fibres.",
+        "setup_code": "var title = \"Pacemaker depolarisation\";\nreturn { draw: function (ctx, w, h, time) {\n  ctx.fillStyle = '#fafafa'; ctx.fillRect(0, 0, w, h);\n  var T = 4, tt = time % T; var ox = 50, oy = h - 40, W = w - 80, H = h - 90;\n  ctx.strokeStyle = '#9ca3af'; ctx.beginPath(); ctx.moveTo(ox, 30); ctx.lineTo(ox, oy); ctx.lineTo(ox + W, oy); ctx.stroke();\n  function v(s) { if (s < 1) return -70; if (s < 1.15) return -70 + (s - 1) / 0.15 * 15; if (s < 1.35) return -55 + (s - 1.15) / 0.2 * 95; if (s < 1.7) return 40 - (s - 1.35) / 0.35 * 120; if (s < 2.4) return -80 + (s - 1.7) / 0.7 * 10; return -70; }\n  function Y(mv) { return oy - (mv + 90) / 140 * H; }\n  ctx.strokeStyle = '#e11d48'; ctx.lineWidth = 2; ctx.beginPath();\n  for (var i = 0; i <= 300; i++) { var s = i / 300 * T; if (s > tt) break; var x = ox + s / T * W; if (i === 0) ctx.moveTo(x, Y(v(s))); else ctx.lineTo(x, Y(v(s))); } ctx.stroke();\n  ctx.setLineDash([5, 4]); ctx.strokeStyle = '#d97706'; ctx.beginPath(); ctx.moveTo(ox, Y(-55)); ctx.lineTo(ox + W, Y(-55)); ctx.stroke(); ctx.setLineDash([]);\n  ctx.fillStyle = '#1a1a1d'; ctx.font = '14px sans-serif'; ctx.fillText(title, 14, 20); ctx.font = '12px sans-serif'; ctx.fillText('threshold -55 mV', ox + W - 110, Y(-55) - 6); ctx.fillText('Vm (mV)', 8, 44); ctx.fillText('time (ms)', ox + W - 60, oy + 18);\n} };"
+      },
+      "attempts": 1
+    },
+    {
+      "id": "0-2",
+      "page": 0,
+      "endX": 175.558916662,
+      "endY": 262.4919,
+      "fontHeight": 11.5,
+      "type": "3d",
+      "label": "Islets of Langerhans",
+      "ready": true,
+      "generating": false,
+      "concept": {
+        "label": "Islets of Langerhans",
+        "type": "3d",
+        "anchor": "Embedded within the pancreatic parenchyma are the islets of Langerhans",
+        "context": "Endocrine cell clusters in the pancreas: alpha (glucagon), beta (insulin), delta (somatostatin)."
+      },
+      "spec": {
+        "type": "3d",
+        "title": "An islet of Langerhans",
+        "caption": "Beta cells (core) secrete insulin; alpha cells at the rim secrete glucagon.",
+        "setup_code": "camera.position.set(0, 1.4, 5);\nscene.background = new THREE.Color('#fafafa');\nscene.add(new THREE.AmbientLight(0xffffff, 0.7));\nvar dl = new THREE.DirectionalLight(0xffffff, 0.9); dl.position.set(3, 5, 4); scene.add(dl);\nvar mem = new THREE.Mesh(new THREE.SphereGeometry(2, 48, 48), new THREE.MeshStandardMaterial({ color: '#fda4af', transparent: true, opacity: 0.25 }));\ngroup.add(mem);\nvar nuc = new THREE.Mesh(new THREE.SphereGeometry(0.7, 32, 32), new THREE.MeshStandardMaterial({ color: '#7c3aed' }));\ngroup.add(nuc);\nfor (var i = 0; i < 9; i++) {\n  var m = new THREE.Mesh(new THREE.CapsuleGeometry(0.12, 0.35, 6, 12), new THREE.MeshStandardMaterial({ color: '#f59e0b' }));\n  var a = i * 0.7, r = 1.25 + (i % 3) * 0.18;\n  m.position.set(Math.cos(a) * r, Math.sin(a * 1.3) * 0.8, Math.sin(a) * r);\n  m.rotation.set(a, a * 0.5, 0); group.add(m);\n}\nfor (var j = 0; j < 14; j++) {\n  var ch = new THREE.Mesh(new THREE.CylinderGeometry(0.07, 0.07, 0.5, 10), new THREE.MeshStandardMaterial({ color: '#059669' }));\n  var th = j / 14 * Math.PI * 2;\n  ch.position.set(Math.cos(th) * 2, Math.sin(th * 2) * 0.3, Math.sin(th) * 2);\n  ch.lookAt(0, 0, 0); ch.rotateX(Math.PI / 2); group.add(ch);\n}\nreturn { update: function (t) { group.rotation.y = t * 0.3; nuc.scale.setScalar(1 + Math.sin(t * 2) * 0.03); } };"
+      },
+      "attempts": 1
+    },
+    {
+      "id": "0-3",
+      "page": 0,
+      "endX": 523.2799999605002,
+      "endY": 177.8219,
+      "fontHeight": 11.5,
+      "type": "graph",
+      "label": "Insulin vs glucagon",
+      "ready": true,
+      "generating": false,
+      "concept": {
+        "label": "Insulin vs glucagon",
+        "type": "graph",
+        "anchor": "skeletal muscle fibers, where it is converted to glycogen for storage",
+        "context": "Blood glucose after a meal: insulin brings it down, glucagon raises it during fasting."
+      },
+      "spec": {
+        "type": "graph",
+        "title": "Insulin vs glucagon",
+        "caption": "Blood glucose after a meal: insulin brings it down, glucagon raises it during fasting.",
+        "chart_type": "lines",
+        "x_label": "hours after meal",
+        "y_label": "mg/dL",
+        "data_json": "{\"series\":[{\"name\":\"glucose\",\"color\":\"#e11d48\",\"points\":[[0,88],[0.5,140],[1,128],[1.5,110],[2,96],[3,90],[4,86],[6,82]]},{\"name\":\"insulin (scaled)\",\"color\":\"#0284c7\",\"points\":[[0,20],[0.5,95],[1,80],[1.5,55],[2,35],[3,24],[4,20],[6,18]]}]}"
+      },
+      "attempts": 1
+    },
+    {
+      "id": "1-0",
+      "page": 1,
+      "endX": 142.2765,
+      "endY": 640.3233,
+      "fontHeight": 11.5,
+      "type": "2d-text",
+      "label": "Hypothalamus–pituitary axis",
+      "ready": true,
+      "generating": false,
+      "concept": {
+        "label": "Hypothalamus–pituitary axis",
+        "type": "2d-text",
+        "anchor": "projects to both the autonomic nervous system and the pituitary gland",
+        "context": "Hypothalamus integrates hormones/osmolarity/temperature and drives the pituitary."
+      },
+      "spec": {
+        "type": "2d-text",
+        "title": "Hypothalamus–pituitary axis",
+        "caption": "Hypothalamus integrates hormones/osmolarity/temperature and drives the pituitary.",
+        "body_markdown": "The **hypothalamus** controls the **anterior pituitary** through releasing hormones carried by the hypophyseal portal system, and the **posterior pituitary** directly through axons that release oxytocin and ADH [1].\n\n*\"The pituitary gland ... is often called the master gland, though it is itself controlled by the hypothalamus.\"* [2]",
+        "citations": [
+          {
+            "label": "[1]",
+            "source": "Wikipedia — Hypothalamic–pituitary axis",
+            "url": "https://en.wikipedia.org/wiki/Hypothalamic%E2%80%93pituitary%E2%80%93adrenal_axis"
+          },
+          {
+            "label": "[2]",
+            "source": "Wikipedia — Pituitary gland",
+            "url": "https://en.wikipedia.org/wiki/Pituitary_gland"
+          }
+        ]
+      },
+      "attempts": 1
+    }
+  ],
+  "activeTagId": "0-1",
+  "pagesAnalyzed": [
+    0,
+    1
+  ]
+}

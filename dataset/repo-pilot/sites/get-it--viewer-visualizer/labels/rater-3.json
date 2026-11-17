@@ -1,0 +1,530 @@
+{
+  "schemaVersion": "1.0.0",
+  "codebookVersion": "1.0.0",
+  "batch": "repo-pilot",
+  "site": {
+    "slug": "get-it--viewer-visualizer",
+    "url": "http://localhost:4401/viewer/994a113e-e7ba-4f78-926a-7154208adfff",
+    "finalUrl": "http://localhost:4401/viewer/994a113e-e7ba-4f78-926a-7154208adfff",
+    "status": 200,
+    "title": "Get It.",
+    "capturedAt": "2026-11-16T17:52:15.985Z",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "screenshot": {
+      "ref": "capture/screenshot.png",
+      "width": 1440,
+      "height": 2198
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.8127.18 Safari/537.36",
+    "domain": "education",
+    "domainNote": "AI study tool: lecture-PDF viewer with inline concept tags that open generated visualizations (graph, formula, 3D, animation, source) in a side panel",
+    "provenance": {
+      "source": "repo",
+      "record": "repos/repo-pilot/get-it/explore.json",
+      "repo": {
+        "name": "beltromatti/get-it",
+        "url": "https://github.com/beltromatti/get-it",
+        "commit": "ae0fa999f352b951ab8150fac5dcf9d7ab6fd9a4",
+        "license": "Apache-2.0"
+      },
+      "view": {
+        "slug": "viewer-visualizer",
+        "name": "Document viewer with visualizer",
+        "description": "Lecture PDF with inline concept tag pills on the left and the Visualizer pane on the right showing a generated graph for the selected concept."
+      }
+    }
+  },
+  "regions": [
+    {
+      "id": "top-bar",
+      "role": "header",
+      "label": "App top bar: Upload, Library, open document tab with MANUAL badge; Synced status, 7/7 viz ready, settings and account icons",
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 44
+      },
+      "patterns": [
+        "app-shell",
+        "badge",
+        "tabs"
+      ]
+    },
+    {
+      "id": "document-reader",
+      "role": "main-content",
+      "label": "PDF lecture notes rendered as page canvases, with coloured inline concept chips, a hover tooltip and a floating page pager plus zoom",
+      "bbox": {
+        "x": 8,
+        "y": 52,
+        "width": 789,
+        "height": 2138
+      },
+      "patterns": [
+        "reader",
+        "pagination",
+        "tooltip",
+        "annotation",
+        "overview-detail",
+        "split-pane"
+      ]
+    },
+    {
+      "id": "visualizer-panel",
+      "role": "detail-panel",
+      "label": "Visualizer panel: mode dropdown menu, Graph type chip and title, line chart of carrier saturation vs diffusion, overflow menu and a caption footer",
+      "bbox": {
+        "x": 806,
+        "y": 52,
+        "width": 625,
+        "height": 2137
+      },
+      "patterns": [
+        "chart",
+        "menu",
+        "split-pane"
+      ]
+    }
+  ],
+  "patterns": [
+    {
+      "id": "app-shell",
+      "status": "present",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 44
+          },
+          "quote": "Library",
+          "region": "top-bar",
+          "note": "Persistent top bar with global links, a document tab, status and account controls"
+        }
+      ],
+      "dims": {
+        "primary": "top-navigation-bar",
+        "secondary": "none",
+        "items": [
+          "fixed-destinations"
+        ],
+        "visibility": "always-visible",
+        "structure": "document-tabs"
+      }
+    },
+    {
+      "id": "tabs",
+      "status": "uncertain",
+      "confidence": 0.5,
+      "rationale": "Only one document tab is open, next to Upload/Library links styled like tabs. I couldn't confirm whether several documents can be open as peer tabs.",
+      "evidence": [
+        {
+          "bbox": {
+            "x": 201,
+            "y": 7,
+            "width": 311,
+            "height": 37
+          },
+          "quote": "Cell_Biology_L07_-_Membr…",
+          "region": "top-bar",
+          "note": "Raised active document tab joined to the content area"
+        }
+      ],
+      "dims": {
+        "placement": "top",
+        "label": [
+          "icon",
+          "text"
+        ]
+      }
+    },
+    {
+      "id": "badge",
+      "status": "present",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 426,
+            "y": 13,
+            "width": 72,
+            "height": 21
+          },
+          "quote": "MANUAL",
+          "region": "top-bar",
+          "note": "Amber label pill on the document tab"
+        },
+        {
+          "bbox": {
+            "x": 1121,
+            "y": 12,
+            "width": 121,
+            "height": 24
+          },
+          "quote": "Synced 33d ago",
+          "region": "top-bar",
+          "note": "Sync status pill"
+        },
+        {
+          "bbox": {
+            "x": 1251,
+            "y": 12,
+            "width": 105,
+            "height": 24
+          },
+          "quote": "7/7 viz ready",
+          "region": "top-bar",
+          "note": "Count of ready visualizations"
+        }
+      ],
+      "dims": {
+        "meaning": "status",
+        "aggregation": "per-item"
+      }
+    },
+    {
+      "id": "reader",
+      "status": "present",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 41,
+            "y": 84,
+            "width": 723,
+            "height": 1023
+          },
+          "quote": "Cell Biology — Lecture 7: Membrane Transport",
+          "region": "document-reader",
+          "note": "Fixed-layout PDF page rendered to canvas, with a 'page 1' footer"
+        },
+        {
+          "bbox": {
+            "x": 349,
+            "y": 2142,
+            "width": 438,
+            "height": 36
+          },
+          "quote": "1 / 2",
+          "region": "document-reader",
+          "note": "Floating page pager and zoom controls (100%, +, −)"
+        }
+      ],
+      "dims": {
+        "pagination": "fixed-layout",
+        "progress": "location-only"
+      }
+    },
+    {
+      "id": "pagination",
+      "status": "present",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 349,
+            "y": 2142,
+            "width": 108,
+            "height": 36
+          },
+          "quote": "1 / 2",
+          "region": "document-reader",
+          "note": "Previous/next page buttons around a jump-to-page indicator"
+        }
+      ],
+      "dims": {
+        "mechanism": "next-and-previous",
+        "position": "page-n-of-m",
+        "pageSize": "fixed"
+      }
+    },
+    {
+      "id": "tooltip",
+      "status": "present",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 509,
+            "y": 622,
+            "width": 147,
+            "height": 25
+          },
+          "quote": "Graph: Carrier saturation",
+          "region": "document-reader",
+          "note": "Hover label under the active concept chip shows the full type and title"
+        }
+      ],
+      "dims": {
+        "trigger": [
+          "hover"
+        ],
+        "content": "label",
+        "placement": "below",
+        "timing": "until-the-pointer-leaves"
+      }
+    },
+    {
+      "id": "split-pane",
+      "status": "present",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 8,
+            "y": 52,
+            "width": 1423,
+            "height": 840
+          },
+          "region": "document-reader",
+          "note": "Document pane and visualizer pane sit side by side. Clicking a chip in the document changes what the right pane shows. Hovering the divider did not reveal a resize handle."
+        }
+      ],
+      "dims": {
+        "orientation": "side-by-side",
+        "sizing": "fixed",
+        "relationship": "linked-selection"
+      }
+    },
+    {
+      "id": "chart",
+      "status": "present",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 806,
+            "y": 98,
+            "width": 625,
+            "height": 747
+          },
+          "quote": "GLUT carrier",
+          "region": "visualizer-panel",
+          "note": "Two-series line chart (purple GLUT carrier, grey simple diffusion) with axis titles 'uptake rate' and '[glucose] (mM)', a legend and gridlines"
+        }
+      ],
+      "dims": {
+        "markType": "lines",
+        "channels": [
+          "position",
+          "colour-hue-or-value"
+        ],
+        "scale": "linear",
+        "faceting": "layered-series"
+      }
+    },
+    {
+      "id": "menu",
+      "status": "present",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 826,
+            "y": 61,
+            "width": 109,
+            "height": 28
+          },
+          "quote": "Visualizer",
+          "region": "visualizer-panel",
+          "note": "Dropdown (checked live) lists Visualizer, Knowledge Graph, Chat, Flashcards, Quizzes and Feynman, each with an icon and a description. The ⋯ overflow menu offers Regenerate visualization and Download work context."
+        },
+        {
+          "bbox": {
+            "x": 1383,
+            "y": 60,
+            "width": 28,
+            "height": 28
+          },
+          "region": "visualizer-panel",
+          "note": "More actions overflow trigger"
+        }
+      ],
+      "dims": {
+        "openBy": "button-click",
+        "structure": "flat",
+        "item": [
+          "label",
+          "icon",
+          "description"
+        ],
+        "itemSet": "fixed",
+        "form": "vertical-list"
+      }
+    },
+    {
+      "id": "overview-detail",
+      "status": "uncertain",
+      "confidence": 0.5,
+      "rationale": "The inline chips act as item views for 7 generated visualizations. Each chip is colour-coded by type and has a truncated title, and it opens its detail in the right pane. They are spread through the document text rather than gathered into a collection overview, so this may not count.",
+      "evidence": [
+        {
+          "bbox": {
+            "x": 535,
+            "y": 598,
+            "width": 96,
+            "height": 18
+          },
+          "quote": "Carrier…",
+          "region": "document-reader",
+          "note": "Active chip whose detail (the graph) shows in the right pane"
+        },
+        {
+          "bbox": {
+            "x": 358,
+            "y": 498,
+            "width": 96,
+            "height": 18
+          },
+          "quote": "Fick's l…",
+          "region": "document-reader",
+          "note": "Formula chip. Clicking it (checked live) swaps the right pane to a formula derivation."
+        }
+      ],
+      "dims": {
+        "openIn": "side-by-side",
+        "openBy": [
+          "click"
+        ],
+        "openFrom": "whole-item",
+        "abstraction": [
+          "category"
+        ],
+        "truncation": "ellipsis",
+        "detailMultiplicity": "one-at-a-time"
+      }
+    },
+    {
+      "id": "annotation",
+      "status": "uncertain",
+      "confidence": 0.45,
+      "rationale": "Concept chips are anchored to text spans in the PDF and open content in a side panel. However, they are system-generated tags for visualizations, not discussion or feedback between people, so the collaborate framing may not apply.",
+      "evidence": [
+        {
+          "bbox": {
+            "x": 419,
+            "y": 307,
+            "width": 96,
+            "height": 18
+          },
+          "quote": "Fluid mo…",
+          "region": "document-reader",
+          "note": "3D Model chip anchored after the phrase 'phospholipid bilayer'"
+        },
+        {
+          "bbox": {
+            "x": 437,
+            "y": 725,
+            "width": 96,
+            "height": 18
+          },
+          "quote": "Tonicity…",
+          "region": "document-reader",
+          "note": "Source chip anchored to 'hypotonic'"
+        }
+      ],
+      "dims": {
+        "anchor": "text-range",
+        "layout": "side-margin-panel"
+      }
+    },
+    {
+      "id": "ai-provenance",
+      "status": "absent",
+      "confidence": 0.6,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1251,
+            "y": 12,
+            "width": 105,
+            "height": 24
+          },
+          "quote": "7/7 viz ready",
+          "note": "Visualizations appear to be generated ('Regenerate visualization' in the overflow menu), but nothing explicitly marks them as AI-made or cites sources"
+        }
+      ],
+      "dims": {}
+    }
+  ],
+  "structure": {
+    "layout": "Desktop app shell: thin top bar with Upload/Library links and an open-document tab, then a fixed two-pane split. The PDF reader is on the left (page canvas, floating pager and zoom). A visualizer panel is on the right (mode dropdown, type chip and title header, chart canvas, caption footer).",
+    "regions": [
+      "top-bar",
+      "document-reader",
+      "visualizer-panel"
+    ],
+    "density": "medium"
+  },
+  "aesthetics": {
+    "palette": [
+      "#f6f5f2",
+      "#ffffff",
+      "#f3f2ef",
+      "#111113",
+      "#2a2a2d",
+      "#6a6a6e",
+      "#ececea",
+      "#7c3aed",
+      "#d9e9f9",
+      "#1c4f87",
+      "#eae4fb",
+      "#fde8ec",
+      "#d9efe2",
+      "#fdedd2"
+    ],
+    "colorRoles": {
+      "background": "#f6f5f2",
+      "surface": "#ffffff",
+      "text": "#111113",
+      "muted": "#6a6a6e",
+      "border": "#ececea",
+      "primary": "#1c4f87",
+      "accent": "#7c3aed",
+      "secondary": "#f3f2ef"
+    },
+    "typography": "GeistSans throughout the UI: tabs, buttons, chips, tooltip, panel header and caption. The PDF content uses the document's own sans font with bold headings.",
+    "typeScale": "UI chrome is small and quiet: 13px/500 for tabs, 12px/500 for controls, 14px for the panel title, 10–11px/600 for chips, badges and tooltip. Hierarchy comes from the document itself: a ~28px bold H1, ~20px bold H2s and ~13px body text.",
+    "shape": "soft",
+    "elevation": "subtle-shadows",
+    "borders": "thin",
+    "imagery": [
+      "data-visualization",
+      "iconography"
+    ],
+    "iconStyle": "line",
+    "whitespace": "moderate",
+    "backgroundTreatment": "solid",
+    "mood": [
+      "clean",
+      "calm",
+      "academic",
+      "technical",
+      "utilitarian"
+    ]
+  },
+  "model": {
+    "rater": "rater-3",
+    "provider": "claude-code",
+    "name": "claude-opus-5-5",
+    "effort": "high",
+    "generatedAt": "2026-11-16T17:54:37.329Z",
+    "servedBy": [
+      "claude-opus-5-5"
+    ],
+    "turns": 12,
+    "usage": {
+      "input_tokens": 24,
+      "cache_creation_input_tokens": 45750,
+      "cache_read_input_tokens": 430741,
+      "output_tokens": 11937
+    }
+  },
+  "notes": "Distinctive device: small pastel pill chips (rounded 999px, 1px tinted border, light shadow) sit inline on the PDF text at the concept they explain. They are colour-coded by visualization type: rose = 3D Model, lavender = Formula, blue = Graph, mint = Source, amber = Animation. Each has a line icon and a truncated title. The active chip gets a dark outline ring plus a tooltip, and the right panel's header repeats the type chip (e.g. a blue 'Graph' pill) and the title. The right panel switches between tools (Visualizer, Knowledge Graph, Chat, Flashcards, Quizzes, Feynman) via a dropdown menu with descriptions. The Formula view shows a 'HEADLINE' KaTeX equation card and numbered step-by-step derivation cards. The UI uses a warm off-white (#f6f5f2) canvas around white rounded panels (12px), and the pager and zoom controls float as small white pills at the bottom of the document pane. In the full-page capture, the chips are mispositioned at the panel's left edge because the panel was stretched for the capture."
+}

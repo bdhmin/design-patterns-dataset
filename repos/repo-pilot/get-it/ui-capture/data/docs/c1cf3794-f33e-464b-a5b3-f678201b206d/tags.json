@@ -1,0 +1,120 @@
+{
+  "v": 1,
+  "docId": "c1cf3794-f33e-464b-a5b3-f678201b206d",
+  "savedAt": 1793636100000,
+  "tags": [
+    {
+      "id": "0-0",
+      "page": 0,
+      "endX": 183.317,
+      "endY": 371.8544,
+      "fontHeight": 11,
+      "type": "graph",
+      "label": "Carnot efficiency",
+      "ready": true,
+      "generating": false,
+      "concept": {
+        "label": "Carnot efficiency",
+        "type": "graph",
+        "anchor": "depends only on the temperatures (in kelvin): eta_Carnot = 1 - Tc / Th",
+        "context": "Carnot efficiency vs hot reservoir temperature with Tc = 300 K."
+      },
+      "spec": {
+        "type": "graph",
+        "title": "Carnot efficiency",
+        "caption": "Carnot efficiency vs hot reservoir temperature with Tc = 300 K.",
+        "chart_type": "function",
+        "x_label": "Th (K)",
+        "y_label": "max efficiency",
+        "data_json": "{\"fn\":\"1-300/x\",\"x_min\":300,\"x_max\":1500,\"samples\":200}"
+      },
+      "attempts": 1
+    },
+    {
+      "id": "0-1",
+      "page": 0,
+      "endX": 142.81499999999997,
+      "endY": 188.7957,
+      "fontHeight": 11,
+      "type": "formula",
+      "label": "Clausius entropy",
+      "ready": true,
+      "generating": false,
+      "concept": {
+        "label": "Clausius entropy",
+        "type": "formula",
+        "anchor": "entropy , through its change along a reversible path: dS = dQ_rev / T",
+        "context": "Entropy defined along a reversible path; ideal-gas Delta S."
+      },
+      "spec": {
+        "type": "formula",
+        "title": "Clausius entropy",
+        "caption": "Entropy defined along a reversible path; ideal-gas Delta S.",
+        "main_latex": "dS = \\frac{\\delta Q_{rev}}{T}",
+        "steps": [
+          {
+            "latex": "\\delta Q_{rev} = nC_v dT + p\\,dV",
+            "explanation": "First law, reversible ideal gas."
+          },
+          {
+            "latex": "dS = nC_v\\frac{dT}{T} + nR\\frac{dV}{V}",
+            "explanation": "Divide by T, use pV = nRT."
+          },
+          {
+            "latex": "\\Delta S = nC_v\\ln\\frac{T_2}{T_1} + nR\\ln\\frac{V_2}{V_1}",
+            "explanation": "Integrate between states."
+          }
+        ]
+      },
+      "attempts": 1
+    },
+    {
+      "id": "1-0",
+      "page": 1,
+      "endX": 127.44799999999998,
+      "endY": 658.7541,
+      "fontHeight": 11,
+      "type": "2d-anim",
+      "label": "Boltzmann entropy",
+      "ready": true,
+      "generating": false,
+      "concept": {
+        "label": "Boltzmann entropy",
+        "type": "2d-anim",
+        "anchor": "arrangements W compatible with a macroscopic state: S = k_B ln W",
+        "context": "Gas particles spreading into the full box; microstates."
+      },
+      "spec": {
+        "type": "2d-anim",
+        "title": "Free expansion and microstates",
+        "caption": "Gas particles spreading into the full box; microstates.",
+        "setup_code": "var title = \"Free expansion and microstates\";\nvar ps = []; for (var i = 0; i < 40; i++) ps.push({ x: Math.random(), y: Math.random(), vx: (Math.random() - 0.5) * 0.2, vy: (Math.random() - 0.5) * 0.2, s: i % 3 });\nreturn { draw: function (ctx, w, h, time, dt) {\n  ctx.fillStyle = '#fafafa'; ctx.fillRect(0, 0, w, h);\n  var mx = w / 2; ctx.fillStyle = '#fde68a'; ctx.fillRect(mx - 10, 30, 20, h - 50);\n  for (var k = 0; k < 4; k++) { ctx.fillStyle = '#059669'; ctx.fillRect(mx - 14, 60 + k * (h - 110) / 3, 28, 18); }\n  for (var i = 0; i < ps.length; i++) { var p = ps[i]; p.x += p.vx * dt; p.y += p.vy * dt; if (p.y < 0.1 || p.y > 0.95) p.vy *= -1; if (p.x < 0.02 || p.x > 0.98) p.vx *= -1;\n    var X = p.x * w, Y = p.y * h; if (Math.abs(X - mx) < 14 && p.s !== 0) { p.vx *= -1; }\n    ctx.fillStyle = p.s === 0 ? '#0284c7' : (p.s === 1 ? '#e11d48' : '#d97706'); ctx.beginPath(); ctx.arc(X, Y, 5, 0, Math.PI * 2); ctx.fill(); }\n  ctx.fillStyle = '#1a1a1d'; ctx.font = '14px sans-serif'; ctx.fillText(title, 14, 20); ctx.font = '12px sans-serif'; ctx.fillText('outside', 20, h - 10); ctx.fillText('inside', w - 70, h - 10);\n} };"
+      },
+      "attempts": 1
+    },
+    {
+      "id": "1-1",
+      "page": 1,
+      "endX": 261.625996,
+      "endY": 517.0842,
+      "fontHeight": 11,
+      "type": "formula",
+      "label": "Gibbs free energy",
+      "ready": false,
+      "generating": false,
+      "concept": {
+        "label": "Gibbs free energy",
+        "type": "formula",
+        "anchor": "chemistry and biology — the useful criterion is the Gibbs free energy",
+        "context": "G = H - TS; spontaneity at constant T and p."
+      },
+      "error": "The generated scene failed to compile after 4 attempts (SyntaxError: Unexpected token ')').",
+      "attempts": 4
+    }
+  ],
+  "activeTagId": "0-1",
+  "pagesAnalyzed": [
+    0,
+    1
+  ]
+}

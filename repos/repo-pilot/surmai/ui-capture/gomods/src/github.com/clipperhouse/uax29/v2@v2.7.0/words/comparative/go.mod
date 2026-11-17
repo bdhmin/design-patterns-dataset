@@ -1,0 +1,10 @@
+module github.com/clipperhouse/uax29/words/comparative
+
+go 1.18
+
+replace github.com/clipperhouse/uax29/v2 => ../../
+
+require (
+	github.com/blevesearch/segment v0.9.1
+	github.com/clipperhouse/uax29/v2 v2.6.0
+)

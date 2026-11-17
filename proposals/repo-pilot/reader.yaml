@@ -1,0 +1,36 @@
+# Codebook proposal (new-values) — review with: node scripts/proposals.ts show repo-pilot reader
+id: reader
+kind: new-values
+status: open
+batch: repo-pilot
+codebookVersion: 1.0.0
+dimensions:
+  - subdimensions:
+      - id: annotations
+        values:
+          - id: ai-visualization-anchors
+            name: AI visualization anchors
+            description: Typed chips placed inline beside terms by the system; clicking one opens a generated
+              visualization, formula or source
+            example: Study-companion PDF viewers
+rationale:
+  - rater: rater-1
+    site: get-it--quiz-review
+    text: The reader's annotation values only cover marks the person makes. They have no value for
+      system/AI-generated typed anchors placed in the text that open rich explanations.
+sources:
+  - batch: repo-pilot
+    site: get-it--quiz-review
+    url: http://localhost:4401/viewer/994a113e-e7ba-4f78-926a-7154208adfff
+    note: proposed by rater-1
+evidence:
+  - site: get-it--quiz-review
+    rater: rater-1
+    bbox:
+      x: 358
+      y: 498
+      width: 96
+      height: 18
+    quote: Fick's l...
+createdAt: 2026-11-16T17:56:06.383Z
+updatedAt: 2026-11-16T17:56:06.383Z

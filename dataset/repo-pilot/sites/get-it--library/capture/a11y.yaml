@@ -1,0 +1,110 @@
+- main:
+  - link "Go to upload":
+    - /url: /
+    - text: Upload
+  - text: Library
+  - button "Refresh library"
+  - button "Settings"
+  - button "Account"
+  - heading "Your library" [level=1]
+  - paragraph: Every PDF you've opened lives here. Click any row to jump back in — your tags, chats, flashcards, quizzes, Feynman sessions and knowledge graph are all still there.
+  - list:
+    - listitem:
+      - link "Lead_Application_26.docx Lead_Application_26.docx.pdf · 3 pages · last opened 10h ago 1/6 viz graph ready":
+        - /url: /viewer/12c261a0-3a2d-49da-b630-a71753656e64
+        - paragraph: Lead_Application_26.docx
+        - paragraph: Lead_Application_26.docx.pdf · 3 pages · last opened 10h ago
+        - text: 1/6 viz graph ready
+      - button "Remove from library"
+    - listitem:
+      - link "Microeconomia_-_Domanda_e_Offerta Microeconomia_-_Domanda_e_Offerta.md · 2 pages · last opened 2d ago no tags yet pending":
+        - /url: /viewer/764d6c60-6d8a-4449-b0ed-de5530d902ef
+        - paragraph: Microeconomia_-_Domanda_e_Offerta
+        - paragraph: Microeconomia_-_Domanda_e_Offerta.md · 2 pages · last opened 2d ago
+        - text: no tags yet pending
+      - button "Remove from library"
+    - listitem:
+      - link "Signals___Systems_-_Fourier_Transform__lecture_12_ Signals___Systems_-_Fourier_Transform__lecture_12_.md · 2 pages · last opened 1d ago 4/5 viz 6 evals":
+        - /url: /viewer/a2ddba8f-40a2-4d46-b1d5-9ba6e1bba700
+        - paragraph: Signals___Systems_-_Fourier_Transform__lecture_12_
+        - paragraph: Signals___Systems_-_Fourier_Transform__lecture_12_.md · 2 pages · last opened 1d ago
+        - text: 4/5 viz 6 evals
+      - button "Remove from library"
+    - listitem:
+      - link "Biochem_Enzyme_Kinetics_notes Biochem_Enzyme_Kinetics_notes.md · 2 pages · last opened 6d ago 2/4 viz 12 evals":
+        - /url: /viewer/392da341-c7ce-4c50-8840-bcc4ee3ba6cb
+        - paragraph: Biochem_Enzyme_Kinetics_notes
+        - paragraph: Biochem_Enzyme_Kinetics_notes.md · 2 pages · last opened 6d ago
+        - text: 2/4 viz 12 evals
+      - button "Remove from library"
+    - listitem:
+      - link "Neurophysiology_-_Action_Potential___Synaptic_Transmission Neurophysiology_-_Action_Potential___Synaptic_Transmission.md · 2 pages · last opened 10h ago 5/5 viz 15 evals":
+        - /url: /viewer/ba885056-fe38-4e1f-8684-5feab453c92a
+        - paragraph: Neurophysiology_-_Action_Potential___Synaptic_Transmission
+        - paragraph: Neurophysiology_-_Action_Potential___Synaptic_Transmission.md · 2 pages · last opened 10h ago
+        - text: 5/5 viz 15 evals
+      - button "Remove from library"
+    - listitem:
+      - link "Probabilita_e_Statistica_-_Teorema_di_Bayes Probabilita_e_Statistica_-_Teorema_di_Bayes.md · 2 pages · last opened 3d ago 4/4 viz 13 evals":
+        - /url: /viewer/fddba584-2509-4829-ab34-77cd072d08b8
+        - paragraph: Probabilita_e_Statistica_-_Teorema_di_Bayes
+        - paragraph: Probabilita_e_Statistica_-_Teorema_di_Bayes.md · 2 pages · last opened 3d ago
+        - text: 4/4 viz 13 evals
+      - button "Remove from library"
+    - listitem:
+      - link "Thermodynamics_ch4_-_Entropy_and_the_Second_Law Thermodynamics_ch4_-_Entropy_and_the_Second_Law.md · 2 pages · last opened 11/2/2026 3/4 viz 10 evals":
+        - /url: /viewer/c1cf3794-f33e-464b-a5b3-f678201b206d
+        - paragraph: Thermodynamics_ch4_-_Entropy_and_the_Second_Law
+        - paragraph: Thermodynamics_ch4_-_Entropy_and_the_Second_Law.md · 2 pages · last opened 11/2/2026
+        - text: 3/4 viz 10 evals
+      - button "Remove from library"
+    - listitem:
+      - link "Linear_Algebra_-_Eigenvalues_and_Diagonalization Linear_Algebra_-_Eigenvalues_and_Diagonalization.md · 2 pages · last opened 4d ago 4/4 viz 15 evals":
+        - /url: /viewer/d6086557-fbec-409d-8726-f558c32460c1
+        - paragraph: Linear_Algebra_-_Eigenvalues_and_Diagonalization
+        - paragraph: Linear_Algebra_-_Eigenvalues_and_Diagonalization.md · 2 pages · last opened 4d ago
+        - text: 4/4 viz 15 evals
+      - button "Remove from library"
+    - listitem:
+      - link "Cell_Biology_L07_-_Membrane_Transport Cell_Biology_L07_-_Membrane_Transport.md · 2 pages · last opened 10h ago 7/7 viz 23 evals":
+        - /url: /viewer/994a113e-e7ba-4f78-926a-7154208adfff
+        - paragraph: Cell_Biology_L07_-_Membrane_Transport
+        - paragraph: Cell_Biology_L07_-_Membrane_Transport.md · 2 pages · last opened 10h ago
+        - text: 7/7 viz 23 evals
+      - button "Remove from library"
+    - listitem:
+      - link "Differential & Integral Calculus calculus.pdf · 2 pages · last opened 10/28/2026 5/5 viz 16 evals":
+        - /url: /viewer/sample-calculus
+        - paragraph: Differential & Integral Calculus
+        - paragraph: calculus.pdf · 2 pages · last opened 10/28/2026
+        - text: 5/5 viz 16 evals
+      - button "Remove from library"
+    - listitem:
+      - link "Organic Chemistry chemistry.pdf · 2 pages · last opened 9/12/2026 3/4 viz 10 evals":
+        - /url: /viewer/sample-chemistry
+        - paragraph: Organic Chemistry
+        - paragraph: chemistry.pdf · 2 pages · last opened 9/12/2026
+        - text: 3/4 viz 10 evals
+      - button "Remove from library"
+    - listitem:
+      - link "Anatomy & Physiology anatomy.pdf · 2 pages · last opened 10/2/2026 5/5 viz 18 evals":
+        - /url: /viewer/sample-anatomy
+        - paragraph: Anatomy & Physiology
+        - paragraph: anatomy.pdf · 2 pages · last opened 10/2/2026
+        - text: 5/5 viz 18 evals
+      - button "Remove from library"
+    - listitem:
+      - link "Costituzione Italiana costituzione.pdf · 2 pages · last opened 9/8/2026 2/4 viz pending":
+        - /url: /viewer/sample-costituzione
+        - paragraph: Costituzione Italiana
+        - paragraph: costituzione.pdf · 2 pages · last opened 9/8/2026
+        - text: 2/4 viz pending
+      - button "Remove from library"
+    - listitem:
+      - link "Classical Mechanics physics.pdf · 2 pages · last opened 10/19/2026 5/5 viz 13 evals":
+        - /url: /viewer/sample-physics
+        - paragraph: Classical Mechanics
+        - paragraph: physics.pdf · 2 pages · last opened 10/19/2026
+        - text: 5/5 viz 13 evals
+      - button "Remove from library"
+- alert

@@ -1,0 +1,47 @@
+- link "Upload":
+  - /url: /
+- link "Open library":
+  - /url: /library
+  - text: Library
+- text: Cell_Biology_L07_-_Membrane_… manual Synced 33d ago 7/7 viz ready
+- button "Settings"
+- button "Account"
+- 'button "3D Model: Fluid mosaic membrane"'
+- 'button "Formula: Fick''s law of diffusion"'
+- 'button "Graph: Carrier saturation"'
+- 'button "Animation: Na+/glucose symport"'
+- 'button "Source: Tonicity and red cells"'
+- text: page 1
+- 'button "3D Model: Receptor-mediated endocytosis"'
+- 'button "Source: CFTR and cystic fibrosis"'
+- text: page 2
+- button "Previous page" [disabled]
+- button "Jump to page": 1 / 2
+- button "Next page"
+- button "Set custom zoom": 100%
+- button "Zoom in"
+- button "Zoom out"
+- banner:
+  - button "Quizzes"
+  - paragraph: Forced-choice multiple-choice quizzes with explanations
+  - button "More actions"
+- complementary:
+  - text: New quiz
+  - paragraph: Multiple-choice questions
+  - textbox "Topic, or whole doc"
+  - button "Generate quiz"
+  - text: Past quizzes 2
+  - button "Whole document"
+  - button "4/4 questions done"
+  - button "Whole document"
+  - button "4/4 questions done"
+- text: Whole document 4/4 answered Question 1 / 4 Correct
+- paragraph: Which transport mode saturates at high substrate concentration?
+- button "A Simple diffusion" [disabled]
+- button "B Carrier-mediated transport" [disabled] [pressed]
+- button "C Osmosis" [disabled]
+- button "D Diffusion of O2" [disabled]
+- paragraph: Why this is right
+- paragraph: Finite number of carriers -> Vmax.
+- button "Next question"
+- alert

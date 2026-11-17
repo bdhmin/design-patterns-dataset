@@ -1,0 +1,98 @@
+You are Get It.'s visualizer concept-extraction agent.
+
+GOAL
+You receive the text of one OR MORE pages from a textbook-style PDF. Each page
+is delimited by a line "===== PAGE_INDEX n =====". Treat every page on its own
+merits and identify, per page, the concepts that would benefit MOST from a
+visual aid sitting next to the reader.
+
+For each concept choose ONE renderer:
+  • "3d"      — physical objects with meaningful 3D structure
+                (organs, molecules, cells, anatomical regions, buildings,
+                mechanical parts).
+  • "2d-anim" — physical processes, simulations, mechanisms in motion
+                (inclined plane, pendulum, blood flow path, chemical reaction
+                progress, projectile trajectory, spring oscillation).
+  • "formula" — equations, derivations, mathematical statements that benefit
+                from a step-by-step LaTeX walkthrough.
+  • "graph"   — function plots, scatter, bar charts, distributions, time
+                series.
+  • "2d-text" — citations, named statutes, articles, court rulings, named
+                papers/sources, definitions where the visualizer should show
+                an authoritative quote or summary.
+
+RULES
+1. Pick AT MOST 4 concepts per page. Quality over quantity. Skip pages with
+   no good visualization candidates — simply emit no concepts for them.
+   Judge each page independently, exactly as if it were the only page given.
+2. For EVERY concept, set "page" to the integer from the "===== PAGE_INDEX n
+   =====" marker of the page the concept appears on.
+3. Each concept's "anchor" MUST be a verbatim copy of the LAST 30–80
+   characters of the sentence that introduces it, taken EXACTLY from THAT
+   page's text (no paraphrase). The tag pill will be planted right after
+   this anchor — so the anchor string MUST appear once on its page, and the
+   renderer anchors at its tail. Pick anchors that are unique on the page.
+4. LANGUAGE: detect the language of each page's text and write BOTH "label"
+   and "context" in that same language so they read naturally next to the
+   source. Italian page → Italian outputs, English page → English outputs,
+   etc. Never translate the source.
+5. "label" is what shows on the pill (≤ 35 chars). Make it a short noun
+   phrase the reader would skim and instantly recognise.
+6. "context" gives the visualizer everything it needs to render the concept
+   without re-reading the full page: include the concept name, key
+   parameters mentioned in the text, and the field of study. 1–3 sentences.
+7. Avoid trivial picks (page numbers, headings, generic phrases). Avoid
+   duplicates of the same concept across a page.
+
+OUTPUT
+A single JSON object conforming to the supplied schema. No prose.
+
+--- PAGES ---
+===== PAGE_INDEX 0 =====
+Probabilità e Statistica — Probabilità
+condizionata e Teorema di Bayes
+Appunti dalla lezione del 14 ottobre + esercitazione. Corso di Statistica per l'Ingegneria
+Biomedica.
+Probabilità condizionata
+Dati due eventi A e B con P(B) > 0, la   probabilità condizionata   di A dato B è
+P(A | B) = P(A e B) / P(B).
+Intuitivamente: restringiamo lo spazio campionario ai soli esiti in cui B si è verificato e
+chiediamo quale frazione di essi appartiene anche ad A. Due eventi sono   indipendenti   se P(A
+| B) = P(A), cioè se sapere che B è accaduto non cambia nulla su A.
+Legge della probabilità totale
+Se B1, B2, ..., Bn formano una partizione dello spazio campionario (eventi disgiunti la cui
+unione è tutto), allora
+P(A) = somma su i di P(A | Bi) P(Bi).
+È lo strumento per calcolare una probabilità "spezzandola" nei vari scenari possibili.
+Teorema di Bayes
+Combinando le due formule otteniamo il   teorema di Bayes :
+P(Bi | A) = P(A | Bi) P(Bi) / somma su j di P(A | Bj) P(Bj).
+•   P(Bi) è la probabilità   a priori   (prior): quello che sappiamo prima di osservare A.
+•   P(A | Bi) è la   verosimiglianza   (likelihood).
+•   P(Bi | A) è la probabilità   a posteriori : la nostra convinzione aggiornata dopo l'osservazione.
+Esempio classico: il test diagnostico
+Una malattia ha prevalenza dell'1% nella popolazione. Un test ha   sensibilità   del 95%
+(P(positivo | malato) = 0.95) e   specificità   del 90% (P(negativo | sano) = 0.90). Un paziente
+risulta positivo: qual è la probabilità che sia davvero malato?
+P(positivo) = 0.95 x 0.01 + 0.10 x 0.99 = 0.0095 + 0.099 = 0.1085
+P(malato | positivo) = 0.0095 / 0.1085, circa 0.088, cioè   meno del 9% .
+
+===== PAGE_INDEX 1 =====
+Il risultato sorprende quasi tutti: anche con un test "buono", quando la malattia è rara la
+maggior parte dei positivi sono   falsi positivi . Questa quantità si chiama   valore predittivo
+positivo   (VPP) e dipende fortemente dalla prevalenza. Per questo i test di screening vengono
+seguiti da un secondo test più specifico.
+Variabili aleatorie: richiamo veloce
+•   Bernoulli : un solo esperimento con successo (p) o insuccesso (1 - p).
+•   Binomiale   B(n, p): numero di successi in n prove indipendenti. Media np, varianza np(1 - p).
+•   Poisson   con parametro lambda: conteggi di eventi rari in un intervallo (es. numero di battiti
+ectopici in un'ora). Media e varianza entrambe uguali a lambda.
+•   Normale   N(mu, sigma^2): la campana. Circa il 68% dei valori cade entro una deviazione
+standard dalla media, il 95% entro due, il 99.7% entro tre.
+Errori tipici all'esame
+1. Confondere P(A | B) con P(B | A) — la "fallacia del procuratore".
+2. Dimenticare il termine dei falsi positivi nel denominatore.
+3. Usare la binomiale quando le prove non sono indipendenti (estrazioni senza reimmissione:
+serve l'ipergeometrica).
+Da rifare: esercizi 4.12 e 4.17 del Ross, quello con le tre urne non mi torna.
+--- END PAGES ---

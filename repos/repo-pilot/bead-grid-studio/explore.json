@@ -1,0 +1,104 @@
+{
+  "batch": "repo-pilot",
+  "slug": "bead-grid-studio",
+  "ok": true,
+  "entry": "/",
+  "views": [
+    {
+      "slug": "editor-workspace",
+      "name": "Pattern editor workspace",
+      "description": "Main three-pane editor: conversion/size/drawing settings on the left, the 52x52 cat bead pattern canvas with rulers in the centre, and the MARD palette with material counts on the right.",
+      "path": "/",
+      "steps": [],
+      "title": "Bead Grid Studio — Image to Fuse Bead Pattern Generator",
+      "similarity": 1,
+      "preview": "views/editor-workspace.png"
+    },
+    {
+      "slug": "bead-preview-advanced",
+      "name": "Bead preview with advanced conversion settings",
+      "description": "Canvas in round-bead preview mode while the left panel's Advanced Settings are open, showing conversion mode, image fit, background removal, max colours and merge-strength sliders.",
+      "path": "/",
+      "steps": [
+        {
+          "action": "click",
+          "target": {
+            "text": "Advanced Settings"
+          }
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "name": "Bead Preview"
+          }
+        }
+      ],
+      "title": "Bead Grid Studio — Image to Fuse Bead Pattern Generator",
+      "similarity": 1,
+      "preview": "views/bead-preview-advanced.png"
+    },
+    {
+      "slug": "making-assistant",
+      "name": "Making assistant, zoomed in",
+      "description": "Making-assistant mode zoomed to 125%, where per-cell colour codes are visible, the current colour A6 is highlighted and completed colours are ticked, and a progress bar sits above prev/mark done/next controls.",
+      "path": "/",
+      "steps": [
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "name": "Start Making"
+          }
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "name": "Zoom in"
+          }
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "name": "Zoom in"
+          }
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "name": "Color Blocks"
+          }
+        }
+      ],
+      "title": "Bead Grid Studio — Image to Fuse Bead Pattern Generator",
+      "similarity": 1,
+      "preview": "views/making-assistant.png"
+    }
+  ],
+  "summary": "Bead Grid Studio v1.4.0 is a single-page fuse-bead pattern editor that runs entirely in the browser and saves work locally. I saved 3 views, all opened from `/` with the seeded cat pattern loaded:\n\n1. **editor-workspace** — the main three-pane editor with no extra steps: settings on the left, the 52×52 pattern canvas with rulers in the centre, and the colour palette with bead counts on the right.\n2. **bead-preview-advanced** — \"Advanced Settings\" opened and the canvas switched to \"Bead Preview\". This shows the conversion controls (mode, image fit, light-background removal, max-colours and merge sliders) and the round-bead rendering.\n3. **making-assistant** — \"Start Making\", then \"Zoom in\" twice (to 125%), then \"Color Blocks\". This shows the Making Assistant with each cell's colour code visible, the current colour highlighted, finished colours ticked, a progress bar, and the step controls. The harness rejected the unzoomed version as too similar to the main view; I clicked Color Blocks so the replay doesn't depend on a preview mode left over from an earlier step.\n\nThings I couldn't capture or chose to skip:\n- **No in-app screen behind these buttons:** \"Export Pattern\" just downloads a PNG. \"Print / Paginate\" opens the browser's own print dialog. \"Share\" falls back to copying a link. \"Export Share Card\" is disabled because the project has no source image. \"Replace Color\" showed no dialog.\n- **Help/privacy dialog:** this does open, but it is about and legal text, so I left it out.\n- **Uploading an image:** this needs a file chooser, which I didn't try.",
+  "explorer": {
+    "provider": "claude-code",
+    "model": "claude-opus-5-5",
+    "effort": "high"
+  },
+  "outcome": {
+    "finished": true,
+    "reason": "stopped",
+    "turns": 18,
+    "servedBy": [
+      "claude-opus-5-5"
+    ],
+    "usage": {
+      "input_tokens": 36,
+      "cache_creation_input_tokens": 57813,
+      "cache_read_input_tokens": 544496,
+      "output_tokens": 3256
+    }
+  },
+  "actions": 21,
+  "startedAt": "2026-11-16T07:50:14.893Z",
+  "finishedAt": "2026-11-16T07:51:28.330Z"
+}

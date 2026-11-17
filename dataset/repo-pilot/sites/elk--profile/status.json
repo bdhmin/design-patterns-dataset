@@ -1,0 +1,26 @@
+{
+  "slug": "elk--profile",
+  "url": "http://localhost:4400/@maren",
+  "domain": "social-community",
+  "source": "repo",
+  "state": "flagged",
+  "raters": {
+    "rater-1": {
+      "state": "done",
+      "updatedAt": "2026-11-16T17:33:20.549Z"
+    },
+    "rater-2": {
+      "state": "done",
+      "updatedAt": "2026-11-16T17:33:19.789Z"
+    },
+    "rater-3": {
+      "state": "failed",
+      "error": "claude CLI ended with success: \"API Error: Your computer went to sleep mid-response. The response above may be incomplete.\"",
+      "updatedAt": "2026-11-16T14:05:05.416Z"
+    }
+  },
+  "flags": [
+    "rater(s) failed: rater-3"
+  ],
+  "updatedAt": "2026-11-16T17:33:20.552Z"
+}

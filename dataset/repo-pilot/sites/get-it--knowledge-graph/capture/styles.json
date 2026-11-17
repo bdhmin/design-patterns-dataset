@@ -1,0 +1,138 @@
+{
+ "pageBackground": "#f6f5f2",
+ "backgroundsByArea": [
+  {
+   "color": "#f6f5f2",
+   "share": 0.4854
+  },
+  {
+   "color": "#ffffff",
+   "share": 0.4389
+  },
+  {
+   "color": "#f3f2ef",
+   "share": 0.0751
+  },
+  {
+   "color": "#fde8ec",
+   "share": 0.0002
+  },
+  {
+   "color": "#d9efe2",
+   "share": 0.0002
+  },
+  {
+   "color": "#eae4fb",
+   "share": 0.0001
+  },
+  {
+   "color": "#d9e9f9",
+   "share": 0.0001
+  },
+  {
+   "color": "#fdedd2",
+   "share": 0.0001
+  }
+ ],
+ "textColors": [
+  {
+   "color": "#111113",
+   "chars": 306
+  },
+  {
+   "color": "#2a2a2d",
+   "chars": 207
+  },
+  {
+   "color": "#6a6a6e",
+   "chars": 57
+  },
+  {
+   "color": "#8c8c90",
+   "chars": 47
+  },
+  {
+   "color": "#9f1f3a",
+   "chars": 22
+  },
+  {
+   "color": "#0f6a47",
+   "chars": 22
+  },
+  {
+   "color": "#4b2db4",
+   "chars": 11
+  },
+  {
+   "color": "#92580a",
+   "chars": 11
+  },
+  {
+   "color": "#1c4f87",
+   "chars": 10
+  }
+ ],
+ "fonts": [
+  {
+   "family": "GeistSans",
+   "textNodes": 38
+  }
+ ],
+ "fontSizes": [
+  {
+   "px": 70,
+   "textNodes": 6
+  },
+  {
+   "px": 50,
+   "textNodes": 8
+  },
+  {
+   "px": 38,
+   "textNodes": 2
+  },
+  {
+   "px": 14,
+   "textNodes": 1
+  },
+  {
+   "px": 13,
+   "textNodes": 4
+  },
+  {
+   "px": 12,
+   "textNodes": 2
+  },
+  {
+   "px": 11,
+   "textNodes": 4
+  },
+  {
+   "px": 10,
+   "textNodes": 11
+  }
+ ],
+ "radii": [
+  {
+   "radius": "6px",
+   "boxes": 14
+  },
+  {
+   "radius": "999px",
+   "boxes": 7
+  },
+  {
+   "radius": "8px",
+   "boxes": 6
+  },
+  {
+   "radius": "12px",
+   "boxes": 2
+  }
+ ],
+ "boxesMeasured": 226,
+ "shadowedShare": 0.049,
+ "borderedShare": 0.071,
+ "gradientBackgrounds": 0,
+ "imageBackgrounds": 0
+}

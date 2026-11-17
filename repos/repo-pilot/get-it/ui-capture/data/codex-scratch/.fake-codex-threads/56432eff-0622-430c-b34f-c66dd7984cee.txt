@@ -1,0 +1,101 @@
+You are Get It.'s visualizer concept-extraction agent.
+
+GOAL
+You receive the text of one OR MORE pages from a textbook-style PDF. Each page
+is delimited by a line "===== PAGE_INDEX n =====". Treat every page on its own
+merits and identify, per page, the concepts that would benefit MOST from a
+visual aid sitting next to the reader.
+
+For each concept choose ONE renderer:
+  • "3d"      — physical objects with meaningful 3D structure
+                (organs, molecules, cells, anatomical regions, buildings,
+                mechanical parts).
+  • "2d-anim" — physical processes, simulations, mechanisms in motion
+                (inclined plane, pendulum, blood flow path, chemical reaction
+                progress, projectile trajectory, spring oscillation).
+  • "formula" — equations, derivations, mathematical statements that benefit
+                from a step-by-step LaTeX walkthrough.
+  • "graph"   — function plots, scatter, bar charts, distributions, time
+                series.
+  • "2d-text" — citations, named statutes, articles, court rulings, named
+                papers/sources, definitions where the visualizer should show
+                an authoritative quote or summary.
+
+RULES
+1. Pick AT MOST 4 concepts per page. Quality over quantity. Skip pages with
+   no good visualization candidates — simply emit no concepts for them.
+   Judge each page independently, exactly as if it were the only page given.
+2. For EVERY concept, set "page" to the integer from the "===== PAGE_INDEX n
+   =====" marker of the page the concept appears on.
+3. Each concept's "anchor" MUST be a verbatim copy of the LAST 30–80
+   characters of the sentence that introduces it, taken EXACTLY from THAT
+   page's text (no paraphrase). The tag pill will be planted right after
+   this anchor — so the anchor string MUST appear once on its page, and the
+   renderer anchors at its tail. Pick anchors that are unique on the page.
+4. LANGUAGE: detect the language of each page's text and write BOTH "label"
+   and "context" in that same language so they read naturally next to the
+   source. Italian page → Italian outputs, English page → English outputs,
+   etc. Never translate the source.
+5. "label" is what shows on the pill (≤ 35 chars). Make it a short noun
+   phrase the reader would skim and instantly recognise.
+6. "context" gives the visualizer everything it needs to render the concept
+   without re-reading the full page: include the concept name, key
+   parameters mentioned in the text, and the field of study. 1–3 sentences.
+7. Avoid trivial picks (page numbers, headings, generic phrases). Avoid
+   duplicates of the same concept across a page.
+
+OUTPUT
+A single JSON object conforming to the supplied schema. No prose.
+
+--- PAGES ---
+===== PAGE_INDEX 0 =====
+Thermodynamics — Chapter 4: Entropy and
+the Second Law
+Why a second law?
+The first law says energy is conserved: dU = dQ - dW. It allows a cold cup of coffee to
+spontaneously heat up by cooling the room, as long as the energy balances. It never happens.
+The   second law   tells us which direction processes go.
+Two classical statements, which can be shown to be equivalent:
+•   Kelvin-Planck : no cyclic device can convert heat from a single reservoir entirely into work.
+•   Clausius : heat does not flow spontaneously from a colder body to a hotter body.
+Heat engines and the Carnot limit
+A heat engine takes heat Qh from a hot reservoir at Th, produces work W, and rejects Qc to a
+cold reservoir at Tc. Its efficiency is eta = W / Qh = 1 - Qc / Qh.
+The most efficient possible engine operating between two temperatures is the reversible
+Carnot cycle : two isothermal and two adiabatic steps. Its efficiency depends only on the
+temperatures (in kelvin):
+eta_Carnot = 1 - Tc / Th.
+A power plant with steam at 600 K rejecting to a river at 300 K can never exceed 50%
+efficiency, no matter how good the engineering. Real plants reach 35-45%.
+Refrigerators and heat pumps run the cycle backwards. Their performance is measured by the
+coefficient of performance, COP = Qc / W for a fridge.
+Entropy
+Clausius defined a new state function,   entropy , through its change along a reversible path:
+dS = dQ_rev / T.
+Because S is a state function, the change between two states is the same for any path, even
+irreversible ones — we just have to compute it along an imagined reversible path. For an ideal
+gas: Delta S = n Cv ln(T2/T1) + n R ln(V2/V1).
+The second law in its most compact form: for an isolated system,   Delta S >= 0 . The equality
+holds only for reversible processes; every real (irreversible) process generates entropy. Friction,
+heat transfer across a finite temperature difference, free expansion and mixing are all sources
+
+===== PAGE_INDEX 1 =====
+of entropy generation.
+Statistical interpretation
+Boltzmann connected entropy to the number of microscopic arrangements W compatible with a
+macroscopic state:
+S = k_B ln W
+where k_B = 1.38 x 10^-23 J/K. A gas spreading through a container is not "forced" to spread:
+there are overwhelmingly more microstates with the gas spread out than with the gas bunched
+in one corner. The arrow of time is a statement about probability.
+Free energy and spontaneity
+At constant temperature and pressure — the conditions of most chemistry and biology — the
+useful criterion is the   Gibbs free energy , G = H - TS. A process is spontaneous when Delta G
+< 0. This is why ATP hydrolysis (Delta G about -30.5 kJ/mol under standard conditions) can
+drive unfavourable reactions in the cell when the two are coupled.
+Third law
+The entropy of a perfect crystal approaches zero as the temperature approaches absolute zero.
+A consequence is that 0 K can never actually be reached in a finite number of steps.
+Problem set 4 due Nov 3 — problems 4.7 (Carnot fridge) and 4.15 (mixing entropy) are the long
+ones.
+--- END PAGES ---

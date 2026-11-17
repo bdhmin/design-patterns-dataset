@@ -1,0 +1,32 @@
+// Copyright 2025 The go-yaml Project Contributors
+// SPDX-License-Identifier: Apache-2.0
+
+// Tests for the constructor stage.
+// Verifies YAML node to Go value conversion and error handling.
+
+package libyaml
+
+import (
+	"reflect"
+	"testing"
+
+	"go.yaml.in/yaml/v4/internal/testutil/assert"
+)
+
+func TestConstructor(t *testing.T) {
+	RunTestCases(t, "constructor.yaml", map[string]TestHandler{
+		"scalar-resolution": func(t *testing.T, tc TestCase) {
+			t.Helper()
+
+			// Load the YAML
+			result, err := LoadAny([]byte(tc.Yaml))
+			assert.NoErrorf(t, err, "LoadAny() error: %v", err)
+
+			// Compare the result with expected value
+			if !reflect.DeepEqual(result, tc.Want) {
+				t.Errorf("LoadAny() = %v (type: %T), want %v (type: %T)",
+					result, result, tc.Want, tc.Want)
+			}
+		},
+	})
+}

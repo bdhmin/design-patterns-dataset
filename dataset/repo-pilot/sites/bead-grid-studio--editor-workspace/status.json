@@ -1,0 +1,23 @@
+{
+  "slug": "bead-grid-studio--editor-workspace",
+  "url": "http://bead-grid-studio.localhost:4318/",
+  "domain": "design-creative",
+  "source": "repo",
+  "state": "queued",
+  "raters": {
+    "rater-1": {
+      "state": "pending",
+      "updatedAt": "2026-11-16T08:32:57.522Z"
+    },
+    "rater-2": {
+      "state": "pending",
+      "updatedAt": "2026-11-16T08:32:57.522Z"
+    },
+    "rater-3": {
+      "state": "pending",
+      "updatedAt": "2026-11-16T08:32:57.522Z"
+    }
+  },
+  "flags": [],
+  "updatedAt": "2026-11-16T08:32:57.522Z"
+}

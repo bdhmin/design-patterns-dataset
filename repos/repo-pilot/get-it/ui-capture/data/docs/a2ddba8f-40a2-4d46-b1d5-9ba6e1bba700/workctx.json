@@ -1,0 +1,157 @@
+{
+  "v": 1,
+  "docId": "a2ddba8f-40a2-4d46-b1d5-9ba6e1bba700",
+  "chats": [
+    {
+      "id": "s5bdswqfe921y",
+      "title": "Intuition for the Fourier integral",
+      "createdAt": 1794199878000,
+      "updatedAt": 1794200197569,
+      "messages": [
+        {
+          "role": "user",
+          "content": "i can compute the transform of a rect but i don't *get* what the integral is doing",
+          "ts": 1794199909582
+        },
+        {
+          "role": "assistant",
+          "content": "Think of e^(-j2πft) as a **probe spinning at frequency f**.\n\n1. Multiply your signal by the probe.\n2. If x(t) contains a component at exactly f, that component and the probe spin together → their product stops rotating and **adds up** over time.\n3. Every other frequency keeps rotating relative to the probe and **averages to zero**.\n\nSo X(f) is \"how much of x(t) survives when you look at it through a lens spinning at f\". The rect pulse is short, so many probe speeds partially survive → wide sinc.",
+          "ts": 1794199982361
+        },
+        {
+          "role": "user",
+          "content": "ok that actually clicks. so a longer pulse = narrower sinc because only probes really close to 0 survive?",
+          "ts": 1794200101147
+        },
+        {
+          "role": "assistant",
+          "content": "Yes — that's the scaling property in one sentence. Over a long pulse, even a slightly-off probe has time to drift a full cycle and cancel, so only f ≈ 0 survives. Short pulse → not enough time to cancel → broad spectrum. Same reason a short click sounds \"broadband\".",
+          "ts": 1794200197569
+        }
+      ]
+    },
+    {
+      "id": "s86oyenhmf25p",
+      "title": "Lab 4 — why notch at 50 not 60?",
+      "createdAt": 1794414648000,
+      "updatedAt": 1794414779523,
+      "messages": [
+        {
+          "role": "user",
+          "content": "why do we notch at 50 Hz and not 60 like in the matlab example online?",
+          "ts": 1794414652607
+        },
+        {
+          "role": "assistant",
+          "content": "Mains frequency depends on the grid: **50 Hz in Europe** (Italy included), 60 Hz in North America. The tutorial you found was US-based. On page 2 your notes show the sharp peak at 50 Hz in the recorded ECG spectrum — that's what you filter.",
+          "ts": 1794414779523
+        }
+      ]
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "sap7izjgmecyk",
+      "topic": "all",
+      "createdAt": 1794071016000,
+      "cards": [
+        {
+          "q": "What does |X(f)| tell you?",
+          "a": "The amplitude spectrum: how much of each frequency is present in x(t).",
+          "userAnswer": "i think it's the opposite?",
+          "rating": 1,
+          "answeredAt": 1794071066000
+        },
+        {
+          "q": "Rect pulse of width T transforms to?",
+          "a": "T sinc(fT). Narrower pulse -> wider spectrum.",
+          "userAnswer": "i think it's the opposite?",
+          "rating": 2,
+          "answeredAt": 1794071116000
+        },
+        {
+          "q": "State the Nyquist criterion.",
+          "a": "For a signal band-limited to B Hz, sample at fs > 2B to avoid aliasing.",
+          "userAnswer": "i think it's the opposite?",
+          "rating": 2,
+          "answeredAt": 1794071166000
+        },
+        {
+          "q": "Effect of a time shift t0 on X(f)?",
+          "a": "Multiplies X(f) by e^(-j2 pi f t0): only phase changes, magnitude is unchanged."
+        },
+        {
+          "q": "Why do we analyse LTI systems in frequency?",
+          "a": "Convolution becomes multiplication: Y(f) = H(f) X(f)."
+        },
+        {
+          "q": "ECG filtering in the lab?",
+          "a": "Band-pass 0.5–40 Hz to remove baseline wander and HF noise, plus a 50 Hz notch for mains."
+        }
+      ]
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "s5wgwqxtoceqk",
+      "topic": "all",
+      "createdAt": 1794242832000,
+      "endedAt": 1794243127000,
+      "questions": [
+        {
+          "stem": "An audio signal band-limited to 20 kHz must be sampled at least at:",
+          "options": [
+            "10 kHz",
+            "20 kHz",
+            "40 kHz",
+            "80 kHz"
+          ],
+          "correctIndex": 2,
+          "explanation": "Nyquist: fs > 2B = 40 kHz; CDs use 44.1 kHz for margin.",
+          "chosenIndex": 1,
+          "answeredAt": 1794242902000
+        },
+        {
+          "stem": "Compressing a signal in time by a factor 2 does what to its spectrum?",
+          "options": [
+            "Compresses it by 2",
+            "Stretches it by 2",
+            "Shifts it by 2 Hz",
+            "Nothing"
+          ],
+          "correctIndex": 1,
+          "explanation": "Time-bandwidth trade-off: x(2t) <-> (1/2)X(f/2).",
+          "chosenIndex": 3,
+          "answeredAt": 1794242972000
+        },
+        {
+          "stem": "Which signal has a flat spectrum?",
+          "options": [
+            "A Gaussian",
+            "A cosine",
+            "The Dirac delta",
+            "A rect pulse"
+          ],
+          "correctIndex": 2,
+          "explanation": "The delta contains all frequencies equally.",
+          "chosenIndex": 3,
+          "answeredAt": 1794243042000
+        },
+        {
+          "stem": "Frequency resolution of an N-point DFT at sampling rate fs:",
+          "options": [
+            "fs * N",
+            "N / fs",
+            "fs / N",
+            "2 fs / N"
+          ],
+          "correctIndex": 2,
+          "explanation": "Bins are spaced fs/N apart.",
+          "chosenIndex": 3,
+          "answeredAt": 1794243112000
+        }
+      ]
+    }
+  ],
+  "feynman": []
+}

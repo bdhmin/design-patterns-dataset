@@ -1,0 +1,541 @@
+{
+  "schemaVersion": "1.0.0",
+  "codebookVersion": "1.0.0",
+  "batch": "repo-pilot",
+  "site": {
+    "slug": "surmai--travel-board",
+    "url": "http://localhost:4402/login",
+    "finalUrl": "http://localhost:4402/travel-board",
+    "status": 200,
+    "title": "Surmai",
+    "capturedAt": "2026-11-16T17:58:54.168Z",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "screenshot": {
+      "ref": "capture/screenshot.png",
+      "width": 1440,
+      "height": 1474
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.8127.18 Safari/537.36",
+    "domain": "travel-hospitality",
+    "domainNote": "self-hosted trip planner (Surmai) — yearly travel statistics board",
+    "provenance": {
+      "source": "repo",
+      "record": "repos/repo-pilot/surmai/explore.json",
+      "repo": {
+        "name": "rohitkumbhar/surmai",
+        "url": "https://github.com/rohitkumbhar/surmai",
+        "commit": "619b602cd7b9a20f6a05eb752f0007da6bc39b6b",
+        "license": "MIT"
+      },
+      "view": {
+        "slug": "travel-board",
+        "name": "Travel Board",
+        "description": "Yearly travel statistics dashboard with year tabs, KPI cards and transportation, lodging, activity and expense stat panels."
+      }
+    }
+  },
+  "regions": [
+    {
+      "id": "sidebar",
+      "role": "sidebar",
+      "label": "Slate-blue icon rail with logo, 4 destination icons (active one white), profile and logout at bottom; tooltips on hover",
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 80,
+        "height": 900
+      },
+      "patterns": [
+        "app-shell",
+        "tooltip"
+      ]
+    },
+    {
+      "id": "header",
+      "role": "header",
+      "label": "Top bar with page title 'Travel Board', notification bell with count badge, account button with avatar and dropdown",
+      "bbox": {
+        "x": 80,
+        "y": 0,
+        "width": 1360,
+        "height": 60
+      },
+      "patterns": [
+        "app-shell",
+        "badge",
+        "menu"
+      ]
+    },
+    {
+      "id": "year-tabs",
+      "role": "global-filter",
+      "label": "Year tab strip 2028–2024 scoping the whole board (URL ?year=)",
+      "bbox": {
+        "x": 116,
+        "y": 88,
+        "width": 1288,
+        "height": 62
+      },
+      "patterns": [
+        "tabs",
+        "dashboard"
+      ]
+    },
+    {
+      "id": "kpi-row",
+      "role": "stats-strip",
+      "label": "Four KPI tiles: Trips, Destinations, Days, Cost",
+      "bbox": {
+        "x": 116,
+        "y": 175,
+        "width": 1288,
+        "height": 84
+      },
+      "patterns": [
+        "stat-tile",
+        "dashboard"
+      ]
+    },
+    {
+      "id": "stat-cards",
+      "role": "widget-grid",
+      "label": "2x2 grid of outlined cards: Transportation, Lodging, Activity, Expense stats as key-value rows",
+      "bbox": {
+        "x": 116,
+        "y": 291,
+        "width": 1288,
+        "height": 723
+      },
+      "patterns": [
+        "card",
+        "dashboard"
+      ]
+    },
+    {
+      "id": "map",
+      "role": "map",
+      "label": "Leaflet/OSM world map with destination pins and zoom buttons",
+      "bbox": {
+        "x": 117,
+        "y": 1047,
+        "width": 1286,
+        "height": 398
+      },
+      "patterns": [
+        "map-explorer",
+        "dashboard"
+      ]
+    },
+    {
+      "id": "footer",
+      "role": "footer",
+      "label": "Fixed footer with Documentation | About Surmai links",
+      "bbox": {
+        "x": 80,
+        "y": 867,
+        "width": 1360,
+        "height": 33
+      },
+      "patterns": []
+    }
+  ],
+  "patterns": [
+    {
+      "id": "dashboard",
+      "status": "present",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 116,
+            "y": 175,
+            "width": 1288,
+            "height": 1270
+          },
+          "note": "KPI tiles, stat-list cards and map all scoped by the year selector",
+          "region": "stat-cards"
+        },
+        {
+          "bbox": {
+            "x": 116,
+            "y": 88,
+            "width": 1288,
+            "height": 62
+          },
+          "note": "Year selector acts as global filter; clicking 2025 updated all tiles, cards and map",
+          "region": "year-tabs"
+        }
+      ],
+      "dims": {
+        "widgets": [
+          "kpi-tiles",
+          "tables",
+          "maps"
+        ],
+        "purpose": "motivation-and-learning",
+        "arrangement": "fixed-grid",
+        "density": "a-few-glanceable-tiles",
+        "linking": "global-filters",
+        "refresh": "on-visit",
+        "alerting": "none",
+        "ownership": "personal"
+      }
+    },
+    {
+      "id": "stat-tile",
+      "status": "present",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 116,
+            "y": 175,
+            "width": 310,
+            "height": 84
+          },
+          "quote": "TRIPS 7",
+          "region": "kpi-row"
+        },
+        {
+          "bbox": {
+            "x": 1094,
+            "y": 175,
+            "width": 310,
+            "height": 84
+          },
+          "quote": "COST $48,238.14",
+          "region": "kpi-row"
+        }
+      ],
+      "dims": {
+        "context": [
+          "label"
+        ],
+        "encoding": "number-only",
+        "window": "follows-the-dashboard-filter",
+        "drill": "none"
+      }
+    },
+    {
+      "id": "card",
+      "status": "present",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 116,
+            "y": 291,
+            "width": 636,
+            "height": 454
+          },
+          "quote": "Transportation Stats",
+          "region": "stat-cards"
+        },
+        {
+          "bbox": {
+            "x": 768,
+            "y": 291,
+            "width": 636,
+            "height": 454
+          },
+          "quote": "Lodging Stats",
+          "region": "stat-cards"
+        },
+        {
+          "bbox": {
+            "x": 768,
+            "y": 761,
+            "width": 636,
+            "height": 253
+          },
+          "quote": "Expense Stats",
+          "region": "stat-cards"
+        }
+      ],
+      "dims": {
+        "media": "none",
+        "actions": "none",
+        "shape": "vertical",
+        "style": "outlined"
+      }
+    },
+    {
+      "id": "tabs",
+      "status": "present",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 132,
+            "y": 104,
+            "width": 321,
+            "height": 30
+          },
+          "quote": "2028 2027 2026 2025 2024",
+          "note": "Active year has grey pill; hidden Scroll left/right buttons in a11y tree; switching changes URL ?year=",
+          "region": "year-tabs"
+        }
+      ],
+      "dims": {
+        "placement": "top",
+        "overflow": "scroll",
+        "label": [
+          "text"
+        ],
+        "origin": "fixed-by-the-designer",
+        "grouping": "flat",
+        "switchBy": [
+          "click"
+        ]
+      }
+    },
+    {
+      "id": "filter-controls",
+      "status": "absent",
+      "confidence": 0.6,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 132,
+            "y": 104,
+            "width": 321,
+            "height": 30
+          },
+          "note": "Year selection is coded as tabs + dashboard global filter rather than collection filter controls"
+        }
+      ],
+      "dims": {}
+    },
+    {
+      "id": "map-explorer",
+      "status": "present",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 117,
+            "y": 1047,
+            "width": 1286,
+            "height": 398
+          },
+          "quote": "Leaflet | © OpenStreetMap contributors",
+          "note": "OSM street basemap, blue pins for destinations, +/- zoom",
+          "region": "map"
+        }
+      ],
+      "dims": {
+        "basemap": "streets",
+        "overlays": [
+          "poi-pins"
+        ],
+        "mapNav": [
+          "drag-pan",
+          "pinch-scroll-zoom"
+        ],
+        "coupling": "map-only"
+      }
+    },
+    {
+      "id": "app-shell",
+      "status": "present",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 80,
+            "height": 900
+          },
+          "note": "Icon-only nav rail, active item white tile",
+          "region": "sidebar"
+        },
+        {
+          "bbox": {
+            "x": 80,
+            "y": 0,
+            "width": 1360,
+            "height": 60
+          },
+          "quote": "Travel Board",
+          "region": "header"
+        }
+      ],
+      "dims": {
+        "primary": "navigation-rail",
+        "secondary": "none",
+        "items": [
+          "fixed-destinations"
+        ],
+        "visibility": "always-visible",
+        "structure": "single-app"
+      }
+    },
+    {
+      "id": "badge",
+      "status": "present",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1131,
+            "y": 10,
+            "width": 36,
+            "height": 33
+          },
+          "quote": "2",
+          "note": "Count badge on notification bell (2 pending invitations)",
+          "region": "header"
+        }
+      ],
+      "dims": {
+        "meaning": "count",
+        "overflow": "exact-count",
+        "aggregation": "app-icon-total"
+      }
+    },
+    {
+      "id": "menu",
+      "status": "present",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1169,
+            "y": 12,
+            "width": 235,
+            "height": 38
+          },
+          "quote": "Maya Chen",
+          "note": "Live: click opens dropdown with Profile, Invitations (2), Logout, Version dev",
+          "region": "header"
+        }
+      ],
+      "dims": {
+        "openBy": "button-click",
+        "structure": "sections",
+        "item": [
+          "label",
+          "icon"
+        ],
+        "itemSet": "fixed",
+        "form": "vertical-list"
+      }
+    },
+    {
+      "id": "tooltip",
+      "status": "present",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 16,
+            "y": 203,
+            "width": 47,
+            "height": 50
+          },
+          "note": "Live: hovering sidebar icon shows dark 'Traveler Profiles' label to the right",
+          "region": "sidebar"
+        }
+      ],
+      "dims": {
+        "trigger": [
+          "hover"
+        ],
+        "timing": "until-the-pointer-leaves",
+        "content": "label",
+        "placement": "beside"
+      }
+    },
+    {
+      "id": "data-table",
+      "status": "absent",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 116,
+            "y": 291,
+            "width": 636,
+            "height": 454
+          },
+          "note": "Stat cards are key-value lists, not sortable tables"
+        }
+      ],
+      "dims": {}
+    }
+  ],
+  "structure": {
+    "layout": "app shell with narrow fixed icon sidebar rail and top bar; content is a year tab strip, a 4-up KPI tile row, a 2x2 grid of stat-list cards, and a full-width Leaflet map; fixed footer links",
+    "regions": [
+      "sidebar",
+      "header",
+      "year-tabs",
+      "kpi-row",
+      "stat-cards",
+      "map",
+      "footer"
+    ],
+    "density": "medium"
+  },
+  "aesthetics": {
+    "palette": [
+      "#ffffff",
+      "#e9e9e9",
+      "#6b7a99",
+      "#000000",
+      "#868e96",
+      "#dee2e6",
+      "#aad3df",
+      "#2a81cb"
+    ],
+    "colorRoles": {
+      "background": "#e9e9e9",
+      "surface": "#ffffff",
+      "text": "#000000",
+      "muted": "#868e96",
+      "primary": "#6b7a99",
+      "border": "#dee2e6",
+      "accent": "#2a81cb"
+    },
+    "typography": "Verdana throughout the app UI (headings, labels, numbers); Helvetica Neue only in Leaflet map attribution/controls",
+    "typeScale": "Modest: card headings 18–20px bold, KPI values 20px bold, body rows 14–16px regular, uppercase KPI labels and averages 12px grey semibold",
+    "shape": "soft",
+    "elevation": "flat",
+    "borders": "thin",
+    "imagery": [
+      "iconography",
+      "data-visualization"
+    ],
+    "iconStyle": "line",
+    "whitespace": "moderate",
+    "backgroundTreatment": "solid",
+    "mood": [
+      "clean",
+      "utilitarian",
+      "calm",
+      "personal"
+    ]
+  },
+  "model": {
+    "rater": "rater-3",
+    "provider": "claude-code",
+    "name": "claude-opus-5-5",
+    "effort": "high",
+    "generatedAt": "2026-11-16T18:00:10.705Z",
+    "servedBy": [
+      "claude-opus-5-5"
+    ],
+    "turns": 9,
+    "usage": {
+      "input_tokens": 18,
+      "cache_creation_input_tokens": 34213,
+      "cache_read_input_tokens": 290192,
+      "output_tokens": 4833
+    }
+  },
+  "notes": "Surmai (Mantine-based) travel board. Distinctive slate-blue (#6b7a99) icon rail with white active tile; light grey canvas with white 8px-radius outlined cards; stat cards use label-left/value-right rows with tiny grey 'Avg.:' sub-lines and a hairline divider before totals. Expense card has a centered 'Totals per Currency' divider label. Year strip is fixed-by-designer years; selection persists in URL (?year=2025). Footer and sidebar are fixed, so in the full-page capture they overlay content at y 867-900. Map is plain Leaflet OSM default with default blue markers."
+}

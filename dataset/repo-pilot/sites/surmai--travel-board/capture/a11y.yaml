@@ -1,0 +1,137 @@
+- banner:
+  - paragraph: Travel Board
+  - text: "2"
+  - button "Notifications":
+    - img
+  - button "MC Maya Chen maya@chenokafor.family":
+    - text: MC
+    - paragraph: Maya Chen
+    - paragraph: maya@chenokafor.family
+    - img
+- navigation:
+  - navigation:
+    - link:
+      - /url: https://surmai.app
+      - img
+    - button:
+      - img
+    - button:
+      - img
+    - button:
+      - img
+    - button:
+      - img
+    - button:
+      - img
+    - button:
+      - img
+- main:
+  - button "Scroll left":
+    - img
+  - button "2028"
+  - button "2027"
+  - button "2026"
+  - button "2025"
+  - button "2024"
+  - button "Scroll right":
+    - img
+  - paragraph: Trips
+  - paragraph: "7"
+  - paragraph: Destinations
+  - paragraph: "14"
+  - paragraph: Days
+  - paragraph: "42"
+  - paragraph: Cost
+  - paragraph: $48,238.14
+  - heading "Transportation Stats" [level=4]
+  - separator
+  - paragraph: car
+  - paragraph: 2 Trips
+  - paragraph: 8h 55m
+  - paragraph: "Avg.: 4h 28m"
+  - paragraph: Parking
+  - paragraph: 1 Trips
+  - paragraph: 33h 0m
+  - paragraph: "Avg.: 33h 0m"
+  - paragraph: Flight
+  - paragraph: 11 Trips
+  - paragraph: 58h 24m
+  - paragraph: "Avg.: 5h 19m"
+  - paragraph: Car Rental
+  - paragraph: 3 Trips
+  - paragraph: 627h 30m
+  - paragraph: "Avg.: 209h 10m"
+  - paragraph: Boat
+  - paragraph: 1 Trips
+  - paragraph: 35m
+  - paragraph: "Avg.: 35m"
+  - paragraph: Bike
+  - paragraph: 1 Trips
+  - paragraph: 3h 0m
+  - paragraph: "Avg.: 3h 0m"
+  - paragraph: Train
+  - paragraph: 1 Trips
+  - paragraph: 1h 5m
+  - paragraph: "Avg.: 1h 5m"
+  - separator
+  - paragraph: Total Travel Time
+  - paragraph: 732h 29m
+  - heading "Lodging Stats" [level=4]
+  - separator
+  - paragraph: Hotel
+  - paragraph: 12 stays
+  - paragraph: "Avg.: 2.1 nights"
+  - paragraph: Rental
+  - paragraph: 3 stays
+  - paragraph: "Avg.: 4.7 nights"
+  - paragraph: Camp Site
+  - paragraph: 2 stays
+  - paragraph: "Avg.: 1.0 nights"
+  - separator
+  - paragraph: Total Nights
+  - paragraph: "41"
+  - heading "Activity Stats" [level=4]
+  - separator
+  - paragraph: Total Activities
+  - paragraph: "21"
+  - paragraph: Avg. Activities per Trip
+  - paragraph: "3.0"
+  - heading "Expense Stats" [level=4]
+  - separator
+  - paragraph: Currencies Used
+  - paragraph: "3"
+  - separator: Totals per Currency
+  - paragraph: ISK
+  - paragraph: ISK 955,084
+  - paragraph: USD
+  - paragraph: $37,755.60
+  - paragraph: CAD
+  - paragraph: CA$4,091.23
+  - button "Marker"
+  - button "Marker"
+  - button "Marker"
+  - button "Marker"
+  - button "Marker"
+  - button "Marker"
+  - button "Marker"
+  - button "Marker"
+  - button "Marker"
+  - button "Marker"
+  - button "Marker"
+  - button "Marker"
+  - button "Marker"
+  - button "Marker"
+  - button "Zoom in"
+  - button "Zoom out"
+  - link "Leaflet":
+    - /url: https://leafletjs.com
+  - text: ©
+  - link "OpenStreetMap":
+    - /url: https://www.openstreetmap.org/copyright
+  - text: contributors
+- contentinfo:
+  - link "Documentation":
+    - /url: https://surmai.app/documentation
+  - text: "|"
+  - link "About Surmai":
+    - /url: https://surmai.app/documentation/about.html

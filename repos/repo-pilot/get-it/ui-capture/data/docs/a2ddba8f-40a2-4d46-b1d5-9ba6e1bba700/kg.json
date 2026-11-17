@@ -1,0 +1,148 @@
+{
+  "v": 1,
+  "docId": "a2ddba8f-40a2-4d46-b1d5-9ba6e1bba700",
+  "status": "ready",
+  "buildAt": 1793899290000,
+  "lastEvaluatedAt": 1794758160000,
+  "evaluationCount": 6,
+  "nodes": [
+    {
+      "id": "fourier-transform",
+      "label": "Fourier transform",
+      "summary": "Definition of the CTFT and its inverse.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 31,
+        "comprehension": 14,
+        "structure": 13,
+        "application": 2
+      },
+      "evaluatorNote": "Not yet tested."
+    },
+    {
+      "id": "rect-pulse-to-sinc",
+      "label": "Rect pulse to sinc",
+      "summary": "Spectrum of a rectangular pulse of width T = 1.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 20,
+        "comprehension": 1,
+        "structure": 0,
+        "application": 0
+      },
+      "evaluatorNote": "Not yet tested."
+    },
+    {
+      "id": "aliasing",
+      "label": "Aliasing",
+      "summary": "Undersampling a sinusoid makes it look like a lower frequency.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 42,
+        "comprehension": 31,
+        "structure": 24,
+        "application": 20
+      },
+      "evaluatorNote": "Not yet tested."
+    },
+    {
+      "id": "nyquist-shannon-theorem",
+      "label": "Nyquist-Shannon theorem",
+      "summary": "fs > 2B for perfect reconstruction.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 31,
+        "comprehension": 18,
+        "structure": 11,
+        "application": 5
+      },
+      "evaluatorNote": "Only seen while reading — no flashcard or quiz evidence yet."
+    },
+    {
+      "id": "ecg-spectrum",
+      "label": "ECG spectrum",
+      "summary": "ECG power spectrum with QRS energy and 50 Hz mains.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 56,
+        "comprehension": 42,
+        "structure": 32,
+        "application": 23
+      },
+      "evaluatorNote": "Good recognition on quizzes; explanations still lean on the textbook's wording."
+    },
+    {
+      "id": "convolution-theorem",
+      "label": "Convolution theorem",
+      "summary": "Convolution in time is multiplication in frequency: Y(f) = H(f) X(f).",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 0,
+        "comprehension": 0,
+        "structure": 0,
+        "application": 0
+      },
+      "evaluatorNote": "Only seen while reading — no flashcard or quiz evidence yet."
+    },
+    {
+      "id": "fft",
+      "label": "FFT and DFT",
+      "summary": "DFT of N samples computed in O(N log N); resolution fs/N; windowing reduces leakage.",
+      "pageHints": [
+        2
+      ],
+      "evaluation": {
+        "memory": 37,
+        "comprehension": 19,
+        "structure": 13,
+        "application": 12
+      },
+      "evaluatorNote": "Only seen while reading — no flashcard or quiz evidence yet."
+    }
+  ],
+  "edges": [
+    {
+      "source": "fourier-transform",
+      "target": "rect-pulse-to-sinc",
+      "relation": "contrasts with"
+    },
+    {
+      "source": "fourier-transform",
+      "target": "aliasing",
+      "relation": "contrasts with"
+    },
+    {
+      "source": "rect-pulse-to-sinc",
+      "target": "nyquist-shannon-theorem",
+      "relation": "is an example of"
+    },
+    {
+      "source": "fourier-transform",
+      "target": "ecg-spectrum",
+      "relation": "explains"
+    },
+    {
+      "source": "nyquist-shannon-theorem",
+      "target": "convolution-theorem",
+      "relation": "requires"
+    },
+    {
+      "source": "nyquist-shannon-theorem",
+      "target": "fft",
+      "relation": "is an example of"
+    }
+  ],
+  "globalNote": "Early days: most nodes have only been read, not tested. Start with flashcards on the core definitions, then one quiz to calibrate."
+}

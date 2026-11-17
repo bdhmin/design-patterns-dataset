@@ -1,0 +1,20 @@
+{
+  "mode": "static",
+  "entry": "/",
+  "login": null,
+  "stubs": [
+    {
+      "service": "Google Fonts (fonts.googleapis.com / fonts.gstatic.com: Baloo 2 and Nunito)",
+      "how": "The same font families from the @fontsource npm packages, copied into out/fonts with an out/fonts/fonts.css. In out/index.html the Google Fonts <link> now points at /fonts/fonts.css, and the page's CSP font-src also allows 'self'. Done after the build by .ui-capture/build.js."
+    },
+    {
+      "service": "ridiculytics visit counter (cdn.jsdelivr.net script reporting to stats.seriesoftub.es)",
+      "how": "Nothing to change: the game only loads it on the seriesoftub.es hostname, so it never loads on localhost."
+    },
+    {
+      "service": "Multimode federation relay (wss://s1.seriesoftub.es/fed)",
+      "how": "The seeded network is a solo save with Multimode off, so the game never dials a relay. Nothing is stubbed."
+    }
+  ],
+  "notes": "Series of Tubes is one static page with no backend, so out/ is the repo's own production build (OUT=.ui-capture/out node scripts/build.js, run by .ui-capture/build.js). The game keeps its networks in browser localStorage. The seed data is an established solo player's network, 'Lambda Lagoon Networks' (AS204917), played from Amsterdam for about two and a half in-game years. .ui-capture/seed/gen.js generates it: it plays the game headlessly in the repo's own jsdom test harness with the game's own actions (ACT.buildPop/buildLink/buyTransit/buyIx/pni/cache/accept/fixInc/upLink/upRouter/takeLoan...) and real day ticks. The result on Y3 · Apr 21 (day 840): Tier 2 · level 8; 47 POPs across Europe, North America, the Middle East, Asia, South America, Africa and Australia; 58 leased-wave and subsea links; 5 transit ports; 34 IX ports with 342 peering sessions; 13 PNIs; 25 CDN caches; and 157 customers of 24 types (DIA, L2VPN, SD-WAN, sovereign cloud, HFT, GPU/AI, cloud on-ramps...). Their contracts started at different times and 9 of them are unhappy. Also: one bank loan; $3.17M cash at +$1.1M/mo; and a log of DDoS attacks, cable cuts, de-peerings and churn. The game names customers 'Startup #N' once its name pools run out; the generator renames those in its own pun style. The save it writes is seed/save.json. build.js turns it into out/seed-save.js, which index.html loads first. If this browser has no networks yet, it writes the save into the game's own storage slots (sot-save-v1:<id> + sot-slots index), marks the tutorial and 'what's new' as seen, and the game boots straight into the network at 1x speed. Reset by clearing site data. Main areas: the world map with your POPs, links and cables; the top HUD (cash/bank, traffic served, reach, rank/level, customers, NOC, date, speed); the left panel tabs (NOC/incidents, customers, networks/peering, deals, infrastructure); the dashboard; link and POP panels; and the menu (save slots, settings, export)."
+}

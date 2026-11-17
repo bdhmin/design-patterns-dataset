@@ -1,0 +1,278 @@
+{
+  "v": 1,
+  "docId": "sample-anatomy",
+  "chats": [
+    {
+      "id": "s9juw7ugccmwm",
+      "title": "Why is the left ventricle thicker?",
+      "createdAt": 1789652229000,
+      "updatedAt": 1789652350213,
+      "messages": [
+        {
+          "role": "user",
+          "content": "why is the left ventricle wall thicker than the right",
+          "ts": 1789652251204
+        },
+        {
+          "role": "assistant",
+          "content": "Because it pumps into the **systemic** circulation — the whole body — against a much higher pressure (≈120 mmHg systolic) than the right ventricle faces in the pulmonary circuit (≈25 mmHg). By Laplace's law more pressure needs more wall tension, so the muscle hypertrophies to cope. Same stroke volume, ~5× the pressure.",
+          "ts": 1789652350213
+        }
+      ]
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "s5fu2bvj27lar",
+      "topic": "all",
+      "createdAt": 1789349928000,
+      "endedAt": 1789350198000,
+      "cards": [
+        {
+          "q": "Valve between right atrium and right ventricle?",
+          "a": "Tricuspid valve.",
+          "userAnswer": "tricuspid valve",
+          "rating": 4,
+          "answeredAt": 1789349978000
+        },
+        {
+          "q": "Natural pacemaker of the heart?",
+          "a": "The sinoatrial (SA) node in the right atrium wall.",
+          "userAnswer": "the sinoatrial (sa) node in the right atrium wall",
+          "rating": 4,
+          "answeredAt": 1789350028000
+        },
+        {
+          "q": "Hormone from beta cells?",
+          "a": "Insulin — lowers blood glucose.",
+          "userAnswer": "insulin — lowers blood glucose",
+          "rating": 4,
+          "answeredAt": 1789350078000
+        },
+        {
+          "q": "Hormones stored in the posterior pituitary?",
+          "a": "Oxytocin and ADH, made by hypothalamic neurons.",
+          "userAnswer": "i think it's the opposite?",
+          "rating": 1,
+          "answeredAt": 1789350128000
+        },
+        {
+          "q": "Conduction path after the AV node?",
+          "a": "Bundle of His, then Purkinje fibres.",
+          "userAnswer": "bundle of his, then purkinje fibres",
+          "rating": 3,
+          "answeredAt": 1789350178000
+        }
+      ]
+    },
+    {
+      "id": "s6l8tqk07eyaj",
+      "topic": "SA node pacemaker",
+      "createdAt": 1789820174000,
+      "endedAt": 1789820444000,
+      "cards": [
+        {
+          "q": "Valve between right atrium and right ventricle?",
+          "a": "Tricuspid valve.",
+          "userAnswer": "tricuspid valve",
+          "rating": 3,
+          "answeredAt": 1789820224000
+        },
+        {
+          "q": "Natural pacemaker of the heart?",
+          "a": "The sinoatrial (SA) node in the right atrium wall.",
+          "userAnswer": "the sinoatrial (sa) node in the right atrium wall",
+          "rating": 3,
+          "answeredAt": 1789820274000
+        },
+        {
+          "q": "Hormone from beta cells?",
+          "a": "Insulin — lowers blood glucose.",
+          "userAnswer": "insulin — lowers blood glucose",
+          "rating": 3,
+          "answeredAt": 1789820324000
+        },
+        {
+          "q": "Hormones stored in the posterior pituitary?",
+          "a": "Oxytocin and ADH, made by hypothalamic neurons.",
+          "userAnswer": "i think it's the opposite?",
+          "rating": 1,
+          "answeredAt": 1789820374000
+        },
+        {
+          "q": "Conduction path after the AV node?",
+          "a": "Bundle of His, then Purkinje fibres.",
+          "userAnswer": "bundle of his, then purkinje fibres",
+          "rating": 3,
+          "answeredAt": 1789820424000
+        }
+      ]
+    },
+    {
+      "id": "s7akiwzmnjwqd",
+      "topic": "Islets of Langerhans",
+      "createdAt": 1790290420000,
+      "endedAt": 1790290690000,
+      "cards": [
+        {
+          "q": "Valve between right atrium and right ventricle?",
+          "a": "Tricuspid valve.",
+          "userAnswer": "tricuspid valve",
+          "rating": 4,
+          "answeredAt": 1790290470000
+        },
+        {
+          "q": "Natural pacemaker of the heart?",
+          "a": "The sinoatrial (SA) node in the right atrium wall.",
+          "userAnswer": "the sinoatrial (sa) node in the right atrium wall",
+          "rating": 3,
+          "answeredAt": 1790290520000
+        },
+        {
+          "q": "Hormone from beta cells?",
+          "a": "Insulin — lowers blood glucose.",
+          "userAnswer": "insulin — lowers blood glucose",
+          "rating": 4,
+          "answeredAt": 1790290570000
+        },
+        {
+          "q": "Hormones stored in the posterior pituitary?",
+          "a": "Oxytocin and ADH, made by hypothalamic neurons.",
+          "userAnswer": "i think it's the opposite?",
+          "rating": 1,
+          "answeredAt": 1790290620000
+        },
+        {
+          "q": "Conduction path after the AV node?",
+          "a": "Bundle of His, then Purkinje fibres.",
+          "userAnswer": "bundle of his, then purkinje fibres",
+          "rating": 4,
+          "answeredAt": 1790290670000
+        }
+      ]
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "s2uujwjkhguat",
+      "topic": "all",
+      "createdAt": 1789752996000,
+      "endedAt": 1789753291000,
+      "questions": [
+        {
+          "stem": "Glucagon stimulates:",
+          "options": [
+            "Glycogen synthesis",
+            "Glycogenolysis and gluconeogenesis",
+            "Insulin release",
+            "Glucose excretion"
+          ],
+          "correctIndex": 1,
+          "explanation": "It raises blood glucose during fasting.",
+          "chosenIndex": 1,
+          "answeredAt": 1789753066000
+        },
+        {
+          "stem": "The pituitary sits in the:",
+          "options": [
+            "Foramen magnum",
+            "Sella turcica",
+            "Mediastinum",
+            "Medulla"
+          ],
+          "correctIndex": 1,
+          "explanation": "Of the sphenoid bone.",
+          "chosenIndex": 1,
+          "answeredAt": 1789753136000
+        },
+        {
+          "stem": "Lesion of the nucleus tractus solitarius abolishes:",
+          "options": [
+            "Baroreceptor reflexes",
+            "Insulin release",
+            "Vision",
+            "Hearing"
+          ],
+          "correctIndex": 0,
+          "explanation": "NTS integrates baroreceptor input.",
+          "chosenIndex": 3,
+          "answeredAt": 1789753206000
+        },
+        {
+          "stem": "Which valve guards the exit to the aorta?",
+          "options": [
+            "Mitral",
+            "Tricuspid",
+            "Aortic semilunar",
+            "Pulmonary"
+          ],
+          "correctIndex": 2,
+          "explanation": "Semilunar valves guard the great arteries.",
+          "chosenIndex": 3,
+          "answeredAt": 1789753276000
+        }
+      ]
+    },
+    {
+      "id": "s7cnc9ihsj3by",
+      "topic": "all",
+      "createdAt": 1790256831000,
+      "endedAt": 1790257126000,
+      "questions": [
+        {
+          "stem": "Glucagon stimulates:",
+          "options": [
+            "Glycogen synthesis",
+            "Glycogenolysis and gluconeogenesis",
+            "Insulin release",
+            "Glucose excretion"
+          ],
+          "correctIndex": 1,
+          "explanation": "It raises blood glucose during fasting.",
+          "chosenIndex": 0,
+          "answeredAt": 1790256901000
+        },
+        {
+          "stem": "The pituitary sits in the:",
+          "options": [
+            "Foramen magnum",
+            "Sella turcica",
+            "Mediastinum",
+            "Medulla"
+          ],
+          "correctIndex": 1,
+          "explanation": "Of the sphenoid bone.",
+          "chosenIndex": 2,
+          "answeredAt": 1790256971000
+        },
+        {
+          "stem": "Lesion of the nucleus tractus solitarius abolishes:",
+          "options": [
+            "Baroreceptor reflexes",
+            "Insulin release",
+            "Vision",
+            "Hearing"
+          ],
+          "correctIndex": 0,
+          "explanation": "NTS integrates baroreceptor input.",
+          "chosenIndex": 0,
+          "answeredAt": 1790257041000
+        },
+        {
+          "stem": "Which valve guards the exit to the aorta?",
+          "options": [
+            "Mitral",
+            "Tricuspid",
+            "Aortic semilunar",
+            "Pulmonary"
+          ],
+          "correctIndex": 2,
+          "explanation": "Semilunar valves guard the great arteries.",
+          "chosenIndex": 0,
+          "answeredAt": 1790257111000
+        }
+      ]
+    }
+  ],
+  "feynman": []
+}

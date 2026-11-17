@@ -1,0 +1,10 @@
+[tools]
+node = "24.22.3"
+pnpm = "11.6.0"
+
+[settings]
+# sigstore/GitHub attestation endpoints are unreachable from the sandbox
+aqua.github_attestations = false
+aqua.slsa = false
+github_attestations = false
+slsa = false

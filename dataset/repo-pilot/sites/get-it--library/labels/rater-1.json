@@ -1,0 +1,372 @@
+{
+  "schemaVersion": "1.0.0",
+  "codebookVersion": "1.0.0",
+  "batch": "repo-pilot",
+  "site": {
+    "slug": "get-it--library",
+    "url": "http://localhost:4401/library",
+    "finalUrl": "http://localhost:4401/library",
+    "status": 200,
+    "title": "Get It.",
+    "capturedAt": "2026-11-16T17:50:59.656Z",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "screenshot": {
+      "ref": "capture/screenshot.png",
+      "width": 1440,
+      "height": 1409
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.8127.18 Safari/537.36",
+    "domain": "education",
+    "domainNote": "AI study tool: PDF/doc library with tags, chats, flashcards, quizzes, knowledge graph",
+    "provenance": {
+      "source": "repo",
+      "record": "repos/repo-pilot/get-it/explore.json",
+      "repo": {
+        "name": "beltromatti/get-it",
+        "url": "https://github.com/beltromatti/get-it",
+        "commit": "ae0fa999f352b951ab8150fac5dcf9d7ab6fd9a4",
+        "license": "Apache-2.0"
+      },
+      "view": {
+        "slug": "library",
+        "name": "Library",
+        "description": "List of all uploaded study documents with page counts, last-opened dates, visualization and knowledge-graph status badges."
+      }
+    }
+  },
+  "regions": [
+    {
+      "id": "top-bar",
+      "role": "header",
+      "label": "Tab-styled nav (Upload, Library active) plus refresh, settings, account icon buttons",
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 43
+      },
+      "patterns": [
+        "app-shell",
+        "tabs"
+      ]
+    },
+    {
+      "id": "page-intro",
+      "role": "page-header",
+      "label": "H1 'Your library' with explanatory paragraph",
+      "bbox": {
+        "x": 312,
+        "y": 91,
+        "width": 816,
+        "height": 95
+      },
+      "patterns": []
+    },
+    {
+      "id": "library-list",
+      "role": "collection-list",
+      "label": "14 outlined horizontal document cards with icon, title, filename/pages/last-opened meta, viz and graph status pills, hover-revealed delete",
+      "bbox": {
+        "x": 312,
+        "y": 218,
+        "width": 816,
+        "height": 1143
+      },
+      "patterns": [
+        "overview-detail",
+        "card",
+        "badge"
+      ]
+    }
+  ],
+  "patterns": [
+    {
+      "id": "app-shell",
+      "status": "present",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 43
+          },
+          "region": "top-bar",
+          "quote": "Upload Library",
+          "note": "Persistent top bar with primary destinations and refresh/settings/account icon buttons"
+        }
+      ],
+      "dims": {
+        "primary": "top-navigation-bar",
+        "secondary": "none",
+        "items": [
+          "fixed-destinations"
+        ],
+        "structure": "single-app"
+      }
+    },
+    {
+      "id": "tabs",
+      "status": "uncertain",
+      "confidence": 0.5,
+      "rationale": "Upload/Library are styled as browser-like tabs with an active tab, but they are route links (Upload -> /) rather than an in-page tab panel; could be read as app-shell nav only.",
+      "evidence": [
+        {
+          "bbox": {
+            "x": 8,
+            "y": 6,
+            "width": 191,
+            "height": 37
+          },
+          "region": "top-bar",
+          "quote": "Library",
+          "note": "Folder-style tab strip; active Library tab is white and merges with content area"
+        }
+      ],
+      "dims": {
+        "placement": "top",
+        "label": [
+          "icon",
+          "text"
+        ],
+        "origin": "fixed-by-the-designer",
+        "grouping": "flat",
+        "switchBy": [
+          "click"
+        ]
+      }
+    },
+    {
+      "id": "overview-detail",
+      "status": "present",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 312,
+            "y": 218,
+            "width": 816,
+            "height": 1143
+          },
+          "region": "library-list",
+          "quote": "Click any row to jump back in",
+          "note": "List overview of documents; each row links to /viewer/<id> detail page"
+        }
+      ],
+      "dims": {
+        "attributePlacement": [
+          "in-overview-only",
+          "in-both-views"
+        ],
+        "abstraction": [
+          "category",
+          "sum-or-average"
+        ],
+        "truncation": "ellipsis",
+        "relationship": "one-to-one",
+        "recursion": [
+          "none"
+        ],
+        "openIn": "new-page",
+        "overviewType": [
+          "list"
+        ],
+        "openBy": [
+          "click"
+        ],
+        "openFrom": "whole-item",
+        "attributeScope": [
+          "per-item"
+        ]
+      }
+    },
+    {
+      "id": "card",
+      "status": "present",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 312,
+            "y": 218,
+            "width": 816,
+            "height": 74
+          },
+          "region": "library-list",
+          "quote": "Lead_Application_26.docx",
+          "note": "White, 1px #ececea outline, 12px radius; file icon thumbnail, title, meta line, status pills; trash icon appears on hover"
+        },
+        {
+          "bbox": {
+            "x": 312,
+            "y": 547,
+            "width": 816,
+            "height": 74
+          },
+          "region": "library-list",
+          "quote": "Neurophysiology_-_Action_Potential___Synaptic_Transmission",
+          "note": "Meta line truncated with ellipsis"
+        }
+      ],
+      "dims": {
+        "media": "side-thumbnail",
+        "actions": "one-primary-action",
+        "shape": "horizontal",
+        "style": "outlined",
+        "target": "whole-card"
+      }
+    },
+    {
+      "id": "badge",
+      "status": "present",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 972,
+            "y": 242,
+            "width": 93,
+            "height": 25
+          },
+          "region": "library-list",
+          "quote": "graph ready",
+          "note": "Green status pill for knowledge graph"
+        },
+        {
+          "bbox": {
+            "x": 990,
+            "y": 326,
+            "width": 75,
+            "height": 24
+          },
+          "region": "library-list",
+          "quote": "pending",
+          "note": "Neutral grey status pill"
+        },
+        {
+          "bbox": {
+            "x": 898,
+            "y": 242,
+            "width": 68,
+            "height": 25
+          },
+          "region": "library-list",
+          "quote": "1/6 viz",
+          "note": "Tag/visualization ratio pill; green when complete (5/5), grey when partial"
+        }
+      ],
+      "dims": {
+        "meaning": "status",
+        "overflow": "exact-count",
+        "aggregation": "per-item"
+      }
+    },
+    {
+      "id": "file-manager",
+      "status": "absent",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 312,
+            "y": 218,
+            "width": 816,
+            "height": 1143
+          },
+          "note": "Flat document list with no folders, locations, path or toolbar"
+        }
+      ],
+      "dims": {}
+    },
+    {
+      "id": "data-table",
+      "status": "absent",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 312,
+            "y": 218,
+            "width": 816,
+            "height": 1143
+          },
+          "note": "Rows are cards without columns, sort or filter"
+        }
+      ],
+      "dims": {}
+    }
+  ],
+  "structure": {
+    "layout": "Top bar with tab-styled Upload/Library nav and utility icons; single centered 816px column with page title, intro paragraph and a vertical list of full-width document cards",
+    "regions": [
+      "top-bar",
+      "page-intro",
+      "library-list"
+    ],
+    "density": "medium"
+  },
+  "aesthetics": {
+    "palette": [
+      "#f6f5f2",
+      "#ffffff",
+      "#111113",
+      "#6a6a6e",
+      "#2a2a2d",
+      "#ececea",
+      "#f3f2ef",
+      "#16a34a",
+      "#4f46e5"
+    ],
+    "colorRoles": {
+      "background": "#ffffff",
+      "surface": "#ffffff",
+      "chrome": "#f6f5f2",
+      "text": "#111113",
+      "muted": "#6a6a6e",
+      "border": "#ececea",
+      "accent": "#16a34a",
+      "primary": "#4f46e5",
+      "icon-tile": "#f3f2ef"
+    },
+    "typography": "GeistSans throughout: 34px/700 H1, 14px/600 card titles, 14px body intro, 12px meta lines, 11px pills, 13px/500 nav tabs",
+    "typeScale": "Strong jump from 34px bold heading to 14px titles/body, then 12px and 11px muted metadata; mostly weight 400–600",
+    "shape": "soft",
+    "elevation": "flat",
+    "borders": "thin",
+    "imagery": [
+      "iconography"
+    ],
+    "iconStyle": "line",
+    "whitespace": "generous",
+    "backgroundTreatment": "solid",
+    "mood": [
+      "clean",
+      "calm",
+      "minimal",
+      "utilitarian",
+      "neutral"
+    ]
+  },
+  "model": {
+    "rater": "rater-1",
+    "provider": "claude-code",
+    "name": "claude-opus-5-5",
+    "effort": "high",
+    "generatedAt": "2026-11-16T17:51:58.351Z",
+    "servedBy": [
+      "claude-opus-5-5"
+    ],
+    "turns": 7,
+    "usage": {
+      "input_tokens": 14,
+      "cache_creation_input_tokens": 27929,
+      "cache_read_input_tokens": 186563,
+      "output_tokens": 6247
+    }
+  },
+  "notes": "Warm off-white chrome (#f6f5f2) top strip with folder-like tabs; active 'Library' tab is white, joining the white content area. Status pills use a mint-green fill/border for completed states (graph ready, N evals, full viz) versus grey outlined for partial/pending — a two-state traffic system. Row delete (trash) icon is hidden until hover and turns red on press. Settings icon opens an anchored settings popover (model engine, model selects, appearance segmented control, toggle, number input) — not visible in the capture so not coded. Filenames shown raw with underscores. No search, sort or filter despite 14 items."
+}

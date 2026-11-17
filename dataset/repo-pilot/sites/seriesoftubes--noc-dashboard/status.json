@@ -1,0 +1,23 @@
+{
+  "slug": "seriesoftubes--noc-dashboard",
+  "url": "http://seriesoftubes.localhost:4318/",
+  "domain": "games",
+  "source": "repo",
+  "state": "queued",
+  "raters": {
+    "rater-1": {
+      "state": "pending",
+      "updatedAt": "2026-11-16T08:32:57.521Z"
+    },
+    "rater-2": {
+      "state": "pending",
+      "updatedAt": "2026-11-16T08:32:57.521Z"
+    },
+    "rater-3": {
+      "state": "pending",
+      "updatedAt": "2026-11-16T08:32:57.521Z"
+    }
+  },
+  "flags": [],
+  "updatedAt": "2026-11-16T08:32:57.521Z"
+}

@@ -1,0 +1,86 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+  deployments: write
+
+jobs:
+  doc:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: bufbuild/buf-action@v1
+        with:
+          token: ${{ secrets.BUF_TOKEN }}
+          pr_comment: true
+          breaking: true
+          breaking_against: "https://github.com/ringsaturn/tzf.git#branch=main"
+
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Set up Go
+        uses: actions/setup-go@v6
+        with:
+          go-version-file: go.mod
+
+      # A `replace` directive only applies when its module is the main module,
+      # so a dependency graph that resolves here can still be broken for
+      # consumers (see #217). Build tzf from a throwaway module where tzf is a
+      # dependency, which is the only way that difference shows up.
+      - name: Test external module consumption
+        shell: bash
+        run: |
+          set -euo pipefail
+          repo_root="$PWD"
+          consumer_dir="$(mktemp -d)"
+          trap 'rm -rf "$consumer_dir"' EXIT
+          cd "$consumer_dir"
+          go mod init example.com/tzf-consumer
+          go mod edit -replace="github.com/ringsaturn/tzf=$repo_root"
+          printf '%s\n' \
+            'package main' \
+            '' \
+            'import _ "github.com/ringsaturn/tzf"' \
+            '' \
+            'func main() {}' \
+            > main.go
+          go mod tidy
+          go test ./...
+
+      - run: ls -al
+
+      - name: golangci-lint
+        uses: golangci/golangci-lint-action@v9
+        with:
+          version: latest
+          args: --timeout=5m
+          skip-cache: true
+
+      - name: Run coverage
+        run: go test -coverprofile=coverage.txt -covermode=atomic
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v7
+
+      - name: Bench
+        run: make bench
+
+      - name: Memory footprint
+        run: make bench-memory
+
+
+      - name: Write benchmark summary
+        run: python3 scripts/bench2summary.py benchmark_result.txt memory_result.txt >> $GITHUB_STEP_SUMMARY

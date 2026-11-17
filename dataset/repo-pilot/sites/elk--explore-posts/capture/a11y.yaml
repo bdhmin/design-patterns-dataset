@@ -1,0 +1,186 @@
+- main:
+  - complementary:
+    - link "Elk":
+      - /url: /home
+      - img
+      - text: Elk
+    - button "Go back"
+    - navigation:
+      - link "Home":
+        - /url: /home
+      - link "Notifications":
+        - /url: /notifications
+      - link "Conversations":
+        - /url: /conversations
+      - link "Favorites":
+        - /url: /favourites
+      - link "Bookmarks":
+        - /url: /bookmarks
+      - link "Compose":
+        - /url: /compose
+      - link "Scheduled posts":
+        - /url: /scheduled-posts
+      - link "Explore":
+        - /url: /localhost:4410/explore
+      - link "Local":
+        - /url: /localhost:4410/public/local
+      - link "Federated":
+        - /url: /localhost:4410/public
+      - link "Lists":
+        - /url: /localhost:4410/lists
+      - link "Hashtags":
+        - /url: /hashtags
+      - link "Collections":
+        - /url: /localhost:4410/collections
+      - link "Settings":
+        - /url: /settings
+    - paragraph:
+      - text: Viewing
+      - strong: localhost:4410
+      - text: public data
+    - paragraph: Sign in to follow profiles or hashtags, favorite, share and reply to posts.
+    - button "Sign in"
+  - link "Posts":
+    - /url: /localhost:4410/explore
+  - link "Hashtags":
+    - /url: /localhost:4410/explore/tags
+  - link "News":
+    - /url: /localhost:4410/explore/links
+  - text: For you
+  - paragraph: These posts from this and other servers in the decentralized network are gaining traction on this server right now.
+  - button
+  - link "climatedesk's avatar":
+    - /url: /localhost:4410/@climatedesk@mastodon.green
+    - img "climatedesk's avatar"
+  - link "Nordic Climate Desk @climatedesk@mastodon.green":
+    - /url: /localhost:4410/@climatedesk@mastodon.green
+    - text: Nordic Climate Desk
+    - paragraph: "@climatedesk@mastodon.green"
+  - link "1w":
+    - /url: /localhost:4410/@climatedesk@mastodon.green/117576817919262815
+    - time: 1w
+  - button "More"
+  - paragraph:
+    - text: "Sweden's emissions rose 4% in 2025, the first increase in over a decade, driven by cuts to the biofuel blending mandate. Our analysis:"
+    - link "nordicclimatedesk.eu/2026/11/e…":
+      - /url: https://nordicclimatedesk.eu/2026/11/emissions-rise
+  - link "Sweden's emissions rose for the first time in a decade. Here's why. - Sweden's emissions rose for the first time in a decade. Here's why. Nordic Climate Desk Sweden's emissions rose for the first time in a decade. Here's why. Cuts to the fuel blending mandate wiped out years of progress in the transport sector.":
+    - /url: https://nordicclimatedesk.eu/2026/11/emissions-rise
+    - img "Sweden's emissions rose for the first time in a decade. Here's why. - Sweden's emissions rose for the first time in a decade. Here's why."
+    - paragraph: Nordic Climate Desk
+    - strong: Sweden's emissions rose for the first time in a decade. Here's why.
+    - paragraph: Cuts to the fuel blending mandate wiped out years of progress in the transport sector.
+  - button "Reply"
+  - button "Boost": 92 92
+  - button "Quote" [disabled]
+  - button "Favorite": 218 218
+  - button "Bookmarked"
+  - link "dmitri's avatar":
+    - /url: /localhost:4410/@dmitri@infosec.exchange
+    - img "dmitri's avatar"
+  - link "Dmitri Volkov @dmitri@infosec.exchange":
+    - /url: /localhost:4410/@dmitri@infosec.exchange
+    - text: Dmitri Volkov
+    - paragraph: "@dmitri@infosec.exchange"
+  - link "1w":
+    - /url: /localhost:4410/@dmitri@infosec.exchange/117581617440424006
+    - time: 1w
+  - button "More"
+  - paragraph: Vendor took 214 days to patch, then called it "low severity" in the advisory. It is pre-auth RCE. Writeup next week.
+  - button "Reply"
+  - button "Boost": 62 62
+  - button "Quote" [disabled]
+  - button "Favorite": 146 146
+  - button "Bookmark"
+  - link "dmitri's avatar":
+    - /url: /localhost:4410/@dmitri@infosec.exchange
+    - img "dmitri's avatar"
+  - link "Dmitri Volkov @dmitri@infosec.exchange":
+    - /url: /localhost:4410/@dmitri@infosec.exchange
+    - text: Dmitri Volkov
+    - paragraph: "@dmitri@infosec.exchange"
+  - link "4d":
+    - /url: /localhost:4410/@dmitri@infosec.exchange/117602245684494408
+    - time: 4d
+  - button "More"
+  - paragraph:
+    - text: "Gave a talk on supply chain attacks yesterday. Slides are up:"
+    - link "volkov.sec/talks/supply-chain-…":
+      - /url: https://volkov.sec/talks/supply-chain-2026
+  - 'link "volkov.sec Your dependencies have dependencies: supply chain attacks in 2026 Slides and notes from my talk at Security Fest, Gothenburg."':
+    - /url: https://volkov.sec/talks/supply-chain-2026
+    - paragraph: volkov.sec
+    - strong: "Your dependencies have dependencies: supply chain attacks in 2026"
+    - paragraph: Slides and notes from my talk at Security Fest, Gothenburg.
+  - button "Reply"
+  - button "Boost": 80 80
+  - button "Quote" [disabled]
+  - button "Favorited": 82 82
+  - button "Bookmarked"
+  - link "ravi's avatar":
+    - /url: /localhost:4410/@ravi@hachyderm.io
+    - img "ravi's avatar"
+  - link "Ravi Subramanian @ravi@hachyderm.io":
+    - /url: /localhost:4410/@ravi@hachyderm.io
+    - text: Ravi Subramanian
+    - paragraph: "@ravi@hachyderm.io"
+  - link "2w":
+    - /url: /localhost:4410/@ravi@hachyderm.io/117524585673457696
+    - time: 2w
+  - button "More"
+  - paragraph: Postgres autovacuum is like flossing. Nobody thinks about it until something hurts and then it is too late.
+  - button "Reply"
+  - button "Boost": 61 61
+  - button "Quote" [disabled]
+  - button "Favorite": 99 99
+  - button "Bookmark"
+  - link "ravi's avatar":
+    - /url: /localhost:4410/@ravi@hachyderm.io
+    - img "ravi's avatar"
+  - link "Ravi Subramanian @ravi@hachyderm.io":
+    - /url: /localhost:4410/@ravi@hachyderm.io
+    - text: Ravi Subramanian
+    - paragraph: "@ravi@hachyderm.io"
+  - link "1w":
+    - /url: /localhost:4410/@ravi@hachyderm.io/117545965038403620
+    - time: 1w
+  - button "More"
+  - paragraph: work rant, mild swearing in replies
+  - button "Show more"
+  - button "Reply"
+  - button "Boost": 46 46
+  - button "Quote" [disabled]
+  - button "Favorite": 120 120
+  - button "Bookmark"
+  - text: End of the list
+  - complementary:
+    - textbox "Search"
+    - text: Harbor Social
+    - img "Thumbnail for Harbor Social server"
+    - paragraph: "A friendly Mastodon server for people around the North Sea and Baltic: scientists, makers, cyclists, cooks and the generally curious."
+    - button "Toggle Theme"
+    - button "Zen Mode"
+    - button "Keyboard shortcuts"
+    - link "Sponsor us":
+      - /url: https://github.com/sponsors/elk-zone
+    - text: Built
+    - time: 1 hour ago
+    - text: ·
+    - link "v1.0.1":
+      - /url: https://github.com/elk-zone/elk/releases/tag/v1.0.1
+    - text: ·
+    - link "6b956a6":
+      - /url: https://github.com/elk-zone/elk/commit/6b956a6d4a89a676059d83a0b0e59d7165d5f266
+    - link "About":
+      - /url: /settings/about
+    - text: ·
+    - link "Mastodon":
+      - /url: /m.webtoo.ls/@elk
+    - text: ·
+    - link "Discord":
+      - /url: https://chat.elk.zone
+    - text: ·
+    - link "GitHub":
+      - /url: https://github.com/elk-zone/elk
+- status
+- img

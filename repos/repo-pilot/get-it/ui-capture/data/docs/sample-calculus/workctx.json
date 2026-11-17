@@ -1,0 +1,278 @@
+{
+  "v": 1,
+  "docId": "sample-calculus",
+  "chats": [
+    {
+      "id": "scmst00nnbx17",
+      "title": "Integral of the bell curve",
+      "createdAt": 1790496384000,
+      "updatedAt": 1790496510886,
+      "messages": [
+        {
+          "role": "user",
+          "content": "how do we know the integral of the normal density is 1 if there's no antiderivative",
+          "ts": 1790496412278
+        },
+        {
+          "role": "assistant",
+          "content": "Neat trick (Gauss/Poisson): square it.\n\nI² = ∫∫ e^(-(x²+y²)/2) dx dy over the plane. Switch to polar coordinates: x²+y² = r², dx dy = r dr dθ. Now the r factor gives you an antiderivative!\n\nI² = ∫₀^{2π} ∫₀^∞ e^(-r²/2) r dr dθ = 2π · 1, so I = √(2π). Dividing by √(2π) in φ(x) normalises it to 1.\n\nNot in your notes — it's the classic argument from Analisi 2.",
+          "ts": 1790496510886
+        }
+      ]
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "sn2r81cofu7m",
+      "topic": "all",
+      "createdAt": 1789876068000,
+      "endedAt": 1789876338000,
+      "cards": [
+        {
+          "q": "Definition of derivative",
+          "a": "f'(x) = lim h->0 [f(x+h) - f(x)] / h.",
+          "userAnswer": "not sure",
+          "rating": 1,
+          "answeredAt": 1789876118000
+        },
+        {
+          "q": "Chain rule",
+          "a": "d/dx f(g(x)) = f'(g(x)) g'(x).",
+          "userAnswer": "d/dx f(g(x)) = f'(g(x)) g'(x)",
+          "rating": 4,
+          "answeredAt": 1789876168000
+        },
+        {
+          "q": "FTC part II",
+          "a": "Integral from a to b of f = F(b) - F(a) for any antiderivative F.",
+          "userAnswer": "i think it's the opposite?",
+          "rating": 1,
+          "answeredAt": 1789876218000
+        },
+        {
+          "q": "Maclaurin series of sin x",
+          "a": "sum (-1)^n x^(2n+1)/(2n+1)!",
+          "userAnswer": "sum (-1)^n x^(2n+1)/(2n+1)!",
+          "rating": 3,
+          "answeredAt": 1789876268000
+        },
+        {
+          "q": "Why must Phi(x) be computed numerically?",
+          "a": "exp(-x^2/2) has no elementary antiderivative.",
+          "userAnswer": "exp(-x^2/2) has no elementary antiderivative",
+          "rating": 4,
+          "answeredAt": 1789876318000
+        }
+      ]
+    },
+    {
+      "id": "s49nm6tsv87pp",
+      "topic": "Tangent envelope of x^2",
+      "createdAt": 1790841004000,
+      "endedAt": 1790841274000,
+      "cards": [
+        {
+          "q": "Definition of derivative",
+          "a": "f'(x) = lim h->0 [f(x+h) - f(x)] / h.",
+          "userAnswer": "f'(x) = lim h->0 [f(x+h) - f(x)] / h",
+          "rating": 3,
+          "answeredAt": 1790841054000
+        },
+        {
+          "q": "Chain rule",
+          "a": "d/dx f(g(x)) = f'(g(x)) g'(x).",
+          "userAnswer": "d/dx f(g(x)) = f'(g(x)) g'(x)",
+          "rating": 3,
+          "answeredAt": 1790841104000
+        },
+        {
+          "q": "FTC part II",
+          "a": "Integral from a to b of f = F(b) - F(a) for any antiderivative F.",
+          "userAnswer": "integral from a to b of f = f(b) - f(a) for any antiderivative f",
+          "rating": 4,
+          "answeredAt": 1790841154000
+        },
+        {
+          "q": "Maclaurin series of sin x",
+          "a": "sum (-1)^n x^(2n+1)/(2n+1)!",
+          "userAnswer": "sum (-1)^n x^(2n+1)/(2n+1)!",
+          "rating": 3,
+          "answeredAt": 1790841204000
+        },
+        {
+          "q": "Why must Phi(x) be computed numerically?",
+          "a": "exp(-x^2/2) has no elementary antiderivative.",
+          "userAnswer": "exp(-x^2/2) has no elementary antiderivative",
+          "rating": 3,
+          "answeredAt": 1790841254000
+        }
+      ]
+    },
+    {
+      "id": "s8ekbftw97y0e",
+      "topic": "Fundamental Theorem",
+      "createdAt": 1791805940000,
+      "endedAt": 1791806210000,
+      "cards": [
+        {
+          "q": "Definition of derivative",
+          "a": "f'(x) = lim h->0 [f(x+h) - f(x)] / h.",
+          "userAnswer": "not sure",
+          "rating": 1,
+          "answeredAt": 1791805990000
+        },
+        {
+          "q": "Chain rule",
+          "a": "d/dx f(g(x)) = f'(g(x)) g'(x).",
+          "userAnswer": "d/dx f(g(x)) = f'(g(x)) g'(x)",
+          "rating": 3,
+          "answeredAt": 1791806040000
+        },
+        {
+          "q": "FTC part II",
+          "a": "Integral from a to b of f = F(b) - F(a) for any antiderivative F.",
+          "userAnswer": "integral from a to b of f = f(b) - f(a) for any antiderivative f",
+          "rating": 4,
+          "answeredAt": 1791806090000
+        },
+        {
+          "q": "Maclaurin series of sin x",
+          "a": "sum (-1)^n x^(2n+1)/(2n+1)!",
+          "userAnswer": "sum (-1)^n x^(2n+1)/(2n+1)!",
+          "rating": 3,
+          "answeredAt": 1791806140000
+        },
+        {
+          "q": "Why must Phi(x) be computed numerically?",
+          "a": "exp(-x^2/2) has no elementary antiderivative.",
+          "userAnswer": "exp(-x^2/2) has no elementary antiderivative",
+          "rating": 4,
+          "answeredAt": 1791806190000
+        }
+      ]
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "sbj6z4fmp8fgv",
+      "topic": "all",
+      "createdAt": 1790703156000,
+      "endedAt": 1790703451000,
+      "questions": [
+        {
+          "stem": "Tangent to y = x^2 at x = 3:",
+          "options": [
+            "y = 6x - 9",
+            "y = 3x",
+            "y = 6x + 9",
+            "y = 2x - 3"
+          ],
+          "correctIndex": 0,
+          "explanation": "y = 2ax - a^2 with a = 3.",
+          "chosenIndex": 0,
+          "answeredAt": 1790703226000
+        },
+        {
+          "stem": "d/dx sin(x^2) =",
+          "options": [
+            "cos(x^2)",
+            "2x cos(x^2)",
+            "2 sin x cos x",
+            "-2x cos(x^2)"
+          ],
+          "correctIndex": 1,
+          "explanation": "Chain rule.",
+          "chosenIndex": 1,
+          "answeredAt": 1790703296000
+        },
+        {
+          "stem": "The inflection points of the standard normal density are at:",
+          "options": [
+            "x = 0",
+            "x = +/-1",
+            "x = +/-2",
+            "none"
+          ],
+          "correctIndex": 1,
+          "explanation": "Second derivative changes sign at +/- sigma.",
+          "chosenIndex": 3,
+          "answeredAt": 1790703366000
+        },
+        {
+          "stem": "Increasing the degree of a Taylor polynomial:",
+          "options": [
+            "Improves accuracy everywhere",
+            "Improves accuracy inside the radius of convergence",
+            "Never changes accuracy",
+            "Always diverges"
+          ],
+          "correctIndex": 1,
+          "explanation": "Outside the radius it still diverges.",
+          "chosenIndex": 1,
+          "answeredAt": 1790703436000
+        }
+      ]
+    },
+    {
+      "id": "sbgz40wbs6fww",
+      "topic": "all",
+      "createdAt": 1791737016000,
+      "endedAt": 1791737311000,
+      "questions": [
+        {
+          "stem": "Tangent to y = x^2 at x = 3:",
+          "options": [
+            "y = 6x - 9",
+            "y = 3x",
+            "y = 6x + 9",
+            "y = 2x - 3"
+          ],
+          "correctIndex": 0,
+          "explanation": "y = 2ax - a^2 with a = 3.",
+          "chosenIndex": 1,
+          "answeredAt": 1791737086000
+        },
+        {
+          "stem": "d/dx sin(x^2) =",
+          "options": [
+            "cos(x^2)",
+            "2x cos(x^2)",
+            "2 sin x cos x",
+            "-2x cos(x^2)"
+          ],
+          "correctIndex": 1,
+          "explanation": "Chain rule.",
+          "chosenIndex": 1,
+          "answeredAt": 1791737156000
+        },
+        {
+          "stem": "The inflection points of the standard normal density are at:",
+          "options": [
+            "x = 0",
+            "x = +/-1",
+            "x = +/-2",
+            "none"
+          ],
+          "correctIndex": 1,
+          "explanation": "Second derivative changes sign at +/- sigma.",
+          "chosenIndex": 1,
+          "answeredAt": 1791737226000
+        },
+        {
+          "stem": "Increasing the degree of a Taylor polynomial:",
+          "options": [
+            "Improves accuracy everywhere",
+            "Improves accuracy inside the radius of convergence",
+            "Never changes accuracy",
+            "Always diverges"
+          ],
+          "correctIndex": 1,
+          "explanation": "Outside the radius it still diverges.",
+          "chosenIndex": 1,
+          "answeredAt": 1791737296000
+        }
+      ]
+    }
+  ],
+  "feynman": []
+}

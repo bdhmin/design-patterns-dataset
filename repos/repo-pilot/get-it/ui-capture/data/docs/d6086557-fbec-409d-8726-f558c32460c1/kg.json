@@ -1,0 +1,158 @@
+{
+  "v": 1,
+  "docId": "d6086557-fbec-409d-8726-f558c32460c1",
+  "status": "ready",
+  "buildAt": 1790861490000,
+  "lastEvaluatedAt": 1794512340000,
+  "evaluationCount": 15,
+  "nodes": [
+    {
+      "id": "eigenvector-geometry",
+      "label": "Eigenvector geometry",
+      "summary": "A linear map stretches eigenvectors without rotating them.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 60,
+        "comprehension": 45,
+        "structure": 43,
+        "application": 33
+      },
+      "evaluatorNote": "Good recognition on quizzes; explanations still lean on the textbook's wording."
+    },
+    {
+      "id": "characteristic-equation",
+      "label": "Characteristic equation",
+      "summary": "det(A - lambda I) = 0 for A = [[2,1],[1,2]].",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 77,
+        "comprehension": 59,
+        "structure": 58,
+        "application": 48
+      },
+      "evaluatorNote": "Good recognition on quizzes; explanations still lean on the textbook's wording."
+    },
+    {
+      "id": "diagonalization",
+      "label": "Diagonalization",
+      "summary": "A = P D P^-1 and powers A^k.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 86,
+        "comprehension": 72,
+        "structure": 64,
+        "application": 56
+      },
+      "evaluatorNote": "Explains it unprompted and applies it to new cases; keep it warm with spaced review."
+    },
+    {
+      "id": "pagerank-power-method",
+      "label": "PageRank power method",
+      "summary": "Power iteration converging to dominant eigenvector.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 58,
+        "comprehension": 44,
+        "structure": 38,
+        "application": 32
+      },
+      "evaluatorNote": "Recalls the definition but hesitated applying it to an unseen example."
+    },
+    {
+      "id": "multiplicity",
+      "label": "Algebraic vs geometric multiplicity",
+      "summary": "1 <= geometric <= algebraic; strict inequality means defective.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 69,
+        "comprehension": 62,
+        "structure": 54,
+        "application": 44
+      },
+      "evaluatorNote": "Understands the idea, but confuses it with a neighbouring concept under time pressure."
+    },
+    {
+      "id": "spectral-theorem",
+      "label": "Spectral theorem",
+      "summary": "Real symmetric matrices: real eigenvalues, orthogonal eigenvectors, A = Q D Q^T.",
+      "pageHints": [
+        2
+      ],
+      "evaluation": {
+        "memory": 100,
+        "comprehension": 84,
+        "structure": 83,
+        "application": 75
+      },
+      "evaluatorNote": "Solid recall and a clean Feynman explanation — ready for exam-style problems."
+    },
+    {
+      "id": "markov-steady-state",
+      "label": "Markov steady state",
+      "summary": "Eigenvector with eigenvalue 1 of the transition matrix.",
+      "pageHints": [
+        2
+      ],
+      "evaluation": {
+        "memory": 84,
+        "comprehension": 68,
+        "structure": 65,
+        "application": 56
+      },
+      "evaluatorNote": "Good recognition on quizzes; explanations still lean on the textbook's wording."
+    }
+  ],
+  "edges": [
+    {
+      "source": "eigenvector-geometry",
+      "target": "characteristic-equation",
+      "relation": "requires"
+    },
+    {
+      "source": "characteristic-equation",
+      "target": "diagonalization",
+      "relation": "is a consequence of"
+    },
+    {
+      "source": "characteristic-equation",
+      "target": "pagerank-power-method",
+      "relation": "contrasts with"
+    },
+    {
+      "source": "characteristic-equation",
+      "target": "multiplicity",
+      "relation": "is measured by"
+    },
+    {
+      "source": "pagerank-power-method",
+      "target": "spectral-theorem",
+      "relation": "is a consequence of"
+    },
+    {
+      "source": "characteristic-equation",
+      "target": "markov-steady-state",
+      "relation": "is measured by"
+    },
+    {
+      "source": "markov-steady-state",
+      "target": "spectral-theorem",
+      "relation": "is related to"
+    },
+    {
+      "source": "markov-steady-state",
+      "target": "multiplicity",
+      "relation": "is related to"
+    }
+  ],
+  "globalNote": "Halfway there. Definitions are in place, but links between concepts are shaky. Focus on \"PageRank power method\" and try explaining how it connects to its neighbours."
+}

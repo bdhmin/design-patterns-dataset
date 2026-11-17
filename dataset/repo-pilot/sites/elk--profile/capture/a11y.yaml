@@ -1,0 +1,284 @@
+- main:
+  - complementary:
+    - link "Elk":
+      - /url: /home
+      - img
+      - text: Elk
+    - button "Go back"
+    - navigation:
+      - link "Home":
+        - /url: /home
+      - link "Notifications":
+        - /url: /notifications
+      - link "Conversations":
+        - /url: /conversations
+      - link "Favorites":
+        - /url: /favourites
+      - link "Bookmarks":
+        - /url: /bookmarks
+      - link "Compose":
+        - /url: /compose
+      - link "Scheduled posts":
+        - /url: /scheduled-posts
+      - link "Explore":
+        - /url: /localhost:4410/explore
+      - link "Local":
+        - /url: /localhost:4410/public/local
+      - link "Federated":
+        - /url: /localhost:4410/public
+      - link "Lists":
+        - /url: /localhost:4410/lists
+      - link "Hashtags":
+        - /url: /hashtags
+      - link "Collections":
+        - /url: /localhost:4410/collections
+      - link "Settings":
+        - /url: /settings
+    - paragraph:
+      - text: Viewing
+      - strong: localhost:4410
+      - text: public data
+    - paragraph: Sign in to follow profiles or hashtags, favorite, share and reply to posts.
+    - button "Sign in"
+  - button "maren's profile header":
+    - img "maren's profile header"
+  - button "maren's avatar":
+    - img "maren's avatar"
+  - button "actions.more"
+  - text: Maren Lindqvist
+  - paragraph: "@maren@harbor.social"
+  - button "Copy account name"
+  - paragraph:
+    - text: Urban ecologist in Gothenburg
+    - img "🌿"
+    - text: Studying pollinators on green roofs. Weekend sourdough, weekday bike commuter. She/her.
+  - paragraph
+  - paragraph:
+    - text: Posts in English & Swedish.
+    - link "#GreenRoofs":
+      - /url: /localhost:4410/tags/GreenRoofs
+    - link "#Pollinators":
+      - /url: /localhost:4410/tags/Pollinators
+  - text: Lab |
+  - link "urbanpollinators.se":
+    - /url: https://urbanpollinators.se/
+  - text: Göteborg, Sverige she/her November 7, 2022
+  - link "2,147 Posts":
+    - /url: /localhost:4410/@maren@harbor.social
+  - link "312 Following":
+    - /url: /localhost:4410/@maren@harbor.social/following
+  - link "1,284 Followers":
+    - /url: /localhost:4410/@maren@harbor.social/followers
+  - link "Posts":
+    - /url: /@maren
+  - link "Posts & Replies":
+    - /url: /@maren/with_replies
+  - link "Media":
+    - /url: /@maren/media
+  - link "Collections":
+    - /url: /@maren/collections
+  - text: Pinned post
+  - link "maren's avatar":
+    - /url: /localhost:4410/@maren
+    - img "maren's avatar"
+  - link "Maren Lindqvist @maren@localhost:4410":
+    - /url: /localhost:4410/@maren
+    - text: Maren Lindqvist
+    - paragraph: "@maren@localhost:4410"
+  - link "6mo":
+    - /url: /localhost:4410/@maren/116605806047723622
+    - time: 6mo
+  - button "More"
+  - paragraph:
+    - text: Thread on what we have learned from three years of green roof surveys
+    - img "🧵"
+  - paragraph
+  - paragraph: 1/ Sedum mats look nice from a plane but are nearly useless for wild bees. They flower briefly, all at once, and offer little pollen diversity.
+  - button "Reply": 1 1
+  - button "Boost": 24 24
+  - button "Quote" [disabled]
+  - button "Favorite": 120 120
+  - button "Bookmark"
+  - text: Pinned post
+  - link "maren's avatar":
+    - /url: /localhost:4410/@maren
+    - img "maren's avatar"
+  - link "Maren Lindqvist @maren@localhost:4410":
+    - /url: /localhost:4410/@maren
+    - text: Maren Lindqvist
+    - paragraph: "@maren@localhost:4410"
+  - link "3mo":
+    - /url: /localhost:4410/@maren/117080779518443625
+    - time: 3mo
+  - button "More"
+  - paragraph:
+    - text: Paper accepted!! "Urban roofs as stepping stones for wild bees" with
+    - link "@ingrid_b":
+      - /url: /localhost:4410/@ingrid_b@scholar.social
+    - text: and the whole team. Preprint link soon.
+    - img "🐝"
+  - button "Reply": 1 1
+  - button "Boost": 17 17
+  - button "Quote" [disabled]
+  - button "Favorite": 21 21
+  - button "Bookmark"
+  - link "maren's avatar":
+    - /url: /localhost:4410/@maren
+    - img "maren's avatar"
+  - link "Maren Lindqvist":
+    - /url: /localhost:4410/@maren
+  - link "ingrid_b's avatar":
+    - /url: /localhost:4410/@ingrid_b@scholar.social
+    - img "ingrid_b's avatar"
+  - link "Ingrid Bergström @ingrid_b@scholar.social":
+    - /url: /localhost:4410/@ingrid_b@scholar.social
+    - text: Ingrid Bergström
+    - paragraph: "@ingrid_b@scholar.social"
+  - link "6h":
+    - /url: /localhost:4410/@ingrid_b@scholar.social/117623587849830407
+    - time: 6h
+  - button "More"
+  - paragraph:
+    - text: Our 20-year grassland plot data is finally public. Twenty summers of species counts by four generations of students. I may have cried a little hitting "publish".
+    - link "#OpenScience":
+      - /url: /localhost:4410/tags/OpenScience
+    - link "#Ecology":
+      - /url: /localhost:4410/tags/Ecology
+  - button "Reply"
+  - button "Boosted": 29 29
+  - button "Quote" [disabled]
+  - button "Favorite": 88 88
+  - button "Bookmark"
+  - link "maren's avatar":
+    - /url: /localhost:4410/@maren
+    - img "maren's avatar"
+  - link "Maren Lindqvist @maren@localhost:4410":
+    - /url: /localhost:4410/@maren
+    - text: Maren Lindqvist
+    - paragraph: "@maren@localhost:4410"
+  - link "7h":
+    - /url: /localhost:4410/@maren/117623437259243633
+    - time: 7h
+  - button "More"
+  - paragraph:
+    - text: "Tiny win: the city added \"native flowering species\" as a requirement in the new green roof guidelines draft. Years of pestering, finally paying off."
+    - link "#UrbanEcology":
+      - /url: /localhost:4410/tags/UrbanEcology
+    - link "#Gothenburg":
+      - /url: /localhost:4410/tags/Gothenburg
+  - button "Reply": 1 1
+  - button "Boost": 2 2
+  - button "Quote" [disabled]
+  - button "Favorite": 46 46
+  - button "Bookmark"
+  - link "maren's avatar":
+    - /url: /localhost:4410/@maren
+    - img "maren's avatar"
+  - link "Maren Lindqvist":
+    - /url: /localhost:4410/@maren
+  - link "elinor's avatar":
+    - /url: /localhost:4410/@elinor@mastodon.green
+    - img "elinor's avatar"
+  - link "Elinor Vance @elinor@mastodon.green":
+    - /url: /localhost:4410/@elinor@mastodon.green
+    - text: Elinor Vance
+    - paragraph: "@elinor@mastodon.green"
+  - link "17h":
+    - /url: /localhost:4410/@elinor@mastodon.green/117621030291243045
+    - time: 17h
+  - button "More"
+  - paragraph:
+    - text: "New piece: How Copenhagen's district heating network quietly became one of the biggest batteries in Europe."
+    - link "nordicclimatedesk.eu/2026/11/d…":
+      - /url: https://nordicclimatedesk.eu/2026/11/district-heating-battery
+  - link "The hidden battery under Copenhagen's streets - The hidden battery under Copenhagen's streets Nordic Climate Desk The hidden battery under Copenhagen's streets District heating pipes and giant hot-water tanks are quietly balancing Denmark's wind-heavy grid. Here is how it works.":
+    - /url: https://nordicclimatedesk.eu/2026/11/district-heating-battery
+    - img "The hidden battery under Copenhagen's streets - The hidden battery under Copenhagen's streets"
+    - paragraph: Nordic Climate Desk
+    - strong: The hidden battery under Copenhagen's streets
+    - paragraph: District heating pipes and giant hot-water tanks are quietly balancing Denmark's wind-heavy grid. Here is how it works.
+  - button "Reply"
+  - button "Boosted": 16 16
+  - button "Quote" [disabled]
+  - button "Favorite": 12 12
+  - button "Bookmarked"
+  - link "maren's avatar":
+    - /url: /localhost:4410/@maren
+    - img "maren's avatar"
+  - link "Maren Lindqvist":
+    - /url: /localhost:4410/@maren
+  - link "priya's avatar":
+    - /url: /localhost:4410/@priya@scholar.social
+    - img "priya's avatar"
+  - link "Priya Natarajan @priya@scholar.social":
+    - /url: /localhost:4410/@priya@scholar.social
+    - text: Priya Natarajan
+    - paragraph: "@priya@scholar.social"
+  - link "1d":
+    - /url: /localhost:4410/@priya@scholar.social/117614488654184494
+    - time: 1d
+  - button "More"
+  - paragraph:
+    - text: "Hoverfly appreciation post: they pollinate, their larvae eat aphids, and they look like wasps so birds leave them alone. Perfect insects. No notes."
+    - link "#Entomology":
+      - /url: /localhost:4410/tags/Entomology
+    - link "#Pollinators":
+      - /url: /localhost:4410/tags/Pollinators
+  - button "Reply": 1 1
+  - button "Boosted": 1 1
+  - button "Quote" [disabled]
+  - button "Favorite": 5 5
+  - button "Bookmark"
+  - link "maren's avatar":
+    - /url: /localhost:4410/@maren
+    - img "maren's avatar"
+  - link "Maren Lindqvist @maren@localhost:4410":
+    - /url: /localhost:4410/@maren
+    - text: Maren Lindqvist
+    - paragraph: "@maren@localhost:4410"
+  - link "2d":
+    - /url: /localhost:4410/@maren/117611491357163632
+    - time: 2d
+  - button "More"
+  - paragraph:
+    - text: Data from the 2026 season is cleaned and archived. 11,482 pollinator visits recorded across 14 roofs. Time to start writing.
+    - img "☕"
+  - button "Reply": 1 1
+  - button "Boost": 24 24
+  - button "Quote" [disabled]
+  - button "Favorite": 139 139
+  - button "Bookmark"
+  - text: Older posts from other instances may not be displayed.
+  - link "Open in original site":
+    - /url: http://localhost:4410/@maren
+  - complementary:
+    - textbox "Search"
+    - text: Harbor Social
+    - img "Thumbnail for Harbor Social server"
+    - paragraph: "A friendly Mastodon server for people around the North Sea and Baltic: scientists, makers, cyclists, cooks and the generally curious."
+    - button "Toggle Theme"
+    - button "Zen Mode"
+    - button "Keyboard shortcuts"
+    - link "Sponsor us":
+      - /url: https://github.com/sponsors/elk-zone
+    - text: Built
+    - time: 1 hour ago
+    - text: ·
+    - link "v1.0.1":
+      - /url: https://github.com/elk-zone/elk/releases/tag/v1.0.1
+    - text: ·
+    - link "6b956a6":
+      - /url: https://github.com/elk-zone/elk/commit/6b956a6d4a89a676059d83a0b0e59d7165d5f266
+    - link "About":
+      - /url: /settings/about
+    - text: ·
+    - link "Mastodon":
+      - /url: /m.webtoo.ls/@elk
+    - text: ·
+    - link "Discord":
+      - /url: https://chat.elk.zone
+    - text: ·
+    - link "GitHub":
+      - /url: https://github.com/elk-zone/elk
+- status
+- img

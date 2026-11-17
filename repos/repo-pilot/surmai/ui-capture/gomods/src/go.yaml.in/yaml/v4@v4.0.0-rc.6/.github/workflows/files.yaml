@@ -1,0 +1,61 @@
+# Copyright 2025 The go-yaml Project Contributors
+# SPDX-License-Identifier: Apache-2.0
+
+name: Files Lint
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions: read-all
+
+jobs:
+  action-lint:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout-action
+      uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10  # v6.0.3
+      with:
+        persist-credentials: false
+
+    - name: actionlint
+      # yamllint disable-line rule:line-length
+      uses: raven-actions/actionlint@205b530c5d9fa8f44ae9ed59f341a0db994aa6f8  # v2.1.2
+
+  yamllint:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout-action
+      uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10  # v6.0.3
+      with:
+        persist-credentials: false
+
+    - name: yamllint
+      # yamllint disable-line rule:line-length
+      uses: ibiqlik/action-yamllint@2576378a8e339169678f9939646ee3ee325e845c  # v3.1.1
+
+  ls-lint:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout-action
+      uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10  # v6.0.3
+      with:
+        persist-credentials: false
+
+    - name: ls-lint
+      uses: ls-lint/action@02e380fe8733d499cbfc9e22276de5085508a5bd  # v2.3.1
+      with:
+        config: .ls-lint.yaml
+
+  typos:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout-action
+      uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10  # v6.0.3
+      with:
+        persist-credentials: false
+
+    - name: typos-action
+      uses: crate-ci/typos@37bb98842b0d8c4ffebdb75301a13db0267cef89  # v1.47.2

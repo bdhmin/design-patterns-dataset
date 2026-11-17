@@ -1,0 +1,23 @@
+{
+  "slug": "elk--settings-interface",
+  "url": "http://localhost:4400/settings/interface",
+  "domain": "social-community",
+  "source": "repo",
+  "state": "labeled",
+  "raters": {
+    "rater-1": {
+      "state": "done",
+      "updatedAt": "2026-11-16T17:51:51.196Z"
+    },
+    "rater-2": {
+      "state": "done",
+      "updatedAt": "2026-11-16T17:51:56.649Z"
+    },
+    "rater-3": {
+      "state": "done",
+      "updatedAt": "2026-11-16T17:52:12.563Z"
+    }
+  },
+  "flags": [],
+  "updatedAt": "2026-11-16T17:52:12.566Z"
+}

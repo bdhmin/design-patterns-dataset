@@ -1,0 +1,37 @@
+# Codebook proposal (new-values) — review with: node scripts/proposals.ts show repo-pilot map-explorer
+id: map-explorer
+kind: new-values
+status: open
+batch: repo-pilot
+codebookVersion: 1.0.0
+dimensions:
+  - subdimensions:
+      - id: basemap
+        values:
+          - id: stylized-illustrated
+            name: Stylized / illustrated
+            description: Cartoon or hand-drawn world rendering with flat colored land and sea, decorative
+              elements; used in games and editorial maps
+            example: Series of Tubes network-building game world map
+rationale:
+  - rater: rater-2
+    site: seriesoftubes--world-map
+    text: Game and storytelling maps use a hand-drawn/cartoon illustrated basemap (flat colored
+      land/ocean with outlines, decorative waves and clouds), not streets, satellite, terrain or
+      minimal-light.
+sources:
+  - batch: repo-pilot
+    site: seriesoftubes--world-map
+    url: http://seriesoftubes.localhost:4318/
+    note: proposed by rater-2
+evidence:
+  - site: seriesoftubes--world-map
+    rater: rater-2
+    bbox:
+      x: 364
+      y: 200
+      width: 1076
+      height: 826
+    note: Cartoon world map with green land, cyan ocean, outlined coasts, wave squiggles and clouds
+createdAt: 2026-11-16T18:01:21.876Z
+updatedAt: 2026-11-16T18:01:21.876Z

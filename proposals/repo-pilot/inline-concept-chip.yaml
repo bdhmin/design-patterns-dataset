@@ -1,0 +1,83 @@
+# Codebook proposal (new-entry) — review with: node scripts/proposals.ts show repo-pilot inline-concept-chip
+id: inline-concept-chip
+kind: new-entry
+status: open
+batch: repo-pilot
+codebookVersion: 1.0.0
+name: Inline concept chip
+level: component
+parent: consume-media
+definition: Small color-coded pills embedded inline in a reading surface next to a term or passage,
+  each typed by the kind of enrichment it opens (3D model, formula, graph, animation, source).
+  Selecting one opens that enrichment in a linked side panel. The chip is system- or
+  author-generated learning content, not a discussion thread.
+relations:
+  neighbors:
+    - annotation
+    - badge
+    - coordinated-views
+    - reader
+dimensions:
+  - name: Opens into
+    family: layout
+    question: Where does the enrichment render?
+    subdimensions:
+      - id: target
+        name: Target
+        select: one
+        values:
+          - id: side-panel
+            name: Side panel
+            description: Opens in a companion pane beside the text
+          - id: popover
+            name: Popover
+            description: Opens anchored to the chip
+          - id: modal
+            name: Modal
+            description: Opens over the page
+  - name: Type encoding
+    family: encoding
+    question: How is the kind of enrichment signalled?
+    subdimensions:
+      - id: typeEncoding
+        name: Type encoding
+        select: many
+        values:
+          - id: color-per-type
+            name: Color per type
+          - id: icon-per-type
+            name: Icon per type
+          - id: text-label
+            name: Text label
+rationale:
+  - rater: rater-1
+    site: get-it--document-chat
+    text: Annotation assumes collaborative discussion threads; ai-provenance covers disclosure markers;
+      badge is a status/count. None of them covers typed inline enrichment anchors in a document
+      that drive a companion viewer, which is common in AI study tools and smart readers.
+sources:
+  - batch: repo-pilot
+    site: get-it--document-chat
+    url: http://localhost:4401/viewer/994a113e-e7ba-4f78-926a-7154208adfff
+    note: proposed by rater-1
+evidence:
+  - site: get-it--document-chat
+    rater: rater-1
+    bbox:
+      x: 419
+      y: 307
+      width: 96
+      height: 18
+    quote: Fluid mo...
+    note: 3D Model chip anchored after 'phospholipid bilayer'; click opens 3D viewer in right panel
+  - site: get-it--document-chat
+    rater: rater-1
+    bbox:
+      x: 535
+      y: 598
+      width: 96
+      height: 18
+    quote: Carrier...
+    note: Graph chip, blue
+createdAt: 2026-11-16T17:55:58.240Z
+updatedAt: 2026-11-16T17:55:58.240Z

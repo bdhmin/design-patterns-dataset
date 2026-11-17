@@ -1,0 +1,173 @@
+{
+  "v": 1,
+  "docId": "sample-calculus",
+  "savedAt": 1793184420000,
+  "tags": [
+    {
+      "id": "0-0",
+      "page": 0,
+      "endX": 523.2800000755001,
+      "endY": 599.5461,
+      "fontHeight": 11.5,
+      "type": "formula",
+      "label": "Derivative as a limit",
+      "ready": true,
+      "generating": false,
+      "concept": {
+        "label": "Derivative as a limit",
+        "type": "formula",
+        "anchor": "derivative f'(x) is defined as the limit of the difference quotient",
+        "context": "f'(x) = lim h->0 [f(x+h) - f(x)]/h, slope of the tangent line."
+      },
+      "spec": {
+        "type": "formula",
+        "title": "Derivative as a limit",
+        "caption": "f'(x) = lim h->0 [f(x+h) - f(x)]/h, slope of the tangent line.",
+        "main_latex": "f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h}",
+        "steps": [
+          {
+            "latex": "\\frac{f(x+h)-f(x)}{h}",
+            "explanation": "Slope of the secant line through x and x+h."
+          },
+          {
+            "latex": "h \\to 0",
+            "explanation": "Shrink the gap: the secant rotates into the tangent."
+          },
+          {
+            "latex": "\\frac{(x+h)^2 - x^2}{h} = 2x + h",
+            "explanation": "Example with f(x) = x^2."
+          },
+          {
+            "latex": "f'(x) = 2x",
+            "explanation": "Let h vanish."
+          }
+        ]
+      },
+      "attempts": 1
+    },
+    {
+      "id": "0-1",
+      "page": 0,
+      "endX": 472.69449999999995,
+      "endY": 430.2061,
+      "fontHeight": 11.5,
+      "type": "graph",
+      "label": "Tangent envelope of x^2",
+      "ready": true,
+      "generating": false,
+      "concept": {
+        "label": "Tangent envelope of x^2",
+        "type": "graph",
+        "anchor": "upward; the tangent at any point (a, a^2) has equation y = 2 a x - a^2",
+        "context": "Family of tangents to y = x^2 forming the parabola as envelope."
+      },
+      "spec": {
+        "type": "graph",
+        "title": "Tangent envelope of x^2",
+        "caption": "Family of tangents to y = x^2 forming the parabola as envelope.",
+        "chart_type": "function",
+        "x_label": "x",
+        "y_label": "y",
+        "data_json": "{\"fn\":\"x*x\",\"x_min\":-3,\"x_max\":3,\"samples\":200}"
+      },
+      "attempts": 1
+    },
+    {
+      "id": "0-2",
+      "page": 0,
+      "endX": 523.2800000560001,
+      "endY": 315.8279,
+      "fontHeight": 11.5,
+      "type": "formula",
+      "label": "Fundamental Theorem",
+      "ready": true,
+      "generating": false,
+      "concept": {
+        "label": "Fundamental Theorem",
+        "type": "formula",
+        "anchor": "of f and the x-axis over [a, b]. The Fundamental Theorem of Calculus",
+        "context": "FTC parts I and II linking derivative and integral."
+      },
+      "spec": {
+        "type": "formula",
+        "title": "Fundamental Theorem",
+        "caption": "FTC parts I and II linking derivative and integral.",
+        "main_latex": "\\int_a^b f(x)\\,dx = F(b) - F(a)",
+        "steps": [
+          {
+            "latex": "F(x) = \\int_a^x f(t)\\,dt",
+            "explanation": "Accumulated area as a function of the upper limit."
+          },
+          {
+            "latex": "F'(x) = f(x)",
+            "explanation": "Part I: the rate the area grows equals the height of f."
+          },
+          {
+            "latex": "\\int_a^b f = F(b) - F(a)",
+            "explanation": "Part II: any antiderivative evaluates the integral."
+          }
+        ]
+      },
+      "attempts": 1
+    },
+    {
+      "id": "0-3",
+      "page": 0,
+      "endX": 328.48449999999997,
+      "endY": 200.4899,
+      "fontHeight": 11.5,
+      "type": "graph",
+      "label": "Standard normal density",
+      "ready": true,
+      "generating": false,
+      "concept": {
+        "label": "Standard normal density",
+        "type": "graph",
+        "anchor": "be evaluated numerically. Plotting phi(x) yields the iconic bell curve",
+        "context": "phi(x) = exp(-x^2/2)/sqrt(2 pi), inflection points at +/-1."
+      },
+      "spec": {
+        "type": "graph",
+        "title": "Standard normal density",
+        "caption": "phi(x) = exp(-x^2/2)/sqrt(2 pi), inflection points at +/-1.",
+        "chart_type": "function",
+        "x_label": "x",
+        "y_label": "phi(x)",
+        "data_json": "{\"fn\":\"Math.exp(-x*x/2)/Math.sqrt(2*Math.PI)\",\"x_min\":-4,\"x_max\":4,\"samples\":200}"
+      },
+      "attempts": 1
+    },
+    {
+      "id": "1-0",
+      "page": 1,
+      "endX": 523.2799999639997,
+      "endY": 692.6995,
+      "fontHeight": 11.5,
+      "type": "graph",
+      "label": "Taylor partial sums of sin",
+      "ready": true,
+      "generating": false,
+      "concept": {
+        "label": "Taylor partial sums of sin",
+        "type": "graph",
+        "anchor": "it. Plotting the partial sums of the Maclaurin series for sin(x)",
+        "context": "Odd-degree Maclaurin polynomials approximating sin(x)."
+      },
+      "spec": {
+        "type": "graph",
+        "title": "Taylor partial sums of sin",
+        "caption": "Odd-degree Maclaurin polynomials approximating sin(x).",
+        "chart_type": "lines",
+        "x_label": "x",
+        "y_label": "y",
+        "data_json": "{\"series\":[{\"name\":\"sin x\",\"color\":\"#1a1a1d\",\"points\":[[-6,0.2794],[-5.8,0.4646],[-5.6,0.6313],[-5.4,0.7728],[-5.2,0.8835],[-5,0.9589],[-4.8,0.9962],[-4.6,0.9937],[-4.4,0.9516],[-4.2,0.8716],[-4,0.7568],[-3.8,0.6119],[-3.6,0.4425],[-3.4,0.2555],[-3.2,0.0584],[-3,-0.1411],[-2.8,-0.335],[-2.6,-0.5155],[-2.4,-0.6755],[-2.2,-0.8085],[-2,-0.9093],[-1.8,-0.9738],[-1.6,-0.9996],[-1.4,-0.9854],[-1.2,-0.932],[-1,-0.8415],[-0.8,-0.7174],[-0.6,-0.5646],[-0.4,-0.3894],[-0.2,-0.1987],[0,0],[0.2,0.1987],[0.4,0.3894],[0.6,0.5646],[0.8,0.7174],[1,0.8415],[1.2,0.932],[1.4,0.9854],[1.6,0.9996],[1.8,0.9738],[2,0.9093],[2.2,0.8085],[2.4,0.6755],[2.6,0.5155],[2.8,0.335],[3,0.1411],[3.2,-0.0584],[3.4,-0.2555],[3.6,-0.4425],[3.8,-0.6119],[4,-0.7568],[4.2,-0.8716],[4.4,-0.9516],[4.6,-0.9937],[4.8,-0.9962],[5,-0.9589],[5.2,-0.8835],[5.4,-0.7728],[5.6,-0.6313],[5.8,-0.4646],[6,-0.2794]]},{\"name\":\"T3\",\"color\":\"#e11d48\",\"points\":[[-6,3],[-5.8,3],[-5.6,3],[-5.4,3],[-5.2,3],[-5,3],[-4.8,3],[-4.6,3],[-4.4,3],[-4.2,3],[-4,3],[-3.8,3],[-3.6,3],[-3.4,3],[-3.2,2.2613],[-3,1.5],[-2.8,0.8587],[-2.6,0.3293],[-2.4,-0.096],[-2.2,-0.4253],[-2,-0.6667],[-1.8,-0.828],[-1.6,-0.9173],[-1.4,-0.9427],[-1.2,-0.912],[-1,-0.8333],[-0.8,-0.7147],[-0.6,-0.564],[-0.4,-0.3893],[-0.2,-0.1987],[0,0],[0.2,0.1987],[0.4,0.3893],[0.6,0.564],[0.8,0.7147],[1,0.8333],[1.2,0.912],[1.4,0.9427],[1.6,0.9173],[1.8,0.828],[2,0.6667],[2.2,0.4253],[2.4,0.096],[2.6,-0.3293],[2.8,-0.8587],[3,-1.5],[3.2,-2.2613],[3.4,-3],[3.6,-3],[3.8,-3],[4,-3],[4.2,-3],[4.4,-3],[4.6,-3],[4.8,-3],[5,-3],[5.2,-3],[5.4,-3],[5.6,-3],[5.8,-3],[6,-3]]},{\"name\":\"T7\",\"color\":\"#7c3aed\",\"points\":[[-6,3],[-5.8,3],[-5.6,3],[-5.4,3],[-5.2,3],[-5,3],[-4.8,3],[-4.6,3],[-4.4,2.3892],[-4.2,1.8313],[-4,1.3841],[-3.8,1.0126],[-3.6,0.692],[-3.4,0.4065],[-3.2,0.1469],[-3,-0.0911],[-2.8,-0.3078],[-2.6,-0.5014],[-2.4,-0.6686],[-2.2,-0.8053],[-2,-0.9079],[-1.8,-0.9733],[-1.6,-0.9994],[-1.4,-0.9854],[-1.2,-0.932],[-1,-0.8415],[-0.8,-0.7174],[-0.6,-0.5646],[-0.4,-0.3894],[-0.2,-0.1987],[0,0],[0.2,0.1987],[0.4,0.3894],[0.6,0.5646],[0.8,0.7174],[1,0.8415],[1.2,0.932],[1.4,0.9854],[1.6,0.9994],[1.8,0.9733],[2,0.9079],[2.2,0.8053],[2.4,0.6686],[2.6,0.5014],[2.8,0.3078],[3,0.0911],[3.2,-0.1469],[3.4,-0.4065],[3.6,-0.692],[3.8,-1.0126],[4,-1.3841],[4.2,-1.8313],[4.4,-2.3892],[4.6,-3],[4.8,-3],[5,-3],[5.2,-3],[5.4,-3],[5.6,-3],[5.8,-3],[6,-3]]}]}"
+      },
+      "attempts": 1
+    }
+  ],
+  "activeTagId": "0-1",
+  "pagesAnalyzed": [
+    0,
+    1
+  ]
+}

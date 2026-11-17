@@ -1,0 +1,266 @@
+{
+  "batch": "repo-pilot",
+  "slug": "surmai",
+  "ok": true,
+  "entry": "/login",
+  "views": [
+    {
+      "slug": "trip-list",
+      "name": "All trips",
+      "description": "Home trip list showing upcoming and past trips as cards with cover images, dates and destination tags.",
+      "path": "/login",
+      "steps": [
+        {
+          "action": "fill",
+          "target": {
+            "placeholder": "you@domain.com"
+          },
+          "value": "maya@chenokafor.family"
+        },
+        {
+          "action": "fill",
+          "target": {
+            "label": "Password"
+          },
+          "value": "Wanderlust#2026"
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "name": "Sign In"
+          }
+        },
+        {
+          "action": "wait",
+          "ms": 2000
+        },
+        {
+          "action": "goto",
+          "path": "/"
+        }
+      ],
+      "title": "Surmai",
+      "similarity": 1,
+      "preview": "views/trip-list.png"
+    },
+    {
+      "slug": "trip-transportation",
+      "name": "Trip organization – transportation",
+      "description": "Trip detail page with tabs and accordion sections; the Transportation section is expanded showing a timeline of flight and taxi booking cards with attachments.",
+      "path": "/login",
+      "steps": [
+        {
+          "action": "fill",
+          "target": {
+            "placeholder": "you@domain.com"
+          },
+          "value": "maya@chenokafor.family"
+        },
+        {
+          "action": "fill",
+          "target": {
+            "label": "Password"
+          },
+          "value": "Wanderlust#2026"
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "name": "Sign In"
+          }
+        },
+        {
+          "action": "wait",
+          "ms": 2000
+        },
+        {
+          "action": "goto",
+          "path": "/trips/28yvjgeiih3i58v"
+        },
+        {
+          "action": "click",
+          "target": {
+            "text": "Transportation",
+            "exact": true
+          }
+        }
+      ],
+      "title": "Surmai | Costa Rica — Pura Vida",
+      "similarity": 1,
+      "preview": "views/trip-transportation.png"
+    },
+    {
+      "slug": "trip-expenses",
+      "name": "Trip expenses",
+      "description": "Trip expenses tab with budget, category and currency donut charts plus a grid of expense cards with edit buttons.",
+      "path": "/login",
+      "steps": [
+        {
+          "action": "fill",
+          "target": {
+            "placeholder": "you@domain.com"
+          },
+          "value": "maya@chenokafor.family"
+        },
+        {
+          "action": "fill",
+          "target": {
+            "label": "Password"
+          },
+          "value": "Wanderlust#2026"
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "name": "Sign In"
+          }
+        },
+        {
+          "action": "wait",
+          "ms": 2000
+        },
+        {
+          "action": "goto",
+          "path": "/trips/28yvjgeiih3i58v"
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "tab",
+            "name": "Expenses"
+          }
+        }
+      ],
+      "title": "Surmai | Costa Rica — Pura Vida",
+      "similarity": 1,
+      "preview": "views/trip-expenses.png"
+    },
+    {
+      "slug": "travel-board",
+      "name": "Travel Board",
+      "description": "Yearly travel statistics dashboard with year tabs, KPI cards and transportation, lodging, activity and expense stat panels.",
+      "path": "/login",
+      "steps": [
+        {
+          "action": "fill",
+          "target": {
+            "placeholder": "you@domain.com"
+          },
+          "value": "maya@chenokafor.family"
+        },
+        {
+          "action": "fill",
+          "target": {
+            "label": "Password"
+          },
+          "value": "Wanderlust#2026"
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "name": "Sign In"
+          }
+        },
+        {
+          "action": "wait",
+          "ms": 2000
+        },
+        {
+          "action": "goto",
+          "path": "/travel-board"
+        }
+      ],
+      "title": "Surmai",
+      "similarity": 1,
+      "preview": "views/travel-board.png"
+    },
+    {
+      "slug": "add-flight-dialog",
+      "name": "Add flight dialog",
+      "description": "Modal form for adding a flight booking to a trip, with flight number, airports, dates, airline, seats, cost with currency, travelers, notes and attachments.",
+      "path": "/login",
+      "steps": [
+        {
+          "action": "fill",
+          "target": {
+            "placeholder": "you@domain.com"
+          },
+          "value": "maya@chenokafor.family"
+        },
+        {
+          "action": "fill",
+          "target": {
+            "label": "Password"
+          },
+          "value": "Wanderlust#2026"
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "name": "Sign In"
+          }
+        },
+        {
+          "action": "wait",
+          "ms": 2000
+        },
+        {
+          "action": "goto",
+          "path": "/trips/28yvjgeiih3i58v"
+        },
+        {
+          "action": "click",
+          "target": {
+            "text": "Transportation",
+            "exact": true
+          }
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "button",
+            "name": "Add new"
+          }
+        },
+        {
+          "action": "click",
+          "target": {
+            "role": "menuitem",
+            "name": "Flight"
+          }
+        }
+      ],
+      "title": "Surmai | Costa Rica — Pura Vida",
+      "similarity": 1,
+      "preview": "views/add-flight-dialog.png"
+    }
+  ],
+  "summary": "Surmai is a self-hosted travel organizer for families (React + PocketBase). I signed in as Maya Chen and recorded that sign-in as the prelude that replays before each view. I saved 5 views, and each one replayed and matched (similarity 1.00):\n1. trip-list (/): the home page, with trip cards showing cover images, dates and destination tags.\n2. trip-transportation: the Costa Rica trip, opened from its own URL, on the Organization tab with the Transportation section expanded. It shows a timeline of flight and taxi bookings, one with an attached PDF.\n3. trip-expenses: the Expenses tab of the same trip. It has a budget chart, a chart by category and a chart by currency (all donut charts), plus a grid of expense cards.\n4. travel-board (/travel-board): a dashboard of yearly travel stats, with year tabs, summary number cards and panels for transportation, lodging, activities and expenses.\n5. add-flight-dialog: the \"Add new flight\" form, opened from Add new → Flight. Opening it creates no data.\n\nScreens I looked at but didn't save:\n- Itinerary tab: a day-by-day list of the same bookings, so it overlaps with the transportation view.\n- Travellers (/travellers): a simple table of traveller profiles.\n- Notes tab on Costa Rica: empty, so I skipped it. Other trips have notes I didn't check.\n\nNot visited: Invitations, Profile, Settings and the Attachments tab.",
+  "explorer": {
+    "provider": "claude-code",
+    "model": "claude-opus-5-5",
+    "effort": "high"
+  },
+  "outcome": {
+    "finished": true,
+    "reason": "stopped",
+    "turns": 18,
+    "servedBy": [
+      "claude-opus-5-5"
+    ],
+    "usage": {
+      "input_tokens": 36,
+      "cache_creation_input_tokens": 47834,
+      "cache_read_input_tokens": 468690,
+      "output_tokens": 2601
+    }
+  },
+  "actions": 17,
+  "startedAt": "2026-11-16T07:55:25.642Z",
+  "finishedAt": "2026-11-16T07:57:06.364Z"
+}

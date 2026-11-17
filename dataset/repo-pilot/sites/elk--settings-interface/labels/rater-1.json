@@ -1,0 +1,384 @@
+{
+  "schemaVersion": "1.0.0",
+  "codebookVersion": "1.0.0",
+  "batch": "repo-pilot",
+  "site": {
+    "slug": "elk--settings-interface",
+    "url": "http://localhost:4400/settings/interface",
+    "finalUrl": "http://localhost:4400/settings/interface",
+    "status": 200,
+    "title": "Interface | Settings | Elk",
+    "capturedAt": "2026-11-16T17:50:54.226Z",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "screenshot": {
+      "ref": "capture/screenshot.png",
+      "width": 1440,
+      "height": 978
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.8127.18 Safari/537.36",
+    "domain": "social-community",
+    "domainNote": "Elk — Mastodon/fediverse web client, Interface settings page (signed-out guest)",
+    "provenance": {
+      "source": "repo",
+      "record": "repos/repo-pilot/elk/explore.json",
+      "repo": {
+        "name": "elk-zone/elk",
+        "url": "https://github.com/elk-zone/elk",
+        "commit": "6b956a6d4a89a676059d83a0b0e59d7165d5f266",
+        "license": "MIT"
+      },
+      "view": {
+        "slug": "settings-interface",
+        "name": "Settings – Interface",
+        "description": "Two-pane settings screen with a category list (Interface, Language, Preferences, Logged in users, About) and Interface options: font size slider, color mode, theme color swatches and bottom-navigation configurator."
+      }
+    }
+  },
+  "regions": [
+    {
+      "id": "sidebar",
+      "role": "sidebar",
+      "label": "Left aside with Elk logo, primary navigation list (Home…Settings, signed-out items dimmed), guest notice and Sign in button",
+      "bbox": {
+        "x": 120,
+        "y": 0,
+        "width": 300,
+        "height": 978
+      },
+      "patterns": [
+        "app-shell"
+      ]
+    },
+    {
+      "id": "settings-nav",
+      "role": "secondary-nav",
+      "label": "Settings category list with chevrons: Interface (active), Language, Preferences, Logged in users, About",
+      "bbox": {
+        "x": 435,
+        "y": 0,
+        "width": 365,
+        "height": 978
+      },
+      "patterns": [
+        "settings",
+        "app-shell"
+      ]
+    },
+    {
+      "id": "interface-settings",
+      "role": "settings-content",
+      "label": "Interface settings: Font Size stepped slider, Color Mode segmented buttons, Theme Color swatches, Bottom Navigation chip toggles with preview and Clear/Reset/Save",
+      "bbox": {
+        "x": 800,
+        "y": 0,
+        "width": 520,
+        "height": 978
+      },
+      "patterns": [
+        "settings",
+        "slider",
+        "choice-control",
+        "color-picker",
+        "form"
+      ]
+    }
+  ],
+  "patterns": [
+    {
+      "id": "settings",
+      "status": "present",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 435,
+            "y": 23,
+            "width": 364,
+            "height": 225
+          },
+          "quote": "Interface",
+          "note": "Category list with chevrons drilling into sub-pages",
+          "region": "settings-nav"
+        },
+        {
+          "bbox": {
+            "x": 822,
+            "y": 34,
+            "width": 476,
+            "height": 778
+          },
+          "quote": "Font Size",
+          "note": "Sectioned settings page with slider, segmented buttons, swatches, toggles",
+          "region": "interface-settings"
+        },
+        {
+          "bbox": {
+            "x": 996,
+            "y": 768,
+            "width": 302,
+            "height": 40
+          },
+          "quote": "Reset",
+          "note": "Clear/Reset/Save for bottom-nav section",
+          "region": "interface-settings"
+        }
+      ],
+      "dims": {
+        "ia": "drill-down-hierarchy",
+        "controls": [
+          "single-and-multi-select",
+          "numeric-and-ranges",
+          "boolean-toggles"
+        ],
+        "discovery": [
+          "browse-hierarchy"
+        ],
+        "timing": "instant",
+        "scope": "device-local",
+        "safety": [
+          "no-confirm",
+          "reset-to-default"
+        ]
+      }
+    },
+    {
+      "id": "app-shell",
+      "status": "present",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 120,
+            "y": 0,
+            "width": 300,
+            "height": 978
+          },
+          "quote": "Home",
+          "note": "Persistent left sidebar with global destinations",
+          "region": "sidebar"
+        },
+        {
+          "bbox": {
+            "x": 435,
+            "y": 23,
+            "width": 364,
+            "height": 225
+          },
+          "quote": "Logged in users",
+          "note": "Second column of settings sub-pages",
+          "region": "settings-nav"
+        }
+      ],
+      "dims": {
+        "primary": "sidebar",
+        "secondary": "contextual-panel",
+        "items": [
+          "fixed-destinations"
+        ],
+        "visibility": "always-visible",
+        "structure": "single-app"
+      }
+    },
+    {
+      "id": "slider",
+      "status": "present",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 822,
+            "y": 64,
+            "width": 476,
+            "height": 51
+          },
+          "quote": "Aa",
+          "note": "Font size slider with 11 tick dots, small Aa / large Aa end labels",
+          "region": "interface-settings"
+        }
+      ],
+      "dims": {
+        "values": "discrete-steps",
+        "labels": [
+          "minimum-and-maximum",
+          "tick-marks"
+        ],
+        "scale": "linear"
+      }
+    },
+    {
+      "id": "choice-control",
+      "status": "present",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 822,
+            "y": 167,
+            "width": 476,
+            "height": 55
+          },
+          "quote": "System",
+          "note": "Color Mode: three icon+label buttons, single choice (aria-pressed), applied instantly",
+          "region": "interface-settings"
+        },
+        {
+          "bbox": {
+            "x": 822,
+            "y": 492,
+            "width": 476,
+            "height": 258
+          },
+          "quote": "Scheduled posts",
+          "note": "Bottom Navigation: chip-like toggle buttons (role=switch) selecting up to five, committed with Save",
+          "region": "interface-settings"
+        }
+      ],
+      "dims": {
+        "cardinality": "single-choice",
+        "form": "segmented-control",
+        "option": [
+          "label-only",
+          "icon-or-image"
+        ],
+        "timing": "immediately",
+        "largeSets": "show-all"
+      }
+    },
+    {
+      "id": "color-picker",
+      "status": "present",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 822,
+            "y": 278,
+            "width": 400,
+            "height": 38
+          },
+          "quote": "Theme Color",
+          "note": "Nine circular swatches; selected one ringed; changes accent everywhere instantly",
+          "region": "interface-settings"
+        }
+      ],
+      "dims": {
+        "form": "swatch-palette",
+        "target": "a-token-used-everywhere"
+      }
+    },
+    {
+      "id": "form",
+      "status": "present",
+      "confidence": 0.65,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 822,
+            "y": 372,
+            "width": 476,
+            "height": 440
+          },
+          "quote": "Choose your favorite navigation buttons up to five for the bottom navigation. Must include the \"More menu\" button.",
+          "note": "<form> with hint text, live preview strip, toggle chips and Clear/Reset/Save (Save disabled until changed)",
+          "region": "interface-settings"
+        }
+      ],
+      "dims": {
+        "labels": "top-aligned",
+        "columns": "single-column",
+        "grouping": "flat",
+        "prefill": "smart-defaults",
+        "help": [
+          "hint-text"
+        ],
+        "commit": "submit-button"
+      }
+    },
+    {
+      "id": "tabs",
+      "status": "absent",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 435,
+            "y": 23,
+            "width": 364,
+            "height": 225
+          },
+          "note": "Settings categories are links to separate routes, not tabs"
+        }
+      ],
+      "dims": {}
+    }
+  ],
+  "structure": {
+    "layout": "three-column app layout: left global nav sidebar, middle settings category list, right settings detail panel (scrolls independently)",
+    "regions": [
+      "sidebar",
+      "settings-nav",
+      "interface-settings"
+    ],
+    "density": "medium"
+  },
+  "aesthetics": {
+    "palette": [
+      "#fafafa",
+      "#232323",
+      "#686868",
+      "#9a5a1e",
+      "#cc7d24",
+      "#eeeeee",
+      "#a1a1a1",
+      "#ffffff"
+    ],
+    "colorRoles": {
+      "background": "#fafafa",
+      "text": "#232323",
+      "muted": "#686868",
+      "primary": "#9a5a1e",
+      "accent": "#cc7d24",
+      "border": "#eeeeee",
+      "disabled": "#a1a1a1",
+      "surface": "#fafafa"
+    },
+    "typography": "System UI stack (-apple-system) throughout: logo, nav, headings, controls",
+    "typeScale": "Low contrast: logo 23px, sidebar nav 17px, section headings h2 ~15px semibold, body/controls 15px, small Aa 11px, buttons 15px bold",
+    "shape": "soft",
+    "elevation": "flat",
+    "borders": "thin",
+    "imagery": [
+      "iconography"
+    ],
+    "iconStyle": "line",
+    "whitespace": "moderate",
+    "backgroundTreatment": "solid",
+    "mood": [
+      "clean",
+      "minimal",
+      "calm",
+      "utilitarian"
+    ]
+  },
+  "model": {
+    "rater": "rater-1",
+    "provider": "claude-code",
+    "name": "claude-opus-5-5",
+    "effort": "high",
+    "generatedAt": "2026-11-16T17:51:50.794Z",
+    "servedBy": [
+      "claude-opus-5-5"
+    ],
+    "turns": 7,
+    "usage": {
+      "input_tokens": 14,
+      "cache_creation_input_tokens": 25965,
+      "cache_read_input_tokens": 192838,
+      "output_tokens": 3619
+    }
+  },
+  "notes": "Elk fediverse client. Warm amber/brown theme accent (theme swatch #cc7d24 rendered darker ~#9a5a1e) used for active nav item, chip text/icons, outlined buttons and Sign in. Signed-out nav items greyed out. Theme colour and colour mode apply instantly (verified live: clicking green re-tints whole UI); bottom navigation selection updates a live preview strip and requires Save (Save enabled after change). Selected bottom-nav chips render greyed rather than highlighted. Hairline #eeeeee outlines, 3.75px radii, circular swatches, line icons."
+}

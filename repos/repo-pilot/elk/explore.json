@@ -1,0 +1,88 @@
+{
+  "batch": "repo-pilot",
+  "slug": "elk",
+  "ok": true,
+  "entry": "/home",
+  "views": [
+    {
+      "slug": "explore-posts",
+      "name": "Explore – trending posts",
+      "description": "Explore page with tabs (Posts, Hashtags, News, For you) listing trending posts with images, link cards and action bars, plus sidebar navigation and instance info.",
+      "path": "/explore",
+      "steps": [],
+      "title": "Posts | Explore | Elk",
+      "similarity": 1,
+      "preview": "views/explore-posts.png"
+    },
+    {
+      "slug": "profile",
+      "name": "User profile",
+      "description": "Account profile with header banner, avatar, bio, metadata fields, follower counts, tabs (Posts, Posts & Replies, Media, Collections) and pinned posts.",
+      "path": "/@maren",
+      "steps": [],
+      "title": "Profile | Maren Lindqvist (@maren@harbor.social) | Elk",
+      "similarity": 1,
+      "preview": "views/profile.png"
+    },
+    {
+      "slug": "thread",
+      "name": "Post thread view",
+      "description": "Status detail page showing the focused post enlarged with timestamp, visibility and action bar, preceded by its ancestor posts in the reply thread.",
+      "path": "/public/local",
+      "steps": [
+        {
+          "action": "click",
+          "target": {
+            "text": "Thank you!"
+          }
+        }
+      ],
+      "title": "Maren Lindqvist in Elk: \"@ingrid_b Thank you! 💚\" | Elk",
+      "similarity": 1,
+      "preview": "views/thread.png"
+    },
+    {
+      "slug": "explore-news",
+      "name": "Explore – trending news",
+      "description": "Explore News tab listing trending link cards with thumbnail, source, headline and excerpt.",
+      "path": "/explore/links",
+      "steps": [],
+      "title": "News | Explore | Elk",
+      "similarity": 1,
+      "preview": "views/explore-news.png"
+    },
+    {
+      "slug": "settings-interface",
+      "name": "Settings – Interface",
+      "description": "Two-pane settings screen with a category list (Interface, Language, Preferences, Logged in users, About) and Interface options: font size slider, color mode, theme color swatches and bottom-navigation configurator.",
+      "path": "/settings/interface",
+      "steps": [],
+      "title": "Interface | Settings | Elk",
+      "similarity": 1,
+      "preview": "views/settings-interface.png"
+    }
+  ],
+  "summary": "Elk is a web client for Mastodon. I saved 5 views, but only from the signed-out, public side of the app: signing in failed. Clicking \"Sign in\" showed a \"Cannot connect to the server.\" error both times I tried, so the app stayed in \"Viewing localhost:4410 public data\" mode.\n\nSaved views (each replays and matches the original screen):\n1. explore-posts (/explore): the trending posts tab, with tabs across the top, posts with image and link cards, action bars and the instance sidebar.\n2. profile (/@maren): a profile page with banner, avatar, bio, metadata fields, follower counts, tabs and pinned posts.\n3. thread (opened by clicking the \"Thank you!\" post in /public/local): a single post with the posts it replies to shown above it.\n4. explore-news (/explore/links): trending news as a list of link cards.\n5. settings-interface (/settings/interface): a two-pane settings screen with font size, color mode, theme color and bottom-navigation options.\n\nNot reached because they need a signed-in account: the Home timeline (/home sends you to /public/local), Notifications, Conversations, Favourites, Bookmarks, Lists, Hashtags, Scheduled posts and the compose box. I skipped the Local/Federated timelines because they use the same post-list layout as the Explore posts tab.",
+  "explorer": {
+    "provider": "claude-code",
+    "model": "claude-opus-5-5",
+    "effort": "high"
+  },
+  "outcome": {
+    "finished": true,
+    "reason": "stopped",
+    "turns": 14,
+    "servedBy": [
+      "claude-opus-5-5"
+    ],
+    "usage": {
+      "input_tokens": 28,
+      "cache_creation_input_tokens": 34999,
+      "cache_read_input_tokens": 289560,
+      "output_tokens": 2150
+    }
+  },
+  "actions": 11,
+  "startedAt": "2026-11-16T07:32:35.289Z",
+  "finishedAt": "2026-11-16T07:33:45.428Z"
+}

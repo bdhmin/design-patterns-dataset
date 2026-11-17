@@ -1,0 +1,109 @@
+You are Get It.'s visualizer concept-extraction agent.
+
+GOAL
+You receive the text of one OR MORE pages from a textbook-style PDF. Each page
+is delimited by a line "===== PAGE_INDEX n =====". Treat every page on its own
+merits and identify, per page, the concepts that would benefit MOST from a
+visual aid sitting next to the reader.
+
+For each concept choose ONE renderer:
+  • "3d"      — physical objects with meaningful 3D structure
+                (organs, molecules, cells, anatomical regions, buildings,
+                mechanical parts).
+  • "2d-anim" — physical processes, simulations, mechanisms in motion
+                (inclined plane, pendulum, blood flow path, chemical reaction
+                progress, projectile trajectory, spring oscillation).
+  • "formula" — equations, derivations, mathematical statements that benefit
+                from a step-by-step LaTeX walkthrough.
+  • "graph"   — function plots, scatter, bar charts, distributions, time
+                series.
+  • "2d-text" — citations, named statutes, articles, court rulings, named
+                papers/sources, definitions where the visualizer should show
+                an authoritative quote or summary.
+
+RULES
+1. Pick AT MOST 4 concepts per page. Quality over quantity. Skip pages with
+   no good visualization candidates — simply emit no concepts for them.
+   Judge each page independently, exactly as if it were the only page given.
+2. For EVERY concept, set "page" to the integer from the "===== PAGE_INDEX n
+   =====" marker of the page the concept appears on.
+3. Each concept's "anchor" MUST be a verbatim copy of the LAST 30–80
+   characters of the sentence that introduces it, taken EXACTLY from THAT
+   page's text (no paraphrase). The tag pill will be planted right after
+   this anchor — so the anchor string MUST appear once on its page, and the
+   renderer anchors at its tail. Pick anchors that are unique on the page.
+4. LANGUAGE: detect the language of each page's text and write BOTH "label"
+   and "context" in that same language so they read naturally next to the
+   source. Italian page → Italian outputs, English page → English outputs,
+   etc. Never translate the source.
+5. "label" is what shows on the pill (≤ 35 chars). Make it a short noun
+   phrase the reader would skim and instantly recognise.
+6. "context" gives the visualizer everything it needs to render the concept
+   without re-reading the full page: include the concept name, key
+   parameters mentioned in the text, and the field of study. 1–3 sentences.
+7. Avoid trivial picks (page numbers, headings, generic phrases). Avoid
+   duplicates of the same concept across a page.
+
+OUTPUT
+A single JSON object conforming to the supplied schema. No prose.
+
+--- PAGES ---
+===== PAGE_INDEX 0 =====
+Biochemistry — Enzyme Kinetics
+Why enzymes matter
+Enzymes are biological catalysts, almost always proteins, that speed up reactions by factors of
+10^6 to 10^17 without being consumed. They do not change the equilibrium constant of a
+reaction: they lower the   activation energy   so that equilibrium is reached faster. The substrate
+binds at the   active site , a small pocket whose shape and chemistry complement the transition
+state (induced-fit model, Koshland 1958).
+The Michaelis-Menten model
+Consider the scheme E + S <-> ES -> E + P. Assuming the concentration of the ES complex
+stays roughly constant during the measurement (the   steady-state assumption , Briggs and
+Haldane), the initial velocity is
+v0 = Vmax [S] / (Km + [S])
+•   Vmax   is the maximum rate, reached when every enzyme molecule is saturated with
+substrate. Vmax = kcat [E]total.
+•   Km , the Michaelis constant, is the substrate concentration at which v0 = Vmax / 2. A low
+Km means the enzyme reaches half-saturation at low substrate concentration, which is
+often read (loosely) as high affinity.
+•   kcat , the turnover number, is how many substrate molecules one active site converts per
+second. Carbonic anhydrase reaches about 10^6 per second.
+•   kcat / Km   is the specificity constant. Its upper limit, around 10^8 to 10^9 per molar per
+second, is set by diffusion; enzymes near it are called catalytically perfect (e.g. triose
+phosphate isomerase).
+The curve of v0 against [S] is a rectangular hyperbola: linear at low [S] (first-order kinetics) and
+flat at high [S] (zero-order kinetics).
+The Lineweaver-Burk plot
+Taking the reciprocal of both sides gives a straight line:
+1/v0 = (Km / Vmax)(1/[S]) + 1/Vmax
+The y-intercept is 1/Vmax, the x-intercept is -1/Km, and the slope is Km/Vmax. The double-
+reciprocal plot is convenient for reading inhibition patterns but distorts the error at low substrate
+concentrations, so modern labs fit the hyperbola directly with non-linear regression.
+
+===== PAGE_INDEX 1 =====
+Enzyme inhibition
+Type   Binds   Effect on Km   Effect on Vmax
+Competitive   free enzyme, at the
+active site
+increases (apparent)   unchanged
+Uncompetitive   ES complex only   decreases   decreases
+Non-competitive
+(mixed)
+E and ES equally   unchanged   decreases
+A   competitive inhibitor   resembles the substrate and can be outcompeted by adding more
+substrate; on a Lineweaver-Burk plot the lines cross on the y-axis. Methanol poisoning is
+treated by giving ethanol, which competes for alcohol dehydrogenase. Statins are competitive
+inhibitors of HMG-CoA reductase.
+Irreversible inhibitors   form covalent bonds with the enzyme. Aspirin acetylates a serine in
+cyclooxygenase; penicillin acylates the transpeptidase that builds bacterial cell walls.
+Allosteric regulation
+Allosteric enzymes have multiple subunits and give a   sigmoidal   v0 vs [S] curve instead of a
+hyperbola, because binding at one site changes the affinity of the others (cooperativity).
+Phosphofructokinase-1, the main control point of glycolysis, is inhibited by ATP and citrate and
+activated by AMP and fructose-2,6-bisphosphate. Feedback inhibition — where the end product
+of a pathway inhibits the first committed step — keeps metabolic pathways from overproducing.
+Effect of temperature and pH
+Rate increases with temperature until the protein begins to denature (most human enzymes
+peak near 37 C). Each enzyme has an optimal pH: pepsin works best around pH 2, trypsin
+around pH 8.
+--- END PAGES ---

@@ -1,0 +1,43 @@
+- link "Upload":
+  - /url: /
+- link "Open library":
+  - /url: /library
+  - text: Library
+- text: Cell_Biology_L07_-_Membrane_… manual Synced 33d ago 7/7 viz ready
+- button "Settings"
+- button "Account"
+- 'button "3D Model: Fluid mosaic membrane"'
+- 'button "Formula: Fick''s law of diffusion"'
+- 'button "Graph: Carrier saturation"'
+- 'button "Animation: Na+/glucose symport"'
+- 'button "Source: Tonicity and red cells"'
+- text: page 1
+- 'button "3D Model: Receptor-mediated endocytosis"'
+- 'button "Source: CFTR and cystic fibrosis"'
+- text: page 2
+- button "Previous page" [disabled]
+- button "Jump to page": 1 / 2
+- button "Next page"
+- button "Set custom zoom": 100%
+- button "Zoom in"
+- button "Zoom out"
+- banner:
+  - button "Chat"
+  - paragraph: Multi-turn Q&A about the document
+  - button "More actions"
+- complementary:
+  - button "New chat"
+  - 'button "SGLT1: why 2 Na+?"'
+- paragraph: why does SGLT1 need two sodium ions per glucose and not one?
+- paragraph:
+  - text: Energy budget. Glucose in the enterocyte can be much more concentrated than in the lumen, so moving it in is uphill. Each Na+ moving in releases free energy (concentration gradient
+  - strong: plus
+  - text: the negative membrane potential).
+- paragraph:
+  - text: One Na+ only provides enough to concentrate glucose ~100-fold;
+  - strong: two
+  - text: Na+ square that, allowing ~10 000-fold accumulation. That lets the gut absorb glucose almost completely even when lumen levels are low.
+- paragraph: The notes don't derive this, so it's a good one to confirm in office hours as you planned.
+- textbox "Ask a question about this document…"
+- button "Send (Enter)" [disabled]
+- alert

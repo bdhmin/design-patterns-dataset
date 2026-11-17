@@ -1,0 +1,848 @@
+{
+  "site": {
+    "slug": "surmai--trip-expenses",
+    "url": "http://localhost:4402/login",
+    "finalUrl": "http://localhost:4402/trips/28yvjgeiih3i58v#expenses",
+    "status": 200,
+    "title": "Surmai | Costa Rica — Pura Vida",
+    "capturedAt": "2026-11-16T17:58:19.694Z",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "screenshot": {
+      "ref": "capture/screenshot.png",
+      "width": 1440,
+      "height": 1356
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.8127.18 Safari/537.36",
+    "domain": "travel-hospitality",
+    "domainNote": "self-hosted trip planner (Surmai): trip expenses tab",
+    "provenance": {
+      "source": "repo",
+      "record": "repos/repo-pilot/surmai/explore.json",
+      "repo": {
+        "name": "rohitkumbhar/surmai",
+        "url": "https://github.com/rohitkumbhar/surmai",
+        "commit": "619b602cd7b9a20f6a05eb752f0007da6bc39b6b",
+        "license": "MIT"
+      },
+      "view": {
+        "slug": "trip-expenses",
+        "name": "Trip expenses",
+        "description": "Trip expenses tab with budget, category and currency donut charts plus a grid of expense cards with edit buttons."
+      }
+    }
+  },
+  "codebookVersion": "1.0.0",
+  "batch": "repo-pilot",
+  "raters": [
+    "rater-1",
+    "rater-2",
+    "rater-3"
+  ],
+  "domain": {
+    "value": "travel-hospitality",
+    "support": 3
+  },
+  "structure": {
+    "density": {
+      "value": "medium",
+      "support": 3
+    },
+    "layout": {
+      "rater-1": "app layout: left icon rail, top bar, tabbed trip page with toolbar, 3-up summary chart row and 3-column card grid; fixed footer",
+      "rater-2": "web app shell: narrow slate-blue icon sidebar on the left, white top bar with trip title/dates, notifications and account; content area with horizontal tabs (Organization/Itinerary/Attachments/Expenses/Notes); Expenses panel = sort dropdown + action buttons, row of three donut-chart summary cards, then 3-column grid of expense cards; fixed thin footer with links",
+      "rater-3": "app shell with fixed left icon rail and top bar; trip page with top sub-tabs, toolbar, 3-column row of chart widgets and 3-column card grid; fixed footer bar"
+    }
+  },
+  "aesthetics": {
+    "shape": {
+      "value": "soft",
+      "support": 3
+    },
+    "elevation": {
+      "value": "flat",
+      "support": 3
+    },
+    "borders": {
+      "value": "thin",
+      "support": 3
+    },
+    "iconStyle": {
+      "value": "line",
+      "support": 3
+    },
+    "whitespace": {
+      "value": "moderate",
+      "support": 3
+    },
+    "backgroundTreatment": {
+      "value": "solid",
+      "support": 3
+    }
+  },
+  "patterns": [
+    {
+      "id": "app-shell",
+      "status": "present",
+      "confidence": 0.88,
+      "dims": {
+        "primary": "navigation-rail",
+        "secondary": "sub-tabs-under-the-header",
+        "items": [
+          "fixed-destinations"
+        ],
+        "visibility": "always-visible",
+        "structure": "single-app"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 80,
+            "height": 900
+          },
+          "note": "Icon-only nav rail",
+          "region": "sidebar",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 80,
+            "y": 0,
+            "width": 1360,
+            "height": 60
+          },
+          "quote": "Costa Rica — Pura Vida",
+          "note": "Top bar with title, notifications and account",
+          "region": "header",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 79,
+            "height": 900
+          },
+          "note": "icon-only nav rail",
+          "region": "sidebar",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 80,
+            "y": 0,
+            "width": 1360,
+            "height": 60
+          },
+          "note": "top bar with title and account",
+          "quote": "Costa Rica — Pura Vida",
+          "region": "header",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 80,
+            "height": 900
+          },
+          "note": "Icon-only fixed left rail with logo and destinations",
+          "region": "sidebar-rail",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 80,
+            "y": 0,
+            "width": 1360,
+            "height": 60
+          },
+          "note": "Top bar with trip title and account",
+          "quote": "Costa Rica — Pura Vida",
+          "region": "header",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "badge",
+      "status": "present",
+      "confidence": 0.83,
+      "dims": {
+        "meaning": "count",
+        "overflow": "exact-count",
+        "aggregation": "app-icon-total"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1131,
+            "y": 8,
+            "width": 36,
+            "height": 36
+          },
+          "quote": "2",
+          "note": "Count badge on notifications bell",
+          "region": "header",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 192,
+            "y": 762,
+            "width": 88,
+            "height": 18
+          },
+          "quote": "Activities",
+          "note": "Uppercase category status pill on expense cards",
+          "region": "expense-grid",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 1144,
+            "y": 9,
+            "width": 20,
+            "height": 18
+          },
+          "quote": "2",
+          "note": "notification count on bell",
+          "region": "header",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 192,
+            "y": 762,
+            "width": 88,
+            "height": 18
+          },
+          "quote": "ACTIVITIES",
+          "note": "category label pills on cards",
+          "region": "expense-grid",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 1134,
+            "y": 8,
+            "width": 30,
+            "height": 34
+          },
+          "quote": "2",
+          "note": "Count badge on notification bell",
+          "region": "header",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 193,
+            "y": 762,
+            "width": 87,
+            "height": 18
+          },
+          "quote": "Activities",
+          "note": "Uppercase small grey pill category label on each card (label meaning)",
+          "region": "expense-cards",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "card",
+      "status": "present",
+      "confidence": 0.9,
+      "dims": {
+        "media": "none",
+        "actions": "one-primary-action",
+        "shape": "vertical",
+        "style": "outlined"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 100,
+            "y": 670,
+            "width": 432,
+            "height": 154
+          },
+          "quote": "Activity: Ziplining In the rain forest",
+          "note": "Outlined card with title, Date/Category/Amount attributes and Edit Expense icon button; titles truncated with ellipsis on others",
+          "region": "expense-grid",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 100,
+            "y": 670,
+            "width": 432,
+            "height": 154
+          },
+          "quote": "Activity: Ziplining In the rain forest",
+          "note": "expense card: title, date, category pill, amount, edit icon button (opens Edit Expense modal)",
+          "region": "expense-grid",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 545,
+            "y": 670,
+            "width": 431,
+            "height": 154
+          },
+          "quote": "Transportation: LIR -> SEA",
+          "region": "expense-grid",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 100,
+            "y": 670,
+            "width": 432,
+            "height": 154
+          },
+          "quote": "Activity: Ziplining In the rain forest",
+          "note": "White card with 1px border, title, Date/Category/Amount rows, edit icon button top-right",
+          "region": "expense-cards",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 544,
+            "y": 670,
+            "width": 432,
+            "height": 154
+          },
+          "quote": "Transportation: LIR -> SEA",
+          "region": "expense-cards",
+          "rater": "rater-3"
+        }
+      ],
+      "ties": [
+        "dims.target"
+      ]
+    },
+    {
+      "id": "chart",
+      "status": "present",
+      "confidence": 0.9,
+      "dims": {
+        "markType": "arcs",
+        "channels": [
+          "colour-hue-or-value",
+          "length"
+        ],
+        "scale": "radial",
+        "faceting": "small-multiples",
+        "inspectBy": [
+          "hover-tooltip"
+        ],
+        "authorship": "author-specified",
+        "annotation": [
+          "callout-labels"
+        ]
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 546,
+            "y": 217,
+            "width": 429,
+            "height": 436
+          },
+          "quote": "Expenses by Category",
+          "note": "Donut chart with centre total and legend with percentages; hover shows value tooltip (verified live)",
+          "region": "summary",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 101,
+            "y": 217,
+            "width": 428,
+            "height": 436
+          },
+          "quote": "42%",
+          "note": "Budget used donut",
+          "region": "summary",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 991,
+            "y": 217,
+            "width": 429,
+            "height": 436
+          },
+          "quote": "Expenses by Currency",
+          "note": "Single-segment currency donut",
+          "region": "summary",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 545,
+            "y": 217,
+            "width": 430,
+            "height": 436
+          },
+          "quote": "Expenses by Category",
+          "note": "donut with center total and legend with % and amounts; hover shows value tooltip",
+          "region": "summary-charts",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 100,
+            "y": 217,
+            "width": 429,
+            "height": 436
+          },
+          "quote": "Budget Overview",
+          "note": "donut showing 42% of budget used",
+          "region": "summary-charts",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 991,
+            "y": 217,
+            "width": 429,
+            "height": 436
+          },
+          "quote": "Expenses by Currency",
+          "region": "summary-charts",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 545,
+            "y": 217,
+            "width": 430,
+            "height": 436
+          },
+          "quote": "Expenses by Category",
+          "note": "Donut with centre total '3116 USD' and legend with % and amounts; hovering a segment shows a dark tooltip ($1,719.97)",
+          "region": "summary-widgets",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 100,
+            "y": 217,
+            "width": 429,
+            "height": 436
+          },
+          "quote": "Budget Overview",
+          "note": "Donut gauge 42% used",
+          "region": "summary-widgets",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 991,
+            "y": 217,
+            "width": 429,
+            "height": 436
+          },
+          "quote": "Expenses by Currency",
+          "note": "Single-segment green donut, '1 Currencies'",
+          "region": "summary-widgets",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "dashboard",
+      "status": "uncertain",
+      "confidence": 0.55,
+      "dims": {
+        "arrangement": "fixed-grid",
+        "density": "a-few-glanceable-tiles",
+        "linking": "independent",
+        "refresh": "on-visit"
+      },
+      "support": 2,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 100,
+            "y": 217,
+            "width": 1320,
+            "height": 436
+          },
+          "note": "three glanceable summary widgets in a grid",
+          "region": "summary-charts",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 100,
+            "y": 217,
+            "width": 1320,
+            "height": 436
+          },
+          "note": "Row of three equal donut-chart widgets summarising spend",
+          "region": "summary-widgets",
+          "rater": "rater-3"
+        }
+      ],
+      "ties": [
+        "dims.widgets",
+        "dims.purpose",
+        "dims.alerting"
+      ]
+    },
+    {
+      "id": "data-table",
+      "status": "absent",
+      "confidence": 0.8,
+      "dims": {},
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 100,
+            "y": 670,
+            "width": 1320,
+            "height": 660
+          },
+          "note": "expenses shown as cards, not a table",
+          "rater": "rater-2"
+        }
+      ]
+    },
+    {
+      "id": "menu",
+      "status": "uncertain",
+      "confidence": 0.6,
+      "dims": {
+        "openBy": "button-click",
+        "structure": "sections",
+        "item": [
+          "icon",
+          "label"
+        ],
+        "itemSet": "fixed",
+        "form": "vertical-list"
+      },
+      "support": 1,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1169,
+            "y": 12,
+            "width": 235,
+            "height": 38
+          },
+          "quote": "Maya Chen",
+          "note": "avatar button with chevron trigger",
+          "region": "header",
+          "rater": "rater-2"
+        }
+      ],
+      "ties": [
+        "status"
+      ]
+    },
+    {
+      "id": "modal-dialog",
+      "status": "absent",
+      "confidence": 0.7,
+      "dims": {},
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 491,
+            "y": 683,
+            "width": 28,
+            "height": 28
+          },
+          "note": "Edit opens a modal only on click; not visible in capture",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "overview-detail",
+      "status": "uncertain",
+      "confidence": 0.55,
+      "dims": {
+        "attributePlacement": [
+          "in-both-views",
+          "in-detail-view-only"
+        ],
+        "abstraction": [
+          "category"
+        ],
+        "truncation": "ellipsis",
+        "relationship": "one-to-one",
+        "openIn": "pop-up",
+        "overviewType": [
+          "grid"
+        ],
+        "openBy": [
+          "click"
+        ],
+        "openFrom": "specific-attribute",
+        "attributeScope": [
+          "per-collection",
+          "per-item"
+        ]
+      },
+      "support": 1,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 100,
+            "y": 670,
+            "width": 1320,
+            "height": 660
+          },
+          "note": "grid of expense cards; titles truncated with ellipsis",
+          "quote": "Lodging: Los Lagos Spa & Thermal…",
+          "region": "expense-grid",
+          "rater": "rater-2"
+        }
+      ],
+      "ties": [
+        "status"
+      ]
+    },
+    {
+      "id": "progress-indicator",
+      "status": "absent",
+      "confidence": 0.73,
+      "dims": {},
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 143,
+            "y": 314,
+            "width": 150,
+            "height": 150
+          },
+          "note": "42% donut is budget usage, not work progress",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 144,
+            "y": 314,
+            "width": 149,
+            "height": 149
+          },
+          "note": "42% donut is budget consumption, not task progress",
+          "rater": "rater-2"
+        }
+      ]
+    },
+    {
+      "id": "sort-control",
+      "status": "present",
+      "confidence": 0.87,
+      "dims": {
+        "keys": "fixed-list",
+        "form": "dropdown",
+        "default": "recency",
+        "indicator": "label"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 100,
+            "y": 142,
+            "width": 220,
+            "height": 59
+          },
+          "quote": "Sort by",
+          "note": "Combobox with placeholder 'Select sorting'; live options Date/Category/Amount each Ascending/Descending",
+          "region": "toolbar",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 100,
+            "y": 142,
+            "width": 220,
+            "height": 59
+          },
+          "quote": "Sort by",
+          "note": "combobox with placeholder 'Select sorting'; live options Date/Category/Amount Asc/Desc",
+          "region": "toolbar",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 100,
+            "y": 142,
+            "width": 220,
+            "height": 59
+          },
+          "quote": "Sort by",
+          "note": "Combobox 'Select sorting'; live check shows Date/Category/Amount Ascending/Descending options. Cards default to newest date first.",
+          "region": "toolbar",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "stat-tile",
+      "status": "uncertain",
+      "confidence": 0.5,
+      "dims": {
+        "context": [
+          "label",
+          "target"
+        ],
+        "drill": "none"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 101,
+            "y": 217,
+            "width": 428,
+            "height": 436
+          },
+          "quote": "Remaining: $4,384.04",
+          "note": "Used/Budget/Remaining figures with 42% donut",
+          "region": "summary",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 335,
+            "y": 345,
+            "width": 180,
+            "height": 85
+          },
+          "quote": "Used: $3,115.96 Budget: $7,500.00 Remaining: $4,384.04",
+          "region": "summary-charts",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 100,
+            "y": 217,
+            "width": 429,
+            "height": 436
+          },
+          "quote": "Remaining:",
+          "note": "42% used, $7,500.00 budget, $4,384.04 remaining in green",
+          "region": "summary-widgets",
+          "rater": "rater-3"
+        }
+      ],
+      "ties": [
+        "dims.encoding"
+      ]
+    },
+    {
+      "id": "tabs",
+      "status": "present",
+      "confidence": 0.9,
+      "dims": {
+        "placement": "top",
+        "label": [
+          "text"
+        ],
+        "origin": "fixed-by-the-designer",
+        "grouping": "flat",
+        "switchBy": [
+          "click"
+        ]
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 100,
+            "y": 88,
+            "width": 1320,
+            "height": 36
+          },
+          "quote": "Organization Itinerary Attachments Expenses Notes",
+          "note": "role=tablist, Expenses selected with underline and light fill",
+          "region": "trip-tabs",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 100,
+            "y": 88,
+            "width": 505,
+            "height": 36
+          },
+          "quote": "Organization Itinerary Attachments Expenses Notes",
+          "note": "role=tablist; Expenses selected with light fill and underline",
+          "region": "trip-tabs",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 100,
+            "y": 88,
+            "width": 1320,
+            "height": 36
+          },
+          "quote": "Expenses",
+          "note": "role=tablist with Expenses selected (filled bg + underline)",
+          "region": "trip-tabs",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "tooltip",
+      "status": "uncertain",
+      "confidence": 0.55,
+      "dims": {},
+      "support": 1,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 686,
+            "y": 318,
+            "width": 149,
+            "height": 149
+          },
+          "note": "hovering a donut segment shows '$1,719.97' tooltip",
+          "region": "summary-charts",
+          "rater": "rater-2"
+        }
+      ],
+      "ties": [
+        "status"
+      ]
+    }
+  ],
+  "note": "Majority vote across raters. Free-text fields (layout, typography, palette, notes) stay per rater in labels/.",
+  "computedAt": "2026-11-16T18:00:04.165Z"
+}

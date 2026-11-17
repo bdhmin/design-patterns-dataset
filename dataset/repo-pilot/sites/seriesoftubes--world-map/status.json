@@ -1,0 +1,23 @@
+{
+  "slug": "seriesoftubes--world-map",
+  "url": "http://seriesoftubes.localhost:4318/",
+  "domain": "games",
+  "source": "repo",
+  "state": "labeling",
+  "raters": {
+    "rater-1": {
+      "state": "running",
+      "updatedAt": "2026-11-16T18:00:38.734Z"
+    },
+    "rater-2": {
+      "state": "running",
+      "updatedAt": "2026-11-16T18:00:38.735Z"
+    },
+    "rater-3": {
+      "state": "running",
+      "updatedAt": "2026-11-16T18:00:38.735Z"
+    }
+  },
+  "flags": [],
+  "updatedAt": "2026-11-16T18:00:38.735Z"
+}

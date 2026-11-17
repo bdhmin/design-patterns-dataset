@@ -1,0 +1,38 @@
+{
+  "v": 1,
+  "docId": "sample-chemistry",
+  "chats": [],
+  "flashcards": [
+    {
+      "id": "sah8ogyf33uqi",
+      "topic": "all",
+      "createdAt": 1788998280000,
+      "endedAt": 1788998450000,
+      "cards": [
+        {
+          "q": "H–C–H angle in methane?",
+          "a": "About 109.5 degrees (tetrahedral).",
+          "userAnswer": "about 109",
+          "rating": 3,
+          "answeredAt": 1788998330000
+        },
+        {
+          "q": "Why is water bent?",
+          "a": "Two lone pairs on oxygen compress the angle to 104.5 degrees.",
+          "userAnswer": "two lone pairs on oxygen compress the angle to 104",
+          "rating": 4,
+          "answeredAt": 1788998380000
+        },
+        {
+          "q": "Hückel's rule?",
+          "a": "Planar, cyclic, conjugated with 4n+2 pi electrons -> aromatic.",
+          "userAnswer": "i think it's the opposite?",
+          "rating": 2,
+          "answeredAt": 1788998430000
+        }
+      ]
+    }
+  ],
+  "quizzes": [],
+  "feynman": []
+}

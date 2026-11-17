@@ -1,0 +1,78 @@
+{
+ "pageBackground": "#ffffff",
+ "backgroundsByArea": [
+  {
+   "color": "#ffffff",
+   "share": 0.9227
+  },
+  {
+   "color": "#f8f9fa",
+   "share": 0.0608
+  },
+  {
+   "color": "#6b7a99",
+   "share": 0.0164
+  }
+ ],
+ "textColors": [
+  {
+   "color": "#000000",
+   "chars": 626
+  },
+  {
+   "color": "#868e96",
+   "chars": 427
+  },
+  {
+   "color": "#6b7a99",
+   "chars": 46
+  },
+  {
+   "color": "#ffffff",
+   "chars": 7
+  }
+ ],
+ "fonts": [
+  {
+   "family": "Verdana",
+   "textNodes": 87
+  }
+ ],
+ "fontSizes": [
+  {
+   "px": 16,
+   "textNodes": 36
+  },
+  {
+   "px": 15,
+   "textNodes": 1
+  },
+  {
+   "px": 14,
+   "textNodes": 17
+  },
+  {
+   "px": 12,
+   "textNodes": 33
+  }
+ ],
+ "radii": [
+  {
+   "radius": "8px",
+   "boxes": 28
+  },
+  {
+   "radius": "32px",
+   "boxes": 2
+  },
+  {
+   "radius": "16000px",
+   "boxes": 1
+  }
+ ],
+ "boxesMeasured": 360,
+ "shadowedShare": 0,
+ "borderedShare": 0.025,
+ "gradientBackgrounds": 0,
+ "imageBackgrounds": 0
+}

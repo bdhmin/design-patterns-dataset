@@ -1,0 +1,62 @@
+# Codebook proposal (new-entry) — review with: node scripts/proposals.ts show repo-pilot quiz
+id: quiz
+kind: new-entry
+status: open
+batch: repo-pilot
+codebookVersion: 1.0.0
+name: Quiz / self-assessment
+level: pattern
+parent: guide
+definition: A sequence of questions a person answers to test their own understanding. Each answer
+  gets correctness feedback and often an explanation, and progress through the set is shown.
+dimensions:
+  - name: Feedback timing
+    family: feedback
+    question: When is correctness revealed?
+    subdimensions:
+      - id: feedbackTiming
+        name: Feedback timing
+        select: one
+        values:
+          - id: per-question-immediate
+            name: Per question, immediate
+            example: Duolingo, AI study quiz
+          - id: at-end
+            name: At end
+            example: Google Forms quizzes
+  - name: Question format
+    family: content
+    question: What kind of answers?
+    subdimensions:
+      - id: format
+        name: Format
+        select: many
+        values:
+          - id: multiple-choice
+            name: Multiple choice
+          - id: free-response
+            name: Free response
+          - id: true-false
+            name: True/false
+rationale:
+  - rater: rater-1
+    site: get-it--quiz-review
+    text: Question-by-question assessment with answer options, immediate correctness feedback and an
+      explanation. It doesn't fit form (nothing is collected for submission), wizard or
+      choice-control alone. Common in education and AI study tools.
+sources:
+  - batch: repo-pilot
+    site: get-it--quiz-review
+    url: http://localhost:4401/viewer/994a113e-e7ba-4f78-926a-7154208adfff
+    note: proposed by rater-1
+evidence:
+  - site: get-it--quiz-review
+    rater: rater-1
+    bbox:
+      x: 1030
+      y: 98
+      width: 401
+      height: 570
+    quote: Which transport mode saturates at high substrate concentration?
+createdAt: 2026-11-16T17:56:12.556Z
+updatedAt: 2026-11-16T17:56:12.556Z

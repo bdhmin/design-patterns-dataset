@@ -1,0 +1,920 @@
+{
+  "site": {
+    "slug": "get-it--document-chat",
+    "url": "http://localhost:4401/viewer/994a113e-e7ba-4f78-926a-7154208adfff",
+    "finalUrl": "http://localhost:4401/viewer/994a113e-e7ba-4f78-926a-7154208adfff",
+    "status": 200,
+    "title": "Get It.",
+    "capturedAt": "2026-11-16T17:54:52.872Z",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "screenshot": {
+      "ref": "capture/screenshot.png",
+      "width": 1440,
+      "height": 2198
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.8127.18 Safari/537.36",
+    "domain": "education",
+    "domainNote": "AI study tool: lecture-notes PDF viewer with inline concept visualizations and a document Q&A chat side panel",
+    "provenance": {
+      "source": "repo",
+      "record": "repos/repo-pilot/get-it/explore.json",
+      "repo": {
+        "name": "beltromatti/get-it",
+        "url": "https://github.com/beltromatti/get-it",
+        "commit": "ae0fa999f352b951ab8150fac5dcf9d7ab6fd9a4",
+        "license": "Apache-2.0"
+      },
+      "view": {
+        "slug": "document-chat",
+        "name": "Document chat",
+        "description": "Chat pane beside the lecture document with a thread list, a user question and an AI answer, and a message composer."
+      }
+    }
+  },
+  "codebookVersion": "1.0.0",
+  "batch": "repo-pilot",
+  "raters": [
+    "rater-1",
+    "rater-2",
+    "rater-3"
+  ],
+  "domain": {
+    "value": "education",
+    "support": 3
+  },
+  "structure": {
+    "density": {
+      "value": "medium",
+      "support": 3
+    },
+    "layout": {
+      "rater-1": "Full-height app shell: thin top bar (Upload / Library links, active document tab, sync + viz status, settings, account) above two side-by-side panels: a paginated PDF document viewer on the left (~55%) with floating page/zoom controls, and a mode-switchable tool panel on the right (currently Chat) with a chat-session list column and a message thread with a bottom composer",
+      "rater-2": "two-pane workspace app: thin top bar; left rounded panel with paginated canvas-rendered PDF and floating page/zoom toolbar; right rounded panel with tool-switcher header, narrow conversation list, chat thread and bottom composer",
+      "rater-3": "Desktop app with a thin top bar (Upload, Library and a document tab) and a two-panel split: a paginated document viewer on the left with a floating page/zoom toolbar, and a tool panel on the right (mode dropdown header, chat-history sidebar, chat thread, bottom composer)"
+    }
+  },
+  "aesthetics": {
+    "shape": {
+      "value": "soft",
+      "support": 3
+    },
+    "elevation": {
+      "value": "subtle-shadows",
+      "support": 3
+    },
+    "borders": {
+      "value": "thin",
+      "support": 3
+    },
+    "iconStyle": {
+      "value": "line",
+      "support": 3
+    },
+    "whitespace": {
+      "value": "moderate",
+      "support": 3
+    },
+    "backgroundTreatment": {
+      "value": "solid",
+      "support": 3
+    }
+  },
+  "patterns": [
+    {
+      "id": "ai-chat",
+      "status": "present",
+      "confidence": 0.9,
+      "dims": {
+        "turnContent": [
+          "markdown-with-code"
+        ],
+        "composition": "linear-thread",
+        "invokeBy": [
+          "text-field-submit"
+        ],
+        "flow": "strict-turn-taking",
+        "scope": "live-page-or-selection"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1066,
+            "y": 114,
+            "width": 341,
+            "height": 59
+          },
+          "quote": "why does SGLT1 need two sodium ions per glucose and not one?",
+          "region": "chat-panel",
+          "note": "User turn, dark right-aligned bubble",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 1006,
+            "y": 185,
+            "width": 340,
+            "height": 320
+          },
+          "quote": "Energy budget. Glucose in the enterocyte can be much more concentrated than in the lumen",
+          "region": "chat-panel",
+          "note": "Model reply in light grey bubble with bold emphasis",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 806,
+            "y": 98,
+            "width": 176,
+            "height": 90
+          },
+          "quote": "New chat",
+          "region": "chat-panel",
+          "note": "Chat session list column",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 1066,
+            "y": 114,
+            "width": 341,
+            "height": 59
+          },
+          "quote": "why does SGLT1 need two sodium ions per glucose and not one?",
+          "note": "User turn in dark right-aligned bubble",
+          "region": "chat-panel",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 1006,
+            "y": 185,
+            "width": 340,
+            "height": 320
+          },
+          "quote": "Energy budget. Glucose in the enterocyte can be much more concentrated than in the lumen",
+          "note": "Model reply in light grey bubble with bold emphasis, references the user's notes",
+          "region": "chat-panel",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 806,
+            "y": 98,
+            "width": 176,
+            "height": 90
+          },
+          "quote": "New chat",
+          "note": "Conversation list column with New chat and saved thread 'SGLT1: why 2 Na+?'",
+          "region": "chat-panel",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 1066,
+            "y": 114,
+            "width": 341,
+            "height": 59
+          },
+          "quote": "why does SGLT1 need two sodium ions per glucose and not one?",
+          "region": "chat-thread",
+          "note": "User turn (dark bubble)",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 1006,
+            "y": 185,
+            "width": 340,
+            "height": 320
+          },
+          "quote": "Energy budget. Glucose in the enterocyte can be much more concentrated than in the lumen",
+          "region": "chat-thread",
+          "note": "Model reply with bold emphasis; it answers about the open document",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 814,
+            "y": 106,
+            "width": 159,
+            "height": 72
+          },
+          "quote": "SGLT1: why 2 Na+?",
+          "region": "chat-history",
+          "note": "New chat button and list of past conversations",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "ai-provenance",
+      "status": "absent",
+      "confidence": 0.6,
+      "dims": {},
+      "support": 3,
+      "raters": 3,
+      "evidence": []
+    },
+    {
+      "id": "annotation",
+      "status": "absent",
+      "confidence": 0.6,
+      "dims": {},
+      "support": 2,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 419,
+            "y": 307,
+            "width": 96,
+            "height": 18
+          },
+          "note": "Inline chips are anchored to text but are visualization links, not discussion threads",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 419,
+            "y": 307,
+            "width": 96,
+            "height": 18
+          },
+          "note": "Inline chips are anchored to text but are visualization links, not discussion/feedback threads",
+          "rater": "rater-2"
+        }
+      ]
+    },
+    {
+      "id": "app-shell",
+      "status": "present",
+      "confidence": 0.75,
+      "dims": {
+        "primary": "top-navigation-bar",
+        "items": [
+          "fixed-destinations"
+        ],
+        "visibility": "always-visible",
+        "structure": "document-tabs",
+        "secondary": "none"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 44
+          },
+          "quote": "Upload Library Cell_Biology_L07_-_Membr… MANUAL",
+          "region": "top-bar",
+          "note": "Persistent top bar with global links, document tab, status and account",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 46
+          },
+          "quote": "Upload Library Cell_Biology_L07_-_Membr…",
+          "note": "Thin top bar with global destinations, document tab, status pills, settings and account",
+          "region": "top-bar",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 46
+          },
+          "quote": "Upload Library Cell_Biology_L07_-_Membr… MANUAL",
+          "region": "top-bar",
+          "note": "Persistent top bar with global links, a document tab and status/settings/account controls",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "badge",
+      "status": "present",
+      "confidence": 0.73,
+      "dims": {
+        "meaning": "label"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 426,
+            "y": 14,
+            "width": 72,
+            "height": 18
+          },
+          "quote": "MANUAL",
+          "region": "top-bar",
+          "note": "Label pill on document tab",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 1250,
+            "y": 11,
+            "width": 106,
+            "height": 26
+          },
+          "quote": "7/7 viz ready",
+          "region": "top-bar",
+          "note": "Status pill with count",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 1120,
+            "y": 11,
+            "width": 122,
+            "height": 26
+          },
+          "quote": "Synced 33d ago",
+          "region": "top-bar",
+          "note": "Sync status pill",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 426,
+            "y": 14,
+            "width": 72,
+            "height": 20
+          },
+          "quote": "MANUAL",
+          "note": "Amber label pill on the document tab",
+          "region": "top-bar",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 1250,
+            "y": 11,
+            "width": 106,
+            "height": 26
+          },
+          "quote": "7/7 viz ready",
+          "note": "Status pill counting ready visualizations",
+          "region": "top-bar",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 1120,
+            "y": 11,
+            "width": 122,
+            "height": 26
+          },
+          "quote": "Synced 33d ago",
+          "note": "Sync status pill",
+          "region": "top-bar",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 426,
+            "y": 14,
+            "width": 79,
+            "height": 20
+          },
+          "quote": "MANUAL",
+          "region": "top-bar",
+          "note": "Amber label badge on the document tab",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 1120,
+            "y": 12,
+            "width": 236,
+            "height": 24
+          },
+          "quote": "Synced 33d ago · 7/7 viz ready",
+          "region": "top-bar",
+          "note": "Status pills for sync state and visualization readiness count",
+          "rater": "rater-3"
+        }
+      ],
+      "ties": [
+        "dims.aggregation"
+      ]
+    },
+    {
+      "id": "coordinated-views",
+      "status": "uncertain",
+      "confidence": 0.45,
+      "dims": {
+        "arrangement": "split-panes",
+        "trigger": [
+          "click-a-mark"
+        ]
+      },
+      "support": 2,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 535,
+            "y": 598,
+            "width": 96,
+            "height": 18
+          },
+          "quote": "Carrier...",
+          "region": "document-viewer",
+          "note": "Typed concept chips (3D Model, Formula, Graph, Animation, Source) anchored inline; clicking drives the side panel",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 535,
+            "y": 598,
+            "width": 96,
+            "height": 18
+          },
+          "quote": "Carrier...",
+          "note": "Graph chip; clicking opens 'Carrier saturation' graph in the right panel",
+          "region": "document-viewer",
+          "rater": "rater-2"
+        }
+      ],
+      "ties": [
+        "dims.scope",
+        "dims.linkChannel"
+      ]
+    },
+    {
+      "id": "menu",
+      "status": "present",
+      "confidence": 0.78,
+      "dims": {
+        "openBy": "button-click",
+        "structure": "flat",
+        "item": [
+          "description",
+          "icon",
+          "label"
+        ],
+        "itemSet": "fixed",
+        "form": "vertical-list"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 826,
+            "y": 61,
+            "width": 81,
+            "height": 28
+          },
+          "quote": "Chat",
+          "region": "chat-panel",
+          "note": "Dropdown trigger; live it opens a list of panel modes (Visualizer, Knowledge Graph, Chat, Flashcards, Quizzes, Feynman) each with icon and description",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 1383,
+            "y": 60,
+            "width": 28,
+            "height": 28
+          },
+          "region": "chat-panel",
+          "note": "More actions overflow: Regenerate visualization, Download work context (JSON), with descriptions",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 826,
+            "y": 61,
+            "width": 81,
+            "height": 28
+          },
+          "quote": "Chat",
+          "note": "Verified live: dropdown lists tools Visualizer, Knowledge Graph, Chat, Flashcards, Quizzes, Feynman, each with icon and one-line description; current item highlighted",
+          "region": "chat-panel",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 1383,
+            "y": 60,
+            "width": 28,
+            "height": 28
+          },
+          "note": "More actions overflow button",
+          "region": "chat-panel",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 826,
+            "y": 61,
+            "width": 81,
+            "height": 28
+          },
+          "quote": "Chat",
+          "region": "chat-header",
+          "note": "Dropdown trigger. Checked live: it opens a list of modes (Visualizer, Knowledge Graph, Chat, Flashcards, Quizzes, Feynman), each with an icon and a one-line description",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "object-viewer-3d",
+      "status": "absent",
+      "confidence": 0.6,
+      "dims": {},
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 806,
+            "y": 52,
+            "width": 625,
+            "height": 2137
+          },
+          "note": "A 3D model viewer appears in the right panel only after clicking a chip; capture shows Chat",
+          "rater": "rater-1"
+        }
+      ]
+    },
+    {
+      "id": "pagination",
+      "status": "present",
+      "confidence": 0.68,
+      "dims": {
+        "mechanism": "next-and-previous",
+        "position": "page-n-of-m"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 349,
+            "y": 2144,
+            "width": 108,
+            "height": 32
+          },
+          "quote": "1 / 2",
+          "region": "document-viewer",
+          "note": "Previous page (disabled) / Jump to page / Next page buttons",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 353,
+            "y": 2148,
+            "width": 99,
+            "height": 24
+          },
+          "quote": "1 / 2",
+          "note": "Previous/next page buttons with jump-to-page indicator inside the document viewer",
+          "region": "document-viewer",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 353,
+            "y": 2148,
+            "width": 99,
+            "height": 24
+          },
+          "quote": "1 / 2",
+          "region": "document-viewer",
+          "note": "Previous/next page buttons around a 'Jump to page' N/M button",
+          "rater": "rater-3"
+        }
+      ],
+      "ties": [
+        "dims.pageSize"
+      ]
+    },
+    {
+      "id": "prompt-input",
+      "status": "present",
+      "confidence": 0.87,
+      "dims": {
+        "content": [
+          "plain-prompt"
+        ],
+        "layout": "sidebar-composer",
+        "submitBy": [
+          "click-send",
+          "enter-key"
+        ]
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 982,
+            "y": 2104,
+            "width": 449,
+            "height": 85
+          },
+          "quote": "Ask a question about this document…",
+          "region": "chat-panel",
+          "note": "Textarea plus square send button labelled Send (Enter), disabled while empty",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 982,
+            "y": 2104,
+            "width": 449,
+            "height": 85
+          },
+          "quote": "Ask a question about this document…",
+          "note": "Bottom composer textarea with disabled dark send button labelled 'Send (Enter)'",
+          "region": "chat-panel",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 994,
+            "y": 2117,
+            "width": 425,
+            "height": 60
+          },
+          "quote": "Ask a question about this document…",
+          "region": "chat-thread",
+          "note": "Textarea plus dark 'Send (Enter)' button (disabled while empty) at the bottom of the side panel",
+          "rater": "rater-3"
+        }
+      ],
+      "ties": [
+        "dims.assistance"
+      ]
+    },
+    {
+      "id": "reader",
+      "status": "present",
+      "confidence": 0.78,
+      "dims": {
+        "pagination": "fixed-layout",
+        "progress": "location-only"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 41,
+            "y": 84,
+            "width": 723,
+            "height": 1023
+          },
+          "quote": "Cell Biology — Lecture 7: Membrane Transport",
+          "region": "document-viewer",
+          "note": "PDF page rendered on canvas; page 1 of 2, scrolls continuously within the panel",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 349,
+            "y": 2144,
+            "width": 435,
+            "height": 32
+          },
+          "quote": "1 / 2  100%",
+          "region": "document-viewer",
+          "note": "Floating page and zoom controls",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 41,
+            "y": 84,
+            "width": 723,
+            "height": 1023
+          },
+          "quote": "Cell Biology — Lecture 7: Membrane Transport",
+          "note": "Page 1 of the lecture PDF rendered on a canvas, followed by page 2",
+          "region": "document-viewer",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 348,
+            "y": 2144,
+            "width": 440,
+            "height": 32
+          },
+          "quote": "1 / 2 100%",
+          "note": "Floating toolbar: prev/next page, jump-to-page, zoom in/out",
+          "region": "document-viewer",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 41,
+            "y": 84,
+            "width": 723,
+            "height": 1023
+          },
+          "quote": "Cell Biology — Lecture 7: Membrane Transport",
+          "region": "document-viewer",
+          "note": "Fixed-layout pages rendered to canvas, with 'page 1' and 'page 2' markers and zoom controls",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 676,
+            "y": 2148,
+            "width": 104,
+            "height": 24
+          },
+          "quote": "100%",
+          "region": "document-viewer",
+          "note": "Zoom in/out and custom zoom",
+          "rater": "rater-3"
+        }
+      ],
+      "ties": [
+        "dims.typography"
+      ]
+    },
+    {
+      "id": "settings",
+      "status": "absent",
+      "confidence": 0.6,
+      "dims": {},
+      "support": 3,
+      "raters": 3,
+      "evidence": []
+    },
+    {
+      "id": "split-pane",
+      "status": "uncertain",
+      "confidence": 0.5,
+      "dims": {
+        "orientation": "side-by-side"
+      },
+      "support": 2,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 8,
+            "y": 52,
+            "width": 1423,
+            "height": 2138
+          },
+          "region": "document-viewer",
+          "note": "Document panel and tool panel side by side",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 8,
+            "y": 52,
+            "width": 1423,
+            "height": 2138
+          },
+          "note": "Document pane (left) and assistant/tool pane (right) as two rounded white panels",
+          "region": "document-viewer",
+          "rater": "rater-2"
+        }
+      ],
+      "ties": [
+        "dims.relationship"
+      ]
+    },
+    {
+      "id": "suggestion-chips",
+      "status": "absent",
+      "confidence": 0.7,
+      "dims": {},
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 982,
+            "y": 2104,
+            "width": 449,
+            "height": 85
+          },
+          "note": "Composer has no starter or follow-up chips",
+          "rater": "rater-2"
+        }
+      ]
+    },
+    {
+      "id": "tabs",
+      "status": "uncertain",
+      "confidence": 0.5,
+      "dims": {
+        "placement": "top"
+      },
+      "support": 2,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 201,
+            "y": 6,
+            "width": 311,
+            "height": 40
+          },
+          "quote": "Cell_Biology_L07_-_Membr… MANUAL",
+          "note": "Active document tab with doc icon, truncated filename and a label badge",
+          "region": "top-bar",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 202,
+            "y": 7,
+            "width": 309,
+            "height": 36
+          },
+          "quote": "Cell_Biology_L07_-_Membr…",
+          "region": "top-bar",
+          "note": "Browser-style active document tab with file icon and truncated name",
+          "rater": "rater-3"
+        }
+      ],
+      "ties": [
+        "dims.label"
+      ]
+    },
+    {
+      "id": "tooltip",
+      "status": "present",
+      "confidence": 0.7,
+      "dims": {
+        "trigger": [
+          "hover"
+        ],
+        "content": "label",
+        "placement": "below"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 419,
+            "y": 307,
+            "width": 96,
+            "height": 18
+          },
+          "quote": "Fluid mo...",
+          "region": "document-viewer",
+          "note": "Live: hovering/focusing a truncated chip shows full name '3D Model: Fluid mosaic membrane' just below it; not visible in capture",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 419,
+            "y": 307,
+            "width": 96,
+            "height": 18
+          },
+          "quote": "Fluid mo...",
+          "note": "Verified live: hovering a truncated viz chip shows its full label below, e.g. '3D Model: Fluid mosaic membrane'",
+          "region": "document-viewer",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 419,
+            "y": 307,
+            "width": 96,
+            "height": 18
+          },
+          "quote": "Fluid mo...",
+          "region": "document-viewer",
+          "note": "Checked live: hovering a truncated chip shows a tooltip below it with the full name, '3D Model: Fluid mosaic membrane'",
+          "rater": "rater-3"
+        }
+      ],
+      "ties": [
+        "dims.timing"
+      ]
+    }
+  ],
+  "note": "Majority vote across raters. Free-text fields (layout, typography, palette, notes) stay per rater in labels/.",
+  "computedAt": "2026-11-16T17:56:59.043Z"
+}

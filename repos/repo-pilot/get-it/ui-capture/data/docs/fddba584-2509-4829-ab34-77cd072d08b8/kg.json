@@ -1,0 +1,153 @@
+{
+  "v": 1,
+  "docId": "fddba584-2509-4829-ab34-77cd072d08b8",
+  "status": "ready",
+  "buildAt": 1792079130000,
+  "lastEvaluatedAt": 1794579480000,
+  "evaluationCount": 13,
+  "nodes": [
+    {
+      "id": "teorema-di-bayes",
+      "label": "Teorema di Bayes",
+      "summary": "Formula di Bayes con prior, verosimiglianza e posterior.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 71,
+        "comprehension": 55,
+        "structure": 50,
+        "application": 49
+      },
+      "evaluatorNote": "Understands the idea, but confuses it with a neighbouring concept under time pressure."
+    },
+    {
+      "id": "vpp-vs-prevalenza",
+      "label": "VPP vs prevalenza",
+      "summary": "VPP di un test con sens 95% e spec 90% al variare della prevalenza.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 66,
+        "comprehension": 59,
+        "structure": 53,
+        "application": 38
+      },
+      "evaluatorNote": "Good recognition on quizzes; explanations still lean on the textbook's wording."
+    },
+    {
+      "id": "albero-del-test-diagnostico",
+      "label": "Albero del test diagnostico",
+      "summary": "Su 10000 persone: 100 malati, 95 veri positivi, 990 falsi positivi.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 79,
+        "comprehension": 66,
+        "structure": 62,
+        "application": 51
+      },
+      "evaluatorNote": "Understands the idea, but confuses it with a neighbouring concept under time pressure."
+    },
+    {
+      "id": "regola-68-95-99-7",
+      "label": "Regola 68-95-99.7",
+      "summary": "Densità normale standard con bande a 1, 2, 3 sigma.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 0,
+        "comprehension": 0,
+        "structure": 0,
+        "application": 0
+      },
+      "evaluatorNote": "Only seen while reading — no flashcard or quiz evidence yet."
+    },
+    {
+      "id": "probabilita-condizionata",
+      "label": "Probabilità condizionata",
+      "summary": "P(A|B) = P(A e B)/P(B): restringere lo spazio campionario a B.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 62,
+        "comprehension": 48,
+        "structure": 49,
+        "application": 41
+      },
+      "evaluatorNote": "Understands the idea, but confuses it with a neighbouring concept under time pressure."
+    },
+    {
+      "id": "probabilita-totale",
+      "label": "Probabilità totale",
+      "summary": "P(A) = somma P(A|Bi)P(Bi) su una partizione.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 49,
+        "comprehension": 30,
+        "structure": 25,
+        "application": 19
+      },
+      "evaluatorNote": "Missed both quiz items on this; revisit the worked example on the page."
+    },
+    {
+      "id": "distribuzioni",
+      "label": "Distribuzioni notevoli",
+      "summary": "Bernoulli, binomiale, Poisson, normale: medie e varianze.",
+      "pageHints": [
+        2
+      ],
+      "evaluation": {
+        "memory": 85,
+        "comprehension": 75,
+        "structure": 64,
+        "application": 56
+      },
+      "evaluatorNote": "Solid recall and a clean Feynman explanation — ready for exam-style problems."
+    }
+  ],
+  "edges": [
+    {
+      "source": "teorema-di-bayes",
+      "target": "vpp-vs-prevalenza",
+      "relation": "is measured by"
+    },
+    {
+      "source": "teorema-di-bayes",
+      "target": "albero-del-test-diagnostico",
+      "relation": "is measured by"
+    },
+    {
+      "source": "vpp-vs-prevalenza",
+      "target": "regola-68-95-99-7",
+      "relation": "requires"
+    },
+    {
+      "source": "albero-del-test-diagnostico",
+      "target": "probabilita-condizionata",
+      "relation": "requires"
+    },
+    {
+      "source": "teorema-di-bayes",
+      "target": "probabilita-totale",
+      "relation": "is an example of"
+    },
+    {
+      "source": "probabilita-condizionata",
+      "target": "distribuzioni",
+      "relation": "explains"
+    },
+    {
+      "source": "distribuzioni",
+      "target": "albero-del-test-diagnostico",
+      "relation": "is related to"
+    }
+  ],
+  "globalNote": "Halfway there. Definitions are in place, but links between concepts are shaky. Focus on \"Regola 68-95-99.7\" and try explaining how it connects to its neighbours."
+}

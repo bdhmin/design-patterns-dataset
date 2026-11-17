@@ -1,0 +1,630 @@
+{
+  "site": {
+    "slug": "surmai--trip-list",
+    "url": "http://localhost:4402/login",
+    "finalUrl": "http://localhost:4402/",
+    "status": 200,
+    "title": "Surmai",
+    "capturedAt": "2026-11-16T17:56:53.792Z",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "screenshot": {
+      "ref": "capture/screenshot.png",
+      "width": 1440,
+      "height": 1926
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.8127.18 Safari/537.36",
+    "domain": "travel-hospitality",
+    "domainNote": "self-hosted personal/family trip planner (Surmai) — trip list dashboard",
+    "provenance": {
+      "source": "repo",
+      "record": "repos/repo-pilot/surmai/explore.json",
+      "repo": {
+        "name": "rohitkumbhar/surmai",
+        "url": "https://github.com/rohitkumbhar/surmai",
+        "commit": "619b602cd7b9a20f6a05eb752f0007da6bc39b6b",
+        "license": "MIT"
+      },
+      "view": {
+        "slug": "trip-list",
+        "name": "All trips",
+        "description": "Home trip list showing upcoming and past trips as cards with cover images, dates and destination tags."
+      }
+    }
+  },
+  "codebookVersion": "1.0.0",
+  "batch": "repo-pilot",
+  "raters": [
+    "rater-1",
+    "rater-2",
+    "rater-3"
+  ],
+  "domain": {
+    "value": "travel-hospitality",
+    "support": 3
+  },
+  "structure": {
+    "density": {
+      "value": "medium",
+      "support": 3
+    },
+    "layout": {
+      "rater-1": "app dashboard: left icon rail + top bar, content in one large white panel with two stacked titled sections of 4-column card grids; fixed footer",
+      "rater-2": "app shell: fixed narrow icon sidebar on the left, top bar with page title, notification bell and account menu, fixed footer links; one large white panel with two stacked sections (Upcoming Trips, Past Trips), each a 4-column grid of trip cards",
+      "rater-3": "app layout: fixed icon navigation rail on left, top bar, single white content panel on grey background with two stacked sections of 4-column card grids, fixed footer link bar"
+    }
+  },
+  "aesthetics": {
+    "shape": {
+      "value": "soft",
+      "support": 3
+    },
+    "elevation": {
+      "value": "flat",
+      "support": 3
+    },
+    "borders": {
+      "value": "thin",
+      "support": 3
+    },
+    "iconStyle": {
+      "value": "line",
+      "support": 3
+    },
+    "whitespace": {
+      "value": "moderate",
+      "support": 3
+    },
+    "backgroundTreatment": {
+      "value": "solid",
+      "support": 3
+    }
+  },
+  "patterns": [
+    {
+      "id": "app-shell",
+      "status": "present",
+      "confidence": 0.9,
+      "dims": {
+        "primary": "navigation-rail",
+        "secondary": "none",
+        "items": [
+          "fixed-destinations"
+        ],
+        "visibility": "always-visible",
+        "structure": "single-app"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 80,
+            "height": 900
+          },
+          "note": "Icon-only navigation rail with active Home item highlighted white",
+          "region": "side-rail",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 80,
+            "y": 0,
+            "width": 1360,
+            "height": 60
+          },
+          "quote": "All Trips",
+          "note": "Top bar with title and account",
+          "region": "header",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 80,
+            "height": 900
+          },
+          "note": "Fixed icon-only navigation rail with home, travel board, etc.; profile/logout at bottom",
+          "region": "sidebar",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 80,
+            "y": 0,
+            "width": 1360,
+            "height": 60
+          },
+          "quote": "All Trips",
+          "note": "Top bar with page title and account",
+          "region": "header",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 80,
+            "height": 900
+          },
+          "note": "Icon-only navigation rail with fixed destinations",
+          "region": "sidebar",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 80,
+            "y": 0,
+            "width": 1360,
+            "height": 60
+          },
+          "quote": "All Trips",
+          "note": "Top bar with title, notifications and account",
+          "region": "header",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "badge",
+      "status": "present",
+      "confidence": 0.85,
+      "dims": {
+        "meaning": "count",
+        "overflow": "exact-count",
+        "aggregation": "rolled-up-to-parent"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1131,
+            "y": 8,
+            "width": 36,
+            "height": 36
+          },
+          "quote": "2",
+          "note": "Small count bubble on notifications bell (matches 'Invitations (2)' in user menu)",
+          "region": "header",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 1131,
+            "y": 10,
+            "width": 36,
+            "height": 33
+          },
+          "quote": "2",
+          "note": "Count badge on notification bell; matches 2 NEW notifications on profile page (verified live)",
+          "region": "header",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 1132,
+            "y": 8,
+            "width": 34,
+            "height": 36
+          },
+          "quote": "2",
+          "note": "Count badge on notification bell (2 pending invitations)",
+          "region": "header",
+          "rater": "rater-3"
+        }
+      ],
+      "ties": [
+        "dims.rule"
+      ]
+    },
+    {
+      "id": "card",
+      "status": "present",
+      "confidence": 0.91,
+      "dims": {
+        "media": "top-image",
+        "actions": "none",
+        "shape": "vertical",
+        "style": "outlined",
+        "target": "whole-card"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 768,
+            "y": 270,
+            "width": 294,
+            "height": 292
+          },
+          "quote": "Costa Rica — Pura Vida",
+          "note": "Cover photo on top, title, date range, city pills; 1px border, 8px radius",
+          "region": "upcoming-trips",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 149,
+            "y": 270,
+            "width": 294,
+            "height": 292
+          },
+          "quote": "New York — work + weekend",
+          "note": "Most cards show a grey image-icon placeholder instead of a cover",
+          "region": "upcoming-trips",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 149,
+            "y": 957,
+            "width": 294,
+            "height": 277
+          },
+          "quote": "Napa Anniversary Weekend",
+          "region": "past-trips",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 149,
+            "y": 270,
+            "width": 294,
+            "height": 292
+          },
+          "quote": "New York — work + weekend",
+          "note": "Outlined card: cover image placeholder on top, bold title, uppercase date range, divider, location pills",
+          "region": "upcoming-trips",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 768,
+            "y": 270,
+            "width": 294,
+            "height": 292
+          },
+          "quote": "Costa Rica — Pura Vida",
+          "note": "Only card with actual cover photo",
+          "region": "upcoming-trips",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 768,
+            "y": 1250,
+            "width": 294,
+            "height": 302
+          },
+          "quote": "Japan: Tokyo, Kyoto & Osaka",
+          "region": "past-trips",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 149,
+            "y": 270,
+            "width": 294,
+            "height": 292
+          },
+          "quote": "New York — work + weekend",
+          "note": "Outlined card with placeholder top image, title, date range, destination chips",
+          "region": "upcoming-trips",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 768,
+            "y": 270,
+            "width": 294,
+            "height": 292
+          },
+          "quote": "Costa Rica — Pura Vida",
+          "note": "Card with real photo cover",
+          "region": "upcoming-trips",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 768,
+            "y": 1250,
+            "width": 294,
+            "height": 302
+          },
+          "quote": "Japan: Tokyo, Kyoto & Osaka",
+          "region": "past-trips",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "data-table",
+      "status": "absent",
+      "confidence": 0.9,
+      "dims": {},
+      "support": 3,
+      "raters": 3,
+      "evidence": []
+    },
+    {
+      "id": "empty-state",
+      "status": "absent",
+      "confidence": 0.7,
+      "dims": {},
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 150,
+            "y": 271,
+            "width": 292,
+            "height": 121
+          },
+          "note": "Grey image placeholders for missing cover images — a media fallback, not an empty view",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 149,
+            "y": 270,
+            "width": 294,
+            "height": 122
+          },
+          "note": "Image placeholders inside cards are media fallbacks, not empty states of a view",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "menu",
+      "status": "present",
+      "confidence": 0.85,
+      "dims": {
+        "openBy": "button-click",
+        "structure": "sections",
+        "item": [
+          "icon",
+          "label"
+        ],
+        "itemSet": "fixed",
+        "form": "vertical-list"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1169,
+            "y": 12,
+            "width": 235,
+            "height": 38
+          },
+          "quote": "Maya Chen",
+          "note": "User button with chevron opens dropdown: Profile, Invitations (2), Logout, Version dev (verified live)",
+          "region": "header",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 1169,
+            "y": 12,
+            "width": 235,
+            "height": 38
+          },
+          "quote": "Maya Chen",
+          "note": "Account button opens dropdown: Profile, Invitations (2), Logout, divider, 'Version dev' (verified live)",
+          "region": "header",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 1166,
+            "y": 8,
+            "width": 242,
+            "height": 46
+          },
+          "quote": "Maya Chen",
+          "note": "Account button opens dropdown (verified live): Profile, Invitations (2), Logout, divider, Version dev",
+          "region": "header",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "overview-detail",
+      "status": "present",
+      "confidence": 0.83,
+      "dims": {
+        "attributePlacement": [
+          "in-both-views",
+          "in-detail-view-only"
+        ],
+        "abstraction": [
+          "category",
+          "summary"
+        ],
+        "truncation": "full-text",
+        "relationship": "one-to-one",
+        "recursion": [
+          "none"
+        ],
+        "openIn": "new-page",
+        "overviewType": [
+          "grid"
+        ],
+        "openBy": [
+          "click"
+        ],
+        "openFrom": "whole-item",
+        "attributeScope": [
+          "per-item"
+        ]
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 149,
+            "y": 270,
+            "width": 1222,
+            "height": 574
+          },
+          "quote": "Upcoming Trips",
+          "note": "Grid of trip cards; clicking a card opens /trips/:id detail page with tabs (Organization, Itinerary, Expenses...)",
+          "region": "upcoming-trips",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 149,
+            "y": 957,
+            "width": 1222,
+            "height": 888
+          },
+          "quote": "Past Trips",
+          "region": "past-trips",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 149,
+            "y": 270,
+            "width": 1222,
+            "height": 574
+          },
+          "quote": "Upcoming Trips",
+          "note": "Grid overview of trips; clicking a card navigates to /trips/:id detail page with tabs (verified live)",
+          "region": "upcoming-trips",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 149,
+            "y": 957,
+            "width": 1222,
+            "height": 888
+          },
+          "quote": "Past Trips",
+          "region": "past-trips",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 149,
+            "y": 270,
+            "width": 1222,
+            "height": 574
+          },
+          "quote": "Upcoming Trips",
+          "note": "Grid overview of trips; clicking a card navigates to /trips/:id detail page with tabs",
+          "region": "upcoming-trips",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 149,
+            "y": 957,
+            "width": 1222,
+            "height": 888
+          },
+          "quote": "Past Trips",
+          "region": "past-trips",
+          "rater": "rater-3"
+        }
+      ],
+      "ties": [
+        "dims.detailMultiplicity"
+      ]
+    },
+    {
+      "id": "tabs",
+      "status": "absent",
+      "confidence": 0.78,
+      "dims": {},
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 149,
+            "y": 200,
+            "width": 400,
+            "height": 55
+          },
+          "note": "Upcoming/Past are stacked sections, not tabs",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 149,
+            "y": 205,
+            "width": 400,
+            "height": 50
+          },
+          "note": "Upcoming/Past are stacked sections, not tabs",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "tooltip",
+      "status": "present",
+      "confidence": 0.77,
+      "dims": {},
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 16,
+            "y": 153,
+            "width": 47,
+            "height": 50
+          },
+          "note": "Hovering rail icon shows dark tooltip 'Travel Board' (verified live)",
+          "region": "side-rail",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 16,
+            "y": 153,
+            "width": 47,
+            "height": 50
+          },
+          "note": "Hover on rail icon shows dark tooltip 'Travel Board' to the right (verified live)",
+          "region": "sidebar",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 16,
+            "y": 153,
+            "width": 48,
+            "height": 50
+          },
+          "note": "Hovering icon-only rail buttons shows dark label tooltip (e.g. 'Travel Board'), verified live; not visible in capture",
+          "region": "sidebar",
+          "rater": "rater-3"
+        }
+      ],
+      "ties": [
+        "dims.trigger",
+        "dims.content",
+        "dims.placement",
+        "dims.timing"
+      ]
+    }
+  ],
+  "note": "Majority vote across raters. Free-text fields (layout, typography, palette, notes) stay per rater in labels/.",
+  "computedAt": "2026-11-16T17:58:11.982Z"
+}

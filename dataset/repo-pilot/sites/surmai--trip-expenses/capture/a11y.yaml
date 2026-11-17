@@ -1,0 +1,175 @@
+- banner:
+  - paragraph: Costa Rica — Pura Vida
+  - paragraph: Jun 11, 2027 - Jun 19, 2027
+  - text: "2"
+  - button "Notifications":
+    - img
+  - button "MC Maya Chen maya@chenokafor.family":
+    - text: MC
+    - paragraph: Maya Chen
+    - paragraph: maya@chenokafor.family
+    - img
+- navigation:
+  - navigation:
+    - link:
+      - /url: https://surmai.app
+      - img
+    - button:
+      - img
+    - button:
+      - img
+    - button:
+      - img
+    - button:
+      - img
+    - button:
+      - img
+    - button:
+      - img
+- main:
+  - tablist:
+    - tab "Organization"
+    - tab "Itinerary"
+    - tab "Attachments"
+    - tab "Expenses" [selected]
+    - tab "Notes"
+  - tabpanel "Expenses":
+    - text: Sort by
+    - combobox "Sort by"
+    - img
+    - button "Add Expense":
+      - img
+      - text: Add Expense
+    - button "Download CSV":
+      - img
+      - text: Download CSV
+    - paragraph: Budget Overview
+    - img
+    - paragraph: 42%
+    - paragraph: "Used:"
+    - paragraph: $3,115.96
+    - paragraph: "Budget:"
+    - paragraph: $7,500.00
+    - paragraph: "Remaining:"
+    - paragraph: $4,384.04
+    - link "conversionRates By Exchange Rate API":
+      - /url: https://www.exchangerate-api.com
+    - paragraph: Expenses by Category
+    - img
+    - paragraph: Total
+    - paragraph: "3116"
+    - paragraph: USD
+    - paragraph: Lodging
+    - paragraph: 55.2%
+    - paragraph: $1,719.97
+    - paragraph: Transportation
+    - paragraph: 35.3%
+    - paragraph: $1,099.99
+    - paragraph: Activities
+    - paragraph: 8.1%
+    - paragraph: $253.00
+    - paragraph: Food
+    - paragraph: 1.4%
+    - paragraph: $43.00
+    - paragraph: Expenses by Currency
+    - img
+    - paragraph: "1"
+    - paragraph: Currencies
+    - paragraph: $3,115.96
+    - paragraph: 100.0%
+    - paragraph: "Activity: Ziplining In the rain forest"
+    - button "Edit Expense":
+      - img
+    - paragraph: "Date:"
+    - paragraph: Jul 17, 2027
+    - paragraph: "Category:"
+    - text: Activities
+    - paragraph: "Amount:"
+    - paragraph: $233.00
+    - paragraph: "Transportation: LIR -> SEA"
+    - button "Edit Expense":
+      - img
+    - paragraph: "Date:"
+    - paragraph: Jun 19, 2027
+    - paragraph: "Category:"
+    - text: Transportation
+    - paragraph: "Amount:"
+    - paragraph: $419.88
+    - paragraph: Dinner at the market
+    - button "Edit Expense":
+      - img
+    - paragraph: "Date:"
+    - paragraph: Jun 17, 2027
+    - paragraph: "Category:"
+    - text: Food
+    - paragraph: "Amount:"
+    - paragraph: $43.00
+    - paragraph: "Lodging: The Westin Reserva Conchal"
+    - button "Edit Expense":
+      - img
+    - paragraph: "Date:"
+    - paragraph: Jun 16, 2027
+    - paragraph: "Category:"
+    - text: Lodging
+    - paragraph: "Amount:"
+    - paragraph: $1,437.00
+    - paragraph: "Transportation: La Fortuna -> Playa Conchal"
+    - button "Edit Expense":
+      - img
+    - paragraph: "Date:"
+    - paragraph: Jun 16, 2027
+    - paragraph: "Category:"
+    - text: Transportation
+    - paragraph: "Amount:"
+    - paragraph: $232.00
+    - paragraph: "Activity: Visit to the Arenal Volcano"
+    - button "Edit Expense":
+      - img
+    - paragraph: "Date:"
+    - paragraph: Jun 14, 2027
+    - paragraph: "Category:"
+    - text: Activities
+    - paragraph: "Amount:"
+    - paragraph: $20.00
+    - paragraph: "Lodging: Los Lagos Spa & Thermal Resort Experience"
+    - button "Edit Expense":
+      - img
+    - paragraph: "Date:"
+    - paragraph: Jun 13, 2027
+    - paragraph: "Category:"
+    - text: Lodging
+    - paragraph: "Amount:"
+    - paragraph: $97.20
+    - paragraph: "Transportation: San José -> La Fortuna"
+    - button "Edit Expense":
+      - img
+    - paragraph: "Date:"
+    - paragraph: Jun 13, 2027
+    - paragraph: "Category:"
+    - text: Transportation
+    - paragraph: "Amount:"
+    - paragraph: $37.55
+    - paragraph: "Lodging: Delta Hotels by Marriott San Jose Aurola"
+    - button "Edit Expense":
+      - img
+    - paragraph: "Date:"
+    - paragraph: Jun 11, 2027
+    - paragraph: "Category:"
+    - text: Lodging
+    - paragraph: "Amount:"
+    - paragraph: $185.77
+    - paragraph: "Transportation: SEA -> SJO"
+    - button "Edit Expense":
+      - img
+    - paragraph: "Date:"
+    - paragraph: Jun 11, 2027
+    - paragraph: "Category:"
+    - text: Transportation
+    - paragraph: "Amount:"
+    - paragraph: $410.56
+- contentinfo:
+  - link "Documentation":
+    - /url: https://surmai.app/documentation
+  - text: "|"
+  - link "About Surmai":
+    - /url: https://surmai.app/documentation/about.html

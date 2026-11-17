@@ -1,0 +1,165 @@
+{
+  "v": 1,
+  "docId": "sample-physics",
+  "savedAt": 1792422120000,
+  "tags": [
+    {
+      "id": "0-0",
+      "page": 0,
+      "endX": 523.3950000560002,
+      "endY": 614.8801,
+      "fontHeight": 11.5,
+      "type": "2d-anim",
+      "label": "Inclined plane forces",
+      "ready": true,
+      "generating": false,
+      "concept": {
+        "label": "Inclined plane forces",
+        "type": "2d-anim",
+        "anchor": "Consider a block of mass m resting on a frictionless inclined plane",
+        "context": "Block sliding on a slope: mg sin(theta) along the plane, normal force balancing mg cos(theta)."
+      },
+      "spec": {
+        "type": "2d-anim",
+        "title": "Block on an incline",
+        "caption": "Block sliding on a slope: mg sin(theta) along the plane, normal force balancing mg cos(theta).",
+        "setup_code": "var title = \"Block on an incline\";\nreturn { draw: function (ctx, w, h, time) {\n  ctx.fillStyle = '#fafafa'; ctx.fillRect(0, 0, w, h);\n  var mid = h / 2; ctx.strokeStyle = '#d1d5db'; ctx.beginPath(); ctx.moveTo(20, mid); ctx.lineTo(w - 20, mid); ctx.stroke();\n  ctx.strokeStyle = '#7c3aed'; ctx.lineWidth = 2.5; ctx.beginPath();\n  for (var x = 20; x <= w - 20; x += 2) { var y = mid - Math.sin((x / w) * 4 * Math.PI - time * 2.2) * h * 0.22 * Math.exp(-((x - w / 2) * (x - w / 2)) / (w * w * 0.25)); if (x === 20) ctx.moveTo(x, y); else ctx.lineTo(x, y); } ctx.stroke(); ctx.lineWidth = 1;\n  ctx.strokeStyle = '#0284c7'; ctx.setLineDash([4, 4]); ctx.beginPath();\n  for (var x2 = 20; x2 <= w - 20; x2 += 2) { var y2 = mid - Math.cos((x2 / w) * 4 * Math.PI - time * 2.2) * h * 0.12; if (x2 === 20) ctx.moveTo(x2, y2); else ctx.lineTo(x2, y2); } ctx.stroke(); ctx.setLineDash([]);\n  ctx.fillStyle = '#1a1a1d'; ctx.font = '14px sans-serif'; ctx.fillText(title, 14, 22); ctx.font = '12px sans-serif'; ctx.fillStyle = '#6b7280'; ctx.fillText('t = ' + time.toFixed(1) + ' s', w - 80, h - 12);\n} };"
+      },
+      "attempts": 1
+    },
+    {
+      "id": "0-1",
+      "page": 0,
+      "endX": 523.4525000525,
+      "endY": 499.5421,
+      "fontHeight": 11.5,
+      "type": "formula",
+      "label": "Acceleration with friction",
+      "ready": true,
+      "generating": false,
+      "concept": {
+        "label": "Acceleration with friction",
+        "type": "formula",
+        "anchor": "mu, the net acceleration becomes a = g (sin(theta) - mu cos(theta))",
+        "context": "Net acceleration on an incline with kinetic friction."
+      },
+      "spec": {
+        "type": "formula",
+        "title": "Acceleration with friction",
+        "caption": "Net acceleration on an incline with kinetic friction.",
+        "main_latex": "a = g\\,(\\sin\\theta - \\mu\\cos\\theta)",
+        "steps": [
+          {
+            "latex": "F_\\parallel = mg\\sin\\theta",
+            "explanation": "Component of gravity along the slope."
+          },
+          {
+            "latex": "f_k = \\mu N = \\mu mg\\cos\\theta",
+            "explanation": "Kinetic friction opposes motion; N balances the perpendicular component."
+          },
+          {
+            "latex": "ma = mg\\sin\\theta - \\mu mg\\cos\\theta",
+            "explanation": "Newton's second law along the plane."
+          },
+          {
+            "latex": "\\theta_c = \\arctan\\mu",
+            "explanation": "Setting a = 0 gives the critical angle."
+          }
+        ]
+      },
+      "attempts": 1
+    },
+    {
+      "id": "0-2",
+      "page": 0,
+      "endX": 436.6765,
+      "endY": 262.4919,
+      "fontHeight": 11.5,
+      "type": "2d-anim",
+      "label": "Pendulum period",
+      "ready": true,
+      "generating": false,
+      "concept": {
+        "label": "Pendulum period",
+        "type": "2d-anim",
+        "anchor": "oscillation is omega = sqrt(g/L), giving a period T = 2 pi sqrt(L/g)",
+        "context": "Simple pendulum, small-angle SHM with period 2 pi sqrt(L/g)."
+      },
+      "spec": {
+        "type": "2d-anim",
+        "title": "Simple pendulum",
+        "caption": "Simple pendulum, small-angle SHM with period 2 pi sqrt(L/g).",
+        "setup_code": "var title = \"Simple pendulum\";\nreturn { draw: function (ctx, w, h, time) {\n  ctx.fillStyle = '#fafafa'; ctx.fillRect(0, 0, w, h);\n  var L = h * 0.55, g = 9.81, th0 = 0.5, om = Math.sqrt(g / 1.2);\n  var th = th0 * Math.cos(om * time);\n  var px = w / 2, py = h * 0.12;\n  var bx = px + L * Math.sin(th), by = py + L * Math.cos(th);\n  ctx.strokeStyle = '#1a1a1d'; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(px - 60, py); ctx.lineTo(px + 60, py); ctx.stroke();\n  ctx.beginPath(); ctx.moveTo(px, py); ctx.lineTo(bx, by); ctx.stroke();\n  ctx.fillStyle = '#7c3aed'; ctx.beginPath(); ctx.arc(bx, by, 16, 0, Math.PI * 2); ctx.fill();\n  ctx.setLineDash([4, 4]); ctx.strokeStyle = '#9ca3af'; ctx.beginPath(); ctx.arc(px, py, L, Math.PI / 2 - th0, Math.PI / 2 + th0); ctx.stroke(); ctx.setLineDash([]);\n  ctx.fillStyle = '#1a1a1d'; ctx.font = '14px sans-serif'; ctx.fillText(title, 14, 22);\n  ctx.fillStyle = '#e11d48'; ctx.fillText('theta = ' + th.toFixed(2) + ' rad', 14, h - 16);\n} };"
+      },
+      "attempts": 1
+    },
+    {
+      "id": "0-3",
+      "page": 0,
+      "endX": 223.133,
+      "endY": 108.4859,
+      "fontHeight": 11.5,
+      "type": "2d-text",
+      "label": "Tacoma Narrows collapse",
+      "ready": true,
+      "generating": false,
+      "concept": {
+        "label": "Tacoma Narrows collapse",
+        "type": "2d-text",
+        "anchor": "and the catastrophic collapse of the Tacoma Narrows bridge in 1940",
+        "context": "Resonance and aeroelastic flutter in the 1940 Tacoma Narrows bridge failure."
+      },
+      "spec": {
+        "type": "2d-text",
+        "title": "Tacoma Narrows collapse",
+        "caption": "Resonance and aeroelastic flutter in the 1940 Tacoma Narrows bridge failure.",
+        "body_markdown": "The 1940 collapse is usually taught as resonance, but engineers now attribute it to **aeroelastic flutter** — a self-exciting oscillation where the wind feeds energy into the twisting deck [1].\n\nThe lesson for oscillators still stands: when energy input matches the natural mode, amplitude grows until something breaks [2].",
+        "citations": [
+          {
+            "label": "[1]",
+            "source": "Wikipedia — Tacoma Narrows Bridge (1940)",
+            "url": "https://en.wikipedia.org/wiki/Tacoma_Narrows_Bridge_(1940)"
+          },
+          {
+            "label": "[2]",
+            "source": "Billah & Scanlan, Am. J. Phys. 59 (1991)",
+            "url": "https://doi.org/10.1119/1.16590"
+          }
+        ]
+      },
+      "attempts": 1
+    },
+    {
+      "id": "1-0",
+      "page": 1,
+      "endX": 523.2800000064997,
+      "endY": 635.2565,
+      "fontHeight": 11.5,
+      "type": "graph",
+      "label": "Range vs launch angle",
+      "ready": true,
+      "generating": false,
+      "concept": {
+        "label": "Range vs launch angle",
+        "type": "graph",
+        "anchor": "flight T, and maximum height H follow directly: R = v_0^2 sin(2 alph",
+        "context": "Range of a projectile as alpha sweeps 0 to 90 degrees."
+      },
+      "spec": {
+        "type": "graph",
+        "title": "Range vs launch angle",
+        "caption": "Range of a projectile as alpha sweeps 0 to 90 degrees.",
+        "chart_type": "function",
+        "x_label": "launch angle (deg)",
+        "y_label": "range (m), v0 = 20 m/s",
+        "data_json": "{\"fn\":\"400*Math.sin(2*x*Math.PI/180)/9.81\",\"x_min\":0,\"x_max\":90,\"samples\":180}"
+      },
+      "attempts": 1
+    }
+  ],
+  "activeTagId": "0-1",
+  "pagesAnalyzed": [
+    0,
+    1
+  ]
+}

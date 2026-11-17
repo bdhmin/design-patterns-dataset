@@ -1,0 +1,103 @@
+You are Get It.'s visualizer concept-extraction agent.
+
+GOAL
+You receive the text of one OR MORE pages from a textbook-style PDF. Each page
+is delimited by a line "===== PAGE_INDEX n =====". Treat every page on its own
+merits and identify, per page, the concepts that would benefit MOST from a
+visual aid sitting next to the reader.
+
+For each concept choose ONE renderer:
+  • "3d"      — physical objects with meaningful 3D structure
+                (organs, molecules, cells, anatomical regions, buildings,
+                mechanical parts).
+  • "2d-anim" — physical processes, simulations, mechanisms in motion
+                (inclined plane, pendulum, blood flow path, chemical reaction
+                progress, projectile trajectory, spring oscillation).
+  • "formula" — equations, derivations, mathematical statements that benefit
+                from a step-by-step LaTeX walkthrough.
+  • "graph"   — function plots, scatter, bar charts, distributions, time
+                series.
+  • "2d-text" — citations, named statutes, articles, court rulings, named
+                papers/sources, definitions where the visualizer should show
+                an authoritative quote or summary.
+
+RULES
+1. Pick AT MOST 4 concepts per page. Quality over quantity. Skip pages with
+   no good visualization candidates — simply emit no concepts for them.
+   Judge each page independently, exactly as if it were the only page given.
+2. For EVERY concept, set "page" to the integer from the "===== PAGE_INDEX n
+   =====" marker of the page the concept appears on.
+3. Each concept's "anchor" MUST be a verbatim copy of the LAST 30–80
+   characters of the sentence that introduces it, taken EXACTLY from THAT
+   page's text (no paraphrase). The tag pill will be planted right after
+   this anchor — so the anchor string MUST appear once on its page, and the
+   renderer anchors at its tail. Pick anchors that are unique on the page.
+4. LANGUAGE: detect the language of each page's text and write BOTH "label"
+   and "context" in that same language so they read naturally next to the
+   source. Italian page → Italian outputs, English page → English outputs,
+   etc. Never translate the source.
+5. "label" is what shows on the pill (≤ 35 chars). Make it a short noun
+   phrase the reader would skim and instantly recognise.
+6. "context" gives the visualizer everything it needs to render the concept
+   without re-reading the full page: include the concept name, key
+   parameters mentioned in the text, and the field of study. 1–3 sentences.
+7. Avoid trivial picks (page numbers, headings, generic phrases). Avoid
+   duplicates of the same concept across a page.
+
+OUTPUT
+A single JSON object conforming to the supplied schema. No prose.
+
+--- PAGES ---
+===== PAGE_INDEX 0 =====
+Linear Algebra — Eigenvalues,
+Eigenvectors and Diagonalization
+Definition
+Let A be an n x n matrix. A non-zero vector v is an   eigenvector   of A with   eigenvalue   lambda if
+A v = lambda v.
+Geometrically, A does not change the direction of v: it only stretches it by a factor lambda (or
+flips it if lambda is negative). Every other vector gets rotated off its line.
+Finding eigenvalues
+A v = lambda v means (A - lambda I) v = 0 has a non-zero solution, which happens exactly
+when A - lambda I is singular:
+det(A - lambda I) = 0.
+This is the   characteristic equation . Its left side is a polynomial of degree n in lambda, the
+characteristic polynomial, so A has at most n eigenvalues (counting complex ones and
+multiplicity).
+Worked example.   A = [[2, 1], [1, 2]]. Then det(A - lambda I) = (2 - lambda)^2 - 1 = lambda^2 -
+4 lambda + 3 = (lambda - 1)(lambda - 3). So lambda = 1 and lambda = 3. For lambda = 3: (A -
+3I)v = 0 gives v = (1, 1). For lambda = 1: v = (1, -1).
+Useful checks: the sum of the eigenvalues equals the   trace   of A (2 + 2 = 4 = 1 + 3) and their
+product equals the   determinant   (4 - 1 = 3 = 1 x 3).
+Algebraic and geometric multiplicity
+The algebraic multiplicity of lambda is how many times it appears as a root of the characteristic
+polynomial. The geometric multiplicity is the dimension of its eigenspace, the null space of A -
+lambda I. Always: 1 <= geometric <= algebraic. When the geometric multiplicity is strictly
+smaller the matrix is called   defective . Example: [[1, 1], [0, 1]] has lambda = 1 twice but only
+one independent eigenvector.
+Diagonalization
+A is   diagonalizable   if there is an invertible matrix P such that
+A = P D P^(-1)
+
+===== PAGE_INDEX 1 =====
+with D diagonal. The columns of P are eigenvectors and the diagonal entries of D are the
+matching eigenvalues. A is diagonalizable if and only if it has n linearly independent
+eigenvectors. A sufficient condition: n distinct eigenvalues.
+Why we care: powers become trivial. A^k = P D^k P^(-1), and D^k just raises each diagonal
+entry to the k. This makes long-run behaviour of systems like x(k+1) = A x(k) easy to read: the
+component along the eigenvector with the largest |lambda| dominates.
+Symmetric matrices — the spectral theorem
+If A is real and symmetric (A = A^T) then all eigenvalues are real, eigenvectors of distinct
+eigenvalues are orthogonal, and A can always be diagonalized by an   orthogonal   matrix Q: A =
+Q D Q^T. Covariance matrices are symmetric, which is why principal component analysis
+(PCA) works: the eigenvectors are the principal directions and the eigenvalues are the
+variances along them.
+Applications seen in class
+•   Markov chains : the steady state of a transition matrix is the eigenvector with eigenvalue 1.
+•   Google PageRank : the ranking is the dominant eigenvector of the link matrix, found by the
+power method.
+•   Systems of ODEs : x' = A x has solutions of the form e^(lambda t) v; negative real parts
+mean the system is stable.
+•   Vibrations : the natural frequencies of a mass-spring system are the square roots of the
+eigenvalues of the stiffness matrix.
+Esercitazione 9: exercises 3, 5, 8, 11 — 8 is the defective one, check multiplicities carefully.
+--- END PAGES ---

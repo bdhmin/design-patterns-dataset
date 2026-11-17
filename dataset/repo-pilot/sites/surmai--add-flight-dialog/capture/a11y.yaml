@@ -1,0 +1,232 @@
+- banner:
+  - paragraph: Costa Rica — Pura Vida
+  - paragraph: Jun 11, 2027 - Jun 19, 2027
+  - text: "2"
+  - button "Notifications":
+    - img
+  - button "MC Maya Chen maya@chenokafor.family":
+    - text: MC
+    - paragraph: Maya Chen
+    - paragraph: maya@chenokafor.family
+    - img
+- navigation:
+  - navigation:
+    - link:
+      - /url: https://surmai.app
+      - img
+    - button:
+      - img
+    - button:
+      - img
+    - button:
+      - img
+    - button:
+      - img
+    - button:
+      - img
+    - button:
+      - img
+- main:
+  - tablist:
+    - tab "Organization" [selected]
+    - tab "Itinerary"
+    - tab "Attachments"
+    - tab "Expenses"
+    - tab "Notes"
+  - tabpanel "Organization":
+    - button "Basic Information View basic information about your trip":
+      - img
+      - paragraph: Basic Information
+      - paragraph: View basic information about your trip
+      - img
+    - button "Transportation View and edit your transportation arrangements for this trip" [expanded]:
+      - img
+      - paragraph: Transportation
+      - paragraph: View and edit your transportation arrangements for this trip
+      - img
+    - region "Transportation View and edit your transportation arrangements for this trip":
+      - button "Add new":
+        - text: Add new
+        - img
+      - heading "Travel Timeline" [level=5]
+      - button "Menu":
+        - img "Menu"
+      - img
+      - paragraph: From
+      - paragraph:
+        - text: SEA
+        - img
+      - paragraph: Jun 11, 2027 7:50 AM
+      - paragraph
+      - paragraph: To
+      - paragraph:
+        - text: SJO
+        - img
+      - paragraph: Jun 11, 2027 6:48 PM
+      - paragraph
+      - paragraph: Flight Number
+      - paragraph: ASA3543
+      - paragraph: Airline
+      - paragraph: Delta Air Lines
+      - paragraph: Confirmation Code
+      - paragraph: GRZCKO
+      - paragraph: Seats
+      - paragraph: 2A,2B,2C
+      - paragraph: Cost
+      - paragraph: $410.56
+      - separator
+      - img
+      - link "costa_rica_flight.pdf":
+        - /url: "#"
+      - button "Delete Attachment":
+        - img
+      - button "Menu":
+        - img "Menu"
+      - img
+      - paragraph: From
+      - paragraph:
+        - text: San José
+        - img
+      - paragraph: Jun 13, 2027 6:30 PM
+      - paragraph: 123 Main St, San Jose
+      - paragraph: To
+      - paragraph:
+        - text: La Fortuna
+        - img
+      - paragraph: Jun 13, 2027 10:00 PM
+      - paragraph: 23 E La Hotel Ct, La Fortuna
+      - paragraph: Provider
+      - paragraph: A1 Taxi Service
+      - paragraph: Reservation
+      - paragraph: "4345565476"
+      - paragraph: Cost
+      - paragraph: $37.55
+      - separator
+      - button "Menu":
+        - img "Menu"
+      - img
+      - paragraph: From
+      - paragraph:
+        - text: La Fortuna
+        - img
+      - paragraph: Jun 16, 2027 5:00 PM
+      - paragraph: 23 E La Hotel Ct, La Fortuna
+      - paragraph: To
+      - paragraph:
+        - text: Playa Conchal
+        - img
+      - paragraph: Jun 16, 2027 11:00 PM
+      - paragraph: 356 W Guanacaste Way
+      - paragraph: Provider
+      - paragraph: Westin Transportation
+      - paragraph: Reservation
+      - paragraph: 5465TRY3
+      - paragraph: Cost
+      - paragraph: $232.00
+      - separator
+      - button "Menu":
+        - img "Menu"
+      - img
+      - paragraph: From
+      - paragraph:
+        - text: LIR
+        - img
+      - paragraph: Jun 19, 2027 2:55 PM
+      - paragraph
+      - paragraph: To
+      - paragraph:
+        - text: SEA
+        - img
+      - paragraph: Jun 20, 2027 12:48 AM
+      - paragraph
+      - paragraph: Flight Number
+      - paragraph: ASA545
+      - paragraph: Airline
+      - paragraph: Alaska Airlines
+      - paragraph: Confirmation Code
+      - paragraph: GSC5X3
+      - paragraph: Seats
+      - paragraph: 2A,2B,2C
+      - paragraph: Cost
+      - paragraph: $419.88
+      - separator
+      - heading "Rentals" [level=5]
+      - paragraph: No Rentals
+      - heading "Parking" [level=5]
+      - paragraph: No Parking
+    - button "Lodging View and edit your lodging arrangements for this trip":
+      - img
+      - paragraph: Lodging
+      - paragraph: View and edit your lodging arrangements for this trip
+      - img
+    - button "Activities View and edit your activities for this trip":
+      - img
+      - paragraph: Activities
+      - paragraph: View and edit your activities for this trip
+      - img
+- contentinfo:
+  - link "Documentation":
+    - /url: https://surmai.app/documentation
+  - text: "|"
+  - link "About Surmai":
+    - /url: https://surmai.app/documentation/about.html
+- dialog "Add new flight":
+  - banner:
+    - heading "Add new flight" [level=2]
+    - button:
+      - img
+  - text: Flight Number
+  - paragraph: ICAO Flight Designation
+  - textbox "Flight Number"
+  - img
+  - text: Confirmation Code
+  - paragraph: Ticket Id, Confirmation code etc
+  - textbox "Confirmation Code"
+  - img
+  - text: From
+  - paragraph: Departure Airport
+  - textbox "From":
+    - /placeholder: Airport Code
+  - img
+  - text: Departure
+  - paragraph: Departure date and time
+  - button "Departure"
+  - text: To
+  - paragraph: Arrival Airport
+  - textbox "To":
+    - /placeholder: Airport Code
+  - img
+  - text: Arrival
+  - paragraph: Arrival date and time
+  - button "Arrival"
+  - text: Airline
+  - paragraph: Select an Airline
+  - textbox "Airline":
+    - /placeholder: Airline Name
+  - img
+  - text: Seats
+  - paragraph: Reserved seats, if any
+  - textbox "Seats"
+  - img
+  - text: Link
+  - paragraph: Related link
+  - textbox "Link"
+  - img
+  - text: Cost
+  - paragraph: Charges for this transportation
+  - spinbutton "Cost"
+  - combobox: 🇺🇸 USD
+  - img
+  - text: Travelers
+  - paragraph: Optionally assign travelers
+  - combobox "Travelers"
+  - img
+  - text: Notes
+  - paragraph: General notes about this entry
+  - textbox "Notes"
+  - text: Attachments
+  - paragraph: Upload any related documents e.g. confirmation email
+  - button "file upload"
+  - paragraph: Drag attachments here or click to select files
+  - button "Save"
+  - button "Cancel"

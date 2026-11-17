@@ -1,0 +1,412 @@
+{
+  "schemaVersion": "1.0.0",
+  "codebookVersion": "1.0.0",
+  "batch": "repo-pilot",
+  "site": {
+    "slug": "surmai--trip-list",
+    "url": "http://localhost:4402/login",
+    "finalUrl": "http://localhost:4402/",
+    "status": 200,
+    "title": "Surmai",
+    "capturedAt": "2026-11-16T17:56:53.792Z",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "screenshot": {
+      "ref": "capture/screenshot.png",
+      "width": 1440,
+      "height": 1926
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.8127.18 Safari/537.36",
+    "domain": "travel-hospitality",
+    "domainNote": "self-hosted trip planner (Surmai) — logged-in All Trips dashboard",
+    "provenance": {
+      "source": "repo",
+      "record": "repos/repo-pilot/surmai/explore.json",
+      "repo": {
+        "name": "rohitkumbhar/surmai",
+        "url": "https://github.com/rohitkumbhar/surmai",
+        "commit": "619b602cd7b9a20f6a05eb752f0007da6bc39b6b",
+        "license": "MIT"
+      },
+      "view": {
+        "slug": "trip-list",
+        "name": "All trips",
+        "description": "Home trip list showing upcoming and past trips as cards with cover images, dates and destination tags."
+      }
+    }
+  },
+  "regions": [
+    {
+      "id": "sidebar",
+      "role": "sidebar",
+      "label": "Fixed slate-blue icon rail with logo, 4 primary destinations, profile and logout at bottom; hover tooltips",
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 80,
+        "height": 900
+      },
+      "patterns": [
+        "app-shell",
+        "tooltip"
+      ]
+    },
+    {
+      "id": "header",
+      "role": "header",
+      "label": "Top bar with page title 'All Trips', notification bell with count badge, avatar account button opening a menu",
+      "bbox": {
+        "x": 80,
+        "y": 0,
+        "width": 1360,
+        "height": 60
+      },
+      "patterns": [
+        "app-shell",
+        "badge",
+        "menu"
+      ]
+    },
+    {
+      "id": "upcoming-trips",
+      "role": "card-grid",
+      "label": "Import Trip / New Trip actions, 'Upcoming Trips' heading and grid of 5 trip cards",
+      "bbox": {
+        "x": 116,
+        "y": 108,
+        "width": 1288,
+        "height": 752
+      },
+      "patterns": [
+        "overview-detail",
+        "card"
+      ]
+    },
+    {
+      "id": "past-trips",
+      "role": "card-grid",
+      "label": "'Past Trips — In the last 12 months' heading and grid of 10 trip cards",
+      "bbox": {
+        "x": 116,
+        "y": 860,
+        "width": 1288,
+        "height": 1018
+      },
+      "patterns": [
+        "overview-detail",
+        "card"
+      ]
+    },
+    {
+      "id": "footer",
+      "role": "footer",
+      "label": "Fixed bottom bar with Documentation | About Surmai links",
+      "bbox": {
+        "x": 80,
+        "y": 867,
+        "width": 1360,
+        "height": 33
+      },
+      "patterns": []
+    }
+  ],
+  "patterns": [
+    {
+      "id": "app-shell",
+      "status": "present",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 80,
+            "height": 900
+          },
+          "note": "Fixed icon-only navigation rail with home, travel board, etc.; profile/logout at bottom",
+          "region": "sidebar"
+        },
+        {
+          "bbox": {
+            "x": 80,
+            "y": 0,
+            "width": 1360,
+            "height": 60
+          },
+          "quote": "All Trips",
+          "note": "Top bar with page title and account",
+          "region": "header"
+        }
+      ],
+      "dims": {
+        "primary": "navigation-rail",
+        "secondary": "none",
+        "items": [
+          "fixed-destinations"
+        ],
+        "visibility": "always-visible",
+        "structure": "single-app"
+      }
+    },
+    {
+      "id": "tooltip",
+      "status": "present",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 16,
+            "y": 153,
+            "width": 47,
+            "height": 50
+          },
+          "note": "Hover on rail icon shows dark tooltip 'Travel Board' to the right (verified live)",
+          "region": "sidebar"
+        }
+      ],
+      "dims": {
+        "trigger": [
+          "hover"
+        ],
+        "content": "label",
+        "placement": "beside",
+        "timing": "until-the-pointer-leaves"
+      }
+    },
+    {
+      "id": "badge",
+      "status": "present",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1131,
+            "y": 10,
+            "width": 36,
+            "height": 33
+          },
+          "quote": "2",
+          "note": "Count badge on notification bell; matches 2 NEW notifications on profile page (verified live)",
+          "region": "header"
+        }
+      ],
+      "dims": {
+        "meaning": "count",
+        "overflow": "exact-count",
+        "rule": "everything-unread",
+        "aggregation": "rolled-up-to-parent"
+      }
+    },
+    {
+      "id": "menu",
+      "status": "present",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1169,
+            "y": 12,
+            "width": 235,
+            "height": 38
+          },
+          "quote": "Maya Chen",
+          "note": "Account button opens dropdown: Profile, Invitations (2), Logout, divider, 'Version dev' (verified live)",
+          "region": "header"
+        }
+      ],
+      "dims": {
+        "openBy": "button-click",
+        "structure": "sections",
+        "item": [
+          "label",
+          "icon"
+        ],
+        "itemSet": "fixed",
+        "form": "vertical-list"
+      }
+    },
+    {
+      "id": "card",
+      "status": "present",
+      "confidence": 0.9,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 149,
+            "y": 270,
+            "width": 294,
+            "height": 292
+          },
+          "quote": "New York — work + weekend",
+          "note": "Outlined card: cover image placeholder on top, bold title, uppercase date range, divider, location pills",
+          "region": "upcoming-trips"
+        },
+        {
+          "bbox": {
+            "x": 768,
+            "y": 270,
+            "width": 294,
+            "height": 292
+          },
+          "quote": "Costa Rica — Pura Vida",
+          "note": "Only card with actual cover photo",
+          "region": "upcoming-trips"
+        },
+        {
+          "bbox": {
+            "x": 768,
+            "y": 1250,
+            "width": 294,
+            "height": 302
+          },
+          "quote": "Japan: Tokyo, Kyoto & Osaka",
+          "region": "past-trips"
+        }
+      ],
+      "dims": {
+        "media": "top-image",
+        "actions": "none",
+        "shape": "vertical",
+        "style": "outlined",
+        "target": "whole-card"
+      }
+    },
+    {
+      "id": "overview-detail",
+      "status": "present",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 149,
+            "y": 270,
+            "width": 1222,
+            "height": 574
+          },
+          "quote": "Upcoming Trips",
+          "note": "Grid overview of trips; clicking a card navigates to /trips/:id detail page with tabs (verified live)",
+          "region": "upcoming-trips"
+        },
+        {
+          "bbox": {
+            "x": 149,
+            "y": 957,
+            "width": 1222,
+            "height": 888
+          },
+          "quote": "Past Trips",
+          "region": "past-trips"
+        }
+      ],
+      "dims": {
+        "attributePlacement": [
+          "in-both-views",
+          "in-detail-view-only"
+        ],
+        "abstraction": [
+          "summary",
+          "category"
+        ],
+        "truncation": "full-text",
+        "relationship": "one-to-one",
+        "recursion": [
+          "none"
+        ],
+        "openIn": "new-page",
+        "overviewType": [
+          "grid"
+        ],
+        "openBy": [
+          "click"
+        ],
+        "openFrom": "whole-item",
+        "attributeScope": [
+          "per-item"
+        ]
+      }
+    },
+    {
+      "id": "data-table",
+      "status": "absent",
+      "confidence": 0.9,
+      "evidence": [],
+      "dims": {}
+    },
+    {
+      "id": "tabs",
+      "status": "absent",
+      "confidence": 0.8,
+      "evidence": [],
+      "dims": {}
+    }
+  ],
+  "structure": {
+    "layout": "app shell: fixed narrow icon sidebar on the left, top bar with page title, notification bell and account menu, fixed footer links; one large white panel with two stacked sections (Upcoming Trips, Past Trips), each a 4-column grid of trip cards",
+    "regions": [
+      "sidebar",
+      "header",
+      "upcoming-trips",
+      "past-trips",
+      "footer"
+    ],
+    "density": "medium"
+  },
+  "aesthetics": {
+    "palette": [
+      "#ffffff",
+      "#e9e9e9",
+      "#6b7a99",
+      "#000000",
+      "#868e96",
+      "#f1f3f5",
+      "#dee2e6"
+    ],
+    "colorRoles": {
+      "background": "#e9e9e9",
+      "surface": "#ffffff",
+      "text": "#000000",
+      "muted": "#868e96",
+      "primary": "#6b7a99",
+      "border": "#dee2e6",
+      "accent": "#f1f3f5"
+    },
+    "typography": "Verdana throughout (Mantine-style app): headings, card titles, uppercase date subtitles, pill labels, buttons",
+    "typeScale": "Restrained: 22px bold section headings, 16px bold card titles, 12px bold uppercase muted dates, 11px bold uppercase pill labels and 12px muted subtitles; 14px/600 buttons",
+    "shape": "soft",
+    "elevation": "flat",
+    "borders": "thin",
+    "imagery": [
+      "photography",
+      "iconography"
+    ],
+    "iconStyle": "line",
+    "whitespace": "moderate",
+    "backgroundTreatment": "solid",
+    "mood": [
+      "clean",
+      "utilitarian",
+      "calm",
+      "muted"
+    ]
+  },
+  "model": {
+    "rater": "rater-2",
+    "provider": "claude-code",
+    "name": "claude-opus-5-5",
+    "effort": "high",
+    "generatedAt": "2026-11-16T17:58:11.533Z",
+    "servedBy": [
+      "claude-opus-5-5"
+    ],
+    "turns": 11,
+    "usage": {
+      "input_tokens": 22,
+      "cache_creation_input_tokens": 36041,
+      "cache_read_input_tokens": 372158,
+      "output_tokens": 4470
+    }
+  },
+  "notes": "Surmai trip planner dashboard. Desaturated slate-blue (#6b7a99) is the single brand hue: sidebar rail, primary 'New Trip' button, pill text and placeholder icons. Active rail item is a white rounded square with shadow. Trip cards mostly show a light gray placeholder with a line image icon where no cover is set; only Costa Rica has a photo. Cards show a hover shadow and a slate edit-pencil strip on the cover. Destinations appear as small uppercase rounded pills (not status badges). Footer and sidebar are fixed (footer overlaps content in full-page capture). Clicking a card opens a trip detail page with tabs (Organization, Itinerary, Attachments, Expenses, Notes) and accordion sections."
+}

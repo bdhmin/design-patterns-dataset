@@ -1,0 +1,102 @@
+You are Get It.'s visualizer concept-extraction agent.
+
+GOAL
+You receive the text of one OR MORE pages from a textbook-style PDF. Each page
+is delimited by a line "===== PAGE_INDEX n =====". Treat every page on its own
+merits and identify, per page, the concepts that would benefit MOST from a
+visual aid sitting next to the reader.
+
+For each concept choose ONE renderer:
+  • "3d"      — physical objects with meaningful 3D structure
+                (organs, molecules, cells, anatomical regions, buildings,
+                mechanical parts).
+  • "2d-anim" — physical processes, simulations, mechanisms in motion
+                (inclined plane, pendulum, blood flow path, chemical reaction
+                progress, projectile trajectory, spring oscillation).
+  • "formula" — equations, derivations, mathematical statements that benefit
+                from a step-by-step LaTeX walkthrough.
+  • "graph"   — function plots, scatter, bar charts, distributions, time
+                series.
+  • "2d-text" — citations, named statutes, articles, court rulings, named
+                papers/sources, definitions where the visualizer should show
+                an authoritative quote or summary.
+
+RULES
+1. Pick AT MOST 4 concepts per page. Quality over quantity. Skip pages with
+   no good visualization candidates — simply emit no concepts for them.
+   Judge each page independently, exactly as if it were the only page given.
+2. For EVERY concept, set "page" to the integer from the "===== PAGE_INDEX n
+   =====" marker of the page the concept appears on.
+3. Each concept's "anchor" MUST be a verbatim copy of the LAST 30–80
+   characters of the sentence that introduces it, taken EXACTLY from THAT
+   page's text (no paraphrase). The tag pill will be planted right after
+   this anchor — so the anchor string MUST appear once on its page, and the
+   renderer anchors at its tail. Pick anchors that are unique on the page.
+4. LANGUAGE: detect the language of each page's text and write BOTH "label"
+   and "context" in that same language so they read naturally next to the
+   source. Italian page → Italian outputs, English page → English outputs,
+   etc. Never translate the source.
+5. "label" is what shows on the pill (≤ 35 chars). Make it a short noun
+   phrase the reader would skim and instantly recognise.
+6. "context" gives the visualizer everything it needs to render the concept
+   without re-reading the full page: include the concept name, key
+   parameters mentioned in the text, and the field of study. 1–3 sentences.
+7. Avoid trivial picks (page numbers, headings, generic phrases). Avoid
+   duplicates of the same concept across a page.
+
+OUTPUT
+A single JSON object conforming to the supplied schema. No prose.
+
+--- PAGES ---
+===== PAGE_INDEX 0 =====
+Classical Mechanics
+Chapter 6 — Forces, Energy, and Oscillations
+Braynr Open Textbook Project
+6.1 The Inclined Plane
+Consider a block of mass m resting on a frictionless inclined plane that makes an angle theta
+with the horizontal. The gravitational force mg acts vertically downward and can be decomposed
+into two orthogonal components: one parallel to the surface, equal to mg sin(theta), and one
+perpendicular to the surface, equal to mg cos(theta). The perpendicular component is balanced
+by the normal reaction force N exerted by the plane.
+The unbalanced parallel component accelerates the block down the slope according to
+Newton's second law: a = g sin(theta). When kinetic friction is present, with coefficient mu, the
+net acceleration becomes a = g (sin(theta) - mu cos(theta)). This expression yields a critical angle
+theta_c = arctan(mu) below which the block remains stationary, illustrating how the limiting case
+of static equilibrium emerges from the dynamic equations.
+The energy perspective offers an equivalent description. As the block descends a vertical
+height h, gravitational potential energy mgh is converted into kinetic energy (1/2) m v^2. On a
+frictionless slope, conservation of mechanical energy gives v = sqrt(2 g h), independent of the
+angle of inclination. Friction would dissipate part of that energy as heat, reducing the final speed
+accordingly.
+6.2 The Simple Pendulum and Harmonic Motion
+A simple pendulum consists of a point mass suspended from a fixed pivot by a massless
+string   of   length   L.   When   displaced   by   a   small   angular   amplitude   theta_0,   the   restoring
+component of gravity, equal to -mg sin(theta), is approximately linear in the angle, and the bob
+undergoes simple harmonic motion. The angular frequency of oscillation is omega = sqrt(g/L),
+giving a period T = 2 pi sqrt(L/g) that depends only on length and local gravity.
+The motion can be described by the differential equation d^2 theta / dt^2 + (g/L) sin(theta) =
+0. For small angles the equation linearizes to d^2 theta / dt^2 + (g/L) theta = 0, whose solution is
+theta(t) = theta_0 cos(omega t + phi). Plotting the angular position over time produces a sinusoid;
+plotting velocity against position produces an elliptical phase-space trajectory.
+Damping introduces a velocity-proportional term and the amplitude decays exponentially as
+exp(-gamma t). Driven by an external periodic force, the system exhibits resonance at omega =
+omega_0, where the steady-state amplitude grows dramatically. This phenomenon underlies the
+design of seismometers, the tuning of musical instruments, and the catastrophic collapse of the
+Tacoma Narrows bridge in 1940.
+
+===== PAGE_INDEX 1 =====
+6.3 Projectile Motion
+A projectile launched with initial speed v_0 at an angle alpha above the horizontal, in the
+absence   of   air   resistance,   follows   a   parabolic   trajectory.   Decomposing   the   velocity   into
+horizontal and vertical components yields v_x = v_0 cos(alpha), constant in time, and v_y(t) =
+v_0 sin(alpha) - g t. Integrating gives x(t) = v_0 cos(alpha) t and y(t) = v_0 sin(alpha) t - (1/2) g
+t^2.
+The range R, time of flight T, and maximum height H follow directly: R = v_0^2 sin(2
+alpha) / g, T = 2 v_0 sin(alpha) / g, and H = v_0^2 sin^2(alpha) / (2 g). The range is maximized
+at alpha = 45 degrees on level ground; it decreases symmetrically on either side. Plotting R as a
+function of alpha for a fixed v_0 produces a sinusoidal curve peaking at the optimal angle.
+Real projectiles are subject to drag, which depends nonlinearly on speed. At low Reynolds
+numbers the drag force scales linearly with velocity, while at high speeds it scales as v^2. The
+resulting trajectories are no longer parabolic — they become asymmetric, with shortened range
+and a reduced impact angle compared with the ideal case.
+--- END PAGES ---

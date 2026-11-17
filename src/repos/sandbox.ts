@@ -46,6 +46,12 @@ export function claudeSandboxSettings(network: string[], home = os.homedir(), en
       allowUnsandboxedCommands: false,
       network: { allowedDomains: network, allowLocalBinding: true },
       filesystem: { denyRead: paths.map(sandboxPath) },
+      // Allows com.apple.trustd.agent. Without it, mise (rustls with the macOS
+      // platform verifier) fails every HTTPS request with "invalid peer
+      // certificate: OSStatus -26276", and agents fall back to plain-HTTP
+      // runtime downloads. Claude Code flags this as weaker isolation (trustd
+      // as a low-bandwidth exfiltration path); the network allowlist still holds.
+      enableWeakerNetworkIsolation: true,
     },
     // The file tools are not part of the Bash sandbox; keep them out of the same places.
     permissions: { deny: paths.map(rulePath).flatMap((d) => [`Read(${d}/**)`, `Read(${d})`]) },

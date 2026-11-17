@@ -1,0 +1,72 @@
+package main
+
+import (
+	"context"
+	"encoding/json"
+	"flag"
+	"fmt"
+	"log"
+	"net/http"
+
+	tzfdist "github.com/ringsaturn/tzf-dist"
+	pb "github.com/ringsaturn/tzf/gen/go/tzf/v1"
+	"google.golang.org/protobuf/proto"
+)
+
+const API = "https://api.github.com/repos/evansiroky/timezone-boundary-builder/tags"
+
+type TagsResponseItem struct {
+	Name   string `json:"name"`
+	Commit Commit `json:"commit"`
+	// ZipballURL string `json:"zipball_url"`
+	// TarballURL string `json:"tarball_url"`
+	// NodeID     string `json:"node_id"`
+}
+
+type Commit struct {
+	Sha string `json:"sha"`
+	URL string `json:"url"`
+}
+
+func must(err error) {
+	if err != nil {
+		panic(err)
+	}
+}
+
+func main() {
+	verbose := flag.Bool("verbose", false, "show more logs")
+	force := flag.Bool("force", false, "force update even if the version is the same")
+	flag.Parse()
+	ctx := context.Background()
+
+	httpRequest, err := http.NewRequestWithContext(ctx, http.MethodGet, API, nil)
+	must(err)
+
+	httpResponse, err := http.DefaultClient.Do(httpRequest)
+	must(err)
+	defer func() {
+		if err := httpResponse.Body.Close(); err != nil {
+			log.Printf("error closing body: %v", err)
+		}
+	}()
+
+	resp := []*TagsResponseItem{}
+	err = json.NewDecoder(httpResponse.Body).Decode(&resp)
+	must(err)
+
+	latestTag := resp[0].Name
+
+	input := &pb.PreindexTimezones{}
+	if err := proto.Unmarshal(tzfdist.PreindexData, input); err != nil {
+		panic(err)
+	}
+	if *verbose {
+		log.Printf("input.Version=%v, latestTag=%v\n", input.Version, latestTag)
+	}
+	if input.Version == latestTag && !*force {
+		log.Println("Same version, bye!")
+		return
+	}
+	fmt.Printf("TIMEZONE_BOUNDARY_VERSION=%s\n", latestTag)
+}

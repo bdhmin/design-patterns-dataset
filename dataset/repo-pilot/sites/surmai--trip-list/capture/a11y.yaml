@@ -1,0 +1,118 @@
+- banner:
+  - paragraph: All Trips
+  - text: "2"
+  - button "Notifications":
+    - img
+  - button "MC Maya Chen maya@chenokafor.family":
+    - text: MC
+    - paragraph: Maya Chen
+    - paragraph: maya@chenokafor.family
+    - img
+- navigation:
+  - navigation:
+    - link:
+      - /url: https://surmai.app
+      - img
+    - button:
+      - img
+    - button:
+      - img
+    - button:
+      - img
+    - button:
+      - img
+    - button:
+      - img
+    - button:
+      - img
+- main:
+  - button "Import Trip"
+  - button "New Trip"
+  - separator
+  - heading "Upcoming Trips All future trips ordered by start date" [level=3]:
+    - text: Upcoming Trips
+    - paragraph: All future trips ordered by start date
+  - button "Trip Details":
+    - img
+  - paragraph: New York — work + weekend
+  - paragraph: November 12, 2026 - November 17, 2026
+  - text: New York City
+  - button "Trip Details":
+    - img
+  - paragraph: Maui Holidays
+  - paragraph: December 20, 2026 - January 1, 2027
+  - text: Lahaina Wailea Hana
+  - img "Cover Image"
+  - paragraph: Costa Rica — Pura Vida
+  - paragraph: June 11, 2027 - June 19, 2027
+  - text: San José Liberia La Fortuna Portland
+  - button "Trip Details":
+    - img
+  - paragraph: "Italy: Rome, Florence & the Amalfi Coast"
+  - paragraph: July 8, 2027 - July 24, 2027
+  - text: Rome Florence Positano
+  - button "Trip Details":
+    - img
+  - paragraph: Patagonia (someday)
+  - paragraph: February 5, 2028 - February 19, 2028
+  - text: El Calafate Natales
+  - separator
+  - heading "Past Trips In the last 12 months" [level=3]:
+    - text: Past Trips
+    - paragraph: In the last 12 months
+  - button "Trip Details":
+    - img
+  - paragraph: Napa Anniversary Weekend
+  - paragraph: September 18, 2026 - September 21, 2026
+  - text: Napa Yountville
+  - button "Trip Details":
+    - img
+  - paragraph: Olympic Peninsula Camping
+  - paragraph: August 14, 2026 - August 17, 2026
+  - text: Port Angeles Forks
+  - button "Trip Details":
+    - img
+  - paragraph: Iceland Ring Road
+  - paragraph: June 18, 2026 - June 29, 2026
+  - text: Reykjavík Mýrdalshreppur Höfn Akureyri
+  - button "Trip Details":
+    - img
+  - paragraph: Chicago — Q1 client offsite
+  - paragraph: March 9, 2026 - March 12, 2026
+  - text: Chicago
+  - button "Trip Details":
+    - img
+  - paragraph: Whistler Ski Weekend
+  - paragraph: February 13, 2026 - February 15, 2026
+  - text: Whistler
+  - button "Trip Details":
+    - img
+  - paragraph: Thanksgiving in Portland
+  - paragraph: November 26, 2025 - November 29, 2025
+  - text: Portland
+  - button "Trip Details":
+    - img
+  - paragraph: "Japan: Tokyo, Kyoto & Osaka"
+  - paragraph: March 26, 2025 - April 8, 2025
+  - text: Tokyo Hakone Kyoto Osaka
+  - button "Trip Details":
+    - img
+  - paragraph: Mexico City — Día de Muertos
+  - paragraph: October 30, 2024 - November 3, 2024
+  - text: Mexico City
+  - button "Trip Details":
+    - img
+  - paragraph: Canadian Rockies Road Trip
+  - paragraph: August 2, 2024 - August 11, 2024
+  - text: Calgary Banff Jasper Park Lodge
+  - button "Trip Details":
+    - img
+  - paragraph: Lisbon & Porto Spring Escape
+  - paragraph: April 4, 2024 - April 14, 2024
+  - text: Lisbon Porto Sintra
+- contentinfo:
+  - link "Documentation":
+    - /url: https://surmai.app/documentation
+  - text: "|"
+  - link "About Surmai":
+    - /url: https://surmai.app/documentation/about.html

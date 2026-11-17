@@ -1,0 +1,134 @@
+{
+ "pageBackground": "#f6f5f2",
+ "backgroundsByArea": [
+  {
+   "color": "#f6f5f2",
+   "share": 0.4958
+  },
+  {
+   "color": "#ffffff",
+   "share": 0.4227
+  },
+  {
+   "color": "#f3f2ef",
+   "share": 0.0798
+  },
+  {
+   "color": "#111113",
+   "share": 0.0011
+  },
+  {
+   "color": "#fde8ec",
+   "share": 0.0002
+  },
+  {
+   "color": "#d9efe2",
+   "share": 0.0002
+  },
+  {
+   "color": "#eae4fb",
+   "share": 0.0001
+  },
+  {
+   "color": "#d9e9f9",
+   "share": 0.0001
+  },
+  {
+   "color": "#fdedd2",
+   "share": 0.0001
+  }
+ ],
+ "textColors": [
+  {
+   "color": "#111113",
+   "chars": 616
+  },
+  {
+   "color": "#ffffff",
+   "chars": 60
+  },
+  {
+   "color": "#6a6a6e",
+   "chars": 29
+  },
+  {
+   "color": "#9f1f3a",
+   "chars": 22
+  },
+  {
+   "color": "#0f6a47",
+   "chars": 22
+  },
+  {
+   "color": "#8c8c90",
+   "chars": 12
+  },
+  {
+   "color": "#4b2db4",
+   "chars": 11
+  },
+  {
+   "color": "#92580a",
+   "chars": 11
+  },
+  {
+   "color": "#1c4f87",
+   "chars": 10
+  },
+  {
+   "color": "#2a2a2d",
+   "chars": 4
+  }
+ ],
+ "fonts": [
+  {
+   "family": "GeistSans",
+   "textNodes": 27
+  }
+ ],
+ "fontSizes": [
+  {
+   "px": 14,
+   "textNodes": 1
+  },
+  {
+   "px": 13,
+   "textNodes": 9
+  },
+  {
+   "px": 12,
+   "textNodes": 4
+  },
+  {
+   "px": 11,
+   "textNodes": 3
+  },
+  {
+   "px": 10,
+   "textNodes": 10
+  }
+ ],
+ "radii": [
+  {
+   "radius": "6px",
+   "boxes": 17
+  },
+  {
+   "radius": "8px",
+   "boxes": 7
+  },
+  {
+   "radius": "999px",
+   "boxes": 7
+  },
+  {
+   "radius": "12px",
+   "boxes": 2
+  }
+ ],
+ "boxesMeasured": 155,
+ "shadowedShare": 0.065,
+ "borderedShare": 0.116,
+ "gradientBackgrounds": 0,
+ "imageBackgrounds": 0
+}

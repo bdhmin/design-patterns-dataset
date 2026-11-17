@@ -1,0 +1,586 @@
+{
+  "schemaVersion": "1.0.0",
+  "codebookVersion": "1.0.0",
+  "batch": "repo-pilot",
+  "site": {
+    "slug": "get-it--knowledge-graph",
+    "url": "http://localhost:4401/viewer/994a113e-e7ba-4f78-926a-7154208adfff",
+    "finalUrl": "http://localhost:4401/viewer/994a113e-e7ba-4f78-926a-7154208adfff",
+    "status": 200,
+    "title": "Get It.",
+    "capturedAt": "2026-11-16T17:52:27.789Z",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "screenshot": {
+      "ref": "capture/screenshot.png",
+      "width": 1440,
+      "height": 2198
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.8127.18 Safari/537.36",
+    "domain": "education",
+    "domainNote": "AI study tool: lecture PDF viewer with concept tags linked to visualizers, knowledge graph with mastery scores, chat/flashcards/quizzes",
+    "provenance": {
+      "source": "repo",
+      "record": "repos/repo-pilot/get-it/explore.json",
+      "repo": {
+        "name": "beltromatti/get-it",
+        "url": "https://github.com/beltromatti/get-it",
+        "commit": "ae0fa999f352b951ab8150fac5dcf9d7ab6fd9a4",
+        "license": "Apache-2.0"
+      },
+      "view": {
+        "slug": "knowledge-graph",
+        "name": "Knowledge graph pane",
+        "description": "Document viewer with the right pane switched to the knowledge graph: an AI evaluation summary above a node-link map of concepts colored by mastery."
+      }
+    }
+  },
+  "regions": [
+    {
+      "id": "top-bar",
+      "role": "header",
+      "label": "App top bar: Upload, Library links, active document tab with MANUAL badge, Synced/viz-ready status pills, settings and account icons",
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 46
+      },
+      "patterns": [
+        "app-shell",
+        "badge",
+        "tabs"
+      ]
+    },
+    {
+      "id": "document-viewer",
+      "role": "main-content",
+      "label": "Rendered lecture PDF pages with colored concept chips anchored in text, page nav (1/2) and zoom controls floating at bottom",
+      "bbox": {
+        "x": 8,
+        "y": 52,
+        "width": 789,
+        "height": 2138
+      },
+      "patterns": [
+        "reader",
+        "pagination",
+        "tooltip",
+        "annotation",
+        "split-pane"
+      ]
+    },
+    {
+      "id": "tool-panel",
+      "role": "sidebar",
+      "label": "Knowledge Graph panel: tool dropdown menu, title, overflow menu, AI insight summary and node-link concept graph with zoom/fit controls",
+      "bbox": {
+        "x": 806,
+        "y": 52,
+        "width": 625,
+        "height": 2138
+      },
+      "patterns": [
+        "chart",
+        "menu",
+        "ai-provenance",
+        "split-pane"
+      ]
+    }
+  ],
+  "patterns": [
+    {
+      "id": "app-shell",
+      "status": "present",
+      "confidence": 0.75,
+      "dims": {
+        "primary": "top-navigation-bar",
+        "secondary": "none",
+        "items": [
+          "fixed-destinations"
+        ],
+        "visibility": "always-visible",
+        "structure": "document-tabs"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 46
+          },
+          "quote": "Upload Library Cell_Biology_L07_-_Membr...",
+          "region": "top-bar",
+          "note": "Persistent top bar with destinations, open document tab, status and account"
+        }
+      ]
+    },
+    {
+      "id": "tabs",
+      "status": "uncertain",
+      "confidence": 0.5,
+      "rationale": "Single browser-style document tab beside Upload/Library links; only one tab visible so could not confirm multi-tab switching",
+      "dims": {
+        "placement": "top",
+        "label": [
+          "icon",
+          "text",
+          "favicon-and-title"
+        ],
+        "origin": "created-by-the-person"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 201,
+            "y": 6,
+            "width": 311,
+            "height": 38
+          },
+          "quote": "Cell_Biology_L07_-_Membr...",
+          "region": "top-bar",
+          "note": "Active document tab raised in white with document icon"
+        }
+      ]
+    },
+    {
+      "id": "badge",
+      "status": "present",
+      "confidence": 0.75,
+      "dims": {
+        "meaning": "status",
+        "aggregation": "per-item"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 426,
+            "y": 14,
+            "width": 72,
+            "height": 18
+          },
+          "quote": "MANUAL",
+          "region": "top-bar",
+          "note": "Orange label badge on document tab"
+        },
+        {
+          "bbox": {
+            "x": 1120,
+            "y": 11,
+            "width": 122,
+            "height": 26
+          },
+          "quote": "Synced 33d ago",
+          "region": "top-bar",
+          "note": "Sync status pill"
+        },
+        {
+          "bbox": {
+            "x": 1250,
+            "y": 11,
+            "width": 106,
+            "height": 26
+          },
+          "quote": "7/7 viz ready",
+          "region": "top-bar",
+          "note": "Count/status pill"
+        }
+      ]
+    },
+    {
+      "id": "reader",
+      "status": "present",
+      "confidence": 0.8,
+      "dims": {
+        "pagination": "fixed-layout",
+        "typography": [
+          "size-and-spacing"
+        ],
+        "annotations": [
+          "highlights"
+        ],
+        "progress": "location-only"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 41,
+            "y": 84,
+            "width": 723,
+            "height": 1023
+          },
+          "quote": "Cell Biology — Lecture 7: Membrane Transport",
+          "region": "document-viewer",
+          "note": "PDF page rendered to canvas; pages stack vertically with page labels"
+        },
+        {
+          "bbox": {
+            "x": 670,
+            "y": 2140,
+            "width": 115,
+            "height": 40
+          },
+          "quote": "100%",
+          "region": "document-viewer",
+          "note": "Zoom in/out controls"
+        }
+      ]
+    },
+    {
+      "id": "pagination",
+      "status": "present",
+      "confidence": 0.8,
+      "dims": {
+        "mechanism": "next-and-previous",
+        "position": "page-n-of-m"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 349,
+            "y": 2140,
+            "width": 110,
+            "height": 40
+          },
+          "quote": "1 / 2",
+          "region": "document-viewer",
+          "note": "Previous/next page with jump-to-page counter"
+        }
+      ]
+    },
+    {
+      "id": "annotation",
+      "status": "uncertain",
+      "confidence": 0.45,
+      "rationale": "Colored chips are anchored to text spans of the document but are AI/manual concept tags opening visualizations, not discussion threads",
+      "dims": {
+        "anchor": "text-range",
+        "marker": [
+          "status-colour"
+        ],
+        "layout": "side-margin-panel"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 419,
+            "y": 307,
+            "width": 96,
+            "height": 18
+          },
+          "quote": "Fluid mo...",
+          "region": "document-viewer",
+          "note": "3D Model chip (pink) anchored after 'phospholipid bilayer'"
+        },
+        {
+          "bbox": {
+            "x": 358,
+            "y": 498,
+            "width": 96,
+            "height": 18
+          },
+          "quote": "Fick's l...",
+          "region": "document-viewer",
+          "note": "Formula chip (purple); clicking opens formula visualizer in right pane"
+        },
+        {
+          "bbox": {
+            "x": 535,
+            "y": 598,
+            "width": 96,
+            "height": 18
+          },
+          "quote": "Carrier...",
+          "region": "document-viewer",
+          "note": "Graph chip (blue)"
+        }
+      ]
+    },
+    {
+      "id": "tooltip",
+      "status": "present",
+      "confidence": 0.75,
+      "dims": {
+        "trigger": [
+          "hover"
+        ],
+        "content": "label",
+        "placement": "below",
+        "timing": "until-the-pointer-leaves"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 358,
+            "y": 498,
+            "width": 96,
+            "height": 18
+          },
+          "region": "document-viewer",
+          "note": "Live: hovering a chip shows 'Formula: Fick's law of diffusion' label below it"
+        }
+      ]
+    },
+    {
+      "id": "split-pane",
+      "status": "present",
+      "confidence": 0.7,
+      "dims": {
+        "orientation": "side-by-side",
+        "sizing": "fixed",
+        "relationship": "linked-selection"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 8,
+            "y": 52,
+            "width": 1423,
+            "height": 2138
+          },
+          "region": "document-viewer",
+          "note": "Document pane and tool pane side by side; clicking a chip in the doc loads its visualization in the right pane"
+        }
+      ]
+    },
+    {
+      "id": "chart",
+      "status": "present",
+      "confidence": 0.7,
+      "dims": {
+        "markType": "points",
+        "channels": [
+          "position",
+          "size",
+          "colour-hue-or-value"
+        ],
+        "faceting": "single-plot",
+        "authorship": "author-specified",
+        "annotation": [
+          "automated-insight-captions"
+        ],
+        "inspectBy": [
+          "click-to-select"
+        ]
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 806,
+            "y": 200,
+            "width": 625,
+            "height": 700
+          },
+          "quote": "Fick's law of diffusion",
+          "region": "tool-panel",
+          "note": "Force-directed node-link concept graph; node size/label size and green shade encode importance/mastery; pan/zoom/fit controls (graph rendered in first viewport)"
+        },
+        {
+          "bbox": {
+            "x": 1388,
+            "y": 2088,
+            "width": 32,
+            "height": 90
+          },
+          "region": "tool-panel",
+          "note": "Zoom in/out/fit graph buttons"
+        }
+      ]
+    },
+    {
+      "id": "menu",
+      "status": "present",
+      "confidence": 0.85,
+      "dims": {
+        "openBy": "button-click",
+        "structure": "flat",
+        "item": [
+          "icon",
+          "label",
+          "description"
+        ],
+        "itemSet": "fixed",
+        "form": "vertical-list"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 826,
+            "y": 61,
+            "width": 153,
+            "height": 28
+          },
+          "quote": "Knowledge Graph",
+          "region": "tool-panel",
+          "note": "Live: opens dropdown of tools — Visualizer, Knowledge Graph, Chat, Flashcards, Quizzes, Feynman — each with icon and description"
+        },
+        {
+          "bbox": {
+            "x": 1383,
+            "y": 60,
+            "width": 28,
+            "height": 28
+          },
+          "region": "tool-panel",
+          "note": "More actions overflow button"
+        }
+      ]
+    },
+    {
+      "id": "ai-provenance",
+      "status": "uncertain",
+      "confidence": 0.55,
+      "rationale": "Sparkle icon marks the evaluator summary as AI-generated and shows evaluation age; no explicit 'AI' label",
+      "dims": {
+        "disclosure": [
+          "ai-generated-badge"
+        ],
+        "placement": "inline-beside-the-span",
+        "trustCues": [
+          "stale-retrieval-time"
+        ]
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 806,
+            "y": 98,
+            "width": 625,
+            "height": 102
+          },
+          "quote": "last evaluated 789h ago · 23 passes",
+          "region": "tool-panel",
+          "note": "Sparkle-icon insight with evaluation timestamp"
+        }
+      ]
+    },
+    {
+      "id": "coordinated-views",
+      "status": "absent",
+      "confidence": 0.6,
+      "dims": {},
+      "evidence": [
+        {
+          "bbox": {
+            "x": 806,
+            "y": 52,
+            "width": 625,
+            "height": 2138
+          },
+          "note": "Document chips drive the panel content, but panes are not synchronized data views"
+        }
+      ]
+    },
+    {
+      "id": "zoomable-canvas",
+      "status": "absent",
+      "confidence": 0.65,
+      "dims": {},
+      "evidence": [
+        {
+          "bbox": {
+            "x": 806,
+            "y": 200,
+            "width": 625,
+            "height": 1989
+          },
+          "note": "Graph is pannable/zoomable but is a data visualization, not a free-placed canvas"
+        }
+      ]
+    },
+    {
+      "id": "view-switcher",
+      "status": "absent",
+      "confidence": 0.6,
+      "dims": {},
+      "evidence": [
+        {
+          "bbox": {
+            "x": 826,
+            "y": 61,
+            "width": 153,
+            "height": 28
+          },
+          "note": "Dropdown switches between distinct tools, not representations of the same collection; coded as menu"
+        }
+      ]
+    }
+  ],
+  "structure": {
+    "layout": "full-height two-pane app: top bar with nav links and a document tab; left pane is a paginated PDF/document viewer with floating page and zoom controls; right pane is a switchable tool panel (currently Knowledge Graph) with header dropdown, AI insight strip and a pan/zoom node-link graph",
+    "regions": [
+      "top-bar",
+      "document-viewer",
+      "tool-panel"
+    ],
+    "density": "medium"
+  },
+  "aesthetics": {
+    "palette": [
+      "#f6f5f2",
+      "#ffffff",
+      "#f3f2ef",
+      "#111113",
+      "#2a2a2d",
+      "#6a6a6e",
+      "#8c8c90",
+      "#ececea",
+      "#1a9a6c",
+      "#4b2db4",
+      "#fde8ec",
+      "#eae4fb",
+      "#d9e9f9",
+      "#fdedd2",
+      "#d9efe2"
+    ],
+    "colorRoles": {
+      "background": "#f6f5f2",
+      "surface": "#ffffff",
+      "text": "#111113",
+      "muted": "#6a6a6e",
+      "border": "#ececea",
+      "primary": "#1a9a6c",
+      "accent": "#4b2db4"
+    },
+    "typography": "GeistSans throughout UI chrome (13px/500 nav, 12px/500 controls, 10-11px meta and chips at 600); the PDF content renders in a Helvetica/Arial-like sans in the canvas; graph labels in GeistSans at large sizes",
+    "typeScale": "Compact UI chrome at 10-14px; document headings ~22-28px bold over 13px body; graph node labels scale with importance (14px → 38px → 50/70px in SVG units), producing strong hierarchy",
+    "shape": "soft",
+    "elevation": "subtle-shadows",
+    "borders": "thin",
+    "imagery": [
+      "data-visualization",
+      "iconography"
+    ],
+    "iconStyle": "line",
+    "whitespace": "moderate",
+    "backgroundTreatment": "solid",
+    "mood": [
+      "clean",
+      "calm",
+      "academic",
+      "technical",
+      "neutral"
+    ]
+  },
+  "model": {
+    "rater": "rater-1",
+    "provider": "claude-code",
+    "name": "claude-opus-5-5",
+    "effort": "high",
+    "generatedAt": "2026-11-16T17:54:12.054Z",
+    "servedBy": [
+      "claude-opus-5-5"
+    ],
+    "turns": 9,
+    "usage": {
+      "input_tokens": 18,
+      "cache_creation_input_tokens": 39917,
+      "cache_read_input_tokens": 276621,
+      "output_tokens": 11715
+    }
+  },
+  "notes": "Warm off-white (#f6f5f2) app canvas with two white rounded panes. Concept chips are pastel pills color-coded by visualization type (pink=3D model, purple=formula, blue=graph, amber=animation, green=source) and overlaid in the PDF text flow; selected chip gets a dark outline. Right pane is a tool switcher (Visualizer / Knowledge Graph / Chat / Flashcards / Quizzes / Feynman); Knowledge Graph shows an AI coaching summary strip in beige above a force-directed graph of green nodes whose size and label size reflect importance, with 'drag to pan · scroll to zoom' hint. Full-page capture stretched panes so graph SVG appears blank and chips misplace in the tall screenshot; coded from the 900px viewport."
+}

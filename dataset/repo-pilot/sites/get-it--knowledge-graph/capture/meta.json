@@ -1,0 +1,28 @@
+{
+  "url": "http://localhost:4401/viewer/994a113e-e7ba-4f78-926a-7154208adfff",
+  "finalUrl": "http://localhost:4401/viewer/994a113e-e7ba-4f78-926a-7154208adfff",
+  "status": 200,
+  "title": "Get It.",
+  "capturedAt": "2026-11-16T17:52:27.789Z",
+  "viewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "screenshot": {
+    "ref": "capture/screenshot.png",
+    "width": 1440,
+    "height": 2198,
+    "truncated": false,
+    "pageHeight": 2198
+  },
+  "viewportShot": "capture/viewport.png",
+  "panels": {
+    "viewportHeight": 2198,
+    "scrollers": 1,
+    "expandedInPlace": 0,
+    "hiddenRemaining": 0
+  },
+  "steps": 4,
+  "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.8127.18 Safari/537.36",
+  "durationMs": 5140
+}

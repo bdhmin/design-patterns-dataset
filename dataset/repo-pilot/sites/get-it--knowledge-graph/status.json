@@ -1,0 +1,23 @@
+{
+  "slug": "get-it--knowledge-graph",
+  "url": "http://localhost:4401/viewer/994a113e-e7ba-4f78-926a-7154208adfff",
+  "domain": "education",
+  "source": "repo",
+  "state": "labeled",
+  "raters": {
+    "rater-1": {
+      "state": "done",
+      "updatedAt": "2026-11-16T17:54:12.523Z"
+    },
+    "rater-2": {
+      "state": "done",
+      "updatedAt": "2026-11-16T17:54:49.006Z"
+    },
+    "rater-3": {
+      "state": "done",
+      "updatedAt": "2026-11-16T17:54:33.484Z"
+    }
+  },
+  "flags": [],
+  "updatedAt": "2026-11-16T17:54:49.010Z"
+}

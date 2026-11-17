@@ -1,0 +1,153 @@
+{
+  "v": 1,
+  "docId": "392da341-c7ce-4c50-8840-bcc4ee3ba6cb",
+  "status": "ready",
+  "buildAt": 1793102790000,
+  "lastEvaluatedAt": 1794303060000,
+  "evaluationCount": 12,
+  "nodes": [
+    {
+      "id": "michaelis-menten-equation",
+      "label": "Michaelis-Menten equation",
+      "summary": "Initial velocity vs substrate concentration.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 64,
+        "comprehension": 48,
+        "structure": 48,
+        "application": 44
+      },
+      "evaluatorNote": "Recalls the definition but hesitated applying it to an unseen example."
+    },
+    {
+      "id": "saturation-curve",
+      "label": "Saturation curve",
+      "summary": "v0 vs [S] hyperbola with Vmax = 100, Km = 2 mM.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 0,
+        "comprehension": 0,
+        "structure": 0,
+        "application": 0
+      },
+      "evaluatorNote": "Missed both quiz items on this; revisit the worked example on the page."
+    },
+    {
+      "id": "lineweaver-burk-plot",
+      "label": "Lineweaver-Burk plot",
+      "summary": "Double reciprocal plot with and without a competitive inhibitor.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 74,
+        "comprehension": 63,
+        "structure": 58,
+        "application": 50
+      },
+      "evaluatorNote": "Understands the idea, but confuses it with a neighbouring concept under time pressure."
+    },
+    {
+      "id": "allosteric-sigmoid",
+      "label": "Allosteric sigmoid",
+      "summary": "Cooperative binding gives sigmoidal kinetics (Hill n = 2.8).",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 56,
+        "comprehension": 37,
+        "structure": 35,
+        "application": 20
+      },
+      "evaluatorNote": "Understands the idea, but confuses it with a neighbouring concept under time pressure."
+    },
+    {
+      "id": "competitive-inhibition",
+      "label": "Competitive inhibition",
+      "summary": "Raises apparent Km, Vmax unchanged; lines cross on y-axis.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 76,
+        "comprehension": 57,
+        "structure": 59,
+        "application": 47
+      },
+      "evaluatorNote": "Recalls the definition but hesitated applying it to an unseen example."
+    },
+    {
+      "id": "kcat-km",
+      "label": "Specificity constant",
+      "summary": "kcat/Km, diffusion-limited near 10^8–10^9 M^-1 s^-1.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 68,
+        "comprehension": 48,
+        "structure": 39,
+        "application": 39
+      },
+      "evaluatorNote": "Recalls the definition but hesitated applying it to an unseen example."
+    },
+    {
+      "id": "irreversible-inhibition",
+      "label": "Irreversible inhibitors",
+      "summary": "Covalent: aspirin on COX, penicillin on transpeptidase.",
+      "pageHints": [
+        2
+      ],
+      "evaluation": {
+        "memory": 47,
+        "comprehension": 29,
+        "structure": 26,
+        "application": 17
+      },
+      "evaluatorNote": "Not yet tested."
+    }
+  ],
+  "edges": [
+    {
+      "source": "michaelis-menten-equation",
+      "target": "saturation-curve",
+      "relation": "explains"
+    },
+    {
+      "source": "michaelis-menten-equation",
+      "target": "lineweaver-burk-plot",
+      "relation": "is measured by"
+    },
+    {
+      "source": "saturation-curve",
+      "target": "allosteric-sigmoid",
+      "relation": "is measured by"
+    },
+    {
+      "source": "allosteric-sigmoid",
+      "target": "competitive-inhibition",
+      "relation": "is measured by"
+    },
+    {
+      "source": "saturation-curve",
+      "target": "kcat-km",
+      "relation": "contrasts with"
+    },
+    {
+      "source": "lineweaver-burk-plot",
+      "target": "irreversible-inhibition",
+      "relation": "requires"
+    },
+    {
+      "source": "michaelis-menten-equation",
+      "target": "kcat-km",
+      "relation": "is related to"
+    }
+  ],
+  "globalNote": "Early days: most nodes have only been read, not tested. Start with flashcards on the core definitions, then one quiz to calibrate."
+}

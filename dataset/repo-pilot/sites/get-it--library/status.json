@@ -1,0 +1,23 @@
+{
+  "slug": "get-it--library",
+  "url": "http://localhost:4401/library",
+  "domain": "education",
+  "source": "repo",
+  "state": "labeled",
+  "raters": {
+    "rater-1": {
+      "state": "done",
+      "updatedAt": "2026-11-16T17:51:58.777Z"
+    },
+    "rater-2": {
+      "state": "done",
+      "updatedAt": "2026-11-16T17:52:22.646Z"
+    },
+    "rater-3": {
+      "state": "done",
+      "updatedAt": "2026-11-16T17:52:20.130Z"
+    }
+  },
+  "flags": [],
+  "updatedAt": "2026-11-16T17:52:22.649Z"
+}

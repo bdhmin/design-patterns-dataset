@@ -1,0 +1,168 @@
+{
+  "v": 1,
+  "docId": "sample-anatomy",
+  "status": "ready",
+  "buildAt": 1788946950000,
+  "lastEvaluatedAt": 1790962080000,
+  "evaluationCount": 18,
+  "nodes": [
+    {
+      "id": "four-chambered-heart",
+      "label": "Four-chambered heart",
+      "summary": "The heart's four chambers — right/left atria and ventricles — with the great vessels, beating in systole and diastole.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 91,
+        "comprehension": 77,
+        "structure": 78,
+        "application": 63
+      },
+      "evaluatorNote": "Solid recall and a clean Feynman explanation — ready for exam-style problems."
+    },
+    {
+      "id": "sa-node-pacemaker",
+      "label": "SA node pacemaker",
+      "summary": "Depolarisation starts at the SA node, crosses to the AV node, bundle of His and Purkinje fibres.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 100,
+        "comprehension": 91,
+        "structure": 88,
+        "application": 84
+      },
+      "evaluatorNote": "Strong: correct on every quiz item and used it in own words in chat."
+    },
+    {
+      "id": "islets-of-langerhans",
+      "label": "Islets of Langerhans",
+      "summary": "Endocrine cell clusters in the pancreas: alpha (glucagon), beta (insulin), delta (somatostatin).",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 100,
+        "comprehension": 99,
+        "structure": 88,
+        "application": 84
+      },
+      "evaluatorNote": "Solid recall and a clean Feynman explanation — ready for exam-style problems."
+    },
+    {
+      "id": "insulin-vs-glucagon",
+      "label": "Insulin vs glucagon",
+      "summary": "Blood glucose after a meal: insulin brings it down, glucagon raises it during fasting.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 64,
+        "comprehension": 53,
+        "structure": 51,
+        "application": 33
+      },
+      "evaluatorNote": "Good recognition on quizzes; explanations still lean on the textbook's wording."
+    },
+    {
+      "id": "hypothalamus-pituitary-axis",
+      "label": "Hypothalamus–pituitary axis",
+      "summary": "Hypothalamus integrates hormones/osmolarity/temperature and drives the pituitary.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 79,
+        "comprehension": 63,
+        "structure": 55,
+        "application": 54
+      },
+      "evaluatorNote": "Good recognition on quizzes; explanations still lean on the textbook's wording."
+    },
+    {
+      "id": "cardiac-valves",
+      "label": "Cardiac valves",
+      "summary": "Tricuspid, mitral, pulmonary and aortic valves enforce one-way flow.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 66,
+        "comprehension": 54,
+        "structure": 48,
+        "application": 38
+      },
+      "evaluatorNote": "Understands the idea, but confuses it with a neighbouring concept under time pressure."
+    },
+    {
+      "id": "cardiac-cycle",
+      "label": "Cardiac cycle",
+      "summary": "Systole and diastole; lub-dub from valve closure.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 100,
+        "comprehension": 93,
+        "structure": 93,
+        "application": 87
+      },
+      "evaluatorNote": "Explains it unprompted and applies it to new cases; keep it warm with spaced review."
+    },
+    {
+      "id": "diabetes",
+      "label": "Diabetes mellitus",
+      "summary": "Glucose in urine when renal threshold exceeded; microvascular damage.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 100,
+        "comprehension": 85,
+        "structure": 79,
+        "application": 74
+      },
+      "evaluatorNote": "Strong: correct on every quiz item and used it in own words in chat."
+    }
+  ],
+  "edges": [
+    {
+      "source": "four-chambered-heart",
+      "target": "sa-node-pacemaker",
+      "relation": "requires"
+    },
+    {
+      "source": "sa-node-pacemaker",
+      "target": "islets-of-langerhans",
+      "relation": "explains"
+    },
+    {
+      "source": "four-chambered-heart",
+      "target": "insulin-vs-glucagon",
+      "relation": "explains"
+    },
+    {
+      "source": "sa-node-pacemaker",
+      "target": "hypothalamus-pituitary-axis",
+      "relation": "is a consequence of"
+    },
+    {
+      "source": "islets-of-langerhans",
+      "target": "cardiac-valves",
+      "relation": "requires"
+    },
+    {
+      "source": "cardiac-valves",
+      "target": "cardiac-cycle",
+      "relation": "is an example of"
+    },
+    {
+      "source": "hypothalamus-pituitary-axis",
+      "target": "diabetes",
+      "relation": "requires"
+    }
+  ],
+  "globalNote": "Most of the map is solid — recall and comprehension are well ahead. The gap is application: \"Insulin vs glucagon\" still breaks down on unseen problems. A short quiz on it is the best next step."
+}

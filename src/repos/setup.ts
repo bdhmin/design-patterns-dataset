@@ -105,6 +105,12 @@ ${sandbox}
 - server mode: ./${CONTRACT_DIR}/start.sh, which starts everything the app needs (stubs included) in the foreground and serves the UI at http://localhost:${r.port}/ (it gets PORT=${r.port}). It runs with the same PATH and restrictions as your shell, plus no network at all except localhost, so everything must already be installed, built and seeded (or seeded by start.sh itself).
 - Put any scripts you write for seeding or stubbing in ./${CONTRACT_DIR}/ too; they're kept with the setup record.
 
+# Order of work
+You have ${cfg.setup.timeoutMinutes} minutes in total, and anything unfinished when time runs out is lost. So work in this order:
+1. Get the app building and running with its stubs, and write the contract above (app.json plus out/ or start.sh), even if it has only a little data so far.
+2. Then build out the data, re-running your seed and checking the app still loads after each substantial step, so that a working state with the data loaded so far is always in place.
+Write large data sets with a short generator script rather than as one long literal file.
+
 I'll open it at ${VIEWPORT.width}×${VIEWPORT.height}.`;
 }
 

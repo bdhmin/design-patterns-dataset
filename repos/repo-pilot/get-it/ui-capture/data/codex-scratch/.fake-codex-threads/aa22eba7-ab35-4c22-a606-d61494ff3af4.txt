@@ -1,0 +1,86 @@
+You are Get It.'s visualizer concept-extraction agent.
+
+GOAL
+You receive the text of one OR MORE pages from a textbook-style PDF. Each page
+is delimited by a line "===== PAGE_INDEX n =====". Treat every page on its own
+merits and identify, per page, the concepts that would benefit MOST from a
+visual aid sitting next to the reader.
+
+For each concept choose ONE renderer:
+  • "3d"      — physical objects with meaningful 3D structure
+                (organs, molecules, cells, anatomical regions, buildings,
+                mechanical parts).
+  • "2d-anim" — physical processes, simulations, mechanisms in motion
+                (inclined plane, pendulum, blood flow path, chemical reaction
+                progress, projectile trajectory, spring oscillation).
+  • "formula" — equations, derivations, mathematical statements that benefit
+                from a step-by-step LaTeX walkthrough.
+  • "graph"   — function plots, scatter, bar charts, distributions, time
+                series.
+  • "2d-text" — citations, named statutes, articles, court rulings, named
+                papers/sources, definitions where the visualizer should show
+                an authoritative quote or summary.
+
+RULES
+1. Pick AT MOST 4 concepts per page. Quality over quantity. Skip pages with
+   no good visualization candidates — simply emit no concepts for them.
+   Judge each page independently, exactly as if it were the only page given.
+2. For EVERY concept, set "page" to the integer from the "===== PAGE_INDEX n
+   =====" marker of the page the concept appears on.
+3. Each concept's "anchor" MUST be a verbatim copy of the LAST 30–80
+   characters of the sentence that introduces it, taken EXACTLY from THAT
+   page's text (no paraphrase). The tag pill will be planted right after
+   this anchor — so the anchor string MUST appear once on its page, and the
+   renderer anchors at its tail. Pick anchors that are unique on the page.
+4. LANGUAGE: detect the language of each page's text and write BOTH "label"
+   and "context" in that same language so they read naturally next to the
+   source. Italian page → Italian outputs, English page → English outputs,
+   etc. Never translate the source.
+5. "label" is what shows on the pill (≤ 35 chars). Make it a short noun
+   phrase the reader would skim and instantly recognise.
+6. "context" gives the visualizer everything it needs to render the concept
+   without re-reading the full page: include the concept name, key
+   parameters mentioned in the text, and the field of study. 1–3 sentences.
+7. Avoid trivial picks (page numbers, headings, generic phrases). Avoid
+   duplicates of the same concept across a page.
+
+OUTPUT
+A single JSON object conforming to the supplied schema. No prose.
+
+--- PAGES ---
+===== PAGE_INDEX 0 =====
+Organic Chemistry
+Chapter 2 — Hydrocarbons, Functional Groups, and Geometry
+Braynr Open Textbook Project
+2.1 Methane and Tetrahedral Geometry
+Methane   (CH4)   is   the   simplest   hydrocarbon   and   the   prototypical   example   of   sp3
+hybridization. The carbon atom forms four equivalent sigma bonds to hydrogen atoms arranged
+at the vertices of a regular tetrahedron, with H–C–H bond angles of approximately 109.5 degrees
+and C–H bond lengths near 109 picometers. This geometry minimizes electron-pair repulsion in
+accordance with VSEPR theory.
+Methane is the principal component of natural gas and a potent greenhouse gas, with a global
+warming potential roughly 28 times that of carbon dioxide over a century. Its combustion follows
+the equation CH4 + 2 O2 !’ CO2 + 2 H2O, releasing approximately 890 kJ per mole. Visualizing
+the three-dimensional tetrahedral arrangement is essential to understanding why methane is non-
+polar despite the polarity of individual C–H bonds.
+2.2 The Water Molecule and Hydrogen Bonding
+Water (H2O) consists of an oxygen atom bonded to two hydrogen atoms with an H–O–H
+bond angle of about 104.5 degrees, slightly less than the ideal tetrahedral angle because of
+repulsion from the two lone pairs on oxygen. The molecule is bent and strongly polar, with a
+dipole moment of 1.85 debye pointing from the hydrogens toward the oxygen.
+Each water molecule can participate in up to four hydrogen bonds — two as donor through
+its hydrogens, two as acceptor through the oxygen lone pairs. This network underlies water's
+remarkable properties: high boiling point, high specific heat, surface tension, and the lower
+density of ice relative to liquid water. Visualization of the lattice of hydrogen-bonded water
+molecules in ice reveals a hexagonal open structure that explains why ice floats.
+2.3 Benzene and Aromaticity
+Benzene (C6H6) is a planar six-membered ring of carbon atoms, each bonded to a single
+hydrogen. The C–C bond lengths are all 139 picometers — intermediate between a single bond
+(154 pm) and a double bond (134 pm) — reflecting the delocalization of six pi electrons across
+the ring. This continuous pi system gives benzene its aromatic stability.
+Hückel's rule states that a planar, fully conjugated monocyclic system is aromatic if it
+contains 4n+2 pi electrons. Benzene satisfies the rule with n = 1, accounting for its enhanced
+stability   and   characteristic   chemistry:   it   preferentially   undergoes   electrophilic   aromatic
+substitution rather than addition. Visualizing the molecular orbitals — three bonding and three
+antibonding pi MOs distributed above and below the ring plane — clarifies why aromaticity is
+--- END PAGES ---

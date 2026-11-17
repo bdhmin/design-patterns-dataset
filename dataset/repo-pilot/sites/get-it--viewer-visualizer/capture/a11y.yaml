@@ -1,0 +1,32 @@
+- link "Upload":
+  - /url: /
+- link "Open library":
+  - /url: /library
+  - text: Library
+- text: Cell_Biology_L07_-_Membrane_… manual Synced 33d ago 7/7 viz ready
+- button "Settings"
+- button "Account"
+- 'button "3D Model: Fluid mosaic membrane"'
+- 'button "Formula: Fick''s law of diffusion"'
+- 'button "Graph: Carrier saturation"':
+  - 'tooltip "Graph: Carrier saturation"'
+- 'button "Animation: Na+/glucose symport"'
+- 'button "Source: Tonicity and red cells"'
+- text: page 1
+- 'button "3D Model: Receptor-mediated endocytosis"'
+- 'button "Source: CFTR and cystic fibrosis"'
+- text: page 2
+- button "Previous page" [disabled]
+- button "Jump to page": 1 / 2
+- button "Next page"
+- button "Set custom zoom": 100%
+- button "Zoom in"
+- button "Zoom out"
+- banner:
+  - button "Visualizer"
+  - text: Graph
+  - paragraph: Carrier saturation
+  - button "More actions"
+- contentinfo:
+  - paragraph: Carrier-mediated transport rate vs concentration saturates (Vmax, Km) vs linear diffusion.
+- alert

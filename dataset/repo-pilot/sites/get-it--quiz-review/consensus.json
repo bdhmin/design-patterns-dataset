@@ -1,0 +1,1117 @@
+{
+  "site": {
+    "slug": "get-it--quiz-review",
+    "url": "http://localhost:4401/viewer/994a113e-e7ba-4f78-926a-7154208adfff",
+    "finalUrl": "http://localhost:4401/viewer/994a113e-e7ba-4f78-926a-7154208adfff",
+    "status": 200,
+    "title": "Get It.",
+    "capturedAt": "2026-11-16T17:54:43.025Z",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "screenshot": {
+      "ref": "capture/screenshot.png",
+      "width": 1440,
+      "height": 2198
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.8127.18 Safari/537.36",
+    "domain": "education",
+    "domainNote": "AI study companion: PDF lecture viewer with inline AI visualization tags and a side panel of study tools (quizzes, flashcards, chat, knowledge graph)",
+    "provenance": {
+      "source": "repo",
+      "record": "repos/repo-pilot/get-it/explore.json",
+      "repo": {
+        "name": "beltromatti/get-it",
+        "url": "https://github.com/beltromatti/get-it",
+        "commit": "ae0fa999f352b951ab8150fac5dcf9d7ab6fd9a4",
+        "license": "Apache-2.0"
+      },
+      "view": {
+        "slug": "quiz-review",
+        "name": "Quiz question review",
+        "description": "Quizzes pane beside the document: new-quiz form and past quizzes list, with a graded multiple-choice question showing the correct answer and explanation."
+      }
+    }
+  },
+  "codebookVersion": "1.0.0",
+  "batch": "repo-pilot",
+  "raters": [
+    "rater-1",
+    "rater-2",
+    "rater-3"
+  ],
+  "domain": {
+    "value": "education",
+    "support": 3
+  },
+  "structure": {
+    "density": {
+      "value": "medium",
+      "support": 3
+    },
+    "layout": {
+      "rater-1": "three-zone workspace: top tab strip, left PDF reader pane (~55%), right tool panel split into a narrow list sidebar and a detail column",
+      "rater-2": "Desktop app: thin top bar with nav links and one open-document tab; below it two side-by-side panels — a PDF reader on the left (~55%) and a tool panel on the right holding a mode-switcher menu, a narrow quiz sidebar (new quiz form and past quizzes) and the active quiz question view",
+      "rater-3": "Desktop app with top tab bar; two-pane workspace: large paged PDF viewer on left, tool panel on right subdivided into a narrow quiz-list sidebar and a quiz detail column"
+    }
+  },
+  "aesthetics": {
+    "shape": {
+      "value": "soft",
+      "support": 3
+    },
+    "elevation": {
+      "value": "subtle-shadows",
+      "support": 3
+    },
+    "borders": {
+      "value": "thin",
+      "support": 3
+    },
+    "iconStyle": {
+      "value": "line",
+      "support": 3
+    },
+    "whitespace": {
+      "value": "moderate",
+      "support": 3
+    },
+    "backgroundTreatment": {
+      "value": "solid",
+      "support": 3
+    }
+  },
+  "patterns": [
+    {
+      "id": "ai-provenance",
+      "status": "absent",
+      "confidence": 0.6,
+      "dims": {},
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 419,
+            "y": 307,
+            "width": 96,
+            "height": 18
+          },
+          "note": "Inline viz chips mark AI-attached content type but carry no disclosure of model/sources",
+          "rater": "rater-1"
+        }
+      ]
+    },
+    {
+      "id": "annotation",
+      "status": "uncertain",
+      "confidence": 0.48,
+      "dims": {
+        "anchor": "text-range",
+        "layout": "side-margin-panel"
+      },
+      "support": 2,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 419,
+            "y": 307,
+            "width": 96,
+            "height": 18
+          },
+          "quote": "Fluid mo...",
+          "region": "document-viewer",
+          "note": "Pill chip (3D Model) anchored after 'phospholipid bilayer'",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 535,
+            "y": 598,
+            "width": 96,
+            "height": 18
+          },
+          "quote": "Carrier...",
+          "region": "document-viewer",
+          "note": "Graph chip; clicking opens 'Carrier saturation' chart in right panel (verified live)",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 419,
+            "y": 307,
+            "width": 96,
+            "height": 18
+          },
+          "quote": "Fluid mo...",
+          "region": "document-viewer",
+          "note": "3D Model chip",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 535,
+            "y": 598,
+            "width": 96,
+            "height": 18
+          },
+          "quote": "Carrier...",
+          "region": "document-viewer",
+          "note": "Graph chip, selected (dark outline)",
+          "rater": "rater-3"
+        }
+      ],
+      "ties": [
+        "dims.marker"
+      ]
+    },
+    {
+      "id": "app-shell",
+      "status": "present",
+      "confidence": 0.8,
+      "dims": {
+        "primary": "top-navigation-bar",
+        "secondary": "none",
+        "items": [
+          "fixed-destinations"
+        ],
+        "visibility": "always-visible",
+        "structure": "document-tabs"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 46
+          },
+          "quote": "Upload Library Cell_Biology_L07_-_Membr... MANUAL",
+          "region": "top-bar",
+          "note": "Persistent top strip with destinations, document tab, sync status, settings and account",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 48
+          },
+          "quote": "Upload Library Cell_Biology_L07_-_Membr... MANUAL",
+          "region": "top-bar",
+          "note": "Persistent top bar with fixed destinations plus open-document tab and account/settings",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 46
+          },
+          "quote": "Upload Library",
+          "region": "top-bar",
+          "note": "Persistent top bar with global destinations, document tab, status and account",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "badge",
+      "status": "present",
+      "confidence": 0.8,
+      "dims": {
+        "meaning": "status",
+        "aggregation": "per-item"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1330,
+            "y": 172,
+            "width": 77,
+            "height": 25
+          },
+          "quote": "Correct",
+          "region": "quiz-detail",
+          "note": "Green status pill",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 426,
+            "y": 14,
+            "width": 70,
+            "height": 20
+          },
+          "quote": "MANUAL",
+          "region": "top-bar",
+          "note": "Amber label pill on document tab",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 1120,
+            "y": 12,
+            "width": 122,
+            "height": 24
+          },
+          "quote": "Synced 33d ago",
+          "region": "top-bar",
+          "note": "Sync status pill",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 1250,
+            "y": 12,
+            "width": 106,
+            "height": 24
+          },
+          "quote": "7/7 viz ready",
+          "region": "top-bar",
+          "note": "Count status pill",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 426,
+            "y": 13,
+            "width": 74,
+            "height": 20
+          },
+          "quote": "MANUAL",
+          "region": "top-bar",
+          "note": "Status label pill on document tab",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 1330,
+            "y": 171,
+            "width": 77,
+            "height": 26
+          },
+          "quote": "Correct",
+          "region": "quiz-detail",
+          "note": "Green status pill",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 1250,
+            "y": 11,
+            "width": 106,
+            "height": 26
+          },
+          "quote": "7/7 viz ready",
+          "region": "top-bar",
+          "note": "Count status chip",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 1010,
+            "y": 242,
+            "width": 12,
+            "height": 14
+          },
+          "quote": "2",
+          "region": "quiz-sidebar",
+          "note": "Count of past quizzes",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 426,
+            "y": 13,
+            "width": 86,
+            "height": 21
+          },
+          "quote": "MANUAL",
+          "region": "top-bar",
+          "note": "label pill on document tab",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 1120,
+            "y": 11,
+            "width": 122,
+            "height": 26
+          },
+          "quote": "Synced 33d ago",
+          "region": "top-bar",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 1250,
+            "y": 11,
+            "width": 106,
+            "height": 26
+          },
+          "quote": "7/7 viz ready",
+          "region": "top-bar",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 1330,
+            "y": 171,
+            "width": 78,
+            "height": 26
+          },
+          "quote": "Correct",
+          "region": "quiz-detail",
+          "note": "green status pill for answer correctness",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "card",
+      "status": "present",
+      "confidence": 0.67,
+      "dims": {
+        "media": "none",
+        "actions": "none",
+        "shape": "horizontal",
+        "style": "outlined",
+        "target": "whole-card"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 814,
+            "y": 262,
+            "width": 207,
+            "height": 58
+          },
+          "quote": "Whole document 4/4 questions done",
+          "region": "quiz-sidebar",
+          "note": "Past-quiz card; selected one is white with soft shadow, unselected sits flat",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 1054,
+            "y": 214,
+            "width": 353,
+            "height": 84
+          },
+          "quote": "Which transport mode saturates at high substrate concentration?",
+          "region": "quiz-detail",
+          "note": "Question card",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 812,
+            "y": 262,
+            "width": 211,
+            "height": 58
+          },
+          "quote": "Whole document",
+          "region": "quiz-sidebar",
+          "note": "Past-quiz item card with title, status dot, count, done and progress bar; selected one has white fill",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 814,
+            "y": 262,
+            "width": 207,
+            "height": 60
+          },
+          "quote": "Whole document 4/4 questions done",
+          "region": "quiz-sidebar",
+          "note": "Selected past-quiz item as white card; unselected item is borderless",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "chart",
+      "status": "absent",
+      "confidence": 0.73,
+      "dims": {},
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 806,
+            "y": 52,
+            "width": 625,
+            "height": 800
+          },
+          "note": "Chart only appears after clicking a chip (Visualizer mode); not in captured Quizzes state",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 806,
+            "y": 52,
+            "width": 625,
+            "height": 600
+          },
+          "note": "Chart only appears after clicking a Graph chip live; not in capture",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "choice-control",
+      "status": "present",
+      "confidence": 0.82,
+      "dims": {
+        "cardinality": "single-choice",
+        "form": "option-cards",
+        "option": [
+          "label-only"
+        ],
+        "timing": "immediately",
+        "largeSets": "show-all"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1054,
+            "y": 314,
+            "width": 353,
+            "height": 216
+          },
+          "quote": "B Carrier-mediated transport",
+          "region": "quiz-detail",
+          "note": "Lettered A-D answer cards; chosen correct answer turns green with check, others dimmed/disabled after answering",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 1054,
+            "y": 314,
+            "width": 353,
+            "height": 216
+          },
+          "quote": "A Simple diffusion B Carrier-mediated transport C Osmosis D Diffusion of O2",
+          "region": "quiz-detail",
+          "note": "Lettered answer option cards; chosen B shown green with check, others disabled; explanation revealed",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 1054,
+            "y": 314,
+            "width": 353,
+            "height": 216
+          },
+          "quote": "B Carrier-mediated transport",
+          "region": "quiz-detail",
+          "note": "Four lettered answer rows; chosen correct answer green with check, others disabled after answering",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "menu",
+      "status": "present",
+      "confidence": 0.83,
+      "dims": {
+        "openBy": "button-click",
+        "structure": "flat",
+        "item": [
+          "description",
+          "icon",
+          "label"
+        ],
+        "itemSet": "fixed",
+        "form": "vertical-list"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 826,
+            "y": 61,
+            "width": 99,
+            "height": 28
+          },
+          "quote": "Quizzes",
+          "region": "tool-panel-header",
+          "note": "Dropdown opens list of tools: Visualizer, Knowledge Graph, Chat, Flashcards, Quizzes, Feynman, each with icon and description (verified live)",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 1383,
+            "y": 60,
+            "width": 28,
+            "height": 28
+          },
+          "region": "tool-panel-header",
+          "note": "More actions overflow button",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 826,
+            "y": 61,
+            "width": 99,
+            "height": 28
+          },
+          "quote": "Quizzes",
+          "region": "tool-header",
+          "note": "Dropdown trigger; live check opens list: Visualizer, Knowledge Graph, Chat, Flashcards, Quizzes, Feynman, each with icon and description",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 1383,
+            "y": 60,
+            "width": 28,
+            "height": 28
+          },
+          "region": "tool-header",
+          "note": "More actions overflow button",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 826,
+            "y": 61,
+            "width": 99,
+            "height": 28
+          },
+          "quote": "Quizzes",
+          "region": "tool-panel-header",
+          "note": "Dropdown trigger; live it lists Visualizer, Knowledge Graph, Chat, Flashcards, Quizzes, Feynman with icons and descriptions",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "overview-detail",
+      "status": "present",
+      "confidence": 0.7,
+      "dims": {
+        "attributePlacement": [
+          "in-both-views"
+        ],
+        "abstraction": [
+          "graphic",
+          "summary"
+        ],
+        "relationship": "one-to-one",
+        "openIn": "side-by-side",
+        "overviewType": [
+          "list"
+        ],
+        "detailMultiplicity": "one-at-a-time",
+        "openBy": [
+          "click"
+        ],
+        "openFrom": "whole-item"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 814,
+            "y": 240,
+            "width": 207,
+            "height": 145
+          },
+          "quote": "PAST QUIZZES 2",
+          "region": "quiz-sidebar",
+          "note": "List of past quizzes with scope, count and progress bar",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 1030,
+            "y": 98,
+            "width": 401,
+            "height": 570
+          },
+          "quote": "Whole document 4/4 answered",
+          "region": "quiz-detail",
+          "note": "Selected quiz shown in detail beside list",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 812,
+            "y": 262,
+            "width": 211,
+            "height": 58
+          },
+          "quote": "Whole document 4/4 questions done",
+          "region": "quiz-sidebar",
+          "note": "Selected past quiz (white) in list",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 1030,
+            "y": 98,
+            "width": 401,
+            "height": 580
+          },
+          "quote": "Whole document 4/4 answered",
+          "region": "quiz-detail",
+          "note": "Detail view of the selected quiz",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 814,
+            "y": 262,
+            "width": 207,
+            "height": 125
+          },
+          "quote": "PAST QUIZZES 2",
+          "region": "quiz-sidebar",
+          "note": "List of past quizzes; the selected one (white card) shown in detail at right",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 1030,
+            "y": 98,
+            "width": 401,
+            "height": 580
+          },
+          "quote": "Whole document 4/4 answered",
+          "region": "quiz-detail",
+          "rater": "rater-3"
+        }
+      ],
+      "ties": [
+        "dims.attributeScope"
+      ]
+    },
+    {
+      "id": "pagination",
+      "status": "present",
+      "confidence": 0.75,
+      "dims": {
+        "mechanism": "next-and-previous",
+        "position": "page-n-of-m"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 349,
+            "y": 2144,
+            "width": 108,
+            "height": 32
+          },
+          "quote": "1 / 2",
+          "region": "document-viewer",
+          "note": "Floating page navigator with prev/next and jump-to-page",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 350,
+            "y": 2145,
+            "width": 106,
+            "height": 30
+          },
+          "quote": "1 / 2",
+          "region": "document-viewer",
+          "note": "Previous (disabled) / Jump to page / Next page",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 349,
+            "y": 2144,
+            "width": 108,
+            "height": 32
+          },
+          "quote": "1 / 2",
+          "region": "document-viewer",
+          "note": "Floating pill with prev/next page arrows and 'Jump to page' counter",
+          "rater": "rater-3"
+        }
+      ],
+      "ties": [
+        "dims.pageSize"
+      ]
+    },
+    {
+      "id": "progress-indicator",
+      "status": "present",
+      "confidence": 0.78,
+      "dims": {
+        "determinacy": "steps-completed",
+        "form": "linear-bar",
+        "coverage": "a-region",
+        "control": "no-control"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1046,
+            "y": 106,
+            "width": 369,
+            "height": 36
+          },
+          "quote": "4/4 answered",
+          "region": "quiz-detail",
+          "note": "Indigo linear bar of answered questions",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 820,
+            "y": 292,
+            "width": 195,
+            "height": 24
+          },
+          "quote": "4/4 questions done",
+          "region": "quiz-sidebar",
+          "note": "Per-quiz mini progress bars",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 1048,
+            "y": 108,
+            "width": 365,
+            "height": 34
+          },
+          "quote": "Whole document 4/4 answered",
+          "region": "quiz-detail",
+          "note": "Indigo linear bar showing answered questions",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 820,
+            "y": 292,
+            "width": 195,
+            "height": 24
+          },
+          "quote": "4/4 questions done",
+          "region": "quiz-sidebar",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 1050,
+            "y": 108,
+            "width": 361,
+            "height": 34
+          },
+          "quote": "4/4 answered",
+          "region": "quiz-detail",
+          "note": "Indigo linear bar of quiz completion",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 820,
+            "y": 292,
+            "width": 195,
+            "height": 24
+          },
+          "quote": "4/4 questions done",
+          "region": "quiz-sidebar",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "prompt-input",
+      "status": "present",
+      "confidence": 0.68,
+      "dims": {
+        "content": [
+          "plain-prompt"
+        ],
+        "layout": "sidebar-composer",
+        "submitBy": [
+          "click-send"
+        ],
+        "assistance": [
+          "placeholder-examples"
+        ]
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 814,
+            "y": 106,
+            "width": 207,
+            "height": 128
+          },
+          "quote": "Topic, or whole doc",
+          "region": "quiz-sidebar",
+          "note": "Topic field + sparkle 'Generate quiz' button that asks the model to generate a quiz",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 814,
+            "y": 106,
+            "width": 207,
+            "height": 128
+          },
+          "quote": "NEW QUIZ Multiple-choice questions Topic, or whole doc Generate quiz",
+          "region": "quiz-sidebar",
+          "note": "Topic field and sparkle 'Generate quiz' button sends a brief to the model",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 814,
+            "y": 106,
+            "width": 207,
+            "height": 128
+          },
+          "quote": "Topic, or whole doc",
+          "region": "quiz-sidebar",
+          "note": "Topic field + 'Generate quiz' button with sparkle icon triggers AI generation",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "reader",
+      "status": "present",
+      "confidence": 0.8,
+      "dims": {
+        "pagination": "fixed-layout"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 41,
+            "y": 84,
+            "width": 723,
+            "height": 1023
+          },
+          "quote": "Cell Biology — Lecture 7: Membrane Transport",
+          "region": "document-viewer",
+          "note": "PDF page rendered as canvas, page 1 of 2",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 670,
+            "y": 2146,
+            "width": 114,
+            "height": 28
+          },
+          "quote": "100%",
+          "region": "document-viewer",
+          "note": "Zoom control",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 41,
+            "y": 84,
+            "width": 723,
+            "height": 1023
+          },
+          "quote": "Cell Biology — Lecture 7: Membrane Transport",
+          "region": "document-viewer",
+          "note": "PDF page rendered on canvas, fixed layout; page 2 follows below",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 350,
+            "y": 2145,
+            "width": 430,
+            "height": 30
+          },
+          "quote": "1 / 2  100%",
+          "region": "document-viewer",
+          "note": "Page pager and zoom in/out controls",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 41,
+            "y": 84,
+            "width": 723,
+            "height": 1023
+          },
+          "quote": "Cell Biology — Lecture 7: Membrane Transport",
+          "region": "document-viewer",
+          "note": "PDF page rendered as canvas; pages stacked with 'page 1' label; zoom 100% +/-",
+          "rater": "rater-3"
+        }
+      ],
+      "ties": [
+        "dims.navigation",
+        "dims.annotations",
+        "dims.progress",
+        "dims.typography"
+      ]
+    },
+    {
+      "id": "split-pane",
+      "status": "present",
+      "confidence": 0.68,
+      "dims": {
+        "orientation": "side-by-side",
+        "relationship": "linked-selection"
+      },
+      "support": 2,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 8,
+            "y": 52,
+            "width": 1423,
+            "height": 2137
+          },
+          "region": "document-viewer",
+          "note": "Document pane beside tool pane; clicking a viz chip in the document loads its visualization in the right pane (verified live). Divider resizability not verified.",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 8,
+            "y": 52,
+            "width": 1423,
+            "height": 2138
+          },
+          "region": "document-viewer",
+          "note": "Document pane left, tool pane right; clicking an inline chip in the document loads its visualization in the right pane (verified live)",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "tabs",
+      "status": "uncertain",
+      "confidence": 0.53,
+      "dims": {
+        "placement": "top"
+      },
+      "support": 2,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 202,
+            "y": 6,
+            "width": 310,
+            "height": 38
+          },
+          "quote": "Cell_Biology_L07_-_Membr...",
+          "region": "top-bar",
+          "note": "Active document tab joined to content area",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 202,
+            "y": 6,
+            "width": 310,
+            "height": 38
+          },
+          "quote": "Cell_Biology_L07_-_Membr...",
+          "region": "top-bar",
+          "note": "Active document tab with file icon, truncated title and MANUAL label",
+          "rater": "rater-2"
+        }
+      ],
+      "ties": [
+        "dims.label",
+        "dims.origin"
+      ]
+    },
+    {
+      "id": "text-field",
+      "status": "absent",
+      "confidence": 0.5,
+      "dims": {},
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 823,
+            "y": 155,
+            "width": 189,
+            "height": 32
+          },
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "tooltip",
+      "status": "absent",
+      "confidence": 0.5,
+      "dims": {},
+      "support": 2,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 535,
+            "y": 598,
+            "width": 96,
+            "height": 18
+          },
+          "note": "Chip shows a hover label only in live interaction",
+          "rater": "rater-2"
+        }
+      ]
+    },
+    {
+      "id": "wizard",
+      "status": "absent",
+      "confidence": 0.6,
+      "dims": {},
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1054,
+            "y": 172,
+            "width": 100,
+            "height": 25
+          },
+          "quote": "Question 1 / 4",
+          "note": "Question-by-question quiz flow is assessment, not a data-entry wizard",
+          "rater": "rater-1"
+        }
+      ]
+    }
+  ],
+  "note": "Majority vote across raters. Free-text fields (layout, typography, palette, notes) stay per rater in labels/.",
+  "computedAt": "2026-11-16T17:56:45.629Z"
+}

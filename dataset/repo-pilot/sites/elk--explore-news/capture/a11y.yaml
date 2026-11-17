@@ -1,0 +1,112 @@
+- main:
+  - complementary:
+    - link "Elk":
+      - /url: /home
+      - img
+      - text: Elk
+    - button "Go back"
+    - navigation:
+      - link "Home":
+        - /url: /home
+      - link "Notifications":
+        - /url: /notifications
+      - link "Conversations":
+        - /url: /conversations
+      - link "Favorites":
+        - /url: /favourites
+      - link "Bookmarks":
+        - /url: /bookmarks
+      - link "Compose":
+        - /url: /compose
+      - link "Scheduled posts":
+        - /url: /scheduled-posts
+      - link "Explore":
+        - /url: /localhost:4410/explore/links
+      - link "Local":
+        - /url: /localhost:4410/public/local
+      - link "Federated":
+        - /url: /localhost:4410/public
+      - link "Lists":
+        - /url: /localhost:4410/lists
+      - link "Hashtags":
+        - /url: /hashtags
+      - link "Collections":
+        - /url: /localhost:4410/collections
+      - link "Settings":
+        - /url: /settings
+    - paragraph:
+      - text: Viewing
+      - strong: localhost:4410
+      - text: public data
+    - paragraph: Sign in to follow profiles or hashtags, favorite, share and reply to posts.
+    - button "Sign in"
+  - link "Posts":
+    - /url: /localhost:4410/explore
+  - link "Hashtags":
+    - /url: /localhost:4410/explore/tags
+  - link "News":
+    - /url: /localhost:4410/explore/links
+  - text: For you
+  - paragraph: These news stories are being talked about by people on this and other servers of the decentralized network right now.
+  - button
+  - 'link "Urban roofs as stepping stones for wild bees: native forbs triple pollinator visitation - Urban roofs as stepping stones for wild bees: native forbs triple pollinator visitation Urban Forestry & Urban Greening Urban roofs as stepping stones for wild bees: native forbs triple pollinator visitation Green roofs are increasingly promoted as pollinator habitat, but their value depends strongly on planting design. Across 14 roofs in Gothenburg we recorded..."':
+    - /url: https://doi.org/10.1016/j.ufug.2026.128512
+    - 'img "Urban roofs as stepping stones for wild bees: native forbs triple pollinator visitation - Urban roofs as stepping stones for wild bees: native forbs triple pollinator visitation"'
+    - paragraph: Urban Forestry & Urban Greening
+    - strong: "Urban roofs as stepping stones for wild bees: native forbs triple pollinator visitation"
+    - paragraph: Green roofs are increasingly promoted as pollinator habitat, but their value depends strongly on planting design. Across 14 roofs in Gothenburg we recorded...
+  - link "The hidden battery under Copenhagen's streets - The hidden battery under Copenhagen's streets Nordic Climate Desk The hidden battery under Copenhagen's streets District heating pipes and giant hot-water tanks are quietly balancing Denmark's wind-heavy grid. Here is how it works.":
+    - /url: https://nordicclimatedesk.eu/2026/11/district-heating-battery
+    - img "The hidden battery under Copenhagen's streets - The hidden battery under Copenhagen's streets"
+    - paragraph: Nordic Climate Desk
+    - strong: The hidden battery under Copenhagen's streets
+    - paragraph: District heating pipes and giant hot-water tanks are quietly balancing Denmark's wind-heavy grid. Here is how it works.
+  - link "About Harbor Social - About Harbor Social Harbor Social About Harbor Social A friendly Mastodon server for people around the North Sea and Baltic.":
+    - /url: https://harbor.social/about
+    - img "About Harbor Social - About Harbor Social"
+    - paragraph: Harbor Social
+    - strong: About Harbor Social
+    - paragraph: A friendly Mastodon server for people around the North Sea and Baltic.
+  - 'link "volkov.sec Your dependencies have dependencies: supply chain attacks in 2026 Slides and notes from my talk at Security Fest, Gothenburg."':
+    - /url: https://volkov.sec/talks/supply-chain-2026
+    - paragraph: volkov.sec
+    - strong: "Your dependencies have dependencies: supply chain attacks in 2026"
+    - paragraph: Slides and notes from my talk at Security Fest, Gothenburg.
+  - link "Sweden's emissions rose for the first time in a decade. Here's why. - Sweden's emissions rose for the first time in a decade. Here's why. Nordic Climate Desk Sweden's emissions rose for the first time in a decade. Here's why. Cuts to the fuel blending mandate wiped out years of progress in the transport sector.":
+    - /url: https://nordicclimatedesk.eu/2026/11/emissions-rise
+    - img "Sweden's emissions rose for the first time in a decade. Here's why. - Sweden's emissions rose for the first time in a decade. Here's why."
+    - paragraph: Nordic Climate Desk
+    - strong: Sweden's emissions rose for the first time in a decade. Here's why.
+    - paragraph: Cuts to the fuel blending mandate wiped out years of progress in the transport sector.
+  - text: End of the list
+  - complementary:
+    - textbox "Search"
+    - text: Harbor Social
+    - img "Thumbnail for Harbor Social server"
+    - paragraph: "A friendly Mastodon server for people around the North Sea and Baltic: scientists, makers, cyclists, cooks and the generally curious."
+    - button "Toggle Theme"
+    - button "Zen Mode"
+    - button "Keyboard shortcuts"
+    - link "Sponsor us":
+      - /url: https://github.com/sponsors/elk-zone
+    - text: Built
+    - time: 10 hours ago
+    - text: ·
+    - link "v1.0.1":
+      - /url: https://github.com/elk-zone/elk/releases/tag/v1.0.1
+    - text: ·
+    - link "6b956a6":
+      - /url: https://github.com/elk-zone/elk/commit/6b956a6d4a89a676059d83a0b0e59d7165d5f266
+    - link "About":
+      - /url: /settings/about
+    - text: ·
+    - link "Mastodon":
+      - /url: /m.webtoo.ls/@elk
+    - text: ·
+    - link "Discord":
+      - /url: https://chat.elk.zone
+    - text: ·
+    - link "GitHub":
+      - /url: https://github.com/elk-zone/elk
+- status
+- img

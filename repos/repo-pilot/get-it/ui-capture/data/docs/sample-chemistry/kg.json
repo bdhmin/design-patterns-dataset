@@ -1,0 +1,108 @@
+{
+  "v": 1,
+  "docId": "sample-chemistry",
+  "status": "ready",
+  "buildAt": 1788947790000,
+  "lastEvaluatedAt": 1789200480000,
+  "evaluationCount": 10,
+  "nodes": [
+    {
+      "id": "methane-tetrahedron",
+      "label": "Methane tetrahedron",
+      "summary": "CH4: central carbon, four H at 109.5 degrees.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 63,
+        "comprehension": 43,
+        "structure": 41,
+        "application": 35
+      },
+      "evaluatorNote": "Recalls the definition but hesitated applying it to an unseen example."
+    },
+    {
+      "id": "bent-water-molecule",
+      "label": "Bent water molecule",
+      "summary": "H2O bent geometry, 104.5 degrees due to two lone pairs.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 26,
+        "comprehension": 19,
+        "structure": 13,
+        "application": 1
+      },
+      "evaluatorNote": "Only seen while reading — no flashcard or quiz evidence yet."
+    },
+    {
+      "id": "benzene-ring",
+      "label": "Benzene ring",
+      "summary": "C6H6 planar ring with delocalised pi electrons.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 31,
+        "comprehension": 12,
+        "structure": 7,
+        "application": 0
+      },
+      "evaluatorNote": "Only seen while reading — no flashcard or quiz evidence yet."
+    },
+    {
+      "id": "huckel-s-rule",
+      "label": "Hückel's rule",
+      "summary": "Aromatic if planar, cyclic, fully conjugated with 4n+2 pi electrons.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 64,
+        "comprehension": 51,
+        "structure": 43,
+        "application": 41
+      },
+      "evaluatorNote": "Recalls the definition but hesitated applying it to an unseen example."
+    },
+    {
+      "id": "vsepr",
+      "label": "VSEPR theory",
+      "summary": "Electron-pair repulsion predicts molecular geometry.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 36,
+        "comprehension": 15,
+        "structure": 19,
+        "application": 4
+      },
+      "evaluatorNote": "Only seen while reading — no flashcard or quiz evidence yet."
+    }
+  ],
+  "edges": [
+    {
+      "source": "methane-tetrahedron",
+      "target": "bent-water-molecule",
+      "relation": "contrasts with"
+    },
+    {
+      "source": "bent-water-molecule",
+      "target": "benzene-ring",
+      "relation": "requires"
+    },
+    {
+      "source": "methane-tetrahedron",
+      "target": "huckel-s-rule",
+      "relation": "is an example of"
+    },
+    {
+      "source": "bent-water-molecule",
+      "target": "vsepr",
+      "relation": "contrasts with"
+    }
+  ],
+  "globalNote": "Early days: most nodes have only been read, not tested. Start with flashcards on the core definitions, then one quiz to calibrate."
+}

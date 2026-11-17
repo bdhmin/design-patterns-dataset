@@ -1,0 +1,821 @@
+{
+  "site": {
+    "slug": "elk--explore-posts",
+    "url": "http://localhost:4400/explore",
+    "finalUrl": "http://localhost:4400/explore",
+    "status": 200,
+    "title": "Posts | Explore | Elk",
+    "capturedAt": "2026-11-16T08:33:02.828Z",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "screenshot": {
+      "ref": "capture/screenshot.png",
+      "width": 1440,
+      "height": 4422
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.8127.18 Safari/537.36",
+    "domain": "social-community",
+    "domainNote": "Elk — a web client for Mastodon/fediverse; Explore > trending Posts timeline, signed-out view",
+    "provenance": {
+      "source": "repo",
+      "record": "repos/repo-pilot/elk/explore.json",
+      "repo": {
+        "name": "elk-zone/elk",
+        "url": "https://github.com/elk-zone/elk",
+        "commit": "6b956a6d4a89a676059d83a0b0e59d7165d5f266",
+        "license": "MIT"
+      },
+      "view": {
+        "slug": "explore-posts",
+        "name": "Explore – trending posts",
+        "description": "Explore page with tabs (Posts, Hashtags, News, For you) listing trending posts with images, link cards and action bars, plus sidebar navigation and instance info."
+      }
+    }
+  },
+  "codebookVersion": "1.0.0",
+  "batch": "repo-pilot",
+  "raters": [
+    "rater-1",
+    "rater-2",
+    "rater-3"
+  ],
+  "domain": {
+    "value": "social-community",
+    "support": 3
+  },
+  "structure": {
+    "density": {
+      "value": "medium",
+      "support": 3
+    },
+    "layout": {
+      "rater-1": "three-column app shell: left sidebar nav with sign-in CTA, centre single-column feed under a top tab strip, right aside with search, server info and footer",
+      "rater-2": "three-column social client: left vertical nav sidebar, central 600px single-column timeline with route tabs and dismissible notice, right sidebar with search, server info and footer",
+      "rater-3": "three-column app layout: left sidebar nav with logo and sign-in CTA, center 600px timeline column with route tabs, dismissible info notice and post stream, right aside with search, server info card and footer"
+    }
+  },
+  "aesthetics": {
+    "shape": {
+      "value": "soft",
+      "support": 3
+    },
+    "elevation": {
+      "value": "flat",
+      "support": 3
+    },
+    "borders": {
+      "value": "thin",
+      "support": 3
+    },
+    "iconStyle": {
+      "value": "line",
+      "support": 3
+    },
+    "whitespace": {
+      "value": "moderate",
+      "support": 3
+    },
+    "backgroundTreatment": {
+      "value": "solid",
+      "support": 3
+    }
+  },
+  "patterns": [
+    {
+      "id": "accordion",
+      "status": "absent",
+      "confidence": 0.7,
+      "dims": {},
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 707,
+            "y": 1296,
+            "width": 117,
+            "height": 30
+          },
+          "quote": "Show more",
+          "note": "content-warning reveal is a spoiler toggle, not a stacked accordion",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 707,
+            "y": 1296,
+            "width": 117,
+            "height": 30
+          },
+          "note": "Content-warning 'Show more' reveal on one post — a spoiler disclosure, not stacked accordion sections",
+          "quote": "Show more",
+          "rater": "rater-2"
+        }
+      ]
+    },
+    {
+      "id": "app-shell",
+      "status": "present",
+      "confidence": 0.88,
+      "dims": {
+        "primary": "sidebar",
+        "secondary": "sub-tabs-under-the-header",
+        "items": [
+          "fixed-destinations"
+        ],
+        "visibility": "always-visible",
+        "structure": "single-app"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 120,
+            "y": 86,
+            "width": 300,
+            "height": 723
+          },
+          "quote": "Home Notifications Conversations Favorites Bookmarks",
+          "note": "left sidebar primary nav with icons",
+          "region": "left-sidebar",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 435,
+            "y": 0,
+            "width": 600,
+            "height": 84
+          },
+          "quote": "Posts Hashtags News For you",
+          "note": "sub-tabs above content",
+          "region": "explore-tabs",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 1035,
+            "y": 0,
+            "width": 285,
+            "height": 970
+          },
+          "note": "right aside with search and instance info",
+          "region": "right-aside",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 120,
+            "y": 86,
+            "width": 300,
+            "height": 723
+          },
+          "note": "Persistent left sidebar navigation with fixed destinations",
+          "quote": "Home Notifications Conversations Favorites Bookmarks",
+          "region": "left-sidebar",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 1035,
+            "y": 0,
+            "width": 285,
+            "height": 970
+          },
+          "note": "Right column with search and server info framing the central content",
+          "region": "right-sidebar",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 120,
+            "y": 86,
+            "width": 300,
+            "height": 723
+          },
+          "quote": "Home Notifications Conversations Favorites Bookmarks",
+          "region": "left-sidebar",
+          "note": "Persistent sidebar navigation with fixed destinations; signed-out-only items greyed",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 435,
+            "y": 0,
+            "width": 600,
+            "height": 84
+          },
+          "quote": "Posts Hashtags News For you",
+          "region": "explore-tabs",
+          "note": "Secondary sub-tabs atop the content column",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "banner",
+      "status": "present",
+      "confidence": 0.75,
+      "dims": {
+        "scope": "section",
+        "severity": "information",
+        "dismissal": "dismissible",
+        "action": "none",
+        "placement": "top-of-content"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 435,
+            "y": 84,
+            "width": 600,
+            "height": 68
+          },
+          "quote": "These posts from this and other servers in the decentralized network are gaining traction on this server right now.",
+          "note": "info notice with close ×",
+          "region": "info-banner",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 435,
+            "y": 84,
+            "width": 600,
+            "height": 68
+          },
+          "note": "Info notice at top of the timeline with close X",
+          "quote": "These posts from this and other servers in the decentralized network are gaining traction on this server right now.",
+          "region": "trending-banner",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 435,
+            "y": 84,
+            "width": 600,
+            "height": 68
+          },
+          "quote": "These posts from this and other servers in the decentralized network are gaining traction on this server right now.",
+          "region": "info-banner",
+          "note": "Plain informational notice with × close button",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "card",
+      "status": "present",
+      "confidence": 0.8,
+      "dims": {
+        "media": "top-image",
+        "actions": "none",
+        "shape": "vertical",
+        "style": "filled",
+        "target": "whole-card"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 512,
+            "y": 268,
+            "width": 508,
+            "height": 364
+          },
+          "quote": "Sweden's emissions rose for the first time in a decade. Here's why.",
+          "note": "link preview card, top image on grey fill, whole card is a link",
+          "region": "feed",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 512,
+            "y": 915,
+            "width": 509,
+            "height": 120
+          },
+          "quote": "Your dependencies have dependencies",
+          "note": "variant with side placeholder thumbnail",
+          "region": "feed",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 512,
+            "y": 268,
+            "width": 509,
+            "height": 364
+          },
+          "note": "Link preview card: top image, source, bold title, truncated description; grey filled container, whole card is a link",
+          "quote": "Sweden's emissions rose for the first time in a decade. Here's why.",
+          "region": "feed",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 512,
+            "y": 915,
+            "width": 509,
+            "height": 120
+          },
+          "note": "Horizontal variant with side placeholder thumbnail",
+          "quote": "Your dependencies have dependencies: supply c…",
+          "region": "feed",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 512,
+            "y": 268,
+            "width": 509,
+            "height": 364
+          },
+          "quote": "Sweden's emissions rose for the first time in a decade. Here's why.",
+          "region": "timeline",
+          "note": "Link preview card: top image, grey-filled body with source, bold title, truncated description; whole card is a link",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 512,
+            "y": 915,
+            "width": 509,
+            "height": 120
+          },
+          "quote": "Your dependencies have dependencies: supply chain attacks in 2026",
+          "region": "timeline",
+          "note": "Exception: horizontal variant with side placeholder thumbnail",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "comment-thread",
+      "status": "absent",
+      "confidence": 0.8,
+      "dims": {},
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 512,
+            "y": 639,
+            "width": 37,
+            "height": 33
+          },
+          "note": "Only reply buttons; no threads shown",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "feed",
+      "status": "present",
+      "confidence": 0.91,
+      "dims": {
+        "density": "full-post",
+        "heterogeneity": [
+          "mixed-media-types"
+        ],
+        "ordering": "ranked",
+        "sources": [
+          "algorithmic-discovery"
+        ],
+        "arrangement": "single-column",
+        "position": "caught-up-marker",
+        "nesting": [
+          "flat"
+        ]
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 435,
+            "y": 152,
+            "width": 600,
+            "height": 530
+          },
+          "quote": "Nordic Climate Desk @climatedesk@mastodon.green",
+          "note": "post with author, body, link-preview card, action row",
+          "region": "feed",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 435,
+            "y": 690,
+            "width": 600,
+            "height": 130
+          },
+          "quote": "Vendor took 214 days to patch",
+          "note": "text-only post",
+          "region": "feed",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 435,
+            "y": 1230,
+            "width": 600,
+            "height": 150
+          },
+          "quote": "work rant, mild swearing in replies",
+          "note": "content-warning post collapsed behind 'Show more'",
+          "region": "feed",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 660,
+            "y": 4380,
+            "width": 120,
+            "height": 30
+          },
+          "quote": "End of the list",
+          "note": "end-of-stream marker",
+          "region": "feed-end",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 446,
+            "y": 166,
+            "width": 575,
+            "height": 510
+          },
+          "note": "Post with author, body, link preview card and engagement row",
+          "quote": "Sweden's emissions rose 4% in 2025",
+          "region": "feed",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 446,
+            "y": 694,
+            "width": 575,
+            "height": 120
+          },
+          "note": "Text-only post",
+          "quote": "Vendor took 214 days to patch",
+          "region": "feed",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 640,
+            "y": 4380,
+            "width": 160,
+            "height": 30
+          },
+          "note": "End marker",
+          "quote": "End of the list",
+          "region": "feed",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 446,
+            "y": 166,
+            "width": 575,
+            "height": 510
+          },
+          "quote": "Sweden's emissions rose 4% in 2025, the first increase in over a decade",
+          "region": "timeline",
+          "note": "Full post with large link preview card and action row",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 446,
+            "y": 694,
+            "width": 575,
+            "height": 120
+          },
+          "quote": "Vendor took 214 days to patch",
+          "region": "timeline",
+          "note": "Text-only post",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 446,
+            "y": 1235,
+            "width": 575,
+            "height": 135
+          },
+          "quote": "work rant, mild swearing in replies",
+          "region": "timeline",
+          "note": "Content-warning post with 'Show more' reveal; a11y tree ends with 'End of the list'",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "menu",
+      "status": "present",
+      "confidence": 0.85,
+      "dims": {
+        "openBy": "button-click",
+        "structure": "flat",
+        "item": [
+          "icon",
+          "label"
+        ],
+        "itemSet": "fixed",
+        "form": "vertical-list"
+      },
+      "support": 2,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 987,
+            "y": 694,
+            "width": 33,
+            "height": 33
+          },
+          "note": "'More' ⋯ trigger; live check opened a list: Show who reacted, Copy link to this post, Copy original link, Open in original site",
+          "region": "feed",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 987,
+            "y": 166,
+            "width": 33,
+            "height": 33
+          },
+          "region": "timeline",
+          "note": "'More' ⋯ button; live page opens a dropdown: Show who reacted, Copy link to this post, Copy original link, Open in original site",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "pagination",
+      "status": "absent",
+      "confidence": 0.6,
+      "dims": {},
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 640,
+            "y": 4380,
+            "width": 160,
+            "height": 30
+          },
+          "note": "No page controls; list simply ends",
+          "quote": "End of the list",
+          "rater": "rater-2"
+        }
+      ]
+    },
+    {
+      "id": "reactions",
+      "status": "present",
+      "confidence": 0.85,
+      "dims": {
+        "vocabulary": "single-like",
+        "aggregate": "total-count",
+        "add": [
+          "tap-a-dedicated-button"
+        ],
+        "visibility": "public-with-names"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 868,
+            "y": 639,
+            "width": 59,
+            "height": 33
+          },
+          "quote": "218",
+          "note": "Favorite heart with count; More menu offers 'Show who reacted'",
+          "region": "feed",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 868,
+            "y": 1042,
+            "width": 53,
+            "height": 33
+          },
+          "quote": "82",
+          "note": "favorited state in pink #fb7185",
+          "region": "feed",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 868,
+            "y": 639,
+            "width": 59,
+            "height": 33
+          },
+          "note": "Favorite heart with total count; active state pink in 3rd post",
+          "quote": "218",
+          "region": "feed",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 868,
+            "y": 1042,
+            "width": 53,
+            "height": 33
+          },
+          "note": "Favorited (pink) state",
+          "quote": "82",
+          "region": "feed",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 512,
+            "y": 639,
+            "width": 509,
+            "height": 33
+          },
+          "quote": "92 218",
+          "region": "timeline",
+          "note": "Boost and Favorite buttons with counts; favorited state turns pink (#fb7185), bookmarked turns yellow",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 868,
+            "y": 1042,
+            "width": 53,
+            "height": 33
+          },
+          "quote": "82",
+          "region": "timeline",
+          "note": "Favorited state filled pink",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "recommendations",
+      "status": "uncertain",
+      "confidence": 0.53,
+      "dims": {
+        "basis": [
+          "trending"
+        ],
+        "rationale": "short-label"
+      },
+      "support": 2,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 435,
+            "y": 84,
+            "width": 600,
+            "height": 68
+          },
+          "quote": "gaining traction on this server right now",
+          "region": "info-banner",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 435,
+            "y": 84,
+            "width": 600,
+            "height": 68
+          },
+          "quote": "gaining traction on this server right now",
+          "region": "info-banner",
+          "note": "Explains trending basis for the listed posts",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "tabs",
+      "status": "present",
+      "confidence": 0.8,
+      "dims": {
+        "placement": "top",
+        "label": [
+          "text"
+        ],
+        "origin": "fixed-by-the-designer",
+        "grouping": "flat",
+        "switchBy": [
+          "click"
+        ]
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 435,
+            "y": 10,
+            "width": 600,
+            "height": 63
+          },
+          "quote": "Posts",
+          "note": "route-link tabs sharing the content column; 'For you' dimmed (unavailable signed out)",
+          "region": "explore-tabs",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 435,
+            "y": 10,
+            "width": 600,
+            "height": 63
+          },
+          "note": "Route tabs for Explore sections; 'For you' greyed/disabled; no strong active indicator visible in capture",
+          "quote": "Posts Hashtags News For you",
+          "region": "explore-tabs",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 435,
+            "y": 10,
+            "width": 600,
+            "height": 63
+          },
+          "quote": "Posts Hashtags News For you",
+          "region": "explore-tabs",
+          "note": "Route-backed tabs; clicking News on live page swaps the panel to link previews and gives the active tab a grey fill. 'For you' is disabled/light grey.",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "text-field",
+      "status": "present",
+      "confidence": 0.82,
+      "dims": {
+        "supporting": [
+          "placeholder"
+        ],
+        "style": "outlined"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1047,
+            "y": 27,
+            "width": 268,
+            "height": 36
+          },
+          "quote": "Search",
+          "note": "search field with icon and placeholder",
+          "region": "right-aside",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 1046,
+            "y": 27,
+            "width": 270,
+            "height": 36
+          },
+          "note": "Search input with magnifier icon and placeholder in thin rounded outline",
+          "quote": "Search",
+          "region": "right-sidebar",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 1046,
+            "y": 27,
+            "width": 270,
+            "height": 36
+          },
+          "quote": "Search",
+          "region": "right-aside",
+          "note": "Rounded search input with magnifier icon and placeholder",
+          "rater": "rater-3"
+        }
+      ]
+    }
+  ],
+  "note": "Majority vote across raters. Free-text fields (layout, typography, palette, notes) stay per rater in labels/.",
+  "computedAt": "2026-11-16T17:50:51.426Z"
+}

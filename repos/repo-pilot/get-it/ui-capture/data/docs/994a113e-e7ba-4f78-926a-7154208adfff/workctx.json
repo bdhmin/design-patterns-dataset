@@ -1,0 +1,299 @@
+{
+  "v": 1,
+  "docId": "994a113e-e7ba-4f78-926a-7154208adfff",
+  "chats": [
+    {
+      "id": "sbl8rxw324v59",
+      "title": "SGLT1: why 2 Na+?",
+      "createdAt": 1790825793000,
+      "updatedAt": 1790825897430,
+      "messages": [
+        {
+          "role": "user",
+          "content": "why does SGLT1 need two sodium ions per glucose and not one?",
+          "ts": 1790825826867
+        },
+        {
+          "role": "assistant",
+          "content": "Energy budget. Glucose in the enterocyte can be much more concentrated than in the lumen, so moving it in is uphill. Each Na+ moving in releases free energy (concentration gradient **plus** the negative membrane potential).\n\nOne Na+ only provides enough to concentrate glucose ~100-fold; **two** Na+ square that, allowing ~10 000-fold accumulation. That lets the gut absorb glucose almost completely even when lumen levels are low.\n\nThe notes don't derive this, so it's a good one to confirm in office hours as you planned.",
+          "ts": 1790825897430
+        }
+      ]
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "s70jyg37gd6hv",
+      "topic": "all",
+      "createdAt": 1790552076000,
+      "endedAt": 1790552396000,
+      "cards": [
+        {
+          "q": "What crosses the bilayer by simple diffusion?",
+          "a": "Small non-polar molecules: O2, CO2, steroid hormones.",
+          "userAnswer": "small non-polar molecules",
+          "rating": 3,
+          "answeredAt": 1790552126000
+        },
+        {
+          "q": "Channel vs carrier protein?",
+          "a": "Channels: water-filled pores, very fast. Carriers: bind and change shape, saturate (Vmax, Km).",
+          "userAnswer": "channels",
+          "rating": 4,
+          "answeredAt": 1790552176000
+        },
+        {
+          "q": "RBC in hypotonic solution?",
+          "a": "Water enters, the cell swells and may lyse.",
+          "userAnswer": "water enters, the cell swells and may lyse",
+          "rating": 3,
+          "answeredAt": 1790552226000
+        },
+        {
+          "q": "Stoichiometry of the Na+/K+ pump?",
+          "a": "3 Na+ out, 2 K+ in per ATP.",
+          "userAnswer": "3 na+ out, 2 k+ in per atp",
+          "rating": 4,
+          "answeredAt": 1790552276000
+        },
+        {
+          "q": "How does SGLT1 move glucose uphill?",
+          "a": "Secondary active symport: couples 2 Na+ moving down their gradient.",
+          "userAnswer": "secondary active symport",
+          "rating": 3,
+          "answeredAt": 1790552326000
+        },
+        {
+          "q": "Cause of cystic fibrosis?",
+          "a": "Mutations in CFTR, a chloride channel.",
+          "userAnswer": "not sure",
+          "rating": 1,
+          "answeredAt": 1790552376000
+        }
+      ]
+    },
+    {
+      "id": "s879dupwehx4a",
+      "topic": "Fick's law of diffusion",
+      "createdAt": 1790977858000,
+      "endedAt": 1790978178000,
+      "cards": [
+        {
+          "q": "What crosses the bilayer by simple diffusion?",
+          "a": "Small non-polar molecules: O2, CO2, steroid hormones.",
+          "userAnswer": "small non-polar molecules",
+          "rating": 3,
+          "answeredAt": 1790977908000
+        },
+        {
+          "q": "Channel vs carrier protein?",
+          "a": "Channels: water-filled pores, very fast. Carriers: bind and change shape, saturate (Vmax, Km).",
+          "userAnswer": "channels",
+          "rating": 3,
+          "answeredAt": 1790977958000
+        },
+        {
+          "q": "RBC in hypotonic solution?",
+          "a": "Water enters, the cell swells and may lyse.",
+          "userAnswer": "water enters, the cell swells and may lyse",
+          "rating": 4,
+          "answeredAt": 1790978008000
+        },
+        {
+          "q": "Stoichiometry of the Na+/K+ pump?",
+          "a": "3 Na+ out, 2 K+ in per ATP.",
+          "userAnswer": "3 na+ out, 2 k+ in per atp",
+          "rating": 3,
+          "answeredAt": 1790978058000
+        },
+        {
+          "q": "How does SGLT1 move glucose uphill?",
+          "a": "Secondary active symport: couples 2 Na+ moving down their gradient.",
+          "userAnswer": "secondary active symport",
+          "rating": 3,
+          "answeredAt": 1790978108000
+        },
+        {
+          "q": "Cause of cystic fibrosis?",
+          "a": "Mutations in CFTR, a chloride channel.",
+          "userAnswer": "mutations in cftr, a chloride channel",
+          "rating": 4,
+          "answeredAt": 1790978158000
+        }
+      ]
+    },
+    {
+      "id": "s6egnxlurai3v",
+      "topic": "Carrier saturation",
+      "createdAt": 1791403640000,
+      "endedAt": 1791403960000,
+      "cards": [
+        {
+          "q": "What crosses the bilayer by simple diffusion?",
+          "a": "Small non-polar molecules: O2, CO2, steroid hormones.",
+          "userAnswer": "small non-polar molecules",
+          "rating": 3,
+          "answeredAt": 1791403690000
+        },
+        {
+          "q": "Channel vs carrier protein?",
+          "a": "Channels: water-filled pores, very fast. Carriers: bind and change shape, saturate (Vmax, Km).",
+          "userAnswer": "channels",
+          "rating": 3,
+          "answeredAt": 1791403740000
+        },
+        {
+          "q": "RBC in hypotonic solution?",
+          "a": "Water enters, the cell swells and may lyse.",
+          "userAnswer": "water enters, the cell swells and may lyse",
+          "rating": 4,
+          "answeredAt": 1791403790000
+        },
+        {
+          "q": "Stoichiometry of the Na+/K+ pump?",
+          "a": "3 Na+ out, 2 K+ in per ATP.",
+          "userAnswer": "3 na+ out, 2 k+ in per atp",
+          "rating": 3,
+          "answeredAt": 1791403840000
+        },
+        {
+          "q": "How does SGLT1 move glucose uphill?",
+          "a": "Secondary active symport: couples 2 Na+ moving down their gradient.",
+          "userAnswer": "secondary active symport",
+          "rating": 3,
+          "answeredAt": 1791403890000
+        },
+        {
+          "q": "Cause of cystic fibrosis?",
+          "a": "Mutations in CFTR, a chloride channel.",
+          "userAnswer": "mutations in cftr, a chloride channel",
+          "rating": 3,
+          "answeredAt": 1791403940000
+        }
+      ]
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "scn42gym73c7i",
+      "topic": "all",
+      "createdAt": 1790917032000,
+      "endedAt": 1790917327000,
+      "questions": [
+        {
+          "stem": "Which transport mode saturates at high substrate concentration?",
+          "options": [
+            "Simple diffusion",
+            "Carrier-mediated transport",
+            "Osmosis",
+            "Diffusion of O2"
+          ],
+          "correctIndex": 1,
+          "explanation": "Finite number of carriers -> Vmax.",
+          "chosenIndex": 1,
+          "answeredAt": 1790917102000
+        },
+        {
+          "stem": "Omeprazole targets:",
+          "options": [
+            "Na+/K+-ATPase",
+            "H+/K+-ATPase",
+            "Ca2+-ATPase",
+            "GLUT2"
+          ],
+          "correctIndex": 1,
+          "explanation": "The gastric proton pump.",
+          "chosenIndex": 1,
+          "answeredAt": 1790917172000
+        },
+        {
+          "stem": "Glucose exits intestinal cells to the blood via:",
+          "options": [
+            "SGLT1",
+            "GLUT2",
+            "Na+/K+ pump",
+            "Endocytosis"
+          ],
+          "correctIndex": 1,
+          "explanation": "Facilitated diffusion on the basolateral side.",
+          "chosenIndex": 1,
+          "answeredAt": 1790917242000
+        },
+        {
+          "stem": "LDL is taken up by:",
+          "options": [
+            "Phagocytosis",
+            "Pinocytosis",
+            "Receptor-mediated endocytosis",
+            "Exocytosis"
+          ],
+          "correctIndex": 2,
+          "explanation": "Clathrin-coated pits with LDL receptors.",
+          "chosenIndex": 2,
+          "answeredAt": 1790917312000
+        }
+      ]
+    },
+    {
+      "id": "saqwfr2v52l6n",
+      "topic": "all",
+      "createdAt": 1791373227000,
+      "endedAt": 1791373522000,
+      "questions": [
+        {
+          "stem": "Which transport mode saturates at high substrate concentration?",
+          "options": [
+            "Simple diffusion",
+            "Carrier-mediated transport",
+            "Osmosis",
+            "Diffusion of O2"
+          ],
+          "correctIndex": 1,
+          "explanation": "Finite number of carriers -> Vmax.",
+          "chosenIndex": 1,
+          "answeredAt": 1791373297000
+        },
+        {
+          "stem": "Omeprazole targets:",
+          "options": [
+            "Na+/K+-ATPase",
+            "H+/K+-ATPase",
+            "Ca2+-ATPase",
+            "GLUT2"
+          ],
+          "correctIndex": 1,
+          "explanation": "The gastric proton pump.",
+          "chosenIndex": 1,
+          "answeredAt": 1791373367000
+        },
+        {
+          "stem": "Glucose exits intestinal cells to the blood via:",
+          "options": [
+            "SGLT1",
+            "GLUT2",
+            "Na+/K+ pump",
+            "Endocytosis"
+          ],
+          "correctIndex": 1,
+          "explanation": "Facilitated diffusion on the basolateral side.",
+          "chosenIndex": 1,
+          "answeredAt": 1791373437000
+        },
+        {
+          "stem": "LDL is taken up by:",
+          "options": [
+            "Phagocytosis",
+            "Pinocytosis",
+            "Receptor-mediated endocytosis",
+            "Exocytosis"
+          ],
+          "correctIndex": 2,
+          "explanation": "Clathrin-coated pits with LDL receptors.",
+          "chosenIndex": 2,
+          "answeredAt": 1791373507000
+        }
+      ]
+    }
+  ],
+  "feynman": []
+}

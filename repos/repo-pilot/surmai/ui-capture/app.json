@@ -1,0 +1,28 @@
+{
+  "mode": "server",
+  "entry": "/login",
+  "login": {
+    "username": "Maya Chen",
+    "email": "maya@chenokafor.family",
+    "password": "Wanderlust#2026"
+  },
+  "stubs": [
+    {
+      "service": "Airline logos (images.kiwi.com, referenced by the bundled airlines dataset and loaded directly by the browser)",
+      "how": "seed/airline_logos.mjs writes an SVG tail badge per airline code to run/pb_public/_stub/airlines/ (served same-origin by the app's static handler) and repoints the logo URL of every airlines record and of the seeded flights' metadata.provider at it."
+    },
+    {
+      "service": "Currency exchange rates (open.er-api.com, fetched by the hourly SyncCurrencyDataJob)",
+      "how": "currency_conversions is pre-seeded through the API with realistic USD-based rates for 14 currencies (USD, EUR, GBP, JPY, CAD, MXN, ISK, CRC, ...). The hourly job can't reach the API offline; it only logs an error and leaves the seeded rates in place."
+    },
+    {
+      "service": "Outgoing email (trip collaboration invitations / SMTP)",
+      "how": "SMTP stays disabled (the app's default). Invitations were created through the normal API, so the records exist. Sending the email fails, which is logged and has no effect on the UI."
+    },
+    {
+      "service": "Go module proxy / modernc.org SQLite driver (build-time only)",
+      "how": "proxy.golang.org and dl.google.com are unreachable here. Go 1.27.4 comes from GitHub's actions/go-versions mirror via mise's http backend. Modules come from their GitHub mirrors via gomods/fetch.py and a go.work with local replaces; backend/go.mod is unchanged. modernc.org/libc has no GitHub mirror, so gomods/shims/sqlite registers the 'sqlite' driver on top of mattn/go-sqlite3 (cgo). That causes PocketBase's harmless 'modernc.org/libc version' startup warning. The binary is also built with `go build -overlay gomods/overlay.json`, which replaces Go's net/sendfile_nonwindows.go so sendfile(2) counts as unsupported. The sandbox rejects that syscall, and without the overlay net/http cut every static file off after its first 512 bytes (ERR_CONTENT_LENGTH_MISMATCH)."
+    }
+  ],
+  "notes": "ENTRY is /login, the app's sign-in page. Opening / without a session makes SecureRoute call POST /api/collections/users/auth-refresh, which correctly returns 401 for a logged-out visitor before the app redirects to /login. /login sits outside SecureRoute and makes no failing requests. Sign in with the login below to reach the trip list at /; auth-refresh then returns 200. Surmai is a PocketBase (Go) backend that serves the Vite/React production build. .ui-capture/build.sh rebuilds everything: mise install (node 26.13.1, go 1.27.4, pnpm 11.28.12; pnpm 12.18.0 from packageManager can't open its named store lock in this sandbox), pnpm install + vite build, the Go modules and backend binary at .ui-capture/bin/surmai-backend, and run/pb_public as a copy of dist/. start.sh runs migrations and serves UI + API on $PORT from .ui-capture/run (pb_data = SQLite, already seeded). Superuser dashboard at /_/ is admin@surmai.net / ChangeMe123. DATA: the app's bundled airports, airlines and places datasets were loaded through its own admin route (/api/surmai/settings/datasets). seed/seed.mjs then uses the REST API and the app's own save-transportation/save-lodging/save-activity routes (which create linked expenses) and the trip-import route. The result is a Seattle family account, Maya Chen, with partner Sam Okafor (also a user). There are 17 trips from Apr 2024 to Feb 2028; Maya sees 15. Finished: Lisbon & Porto, Canadian Rockies, Mexico City with friend Priya, Japan, Portland Thanksgiving, Whistler, Sam's Chicago work trip (shared with Maya), Iceland Ring Road, Olympic Peninsula camping, Napa. In progress today (2026-11-15): New York, Nov 12-18. Upcoming: Maui Holidays (owned by Sam), Costa Rica (the app's own demo_trip.zip imported, with PDFs and a cover photo), Italy 2027 with flights only, and a 'Patagonia (someday)' idea with no bookings. Bookings: 47 flights, trains, buses, ferries, rental cars, parking and bikes; 35 lodgings (hotels, rentals, campsites, family home, one cancelled); 45 activities. There are 157 expenses in 13 categories and 8 currencies, some split between travellers, plus budgets, rich-text notes with checklists, and 10 traveller profiles with passports, loyalty numbers and managed kids/grandma profiles. Maya has 2 open trip invitations (from Priya and Grace, whose trips stay hidden until she accepts) and notifications from 2 admin announcements. MAIN AREAS: trip list (/), trip view (/trips/:id) with tabs for transportation, lodging, activities, itinerary, expenses, notes and attachments, Travel Board (/travel-board, a map plus timeline; the OpenStreetMap tiles are hotlinked and stay blank offline), Travellers (/travellers), Invitations (/invitations), Profile (/profile) and Settings (/settings, admin)."
+}

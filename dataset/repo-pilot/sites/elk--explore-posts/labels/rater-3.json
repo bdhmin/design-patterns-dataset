@@ -1,0 +1,502 @@
+{
+  "schemaVersion": "1.0.0",
+  "codebookVersion": "1.0.0",
+  "batch": "repo-pilot",
+  "site": {
+    "slug": "elk--explore-posts",
+    "url": "http://localhost:4400/explore",
+    "finalUrl": "http://localhost:4400/explore",
+    "status": 200,
+    "title": "Posts | Explore | Elk",
+    "capturedAt": "2026-11-16T08:33:02.828Z",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "screenshot": {
+      "ref": "capture/screenshot.png",
+      "width": 1440,
+      "height": 4422
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.8127.18 Safari/537.36",
+    "domain": "social-community",
+    "domainNote": "Elk, a web client for Mastodon (fediverse) — Explore > trending Posts timeline, signed-out view",
+    "provenance": {
+      "source": "repo",
+      "record": "repos/repo-pilot/elk/explore.json",
+      "repo": {
+        "name": "elk-zone/elk",
+        "url": "https://github.com/elk-zone/elk",
+        "commit": "6b956a6d4a89a676059d83a0b0e59d7165d5f266",
+        "license": "MIT"
+      },
+      "view": {
+        "slug": "explore-posts",
+        "name": "Explore – trending posts",
+        "description": "Explore page with tabs (Posts, Hashtags, News, For you) listing trending posts with images, link cards and action bars, plus sidebar navigation and instance info."
+      }
+    }
+  },
+  "regions": [
+    {
+      "id": "left-sidebar",
+      "role": "sidebar",
+      "label": "Elk logo, vertical icon+label nav (signed-out items greyed), 'Viewing localhost:4410 public data' note and orange Sign in button",
+      "bbox": {
+        "x": 120,
+        "y": 0,
+        "width": 300,
+        "height": 978
+      },
+      "patterns": [
+        "app-shell"
+      ]
+    },
+    {
+      "id": "explore-tabs",
+      "role": "tab-bar",
+      "label": "Explore sub-tabs: Posts, Hashtags, News, For you (disabled)",
+      "bbox": {
+        "x": 435,
+        "y": 0,
+        "width": 600,
+        "height": 84
+      },
+      "patterns": [
+        "tabs"
+      ]
+    },
+    {
+      "id": "info-banner",
+      "role": "notice",
+      "label": "Dismissible explanatory notice about trending posts",
+      "bbox": {
+        "x": 435,
+        "y": 84,
+        "width": 600,
+        "height": 68
+      },
+      "patterns": [
+        "banner"
+      ]
+    },
+    {
+      "id": "timeline",
+      "role": "feed",
+      "label": "Trending posts stream: avatar, name/handle, relative time, overflow menu, body text, link preview cards, action row with reply/boost/quote/favorite/bookmark",
+      "bbox": {
+        "x": 435,
+        "y": 152,
+        "width": 600,
+        "height": 1240
+      },
+      "patterns": [
+        "feed",
+        "card",
+        "reactions",
+        "menu",
+        "recommendations"
+      ]
+    },
+    {
+      "id": "right-aside",
+      "role": "sidebar",
+      "label": "Search field, Harbor Social server card with photo and description, footer with theme/zen/shortcuts icons and build/about links",
+      "bbox": {
+        "x": 1035,
+        "y": 0,
+        "width": 285,
+        "height": 978
+      },
+      "patterns": [
+        "text-field"
+      ]
+    }
+  ],
+  "patterns": [
+    {
+      "id": "app-shell",
+      "status": "present",
+      "confidence": 0.9,
+      "dims": {
+        "primary": "sidebar",
+        "secondary": "sub-tabs-under-the-header",
+        "items": [
+          "fixed-destinations"
+        ],
+        "visibility": "always-visible",
+        "structure": "single-app"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 120,
+            "y": 86,
+            "width": 300,
+            "height": 723
+          },
+          "quote": "Home Notifications Conversations Favorites Bookmarks",
+          "region": "left-sidebar",
+          "note": "Persistent sidebar navigation with fixed destinations; signed-out-only items greyed"
+        },
+        {
+          "bbox": {
+            "x": 435,
+            "y": 0,
+            "width": 600,
+            "height": 84
+          },
+          "quote": "Posts Hashtags News For you",
+          "region": "explore-tabs",
+          "note": "Secondary sub-tabs atop the content column"
+        }
+      ]
+    },
+    {
+      "id": "tabs",
+      "status": "present",
+      "confidence": 0.85,
+      "dims": {
+        "placement": "top",
+        "label": [
+          "text"
+        ],
+        "origin": "fixed-by-the-designer",
+        "grouping": "flat",
+        "switchBy": [
+          "click"
+        ]
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 435,
+            "y": 10,
+            "width": 600,
+            "height": 63
+          },
+          "quote": "Posts Hashtags News For you",
+          "region": "explore-tabs",
+          "note": "Route-backed tabs; clicking News on live page swaps the panel to link previews and gives the active tab a grey fill. 'For you' is disabled/light grey."
+        }
+      ]
+    },
+    {
+      "id": "banner",
+      "status": "present",
+      "confidence": 0.75,
+      "dims": {
+        "scope": "section",
+        "severity": "information",
+        "dismissal": "dismissible",
+        "action": "none",
+        "placement": "top-of-content"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 435,
+            "y": 84,
+            "width": 600,
+            "height": 68
+          },
+          "quote": "These posts from this and other servers in the decentralized network are gaining traction on this server right now.",
+          "region": "info-banner",
+          "note": "Plain informational notice with × close button"
+        }
+      ]
+    },
+    {
+      "id": "feed",
+      "status": "present",
+      "confidence": 0.9,
+      "dims": {
+        "density": "full-post",
+        "heterogeneity": [
+          "mixed-media-types"
+        ],
+        "ordering": "ranked",
+        "sources": [
+          "algorithmic-discovery"
+        ],
+        "arrangement": "single-column",
+        "position": "caught-up-marker",
+        "nesting": [
+          "flat"
+        ]
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 446,
+            "y": 166,
+            "width": 575,
+            "height": 510
+          },
+          "quote": "Sweden's emissions rose 4% in 2025, the first increase in over a decade",
+          "region": "timeline",
+          "note": "Full post with large link preview card and action row"
+        },
+        {
+          "bbox": {
+            "x": 446,
+            "y": 694,
+            "width": 575,
+            "height": 120
+          },
+          "quote": "Vendor took 214 days to patch",
+          "region": "timeline",
+          "note": "Text-only post"
+        },
+        {
+          "bbox": {
+            "x": 446,
+            "y": 1235,
+            "width": 575,
+            "height": 135
+          },
+          "quote": "work rant, mild swearing in replies",
+          "region": "timeline",
+          "note": "Content-warning post with 'Show more' reveal; a11y tree ends with 'End of the list'"
+        }
+      ]
+    },
+    {
+      "id": "recommendations",
+      "status": "uncertain",
+      "confidence": 0.55,
+      "rationale": "The trending timeline is system-proposed content (trending basis) but it is presented as a feed rather than recommendation shelves; overlap with feed ranked ordering.",
+      "dims": {
+        "basis": [
+          "trending"
+        ],
+        "rationale": "short-label"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 435,
+            "y": 84,
+            "width": 600,
+            "height": 68
+          },
+          "quote": "gaining traction on this server right now",
+          "region": "info-banner",
+          "note": "Explains trending basis for the listed posts"
+        }
+      ]
+    },
+    {
+      "id": "card",
+      "status": "present",
+      "confidence": 0.8,
+      "dims": {
+        "media": "top-image",
+        "actions": "none",
+        "shape": "vertical",
+        "style": "filled",
+        "target": "whole-card"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 512,
+            "y": 268,
+            "width": 509,
+            "height": 364
+          },
+          "quote": "Sweden's emissions rose for the first time in a decade. Here's why.",
+          "region": "timeline",
+          "note": "Link preview card: top image, grey-filled body with source, bold title, truncated description; whole card is a link"
+        },
+        {
+          "bbox": {
+            "x": 512,
+            "y": 915,
+            "width": 509,
+            "height": 120
+          },
+          "quote": "Your dependencies have dependencies: supply chain attacks in 2026",
+          "region": "timeline",
+          "note": "Exception: horizontal variant with side placeholder thumbnail"
+        }
+      ]
+    },
+    {
+      "id": "reactions",
+      "status": "present",
+      "confidence": 0.85,
+      "dims": {
+        "vocabulary": "single-like",
+        "aggregate": "total-count",
+        "add": [
+          "tap-a-dedicated-button"
+        ],
+        "visibility": "public-with-names"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 512,
+            "y": 639,
+            "width": 509,
+            "height": 33
+          },
+          "quote": "92 218",
+          "region": "timeline",
+          "note": "Boost and Favorite buttons with counts; favorited state turns pink (#fb7185), bookmarked turns yellow"
+        },
+        {
+          "bbox": {
+            "x": 868,
+            "y": 1042,
+            "width": 53,
+            "height": 33
+          },
+          "quote": "82",
+          "region": "timeline",
+          "note": "Favorited state filled pink"
+        }
+      ]
+    },
+    {
+      "id": "menu",
+      "status": "present",
+      "confidence": 0.85,
+      "dims": {
+        "openBy": "button-click",
+        "structure": "flat",
+        "item": [
+          "label",
+          "icon"
+        ],
+        "itemSet": "fixed",
+        "form": "vertical-list"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 987,
+            "y": 166,
+            "width": 33,
+            "height": 33
+          },
+          "region": "timeline",
+          "note": "'More' ⋯ button; live page opens a dropdown: Show who reacted, Copy link to this post, Copy original link, Open in original site"
+        }
+      ]
+    },
+    {
+      "id": "text-field",
+      "status": "present",
+      "confidence": 0.8,
+      "dims": {
+        "supporting": [
+          "placeholder"
+        ],
+        "style": "outlined"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1046,
+            "y": 27,
+            "width": 270,
+            "height": 36
+          },
+          "quote": "Search",
+          "region": "right-aside",
+          "note": "Rounded search input with magnifier icon and placeholder"
+        }
+      ]
+    },
+    {
+      "id": "comment-thread",
+      "status": "absent",
+      "confidence": 0.8,
+      "dims": {},
+      "evidence": [
+        {
+          "bbox": {
+            "x": 512,
+            "y": 639,
+            "width": 37,
+            "height": 33
+          },
+          "note": "Only reply buttons; no threads shown"
+        }
+      ]
+    }
+  ],
+  "structure": {
+    "layout": "three-column app layout: left sidebar nav with logo and sign-in CTA, center 600px timeline column with route tabs, dismissible info notice and post stream, right aside with search, server info card and footer",
+    "regions": [
+      "left-sidebar",
+      "explore-tabs",
+      "info-banner",
+      "timeline",
+      "right-aside"
+    ],
+    "density": "medium"
+  },
+  "aesthetics": {
+    "palette": [
+      "#fafafa",
+      "#232323",
+      "#686868",
+      "#919191",
+      "#cc7d24",
+      "#fb7185",
+      "#facc15",
+      "#f0f0f0"
+    ],
+    "colorRoles": {
+      "background": "#fafafa",
+      "text": "#232323",
+      "muted": "#686868",
+      "subtle": "#919191",
+      "primary": "#cc7d24",
+      "accent": "#fb7185",
+      "highlight": "#facc15",
+      "surface": "#f0f0f0"
+    },
+    "typography": "System UI stack (-apple-system / SF Pro) for everything; ui-monospace only for version/commit hash in the footer",
+    "typeScale": "Very flat scale: 23px logo wordmark, 17px nav and tabs, 15px body/post text and display names (names bold), 13px timestamps and footer; hierarchy carried by weight and grey tones more than size",
+    "shape": "soft",
+    "elevation": "flat",
+    "borders": "thin",
+    "imagery": [
+      "photography",
+      "illustration",
+      "iconography"
+    ],
+    "iconStyle": "line",
+    "whitespace": "moderate",
+    "backgroundTreatment": "solid",
+    "mood": [
+      "clean",
+      "calm",
+      "minimal",
+      "friendly",
+      "utilitarian"
+    ]
+  },
+  "model": {
+    "rater": "rater-3",
+    "provider": "claude-code",
+    "name": "claude-opus-5-5",
+    "effort": "high",
+    "generatedAt": "2026-11-16T14:59:49.090Z",
+    "servedBy": [
+      "claude-opus-5-5"
+    ],
+    "turns": 21,
+    "usage": {
+      "input_tokens": 46,
+      "cache_creation_input_tokens": 51887,
+      "cache_read_input_tokens": 796608,
+      "output_tokens": 9349
+    }
+  },
+  "notes": "Elk Mastodon client in signed-out mode: account-only nav items (Home, Notifications, Favorites, Compose...) are rendered in light grey while public ones (Explore, Local, Federated) are full black — a strong disabled/enabled contrast in the sidebar. Single warm orange brand (#cc7d24) used for logo antler, server name, links in posts, Sign in button and 'Show more'. Posts separated only by hairline dividers, no card containers; circular cartoon avatars; action row of five evenly spaced line icons (reply, boost, quote-disabled, favorite, bookmark) with counts. Content-warning posts collapse behind a dashed rule with an eye icon 'Show more'. Right column has a server identity card (photo + description) and a tiny footer with theme/zen/keyboard/sponsor icon buttons. Feed is short (5 posts) and ends with 'End of the list'."
+}

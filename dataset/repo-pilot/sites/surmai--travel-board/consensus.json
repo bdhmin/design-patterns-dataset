@@ -1,0 +1,783 @@
+{
+  "site": {
+    "slug": "surmai--travel-board",
+    "url": "http://localhost:4402/login",
+    "finalUrl": "http://localhost:4402/travel-board",
+    "status": 200,
+    "title": "Surmai",
+    "capturedAt": "2026-11-16T17:58:54.168Z",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "screenshot": {
+      "ref": "capture/screenshot.png",
+      "width": 1440,
+      "height": 1474
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.8127.18 Safari/537.36",
+    "domain": "travel-hospitality",
+    "domainNote": "self-hosted personal trip planner (Surmai) — yearly travel statistics board",
+    "provenance": {
+      "source": "repo",
+      "record": "repos/repo-pilot/surmai/explore.json",
+      "repo": {
+        "name": "rohitkumbhar/surmai",
+        "url": "https://github.com/rohitkumbhar/surmai",
+        "commit": "619b602cd7b9a20f6a05eb752f0007da6bc39b6b",
+        "license": "MIT"
+      },
+      "view": {
+        "slug": "travel-board",
+        "name": "Travel Board",
+        "description": "Yearly travel statistics dashboard with year tabs, KPI cards and transportation, lodging, activity and expense stat panels."
+      }
+    }
+  },
+  "codebookVersion": "1.0.0",
+  "batch": "repo-pilot",
+  "raters": [
+    "rater-1",
+    "rater-2",
+    "rater-3"
+  ],
+  "domain": {
+    "value": "travel-hospitality",
+    "support": 3
+  },
+  "structure": {
+    "density": {
+      "value": "medium",
+      "support": 3
+    },
+    "layout": {
+      "rater-1": "app shell with fixed slate-blue icon rail on the left, white top bar, gray content canvas holding a year filter strip, a 4-up KPI tile row, a 2x2 grid of stats cards, and a full-width Leaflet map; fixed footer bar at the bottom",
+      "rater-2": "app shell with a narrow fixed left icon rail, top bar (page title, notifications, user menu), and a fixed footer link strip. The content area holds a year switcher, a 4-up KPI row, a 2x2 grid of stat-list cards, and a full-width Leaflet map",
+      "rater-3": "app shell with narrow fixed icon sidebar rail and top bar; content is a year tab strip, a 4-up KPI tile row, a 2x2 grid of stat-list cards, and a full-width Leaflet map; fixed footer links"
+    }
+  },
+  "aesthetics": {
+    "shape": {
+      "value": "soft",
+      "support": 3
+    },
+    "elevation": {
+      "value": "flat",
+      "support": 3
+    },
+    "borders": {
+      "value": "thin",
+      "support": 3
+    },
+    "iconStyle": {
+      "value": "line",
+      "support": 3
+    },
+    "whitespace": {
+      "value": "moderate",
+      "support": 3
+    },
+    "backgroundTreatment": {
+      "value": "solid",
+      "support": 3
+    }
+  },
+  "patterns": [
+    {
+      "id": "app-shell",
+      "status": "present",
+      "confidence": 0.9,
+      "dims": {
+        "primary": "navigation-rail",
+        "secondary": "none",
+        "items": [
+          "fixed-destinations"
+        ],
+        "visibility": "always-visible",
+        "structure": "single-app"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 80,
+            "height": 900
+          },
+          "note": "Icon-only navigation rail, active item white tile",
+          "region": "nav-rail",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 80,
+            "y": 0,
+            "width": 1360,
+            "height": 60
+          },
+          "quote": "Travel Board",
+          "region": "header",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 80,
+            "height": 900
+          },
+          "note": "fixed icon navigation rail with the active destination highlighted",
+          "region": "sidebar",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 80,
+            "y": 0,
+            "width": 1360,
+            "height": 60
+          },
+          "note": "top bar with page title, notifications and account",
+          "quote": "Travel Board",
+          "region": "header",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 80,
+            "height": 900
+          },
+          "note": "Icon-only nav rail, active item white tile",
+          "region": "sidebar",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 80,
+            "y": 0,
+            "width": 1360,
+            "height": 60
+          },
+          "quote": "Travel Board",
+          "region": "header",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "badge",
+      "status": "present",
+      "confidence": 0.87,
+      "dims": {
+        "meaning": "count",
+        "overflow": "exact-count"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1131,
+            "y": 10,
+            "width": 36,
+            "height": 33
+          },
+          "quote": "2",
+          "note": "Count badge on notification bell",
+          "region": "header",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 1131,
+            "y": 8,
+            "width": 36,
+            "height": 36
+          },
+          "note": "count badge on the notifications bell; matches 'Invitations (2)' in the user menu",
+          "quote": "2",
+          "region": "header",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 1131,
+            "y": 10,
+            "width": 36,
+            "height": 33
+          },
+          "quote": "2",
+          "note": "Count badge on notification bell (2 pending invitations)",
+          "region": "header",
+          "rater": "rater-3"
+        }
+      ],
+      "ties": [
+        "dims.rule",
+        "dims.aggregation"
+      ]
+    },
+    {
+      "id": "card",
+      "status": "present",
+      "confidence": 0.77,
+      "dims": {
+        "media": "none",
+        "actions": "none",
+        "shape": "vertical",
+        "style": "outlined"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 116,
+            "y": 291,
+            "width": 636,
+            "height": 454
+          },
+          "quote": "Transportation Stats",
+          "region": "stats-grid",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 768,
+            "y": 291,
+            "width": 636,
+            "height": 454
+          },
+          "quote": "Lodging Stats",
+          "region": "stats-grid",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 768,
+            "y": 761,
+            "width": 636,
+            "height": 253
+          },
+          "quote": "Expense Stats",
+          "region": "stats-grid",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 116,
+            "y": 291,
+            "width": 636,
+            "height": 454
+          },
+          "quote": "Transportation Stats",
+          "region": "stat-cards",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 768,
+            "y": 291,
+            "width": 636,
+            "height": 454
+          },
+          "quote": "Lodging Stats",
+          "region": "stat-cards",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 768,
+            "y": 761,
+            "width": 636,
+            "height": 253
+          },
+          "quote": "Expense Stats",
+          "region": "stat-cards",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 116,
+            "y": 291,
+            "width": 636,
+            "height": 454
+          },
+          "quote": "Transportation Stats",
+          "region": "stat-cards",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 768,
+            "y": 291,
+            "width": 636,
+            "height": 454
+          },
+          "quote": "Lodging Stats",
+          "region": "stat-cards",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 768,
+            "y": 761,
+            "width": 636,
+            "height": 253
+          },
+          "quote": "Expense Stats",
+          "region": "stat-cards",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "chart",
+      "status": "absent",
+      "confidence": 0.8,
+      "dims": {},
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 116,
+            "y": 291,
+            "width": 1288,
+            "height": 723
+          },
+          "note": "stats are text lists, not charts",
+          "rater": "rater-2"
+        }
+      ]
+    },
+    {
+      "id": "dashboard",
+      "status": "present",
+      "confidence": 0.87,
+      "dims": {
+        "widgets": [
+          "kpi-tiles",
+          "maps",
+          "tables"
+        ],
+        "purpose": "motivation-and-learning",
+        "arrangement": "fixed-grid",
+        "density": "a-few-glanceable-tiles",
+        "linking": "global-filters",
+        "refresh": "on-visit",
+        "alerting": "none",
+        "ownership": "personal"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 116,
+            "y": 88,
+            "width": 1288,
+            "height": 1357
+          },
+          "note": "Year-filtered board of KPI tiles, stats cards and map",
+          "quote": "Travel Board",
+          "region": "stats-grid",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 116,
+            "y": 175,
+            "width": 1288,
+            "height": 1270
+          },
+          "note": "KPI tiles, stat tables and a map on one board, filtered by year",
+          "quote": "Travel Board",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 116,
+            "y": 175,
+            "width": 1288,
+            "height": 1270
+          },
+          "note": "KPI tiles, stat-list cards and map all scoped by the year selector",
+          "region": "stat-cards",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 116,
+            "y": 88,
+            "width": 1288,
+            "height": 62
+          },
+          "note": "Year selector acts as global filter; clicking 2025 updated all tiles, cards and map",
+          "region": "year-tabs",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "data-table",
+      "status": "absent",
+      "confidence": 0.7,
+      "dims": {},
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 116,
+            "y": 291,
+            "width": 636,
+            "height": 454
+          },
+          "note": "Stats cards are key/value lists, not sortable tables",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 116,
+            "y": 291,
+            "width": 636,
+            "height": 454
+          },
+          "note": "Stat cards are key-value lists, not sortable tables",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "filter-controls",
+      "status": "present",
+      "confidence": 0.73,
+      "dims": {
+        "placement": "filter-bar-with-chips",
+        "preview": "live-results",
+        "origin": "developer-defined",
+        "persistence": "in-the-url"
+      },
+      "support": 2,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 116,
+            "y": 88,
+            "width": 1288,
+            "height": 62
+          },
+          "quote": "2028 2027 2026 2025 2024",
+          "note": "Selecting a year re-scopes all tiles, cards and map pins; written to URL ?year=2025 (verified live)",
+          "region": "year-filter",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 132,
+            "y": 104,
+            "width": 321,
+            "height": 30
+          },
+          "note": "year buttons filter all widgets; the URL changes to ?year=2025 (checked live)",
+          "quote": "2028 2027 2026 2025 2024",
+          "region": "year-filter",
+          "rater": "rater-2"
+        }
+      ],
+      "ties": [
+        "dims.types"
+      ]
+    },
+    {
+      "id": "map-explorer",
+      "status": "present",
+      "confidence": 0.85,
+      "dims": {
+        "basemap": "streets",
+        "overlays": [
+          "poi-pins"
+        ],
+        "mapNav": [
+          "drag-pan",
+          "pinch-scroll-zoom"
+        ],
+        "coupling": "detail-card-over-map"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 117,
+            "y": 1047,
+            "width": 1286,
+            "height": 398
+          },
+          "quote": "Leaflet | © OpenStreetMap contributors",
+          "note": "14 pin markers, zoom controls; clicking a pin opens a Leaflet popup with place + trip link (verified live)",
+          "region": "trip-map",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 117,
+            "y": 1047,
+            "width": 1286,
+            "height": 398
+          },
+          "note": "Leaflet OSM map with destination pins and +/- zoom; clicking a pin opens a popup (checked live)",
+          "quote": "Leaflet | © OpenStreetMap contributors",
+          "region": "map",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 117,
+            "y": 1047,
+            "width": 1286,
+            "height": 398
+          },
+          "quote": "Leaflet | © OpenStreetMap contributors",
+          "note": "OSM street basemap, blue pins for destinations, +/- zoom",
+          "region": "map",
+          "rater": "rater-3"
+        }
+      ],
+      "ties": [
+        "dims.markDesign"
+      ]
+    },
+    {
+      "id": "menu",
+      "status": "present",
+      "confidence": 0.78,
+      "dims": {
+        "openBy": "button-click",
+        "structure": "sections",
+        "item": [
+          "icon",
+          "label"
+        ],
+        "itemSet": "fixed",
+        "form": "vertical-list"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1169,
+            "y": 12,
+            "width": 235,
+            "height": 38
+          },
+          "quote": "Maya Chen",
+          "note": "Account trigger with chevron; live click opens dropdown Profile / Invitations (2) / Logout / Version dev",
+          "region": "header",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 1169,
+            "y": 12,
+            "width": 235,
+            "height": 38
+          },
+          "note": "user chip with a chevron opens a dropdown: Profile, Invitations (2), Logout, Version dev (checked live; closed in the capture)",
+          "quote": "Maya Chen",
+          "region": "header",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 1169,
+            "y": 12,
+            "width": 235,
+            "height": 38
+          },
+          "quote": "Maya Chen",
+          "note": "Live: click opens dropdown with Profile, Invitations (2), Logout, Version dev",
+          "region": "header",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "stat-tile",
+      "status": "present",
+      "confidence": 0.9,
+      "dims": {
+        "context": [
+          "label"
+        ],
+        "encoding": "number-only",
+        "window": "follows-the-dashboard-filter",
+        "drill": "none"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 116,
+            "y": 175,
+            "width": 310,
+            "height": 84
+          },
+          "quote": "TRIPS 7",
+          "region": "kpi-row",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 1094,
+            "y": 175,
+            "width": 310,
+            "height": 84
+          },
+          "quote": "COST $48,238.14",
+          "region": "kpi-row",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 116,
+            "y": 175,
+            "width": 310,
+            "height": 84
+          },
+          "quote": "TRIPS 7",
+          "region": "kpi-row",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 1094,
+            "y": 175,
+            "width": 310,
+            "height": 84
+          },
+          "quote": "COST $48,238.14",
+          "region": "kpi-row",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 116,
+            "y": 175,
+            "width": 310,
+            "height": 84
+          },
+          "quote": "TRIPS 7",
+          "region": "kpi-row",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 1094,
+            "y": 175,
+            "width": 310,
+            "height": 84
+          },
+          "quote": "COST $48,238.14",
+          "region": "kpi-row",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "tabs",
+      "status": "uncertain",
+      "confidence": 0.5,
+      "dims": {
+        "placement": "segmented-control",
+        "overflow": "scroll",
+        "label": [
+          "text"
+        ],
+        "origin": "fixed-by-the-designer",
+        "grouping": "flat",
+        "switchBy": [
+          "click"
+        ]
+      },
+      "support": 1,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 116,
+            "y": 88,
+            "width": 1288,
+            "height": 62
+          },
+          "quote": "2026",
+          "region": "year-filter",
+          "rater": "rater-2"
+        }
+      ],
+      "ties": [
+        "status"
+      ]
+    },
+    {
+      "id": "tooltip",
+      "status": "present",
+      "confidence": 0.73,
+      "dims": {
+        "trigger": [
+          "hover"
+        ],
+        "timing": "until-the-pointer-leaves",
+        "content": "label",
+        "placement": "beside"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 16,
+            "y": 203,
+            "width": 47,
+            "height": 50
+          },
+          "note": "Hovering rail icons shows dark label bubble to the right (e.g. 'Traveler Profiles'), verified live",
+          "region": "nav-rail",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 16,
+            "y": 103,
+            "width": 47,
+            "height": 200
+          },
+          "note": "icon-only rail buttons show dark label tooltips beside them on hover, e.g. 'Traveler Profiles' (checked live)",
+          "region": "sidebar",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 16,
+            "y": 203,
+            "width": 47,
+            "height": 50
+          },
+          "note": "Live: hovering sidebar icon shows dark 'Traveler Profiles' label to the right",
+          "region": "sidebar",
+          "rater": "rater-3"
+        }
+      ]
+    }
+  ],
+  "note": "Majority vote across raters. Free-text fields (layout, typography, palette, notes) stay per rater in labels/.",
+  "computedAt": "2026-11-16T18:00:35.425Z"
+}

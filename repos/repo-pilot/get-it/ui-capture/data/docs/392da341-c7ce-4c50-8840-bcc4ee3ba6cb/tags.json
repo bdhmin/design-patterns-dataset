@@ -1,0 +1,115 @@
+{
+  "v": 1,
+  "docId": "392da341-c7ce-4c50-8840-bcc4ee3ba6cb",
+  "savedAt": 1794303180000,
+  "tags": [
+    {
+      "id": "0-0",
+      "page": 0,
+      "endX": 191.22599999999994,
+      "endY": 487.6304,
+      "fontHeight": 11,
+      "type": "formula",
+      "label": "Michaelis-Menten equation",
+      "ready": true,
+      "generating": false,
+      "concept": {
+        "label": "Michaelis-Menten equation",
+        "type": "formula",
+        "anchor": "and Haldane), the initial velocity is v0 = Vmax [S] / (Km + [S])",
+        "context": "Initial velocity vs substrate concentration."
+      },
+      "spec": {
+        "type": "formula",
+        "title": "Michaelis-Menten equation",
+        "caption": "Initial velocity vs substrate concentration.",
+        "main_latex": "v_0 = \\frac{V_{max}[S]}{K_m + [S]}",
+        "steps": [
+          {
+            "latex": "\\frac{d[ES]}{dt} = 0",
+            "explanation": "Steady-state assumption."
+          },
+          {
+            "latex": "k_1[E][S] = (k_{-1}+k_2)[ES]",
+            "explanation": "Formation balances breakdown."
+          },
+          {
+            "latex": "K_m = \\frac{k_{-1}+k_2}{k_1}",
+            "explanation": "Define the Michaelis constant."
+          },
+          {
+            "latex": "[S] = K_m \\Rightarrow v_0 = V_{max}/2",
+            "explanation": "Km is the half-saturation point."
+          }
+        ]
+      },
+      "attempts": 1
+    },
+    {
+      "id": "0-1",
+      "page": 0,
+      "endX": 523.3599999999997,
+      "endY": 286.2668,
+      "fontHeight": 11,
+      "type": "graph",
+      "label": "Saturation curve",
+      "ready": true,
+      "generating": false,
+      "concept": {
+        "label": "Saturation curve",
+        "type": "graph",
+        "anchor": "isomerase). The curve of v0 against [S] is a rectangular hyperbola",
+        "context": "v0 vs [S] hyperbola with Vmax = 100, Km = 2 mM."
+      },
+      "spec": {
+        "type": "graph",
+        "title": "Saturation curve",
+        "caption": "v0 vs [S] hyperbola with Vmax = 100, Km = 2 mM.",
+        "chart_type": "function",
+        "x_label": "[S] (mM)",
+        "y_label": "v0 (% Vmax)",
+        "data_json": "{\"fn\":\"100*x/(2+x)\",\"x_min\":0,\"x_max\":20,\"samples\":200}"
+      },
+      "attempts": 1
+    },
+    {
+      "id": "0-2",
+      "page": 0,
+      "endX": 270.975,
+      "endY": 230.8108,
+      "fontHeight": 17,
+      "type": "graph",
+      "label": "Lineweaver-Burk plot",
+      "ready": false,
+      "generating": false,
+      "concept": {
+        "label": "Lineweaver-Burk plot",
+        "type": "graph",
+        "anchor": "and flat at high [S] (zero-order kinetics). The Lineweaver-Burk plot",
+        "context": "Double reciprocal plot with and without a competitive inhibitor."
+      }
+    },
+    {
+      "id": "1-0",
+      "page": 1,
+      "endX": 320.4429999999998,
+      "endY": 455.6,
+      "fontHeight": 11,
+      "type": "graph",
+      "label": "Allosteric sigmoid",
+      "ready": false,
+      "generating": false,
+      "concept": {
+        "label": "Allosteric sigmoid",
+        "type": "graph",
+        "anchor": "builds bacterial cell walls. Allosteric regulation Allosteric enzymes",
+        "context": "Cooperative binding gives sigmoidal kinetics (Hill n = 2.8)."
+      }
+    }
+  ],
+  "activeTagId": "0-1",
+  "pagesAnalyzed": [
+    0,
+    1
+  ]
+}

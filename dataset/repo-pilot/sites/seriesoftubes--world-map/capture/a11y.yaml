@@ -1,0 +1,34 @@
+- banner:
+  - 'heading "Series of Tubes: build the internet, one tube at a time" [level=1]'
+  - paragraph: A free cartoon browser game about how the internet works. Start as a tiny network in one city, launch home broadband, buy IP transit from Tier 1 and Tier 2 carriers, peer at internet exchanges, set up private interconnects and embedded CDN caches, and lay terrestrial fiber, subsea waves and your own dark fiber with DWDM and ZR optics. Sign enterprise, hosting, high-frequency trading, AI GPU and hyperscaler customers, and keep them happy while backhoes, sharks, fat fingers, route leaks, DDoS attacks and geopolitics break things.
+- banner:
+  - 'button "Network menu: save, load or start over"': Lambda Lagoon Networks AS204917
+  - button "Cash and bank": Cash · Bank $3.17M ▲ $1.10M/mo
+  - text: Traffic served 17.9 Tbps Reach 100% Rank Tier 2 · Lv 8
+  - button "Customers 😀 92% 9"
+  - button "NOC All quiet"
+  - text: Date Y3 · Apr 21
+  - button "Find anything"
+  - group "Game speed":
+    - button "Pause": ❚❚
+    - button "Half speed": ½×
+    - button "1×"
+    - button "2×"
+    - button "4×"
+    - button "8×"
+    - button "NOC dashboard"
+- complementary:
+  - tablist:
+    - tab "Goals 15/19" [selected]
+    - tab "Deals"
+    - tab "NOC"
+    - tab "Networks"
+  - text: Customer level 8 of 13 Packet empire
+  - button "Your maintenance window is 2 a.m. in every time zone at once."
+  - text: "Next: Six-continent carrier unlocks metaverse platforms (it finally took off), and a free PNI with Etis-a-lot. Gear: Arrrhipster 7800R5 routers, 102.4T fabrics for your own exchange. Peak traffic 19.4 Tbps / 21.0 Tbps POPs 47 / 40 Continents 6 / 6 Stand up DDoS defences Build a scrubbing center from a POP's Infra tab. It cleans attacks up to its capacity and lets you sell DDoS protection. Reward $20.0k Light your own dark fiber Lease or dig dark fiber, put a DWDM system on it and light a channel. Cheaper per bit than waves, once it works. Reward $40.0k Be in two buildings at once Add a second site in a metro from the Infra tab, so one power cut no longer takes the whole city dark. Reward $30.0k Go transit-free: Tier 1! Peer with every Tier 1 over PNIs and cancel every transit port. Their customers come along for free, so you only chase the networks nobody sells transit to. ✓ 15 goals done"
+  - button "15 goals done": ▸ Show
+  - heading "Badges 17/83 this game · 0 ever Badges" [level=3]:
+    - text: Badges 17/83 this game · 0 ever
+    - button "Badges": ▸ Show
+  - text: 🧊 Freeze-dried 0/83 ⭐ On-call 0/83 🔥 Forged at 3 a.m. 0/83
+- text: "Welcome back, Lambda Lagoon Networks. Your network is right where you left it: Y3 · Apr 21."

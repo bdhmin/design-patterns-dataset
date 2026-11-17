@@ -1,0 +1,23 @@
+{
+  "slug": "surmai--add-flight-dialog",
+  "url": "http://localhost:4402/login",
+  "domain": "travel-hospitality",
+  "source": "repo",
+  "state": "labeling",
+  "raters": {
+    "rater-1": {
+      "state": "running",
+      "updatedAt": "2026-11-16T18:00:13.660Z"
+    },
+    "rater-2": {
+      "state": "running",
+      "updatedAt": "2026-11-16T18:00:13.660Z"
+    },
+    "rater-3": {
+      "state": "running",
+      "updatedAt": "2026-11-16T18:00:13.660Z"
+    }
+  },
+  "flags": [],
+  "updatedAt": "2026-11-16T18:00:13.660Z"
+}

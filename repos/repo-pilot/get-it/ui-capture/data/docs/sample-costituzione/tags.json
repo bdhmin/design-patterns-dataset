@@ -1,0 +1,113 @@
+{
+  "v": 1,
+  "docId": "sample-costituzione",
+  "savedAt": 1788899160000,
+  "tags": [
+    {
+      "id": "0-0",
+      "page": 0,
+      "endX": 523.2800000099999,
+      "endY": 581.5601,
+      "fontHeight": 11.5,
+      "type": "2d-text",
+      "label": "Art. 1 — Repubblica fondata sul lavoro",
+      "ready": true,
+      "generating": false,
+      "concept": {
+        "label": "Art. 1 — Repubblica fondata sul lavoro",
+        "type": "2d-text",
+        "anchor": "Repubblica L'Italia è una Repubblica democratica, fondata sul lavoro",
+        "context": "Articolo 1 della Costituzione: Repubblica democratica fondata sul lavoro, sovranità popolare."
+      },
+      "spec": {
+        "type": "2d-text",
+        "title": "Art. 1 — Repubblica fondata sul lavoro",
+        "caption": "Articolo 1 della Costituzione: Repubblica democratica fondata sul lavoro, sovranità popolare.",
+        "body_markdown": "*\"L'Italia è una Repubblica democratica, fondata sul lavoro. La sovranità appartiene al popolo, che la esercita nelle forme e nei limiti della Costituzione.\"* [1]\n\nIl lavoro è inteso come **fondamento della cittadinanza**, non come obbligo: un rifiuto dei privilegi di nascita [2].",
+        "citations": [
+          {
+            "label": "[1]",
+            "source": "Senato della Repubblica — Costituzione, Art. 1",
+            "url": "https://www.senato.it/istituzione/la-costituzione/principi-fondamentali/articolo-1"
+          },
+          {
+            "label": "[2]",
+            "source": "Wikipedia — Articolo 1 della Costituzione italiana",
+            "url": "https://it.wikipedia.org/wiki/Articolo_1_della_Costituzione_italiana"
+          }
+        ]
+      },
+      "attempts": 1
+    },
+    {
+      "id": "0-1",
+      "page": 0,
+      "endX": 260.46168179499995,
+      "endY": 290.5079,
+      "fontHeight": 11,
+      "type": "2d-text",
+      "label": "Sentenza Granital",
+      "ready": true,
+      "generating": false,
+      "concept": {
+        "label": "Sentenza Granital",
+        "type": "2d-text",
+        "anchor": "costituzionale, in particolare la sentenza n. 170/1984 (Granital)",
+        "context": "Corte costituzionale 170/1984: prevalenza del diritto comunitario direttamente applicabile."
+      },
+      "spec": {
+        "type": "2d-text",
+        "title": "Sentenza Granital",
+        "caption": "Corte costituzionale 170/1984: prevalenza del diritto comunitario direttamente applicabile.",
+        "body_markdown": "Con la sentenza **170/1984 (Granital)** la Corte ha stabilito che il giudice comune deve **non applicare** la norma interna contrastante con il diritto comunitario direttamente applicabile, senza sollevare questione di legittimità [1].",
+        "citations": [
+          {
+            "label": "[1]",
+            "source": "Corte costituzionale — Sentenza 170/1984",
+            "url": "https://www.cortecostituzionale.it/actionSchedaPronuncia.do?anno=1984&numero=170"
+          }
+        ]
+      },
+      "attempts": 1
+    },
+    {
+      "id": "0-2",
+      "page": 0,
+      "endX": 445.59,
+      "endY": 223.3232,
+      "fontHeight": 15,
+      "type": "2d-text",
+      "label": "Art. 21 — Libertà di pensiero",
+      "ready": false,
+      "generating": false,
+      "concept": {
+        "label": "Art. 21 — Libertà di pensiero",
+        "type": "2d-text",
+        "anchor": "l'articolo 117. Articolo 21 — Libertà di manifestazione del pensiero",
+        "context": "Articolo 21: libertà di manifestazione del pensiero e di stampa, limiti del buon costume."
+      }
+    },
+    {
+      "id": "1-0",
+      "page": 1,
+      "endX": 523.5675000639999,
+      "endY": 650.5905,
+      "fontHeight": 11.5,
+      "type": "2d-text",
+      "label": "Art. 32 — Tutela della salute",
+      "ready": false,
+      "generating": false,
+      "concept": {
+        "label": "Art. 32 — Tutela della salute",
+        "type": "2d-text",
+        "anchor": "vaccinale e nella ben nota sentenza n. 242/2019 sul fine vita",
+        "context": "Articolo 32: diritto alla salute, trattamenti sanitari obbligatori solo per legge; sent. 5/2018 e 242/2019."
+      }
+    }
+  ],
+  "activeTagId": "0-1",
+  "pagesAnalyzed": [
+    0,
+    1
+  ]
+}

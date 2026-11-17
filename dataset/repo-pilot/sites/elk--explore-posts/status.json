@@ -1,0 +1,23 @@
+{
+  "slug": "elk--explore-posts",
+  "url": "http://localhost:4400/explore",
+  "domain": "social-community",
+  "source": "repo",
+  "state": "labeled",
+  "raters": {
+    "rater-1": {
+      "state": "done",
+      "updatedAt": "2026-11-16T17:50:51.424Z"
+    },
+    "rater-2": {
+      "state": "done",
+      "updatedAt": "2026-11-16T14:59:51.303Z"
+    },
+    "rater-3": {
+      "state": "done",
+      "updatedAt": "2026-11-16T14:59:51.635Z"
+    }
+  },
+  "flags": [],
+  "updatedAt": "2026-11-16T17:50:51.427Z"
+}

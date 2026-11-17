@@ -1,0 +1,163 @@
+# Open-source apps for repo batch repo-pilot (scripts/discover-repos.ts). Review before
+# scripts/prepare-repos.ts: drop repos that are not end-user apps or that obviously need
+# hosted services, fix a wrong domain, or pin a different commit. Edits are fine until setup.
+batch: repo-pilot
+description: Open-source apps across 5 domains
+createdAt: 2026-11-16T03:15:57.352Z
+seed: 1501
+screener:
+  model: claude-sonnet-5-5
+  effort: medium
+repos:
+  - slug: elk
+    repo: elk-zone/elk
+    url: https://github.com/elk-zone/elk
+    commit: 6b956a6d4a89a676059d83a0b0e59d7165d5f266
+    branch: main
+    domain: social-community
+    stars: 6036
+    license: MIT
+    language: Vue
+    topics:
+      - mastodon
+      - mastodon-client
+      - nuxt-app
+    description: A nimble Mastodon web client
+    homepage: https://elk.zone
+    screen:
+      kind: application
+      runnable: needs-external
+      domain: social-community
+      reason: Nuxt Mastodon web client with a mock mode (.env.mock) but it normally
+        needs a Mastodon server and OAuth sign-in.
+    port: 4400
+  - slug: get-it
+    repo: beltromatti/get-it
+    url: https://github.com/beltromatti/get-it
+    commit: ae0fa999f352b951ab8150fac5dcf9d7ab6fd9a4
+    branch: main
+    domain: education
+    stars: 1167
+    license: Apache-2.0
+    language: JavaScript
+    topics:
+      - agents
+      - ai
+      - codex
+      - edtech
+      - feynman-technique
+      - flashcards
+      - gdg-ai-hack-2026
+      - hackathon
+      - knowledge-graph
+      - learning
+      - llm
+      - nextjs
+      - openai
+      - pdf
+      - react
+      - spaced-repetition
+      - study-tools
+      - threejs
+      - typescript
+      - visualization
+    description: Read it. See it. Get it. Built at GDG AI Hack Milan 2026 for "Learn
+      Different" track.
+    homepage: https://getit.noesisai.it
+    screen:
+      kind: application
+      runnable: needs-external
+      domain: education
+      reason: Next.js study companion that turns PDFs into visualizations and a
+        mastery map, powered by AI agents using the user's own AI provider/keys.
+    port: 4401
+  - slug: surmai
+    repo: rohitkumbhar/surmai
+    url: https://github.com/rohitkumbhar/surmai
+    commit: 619b602cd7b9a20f6a05eb752f0007da6bc39b6b
+    branch: main
+    domain: travel-hospitality
+    stars: 292
+    license: MIT
+    language: TypeScript
+    topics:
+      - itinerary
+      - organization
+      - planning
+      - travel
+    description: Surmai is a personal/family travel organizer
+    homepage: https://surmai.app/
+    screen:
+      kind: application
+      runnable: server
+      domain: travel-hospitality
+      reason: Travel organizer with a React frontend and a PocketBase backend in the
+        repo, which uses embedded SQLite and runs through Docker or locally.
+    port: 4402
+  - slug: seriesoftubes
+    repo: fjaeckel/seriesoftubes
+    url: https://github.com/fjaeckel/seriesoftubes
+    commit: 6b16b6c2fb968cd68408a8c772e181f47daf52e5
+    branch: main
+    domain: games
+    stars: 236
+    license: MIT
+    language: JavaScript
+    topics:
+      - bgp
+      - browser-game
+      - educational
+      - game
+      - internet
+      - networking
+      - peering
+      - simulation
+    description: "A free cartoon browser game about how the internet really works:
+      lay fiber and subsea cables, peer at IXPs, bill on the 95th percentile and
+      survive backhoes, sharks and route leaks on your way to Tier 1."
+    homepage: https://seriesoftub.es/
+    screen:
+      kind: application
+      runnable: static
+      domain: games
+      reason: Browser game with solo mode storing saves on device (no accounts);
+        multiplayer is optional, so a static build runs it.
+    port: 4403
+  - slug: bead-grid-studio
+    repo: zwhy149/bead-grid-studio
+    url: https://github.com/zwhy149/bead-grid-studio
+    commit: f2b43375877e4286127087b4bb1b46e138754c11
+    branch: main
+    domain: design-creative
+    stars: 214
+    license: Apache-2.0
+    language: JavaScript
+    topics:
+      - bead-art
+      - bead-pattern
+      - bead-pattern-generator
+      - canvas
+      - color-quantization
+      - craft-tools
+      - fuse-beads
+      - image-quantization
+      - image-to-pixel-art
+      - javascript
+      - local-first
+      - offline-first
+      - pattern-generator
+      - pindou
+      - pindou-pattern
+      - pixel-art
+      - printable
+      - pwa
+    description: 拼豆图纸生成器｜图片转拼豆、拼豆像素画与可编辑施工图｜逐格色号、辅助线、底板布局、用量统计｜Local-first fuse-bead
+      pattern generator
+    homepage: https://zwhy149.github.io/bead-grid-studio/
+    screen:
+      kind: application
+      runnable: static
+      domain: design-creative
+      reason: A local-first Vite PWA that converts images to editable fuse-bead
+        patterns entirely in the browser, with no backend or account.
+    port: 4404

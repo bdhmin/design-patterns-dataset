@@ -1,0 +1,223 @@
+{
+  "v": 1,
+  "docId": "994a113e-e7ba-4f78-926a-7154208adfff",
+  "status": "ready",
+  "buildAt": 1790187210000,
+  "lastEvaluatedAt": 1792011780000,
+  "evaluationCount": 23,
+  "nodes": [
+    {
+      "id": "fluid-mosaic-membrane",
+      "label": "Fluid mosaic membrane",
+      "summary": "Phospholipid bilayer with embedded channel and carrier proteins.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 85,
+        "comprehension": 71,
+        "structure": 73,
+        "application": 58
+      },
+      "evaluatorNote": "Solid recall and a clean Feynman explanation — ready for exam-style problems."
+    },
+    {
+      "id": "fick-s-law-of-diffusion",
+      "label": "Fick's law of diffusion",
+      "summary": "Diffusive flux proportional to concentration gradient.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 100,
+        "comprehension": 92,
+        "structure": 84,
+        "application": 80
+      },
+      "evaluatorNote": "Solid recall and a clean Feynman explanation — ready for exam-style problems."
+    },
+    {
+      "id": "carrier-saturation",
+      "label": "Carrier saturation",
+      "summary": "Carrier-mediated transport rate vs concentration saturates (Vmax, Km) vs linear diffusion.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 89,
+        "comprehension": 80,
+        "structure": 75,
+        "application": 66
+      },
+      "evaluatorNote": "Explains it unprompted and applies it to new cases; keep it warm with spaced review."
+    },
+    {
+      "id": "na-glucose-symport",
+      "label": "Na+/glucose symport",
+      "summary": "SGLT1 couples 2 Na+ downhill with glucose uphill.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 100,
+        "comprehension": 100,
+        "structure": 100,
+        "application": 93
+      },
+      "evaluatorNote": "Explains it unprompted and applies it to new cases; keep it warm with spaced review."
+    },
+    {
+      "id": "receptor-mediated-endocytosis",
+      "label": "Receptor-mediated endocytosis",
+      "summary": "LDL bound to receptors gathered in clathrin-coated pits, invaginating into a vesicle.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 100,
+        "comprehension": 88,
+        "structure": 84,
+        "application": 74
+      },
+      "evaluatorNote": "Explains it unprompted and applies it to new cases; keep it warm with spaced review."
+    },
+    {
+      "id": "cftr-and-cystic-fibrosis",
+      "label": "CFTR and cystic fibrosis",
+      "summary": "CFTR chloride channel defect causes thick mucus.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 100,
+        "comprehension": 93,
+        "structure": 81,
+        "application": 72
+      },
+      "evaluatorNote": "Strong: correct on every quiz item and used it in own words in chat."
+    },
+    {
+      "id": "tonicity-and-red-cells",
+      "label": "Tonicity and red cells",
+      "summary": "Hypotonic, isotonic, hypertonic solutions and erythrocytes.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 100,
+        "comprehension": 100,
+        "structure": 94,
+        "application": 92
+      },
+      "evaluatorNote": "Solid recall and a clean Feynman explanation — ready for exam-style problems."
+    },
+    {
+      "id": "primary-active",
+      "label": "Na+/K+-ATPase",
+      "summary": "Primary active transport: 3 Na+ out, 2 K+ in per ATP.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 100,
+        "comprehension": 96,
+        "structure": 94,
+        "application": 83
+      },
+      "evaluatorNote": "Strong: correct on every quiz item and used it in own words in chat."
+    },
+    {
+      "id": "endocytosis",
+      "label": "Receptor-mediated endocytosis",
+      "summary": "Clathrin-coated pits; LDL uptake; defective in familial hypercholesterolaemia.",
+      "pageHints": [
+        2
+      ],
+      "evaluation": {
+        "memory": 81,
+        "comprehension": 65,
+        "structure": 61,
+        "application": 53
+      },
+      "evaluatorNote": "Good recognition on quizzes; explanations still lean on the textbook's wording."
+    },
+    {
+      "id": "cftr",
+      "label": "CFTR and cystic fibrosis",
+      "summary": "Defective Cl- channel -> thick mucus.",
+      "pageHints": [
+        2
+      ],
+      "evaluation": {
+        "memory": 100,
+        "comprehension": 100,
+        "structure": 100,
+        "application": 93
+      },
+      "evaluatorNote": "Strong: correct on every quiz item and used it in own words in chat."
+    }
+  ],
+  "edges": [
+    {
+      "source": "fluid-mosaic-membrane",
+      "target": "fick-s-law-of-diffusion",
+      "relation": "is a consequence of"
+    },
+    {
+      "source": "fick-s-law-of-diffusion",
+      "target": "carrier-saturation",
+      "relation": "contrasts with"
+    },
+    {
+      "source": "fluid-mosaic-membrane",
+      "target": "na-glucose-symport",
+      "relation": "is an example of"
+    },
+    {
+      "source": "na-glucose-symport",
+      "target": "receptor-mediated-endocytosis",
+      "relation": "is measured by"
+    },
+    {
+      "source": "carrier-saturation",
+      "target": "cftr-and-cystic-fibrosis",
+      "relation": "is measured by"
+    },
+    {
+      "source": "carrier-saturation",
+      "target": "tonicity-and-red-cells",
+      "relation": "is an example of"
+    },
+    {
+      "source": "na-glucose-symport",
+      "target": "primary-active",
+      "relation": "is a consequence of"
+    },
+    {
+      "source": "receptor-mediated-endocytosis",
+      "target": "endocytosis",
+      "relation": "contrasts with"
+    },
+    {
+      "source": "fluid-mosaic-membrane",
+      "target": "cftr",
+      "relation": "is measured by"
+    },
+    {
+      "source": "fick-s-law-of-diffusion",
+      "target": "primary-active",
+      "relation": "is related to"
+    },
+    {
+      "source": "fick-s-law-of-diffusion",
+      "target": "tonicity-and-red-cells",
+      "relation": "is related to"
+    },
+    {
+      "source": "cftr",
+      "target": "carrier-saturation",
+      "relation": "is related to"
+    }
+  ],
+  "globalNote": "Most of the map is solid — recall and comprehension are well ahead. The gap is application: \"Receptor-mediated endocytosis\" still breaks down on unseen problems. A short quiz on it is the best next step."
+}

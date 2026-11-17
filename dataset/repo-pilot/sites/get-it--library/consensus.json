@@ -1,0 +1,557 @@
+{
+  "site": {
+    "slug": "get-it--library",
+    "url": "http://localhost:4401/library",
+    "finalUrl": "http://localhost:4401/library",
+    "status": 200,
+    "title": "Get It.",
+    "capturedAt": "2026-11-16T17:50:59.656Z",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "screenshot": {
+      "ref": "capture/screenshot.png",
+      "width": 1440,
+      "height": 1409
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.8127.18 Safari/537.36",
+    "domain": "education",
+    "domainNote": "AI study tool: PDF/doc library with tags, chats, flashcards, quizzes, knowledge graph",
+    "provenance": {
+      "source": "repo",
+      "record": "repos/repo-pilot/get-it/explore.json",
+      "repo": {
+        "name": "beltromatti/get-it",
+        "url": "https://github.com/beltromatti/get-it",
+        "commit": "ae0fa999f352b951ab8150fac5dcf9d7ab6fd9a4",
+        "license": "Apache-2.0"
+      },
+      "view": {
+        "slug": "library",
+        "name": "Library",
+        "description": "List of all uploaded study documents with page counts, last-opened dates, visualization and knowledge-graph status badges."
+      }
+    }
+  },
+  "codebookVersion": "1.0.0",
+  "batch": "repo-pilot",
+  "raters": [
+    "rater-1",
+    "rater-2",
+    "rater-3"
+  ],
+  "domain": {
+    "value": "education",
+    "support": 3
+  },
+  "structure": {
+    "density": {
+      "value": "medium",
+      "support": 3
+    },
+    "layout": {
+      "rater-1": "Top bar with tab-styled Upload/Library nav and utility icons; single centered 816px column with page title, intro paragraph and a vertical list of full-width document cards",
+      "rater-2": "single centered column (816px) under a browser-tab-style top bar; page header then stacked list of row cards",
+      "rater-3": "single-column centered (816px) list page under a browser-like tab strip; no footer or sidebar"
+    }
+  },
+  "aesthetics": {
+    "shape": {
+      "value": "soft",
+      "support": 3
+    },
+    "elevation": {
+      "value": "flat",
+      "support": 3
+    },
+    "borders": {
+      "value": "thin",
+      "support": 3
+    },
+    "iconStyle": {
+      "value": "line",
+      "support": 3
+    },
+    "whitespace": {
+      "value": "generous",
+      "support": 3
+    },
+    "backgroundTreatment": {
+      "value": "solid",
+      "support": 3
+    }
+  },
+  "patterns": [
+    {
+      "id": "app-shell",
+      "status": "present",
+      "confidence": 0.75,
+      "dims": {
+        "primary": "top-navigation-bar",
+        "secondary": "none",
+        "items": [
+          "fixed-destinations"
+        ],
+        "structure": "single-app",
+        "visibility": "always-visible"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 43
+          },
+          "region": "top-bar",
+          "quote": "Upload Library",
+          "note": "Persistent top bar with primary destinations and refresh/settings/account icon buttons",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 43
+          },
+          "note": "Persistent top bar with Upload/Library destinations and utility icons (refresh, settings, account)",
+          "quote": "Upload Library",
+          "region": "header",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 43
+          },
+          "quote": "Upload Library",
+          "region": "header",
+          "note": "Top bar with two top-level destinations rendered as tabs plus refresh/settings/account icon buttons",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "badge",
+      "status": "present",
+      "confidence": 0.8,
+      "dims": {
+        "meaning": "status",
+        "overflow": "exact-count",
+        "aggregation": "per-item"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 972,
+            "y": 242,
+            "width": 93,
+            "height": 25
+          },
+          "region": "library-list",
+          "quote": "graph ready",
+          "note": "Green status pill for knowledge graph",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 990,
+            "y": 326,
+            "width": 75,
+            "height": 24
+          },
+          "region": "library-list",
+          "quote": "pending",
+          "note": "Neutral grey status pill",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 898,
+            "y": 242,
+            "width": 68,
+            "height": 25
+          },
+          "region": "library-list",
+          "quote": "1/6 viz",
+          "note": "Tag/visualization ratio pill; green when complete (5/5), grey when partial",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 898,
+            "y": 242,
+            "width": 167,
+            "height": 25
+          },
+          "note": "Tag-icon pill '1/6 viz' (grey when incomplete, green when complete) and graph pill 'graph ready' / 'N evals' / 'pending'",
+          "quote": "1/6 viz graph ready",
+          "region": "library-list",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 895,
+            "y": 325,
+            "width": 170,
+            "height": 25
+          },
+          "quote": "no tags yet pending",
+          "region": "library-list",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 898,
+            "y": 242,
+            "width": 167,
+            "height": 25
+          },
+          "quote": "1/6 viz graph ready",
+          "region": "library-list",
+          "note": "Status pills: green tint when complete, grey outline when partial/pending",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 895,
+            "y": 325,
+            "width": 170,
+            "height": 25
+          },
+          "quote": "no tags yet pending",
+          "region": "library-list",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 915,
+            "y": 571,
+            "width": 150,
+            "height": 25
+          },
+          "quote": "5/5 viz 15 evals",
+          "region": "library-list",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "card",
+      "status": "present",
+      "confidence": 0.85,
+      "dims": {
+        "media": "side-thumbnail",
+        "actions": "one-primary-action",
+        "shape": "horizontal",
+        "style": "outlined",
+        "target": "whole-card"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 312,
+            "y": 218,
+            "width": 816,
+            "height": 74
+          },
+          "region": "library-list",
+          "quote": "Lead_Application_26.docx",
+          "note": "White, 1px #ececea outline, 12px radius; file icon thumbnail, title, meta line, status pills; trash icon appears on hover",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 312,
+            "y": 547,
+            "width": 816,
+            "height": 74
+          },
+          "region": "library-list",
+          "quote": "Neurophysiology_-_Action_Potential___Synaptic_Transmission",
+          "note": "Meta line truncated with ellipsis",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 312,
+            "y": 218,
+            "width": 816,
+            "height": 74
+          },
+          "note": "White row card, 1px #ececea border, 12px radius, file icon tile on left, title + meta, status pills right; whole row is a link; trash 'Remove from library' button revealed on hover",
+          "quote": "Lead_Application_26.docx",
+          "region": "library-list",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 312,
+            "y": 1287,
+            "width": 816,
+            "height": 74
+          },
+          "quote": "Classical Mechanics",
+          "region": "library-list",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 312,
+            "y": 218,
+            "width": 816,
+            "height": 74
+          },
+          "quote": "Lead_Application_26.docx",
+          "region": "library-list",
+          "note": "White outlined 12px-radius horizontal card; whole row is a link; trash button appears on hover",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 312,
+            "y": 1287,
+            "width": 816,
+            "height": 74
+          },
+          "quote": "Classical Mechanics",
+          "region": "library-list",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "confirmation",
+      "status": "absent",
+      "confidence": 0.5,
+      "dims": {},
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1085,
+            "y": 243,
+            "width": 25,
+            "height": 25
+          },
+          "note": "Clicking trash on live page showed no visible confirm dialog (possibly native confirm auto-dismissed)",
+          "rater": "rater-2"
+        }
+      ]
+    },
+    {
+      "id": "data-table",
+      "status": "absent",
+      "confidence": 0.8,
+      "dims": {},
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 312,
+            "y": 218,
+            "width": 816,
+            "height": 1143
+          },
+          "note": "Rows are cards without columns, sort or filter",
+          "rater": "rater-1"
+        }
+      ]
+    },
+    {
+      "id": "file-manager",
+      "status": "absent",
+      "confidence": 0.68,
+      "dims": {},
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 312,
+            "y": 218,
+            "width": 816,
+            "height": 1143
+          },
+          "note": "Flat document list with no folders, locations, path or toolbar",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 312,
+            "y": 218,
+            "width": 816,
+            "height": 1143
+          },
+          "note": "Flat document list without folders, path, or file operations beyond remove; coded as overview-detail instead",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 312,
+            "y": 218,
+            "width": 816,
+            "height": 1143
+          },
+          "region": "library-list",
+          "note": "Flat list of documents, no folders/locations/hierarchy",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "overview-detail",
+      "status": "present",
+      "confidence": 0.8,
+      "dims": {
+        "attributePlacement": [
+          "in-both-views",
+          "in-overview-only"
+        ],
+        "abstraction": [
+          "category",
+          "sum-or-average"
+        ],
+        "truncation": "ellipsis",
+        "relationship": "one-to-one",
+        "recursion": [
+          "none"
+        ],
+        "openIn": "new-page",
+        "overviewType": [
+          "list"
+        ],
+        "openBy": [
+          "click"
+        ],
+        "openFrom": "whole-item",
+        "attributeScope": [
+          "per-item"
+        ]
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 312,
+            "y": 218,
+            "width": 816,
+            "height": 1143
+          },
+          "region": "library-list",
+          "quote": "Click any row to jump back in",
+          "note": "List overview of documents; each row links to /viewer/<id> detail page",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 312,
+            "y": 218,
+            "width": 816,
+            "height": 1143
+          },
+          "note": "List of documents; each row links to /viewer/<id> detail page; completion encoded as green pill styling; long meta truncated with ellipsis",
+          "quote": "Click any row to jump back in",
+          "region": "library-list",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 312,
+            "y": 218,
+            "width": 816,
+            "height": 1143
+          },
+          "quote": "Click any row to jump back in",
+          "region": "library-list",
+          "note": "List overview of documents; each row links to /viewer/<id> detail page",
+          "rater": "rater-3"
+        }
+      ],
+      "ties": [
+        "dims.detailMultiplicity"
+      ]
+    },
+    {
+      "id": "popover",
+      "status": "absent",
+      "confidence": 0.6,
+      "dims": {},
+      "support": 2,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1368,
+            "y": 10,
+            "width": 28,
+            "height": 28
+          },
+          "region": "header",
+          "note": "Settings button opens a popover live, but nothing is open in the capture",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "tabs",
+      "status": "uncertain",
+      "confidence": 0.5,
+      "dims": {
+        "placement": "top",
+        "label": [
+          "icon",
+          "text"
+        ],
+        "origin": "fixed-by-the-designer",
+        "grouping": "flat",
+        "switchBy": [
+          "click"
+        ]
+      },
+      "support": 2,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 8,
+            "y": 6,
+            "width": 191,
+            "height": 37
+          },
+          "region": "top-bar",
+          "quote": "Library",
+          "note": "Folder-style tab strip; active Library tab is white and merges with content area",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 8,
+            "y": 7,
+            "width": 190,
+            "height": 36
+          },
+          "quote": "Upload Library",
+          "region": "header",
+          "note": "Active Library tab is white and joins the content area",
+          "rater": "rater-3"
+        }
+      ]
+    }
+  ],
+  "note": "Majority vote across raters. Free-text fields (layout, typography, palette, notes) stay per rater in labels/.",
+  "computedAt": "2026-11-16T17:52:22.648Z"
+}

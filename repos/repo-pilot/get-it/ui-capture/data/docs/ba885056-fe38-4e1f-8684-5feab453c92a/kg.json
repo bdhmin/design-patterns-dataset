@@ -1,0 +1,178 @@
+{
+  "v": 1,
+  "docId": "ba885056-fe38-4e1f-8684-5feab453c92a",
+  "status": "ready",
+  "buildAt": 1792482810000,
+  "lastEvaluatedAt": 1794694200000,
+  "evaluationCount": 15,
+  "nodes": [
+    {
+      "id": "nernst-equation",
+      "label": "Nernst equation",
+      "summary": "Equilibrium potential of a single ion species.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 88,
+        "comprehension": 71,
+        "structure": 70,
+        "application": 63
+      },
+      "evaluatorNote": "Strong: correct on every quiz item and used it in own words in chat."
+    },
+    {
+      "id": "action-potential-phases",
+      "label": "Action potential phases",
+      "summary": "Membrane voltage trace: depolarisation, overshoot, repolarisation, after-hyperpolarisation.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 86,
+        "comprehension": 79,
+        "structure": 70,
+        "application": 67
+      },
+      "evaluatorNote": "Strong: correct on every quiz item and used it in own words in chat."
+    },
+    {
+      "id": "saltatory-conduction",
+      "label": "Saltatory conduction",
+      "summary": "Spike jumping between nodes of Ranvier on a myelinated axon.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 72,
+        "comprehension": 65,
+        "structure": 53,
+        "application": 56
+      },
+      "evaluatorNote": "Understands the idea, but confuses it with a neighbouring concept under time pressure."
+    },
+    {
+      "id": "chemical-synapse",
+      "label": "Chemical synapse",
+      "summary": "Presynaptic terminal, vesicles, cleft, postsynaptic receptors.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 73,
+        "comprehension": 60,
+        "structure": 54,
+        "application": 50
+      },
+      "evaluatorNote": "Recalls the definition but hesitated applying it to an unseen example."
+    },
+    {
+      "id": "epsp-summation",
+      "label": "EPSP summation",
+      "summary": "Summing EPSPs to reach threshold.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 100,
+        "comprehension": 86,
+        "structure": 85,
+        "application": 76
+      },
+      "evaluatorNote": "Strong: correct on every quiz item and used it in own words in chat."
+    },
+    {
+      "id": "resting-potential",
+      "label": "Resting membrane potential",
+      "summary": "About -70 mV, set by the Na+/K+ pump and K+ leak channels.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 80,
+        "comprehension": 72,
+        "structure": 59,
+        "application": 55
+      },
+      "evaluatorNote": "Good recognition on quizzes; explanations still lean on the textbook's wording."
+    },
+    {
+      "id": "refractory-period",
+      "label": "Refractory periods",
+      "summary": "Absolute (Na+ channels inactivated) and relative refractoriness make propagation one-way.",
+      "pageHints": [
+        1
+      ],
+      "evaluation": {
+        "memory": 89,
+        "comprehension": 81,
+        "structure": 67,
+        "application": 67
+      },
+      "evaluatorNote": "Explains it unprompted and applies it to new cases; keep it warm with spaced review."
+    },
+    {
+      "id": "neurotransmitter-clearance",
+      "label": "Signal termination",
+      "summary": "AChE hydrolysis and reuptake transporters (SSRI target) end synaptic signalling.",
+      "pageHints": [
+        2
+      ],
+      "evaluation": {
+        "memory": 66,
+        "comprehension": 53,
+        "structure": 42,
+        "application": 38
+      },
+      "evaluatorNote": "Understands the idea, but confuses it with a neighbouring concept under time pressure."
+    }
+  ],
+  "edges": [
+    {
+      "source": "nernst-equation",
+      "target": "action-potential-phases",
+      "relation": "explains"
+    },
+    {
+      "source": "action-potential-phases",
+      "target": "saltatory-conduction",
+      "relation": "contrasts with"
+    },
+    {
+      "source": "saltatory-conduction",
+      "target": "chemical-synapse",
+      "relation": "is an example of"
+    },
+    {
+      "source": "chemical-synapse",
+      "target": "epsp-summation",
+      "relation": "requires"
+    },
+    {
+      "source": "action-potential-phases",
+      "target": "resting-potential",
+      "relation": "requires"
+    },
+    {
+      "source": "nernst-equation",
+      "target": "refractory-period",
+      "relation": "is a consequence of"
+    },
+    {
+      "source": "nernst-equation",
+      "target": "neurotransmitter-clearance",
+      "relation": "requires"
+    },
+    {
+      "source": "resting-potential",
+      "target": "nernst-equation",
+      "relation": "is related to"
+    },
+    {
+      "source": "resting-potential",
+      "target": "epsp-summation",
+      "relation": "is related to"
+    }
+  ],
+  "globalNote": "Most of the map is solid — recall and comprehension are well ahead. The gap is application: \"Signal termination\" still breaks down on unseen problems. A short quiz on it is the best next step."
+}

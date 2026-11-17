@@ -1,0 +1,370 @@
+{
+  "schemaVersion": "1.0.0",
+  "codebookVersion": "1.0.0",
+  "batch": "repo-pilot",
+  "site": {
+    "slug": "get-it--library",
+    "url": "http://localhost:4401/library",
+    "finalUrl": "http://localhost:4401/library",
+    "status": 200,
+    "title": "Get It.",
+    "capturedAt": "2026-11-16T17:50:59.656Z",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "screenshot": {
+      "ref": "capture/screenshot.png",
+      "width": 1440,
+      "height": 1409
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.8127.18 Safari/537.36",
+    "domain": "education",
+    "domainNote": "AI study tool: personal library of uploaded PDFs/notes with tags, visualizations, flashcards, knowledge graphs",
+    "provenance": {
+      "source": "repo",
+      "record": "repos/repo-pilot/get-it/explore.json",
+      "repo": {
+        "name": "beltromatti/get-it",
+        "url": "https://github.com/beltromatti/get-it",
+        "commit": "ae0fa999f352b951ab8150fac5dcf9d7ab6fd9a4",
+        "license": "Apache-2.0"
+      },
+      "view": {
+        "slug": "library",
+        "name": "Library",
+        "description": "List of all uploaded study documents with page counts, last-opened dates, visualization and knowledge-graph status badges."
+      }
+    }
+  },
+  "regions": [
+    {
+      "id": "header",
+      "role": "header",
+      "label": "Browser-style tab strip (Upload / Library) with refresh, settings and account icon buttons",
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 43
+      },
+      "patterns": [
+        "app-shell",
+        "tabs"
+      ]
+    },
+    {
+      "id": "page-intro",
+      "role": "page-header",
+      "label": "H1 'Your library' with explanatory paragraph",
+      "bbox": {
+        "x": 312,
+        "y": 88,
+        "width": 816,
+        "height": 100
+      },
+      "patterns": []
+    },
+    {
+      "id": "library-list",
+      "role": "list",
+      "label": "Vertical list of 14 outlined document cards with file icon, title, meta line, viz and evals pills, hover-revealed delete",
+      "bbox": {
+        "x": 312,
+        "y": 218,
+        "width": 816,
+        "height": 1143
+      },
+      "patterns": [
+        "overview-detail",
+        "card",
+        "badge"
+      ]
+    }
+  ],
+  "patterns": [
+    {
+      "id": "app-shell",
+      "status": "present",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 43
+          },
+          "quote": "Upload Library",
+          "region": "header",
+          "note": "Top bar with two top-level destinations rendered as tabs plus refresh/settings/account icon buttons"
+        }
+      ],
+      "dims": {
+        "primary": "top-navigation-bar",
+        "secondary": "none",
+        "items": [
+          "fixed-destinations"
+        ],
+        "visibility": "always-visible",
+        "structure": "single-app"
+      }
+    },
+    {
+      "id": "tabs",
+      "status": "uncertain",
+      "confidence": 0.5,
+      "rationale": "Upload/Library strip is styled as document tabs with a raised active tab, but items are route links, so it may be just app-shell navigation.",
+      "evidence": [
+        {
+          "bbox": {
+            "x": 8,
+            "y": 7,
+            "width": 190,
+            "height": 36
+          },
+          "quote": "Upload Library",
+          "region": "header",
+          "note": "Active Library tab is white and joins the content area"
+        }
+      ],
+      "dims": {
+        "placement": "top",
+        "label": [
+          "text",
+          "icon"
+        ],
+        "origin": "fixed-by-the-designer",
+        "grouping": "flat",
+        "switchBy": [
+          "click"
+        ]
+      }
+    },
+    {
+      "id": "overview-detail",
+      "status": "present",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 312,
+            "y": 218,
+            "width": 816,
+            "height": 1143
+          },
+          "quote": "Click any row to jump back in",
+          "region": "library-list",
+          "note": "List overview of documents; each row links to /viewer/<id> detail page"
+        }
+      ],
+      "dims": {
+        "attributePlacement": [
+          "in-both-views",
+          "in-overview-only"
+        ],
+        "abstraction": [
+          "category",
+          "sum-or-average"
+        ],
+        "truncation": "ellipsis",
+        "relationship": "one-to-one",
+        "recursion": [
+          "none"
+        ],
+        "openIn": "new-page",
+        "overviewType": [
+          "list"
+        ],
+        "detailMultiplicity": "one-at-a-time",
+        "openBy": [
+          "click"
+        ],
+        "openFrom": "whole-item",
+        "attributeScope": [
+          "per-item"
+        ]
+      }
+    },
+    {
+      "id": "card",
+      "status": "present",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 312,
+            "y": 218,
+            "width": 816,
+            "height": 74
+          },
+          "quote": "Lead_Application_26.docx",
+          "region": "library-list",
+          "note": "White outlined 12px-radius horizontal card; whole row is a link; trash button appears on hover"
+        },
+        {
+          "bbox": {
+            "x": 312,
+            "y": 1287,
+            "width": 816,
+            "height": 74
+          },
+          "quote": "Classical Mechanics",
+          "region": "library-list"
+        }
+      ],
+      "dims": {
+        "media": "side-thumbnail",
+        "actions": "one-primary-action",
+        "shape": "horizontal",
+        "style": "outlined",
+        "target": "whole-card"
+      }
+    },
+    {
+      "id": "badge",
+      "status": "present",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 898,
+            "y": 242,
+            "width": 167,
+            "height": 25
+          },
+          "quote": "1/6 viz graph ready",
+          "region": "library-list",
+          "note": "Status pills: green tint when complete, grey outline when partial/pending"
+        },
+        {
+          "bbox": {
+            "x": 895,
+            "y": 325,
+            "width": 170,
+            "height": 25
+          },
+          "quote": "no tags yet pending",
+          "region": "library-list"
+        },
+        {
+          "bbox": {
+            "x": 915,
+            "y": 571,
+            "width": 150,
+            "height": 25
+          },
+          "quote": "5/5 viz 15 evals",
+          "region": "library-list"
+        }
+      ],
+      "dims": {
+        "meaning": "count",
+        "overflow": "exact-count",
+        "aggregation": "per-item"
+      }
+    },
+    {
+      "id": "file-manager",
+      "status": "absent",
+      "confidence": 0.65,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 312,
+            "y": 218,
+            "width": 816,
+            "height": 1143
+          },
+          "region": "library-list",
+          "note": "Flat list of documents, no folders/locations/hierarchy"
+        }
+      ],
+      "dims": {}
+    },
+    {
+      "id": "popover",
+      "status": "absent",
+      "confidence": 0.6,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1368,
+            "y": 10,
+            "width": 28,
+            "height": 28
+          },
+          "region": "header",
+          "note": "Settings button opens a popover live, but nothing is open in the capture"
+        }
+      ],
+      "dims": {}
+    }
+  ],
+  "structure": {
+    "layout": "single-column centered (816px) list page under a browser-like tab strip; no footer or sidebar",
+    "regions": [
+      "header",
+      "page-intro",
+      "library-list"
+    ],
+    "density": "medium"
+  },
+  "aesthetics": {
+    "palette": [
+      "#f6f5f2",
+      "#ffffff",
+      "#f3f2ef",
+      "#111113",
+      "#2a2a2d",
+      "#6a6a6e",
+      "#ececea",
+      "#16a36a",
+      "#e8f8f0"
+    ],
+    "colorRoles": {
+      "background": "#ffffff",
+      "surface": "#f6f5f2",
+      "text": "#111113",
+      "muted": "#6a6a6e",
+      "border": "#ececea",
+      "accent": "#16a36a"
+    },
+    "typography": "GeistSans throughout: 34px/700 H1, 14px semibold card titles, 12px muted meta lines, 11px pill labels, 13px/500 tab labels",
+    "typeScale": "Strong jump from 34px bold H1 to 14px body; card titles 14px/600, meta 12px grey, pills 11px; tight compact scale below the heading",
+    "shape": "soft",
+    "elevation": "flat",
+    "borders": "thin",
+    "imagery": [
+      "iconography"
+    ],
+    "iconStyle": "line",
+    "whitespace": "generous",
+    "backgroundTreatment": "solid",
+    "mood": [
+      "clean",
+      "calm",
+      "minimal",
+      "utilitarian",
+      "warm-neutral"
+    ]
+  },
+  "model": {
+    "rater": "rater-3",
+    "provider": "claude-code",
+    "name": "claude-opus-5-5",
+    "effort": "high",
+    "generatedAt": "2026-11-16T17:52:19.656Z",
+    "servedBy": [
+      "claude-opus-5-5"
+    ],
+    "turns": 8,
+    "usage": {
+      "input_tokens": 16,
+      "cache_creation_input_tokens": 29975,
+      "cache_read_input_tokens": 230494,
+      "output_tokens": 6573
+    }
+  },
+  "notes": "Warm off-white chrome (#f6f5f2/#f3f2ef) with a desktop/browser-like tab strip where the active 'Library' tab is white and merges into the white content page. Cards are white with 1px #ececea borders and 12px radius, no shadows; a grey rounded square holds a line document icon. Status pills (tag icon + 'n/m viz', graph icon + 'N evals' / 'graph ready' / 'pending') switch from grey outline to mint-green tint+border when complete. Hover darkens card border and reveals a trash icon; clicking it turns red (likely arm-to-confirm), not in capture. Settings icon opens a settings popover (model engine, theme segmented control, toggles) live only."
+}

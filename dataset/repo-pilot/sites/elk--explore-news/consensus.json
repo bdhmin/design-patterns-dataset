@@ -1,0 +1,626 @@
+{
+  "site": {
+    "slug": "elk--explore-news",
+    "url": "http://localhost:4400/explore/links",
+    "finalUrl": "http://localhost:4400/explore/links",
+    "status": 200,
+    "title": "News | Explore | Elk",
+    "capturedAt": "2026-11-16T17:49:52.452Z",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "screenshot": {
+      "ref": "capture/screenshot.png",
+      "width": 1440,
+      "height": 978
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.8127.18 Safari/537.36",
+    "domain": "social-community",
+    "domainNote": "Elk — web client for Mastodon (fediverse); Explore > News trending links page, logged-out view",
+    "provenance": {
+      "source": "repo",
+      "record": "repos/repo-pilot/elk/explore.json",
+      "repo": {
+        "name": "elk-zone/elk",
+        "url": "https://github.com/elk-zone/elk",
+        "commit": "6b956a6d4a89a676059d83a0b0e59d7165d5f266",
+        "license": "MIT"
+      },
+      "view": {
+        "slug": "explore-news",
+        "name": "Explore – trending news",
+        "description": "Explore News tab listing trending link cards with thumbnail, source, headline and excerpt."
+      }
+    }
+  },
+  "codebookVersion": "1.0.0",
+  "batch": "repo-pilot",
+  "raters": [
+    "rater-1",
+    "rater-2",
+    "rater-3"
+  ],
+  "domain": {
+    "value": "social-community",
+    "support": 3
+  },
+  "structure": {
+    "density": {
+      "value": "medium",
+      "support": 3
+    },
+    "layout": {
+      "rater-1": "three-column app layout: left nav sidebar, centered 600px content column with sub-tabs, right sidebar with search and instance info",
+      "rater-2": "three-column app layout: left sidebar nav (logo, nav links, sign-in prompt), centre 600px content column with route sub-tabs, info notice and link-card list, right aside with search, instance info and footer",
+      "rater-3": "three-column app layout: left nav sidebar, central 600px content column with sub-tabs and a list, right sidebar with search/instance info/footer"
+    }
+  },
+  "aesthetics": {
+    "shape": {
+      "value": "soft",
+      "support": 3
+    },
+    "elevation": {
+      "value": "flat",
+      "support": 3
+    },
+    "borders": {
+      "value": "thin",
+      "support": 3
+    },
+    "iconStyle": {
+      "value": "line",
+      "support": 3
+    },
+    "whitespace": {
+      "value": "moderate",
+      "support": 3
+    },
+    "backgroundTreatment": {
+      "value": "solid",
+      "support": 3
+    }
+  },
+  "patterns": [
+    {
+      "id": "app-shell",
+      "status": "present",
+      "confidence": 0.86,
+      "dims": {
+        "primary": "sidebar",
+        "secondary": "sub-tabs-under-the-header",
+        "items": [
+          "fixed-destinations"
+        ],
+        "visibility": "always-visible",
+        "structure": "single-app"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 120,
+            "y": 86,
+            "width": 300,
+            "height": 723
+          },
+          "note": "Persistent left sidebar nav of fixed destinations",
+          "quote": "Explore",
+          "region": "left-sidebar",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 435,
+            "y": 0,
+            "width": 600,
+            "height": 84
+          },
+          "note": "Sub-tabs within Explore",
+          "quote": "Posts Hashtags News For you",
+          "region": "explore-tabs",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 1046,
+            "y": 27,
+            "width": 270,
+            "height": 36
+          },
+          "note": "Global search in right column",
+          "region": "right-sidebar",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 120,
+            "y": 86,
+            "width": 300,
+            "height": 723
+          },
+          "quote": "Home Notifications Conversations Favorites Bookmarks",
+          "note": "left sidebar global navigation",
+          "region": "left-sidebar",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 435,
+            "y": 0,
+            "width": 600,
+            "height": 84
+          },
+          "quote": "Posts Hashtags News For you",
+          "note": "sub-tabs within Explore destination",
+          "region": "explore-tabs",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 1035,
+            "y": 0,
+            "width": 285,
+            "height": 978
+          },
+          "note": "right aside with search and instance info",
+          "region": "right-aside",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 120,
+            "y": 86,
+            "width": 300,
+            "height": 723
+          },
+          "quote": "Home Notifications Conversations Favorites Bookmarks",
+          "region": "left-sidebar",
+          "note": "Persistent left sidebar nav of fixed destinations",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 435,
+            "y": 0,
+            "width": 600,
+            "height": 84
+          },
+          "quote": "Posts Hashtags News For you",
+          "region": "explore-tabs",
+          "note": "Sub-tabs within Explore",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 1035,
+            "y": 0,
+            "width": 285,
+            "height": 978
+          },
+          "region": "right-sidebar",
+          "note": "Right column with search and instance info",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "banner",
+      "status": "present",
+      "confidence": 0.73,
+      "dims": {
+        "scope": "page",
+        "severity": "information",
+        "dismissal": "dismissible",
+        "action": "none",
+        "placement": "top-of-content"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 435,
+            "y": 84,
+            "width": 600,
+            "height": 68
+          },
+          "note": "Informational note with close X above the list",
+          "quote": "These news stories are being talked about by people on this and other servers of the decentralized network right now.",
+          "region": "info-banner",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 435,
+            "y": 84,
+            "width": 600,
+            "height": 68
+          },
+          "quote": "These news stories are being talked about by people on this and other servers of the decentralized network right now.",
+          "note": "informational notice with close (×) button at top of content",
+          "region": "info-notice",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 435,
+            "y": 84,
+            "width": 600,
+            "height": 68
+          },
+          "quote": "These news stories are being talked about by people on this and other servers of the decentralized network right now.",
+          "region": "info-banner",
+          "note": "Informational notice at top of content with × close button",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "card",
+      "status": "present",
+      "confidence": 0.83,
+      "dims": {
+        "media": "side-thumbnail",
+        "actions": "none",
+        "shape": "horizontal",
+        "style": "filled",
+        "target": "whole-card"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 435,
+            "y": 152,
+            "width": 600,
+            "height": 151
+          },
+          "note": "Horizontal link card: 120px rounded thumbnail left, source, bold truncated title, 2-line excerpt; whole row is one link; light grey fill separated by hairlines",
+          "quote": "Urban roofs as stepping stones for wild bees: native forbs ...",
+          "region": "news-list",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 435,
+            "y": 605,
+            "width": 600,
+            "height": 151
+          },
+          "note": "Card with placeholder newspaper icon when no image",
+          "quote": "volkov.sec",
+          "region": "news-list",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 435,
+            "y": 152,
+            "width": 600,
+            "height": 151
+          },
+          "quote": "Urban roofs as stepping stones for wild bees: native forbs ...",
+          "note": "whole-card link with left 120px rounded thumbnail, source, bold title, truncated description on light grey fill",
+          "region": "news-list",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 435,
+            "y": 605,
+            "width": 600,
+            "height": 151
+          },
+          "quote": "Your dependencies have dependencies: supply chain atta...",
+          "note": "placeholder newspaper icon when no image",
+          "region": "news-list",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 435,
+            "y": 152,
+            "width": 600,
+            "height": 151
+          },
+          "quote": "Urban roofs as stepping stones for wild bees: native forbs ...",
+          "region": "news-feed",
+          "note": "Link preview card: 120px rounded side thumbnail, source, bold title, 2-line excerpt; whole row is the link",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 435,
+            "y": 605,
+            "width": 600,
+            "height": 151
+          },
+          "quote": "volkov.sec",
+          "region": "news-feed",
+          "note": "Variant with placeholder newspaper icon when no image",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "feed",
+      "status": "present",
+      "confidence": 0.72,
+      "dims": {
+        "density": "card-preview",
+        "heterogeneity": [
+          "uniform-posts"
+        ],
+        "ordering": "ranked",
+        "sources": [
+          "global-pool"
+        ],
+        "arrangement": "single-column",
+        "position": "caught-up-marker",
+        "nesting": [
+          "flat"
+        ]
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 435,
+            "y": 152,
+            "width": 600,
+            "height": 755
+          },
+          "note": "Single-column stream of trending link previews",
+          "quote": "The hidden battery under Copenhagen's streets",
+          "region": "news-list",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 640,
+            "y": 922,
+            "width": 200,
+            "height": 30
+          },
+          "note": "End marker",
+          "quote": "End of the list",
+          "region": "news-list",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 435,
+            "y": 152,
+            "width": 600,
+            "height": 755
+          },
+          "note": "single-column stream of trending link cards",
+          "region": "news-list",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 640,
+            "y": 925,
+            "width": 190,
+            "height": 25
+          },
+          "quote": "End of the list",
+          "note": "explicit end marker",
+          "region": "news-list",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 435,
+            "y": 152,
+            "width": 600,
+            "height": 755
+          },
+          "quote": "The hidden battery under Copenhagen's streets",
+          "region": "news-feed",
+          "note": "Single-column stream of trending link previews",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 640,
+            "y": 920,
+            "width": 190,
+            "height": 36
+          },
+          "quote": "End of the list",
+          "region": "news-feed",
+          "note": "Explicit end marker",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "recommendations",
+      "status": "absent",
+      "confidence": 0.63,
+      "dims": {},
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 435,
+            "y": 152,
+            "width": 600,
+            "height": 755
+          },
+          "note": "trending list is the same for all visitors (signed out), not personalised",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 435,
+            "y": 152,
+            "width": 600,
+            "height": 755
+          },
+          "note": "Trending news is global popularity, not personalised recommendation; treated as ranked feed",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "search-results",
+      "status": "absent",
+      "confidence": 0.83,
+      "dims": {},
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 435,
+            "y": 152,
+            "width": 600,
+            "height": 755
+          },
+          "note": "list is not query-driven",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 1046,
+            "y": 27,
+            "width": 270,
+            "height": 37
+          },
+          "note": "Only a search box; the list is trending, not query results",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "tabs",
+      "status": "present",
+      "confidence": 0.78,
+      "dims": {
+        "placement": "top",
+        "label": [
+          "text"
+        ],
+        "origin": "fixed-by-the-designer",
+        "grouping": "flat",
+        "switchBy": [
+          "click"
+        ]
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 435,
+            "y": 10,
+            "width": 600,
+            "height": 63
+          },
+          "note": "Text tabs switching Explore views (implemented as route links); 'For you' greyed/disabled when signed out; no visible active indicator in capture",
+          "quote": "News",
+          "region": "explore-tabs",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 435,
+            "y": 10,
+            "width": 600,
+            "height": 63
+          },
+          "quote": "Posts Hashtags News For you",
+          "note": "route-link tabs; 'For you' greyed out (unavailable signed out); active indicator barely distinguishable",
+          "region": "explore-tabs",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 435,
+            "y": 10,
+            "width": 600,
+            "height": 63
+          },
+          "quote": "Posts Hashtags News For you",
+          "region": "explore-tabs",
+          "note": "Route-based tab strip; 'For you' greyed/disabled when signed out",
+          "rater": "rater-3"
+        }
+      ],
+      "ties": [
+        "dims.background"
+      ]
+    },
+    {
+      "id": "text-field",
+      "status": "present",
+      "confidence": 0.82,
+      "dims": {
+        "supporting": [
+          "placeholder"
+        ],
+        "style": "outlined"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1046,
+            "y": 27,
+            "width": 270,
+            "height": 36
+          },
+          "note": "Search input with magnifier icon and placeholder, rounded thin outline",
+          "quote": "Search",
+          "region": "right-sidebar",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 1046,
+            "y": 26,
+            "width": 270,
+            "height": 38
+          },
+          "quote": "Search",
+          "note": "rounded outlined search input with magnifier prefix icon and placeholder",
+          "region": "right-aside",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 1046,
+            "y": 27,
+            "width": 270,
+            "height": 37
+          },
+          "quote": "Search",
+          "region": "right-sidebar",
+          "note": "Search input with magnifier icon and placeholder",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "tooltip",
+      "status": "absent",
+      "confidence": 0.6,
+      "dims": {},
+      "support": 3,
+      "raters": 3,
+      "evidence": []
+    }
+  ],
+  "note": "Majority vote across raters. Free-text fields (layout, typography, palette, notes) stay per rater in labels/.",
+  "computedAt": "2026-11-16T17:50:56.366Z"
+}

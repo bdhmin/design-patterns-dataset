@@ -1,0 +1,23 @@
+{
+  "slug": "surmai--trip-transportation",
+  "url": "http://localhost:4402/login",
+  "domain": "travel-hospitality",
+  "source": "repo",
+  "state": "labeled",
+  "raters": {
+    "rater-1": {
+      "state": "done",
+      "updatedAt": "2026-11-16T17:58:46.865Z"
+    },
+    "rater-2": {
+      "state": "done",
+      "updatedAt": "2026-11-16T17:58:42.876Z"
+    },
+    "rater-3": {
+      "state": "done",
+      "updatedAt": "2026-11-16T17:58:33.253Z"
+    }
+  },
+  "flags": [],
+  "updatedAt": "2026-11-16T17:58:46.866Z"
+}

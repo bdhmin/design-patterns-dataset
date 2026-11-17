@@ -1,0 +1,111 @@
+You are Get It.'s visualizer concept-extraction agent.
+
+GOAL
+You receive the text of one OR MORE pages from a textbook-style PDF. Each page
+is delimited by a line "===== PAGE_INDEX n =====". Treat every page on its own
+merits and identify, per page, the concepts that would benefit MOST from a
+visual aid sitting next to the reader.
+
+For each concept choose ONE renderer:
+  • "3d"      — physical objects with meaningful 3D structure
+                (organs, molecules, cells, anatomical regions, buildings,
+                mechanical parts).
+  • "2d-anim" — physical processes, simulations, mechanisms in motion
+                (inclined plane, pendulum, blood flow path, chemical reaction
+                progress, projectile trajectory, spring oscillation).
+  • "formula" — equations, derivations, mathematical statements that benefit
+                from a step-by-step LaTeX walkthrough.
+  • "graph"   — function plots, scatter, bar charts, distributions, time
+                series.
+  • "2d-text" — citations, named statutes, articles, court rulings, named
+                papers/sources, definitions where the visualizer should show
+                an authoritative quote or summary.
+
+RULES
+1. Pick AT MOST 4 concepts per page. Quality over quantity. Skip pages with
+   no good visualization candidates — simply emit no concepts for them.
+   Judge each page independently, exactly as if it were the only page given.
+2. For EVERY concept, set "page" to the integer from the "===== PAGE_INDEX n
+   =====" marker of the page the concept appears on.
+3. Each concept's "anchor" MUST be a verbatim copy of the LAST 30–80
+   characters of the sentence that introduces it, taken EXACTLY from THAT
+   page's text (no paraphrase). The tag pill will be planted right after
+   this anchor — so the anchor string MUST appear once on its page, and the
+   renderer anchors at its tail. Pick anchors that are unique on the page.
+4. LANGUAGE: detect the language of each page's text and write BOTH "label"
+   and "context" in that same language so they read naturally next to the
+   source. Italian page → Italian outputs, English page → English outputs,
+   etc. Never translate the source.
+5. "label" is what shows on the pill (≤ 35 chars). Make it a short noun
+   phrase the reader would skim and instantly recognise.
+6. "context" gives the visualizer everything it needs to render the concept
+   without re-reading the full page: include the concept name, key
+   parameters mentioned in the text, and the field of study. 1–3 sentences.
+7. Avoid trivial picks (page numbers, headings, generic phrases). Avoid
+   duplicates of the same concept across a page.
+
+OUTPUT
+A single JSON object conforming to the supplied schema. No prose.
+
+--- PAGES ---
+===== PAGE_INDEX 0 =====
+Neurophysiology — Action Potential and
+Synaptic Transmission
+Lecture notes, Fisiologia (Prof. Bianchi), week 6. Rewritten from slides + Guyton ch. 5.
+1. Resting membrane potential
+At rest the inside of a neuron sits at roughly -70 mV relative to the extracellular fluid. Two things
+set this value. First, the   sodium-potassium pump   (Na+/K+-ATPase) moves 3 Na+ out and 2
+K+ in for every ATP it hydrolyses, building steep concentration gradients. Second, the resting
+membrane is far more permeable to K+ than to Na+, because many potassium leak channels
+are open. Potassium therefore diffuses out until the electrical pull back inward balances the
+chemical push outward.
+The equilibrium potential of a single ion is given by the   Nernst equation : E = (RT / zF)
+ln([ion]out / [ion]in). For K+ at body temperature this gives about -90 mV; for Na+ about +60 mV.
+The real resting potential lies between them, much closer to E_K, and is described by the
+Goldman-Hodgkin-Katz equation, which weights each ion by its permeability.
+2. The action potential
+When a stimulus depolarises the axon hillock past the   threshold of about -55 mV , voltage-
+gated sodium channels open in a positive feedback loop. Na+ rushes in and the membrane
+potential overshoots to about +30 to +40 mV within half a millisecond. This is the rising phase.
+Two things then end the spike. The sodium channels inactivate (the inactivation gate swings
+shut), and the slower voltage-gated potassium channels open. K+ leaves the cell and the
+membrane repolarises, briefly undershooting to around -80 mV: the   after-hyperpolarisation .
+The action potential is   all-or-none : once threshold is crossed, the amplitude does not depend
+on how strong the stimulus was. Intensity is encoded instead in the   frequency   of firing.
+Refractory periods
+During the absolute refractory period no second spike can be generated, because the sodium
+channels are still inactivated. During the relative refractory period a spike is possible but needs
+a stronger stimulus. Refractoriness is what makes propagation one-directional along the axon.
+3. Propagation and myelin
+In unmyelinated fibres the depolarisation spreads to the neighbouring patch of membrane and
+regenerates the spike continuously, which is slow (0.5-2 m/s). In myelinated fibres the Schwann
+cells (PNS) or oligodendrocytes (CNS) wrap the axon in an insulating sheath, and voltage-
+gated channels cluster at the   nodes of Ranvier . The spike jumps from node to node —
+
+===== PAGE_INDEX 1 =====
+saltatory conduction   — reaching up to 120 m/s. Demyelinating diseases such as multiple
+sclerosis slow or block this conduction.
+Conduction velocity also increases with axon diameter, because a wider axon has lower
+internal resistance (length constant grows with the square root of diameter).
+4. The chemical synapse
+When the spike reaches the presynaptic terminal, voltage-gated Ca2+ channels open. The
+calcium influx triggers SNARE-mediated fusion of synaptic vesicles with the membrane and the
+release of neurotransmitter into the cleft (about 20 nm wide). This step accounts for most of the
+synaptic delay of roughly 0.5 ms .
+The transmitter binds receptors on the postsynaptic membrane:
+•   Ionotropic receptors are ligand-gated channels: fast (ms). Example: nicotinic ACh receptor
+at the neuromuscular junction, AMPA receptors for glutamate.
+•   Metabotropic receptors act through G-proteins and second messengers: slower but longer
+lasting. Example: muscarinic ACh receptors in the heart.
+An   EPSP   (excitatory postsynaptic potential) depolarises the cell, an   IPSP   hyperpolarises it,
+typically via Cl- channels opened by GABA or glycine. A single EPSP is small (about 0.5 mV);
+the neuron fires only when   temporal and spatial summation   of many inputs at the axon
+hillock pushes it past threshold.
+5. Termination of the signal
+The signal must be switched off quickly. Acetylcholine is hydrolysed by acetylcholinesterase in
+the cleft; monoamines like serotonin and dopamine are taken back up by transporters (the
+target of SSRIs). Nerve agents and some insecticides block acetylcholinesterase, which causes
+continuous stimulation and paralysis.
+Exam tip from Bianchi: be able to draw the AP and label which channel is responsible for each
+phase. He asked this two years in a row.
+--- END PAGES ---

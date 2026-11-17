@@ -1,0 +1,194 @@
+{
+  "v": 1,
+  "docId": "fddba584-2509-4829-ab34-77cd072d08b8",
+  "chats": [
+    {
+      "id": "s588y0uxebyzr",
+      "title": "Esercizio 4.17 — tre urne",
+      "createdAt": 1792954236000,
+      "updatedAt": 1792954430911,
+      "messages": [
+        {
+          "role": "user",
+          "content": "esercizio con tre urne: U1 ha 2 bianche 1 nera, U2 1 bianca 2 nere, U3 3 bianche. scelgo un'urna a caso ed estraggo bianca. prob che sia U3?",
+          "ts": 1792954247069
+        },
+        {
+          "role": "assistant",
+          "content": "Applica Bayes con la partizione {U1, U2, U3}, ciascuna con prior 1/3.\n\n**Verosimiglianze:** P(B|U1) = 2/3, P(B|U2) = 1/3, P(B|U3) = 1.\n\n**Probabilità totale:** P(B) = (1/3)(2/3 + 1/3 + 1) = (1/3)(2) = 2/3.\n\n**Posterior:** P(U3|B) = (1 · 1/3) / (2/3) = **1/2**.\n\nIntuizione: U3 dà bianca sempre, quindi \"pesa\" il doppio di U1 e il triplo di U2 nell'evidenza.",
+          "ts": 1792954355499
+        },
+        {
+          "role": "user",
+          "content": "ahh io avevo messo 1/3 al numeratore senza moltiplicare per la verosimiglianza. grazie",
+          "ts": 1792954430911
+        }
+      ]
+    }
+  ],
+  "flashcards": [
+    {
+      "id": "s711lzbzb8z5l",
+      "topic": "all",
+      "createdAt": 1792579152000,
+      "endedAt": 1792579472000,
+      "cards": [
+        {
+          "q": "Definizione di probabilità condizionata",
+          "a": "P(A|B) = P(A e B) / P(B), con P(B) > 0.",
+          "userAnswer": "p(a|b) = p(a e b) / p(b), con p(b) > 0",
+          "rating": 4,
+          "answeredAt": 1792579202000
+        },
+        {
+          "q": "Cosa sono prior e posterior?",
+          "a": "Prior P(Bi) prima dell'osservazione; posterior P(Bi|A) aggiornata dopo.",
+          "userAnswer": "prior p(bi) prima dell'osservazione",
+          "rating": 3,
+          "answeredAt": 1792579252000
+        },
+        {
+          "q": "Sensibilità vs specificità",
+          "a": "Sens = P(+|malato); spec = P(-|sano).",
+          "userAnswer": "sens = p(+|malato)",
+          "rating": 3,
+          "answeredAt": 1792579302000
+        },
+        {
+          "q": "Perché il VPP è basso con malattie rare?",
+          "a": "I falsi positivi tra i tanti sani superano i veri positivi tra i pochi malati.",
+          "userAnswer": "i think it's the opposite?",
+          "rating": 2,
+          "answeredAt": 1792579352000
+        },
+        {
+          "q": "Media e varianza della Poisson",
+          "a": "Entrambe uguali a lambda.",
+          "userAnswer": "not sure",
+          "rating": 2,
+          "answeredAt": 1792579402000
+        },
+        {
+          "q": "Fallacia del procuratore",
+          "a": "Confondere P(A|B) con P(B|A).",
+          "userAnswer": "not sure",
+          "rating": 1,
+          "answeredAt": 1792579452000
+        }
+      ]
+    },
+    {
+      "id": "sb2nzsh61g1p",
+      "topic": "VPP vs prevalenza",
+      "createdAt": 1793454348000,
+      "endedAt": 1793454668000,
+      "cards": [
+        {
+          "q": "Definizione di probabilità condizionata",
+          "a": "P(A|B) = P(A e B) / P(B), con P(B) > 0.",
+          "userAnswer": "not sure",
+          "rating": 1,
+          "answeredAt": 1793454398000
+        },
+        {
+          "q": "Cosa sono prior e posterior?",
+          "a": "Prior P(Bi) prima dell'osservazione; posterior P(Bi|A) aggiornata dopo.",
+          "userAnswer": "prior p(bi) prima dell'osservazione",
+          "rating": 4,
+          "answeredAt": 1793454448000
+        },
+        {
+          "q": "Sensibilità vs specificità",
+          "a": "Sens = P(+|malato); spec = P(-|sano).",
+          "userAnswer": "sens = p(+|malato)",
+          "rating": 4,
+          "answeredAt": 1793454498000
+        },
+        {
+          "q": "Perché il VPP è basso con malattie rare?",
+          "a": "I falsi positivi tra i tanti sani superano i veri positivi tra i pochi malati.",
+          "userAnswer": "not sure",
+          "rating": 1,
+          "answeredAt": 1793454548000
+        },
+        {
+          "q": "Media e varianza della Poisson",
+          "a": "Entrambe uguali a lambda.",
+          "userAnswer": "entrambe uguali a lambda",
+          "rating": 4,
+          "answeredAt": 1793454598000
+        },
+        {
+          "q": "Fallacia del procuratore",
+          "a": "Confondere P(A|B) con P(B|A).",
+          "userAnswer": "i think it's the opposite?",
+          "rating": 1,
+          "answeredAt": 1793454648000
+        }
+      ]
+    }
+  ],
+  "quizzes": [
+    {
+      "id": "sauomx1024gcy",
+      "topic": "all",
+      "createdAt": 1793079264000,
+      "endedAt": 1793079559000,
+      "questions": [
+        {
+          "stem": "Prevalenza 1%, sensibilità 95%, specificità 90%. P(malato | positivo) è circa:",
+          "options": [
+            "95%",
+            "50%",
+            "9%",
+            "1%"
+          ],
+          "correctIndex": 2,
+          "explanation": "0.0095 / 0.1085 ≈ 0.088.",
+          "chosenIndex": 0,
+          "answeredAt": 1793079334000
+        },
+        {
+          "stem": "Se A e B sono indipendenti allora:",
+          "options": [
+            "P(A|B) = P(B)",
+            "P(A|B) = P(A)",
+            "P(A e B) = 0",
+            "P(A) + P(B) = 1"
+          ],
+          "correctIndex": 1,
+          "explanation": "Sapere B non cambia la probabilità di A.",
+          "chosenIndex": 2,
+          "answeredAt": 1793079404000
+        },
+        {
+          "stem": "Estrazioni senza reimmissione: quale distribuzione?",
+          "options": [
+            "Binomiale",
+            "Poisson",
+            "Ipergeometrica",
+            "Normale"
+          ],
+          "correctIndex": 2,
+          "explanation": "Le prove non sono indipendenti.",
+          "chosenIndex": 2,
+          "answeredAt": 1793079474000
+        },
+        {
+          "stem": "Per N(mu, sigma^2), la frazione entro 2 sigma è circa:",
+          "options": [
+            "68%",
+            "90%",
+            "95%",
+            "99.7%"
+          ],
+          "correctIndex": 2,
+          "explanation": "Regola 68-95-99.7.",
+          "chosenIndex": 2,
+          "answeredAt": 1793079544000
+        }
+      ]
+    }
+  ],
+  "feynman": []
+}

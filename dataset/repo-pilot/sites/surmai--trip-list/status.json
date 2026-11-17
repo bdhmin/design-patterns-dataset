@@ -1,0 +1,23 @@
+{
+  "slug": "surmai--trip-list",
+  "url": "http://localhost:4402/login",
+  "domain": "travel-hospitality",
+  "source": "repo",
+  "state": "labeled",
+  "raters": {
+    "rater-1": {
+      "state": "done",
+      "updatedAt": "2026-11-16T17:57:59.553Z"
+    },
+    "rater-2": {
+      "state": "done",
+      "updatedAt": "2026-11-16T17:58:11.980Z"
+    },
+    "rater-3": {
+      "state": "done",
+      "updatedAt": "2026-11-16T17:58:07.547Z"
+    }
+  },
+  "flags": [],
+  "updatedAt": "2026-11-16T17:58:11.982Z"
+}

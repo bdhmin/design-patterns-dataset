@@ -1,0 +1,70 @@
+# Codebook proposal (new-entry) — review with: node scripts/proposals.ts show repo-pilot game-hud
+id: game-hud
+kind: new-entry
+status: open
+batch: repo-pilot
+codebookVersion: 1.0.0
+name: Game HUD / simulation chrome
+level: pattern
+parent: monitor
+definition: "The heads-up display around a simulation or strategy game world: resource and score
+  readouts, a game clock with time-speed controls (pause/1×/2×/4×), and quest/goal panels with
+  rewards, all overlaid on the playfield."
+relations:
+  neighbors:
+    - app-shell
+    - dashboard
+    - stat-tile
+    - task-list
+dimensions:
+  - name: HUD elements
+    family: content
+    question: What does the HUD show?
+    subdimensions:
+      - id: hudElements
+        name: Elements
+        select: many
+        values:
+          - id: resource-counters
+            name: Resource counters
+          - id: time-speed-controls
+            name: Time-speed controls
+            example: "Cities: Skylines speed buttons"
+          - id: quest-list-with-rewards
+            name: Quest list with rewards
+          - id: achievements
+            name: Achievements
+          - id: minimap
+            name: Minimap
+rationale:
+  - rater: rater-1
+    site: seriesoftubes--world-map
+    text: app-shell, stat-tile and dashboard each cover a slice, but none captures the game-specific
+      pairing of resource counters, a time-speed transport and quest/objective lists with rewards
+      and achievements around a playfield.
+sources:
+  - batch: repo-pilot
+    site: seriesoftubes--world-map
+    url: http://seriesoftubes.localhost:4318/
+    note: proposed by rater-1
+evidence:
+  - site: seriesoftubes--world-map
+    rater: rater-1
+    bbox:
+      x: 12
+      y: 10
+      width: 1416
+      height: 60
+    note: Resource tiles, date, speed controls
+    quote: Y3 · Apr 21
+  - site: seriesoftubes--world-map
+    rater: rater-1
+    bbox:
+      x: 15
+      y: 434
+      width: 346
+      height: 410
+    note: Goals with rewards
+    quote: Reward $20.0k
+createdAt: 2026-11-16T18:01:31.534Z
+updatedAt: 2026-11-16T18:01:31.534Z

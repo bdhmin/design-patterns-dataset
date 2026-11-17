@@ -1,0 +1,444 @@
+{
+  "schemaVersion": "1.0.0",
+  "codebookVersion": "1.0.0",
+  "batch": "repo-pilot",
+  "site": {
+    "slug": "get-it--library",
+    "url": "http://localhost:4401/library",
+    "finalUrl": "http://localhost:4401/library",
+    "status": 200,
+    "title": "Get It.",
+    "capturedAt": "2026-11-16T17:50:59.656Z",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "screenshot": {
+      "ref": "capture/screenshot.png",
+      "width": 1440,
+      "height": 1409
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.8127.18 Safari/537.36",
+    "domain": "education",
+    "domainNote": "AI study tool: document library for PDFs/notes with tags, visualizations, knowledge graph, flashcards and quizzes",
+    "provenance": {
+      "source": "repo",
+      "record": "repos/repo-pilot/get-it/explore.json",
+      "repo": {
+        "name": "beltromatti/get-it",
+        "url": "https://github.com/beltromatti/get-it",
+        "commit": "ae0fa999f352b951ab8150fac5dcf9d7ab6fd9a4",
+        "license": "Apache-2.0"
+      },
+      "view": {
+        "slug": "library",
+        "name": "Library",
+        "description": "List of all uploaded study documents with page counts, last-opened dates, visualization and knowledge-graph status badges."
+      }
+    }
+  },
+  "regions": [
+    {
+      "id": "header",
+      "role": "header",
+      "label": "Browser-style tab bar (Upload / Library) with refresh, settings and account icon buttons",
+      "bbox": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 43
+      },
+      "patterns": [
+        "app-shell",
+        "tabs",
+        "popover",
+        "settings",
+        "tooltip"
+      ]
+    },
+    {
+      "id": "intro",
+      "role": "page-header",
+      "label": "H1 'Your library' with explanatory paragraph",
+      "bbox": {
+        "x": 312,
+        "y": 91,
+        "width": 816,
+        "height": 95
+      },
+      "patterns": []
+    },
+    {
+      "id": "library-list",
+      "role": "item-list",
+      "label": "Vertical list of 14 outlined document row cards with file icon, title, meta line, viz/graph status pills and hover delete",
+      "bbox": {
+        "x": 312,
+        "y": 218,
+        "width": 816,
+        "height": 1143
+      },
+      "patterns": [
+        "overview-detail",
+        "card",
+        "badge"
+      ]
+    }
+  ],
+  "patterns": [
+    {
+      "id": "app-shell",
+      "status": "present",
+      "confidence": 0.75,
+      "dims": {
+        "primary": "top-navigation-bar",
+        "secondary": "none",
+        "items": [
+          "fixed-destinations"
+        ],
+        "visibility": "always-visible",
+        "structure": "single-app"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 43
+          },
+          "note": "Persistent top bar with Upload/Library destinations and utility icons (refresh, settings, account)",
+          "quote": "Upload Library",
+          "region": "header"
+        }
+      ]
+    },
+    {
+      "id": "tabs",
+      "status": "present",
+      "confidence": 0.7,
+      "dims": {
+        "placement": "top",
+        "label": [
+          "text",
+          "icon"
+        ],
+        "origin": "fixed-by-the-designer",
+        "grouping": "flat",
+        "switchBy": [
+          "click"
+        ]
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 8,
+            "y": 7,
+            "width": 190,
+            "height": 36
+          },
+          "note": "Browser-tab-styled destination switcher; active 'Library' tab is white and joins the content area, 'Upload' is a link to /",
+          "quote": "Library",
+          "region": "header"
+        }
+      ]
+    },
+    {
+      "id": "card",
+      "status": "present",
+      "confidence": 0.85,
+      "dims": {
+        "media": "side-thumbnail",
+        "actions": "one-primary-action",
+        "shape": "horizontal",
+        "style": "outlined",
+        "target": "whole-card"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 312,
+            "y": 218,
+            "width": 816,
+            "height": 74
+          },
+          "note": "White row card, 1px #ececea border, 12px radius, file icon tile on left, title + meta, status pills right; whole row is a link; trash 'Remove from library' button revealed on hover",
+          "quote": "Lead_Application_26.docx",
+          "region": "library-list"
+        },
+        {
+          "bbox": {
+            "x": 312,
+            "y": 1287,
+            "width": 816,
+            "height": 74
+          },
+          "quote": "Classical Mechanics",
+          "region": "library-list"
+        }
+      ]
+    },
+    {
+      "id": "overview-detail",
+      "status": "present",
+      "confidence": 0.8,
+      "dims": {
+        "attributePlacement": [
+          "in-overview-only"
+        ],
+        "abstraction": [
+          "style",
+          "sum-or-average",
+          "category"
+        ],
+        "truncation": "ellipsis",
+        "relationship": "one-to-one",
+        "recursion": [
+          "none"
+        ],
+        "openIn": "new-page",
+        "overviewType": [
+          "list"
+        ],
+        "openBy": [
+          "click"
+        ],
+        "openFrom": "whole-item",
+        "attributeScope": [
+          "per-item"
+        ]
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 312,
+            "y": 218,
+            "width": 816,
+            "height": 1143
+          },
+          "note": "List of documents; each row links to /viewer/<id> detail page; completion encoded as green pill styling; long meta truncated with ellipsis",
+          "quote": "Click any row to jump back in",
+          "region": "library-list"
+        }
+      ]
+    },
+    {
+      "id": "badge",
+      "status": "present",
+      "confidence": 0.8,
+      "dims": {
+        "meaning": "status",
+        "overflow": "exact-count",
+        "aggregation": "per-item"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 898,
+            "y": 242,
+            "width": 167,
+            "height": 25
+          },
+          "note": "Tag-icon pill '1/6 viz' (grey when incomplete, green when complete) and graph pill 'graph ready' / 'N evals' / 'pending'",
+          "quote": "1/6 viz graph ready",
+          "region": "library-list"
+        },
+        {
+          "bbox": {
+            "x": 895,
+            "y": 325,
+            "width": 170,
+            "height": 25
+          },
+          "quote": "no tags yet pending",
+          "region": "library-list"
+        }
+      ]
+    },
+    {
+      "id": "popover",
+      "status": "present",
+      "confidence": 0.65,
+      "dims": {
+        "openBy": "click",
+        "dismissBy": [
+          "escape"
+        ],
+        "placement": "below-the-anchor",
+        "contents": "mini-form",
+        "persistence": "until-dismissed"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1368,
+            "y": 10,
+            "width": 28,
+            "height": 28
+          },
+          "note": "Settings icon button opens (on live page) a settings panel anchored below it; not open in the capture",
+          "region": "header"
+        }
+      ],
+      "rationale": "Panel only observed on the live page, closed in the capture."
+    },
+    {
+      "id": "settings",
+      "status": "uncertain",
+      "confidence": 0.55,
+      "dims": {
+        "ia": "sectioned-page",
+        "controls": [
+          "boolean-toggles",
+          "single-and-multi-select",
+          "numeric-and-ranges"
+        ],
+        "timing": "instant"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1368,
+            "y": 10,
+            "width": 28,
+            "height": 28
+          },
+          "note": "Settings button opens popover with Model Engine, model selects, appearance segmented control, auto-generate toggle, numeric repair attempts; 'Saved automatically'",
+          "region": "header"
+        }
+      ],
+      "rationale": "Settings catalog exists only behind the settings button on the live page; not visible in the captured screenshot."
+    },
+    {
+      "id": "tooltip",
+      "status": "present",
+      "confidence": 0.6,
+      "dims": {
+        "trigger": [
+          "keyboard-focus",
+          "hover"
+        ],
+        "content": "label",
+        "placement": "below"
+      },
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1368,
+            "y": 10,
+            "width": 28,
+            "height": 28
+          },
+          "note": "Icon button shows tooltip 'Settings — provider, visualization preferences.' below on focus/hover (live page)",
+          "region": "header"
+        }
+      ]
+    },
+    {
+      "id": "file-manager",
+      "status": "absent",
+      "confidence": 0.7,
+      "dims": {},
+      "evidence": [
+        {
+          "bbox": {
+            "x": 312,
+            "y": 218,
+            "width": 816,
+            "height": 1143
+          },
+          "note": "Flat document list without folders, path, or file operations beyond remove; coded as overview-detail instead"
+        }
+      ]
+    },
+    {
+      "id": "confirmation",
+      "status": "absent",
+      "confidence": 0.5,
+      "dims": {},
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1085,
+            "y": 243,
+            "width": 25,
+            "height": 25
+          },
+          "note": "Clicking trash on live page showed no visible confirm dialog (possibly native confirm auto-dismissed)"
+        }
+      ],
+      "rationale": "Could not determine whether a native confirm() was triggered."
+    }
+  ],
+  "structure": {
+    "layout": "single centered column (816px) under a browser-tab-style top bar; page header then stacked list of row cards",
+    "regions": [
+      "header",
+      "intro",
+      "library-list"
+    ],
+    "density": "medium"
+  },
+  "aesthetics": {
+    "palette": [
+      "#f6f5f2",
+      "#ffffff",
+      "#111113",
+      "#6a6a6e",
+      "#2a2a2d",
+      "#ececea",
+      "#f3f2ef",
+      "#1f9d6b",
+      "#e9f9f1",
+      "#5b5bd6"
+    ],
+    "colorRoles": {
+      "background": "#ffffff",
+      "surface": "#ffffff",
+      "text": "#111113",
+      "muted": "#6a6a6e",
+      "border": "#ececea",
+      "chrome": "#f6f5f2",
+      "primary": "#5b5bd6",
+      "accent": "#1f9d6b",
+      "accentSurface": "#e9f9f1",
+      "iconTile": "#f3f2ef"
+    },
+    "typography": "GeistSans throughout: 34px/700 H1, 14px/600 row titles, 14px body intro, 12px muted meta, 11px pill labels, 13px/500 tab labels",
+    "typeScale": "Steep jump from 34px bold H1 to 14px titles; then 12px/11px meta and pills; weights 700/600/500/400",
+    "shape": "soft",
+    "elevation": "flat",
+    "borders": "thin",
+    "imagery": [
+      "iconography"
+    ],
+    "iconStyle": "line",
+    "whitespace": "generous",
+    "backgroundTreatment": "solid",
+    "mood": [
+      "clean",
+      "calm",
+      "minimal",
+      "utilitarian",
+      "warm-neutral"
+    ]
+  },
+  "model": {
+    "rater": "rater-2",
+    "provider": "claude-code",
+    "name": "claude-opus-5-5",
+    "effort": "high",
+    "generatedAt": "2026-11-16T17:52:22.280Z",
+    "servedBy": [
+      "claude-opus-5-5"
+    ],
+    "turns": 11,
+    "usage": {
+      "input_tokens": 22,
+      "cache_creation_input_tokens": 37214,
+      "cache_read_input_tokens": 393128,
+      "output_tokens": 5611
+    }
+  },
+  "notes": "Top chrome mimics browser/desktop tabs: warm off-white #f6f5f2 bar with the active 'Library' tab as a white tab merging into the white content area (indigo book icon). Rows are full-row links with a beige rounded icon tile and a hover-revealed trash icon (red on press). Status pills use tag and graph icons; grey outlined when incomplete, mint-green filled with green border/text when complete ('5/5 viz', '15 evals'). Raw filenames with underscores are shown as titles. Settings icon opens an anchored settings popover (model engine, model selects, theme segmented control, toggle, numeric field) on the live page; not visible in capture. Zero shadows; 6/8/12px radii."
+}

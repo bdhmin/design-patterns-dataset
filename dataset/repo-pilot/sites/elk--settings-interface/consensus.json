@@ -1,0 +1,591 @@
+{
+  "site": {
+    "slug": "elk--settings-interface",
+    "url": "http://localhost:4400/settings/interface",
+    "finalUrl": "http://localhost:4400/settings/interface",
+    "status": 200,
+    "title": "Interface | Settings | Elk",
+    "capturedAt": "2026-11-16T17:50:54.226Z",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "screenshot": {
+      "ref": "capture/screenshot.png",
+      "width": 1440,
+      "height": 978
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.8127.18 Safari/537.36",
+    "domain": "social-community",
+    "domainNote": "Elk — Mastodon/fediverse web client, Interface settings page (signed-out guest)",
+    "provenance": {
+      "source": "repo",
+      "record": "repos/repo-pilot/elk/explore.json",
+      "repo": {
+        "name": "elk-zone/elk",
+        "url": "https://github.com/elk-zone/elk",
+        "commit": "6b956a6d4a89a676059d83a0b0e59d7165d5f266",
+        "license": "MIT"
+      },
+      "view": {
+        "slug": "settings-interface",
+        "name": "Settings – Interface",
+        "description": "Two-pane settings screen with a category list (Interface, Language, Preferences, Logged in users, About) and Interface options: font size slider, color mode, theme color swatches and bottom-navigation configurator."
+      }
+    }
+  },
+  "codebookVersion": "1.0.0",
+  "batch": "repo-pilot",
+  "raters": [
+    "rater-1",
+    "rater-2",
+    "rater-3"
+  ],
+  "domain": {
+    "value": "social-community",
+    "support": 3
+  },
+  "structure": {
+    "density": {
+      "value": "medium",
+      "support": 3
+    },
+    "layout": {
+      "rater-1": "three-column app layout: left global nav sidebar, middle settings category list, right settings detail panel (scrolls independently)",
+      "rater-2": "three-column app layout: left global sidebar nav, middle settings category list (drill-down), right settings detail pane with stacked sections",
+      "rater-3": "Three-column app layout: a left sidebar with global nav and a sign-in prompt, a middle column listing settings categories with chevrons, and a right content pane with stacked setting sections. Page is centred at about 1200px and the sidebar is separated by a hairline divider."
+    }
+  },
+  "aesthetics": {
+    "shape": {
+      "value": "soft",
+      "support": 3
+    },
+    "elevation": {
+      "value": "flat",
+      "support": 3
+    },
+    "borders": {
+      "value": "thin",
+      "support": 3
+    },
+    "iconStyle": {
+      "value": "line",
+      "support": 3
+    },
+    "whitespace": {
+      "value": "moderate",
+      "support": 3
+    },
+    "backgroundTreatment": {
+      "value": "solid",
+      "support": 3
+    }
+  },
+  "patterns": [
+    {
+      "id": "app-shell",
+      "status": "present",
+      "confidence": 0.87,
+      "dims": {
+        "primary": "sidebar",
+        "secondary": "contextual-panel",
+        "items": [
+          "fixed-destinations"
+        ],
+        "visibility": "always-visible",
+        "structure": "single-app"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 120,
+            "y": 0,
+            "width": 300,
+            "height": 978
+          },
+          "quote": "Home",
+          "note": "Persistent left sidebar with global destinations",
+          "region": "sidebar",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 435,
+            "y": 23,
+            "width": 364,
+            "height": 225
+          },
+          "quote": "Logged in users",
+          "note": "Second column of settings sub-pages",
+          "region": "settings-nav",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 120,
+            "y": 86,
+            "width": 300,
+            "height": 723
+          },
+          "note": "Left sidebar global nav with logo and destinations",
+          "quote": "Home",
+          "region": "sidebar",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 435,
+            "y": 23,
+            "width": 364,
+            "height": 225
+          },
+          "note": "Settings sub-navigation column",
+          "quote": "Interface",
+          "region": "settings-nav",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 120,
+            "y": 0,
+            "width": 300,
+            "height": 978
+          },
+          "region": "sidebar",
+          "note": "Persistent left sidebar with logo, fixed destinations and account/sign-in area",
+          "quote": "Home Notifications Conversations",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 435,
+            "y": 23,
+            "width": 364,
+            "height": 225
+          },
+          "region": "settings-nav",
+          "note": "Second column of settings sub-pages beside the content",
+          "quote": "Interface",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "choice-control",
+      "status": "present",
+      "confidence": 0.87,
+      "dims": {
+        "cardinality": "single-choice",
+        "form": "segmented-control",
+        "option": [
+          "icon-or-image",
+          "label-only"
+        ],
+        "timing": "immediately",
+        "largeSets": "show-all"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 822,
+            "y": 167,
+            "width": 476,
+            "height": 55
+          },
+          "quote": "System",
+          "note": "Color Mode: three icon+label buttons, single choice (aria-pressed), applied instantly",
+          "region": "interface-settings",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 822,
+            "y": 492,
+            "width": 476,
+            "height": 258
+          },
+          "quote": "Scheduled posts",
+          "note": "Bottom Navigation: chip-like toggle buttons (role=switch) selecting up to five, committed with Save",
+          "region": "interface-settings",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 822,
+            "y": 492,
+            "width": 476,
+            "height": 258
+          },
+          "note": "Bottom navigation toggle chips (role=switch) with icons; selected ones turn grey and appear in preview bar above; requires Save",
+          "quote": "Scheduled posts",
+          "region": "settings-detail",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 822,
+            "y": 167,
+            "width": 476,
+            "height": 55
+          },
+          "note": "Color Mode single-choice buttons with icons (Dark/Light/System), applies immediately",
+          "quote": "System",
+          "region": "settings-detail",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 822,
+            "y": 167,
+            "width": 476,
+            "height": 55
+          },
+          "region": "settings-content",
+          "note": "Color Mode: three icon+label buttons in a group; System is pressed; applies immediately",
+          "quote": "System",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 822,
+            "y": 492,
+            "width": 476,
+            "height": 258
+          },
+          "region": "settings-content",
+          "note": "Second instance: Bottom Navigation as multi-select toggle chips (role=switch) that update a preview strip and need Save",
+          "quote": "More menu",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "color-picker",
+      "status": "present",
+      "confidence": 0.88,
+      "dims": {
+        "form": "swatch-palette",
+        "target": "a-token-used-everywhere",
+        "model": "rgb-or-hex"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 822,
+            "y": 278,
+            "width": 400,
+            "height": 38
+          },
+          "quote": "Theme Color",
+          "note": "Nine circular swatches; selected one ringed; changes accent everywhere instantly",
+          "region": "interface-settings",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 822,
+            "y": 278,
+            "width": 400,
+            "height": 38
+          },
+          "note": "Nine round theme color swatches; selected has ring; changes app accent everywhere instantly",
+          "region": "settings-detail",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 822,
+            "y": 278,
+            "width": 400,
+            "height": 38
+          },
+          "region": "settings-content",
+          "note": "Nine circular theme-color swatches; the selected one has a ring; the choice recolors the app accent right away",
+          "quote": "#cc7d24",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "form",
+      "status": "present",
+      "confidence": 0.67,
+      "dims": {
+        "labels": "top-aligned",
+        "columns": "single-column",
+        "grouping": "flat",
+        "prefill": "smart-defaults",
+        "help": [
+          "hint-text"
+        ],
+        "commit": "submit-button"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 822,
+            "y": 372,
+            "width": 476,
+            "height": 440
+          },
+          "quote": "Choose your favorite navigation buttons up to five for the bottom navigation. Must include the \"More menu\" button.",
+          "note": "<form> with hint text, live preview strip, toggle chips and Clear/Reset/Save (Save disabled until changed)",
+          "region": "interface-settings",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 822,
+            "y": 342,
+            "width": 476,
+            "height": 470
+          },
+          "note": "Bottom Navigation <form> with hint text, live preview bar and Clear/Reset/Save (Save disabled until changed)",
+          "quote": "Choose your favorite navigation buttons up to five for the bottom navigation.",
+          "region": "settings-detail",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 822,
+            "y": 372,
+            "width": 476,
+            "height": 440
+          },
+          "region": "settings-content",
+          "note": "<form> 'Bottom Navigation' with a hint, toggle chips, a preview strip and Clear/Reset/Save; Save stays disabled until something changes",
+          "quote": "Choose your favorite navigation buttons up to five for the bottom navigation.",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "settings",
+      "status": "present",
+      "confidence": 0.93,
+      "dims": {
+        "ia": "drill-down-hierarchy",
+        "controls": [
+          "numeric-and-ranges",
+          "single-and-multi-select"
+        ],
+        "discovery": [
+          "browse-hierarchy"
+        ],
+        "timing": "instant",
+        "scope": "device-local",
+        "safety": [
+          "no-confirm",
+          "reset-to-default"
+        ]
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 435,
+            "y": 23,
+            "width": 364,
+            "height": 225
+          },
+          "quote": "Interface",
+          "note": "Category list with chevrons drilling into sub-pages",
+          "region": "settings-nav",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 822,
+            "y": 34,
+            "width": 476,
+            "height": 778
+          },
+          "quote": "Font Size",
+          "note": "Sectioned settings page with slider, segmented buttons, swatches, toggles",
+          "region": "interface-settings",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 996,
+            "y": 768,
+            "width": 302,
+            "height": 40
+          },
+          "quote": "Reset",
+          "note": "Clear/Reset/Save for bottom-nav section",
+          "region": "interface-settings",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 435,
+            "y": 23,
+            "width": 364,
+            "height": 225
+          },
+          "note": "Category list with chevrons drilling into settings pages",
+          "quote": "Preferences",
+          "region": "settings-nav",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 822,
+            "y": 34,
+            "width": 475,
+            "height": 778
+          },
+          "note": "Interface settings sections; font/theme/color mode apply instantly, bottom navigation needs Save, Reset available",
+          "quote": "Theme Color",
+          "region": "settings-detail",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 435,
+            "y": 23,
+            "width": 364,
+            "height": 225
+          },
+          "region": "settings-nav",
+          "note": "Settings categories as routed sub-pages with chevrons",
+          "quote": "Logged in users",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 822,
+            "y": 34,
+            "width": 476,
+            "height": 775
+          },
+          "region": "settings-content",
+          "note": "Interface settings sections: Font Size, Color Mode, Theme Color, Bottom Navigation",
+          "quote": "Font Size",
+          "rater": "rater-3"
+        },
+        {
+          "bbox": {
+            "x": 996,
+            "y": 768,
+            "width": 302,
+            "height": 40
+          },
+          "region": "settings-content",
+          "note": "Reset to defaults plus Save for the bottom-nav section; the other controls apply right away",
+          "quote": "Reset",
+          "rater": "rater-3"
+        }
+      ]
+    },
+    {
+      "id": "slider",
+      "status": "present",
+      "confidence": 0.9,
+      "dims": {
+        "values": "discrete-steps",
+        "labels": [
+          "minimum-and-maximum",
+          "tick-marks"
+        ],
+        "scale": "linear"
+      },
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 822,
+            "y": 64,
+            "width": 476,
+            "height": 51
+          },
+          "quote": "Aa",
+          "note": "Font size slider with 11 tick dots, small Aa / large Aa end labels",
+          "region": "interface-settings",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 822,
+            "y": 64,
+            "width": 475,
+            "height": 51
+          },
+          "note": "Font size slider with 11 tick dots, small 'Aa' and large 'Aa' endpoint labels",
+          "quote": "Aa",
+          "region": "settings-detail",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 822,
+            "y": 64,
+            "width": 476,
+            "height": 51
+          },
+          "region": "settings-content",
+          "note": "Font size slider with 11 discrete dots, a small 'Aa' at the left end and a large 'Aa' at the right end; value 5 selected",
+          "quote": "Aa",
+          "rater": "rater-3"
+        }
+      ],
+      "ties": [
+        "dims.precision"
+      ]
+    },
+    {
+      "id": "tabs",
+      "status": "absent",
+      "confidence": 0.77,
+      "dims": {},
+      "support": 3,
+      "raters": 3,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 435,
+            "y": 23,
+            "width": 364,
+            "height": 225
+          },
+          "note": "Settings categories are links to separate routes, not tabs",
+          "rater": "rater-1"
+        },
+        {
+          "bbox": {
+            "x": 435,
+            "y": 23,
+            "width": 364,
+            "height": 225
+          },
+          "note": "Settings categories are links to separate routes, not tabs",
+          "rater": "rater-2"
+        },
+        {
+          "bbox": {
+            "x": 435,
+            "y": 23,
+            "width": 364,
+            "height": 225
+          },
+          "note": "Category list is made of routed links with chevrons, not tabs",
+          "rater": "rater-3"
+        }
+      ]
+    }
+  ],
+  "note": "Majority vote across raters. Free-text fields (layout, typography, palette, notes) stay per rater in labels/.",
+  "computedAt": "2026-11-16T17:52:12.566Z"
+}

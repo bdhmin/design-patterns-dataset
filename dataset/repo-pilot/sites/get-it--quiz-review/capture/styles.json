@@ -1,0 +1,158 @@
+{
+ "pageBackground": "#f6f5f2",
+ "backgroundsByArea": [
+  {
+   "color": "#f6f5f2",
+   "share": 0.5019
+  },
+  {
+   "color": "#ffffff",
+   "share": 0.4214
+  },
+  {
+   "color": "#f3f2ef",
+   "share": 0.0745
+  },
+  {
+   "color": "#d1fae5",
+   "share": 0.001
+  },
+  {
+   "color": "#111113",
+   "share": 0.0005
+  },
+  {
+   "color": "#4f5ae0",
+   "share": 0.0002
+  },
+  {
+   "color": "#fde8ec",
+   "share": 0.0002
+  },
+  {
+   "color": "#d9efe2",
+   "share": 0.0002
+  },
+  {
+   "color": "#eae4fb",
+   "share": 0.0001
+  },
+  {
+   "color": "#d9e9f9",
+   "share": 0.0001
+  },
+  {
+   "color": "#fdedd2",
+   "share": 0.0001
+  },
+  {
+   "color": "#eef0ff",
+   "share": 0
+  }
+ ],
+ "textColors": [
+  {
+   "color": "#111113",
+   "chars": 174
+  },
+  {
+   "color": "#6a6a6e",
+   "chars": 130
+  },
+  {
+   "color": "#8c8c90",
+   "chars": 71
+  },
+  {
+   "color": "#2a2a2d",
+   "chars": 62
+  },
+  {
+   "color": "#064e3b",
+   "chars": 34
+  },
+  {
+   "color": "#ffffff",
+   "chars": 27
+  },
+  {
+   "color": "#9f1f3a",
+   "chars": 22
+  },
+  {
+   "color": "#0f6a47",
+   "chars": 22
+  },
+  {
+   "color": "#4b2db4",
+   "chars": 11
+  },
+  {
+   "color": "#92580a",
+   "chars": 11
+  }
+ ],
+ "fonts": [
+  {
+   "family": "GeistSans",
+   "textNodes": 41
+  }
+ ],
+ "fontSizes": [
+  {
+   "px": 16,
+   "textNodes": 1
+  },
+  {
+   "px": 14,
+   "textNodes": 5
+  },
+  {
+   "px": 13,
+   "textNodes": 5
+  },
+  {
+   "px": 12,
+   "textNodes": 8
+  },
+  {
+   "px": 11,
+   "textNodes": 12
+  },
+  {
+   "px": 10,
+   "textNodes": 10
+  }
+ ],
+ "radii": [
+  {
+   "radius": "6px",
+   "boxes": 30
+  },
+  {
+   "radius": "3.35544e+07px",
+   "boxes": 8
+  },
+  {
+   "radius": "999px",
+   "boxes": 7
+  },
+  {
+   "radius": "8px",
+   "boxes": 6
+  },
+  {
+   "radius": "12px",
+   "boxes": 2
+  },
+  {
+   "radius": "4px",
+   "boxes": 1
+  }
+ ],
+ "boxesMeasured": 216,
+ "shadowedShare": 0.051,
+ "borderedShare": 0.139,
+ "gradientBackgrounds": 0,
+ "imageBackgrounds": 0
+}

@@ -1,0 +1,443 @@
+{
+  "schemaVersion": "1.0.0",
+  "codebookVersion": "1.0.0",
+  "batch": "repo-pilot",
+  "site": {
+    "slug": "elk--profile",
+    "url": "http://localhost:4400/@maren",
+    "finalUrl": "http://localhost:4400/@maren",
+    "status": 200,
+    "title": "Profile | Maren Lindqvist (@maren@harbor.social) | Elk",
+    "capturedAt": "2026-11-16T08:33:02.784Z",
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "screenshot": {
+      "ref": "capture/screenshot.png",
+      "width": 1440,
+      "height": 4829
+    },
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/158.0.8127.18 Safari/537.36",
+    "domain": "social-community",
+    "domainNote": "Elk web client for Mastodon/fediverse — public profile page (signed out)",
+    "provenance": {
+      "source": "repo",
+      "record": "repos/repo-pilot/elk/explore.json",
+      "repo": {
+        "name": "elk-zone/elk",
+        "url": "https://github.com/elk-zone/elk",
+        "commit": "6b956a6d4a89a676059d83a0b0e59d7165d5f266",
+        "license": "MIT"
+      },
+      "view": {
+        "slug": "profile",
+        "name": "User profile",
+        "description": "Account profile with header banner, avatar, bio, metadata fields, follower counts, tabs (Posts, Posts & Replies, Media, Collections) and pinned posts."
+      }
+    }
+  },
+  "regions": [
+    {
+      "id": "left-sidebar",
+      "role": "sidebar",
+      "label": "Elk logo, primary vertical nav (signed-out items greyed), 'Viewing localhost:4410 public data' note and Sign in button",
+      "bbox": {
+        "x": 120,
+        "y": 0,
+        "width": 300,
+        "height": 975
+      },
+      "patterns": [
+        "app-shell"
+      ]
+    },
+    {
+      "id": "profile-header",
+      "role": "profile-header",
+      "label": "Banner image, overlapping round avatar, name, handle with copy, bio with hashtags, link field, location/pronouns/joined meta, post/following/follower counts, ⋮ more button",
+      "bbox": {
+        "x": 435,
+        "y": 23,
+        "width": 600,
+        "height": 538
+      },
+      "patterns": []
+    },
+    {
+      "id": "profile-tabs",
+      "role": "tabs",
+      "label": "Posts / Posts & Replies / Media / Collections route tabs with orange underline indicator",
+      "bbox": {
+        "x": 435,
+        "y": 561,
+        "width": 600,
+        "height": 63
+      },
+      "patterns": [
+        "tabs"
+      ]
+    },
+    {
+      "id": "timeline",
+      "role": "feed",
+      "label": "Account timeline: pinned posts, own posts and boosts, each with avatar, name/handle, relative time, ⋯ menu, body and reply/boost/quote/favorite/bookmark action row; one link preview card",
+      "bbox": {
+        "x": 435,
+        "y": 630,
+        "width": 600,
+        "height": 1560
+      },
+      "patterns": [
+        "feed",
+        "reactions",
+        "card",
+        "menu"
+      ]
+    },
+    {
+      "id": "timeline-end",
+      "role": "end-note",
+      "label": "'Older posts from other instances may not be displayed.' + Open in original site link, after a large empty virtual-scroller gap",
+      "bbox": {
+        "x": 435,
+        "y": 4760,
+        "width": 600,
+        "height": 60
+      },
+      "patterns": []
+    },
+    {
+      "id": "right-sidebar",
+      "role": "sidebar",
+      "label": "Search field, instance card (Harbor Social title, image, description), utility icon buttons and build/footer links",
+      "bbox": {
+        "x": 1035,
+        "y": 0,
+        "width": 285,
+        "height": 975
+      },
+      "patterns": [
+        "text-field"
+      ]
+    }
+  ],
+  "patterns": [
+    {
+      "id": "app-shell",
+      "status": "present",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 120,
+            "y": 86,
+            "width": 300,
+            "height": 723
+          },
+          "quote": "Home Notifications Conversations Favorites Bookmarks",
+          "region": "left-sidebar",
+          "note": "Persistent left sidebar with fixed destinations; signed-out-only items greyed"
+        },
+        {
+          "bbox": {
+            "x": 1035,
+            "y": 0,
+            "width": 285,
+            "height": 975
+          },
+          "region": "right-sidebar",
+          "note": "Right aside with search and instance info"
+        }
+      ],
+      "dims": {
+        "primary": "sidebar",
+        "secondary": "sub-tabs-under-the-header",
+        "items": [
+          "fixed-destinations"
+        ],
+        "visibility": "always-visible",
+        "structure": "single-app"
+      }
+    },
+    {
+      "id": "feed",
+      "status": "present",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 435,
+            "y": 630,
+            "width": 600,
+            "height": 1560
+          },
+          "quote": "Pinned post",
+          "region": "timeline",
+          "note": "Profile timeline of full posts, pinned first then reverse-chronological, including boosts"
+        },
+        {
+          "bbox": {
+            "x": 446,
+            "y": 1355,
+            "width": 580,
+            "height": 510
+          },
+          "quote": "New piece: How Copenhagen's district heating network quietly became one of the biggest batteries in Europe.",
+          "region": "timeline",
+          "note": "Boosted post with link preview card"
+        }
+      ],
+      "dims": {
+        "density": "full-post",
+        "heterogeneity": [
+          "mixed-media-types"
+        ],
+        "ordering": "chronological",
+        "arrangement": "single-column",
+        "loading": [
+          "infinite-scroll"
+        ],
+        "nesting": [
+          "flat"
+        ]
+      }
+    },
+    {
+      "id": "tabs",
+      "status": "present",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 435,
+            "y": 561,
+            "width": 600,
+            "height": 63
+          },
+          "quote": "Posts Posts & Replies Media Collections",
+          "region": "profile-tabs",
+          "note": "Text tabs with orange underline on active; each is a route link"
+        }
+      ],
+      "dims": {
+        "placement": "top",
+        "label": [
+          "text"
+        ],
+        "origin": "fixed-by-the-designer",
+        "grouping": "flat",
+        "switchBy": [
+          "click"
+        ]
+      }
+    },
+    {
+      "id": "reactions",
+      "status": "present",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 868,
+            "y": 791,
+            "width": 59,
+            "height": 33
+          },
+          "quote": "120",
+          "region": "timeline",
+          "note": "Favorite heart with total count; boost and bookmark alongside"
+        }
+      ],
+      "dims": {
+        "vocabulary": "single-like",
+        "aggregate": "total-count",
+        "add": [
+          "single-tap"
+        ]
+      }
+    },
+    {
+      "id": "card",
+      "status": "present",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 512,
+            "y": 1457,
+            "width": 509,
+            "height": 364
+          },
+          "quote": "The hidden battery under Copenhagen's streets",
+          "region": "timeline",
+          "note": "Link preview card: top image, grey filled footer with source, title, truncated description; whole card is a link. Posts themselves are borderless rows separated by dividers."
+        }
+      ],
+      "dims": {
+        "media": "top-image",
+        "actions": "none",
+        "shape": "vertical",
+        "style": "filled",
+        "target": "whole-card"
+      }
+    },
+    {
+      "id": "menu",
+      "status": "present",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 987,
+            "y": 661,
+            "width": 33,
+            "height": 33
+          },
+          "region": "timeline",
+          "note": "⋯ More button opens dropdown (verified live): Show who reacted, Copy link to this post, Copy original link, Open in original site"
+        }
+      ],
+      "dims": {
+        "openBy": "button-click",
+        "structure": "flat",
+        "item": [
+          "label",
+          "icon"
+        ],
+        "itemSet": "fixed",
+        "form": "vertical-list"
+      }
+    },
+    {
+      "id": "text-field",
+      "status": "present",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 1046,
+            "y": 26,
+            "width": 270,
+            "height": 38
+          },
+          "quote": "Search",
+          "region": "right-sidebar",
+          "note": "Search input with leading magnifier icon and placeholder, faint rounded outline"
+        }
+      ],
+      "dims": {
+        "supporting": [
+          "placeholder",
+          "prefix-or-suffix"
+        ],
+        "style": "outlined"
+      }
+    },
+    {
+      "id": "popover",
+      "status": "absent",
+      "confidence": 0.6,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 504,
+            "y": 1040,
+            "width": 323,
+            "height": 23
+          },
+          "note": "Hover on author name did not show a hover card in live check"
+        }
+      ],
+      "dims": {}
+    },
+    {
+      "id": "stat-tile",
+      "status": "absent",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "bbox": {
+            "x": 450,
+            "y": 522,
+            "width": 324,
+            "height": 23
+          },
+          "quote": "2,147 Posts",
+          "note": "Inline count links, not tiles"
+        }
+      ],
+      "dims": {}
+    }
+  ],
+  "structure": {
+    "layout": "three-column app layout: left nav sidebar, centered 600px profile + timeline column, right aside with search and instance info",
+    "regions": [
+      "left-sidebar",
+      "profile-header",
+      "profile-tabs",
+      "timeline",
+      "timeline-end",
+      "right-sidebar"
+    ],
+    "density": "medium"
+  },
+  "aesthetics": {
+    "palette": [
+      "#fafafa",
+      "#232323",
+      "#686868",
+      "#919191",
+      "#cc7d24",
+      "#fb923c",
+      "#4ade80",
+      "#facc15"
+    ],
+    "colorRoles": {
+      "background": "#fafafa",
+      "text": "#232323",
+      "muted": "#686868",
+      "border": "#919191",
+      "primary": "#cc7d24",
+      "accent": "#fb923c",
+      "success": "#4ade80",
+      "highlight": "#facc15"
+    },
+    "typography": "System UI stack (-apple-system) for everything; ui-monospace only for version/commit hash in footer",
+    "typeScale": "Restrained: 23px bold profile name/brand, 17px nav and tabs, 15px body and post text (bold display names), 13px meta (handles, times, footer), 11px small-caps field label",
+    "shape": "soft",
+    "elevation": "flat",
+    "borders": "thin",
+    "imagery": [
+      "photography",
+      "iconography"
+    ],
+    "iconStyle": "line",
+    "whitespace": "moderate",
+    "backgroundTreatment": "solid",
+    "mood": [
+      "clean",
+      "calm",
+      "friendly",
+      "minimal"
+    ]
+  },
+  "model": {
+    "rater": "rater-2",
+    "provider": "claude-code",
+    "name": "claude-opus-5-5",
+    "effort": "high",
+    "generatedAt": "2026-11-16T17:33:19.588Z",
+    "servedBy": [
+      "claude-opus-5-5"
+    ],
+    "turns": 32,
+    "usage": {
+      "input_tokens": 66,
+      "cache_creation_input_tokens": 59121,
+      "cache_read_input_tokens": 1494396,
+      "output_tokens": 6115
+    }
+  },
+  "notes": "Elk (Mastodon client) in signed-out state: auth-only nav items rendered in pale grey (#919191-ish) while Explore/Local/Federated/Settings are dark. Single warm orange (#cc7d24) carries links, hashtags, active tab underline, instance title and the Sign in button; state colors: green for boosted, yellow for bookmarked, orange pin label. Boosted posts show a small 'boosted by' avatar+name line above. Flat, near-shadowless, borderless design with hairline dividers between posts. The timeline is a virtual scroller, leaving a large empty gap (~y 2200–4760) in the full-page capture before the end note."
+}
