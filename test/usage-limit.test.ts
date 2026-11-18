@@ -177,3 +177,20 @@ test('without caps, readings never block and no probe runs', async () => {
   assert.equal(now, 1_000);
   assert.equal(probes, 0);
 });
+
+test('a cap pause lifts early when a re-read shows usage dropped (e.g. the account was reset)', async () => {
+  let now = Date.parse('2026-11-18T08:00:00.000Z');
+  const reset = Date.parse('2026-11-22T11:00:00.000Z') / 1000;
+  const logs: string[] = [];
+  const gate = new UsageGate({ now: () => now, sleep: async (ms) => { now += ms; }, log: (l) => logs.push(l), caps: { seven_day: 0.75 } });
+  const started = now;
+  let probes = 0;
+  // The usage resets 2 hours into the pause; the next heartbeat's re-read lifts it.
+  gate.setProbe(async () => { probes++; gate.observe(reading(now - started >= 2 * 3600_000 ? 0 : 0.76, reset)); });
+  gate.observe(reading(0.76, reset));
+  await gate.wait();
+  assert.ok(now < reset * 1000, 'resumed before the window reset');
+  assert.ok(now - started <= 2.5 * 3600_000 + 1);
+  assert.ok(probes >= 4);
+  assert.ok(logs.some((l) => /back under every cap/.test(l)));
+});

@@ -122,9 +122,12 @@ export class UsageGate {
     const windows = (info as { unifiedWindows?: Record<string, { utilization?: unknown; resetsAt?: unknown }> } | undefined)?.unifiedWindows;
     if (!windows || typeof windows !== 'object') return;
     this.lastReading = this.now();
+    let seen = 0, under = 0;
     for (const [win, cap] of Object.entries(this.caps) as [keyof UsageCaps, number][]) {
       const w = windows[win];
       if (!w || typeof w.utilization !== 'number' || typeof w.resetsAt !== 'number') continue;
+      seen++;
+      if (w.utilization < cap) under++;
       if (!this.announced.has(win)) {
         this.announced.add(win);
         this.log(`Usage cap: ${WINDOW_NAME[win]} ${Math.round(cap * 100)}%; the account is at ${Math.round(w.utilization * 100)}% now (window resets ${new Date(w.resetsAt * 1000).toISOString()}).`);
@@ -135,6 +138,11 @@ export class UsageGate {
       this.capUntil = deadline;
       this.generation++;
       this.log(`Usage cap: ${WINDOW_NAME[win]} usage is at ${Math.round(w.utilization * 100)}% (cap ${Math.round(cap * 100)}%). Work already running finishes; nothing new starts until the window resets at ${new Date(deadline).toISOString()} (${formatDuration(deadline - this.now())}).`);
+    }
+    // Usage can drop before the window ends (e.g. the account's usage was reset): lift the cap pause.
+    if (seen > 0 && under === seen && this.capUntil > this.now()) {
+      this.capUntil = 0;
+      this.log('Usage cap: the account is back under every cap; resuming.');
     }
   }
 
@@ -179,6 +187,12 @@ export class UsageGate {
         const slice = Math.min(remaining, MAX_SLEEP_MS, untilNote > 0 ? untilNote : HEARTBEAT_MS);
         await this.sleep(slice);
         if (this.now() >= blockedUntil()) break;
+        if (this.now() >= nextNote && this.capUntil > this.until) {
+          // Paused only by a self-imposed cap: re-read utilization, which may have dropped early.
+          this.lastReading = 0;
+          await this.refresh();
+          if (this.now() >= blockedUntil()) break;
+        }
         if (this.now() >= nextNote) {
           const why = this.capUntil > this.until ? 'at the usage cap' : 'for Claude usage';
           this.log(`Still paused ${why}. Work resumes at ${new Date(blockedUntil()).toISOString()} (${formatDuration(blockedUntil() - this.now())} left). No further sites will be labeled until then.`);
